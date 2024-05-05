@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 180 38% 6%;
+    --foreground: 0 0% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 180 38% 6%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  .map {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #0a1616 !important;
+    cursor: crosshair !important;
+  }
+}
+
+@layer base {
+  .lz-marker-pin {
+    width: 100px;
+    height: fit-content;
+    gap: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .lz-marker-icon {
+    width: 27px !important;
+ }
+
+  .lz-marker-text {
+    width: fit-content;
+    letter-spacing: 0.7px;
+    font-weight: 700;
+    font-size: 9px;
+    padding: 1.5px 4px;
+    background: #000;
+    color: #fff;
+    text-align: center;
+  }
+
+  
+  .poi-marker-pin {
+    width: 100px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .poi-marker-text {
+    width: fit-content;
+    letter-spacing: 0.7px;
+    font-weight: 900;
+    font-size: 12px;
+    padding: 1.5px 4px;
+    text-wrap: nowrap;
+    color: #e0db95;
+    text-align: center;
+  }
+
+  .poi-text-border {
+    text-shadow:
+      -2px   -2px black,
+      -2px -1.5px black,
+      -2px   -1px black,
+      -2px -0.5px black,
+      -2px    0px black,
+      -2px  0.5px black,
+      -2px    1px black,
+      -2px  1.5px black,
+      -2px    2px black,
+      -1.5px  2px black,
+      -1px    2px black,
+      -0.5px  2px black,
+      0px     2px black,
+      0.5px   2px black,
+      1px     2px black,
+      1.5px   2px black,
+      2px     2px black,
+      2px   1.5px black,
+      2px     1px black,
+      2px   0.5px black,
+      2px     0px black,
+      2px  -0.5px black,
+      2px    -1px black,
+      2px  -1.5px black,
+      2px    -2px black,
+      1.5px  -2px black,
+      1px    -2px black,
+      0.5px  -2px black,
+      0px    -2px black,
+      -0.5px -2px black,
+      -1px   -2px black,
+      -1.5px -2px black;
+  }
+}
