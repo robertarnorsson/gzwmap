@@ -8,6 +8,7 @@ const rubik = Rubik({ subsets: ["latin"] });
 export default function LocationMarker({ location }: { location: location }) {
   return (
     <Marker
+      riseOnHover
       position={location.position}
       icon={L.divIcon({
         className: 'marker',

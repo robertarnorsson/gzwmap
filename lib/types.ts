@@ -19,28 +19,46 @@ export type lz = {
 export type location = {
   name: string
   position: LatLngTuple
+  tasks: task[]
 };
 
-export enum TaskType {
+export enum ObjectiveType {
   DISCOVER = "Discover",
+  MARK = "Mark",
   DELIVER = "Deliver",
 }
 
 export type task = {
   name: string,
   description: string
-  tasks: subtask[]
+  objectives: objective[]
   vendor: vendor
   level: number
+  prerequisites?: task
+  items?: item[]
   key?: key
   faction?: faction
 };
 
-export type subtask = {
+export type objective = {
   description: string
   position: LatLngTuple
-  type: TaskType
+  type: ObjectiveType
   faction?: faction
+  subobjective?: subobjective
+}
+
+export type subobjective = {
+  description: string
+  position: LatLngTuple
+  type: ObjectiveType
+  faction?: faction
+}
+
+export type item = {
+  name: string
+  description: string
+  vendor: vendor
 }
 
 export type key = {

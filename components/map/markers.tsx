@@ -12,28 +12,28 @@ export default function MapMarkers() {
     <>
       {LZs.map((lz) => (
         <LZMarker
-          key={lz.name}
+          key={`${lz.position[0]}${lz.name}`}
           lz={lz}
         />
       ))}
       {Locations.map((location) => (
         <LocationMarker
-          key={location.name}
+          key={`${location.position[0]}${location.name}`}
           location={location}
         />
       ))}
       {Factions.map((faction) => (
         <FactionMarker
-          key={faction.name}
+          key={`${faction.position[0]}${faction.name}`}
           faction={faction}
         />
       ))}
       {Tasks.map((task) => (
-        task.tasks.map((subtask) => (
+        task.objectives.map((objective) => (
           <TaskMarker
-            key={subtask.position[0]}
+            key={`${objective.position[0]}${objective.description}`}
             task={task}
-            subtask={subtask}
+            objective={objective}
           />
         ))
       ))}

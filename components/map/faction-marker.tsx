@@ -8,6 +8,7 @@ const rubik = Rubik({ subsets: ["latin"] });
 export default function FactionMarker({ faction }: { faction: faction }) {
   return (
     <Marker
+      riseOnHover
       position={faction.position}
       icon={L.divIcon({
         className: 'marker',
