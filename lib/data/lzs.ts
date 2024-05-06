@@ -1,58 +1,58 @@
 import { lz } from "@/lib/types";
-import { CSI, LRI, MSS } from "./factions";
+import { LamangRecoveryInitiative, MithrasSecuritySystems, CrimsonShieldInternational } from "./factions";
 
 export const ALPHA1: lz = {
   name: "ALPHA 1",
   position: [0.9031536725764605, -0.40756702423095703],
-  faction: LRI
+  faction: LamangRecoveryInitiative
 };
 
 export const ALPHA2: lz = {
   name: "ALPHA 2",
   position: [0.9218588479058658, -0.49163818359375006],
-  faction: LRI
+  faction: LamangRecoveryInitiative
 };
 
 export const ALPHA3: lz = {
   name: "ALPHA 3",
   position: [0.8684646034375607, -0.47863483428955084],
-  faction: LRI
+  faction: LamangRecoveryInitiative
 };
 
 export const BRAVO1: lz = {
   name: "BRAVO 1",
   position: [0.5114152317539321, -0.7335181370487321],
-  faction: MSS
+  faction: MithrasSecuritySystems
 };
 
 export const BRAVO2: lz = {
   name: "BRAVO 2",
   position: [0.5529314673851344, -0.6610552240322409],
-  faction: MSS
+  faction: MithrasSecuritySystems
 };
 
 export const BRAVO3: lz = {
   name: "BRAVO 3",
   position: [0.5837737812689557, -0.7014497204265348],
-  faction: MSS
+  faction: MithrasSecuritySystems
 };
 
 export const CHARLIE1: lz = {
   name: "CHARLIE 1",
   position: [0.948823878029034, -0.934514906546864],
-  faction: CSI
+  faction: CrimsonShieldInternational
 };
 
 export const CHARLIE2: lz = {
   name: "CHARLIE 2",
   position: [0.8669526191449345, -0.9667968750000001],
-  faction: CSI
+  faction: CrimsonShieldInternational
 };
 
 export const CHARLIE3: lz = {
   name: "CHARLIE 3",
   position: [0.8710997745961968, -0.9132814407348634],
-  faction: CSI
+  faction: CrimsonShieldInternational
 };
 
 export const FOXTROT1: lz = {

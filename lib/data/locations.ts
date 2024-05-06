@@ -2,7 +2,7 @@ import { location } from "@/lib/types";
 
 export const PhaLang: location = {
   name: "Pha Lang",
-  position: [0.9042339000010519, -0.44763438237420244]
+  position: [0.9044496463221368, -0.4476499557495118]
 }
 
 export const MidnightSapphire: location = {
