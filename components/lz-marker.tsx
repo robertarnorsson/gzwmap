@@ -1,13 +1,17 @@
 import L, { LatLngTuple } from "leaflet";
 import { Marker } from "react-leaflet";
+import { Inter } from "next/font/google";
+import { lz } from "@/lib/types";
 
-export default function LZMarker({ name, position }: { name: string, position: LatLngTuple }) {
+const inter = Inter({ subsets: ["latin"] });
+
+export default function LZMarker({ lz }: { lz: lz }) {
   return (
     <Marker
-      position={position}
+      position={lz.position}
       icon={L.divIcon({
-        className: 'custom-div-icon',
-        html: `<div class='lz-marker-pin'><img class='lz-marker-icon' src='lz-marker.svg'></img><span class='lz-marker-text'>${name}</span></div>`,
+        className: 'marker',
+        html: `<div class='lz-marker-pin'><img class='lz-marker-icon' src='lz-marker.svg'></img><span class='lz-marker-text ${inter.className}'>${lz.name}</span></div>`,
         iconSize: [100, 30],
         iconAnchor: [50, 15]
       })}
