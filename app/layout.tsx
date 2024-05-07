@@ -53,8 +53,6 @@ export const metadata: Metadata = {
     "gzw lore",
   ],
   twitter: {
-    title: "@title",
-    description: "@description",
     card: "summary_large_image",
     site: "@site",
     creator: "@creator",
