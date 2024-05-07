@@ -13,6 +13,7 @@ export type faction = {
 export type lz = {
   name: string
   position: LatLngTuple
+  discoverable: boolean
   faction?: faction
 };
 
