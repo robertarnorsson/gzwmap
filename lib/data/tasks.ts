@@ -6,6 +6,7 @@ import { LeaveNoManBehind } from "@/lib/data/tasks/leave-no-man-behind";
 import { LittleBirdDown } from "@/lib/data/tasks/little-bird-down";
 import { RestoringOrder } from "@/lib/data/tasks/restoring-order";
 import { RatsNest } from "@/lib/data/tasks/rats-nest";
+import { LostAndFound } from "./tasks/lost-and-found";
 
 export const Tasks: task[] = [
   FirstRecon,
@@ -14,5 +15,6 @@ export const Tasks: task[] = [
   LeaveNoManBehind,
   LittleBirdDown,
   RestoringOrder,
-  RatsNest
+  RatsNest,
+  LostAndFound
 ]
