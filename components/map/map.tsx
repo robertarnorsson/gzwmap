@@ -28,7 +28,7 @@ export default function MyMap() {
       zoom={12}
       zoomSnap={0.2}
       minZoom={12}
-      maxZoom={15}
+      maxZoom={15.4}
       doubleClickZoom={false}
       scrollWheelZoom={true}
     >

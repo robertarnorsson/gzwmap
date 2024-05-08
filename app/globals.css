@@ -67,6 +67,7 @@
 
   .marker {
     background: transparent;
+    cursor: crosshair !important;
   }
 }
 
@@ -123,6 +124,32 @@
       0 0 5px black
   }
 
+  
+  .poi-marker-pin {
+    width: 100px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .poi-marker-text {
+    width: fit-content;
+    letter-spacing: 0.7px;
+    font-weight: 400;
+    font-size: 10px;
+    padding: 1.5px 4px;
+    text-wrap: nowrap;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .poi-text-border {
+    filter: drop-shadow(0 0 0.75rem black);
+    text-shadow:
+      0 0 5px black
+  }
+
 
   .faction-marker-pin {
     width: 100px;
@@ -150,28 +177,56 @@
   }
 
   .task-marker-pin {
-    width: 100px;
-    height: fit-content;
-    gap: 3px;
+    position: relative;
+    width: 100% !important;
+    height: 100% !important;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
   
   .task-marker-icon {
-    width: 14px !important;
- }
-
+    width: 15px !important;
+    height: 15px !important;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
   .task-marker-text {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
     width: fit-content;
     letter-spacing: 0.4px;
     font-weight: 500;
-    font-size: 8px;
-    padding: 0.5px 2px;
+    font-size: 8.5px;
+    padding: 0.5px 3px;
     padding-bottom: 0.5px;
     background: #000;
     color: #c0c0c0;
     text-align: center;
+    white-space: nowrap;
+  }
+
+  .task-marker-text::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    height: 100%;
+    width: 12px;
+    transform: translateY(-50%);
+    background-color: #000;
+    clip-path: polygon(100% 0, 60% 50%, 100% 100%);
+  }
+  
+  .task-marker-text {
+    display: none;
+  }
+
+  .task-marker-pin:hover .task-marker-text {
+    display: block;
   }
 }

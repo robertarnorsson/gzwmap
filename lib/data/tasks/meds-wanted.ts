@@ -7,6 +7,7 @@ import {
 } from "@/lib/data/factions";
 
 const MedsWanted_Objective1_LRI: objective = {
+  name: "Meds Wanted - Supplies",
   description: "Find the UNLRA Medical Supplies at the town's Water Tower",
   position: [0.9140398374202118, -0.4583787918090821],
   type: ObjectiveType.DELIVER,
@@ -14,6 +15,7 @@ const MedsWanted_Objective1_LRI: objective = {
 }
 
 const MedsWanted_Objective1_MMS: objective = {
+  name: "Meds Wanted - Supplies",
   description: "Find the UNLRA Medical Supplies at the town's Water Tower",
   position: [0.5377593062048597, -0.6875038146972657],
   type: ObjectiveType.DELIVER,
@@ -21,6 +23,7 @@ const MedsWanted_Objective1_MMS: objective = {
 }
 
 const MedsWanted_Objective1_CSI: objective = {
+  name: "Meds Wanted - Supplies",
   description: "Find the UNLRA Medical Supplies at the town's Water Tower",
   position: [0.8982289680777165, -0.9536218643188478],
   type: ObjectiveType.DELIVER,

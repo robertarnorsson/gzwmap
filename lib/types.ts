@@ -23,6 +23,12 @@ export type location = {
   tasks: task[]
 };
 
+export type poi = {
+  name: string
+  position: LatLngTuple
+  faction?: faction
+}
+
 export enum ObjectiveType {
   DISCOVER = "Discover",
   MARK = "Mark",
@@ -30,7 +36,7 @@ export enum ObjectiveType {
 }
 
 export type task = {
-  name: string,
+  name: string
   description: string
   objectives: objective[]
   vendor: vendor
@@ -42,6 +48,7 @@ export type task = {
 };
 
 export type objective = {
+  name: string
   description: string
   position: LatLngTuple
   type: ObjectiveType
