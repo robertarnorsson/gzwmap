@@ -1,30 +1,26 @@
-import L from "leaflet";
-import { Marker } from "react-leaflet";
-import { Inter } from "next/font/google";
+import { Rubik } from "next/font/google";
 import { task, objective } from "@/lib/types";
+import { cn } from "@/lib/utils";
+import MapMarker from "./map-marker";
+import { Map } from "leaflet";
+import Image from "next/image";
 
-const inter = Inter({ subsets: ["latin"] });
+const rubik = Rubik({ subsets: ["latin"] });
 
-export default function TaskMarker({ task, objective }: { task: task, objective: objective }) {
+export default function TaskMarker({ map, task, objective }: { map: Map, task: task, objective: objective}) {
   return (
-    <Marker
-      riseOnHover
+    <MapMarker
+      map={map}
+      iconSize={[30, 30]}
       position={objective.position}
-      icon={L.divIcon({
-        className: 'marker',
-        html: `<div class='task-marker-pin'>
-                <img class='task-marker-icon' src='task.png'></img>
-                <span class='task-marker-text ${inter.className}'>${objective.name}</span>
-              </div>`,
-        iconSize: [30, 30],
-        iconAnchor: [15, 15]
-      })}
-      eventHandlers={{
-        click: (e) => {
-          console.log('marker clicked', e)
-        },
-      }}
     >
-    </Marker>
+      <div className='task-marker-pin'>
+        <Image className='task-marker-icon' src='/task.png' width={14} height={14} alt={objective.name}></Image>
+        <span className={cn(
+          rubik.className,
+          'task-marker-text'
+        )}>{objective.name}</span>
+      </div>
+    </MapMarker>
   )
 }

@@ -9,10 +9,10 @@ import {
 import { AlignLeft } from "lucide-react";
 import { Button } from "../ui/button";
 
-export default function InfoMenu() {
+export default function InfoMenu({ open }: { open: boolean }) {
   return (
     <div>
-      <Sheet>
+      <Sheet open={open}>
         <SheetTrigger asChild>
           <Button variant='ghost' className="rounded-full p-4">
             <AlignLeft />

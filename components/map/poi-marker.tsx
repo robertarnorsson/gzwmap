@@ -1,22 +1,24 @@
-import L from "leaflet";
-import { Marker } from "react-leaflet";
 import { Rubik } from "next/font/google";
 import { poi } from "@/lib/types";
+import { cn } from "@/lib/utils";
+import MapMarker from "./map-marker";
+import { Map } from "leaflet";
 
 const rubik = Rubik({ subsets: ["latin"] });
 
-export default function POIMarker({ poi }: { poi: poi }) {
+export default function POIMarker({ map, poi }: { map: Map, poi: poi }) {
   return (
-    <Marker
-      riseOnHover
+    <MapMarker
+      map={map}
+      showZoom={14}
       position={poi.position}
-      icon={L.divIcon({
-        className: 'marker',
-        html: `<div class='poi-marker-pin'><span class='poi-marker-text poi-text-border ${rubik.className}'>${poi.name}</span></div>`,
-        iconSize: [100, 30],
-        iconAnchor: [50, 15]
-      })}
     >
-    </Marker>
+      <div className='poi-marker-pin'>
+        <span className={cn(
+          rubik.className,
+          'poi-marker-text poi-text-border'
+        )}>{poi.name}</span>
+      </div>
+    </MapMarker>
   )
 }

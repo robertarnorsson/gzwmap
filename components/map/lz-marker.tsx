@@ -1,22 +1,25 @@
-import L from "leaflet";
-import { Marker } from "react-leaflet";
 import { Inter } from "next/font/google";
 import { lz } from "@/lib/types";
+import { cn } from "@/lib/utils";
+import MapMarker from "./map-marker";
+import { Map } from "leaflet";
+import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function LZMarker({ lz }: { lz: lz }) {
+export default function LZMarker({ map, lz }: { map: Map, lz: lz }) {
   return (
-    <Marker
-      riseOnHover
+    <MapMarker
+      map={map}
       position={lz.position}
-      icon={L.divIcon({
-        className: 'marker',
-        html: `<div class='lz-marker-pin'><img class='lz-marker-icon' src='lz.jpg'></img><span class='lz-marker-text ${inter.className}'>${lz.name}</span></div>`,
-        iconSize: [100, 30],
-        iconAnchor: [50, 15]
-      })}
     >
-    </Marker>
+      <div className='lz-marker-pin'>
+        <Image className='lz-marker-icon' src='/lz.jpg' width={23} height={13} alt={lz.name}></Image>
+        <span className={cn(
+          inter.className,
+          'lz-marker-text'
+        )}>{lz.name}</span>
+      </div>
+    </MapMarker>
   )
 }

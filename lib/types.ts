@@ -33,6 +33,7 @@ export enum ObjectiveType {
   DISCOVER = "Discover",
   MARK = "Mark",
   DELIVER = "Deliver",
+  ELIMINATION = "Elimination",
 }
 
 export type task = {

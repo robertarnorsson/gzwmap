@@ -8,25 +8,30 @@ import { LZs } from "@/lib/data/lzs";
 import { Locations } from "@/lib/data/locations";
 import { POIs } from "@/lib/data/pois";
 import { Tasks } from "@/lib/data/tasks";
+import { useMap } from "react-leaflet";
 
 export default function MapMarkers() {
+  const map = useMap();
   return (
     <>
       {LZs.map((lz, index) => (
         <LZMarker
           key={index}
+          map={map}
           lz={lz}
         />
       ))}
       {Locations.map((location, index) => (
         <LocationMarker
           key={index}
+          map={map}
           location={location}
         />
       ))}
       {Factions.map((faction, index) => (
         <FactionMarker
           key={index}
+          map={map}
           faction={faction}
         />
       ))}
@@ -34,6 +39,7 @@ export default function MapMarkers() {
         task.objectives.map((objective, index) => (
           <TaskMarker
             key={index}
+            map={map}
             task={task}
             objective={objective}
           />
@@ -42,6 +48,7 @@ export default function MapMarkers() {
       {POIs.map((poi, index) => (
         <POIMarker
           key={index}
+          map={map}
           poi={poi}
         />
       ))}

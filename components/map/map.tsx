@@ -1,9 +1,9 @@
-import { MapContainer, TileLayer, useMapEvents } from "react-leaflet"
+import { MapContainer, TileLayer, useMap, useMapEvents } from "react-leaflet"
 import L, { CRS, LatLngBoundsExpression } from "leaflet"
 import MapMarkers from "./markers";
 import "leaflet/dist/leaflet.css"
 
-export default function MyMap() {
+export default function Map() {
   const MapEvents = () => {
     useMapEvents({
       click(e) {
@@ -29,7 +29,7 @@ export default function MyMap() {
       zoomSnap={0.2}
       minZoom={12}
       maxZoom={15.4}
-      doubleClickZoom={false}
+      doubleClickZoom={true}
       scrollWheelZoom={true}
     >
       <TileLayer className="tile-map"

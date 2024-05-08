@@ -1,12 +1,12 @@
 import { ObjectiveType, objective, task } from "@/lib/types";
-import { Gunny, Handshake } from "@/lib/data/vendors";
+import { Gunny } from "@/lib/data/vendors";
 import {
   CrimsonShieldInternational,
   LamangRecoveryInitiative,
   MithrasSecuritySystems
 } from "@/lib/data/factions";
-import { GPSTracker } from "../items";
-import { CacheRetrival } from "./cache-retrieval";
+import { GPSTracker } from "@/lib/data/items";
+import { CacheRetrival } from "@/lib/data/tasks/cache-retrieval";
 
 const LeaveNoManBehind_Objective1_LRI: objective = {
   name: "Leave No Man Behind - Dead Soldier",
