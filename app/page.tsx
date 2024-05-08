@@ -19,8 +19,10 @@ export default function Page() {
   return (
     <div className='relative h-screen'>
       <Map />
-      <div className="absolute bg-black/50 -p-0.5 px-1 pl-4 rounded-tl-3xl bottom-0 right-0 z-[9999]">
-        <a href="https://github.com/robertarnorsson" target="_blank" rel="noopener noreferrer" className="text-white text-xs hover:text-gray-400 transition duration-300">Robert Arnorsson</a>
+      <div className="absolute bg-black/50 flex flex-row gap-2 px-2 py-0.5 bottom-1.5 right-1.5 rounded-lg z-[9999]">
+        <a href="https://github.com/robertarnorsson" target="_blank" rel="noopener noreferrer" className="text-primary text-xs hover:text-muted-foreground transition duration-300">About</a>
+        <p className="text-xs text-muted-foreground">or</p>
+        <a href="https://buymeacoffee.com/ticknick" target="_blank" rel="noopener noreferrer" className="text-primary text-xs hover:text-muted-foreground transition duration-300">Donate</a>
       </div>
     </div>
   );
