@@ -72,14 +72,6 @@
 }
 
 @layer base {
-  .leaflet-zoom-anim
-  .leaflet-zoom-animated {
-    transition-timing-function: linear;
-    transition-duration: 1000ms;
-  }
-}
-
-@layer base {
   .lz-marker-pin {
     width: 100px;
     height: fit-content;
@@ -204,12 +196,12 @@
   .task-marker-text {
     position: absolute;
     top: 50%;
-    left: 100%;
+    left: 120%;
     transform: translateY(-50%);
     width: fit-content;
     letter-spacing: 0.4px;
     font-weight: 500;
-    font-size: 8.5px;
+    font-size: 9px;
     padding: 0.5px 3px;
     padding-bottom: 0.5px;
     background: #000;

@@ -32,6 +32,7 @@ export type poi = {
 export enum ObjectiveType {
   DISCOVER = "Discover",
   MARK = "Mark",
+  STASH = "Stash",
   DELIVER = "Deliver",
   ELIMINATION = "Elimination",
 }

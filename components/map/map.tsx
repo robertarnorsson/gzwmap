@@ -41,3 +41,5 @@ export default function Map() {
     </MapContainer>
   )
 }
+
+//https://tiles.mapgenie.io/games/gray-zone-warfare/lamang-island/default-v3
