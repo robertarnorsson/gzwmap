@@ -72,6 +72,14 @@
 }
 
 @layer base {
+  .leaflet-zoom-anim
+  .leaflet-zoom-animated {
+    transition-timing-function: linear;
+    transition-duration: 1000ms;
+  }
+}
+
+@layer base {
   .lz-marker-pin {
     width: 100px;
     height: fit-content;

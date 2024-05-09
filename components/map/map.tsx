@@ -17,7 +17,6 @@ export default function Map() {
 
   return (
     <MapContainer
-      id="map-bg"
       className="map"
       attributionControl={false}
       zoomControl={false}
@@ -26,14 +25,16 @@ export default function Map() {
       maxBounds={maxBounds}
       maxBoundsViscosity={10}
       zoom={12}
-      zoomSnap={0.2}
+      zoomSnap={0.1}
+      zoomDelta={1}
+      wheelDebounceTime={100}
       minZoom={12}
       maxZoom={15.4}
       doubleClickZoom={true}
       scrollWheelZoom={true}
     >
       <TileLayer className="tile-map"
-        url="https://tiles.mapgenie.io/games/gray-zone-warfare/lamang-island/default-v1/{z}/{y}/{x}.jpg"
+        url="https://tiles.gzwmap.com/{z}/{y}/{x}"
       />
       <MapEvents />
       <MapMarkers />

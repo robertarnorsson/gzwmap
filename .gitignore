@@ -9,6 +9,10 @@
 # testing
 /coverage
 
+# map
+*/tiles
+*/simple-tiles
+
 # next.js
 /.next/
 /out/
