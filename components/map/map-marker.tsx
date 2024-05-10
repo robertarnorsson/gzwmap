@@ -1,5 +1,5 @@
 import L, { LatLngTuple, Map } from "leaflet";
-import { Marker, useMapEvents } from "react-leaflet";
+import { Marker, Popup, useMapEvents } from "react-leaflet";
 import ReactDOMServer from "react-dom/server";
 import React, { useState } from "react";
 
@@ -44,6 +44,7 @@ export default function MapMarker({
         iconSize: iconSize,
         iconAnchor: [iconSize[0]/2, iconSize[1]/2],
       })}
-    />
+    >
+    </Marker>
   ) : null;
 }
