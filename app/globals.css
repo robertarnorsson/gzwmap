@@ -69,6 +69,21 @@
     background: transparent;
     cursor: crosshair !important;
   }
+
+  .map-popup .leaflet-popup-content-wrapper {
+    border-radius: 0px;
+    background-color: #0a1616;
+    color: fff;
+  }
+
+  .map-popup .leaflet-popup-content p {
+    margin: 0;
+  }
+
+  .map-popup .leaflet-popup-tip {
+    display: none;
+  }
+
 }
 
 @layer base {

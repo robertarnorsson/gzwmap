@@ -10,6 +10,7 @@ interface MapMarkerProps {
   showZoom?: number;
   riseOnHover?: boolean;
   children: React.ReactNode;
+  popup?: React.ReactNode;
 }
 
 export default function MapMarker({
@@ -19,6 +20,7 @@ export default function MapMarker({
   showZoom,
   riseOnHover = true,
   children,
+  popup
 }: MapMarkerProps) {
   const [shouldRender, setShouldRender] = useState(
     map.getZoom() > (showZoom || map.getMinZoom())
@@ -45,6 +47,7 @@ export default function MapMarker({
         iconAnchor: [iconSize[0]/2, iconSize[1]/2],
       })}
     >
+      {popup && popup !== "" && <Popup className="map-popup">{popup}</Popup>}
     </Marker>
   ) : null;
 }

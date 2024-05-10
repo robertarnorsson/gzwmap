@@ -6,6 +6,7 @@ export type vendor = {
 
 export type faction = {
   name: string
+  shorthand: string
   description: string
   position: LatLngTuple
 };
