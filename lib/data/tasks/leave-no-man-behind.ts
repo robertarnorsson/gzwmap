@@ -6,7 +6,7 @@ import {
   MithrasSecuritySystems
 } from "@/lib/data/factions";
 import { GPSTracker } from "@/lib/data/items";
-import { CacheRetrival } from "@/lib/data/tasks/cache-retrieval";
+import { CacheRetrieval } from "@/lib/data/tasks/cache-retrieval";
 
 const LeaveNoManBehind_Objective1_LRI: objective = {
   name: "Leave No Man Behind - Dead Soldier",
@@ -43,7 +43,7 @@ export const LeaveNoManBehind: task = {
   ],
   vendor: Gunny,
   level: 0,
-  prerequisites: CacheRetrival,
+  prerequisites: CacheRetrieval,
   items: [
     GPSTracker
   ]
