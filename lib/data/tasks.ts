@@ -19,7 +19,7 @@ import { CovertResearch }     from "@/lib/data/tasks/covert-research";
 import { ToolsOfTheTrade }    from "@/lib/data/tasks/tools-of-the-trade";
 import { LastFarewell }       from "@/lib/data/tasks/last-farewell";
 import { LeftBehind }         from "@/lib/data/tasks/left-behind";
-import { LastFlight }        from "@/lib/data/tasks/last-flight";
+import { LastFlight }         from "@/lib/data/tasks/last-flight";
 
 export const Tasks: task[] = [
   FirstRecon,
