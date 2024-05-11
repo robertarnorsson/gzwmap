@@ -25,7 +25,7 @@ export default function Map() {
       maxBounds={maxBounds}
       maxBoundsViscosity={10}
       zoom={12}
-      zoomSnap={0.1}
+      zoomSnap={1}
       zoomDelta={1}
       wheelDebounceTime={100}
       minZoom={12}
