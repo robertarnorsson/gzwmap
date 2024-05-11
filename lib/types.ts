@@ -37,6 +37,7 @@ export enum ObjectiveType {
   STASH = "Stash",
   DELIVER = "Deliver",
   ELIMINATION = "Elimination",
+  LOCATE = "Locate",
 }
 
 export type task = {

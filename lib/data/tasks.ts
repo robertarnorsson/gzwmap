@@ -19,6 +19,7 @@ import { CovertResearch }     from "@/lib/data/tasks/covert-research";
 import { ToolsOfTheTrade }    from "@/lib/data/tasks/tools-of-the-trade";
 import { LastFarewell }       from "@/lib/data/tasks/last-farewell";
 import { LeftBehind }         from "@/lib/data/tasks/left-behind";
+import { LastFlight }         from "@/lib/data/tasks/last-flight";
 import { ASingleDrop }        from "@/lib/data/tasks/a-single-drop";
 
 export const Tasks: task[] = [
@@ -41,5 +42,6 @@ export const Tasks: task[] = [
   ToolsOfTheTrade,
   LastFarewell,
   LeftBehind,
+  LastFlight,
   ASingleDrop
 ]
