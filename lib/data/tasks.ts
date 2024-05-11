@@ -1,7 +1,7 @@
 import { task } from "@/lib/types";
 
 import { FirstRecon }         from "@/lib/data/tasks/first-recon";
-import { CacheRetrival }      from "@/lib/data/tasks/cache-retrieval";
+import { CacheRetrieval }      from "@/lib/data/tasks/cache-retrieval";
 import { MedsWanted }         from "@/lib/data/tasks/meds-wanted";
 import { LeaveNoManBehind }   from "@/lib/data/tasks/leave-no-man-behind";
 import { LittleBirdDown }     from "@/lib/data/tasks/little-bird-down";
@@ -20,10 +20,11 @@ import { ToolsOfTheTrade }    from "@/lib/data/tasks/tools-of-the-trade";
 import { LastFarewell }       from "@/lib/data/tasks/last-farewell";
 import { LeftBehind }         from "@/lib/data/tasks/left-behind";
 import { LastFlight }         from "@/lib/data/tasks/last-flight";
+import { ASingleDrop }        from "@/lib/data/tasks/a-single-drop";
 
 export const Tasks: task[] = [
   FirstRecon,
-  CacheRetrival,
+  CacheRetrieval,
   MedsWanted,
   LeaveNoManBehind,
   LittleBirdDown,
@@ -41,5 +42,6 @@ export const Tasks: task[] = [
   ToolsOfTheTrade,
   LastFarewell,
   LeftBehind,
-  LastFlight
+  LastFlight,
+  ASingleDrop
 ]
