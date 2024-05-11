@@ -33,7 +33,8 @@ const TASKNAME_Objective1_CSI: objective = {
 
 export const TASKNAME: task = {
   name: "TASK NAME",
-  description: "TASK DESCRIPTION",
+  briefing: "BRIEFING DESCRIPTION",
+  debriefing: "DEBRIEFING DESCRIPTION",
   objectives: [
     TASKNAME_Objective1_LRI,
     TASKNAME_Objective1_MMS,
