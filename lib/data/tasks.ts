@@ -19,11 +19,7 @@ import { CovertResearch }     from "@/lib/data/tasks/covert-research";
 import { ToolsOfTheTrade }    from "@/lib/data/tasks/tools-of-the-trade";
 import { LastFarewell }       from "@/lib/data/tasks/last-farewell";
 import { LeftBehind }         from "@/lib/data/tasks/left-behind";
-<<<<<<< Updated upstream
-=======
-import { ASingleDrop }        from "@/lib/data/tasks/a-single-drop";
 import { LastFlight }        from "@/lib/data/tasks/last-flight";
->>>>>>> Stashed changes
 
 export const Tasks: task[] = [
   FirstRecon,
@@ -44,11 +40,6 @@ export const Tasks: task[] = [
   CovertResearch,
   ToolsOfTheTrade,
   LastFarewell,
-<<<<<<< Updated upstream
-  LeftBehind
-=======
   LeftBehind,
-  ASingleDrop,
   LastFlight
->>>>>>> Stashed changes
 ]
