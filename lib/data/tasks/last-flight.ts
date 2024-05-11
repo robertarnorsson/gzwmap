@@ -5,7 +5,7 @@ const LastFlight_Objective1: objective = {
     name: "Last Flight - Downed Plane/Liko Savang",
     description: "Search the airfield and uncover what happened to Liko Savang.",
     position: [0.8478899729655405, -0.5872263135531665],
-    type: ObjectiveType.IDENTIFY,
+    type: ObjectiveType.LOCATE,
 }
 
 export const LastFlight: task = {
