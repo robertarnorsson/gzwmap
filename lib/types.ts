@@ -41,8 +41,7 @@ export enum ObjectiveType {
 
 export type task = {
   name: string
-  briefing: string
-  debriefing: string
+  description: string
   objectives: objective[]
   vendor: vendor
   level: number
