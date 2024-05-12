@@ -6,6 +6,7 @@ import {
   MithrasSecuritySystems
 } from "@/lib/data/factions";
 import { LeaveNoManBehind } from "@/lib/data/tasks/leave-no-man-behind";
+import {KVDoctorsOffice} from "@/lib/data/keys";
 
 const MedicalDetective_Objective1_LRI: objective = {
   name: "Medical Detective - Missing Supplies",
@@ -41,6 +42,9 @@ export const MedicalDetective: task = {
     MedicalDetective_Objective1_LRI,
     MedicalDetective_Objective1_MMS,
     MedicalDetective_Objective1_CSI,
+  ],
+  keys: [
+    KVDoctorsOffice,
   ],
   vendor: Gunny,
   level: 0,
