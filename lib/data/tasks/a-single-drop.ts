@@ -24,7 +24,8 @@ const ASingleDrop_Objective3: objective = {
 
 export const ASingleDrop: task = {
     name: "A Single Drop",
-    briefing: "",
+    briefing: "We are still running dangerously low on fuel and can't afford to waste a single drop. Luckily, I think we found just the place where we can finally get some. There's a small airfield east of the shooting range and southeast of that blight of a resort. If there is any place that's gotta stock some damn fuel, it's definitely this one, so get your ass over there and check any tanker trucks that might have some in it.\n" +
+        "Once you're done, report back to me pronto. I'll be damned if we can't find any fuel on this rock!",
     debriefing: "You gotta be shitting me! So you're telling me that they were all empty? On a ‘goddamn afield? That does it! Somebody's fucking with us, there’s no other way. Either they were quicker and" +
         " stockpiled all the fuel before we had our chance, or it has to do something with whatever happened over here. I have to say, I'm not too happy about either of those options. Looks like welll have to make do.",
     objectives: [
