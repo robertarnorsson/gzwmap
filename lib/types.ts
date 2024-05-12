@@ -78,6 +78,7 @@ export type item = {
 
 export type key = {
   name: string
+  image?: string
   locations: location[]
-  position: LatLngTuple
+  position?: LatLngTuple
 }
