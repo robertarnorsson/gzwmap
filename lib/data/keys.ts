@@ -1,5 +1,5 @@
 import { key } from "@/lib/types";
-import {BanPa, FortNarith, HuntersParadise, KiuVongsa, Sawmill, PhaLangAirfield, YBL1} from "@/lib/data/locations";
+import {BanPa, FortNarith, HuntersParadise, KiuVongsa, Sawmill, PhaLangAirfield, YBL1, PhaLang, NamThaven} from "@/lib/data/locations";
 
 export const BPWarehouse: key = {
     name: "BP Warehouse",
@@ -54,6 +54,22 @@ export const KVDoctorsOffice: key = {
     image: "/items/keys/kv-doctors-office.png",
     locations: [
         KiuVongsa
+    ]
+}
+
+export const PLDoctorsOffice: key = {
+    name: "PL Doctor's Office",
+    // image: "/items/keys/pl-doctors-office.png",
+    locations: [
+        PhaLang
+    ]
+}
+
+export const NTDoctorsOffice: key = {
+    name: "NT Doctor's Office",
+    // image: "/items/keys/nt-doctors-office.png",
+    locations: [
+        NamThaven
     ]
 }
 

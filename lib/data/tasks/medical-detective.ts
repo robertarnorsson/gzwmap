@@ -6,14 +6,15 @@ import {
   MithrasSecuritySystems
 } from "@/lib/data/factions";
 import { LeaveNoManBehind } from "@/lib/data/tasks/leave-no-man-behind";
-import {KVDoctorsOffice} from "@/lib/data/keys";
+import {KVDoctorsOffice, NTDoctorsOffice, PLDoctorsOffice} from "@/lib/data/keys";
 
 const MedicalDetective_Objective1_LRI: objective = {
   name: "Medical Detective - Missing Supplies",
   description: "Search for the Missing Supplies in Pha Lang",
   position: [0.910734961284329, -0.42277983496990645],
   type: ObjectiveType.DELIVER,
-  faction: LamangRecoveryInitiative
+  faction: LamangRecoveryInitiative,
+  key: PLDoctorsOffice
 }
 
 const MedicalDetective_Objective1_MMS: objective = {
@@ -21,7 +22,8 @@ const MedicalDetective_Objective1_MMS: objective = {
   description: "Search for the Missing Supplies in Nam Thaven",
   position: [0.5166650742814851, -0.7170144347480178],
   type: ObjectiveType.DELIVER,
-  faction: MithrasSecuritySystems
+  faction: MithrasSecuritySystems,
+  key: NTDoctorsOffice
 }
 
 const MedicalDetective_Objective1_CSI: objective = {
@@ -29,7 +31,8 @@ const MedicalDetective_Objective1_CSI: objective = {
   description: "Search for the Missing Supplies in Kiu Vongsa",
   position: [0.9335705682347442, -0.9445126594327947],
   type: ObjectiveType.DELIVER,
-  faction: CrimsonShieldInternational
+  faction: CrimsonShieldInternational,
+  key: KVDoctorsOffice
 }
 
 
@@ -42,9 +45,6 @@ export const MedicalDetective: task = {
     MedicalDetective_Objective1_LRI,
     MedicalDetective_Objective1_MMS,
     MedicalDetective_Objective1_CSI,
-  ],
-  keys: [
-    KVDoctorsOffice,
   ],
   vendor: Gunny,
   level: 0,

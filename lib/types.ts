@@ -50,7 +50,6 @@ export type task = {
   level: number
   prerequisites?: task
   items?: item[]
-  keys?: key[]
   faction?: faction
 };
 
@@ -61,6 +60,7 @@ export type objective = {
   type: ObjectiveType
   faction?: faction
   subobjective?: subobjective,
+  key?: key
 }
 
 export type subobjective = {
