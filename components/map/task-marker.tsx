@@ -1,4 +1,4 @@
-t aimport { Rubik } from "next/font/google";
+import { Rubik } from "next/font/google";
 import { task, objective } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import MapMarker from "./map-marker";
