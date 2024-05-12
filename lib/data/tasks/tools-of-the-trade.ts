@@ -33,7 +33,8 @@ const ToolsOfTheTrade_Objective1_CSI: objective = {
 
 export const ToolsOfTheTrade: task = {
   name: "Tools of the Trade",
-  description: "I'm glad you're not dumber than you look, hireling. I was afraid you might lose the tools, and that would be bad. And I mean bad for your camp, because I would have left. Well, whatever. Give me the tools and get lost.",
+  briefing: "",
+  debriefing: "I'm glad you're not dumber than you look, hireling. I was afraid you might lose the tools, and that would be bad. And I mean bad for your camp, because I would have left. Well, whatever. Give me the tools and get lost.",
   objectives: [
     ToolsOfTheTrade_Objective1_LRI,
     ToolsOfTheTrade_Objective1_MMS,

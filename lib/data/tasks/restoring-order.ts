@@ -34,7 +34,8 @@ const RestoringOrder_Objective1_CSI: objective = {
 
 export const RestoringOrder: task = {
   name: "Restoring Order",
-  description: "Excellent! I knew you wouldn't have any problems handling those lowlifes. They'll think twice before crossing our path again. A little display of force goes a long way in maintaining control.",
+  briefing: "",
+  debriefing: "Excellent! I knew you wouldn't have any problems handling those lowlifes. They'll think twice before crossing our path again. A little display of force goes a long way in maintaining control.",
   objectives: [
     RestoringOrder_Objective1_LRI,
     RestoringOrder_Objective1_MMS,

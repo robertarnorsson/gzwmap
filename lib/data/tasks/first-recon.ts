@@ -83,7 +83,8 @@ const FirstRecon_Objective3_CSI: objective = {
 
 export const FirstRecon: task = {
   name: "First Recon",
-  description: "Great job! You managed to gather some valuable intel. I knew I could count on you. Don't forget our primary objective at all times is to ensure the smooth running of our operation while safeguarding the interests of our employers. We're in uncharted territory here, and it's up to us to make it work.",
+  briefing: "",
+  debriefing: "Great job! You managed to gather some valuable intel. I knew I could count on you. Don't forget our primary objective at all times is to ensure the smooth running of our operation while safeguarding the interests of our employers. We're in uncharted territory here, and it's up to us to make it work.",
   objectives: [
     FirstRecon_Objective1_LRI,
     FirstRecon_Objective2_LRI,

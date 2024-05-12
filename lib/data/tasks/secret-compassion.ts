@@ -84,7 +84,8 @@ const SecretCompassion_Objective3_CSI: objective = {
 
 export const SecretCompassion: task = {
   name: "Secret Compassion",
-  description: "You did it! Against all odds, we've managed to provide much-needed aid to the local civilians. From the bottom of my heart, thank you. I won't ask you to keep this secret forever, but for now, it's crucial that we exercise caution. Our focus must remain on the greater good, even if it means working in the shadows.",
+  briefing: "",
+  debriefing: "You did it! Against all odds, we've managed to provide much-needed aid to the local civilians. From the bottom of my heart, thank you. I won't ask you to keep this secret forever, but for now, it's crucial that we exercise caution. Our focus must remain on the greater good, even if it means working in the shadows.",
   objectives: [
     SecretCompassion_Objective1_LRI,
     SecretCompassion_Objective2_LRI,

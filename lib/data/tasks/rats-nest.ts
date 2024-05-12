@@ -59,7 +59,8 @@ const RatsNest_Objective2_CSI: objective = {
 
 export const RatsNest: task = {
   name: "Rat's Nest",
-  description: "Great work. You've done a commendable job out there. The information you've gathered during your search is invaluable. We now have a clearer picture of the local criminals' hideouts and activities. We'll be analyzing the data you've collected and devising a strategic plan to dismantle their operations.",
+  briefing: "",
+  debriefing: "Great work. You've done a commendable job out there. The information you've gathered during your search is invaluable. We now have a clearer picture of the local criminals' hideouts and activities. We'll be analyzing the data you've collected and devising a strategic plan to dismantle their operations.",
   objectives: [
     RatsNest_Objective1_LRI,
     RatsNest_Objective2_LRI,

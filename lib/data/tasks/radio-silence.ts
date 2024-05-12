@@ -33,7 +33,8 @@ const RadioSilence_Objective1_CSI: objective = {
 
 export const RadioSilence: task = {
   name: "Radio Silence",
-  description: "You did a great job, but what you found is troubling. There is no way the locals would gain access to equipment like that, with or without the help of the LAF. It's possible that some of our... competitors here tried to eavesdrop, but we also can't rule out the possibility that a new player has entered the game. Stay sharp. This is far from over.",
+  briefing: "",
+  debriefing: "You did a great job, but what you found is troubling. There is no way the locals would gain access to equipment like that, with or without the help of the LAF. It's possible that some of our... competitors here tried to eavesdrop, but we also can't rule out the possibility that a new player has entered the game. Stay sharp. This is far from over.",
   objectives: [
     RadioSilence_Objective1_LRI,
     RadioSilence_Objective1_MMS,

@@ -33,7 +33,8 @@ const LastFarewell_Objective1_CSI: objective = {
 
 export const LastFarewell: task = {
   name: "Last Farewell",
-  description: "TASK DESCRIPTION",
+  briefing: "",
+  debriefing: "TASK DESCRIPTION",
   objectives: [
     LastFarewell_Objective1_LRI,
     LastFarewell_Objective1_MMS,

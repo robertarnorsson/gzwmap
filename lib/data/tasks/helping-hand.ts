@@ -34,7 +34,8 @@ const HelpingHand_Objective1_CSI: objective = {
 
 export const HelpingHand: task = {
   name: "Helping Hand",
-  description: "Excellent work. I knew I could count on you to get the job done. You managed to discover a significant piece of evidence. It appears that those hicks struck some kind of deal with the local armed forces, the LAF. Now, we don't have all the answers just yet, but this discovery opens up new avenues for investigation. We'll analyze the folder and extract any actionable intelligence it contains.",
+  briefing: "",
+  debriefing: "Excellent work. I knew I could count on you to get the job done. You managed to discover a significant piece of evidence. It appears that those hicks struck some kind of deal with the local armed forces, the LAF. Now, we don't have all the answers just yet, but this discovery opens up new avenues for investigation. We'll analyze the folder and extract any actionable intelligence it contains.",
   objectives: [
     HelpingHand_Objective1_LRI,
     HelpingHand_Objective1_MMS,

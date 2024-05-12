@@ -33,7 +33,8 @@ const FirstHit_Objective1_CSI: objective = {
 
 export const FirstHit: task = {
   name: "First Hit",
-  description: "Another job well done! That bastard won't be causing us any more trouble, thanks to your swift and efficient action. Keep up the good work!",
+  briefing: "",
+  debriefing: "Another job well done! That bastard won't be causing us any more trouble, thanks to your swift and efficient action. Keep up the good work!",
   objectives: [
     FirstHit_Objective1_LRI,
     FirstHit_Objective1_MMS,

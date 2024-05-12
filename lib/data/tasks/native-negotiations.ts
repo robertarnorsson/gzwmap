@@ -59,7 +59,8 @@ const NativeNegotiations_Objective2_CSI: objective = {
 
 export const NativeNegotiations: task = {
   name: "Native Negotiations",
-  description: "Excellent work! The potential benefits of this alliance cannot be overstated. Our access to local knowledge and resources will greatly enhance our capabilities in this challenging environment. We have taken a significant step forward in securing a strong foothold in this region.",
+  briefing: "",
+  debriefing: "Excellent work! The potential benefits of this alliance cannot be overstated. Our access to local knowledge and resources will greatly enhance our capabilities in this challenging environment. We have taken a significant step forward in securing a strong foothold in this region.",
   objectives: [
     NativeNegotiations_Objective1_LRI,
     NativeNegotiations_Objective2_LRI,

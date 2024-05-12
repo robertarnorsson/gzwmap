@@ -34,7 +34,8 @@ const MedicalDetective_Objective1_CSI: objective = {
 
 export const MedicalDetective: task = {
   name: "Medical Detective",
-  description: "That stupid girl… I knew she was trouble from the moment I first met her. Look, I won't lie to you. I'm not happy about this. Those things are meant for our soldiers, for our mission. But I'm also not blind to the bigger picture. Some of these people that got left here, they're in dire need too. We can't just turn our backs on them. I'll sweep this incident under the rug, but this is the last time, got it? And you better keep your mouth shut about it. The last thing we need is the higher-ups breathing down our necks. We're in enough shit as is. ",
+  briefing: "",
+  debriefing: "That stupid girl… I knew she was trouble from the moment I first met her. Look, I won't lie to you. I'm not happy about this. Those things are meant for our soldiers, for our mission. But I'm also not blind to the bigger picture. Some of these people that got left here, they're in dire need too. We can't just turn our backs on them. I'll sweep this incident under the rug, but this is the last time, got it? And you better keep your mouth shut about it. The last thing we need is the higher-ups breathing down our necks. We're in enough shit as is. ",
   objectives: [
     MedicalDetective_Objective1_LRI,
     MedicalDetective_Objective1_MMS,

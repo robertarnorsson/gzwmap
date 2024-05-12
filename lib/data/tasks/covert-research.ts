@@ -33,7 +33,8 @@ const CovertResearch_Objective1_CSI: objective = {
 
 export const CovertResearch: task = {
   name: "Covert Research",
-  description: "Thank you! Thank you so much! I understand the trust you've placed in me, and I assure you it will not be in vain. The contents of this container hold incredible potential, and I believe it may be the key to truly understanding what's happening here. I know you must be curious about what's inside, but I must keep it a secret for now, sorry. Rest assured that once I know more, I'll share my findings with you. I'm sure that together, we'll get to the bottom of all of this!",
+  briefing: "",
+  debriefing: "Thank you! Thank you so much! I understand the trust you've placed in me, and I assure you it will not be in vain. The contents of this container hold incredible potential, and I believe it may be the key to truly understanding what's happening here. I know you must be curious about what's inside, but I must keep it a secret for now, sorry. Rest assured that once I know more, I'll share my findings with you. I'm sure that together, we'll get to the bottom of all of this!",
   objectives: [
     CovertResearch_Objective1_LRI,
     CovertResearch_Objective1_MMS,

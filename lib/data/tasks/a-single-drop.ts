@@ -24,7 +24,9 @@ const ASingleDrop_Objective3: objective = {
 
 export const ASingleDrop: task = {
     name: "A Single Drop",
-    description: "You gotta be shitting me! So you're telling me that they were all empty? On a ‘goddamn afield? That does it! Somebody's fucking with us, there’s no other way. Either they were quicker and stockpiled all the fuel before we had our chance, or it has to do something with whatever happened over here. I have to say, I'm not too happy about either of those options. Looks like welll have to make do.",
+    briefing: "",
+    debriefing: "You gotta be shitting me! So you're telling me that they were all empty? On a ‘goddamn afield? That does it! Somebody's fucking with us, there’s no other way. Either they were quicker and" +
+        " stockpiled all the fuel before we had our chance, or it has to do something with whatever happened over here. I have to say, I'm not too happy about either of those options. Looks like welll have to make do.",
     objectives: [
         ASingleDrop_Objective1,
         ASingleDrop_Objective2,

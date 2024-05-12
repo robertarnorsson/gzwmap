@@ -34,7 +34,8 @@ const LostAndFound_Objective1_CSI: objective = {
 
 export const LostAndFound: task = {
   name: "Lost and Found",
-  description: "I see... that is very unfortunate, but rest assured that your efforts were not in vain. By finding Kanoa, we've unveiled the truth, and sometimes that's all one can hope for. Knowing what happened is better than living in uncertainty. At least, I think so. Hopefully, his family will feel the same way.",
+  briefing: "",
+  debriefing: "I see... that is very unfortunate, but rest assured that your efforts were not in vain. By finding Kanoa, we've unveiled the truth, and sometimes that's all one can hope for. Knowing what happened is better than living in uncertainty. At least, I think so. Hopefully, his family will feel the same way.",
   objectives: [
     LostAndFound_Objective1_LRI,
     LostAndFound_Objective1_MMS,

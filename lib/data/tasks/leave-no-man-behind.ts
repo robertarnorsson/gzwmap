@@ -35,7 +35,8 @@ const LeaveNoManBehind_Objective1_CSI: objective = {
 
 export const LeaveNoManBehind: task = {
   name: "Leave No Man Behind",
-  description: "You've done the right thing. To be honest, I never liked the guy. He was too gung-ho and would always run his mouth, but that's not the point. We may have lost him in battle, but we haven't lost our sense of duty. Thanks to your efforts, his family will find solace in knowing their loved one will be returned to them, even if he was an asshole.",
+  briefing: "",
+  debriefing: "You've done the right thing. To be honest, I never liked the guy. He was too gung-ho and would always run his mouth, but that's not the point. We may have lost him in battle, but we haven't lost our sense of duty. Thanks to your efforts, his family will find solace in knowing their loved one will be returned to them, even if he was an asshole.",
   objectives: [
     LeaveNoManBehind_Objective1_LRI,
     LeaveNoManBehind_Objective1_MMS,

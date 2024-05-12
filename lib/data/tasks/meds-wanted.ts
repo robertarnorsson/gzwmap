@@ -33,7 +33,8 @@ const MedsWanted_Objective1_CSI: objective = {
 
 export const MedsWanted: task = {
   name: "Meds Wanted",
-  description: "I knew I could count on you! This will be a tremendous help to everyone. Each vial, each bandage, they represent a chance for healing and recovery. It's a small victory, but one that matters so much to our people.",
+  briefing: "",
+  debriefing: "I knew I could count on you! This will be a tremendous help to everyone. Each vial, each bandage, they represent a chance for healing and recovery. It's a small victory, but one that matters so much to our people.",
   objectives: [
     MedsWanted_Objective1_LRI,
     MedsWanted_Objective1_MMS,
