@@ -1,4 +1,4 @@
-import { Rubik } from "next/font/google";
+t aimport { Rubik } from "next/font/google";
 import { task, objective } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import MapMarker from "./map-marker";
@@ -40,8 +40,6 @@ export default function TaskMarker({ map, task, objective }: { map: Map, task: t
               </div>
             </div>
         )}
-
-
       </div>
   );
 
