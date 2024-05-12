@@ -2,7 +2,7 @@ import {ObjectiveType, objective, task} from "@/lib/types";
 import {Banshee} from "@/lib/data/vendors";
 
 const SkycrawlersPartOne_Objective1: objective = {
-    name: "Skycrawlers - Investigate Pha Lang Airfield and find a proof of drug trade",
+    name: "Skycrawlers - Proof",
     description: "Investigate Pha Lang Airfield and find a proof of drug trade",
     position: [0.852739937032516, -0.6099128723144532],
     type: ObjectiveType.DISCOVER,
