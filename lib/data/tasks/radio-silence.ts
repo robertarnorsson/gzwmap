@@ -33,7 +33,8 @@ const RadioSilence_Objective1_CSI: objective = {
 
 export const RadioSilence: task = {
   name: "Radio Silence",
-  description: "You did a great job, but what you found is troubling. There is no way the locals would gain access to equipment like that, with or without the help of the LAF. It's possible that some of our... competitors here tried to eavesdrop, but we also can't rule out the possibility that a new player has entered the game. Stay sharp. This is far from over.",
+  briefing: "It appears that the local criminal elements we've been dealing with have acquired some advanced communication interception capabilities and are now able to monitor and decrypt our comms in real-time. This poses a significant threat to our operations and needs to be addressed immediately. Your mission is to locate and destroy the enemy's comms equipment. It's apparent that they have established a hidden communication hub within the vicinity of our base, and the most likely place is an isolated house in the northern part of town. Your task is to infiltrate this area, identify the equipment, and neutralize it. By doing so, we'll disrupt their ability to intercept our communications and regain control of the situation. Silence and stealth are paramount. We can't afford to alert those rats to our plans. Keep a low profile, gather intelligence, and strike with precision.",
+  debriefing: "You did a great job, but what you found is troubling. There is no way the locals would gain access to equipment like that, with or without the help of the LAF. It's possible that some of our... competitors here tried to eavesdrop, but we also can't rule out the possibility that a new player has entered the game. Stay sharp. This is far from over.",
   objectives: [
     RadioSilence_Objective1_LRI,
     RadioSilence_Objective1_MMS,

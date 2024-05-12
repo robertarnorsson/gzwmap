@@ -33,7 +33,7 @@ const LastFarewell_Objective1_CSI: objective = {
 
 export const LastFarewell: task = {
   name: "Last Farewell",
-  description: "TASK DESCRIPTION",
+  briefing: "I've got another assignment for you: Steven Clarke. He got separated from his squad during the retreat while seeking cover in a farmhouse southeast of the town's gas station. The last thing they heard on the comms was him screaming in terror and then suddendly dead silence. I need you to investigate and mark the body like before. Be extra careful on this one. I remember the guy, and he was tough as nails. No idea what happened to him to make him scream like that, so make sure the same thing doesn't happen to you. I'll provide you with a tracker right away.",
   objectives: [
     LastFarewell_Objective1_LRI,
     LastFarewell_Objective1_MMS,

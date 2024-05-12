@@ -33,7 +33,8 @@ const ToolsOfTheTrade_Objective1_CSI: objective = {
 
 export const ToolsOfTheTrade: task = {
   name: "Tools of the Trade",
-  description: "I'm glad you're not dumber than you look, hireling. I was afraid you might lose the tools, and that would be bad. And I mean bad for your camp, because I would have left. Well, whatever. Give me the tools and get lost.",
+  briefing: "Merc, let's get this straight. i don't give a fuck how you see me, but remember this - I don't like you. That will never change; your kind disgusts me, but we can still work on professional basis. You do something for me, and I'll reward you. Plain and simple. Do we understand each other? Good. I need you to go back to the nearby town and bring me the tools that are stored in a small house next to the construction site. And if you ask why I need the tools, when I can get new ones here at the base? Well, my answer is: What the fuck do you care? Shut up, do your job, and you will get what you deserve. Oh, and call me Artisan. I don't want any of you butchers getting my real name misspelled.",
+  debriefing: "I'm glad you're not dumber than you look, hireling. I was afraid you might lose the tools, and that would be bad. And I mean bad for your camp, because I would have left. Well, whatever. Give me the tools and get lost.",
   objectives: [
     ToolsOfTheTrade_Objective1_LRI,
     ToolsOfTheTrade_Objective1_MMS,

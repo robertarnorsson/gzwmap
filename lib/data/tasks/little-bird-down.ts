@@ -58,7 +58,7 @@ const LittleBirdDown_Objective2_CSI: objective = {
 
 export const LittleBirdDown: task = {
   name: "Little Bird Down",
-  description: "This turn of events is deeply concerning. It's clear that someone knew about the crash or caused it themselves and acted swiftly to eliminate any witnesses and disappear with the cargo. We can't rule out the possibility of the other PMCs interfering with our operations, but so far, we're in the dark. I need your unwavering commitment and utmost discretion moving forward. We're entering uncharted territory, and I'll be relying on your skills to uncover the truth and help us regain control of the situation. Be prepared for further instructions.",
+  debriefing: "This turn of events is deeply concerning. It's clear that someone knew about the crash or caused it themselves and acted swiftly to eliminate any witnesses and disappear with the cargo. We can't rule out the possibility of the other PMCs interfering with our operations, but so far, we're in the dark. I need your unwavering commitment and utmost discretion moving forward. We're entering uncharted territory, and I'll be relying on your skills to uncover the truth and help us regain control of the situation. Be prepared for further instructions.",
   objectives: [
     LittleBirdDown_Objective1_LRI,
     LittleBirdDown_Objective2_LRI,
