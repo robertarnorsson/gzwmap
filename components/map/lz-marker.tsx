@@ -14,7 +14,7 @@ export default function LZMarker({ map, lz }: { map: Map, lz: lz }) {
       position={lz.position}
     >
       <div className='lz-marker-pin'>
-        <Image className='lz-marker-icon' src='/lz.jpg' unoptimized={true} quality={100} width={23} height={13} alt={lz.name}></Image>
+        <Image className='lz-marker-icon' src='/lz.jpg' unoptimized={true} width={23} height={13} alt={lz.name}></Image>
         <span className={cn(
           inter.className,
           'lz-marker-text'
