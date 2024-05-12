@@ -9,7 +9,7 @@ import { RatsNest } from "@/lib/data/tasks/rats-nest";
 
 const HelpingHand_Objective1_LRI: objective = {
   name: "Helping Hand - Intel Folder",
-  description: "Find the Intel Folder from the resturant in Pha Lang",
+  description: "Find the Intel Folder from the restaurant in Pha Lang",
   position: [0.913078943048676, -0.4350616565740784],
   type: ObjectiveType.DELIVER,
   faction: LamangRecoveryInitiative
@@ -17,7 +17,7 @@ const HelpingHand_Objective1_LRI: objective = {
 
 const HelpingHand_Objective1_MMS: objective = {
   name: "Helping Hand - Intel Folder",
-  description: "Find the Intel Folder from the resturant in Nam Thaven",
+  description: "Find the Intel Folder from the restaurant in Nam Thaven",
   position: [0.5227110808369654, -0.7061656640474491],
   type: ObjectiveType.DELIVER,
   faction: MithrasSecuritySystems
@@ -25,7 +25,7 @@ const HelpingHand_Objective1_MMS: objective = {
 
 const HelpingHand_Objective1_CSI: objective = {
   name: "Helping Hand - Intel Folder",
-  description: "Find the Intel Folder from the resturant in Kiu Vongsa",
+  description: "Find the Intel Folder from the restaurant in Kiu Vongsa",
   position: [0.9218800751974064, -0.9486952611587008],
   type: ObjectiveType.DELIVER,
   faction: CrimsonShieldInternational
