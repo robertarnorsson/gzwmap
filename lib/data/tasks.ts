@@ -23,7 +23,8 @@ import { LastFlight }         from "@/lib/data/tasks/last-flight";
 import { ASingleDrop }        from "@/lib/data/tasks/a-single-drop";
 import { SkycrawlersPartOne } from "@/lib/data/tasks/skycrawlers-part-1";
 import { SkycrawlersPartTwo } from "@/lib/data/tasks/skycrawlers-part-2";
-import { WingClipping } from "@/lib/data/tasks/wing-clipping";
+import { WingClipping }       from "@/lib/data/tasks/wing-clipping";
+import { BusinessOrPleasure }       from "@/lib/data/tasks/business-or-pleasure";
 
 export const Tasks: task[] = [
   FirstRecon,
@@ -50,4 +51,5 @@ export const Tasks: task[] = [
   SkycrawlersPartOne,
   SkycrawlersPartTwo,
   WingClipping,
+  BusinessOrPleasure,
 ]
