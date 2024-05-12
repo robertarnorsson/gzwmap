@@ -33,6 +33,7 @@ export default function Map() {
       doubleClickZoom={true}
       scrollWheelZoom={true}
       boxZoom={false}
+      bounceAtZoomLimits={false}
     >
       <TileLayer
         className="tile-map"
