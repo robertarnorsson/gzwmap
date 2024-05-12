@@ -44,6 +44,7 @@ export type task = {
   name: string
   briefing: string
   debriefing: string
+  note?: string
   objectives: objective[]
   vendor: vendor
   level: number
