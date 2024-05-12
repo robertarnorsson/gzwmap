@@ -1,5 +1,6 @@
 "use client";
 
+import InfoMenu from '@/components/menu/info-menu';
 import dynamic from 'next/dynamic';
 import { useMemo } from 'react';
 
@@ -18,10 +19,7 @@ export default function Page() {
   return (
     <div className='relative h-screen'>
       <Map />
-      <div className="absolute bg-black/50 flex flex-row gap-2 px-2 py-0.5 bottom-1.5 left-1.5 rounded-lg z-[9999]">
-        <a href="https://github.com/robertarnorsson" target="_blank" rel="noopener noreferrer" className="text-primary text-xs hover:text-muted-foreground transition duration-300">Maintained by TickNick</a>
-      </div>
-      <div className="absolute bg-black/50 flex flex-row gap-2 px-2 py-0.5 bottom-1.5 right-1.5 rounded-lg z-[9999]">
+      <div className="absolute bg-black/50 flex flex-row gap-2 px-2 py-0.5 bottom-1.5 right-1.5 rounded-lg z-[9998]">
         <a href="https://github.com/robertarnorsson/gzwmap" target="_blank" rel="noopener noreferrer" className="text-primary text-xs hover:text-muted-foreground transition duration-300">Github</a>
         <p className="text-xs text-muted-foreground">▪</p>
         <a href="/donate" target="_blank" rel="noopener noreferrer" className="text-primary text-xs hover:text-muted-foreground transition duration-300">Donate</a>
