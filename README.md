@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# [GZW Map](https://gzwmap.com/)
 
-## Getting Started
+## About
 
-First, run the development server:
+Welcome to GZW Map! This site aims to be your go-to tool for exploring the Gray Zone Warfare game world. We want to provide you with an easy-to-use map over Lamang so you know where to go and what to do.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Note** - GZW Map is still in development, but we're working hard to make it better every day! Updates happen almost daily, so stay tuned for improvements and new features.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Contributors
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- [Robert Arnorsson](https://github.com/robertarnorsson)
+- [CodeWithDennis](https://github.com/CodeWithDennis)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Big shoutout to these awesome folks who've helped shape GZW Map into what it is today!
 
-## Learn More
+## Things to come
 
-To learn more about Next.js, take a look at the following resources:
+### Markers
+- Keys, doors and spawn areas
+- Loot containers
+- Enemy spawns (unsure)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Map features
+- Search for markers on the map
+- Filtering system for markers on the map
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Other
+- Images
 
-## Deploy on Vercel
+## How to Contribute
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+We love when the community gets involved! Whether you're a seasoned coder or just have a keen eye for bugs, there are plenty of ways to contribute:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Code Contributions**: Help us improve and expand the functionality of GZW Map by submitting code contributions via GitHub. Check out our repository and see where you can lend a hand.
+
+- **Bug Reports**: Notice a bug or glitch while using the map? Let us know by submitting a detailed bug report. Your feedback helps us maintain a smooth and seamless user experience for all players.
+
+- **Feature Requests**: Have an idea for a new feature or enhancement? Share it with us! We're always looking for ways to enhance GZW Map and make it even more useful for our users.
+
+**[Submit your changes](https://github.com/robertarnorsson/gzwmap)**
+
+## How to Donate
+
+If you appreciate the work we're doing and would like to support GZW Map's development, consider making a donation. Your contributions help cover hosting costs, domain fees, and other expenses associated with maintaining the website.
+
+**[Donate Here](https://gzwmap.com/donate)**
+
+Stay tuned for more updates and features coming soon to GZW Map. Thank you for being a part of our community!
+
+---
+
+**Note**: GZW Map is not endorsed by or affiliated by MADFINGER Games. This website is a fan-made project created for the benefit of the gaming community.
