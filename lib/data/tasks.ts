@@ -21,6 +21,12 @@ import { LastFarewell }       from "@/lib/data/tasks/last-farewell";
 import { LeftBehind }         from "@/lib/data/tasks/left-behind";
 import { LastFlight }         from "@/lib/data/tasks/last-flight";
 import { ASingleDrop }        from "@/lib/data/tasks/a-single-drop";
+import { SkycrawlersPartOne } from "@/lib/data/tasks/skycrawlers-part-1";
+import { SkycrawlersPartTwo } from "@/lib/data/tasks/skycrawlers-part-2";
+import { WingClipping }       from "@/lib/data/tasks/wing-clipping";
+import { BusinessOrPleasure } from "@/lib/data/tasks/business-or-pleasure";
+import { FinalCheckout }      from "@/lib/data/tasks/final-checkout"
+import { ManifestDestiny }    from "@/lib/data/tasks/manifest-destiny"
 
 export const Tasks: task[] = [
   FirstRecon,
@@ -43,5 +49,11 @@ export const Tasks: task[] = [
   LastFarewell,
   LeftBehind,
   LastFlight,
-  ASingleDrop
+  ASingleDrop,
+  SkycrawlersPartOne,
+  SkycrawlersPartTwo,
+  WingClipping,
+  BusinessOrPleasure,
+  FinalCheckout,
+  ManifestDestiny
 ]
