@@ -33,7 +33,7 @@ const FirstHit_Objective1_CSI: objective = {
 
 export const FirstHit: task = {
   name: "First Hit",
-  briefing: "",
+  briefing: "Based on all you managed to find out during your previous work, it looks like some of the rats in the town have formed a little gang and are trying to get themselves organized. It#s also moree than probable that their leader is one who struck a deal with the LAF to undermine our operations in the area, and we can't have that, can we? Apparently, this asshole thinks he's tough shit and even wears a red beret. You'll probably find him in and around the marketplace, so gear up and shoot that stupid shit off his head!",
   debriefing: "Another job well done! That bastard won't be causing us any more trouble, thanks to your swift and efficient action. Keep up the good work!",
   objectives: [
     FirstHit_Objective1_LRI,
