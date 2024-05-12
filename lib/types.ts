@@ -50,7 +50,7 @@ export type task = {
   level: number
   prerequisites?: task
   items?: item[]
-  key?: key
+  keys?: key[]
   faction?: faction
 };
 
@@ -60,7 +60,7 @@ export type objective = {
   position: LatLngTuple
   type: ObjectiveType
   faction?: faction
-  subobjective?: subobjective
+  subobjective?: subobjective,
 }
 
 export type subobjective = {
