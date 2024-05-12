@@ -5,10 +5,14 @@ import "leaflet/dist/leaflet.css"
 
 export default function Map() {
   const MapEvents = () => {
+    const map = useMap()
     useMapEvents({
       click(e) {
         console.log(`${e.latlng.lat}, ${e.latlng.lng}`);
       },
+      zoom(e) {
+        console.log(map.getZoom())
+      }
     });
     return false;
   }
@@ -22,18 +26,21 @@ export default function Map() {
       zoomControl={false}
       crs={L.CRS.EPSG3395 as CRS}
       center={[0.7521535241589289, -0.7050094818702314]}
-      maxBounds={maxBounds}
       maxBoundsViscosity={10}
       zoom={12}
       zoomSnap={1}
       zoomDelta={1}
       wheelDebounceTime={100}
-      minZoom={12}
-      maxZoom={15.4}
+      minZoom={9}
+      maxZoom={15}
       doubleClickZoom={true}
       scrollWheelZoom={true}
     >
-      <TileLayer className="tile-map"
+      <TileLayer
+        className="tile-map"
+        bounds={maxBounds}
+        tileSize={256}
+        keepBuffer={24}
         url="https://tiles.gzwmap.com/{z}/{y}/{x}"
       />
       <MapEvents />
