@@ -26,6 +26,7 @@ import { SkycrawlersPartTwo } from "@/lib/data/tasks/skycrawlers-part-2";
 import { WingClipping }       from "@/lib/data/tasks/wing-clipping";
 import { BusinessOrPleasure } from "@/lib/data/tasks/business-or-pleasure";
 import { FinalCheckout }      from "@/lib/data/tasks/final-checkout"
+import { ManifestDestiny }      from "@/lib/data/tasks/manifest-destiny"
 
 export const Tasks: task[] = [
   FirstRecon,
@@ -54,4 +55,5 @@ export const Tasks: task[] = [
   WingClipping,
   BusinessOrPleasure,
   FinalCheckout,
+  ManifestDestiny
 ]
