@@ -59,7 +59,7 @@ const RatsNest_Objective2_CSI: objective = {
 
 export const RatsNest: task = {
   name: "Rat's Nest",
-  briefing: "",
+  briefing: "So, here's the deal. It looks like some of those rats in town didn't get the memo and are still scurrying around and causing trouble. It's time to put a stop to their operations. Your mission is to conduct a thorough search of the town and its outskirts and identify the hiedouts used by these punks. Keep your exes peeled for any suspicious signs or markings that might help you uncover them. The main areas of interest are the town's northwest and southeast sections. Once you've identified the hideouts, investigate them discreetly. We want to gather as much information as possible before moving. Don't engage in direct confrontations unless absolutely necessary. Don't forget, your primary objectives are reconnaissance and gathering intelligence.",
   debriefing: "Great work. You've done a commendable job out there. The information you've gathered during your search is invaluable. We now have a clearer picture of the local criminals' hideouts and activities. We'll be analyzing the data you've collected and devising a strategic plan to dismantle their operations.",
   objectives: [
     RatsNest_Objective1_LRI,
