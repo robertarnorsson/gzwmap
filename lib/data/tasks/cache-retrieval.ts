@@ -58,7 +58,8 @@ const CacheRetrieval_Objective2_CSI: objective = {
 
 export const CacheRetrieval: task = {
   name: "Cache Retrieval",
-  description: "Great job! You managed to gather some valuable intel. I knew I could count on you. Don't forget our primary objective at all times is to ensure the smooth running of our operation while safeguarding the interests of our employers. We're in uncharted territory here, and it's up to us to make it work.",
+  briefing: "",
+  debriefing: "Great job! You managed to gather some valuable intel. I knew I could count on you. Don't forget our primary objective at all times is to ensure the smooth running of our operation while safeguarding the interests of our employers. We're in uncharted territory here, and it's up to us to make it work.",
   objectives: [
     CacheRetrieval_Objective1_LRI,
     CacheRetrieval_Objective2_LRI,

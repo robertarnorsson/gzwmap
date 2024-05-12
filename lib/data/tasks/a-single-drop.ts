@@ -24,7 +24,9 @@ const ASingleDrop_Objective3: objective = {
 
 export const ASingleDrop: task = {
     name: "A Single Drop",
-    description: "You gotta be shitting me! So you're telling me that they were all empty? On a ‘goddamn afield? That does it! Somebody's fucking with us, there’s no other way. Either they were quicker and stockpiled all the fuel before we had our chance, or it has to do something with whatever happened over here. I have to say, I'm not too happy about either of those options. Looks like welll have to make do.",
+    briefing: "We are still running dangerously low on fuel and can't afford to waste a single drop. Luckily, I think we found just the place where we can finally get some. There's a small airfield east of the shooting range and southeast of that blight of a resort. If there is any place that's gotta stock some damn fuel, it's definitely this one, so get your ass over there and check any tanker trucks that might have some in it. Once you're done, report back to me pronto. I'll be damned if we can't find any fuel on this rock!",
+    debriefing: "You gotta be shitting me! So you're telling me that they were all empty? On a ‘goddamn afield? That does it! Somebody's fucking with us, there’s no other way. Either they were quicker and stockpiled all the fuel before we had our chance, or it has to do something with whatever happened over here. I have to say, I'm not too happy about either of those options. Looks like well have to make do.",
+    note: "You need to bring 2 GPS Trackers with you (collect them from the messages tab when you start the task). If you die with them, you'll need to purchase more from Gunny.",
     objectives: [
         ASingleDrop_Objective1,
         ASingleDrop_Objective2,
