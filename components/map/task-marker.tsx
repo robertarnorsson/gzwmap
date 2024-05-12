@@ -32,7 +32,7 @@ export default function TaskMarker({ map, task, objective }: { map: Map, task: t
               <div className="flex flex-wrap gap-1">
                 {objective.key?.image && (
                   <div className="flex gap-1">
-                    <Image className='item-key-image' width={50} height={50} src={objective.key.image} alt={objective.key.name} />
+                    <Image className='item-key-image' quality={100} width={50} height={50} src={objective.key.image} alt={objective.key.name} />
                   </div>
                 )}
               </div>
