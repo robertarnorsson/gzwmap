@@ -36,6 +36,7 @@ import { LineInTheSand }           from "@/lib/data/tasks/line-in-the-sand"
 import { TheValueOfSharing }       from "@/lib/data/tasks/the-value-of-sharing"
 import { UninvitedGuests }         from "@/lib/data/tasks/uninvited-guests"
 import { WarmWelcome }             from "@/lib/data/tasks/warm-welcome"
+import { LamangConnection }        from "@/lib/data/tasks/lamang-connection"
 
 export const Tasks: task[] = [
   FirstRecon,
@@ -73,5 +74,6 @@ export const Tasks: task[] = [
   LineInTheSand,
   TheValueOfSharing,
   UninvitedGuests,
-  WarmWelcome
+  WarmWelcome,
+  LamangConnection
 ]
