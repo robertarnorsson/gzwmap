@@ -30,7 +30,8 @@ import { ManifestDestiny }         from "@/lib/data/tasks/manifest-destiny"
 import { AtTheMoundsOfMadness }    from "@/lib/data/tasks/at-the-mounds-of-madness"
 import { ItsInTheWaterPartOne }    from "@/lib/data/tasks/its-in-the-water-part-1"
 import { ItsInTheWaterPartTwo }    from "@/lib/data/tasks/its-in-the-water-part-2"
-import { TheShadowOverBanPa }      from "@/lib/data/tasks/the-shadow-over-ban-pa"
+import {TheShadowOverBanPaPartOne} from "@/lib/data/tasks/the-shadow-over-ban-pa-part-1"
+import {TheShadowOverBanPaPartTwo} from "@/lib/data/tasks/the-shadow-over-ban-pa-part-2"
 import { LineInTheSand }           from "@/lib/data/tasks/line-in-the-sand"
 import { TheValueOfSharing }       from "@/lib/data/tasks/the-value-of-sharing"
 import { UninvitedGuests }         from "@/lib/data/tasks/uninvited-guests"
@@ -67,7 +68,8 @@ export const Tasks: task[] = [
   AtTheMoundsOfMadness,
   ItsInTheWaterPartOne,
   ItsInTheWaterPartTwo,
-  TheShadowOverBanPa,
+  TheShadowOverBanPaPartOne,
+  TheShadowOverBanPaPartTwo,
   LineInTheSand,
   TheValueOfSharing,
   UninvitedGuests,
