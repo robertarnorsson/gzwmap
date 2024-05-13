@@ -23,7 +23,7 @@ const AtTheMoundsOfMadness_Objective3: objective = {
 }
 
 const AtTheMoundsOfMadness_Objective4: objective = {
-    name: "At the Mounds of Madness - Disturbing statue",
+    name: "Disturbing statue",
     description: "Find a disturbing statue",
     position: [0.6953170854147008, -0.40263175964355474],
     type: ObjectiveType.LOCATE,
