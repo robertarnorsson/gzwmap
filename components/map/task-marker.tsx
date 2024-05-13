@@ -35,11 +35,11 @@ export default function TaskMarker({ map, task, objective }: { map: Map, task: t
       popup={popupContent}
     >
       <div className='task-marker-pin'>
-        <Image className='task-marker-icon' unoptimized={true} src='/task.png' width={14} height={14} alt={objective.name}></Image>
+        <Image className='task-marker-icon' unoptimized={true} src='/task.png' width={30/2} height={30/2} alt={`${task.name} - ${objective.name}`}></Image>
         <span className={cn(
           rubik.className,
           'task-marker-text'
-        )}>{objective.name}</span>
+        )}>{`${task.name} - ${objective.name}`}</span>
       </div>
     </MapMarker>
   )

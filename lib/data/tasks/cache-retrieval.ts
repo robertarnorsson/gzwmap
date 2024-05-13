@@ -8,7 +8,7 @@ import {
 import { GPSTracker } from "@/lib/data/items";
 
 const CacheRetrieval_Objective1_LRI: objective = {
-  name: "Cache Retrieval - Warehouse Cache",
+  name: "Warehouse Cache",
   description: "Find and mark the cache in one of the town's warehouses",
   position: [0.9193533105215791, -0.44743537902832037],
   type: ObjectiveType.MARK,
@@ -16,7 +16,7 @@ const CacheRetrieval_Objective1_LRI: objective = {
 }
 
 const CacheRetrieval_Objective2_LRI: objective = {
-  name: "Cache Retrieval - Lumberyard Cache",
+  name: "Lumberyard Cache",
   description: "Find and mark the cache in a shed at the town's Lumberyard",
   position: [0.9031104734435303, -0.46073913574218756],
   type: ObjectiveType.MARK,
@@ -24,7 +24,7 @@ const CacheRetrieval_Objective2_LRI: objective = {
 }
 
 const CacheRetrieval_Objective1_MMS: objective = {
-  name: "Cache Retrieval - Warehouse Cache",
+  name: "Warehouse Cache",
   description: "Find and mark the cache in one of the town's warehouses",
   position: [0.5257479683866338, -0.6925562329178027],
   type: ObjectiveType.MARK,
@@ -32,7 +32,7 @@ const CacheRetrieval_Objective1_MMS: objective = {
 }
 
 const CacheRetrieval_Objective2_MMS: objective = {
-  name: "Cache Retrieval - Lumberyard Cache",
+  name: "Lumberyard Cache",
   description: "Find and mark the cache in a shed at the town's Lumberyard",
   position: [0.5473356330411291, -0.6924083425618212],
   type: ObjectiveType.MARK,
@@ -40,7 +40,7 @@ const CacheRetrieval_Objective2_MMS: objective = {
 }
 
 const CacheRetrieval_Objective1_CSI: objective = {
-  name: "Cache Retrieval - Warehouse Cache",
+  name: "Warehouse Cache",
   description: "Find and mark the cache in one of the town's warehouses",
   position: [0.9106271147195721, -0.9572267532348634],
   type: ObjectiveType.MARK,
@@ -48,7 +48,7 @@ const CacheRetrieval_Objective1_CSI: objective = {
 }
 
 const CacheRetrieval_Objective2_CSI: objective = {
-  name: "Cache Retrieval - Lumberyard Cache",
+  name: "Lumberyard Cache",
   description: "Find and mark the cache in a shed at the town's Lumberyard",
   position: [0.8939522455555373, -0.9435796737670898],
   type: ObjectiveType.MARK,

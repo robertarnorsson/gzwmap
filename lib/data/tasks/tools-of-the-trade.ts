@@ -7,7 +7,7 @@ import {
 } from "@/lib/data/factions";
 
 const ToolsOfTheTrade_Objective1_LRI: objective = {
-  name: "Tools of the Trade - Tools",
+  name: "Tools",
   description: "Retrieve the tools from Pha Lang and hand them over to Artisan",
   position: [0.9072131305302487, -0.4420728212764469],
   type: ObjectiveType.DELIVER,
@@ -15,7 +15,7 @@ const ToolsOfTheTrade_Objective1_LRI: objective = {
 }
 
 const ToolsOfTheTrade_Objective1_MMS: objective = {
-  name: "Tools of the Trade - Tools",
+  name: "Tools",
   description: "Retrieve the tools from Nam Thaven and hand them over to Artisan",
   position: [0.5320096774049402, -0.7044744290937466],
   type: ObjectiveType.DELIVER,
@@ -23,7 +23,7 @@ const ToolsOfTheTrade_Objective1_MMS: objective = {
 }
 
 const ToolsOfTheTrade_Objective1_CSI: objective = {
-  name: "Tools of the Trade - Tools",
+  name: "Tools",
   description: "Retrieve the tools from Kiu Vongsa and hand them over to Artisan",
   position: [0.9135971875686003, -0.9444996975235489],
   type: ObjectiveType.DELIVER,

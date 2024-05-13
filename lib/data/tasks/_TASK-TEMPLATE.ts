@@ -7,7 +7,7 @@ import {
 } from "@/lib/data/factions";
 
 const TASKNAME_Objective1_LRI: objective = {
-  name: "TASK NAME - OBJECTIVE TITLE",
+  name: "OBJECTIVE TITLE",
   description: "OBJECTIVE DESCRIPTION",
   position: [0.7533526986575634, -0.7050375729025516],
   type: ObjectiveType.DISCOVER,
@@ -15,7 +15,7 @@ const TASKNAME_Objective1_LRI: objective = {
 }
 
 const TASKNAME_Objective1_MMS: objective = {
-  name: "TASK NAME - OBJECTIVE TITLE",
+  name: "OBJECTIVE TITLE",
   description: "OBJECTIVE DESCRIPTION",
   position: [0.7533526986575634, -0.7050375729025516],
   type: ObjectiveType.DISCOVER,
@@ -23,7 +23,7 @@ const TASKNAME_Objective1_MMS: objective = {
 }
 
 const TASKNAME_Objective1_CSI: objective = {
-  name: "TASK NAME - OBJECTIVE TITLE",
+  name: "OBJECTIVE TITLE",
   description: "OBJECTIVE DESCRIPTION",
   position: [0.7533526986575634, -0.7050375729025516],
   type: ObjectiveType.DISCOVER,

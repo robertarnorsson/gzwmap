@@ -2,7 +2,7 @@ import {ObjectiveType, objective, task} from "@/lib/types";
 import {Handshake} from "@/lib/data/vendors";
 
 const ManifestDestiny_Objective1: objective = {
-    name: "Manifest Destiny - Computer",
+    name: "Computer",
     description: "Access the flight manifest database",
     position: [0.8686806011436445, -0.6063508987426759],
     type: ObjectiveType.DISCOVER,

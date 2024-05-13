@@ -7,7 +7,7 @@ import {
 } from "@/lib/data/factions";
 
 const LeftBehind_Objective1_LRI: objective = {
-  name: "Left Behind - Body",
+  name: "Body",
   description: "Locate the missing body to confirm its identity",
   position: [0.8544378292498375, -0.44340629498993656],
   type: ObjectiveType.DISCOVER,
@@ -15,7 +15,7 @@ const LeftBehind_Objective1_LRI: objective = {
 }
 
 const LeftBehind_Objective1_MMS: objective = {
-  name: "Left Behind - Body",
+  name: "Body",
   description: "Locate the missing body to confirm its identity",
   position: [0.5731656157592651, -0.7360875132283897],
   type: ObjectiveType.DISCOVER,
@@ -23,7 +23,7 @@ const LeftBehind_Objective1_MMS: objective = {
 }
 
 const LeftBehind_Objective1_CSI: objective = {
-  name: "Left Behind - Body",
+  name: "Body",
   description: "Locate the missing body to confirm its identity",
   position: [0.9032517355468691, -0.8930146026828379],
   type: ObjectiveType.DISCOVER,

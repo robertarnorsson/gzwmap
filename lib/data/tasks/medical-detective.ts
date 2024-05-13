@@ -8,7 +8,7 @@ import {
 import { LeaveNoManBehind } from "@/lib/data/tasks/leave-no-man-behind";
 
 const MedicalDetective_Objective1_LRI: objective = {
-  name: "Medical Detective - Missing Supplies",
+  name: "Missing Supplies",
   description: "Search for the Missing Supplies in Pha Lang",
   position: [0.910734961284329, -0.42277983496990645],
   type: ObjectiveType.DELIVER,
@@ -16,7 +16,7 @@ const MedicalDetective_Objective1_LRI: objective = {
 }
 
 const MedicalDetective_Objective1_MMS: objective = {
-  name: "Medical Detective - Missing Supplies",
+  name: "Missing Supplies",
   description: "Search for the Missing Supplies in Nam Thaven",
   position: [0.5166650742814851, -0.7170144347480178],
   type: ObjectiveType.DELIVER,
@@ -24,7 +24,7 @@ const MedicalDetective_Objective1_MMS: objective = {
 }
 
 const MedicalDetective_Objective1_CSI: objective = {
-  name: "Medical Detective - Missing Supplies",
+  name: "Missing Supplies",
   description: "Search for the Missing Supplies in Kiu Vongsa",
   position: [0.9335705682347442, -0.9445126594327947],
   type: ObjectiveType.DELIVER,

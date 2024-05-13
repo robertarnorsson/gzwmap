@@ -9,7 +9,7 @@ import { GPSTracker } from "@/lib/data/items";
 import { CacheRetrieval } from "@/lib/data/tasks/cache-retrieval";
 
 const LeaveNoManBehind_Objective1_LRI: objective = {
-  name: "Leave No Man Behind - Dead Soldier",
+  name: "Dead Soldier",
   description: "Locate and mark the Dead Soldier near town hall",
   position: [0.8940818432820015, -0.44516086578369146],
   type: ObjectiveType.MARK,
@@ -17,7 +17,7 @@ const LeaveNoManBehind_Objective1_LRI: objective = {
 }
 
 const LeaveNoManBehind_Objective1_MMS: objective = {
-  name: "Leave No Man Behind - Dead Soldier",
+  name: "Dead Soldier",
   description: "Locate and mark the Dead Soldier near town hall",
   position: [0.5440668888476972, -0.7097768783569336],
   type: ObjectiveType.MARK,
@@ -25,7 +25,7 @@ const LeaveNoManBehind_Objective1_MMS: objective = {
 }
 
 const LeaveNoManBehind_Objective1_CSI: objective = {
-  name: "Leave No Man Behind - Dead Soldier",
+  name: "Dead Soldier",
   description: "Locate and mark the Dead Soldier near town hall",
   position: [0.9085535600864155, -0.9320354461669923],
   type: ObjectiveType.MARK,

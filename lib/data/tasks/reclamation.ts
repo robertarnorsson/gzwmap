@@ -7,7 +7,7 @@ import {
 } from "@/lib/data/factions";
 
 const Reclamation_Objective1_LRI: objective = {
-  name: "Reclamation - Cargo",
+  name: "Cargo",
   description: "Retrieve the cargo from the fortified hideout in Pha Lang and hand it to Handshake",
   position: [0.9032517355468691, -0.425192995488497],
   type: ObjectiveType.DELIVER,
@@ -15,7 +15,7 @@ const Reclamation_Objective1_LRI: objective = {
 }
 
 const Reclamation_Objective1_MMS: objective = {
-  name: "Reclamation - Cargo",
+  name: "Cargo",
   description: "Retrieve the cargo from the fortified hideout in Nam Thaven and hand it to Handshake",
   position: [0.5239225185095121, -0.7197605911753158],
   type: ObjectiveType.DELIVER,
@@ -23,7 +23,7 @@ const Reclamation_Objective1_MMS: objective = {
 }
 
 const Reclamation_Objective1_CSI: objective = {
-  name: "Reclamation - Cargo",
+  name: "Cargo",
   description: "Retrieve the cargo from the fortified hideout in Kiu Vongsa and hand it to Handshake",
   position: [0.929868296155599, -0.9375721389631698],
   type: ObjectiveType.DELIVER,

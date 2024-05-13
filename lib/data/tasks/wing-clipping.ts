@@ -2,8 +2,8 @@ import {ObjectiveType, objective, task} from "@/lib/types";
 import {Handshake} from "@/lib/data/vendors";
 
 const WingClipping_Objective1: objective = {
-    name: "Wing Clipping",
-    description: "Neutralize 20 hostiles at the airfield",
+    name: "Hostiles",
+    description: "Neutralize 20 hostiles at the Pha Lang Airfield",
     position: [0.8693285941867842, -0.6031751632690431],
     type: ObjectiveType.DISCOVER,
 }

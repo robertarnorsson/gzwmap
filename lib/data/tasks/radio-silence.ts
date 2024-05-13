@@ -7,7 +7,7 @@ import {
 } from "@/lib/data/factions";
 
 const RadioSilence_Objective1_LRI: objective = {
-  name: "Radio Silence - Comms Equipment",
+  name: "Comms Equipment",
   description: "Find the isolated house in the north part of Pha Lang and neutralize the equipment within ",
   position: [0.9214646094708584, -0.4371211421688215],
   type: ObjectiveType.DELIVER,
@@ -15,7 +15,7 @@ const RadioSilence_Objective1_LRI: objective = {
 }
 
 const RadioSilence_Objective1_MMS: objective = {
-  name: "Radio Silence - Comms Equipment",
+  name: "Comms Equipment",
   description: "Find the isolated house in the south part of Nam Thaven and neutralize the equipment within ",
   position: [0.5178583139635412, -0.6990768393076997],
   type: ObjectiveType.DELIVER,
@@ -23,7 +23,7 @@ const RadioSilence_Objective1_MMS: objective = {
 }
 
 const RadioSilence_Objective1_CSI: objective = {
-  name: "Radio Silence - Comms Equipment",
+  name: "Comms Equipment",
   description: "Find the isolated house in the north part of Kiu Vongsa and neutralize the equipment within ",
   position: [0.9208685817808192, -0.957270720811263],
   type: ObjectiveType.DELIVER,

@@ -2,7 +2,7 @@ import {ObjectiveType, objective, task} from "@/lib/types";
 import {Banshee} from "@/lib/data/vendors";
 
 const SkycrawlersPartTwo_Objective1: objective = {
-    name: "Skycrawlers II - Logbook",
+    name: "Logbook",
     description: "Retrieve and locate the logbook and report back",
     position: [0.8699765871172558, -0.6057071685791016],
     type: ObjectiveType.COLLECT,

@@ -2,7 +2,7 @@ import {ObjectiveType, objective, task} from "@/lib/types";
 import {Handshake} from "@/lib/data/vendors";
 
 const BusinessOrPleasure_Objective1: objective = {
-    name: "Business or Pleasure - Flash Drive",
+    name: "Flash Drive",
     description: "Retrieve the intel and report back to Handshake",
     position: [0.8724821587198835, -0.601630210876465],
     type: ObjectiveType.COLLECT,

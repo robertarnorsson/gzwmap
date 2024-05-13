@@ -8,7 +8,7 @@ import {
 import { MedsWanted } from "@/lib/data/tasks/meds-wanted";
 
 const LostAndFound_Objective1_LRI: objective = {
-  name: "Lost and Found - Kanoa Sinarath",
+  name: "Kanoa Sinarath",
   description: "Find Kanoa Sinarath and proof of identity",
   position: [0.9059363177502301, -0.45895264706439687],
   type: ObjectiveType.DELIVER,
@@ -16,7 +16,7 @@ const LostAndFound_Objective1_LRI: objective = {
 }
 
 const LostAndFound_Objective1_MMS: objective = {
-  name: "Lost and Found - Kanoa Sinarath",
+  name: "Kanoa Sinarath",
   description: "Find Kanoa Sinarath and proof of identity",
   position: [0.5438293518085245, -0.6919527856864982],
   type: ObjectiveType.DELIVER,
@@ -24,7 +24,7 @@ const LostAndFound_Objective1_MMS: objective = {
 }
 
 const LostAndFound_Objective1_CSI: objective = {
-  name: "Lost and Found - Kanoa Sinarath",
+  name: "Kanoa Sinarath",
   description: "Find Kanoa Sinarath and proof of identity",
   position: [0.8970313544357956, -0.9461584087281374],
   type: ObjectiveType.DELIVER,

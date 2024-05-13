@@ -2,7 +2,7 @@ import {ObjectiveType, objective, task} from "@/lib/types";
 import {Handshake} from "@/lib/data/vendors";
 
 const FinalCheckout_Objective1: objective = {
-    name: "Final Check Out - Purple Suitcase",
+    name: "Purple Suitcase",
     description: "Look for the purple spinner case standing upright adjacent to the wooden post, underneath the Hangar.",
     position: [0.867557412935466, -0.6015443801879884],
     type: ObjectiveType.LOCATE,

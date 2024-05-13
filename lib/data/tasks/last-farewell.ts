@@ -7,7 +7,7 @@ import {
 } from "@/lib/data/factions";
 
 const LastFarewell_Objective1_LRI: objective = {
-  name: "Last Farewell - Body",
+  name: "Body",
   description: "Locate and mark the location of the body",
   position: [0.854994396513734, -0.44340629498993656],
   type: ObjectiveType.MARK,
@@ -15,7 +15,7 @@ const LastFarewell_Objective1_LRI: objective = {
 }
 
 const LastFarewell_Objective1_MMS: objective = {
-  name: "Last Farewell - Body",
+  name: "Body",
   description: "Locate and mark the location of the body",
   position: [0.5731581782987111, -0.7366074238787413],
   type: ObjectiveType.MARK,
@@ -23,7 +23,7 @@ const LastFarewell_Objective1_MMS: objective = {
 }
 
 const LastFarewell_Objective1_CSI: objective = {
-  name: "Last Farewell - Body",
+  name: "Body",
   description: "Locate and mark the location of the body",
   position: [0.9029869247450095, -0.893505141021247],
   type: ObjectiveType.MARK,

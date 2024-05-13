@@ -8,7 +8,7 @@ import {
 import { MedicalDetective } from "@/lib/data/tasks/medical-detective";
 
 const SecretCompassion_Objective1_LRI: objective = {
-  name: "Secret Compassion - Farm South",
+  name: "Farm South",
   description: "Place the Supplies in a box by the front door at a farm south of Pha Lang",
   position: [0.8712657678111906, -0.44314610499706536],
   type: ObjectiveType.STASH,
@@ -16,7 +16,7 @@ const SecretCompassion_Objective1_LRI: objective = {
 }
 
 const SecretCompassion_Objective2_LRI: objective = {
-  name: "Secret Compassion - Farm West",
+  name: "Farm West",
   description: "Place the Supplies in a box by the front door at a farm west of Pha Lang",
   position: [0.9144949402662516, -0.4720064915621825],
   type: ObjectiveType.STASH,
@@ -24,7 +24,7 @@ const SecretCompassion_Objective2_LRI: objective = {
 }
 
 const SecretCompassion_Objective3_LRI: objective = {
-  name: "Secret Compassion - Logging Shed",
+  name: "Logging Shed",
   description: "Place the Supplies in a box by the front door at a farm north of Pha Lang",
   position: [0.9210288702513367, -0.4533260384684135],
   type: ObjectiveType.STASH,
@@ -33,7 +33,7 @@ const SecretCompassion_Objective3_LRI: objective = {
 
 
 const SecretCompassion_Objective1_MMS: objective = {
-  name: "Secret Compassion - Farm West",
+  name: "Farm West",
   description: "Place the Supplies in a box by the front door at a farm west of Nam Thaven",
   position: [0.5618384032046484, -0.7269009856792841],
   type: ObjectiveType.STASH,
@@ -41,7 +41,7 @@ const SecretCompassion_Objective1_MMS: objective = {
 }
 
 const SecretCompassion_Objective2_MMS: objective = {
-  name: "Secret Compassion - Farm East",
+  name: "Farm East",
   description: "Place the Supplies in a box by the front door at a farm east of Nam Thaven",
   position: [0.545875887819414, -0.677249609977626],
   type: ObjectiveType.STASH,
@@ -49,7 +49,7 @@ const SecretCompassion_Objective2_MMS: objective = {
 }
 
 const SecretCompassion_Objective3_MMS: objective = {
-  name: "Secret Compassion - Logging Shed",
+  name: "Logging Shed",
   description: "Place the Supplies in a box by the front door at a logging shed in the southeast part of Nam Thaven",
   position: [0.5284621857447294, -0.6870197193898854],
   type: ObjectiveType.STASH,
@@ -58,7 +58,7 @@ const SecretCompassion_Objective3_MMS: objective = {
 
 
 const SecretCompassion_Objective1_CSI: objective = {
-  name: "Secret Compassion - Farm East",
+  name: "Farm East",
   description: "Place the Supplies in a box by the front door at a farm east of Kiu Vongsa",
   position: [0.9068183278177685, -0.9093634948019782],
   type: ObjectiveType.STASH,
@@ -66,7 +66,7 @@ const SecretCompassion_Objective1_CSI: objective = {
 }
 
 const SecretCompassion_Objective2_CSI: objective = {
-  name: "Secret Compassion - Farm West",
+  name: "Farm West",
   description: "Place the Supplies in a box by the front door at a farm west of Kiu Vongsa",
   position: [0.8849842640209445, -0.9564419247927481],
   type: ObjectiveType.STASH,
@@ -74,7 +74,7 @@ const SecretCompassion_Objective2_CSI: objective = {
 }
 
 const SecretCompassion_Objective3_CSI: objective = {
-  name: "Secret Compassion - Logging Shed",
+  name: "Logging Shed",
   description: "Place the Supplies in a box by the front door at a logging shed in the northwest part of Kiu Vongsa",
   position: [0.9051807776224845, -0.9598434029805626],
   type: ObjectiveType.STASH,

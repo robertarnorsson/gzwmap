@@ -7,7 +7,7 @@ import {
 } from "@/lib/data/factions";
 
 const CovertResearch_Objective1_LRI: objective = {
-  name: "Covert Research - Cargo",
+  name: "Cargo",
   description: "Retrieve the cargo from the fortified hideout in Pha Lang and report back to Lab Rat",
   position: [0.9027279143946259, -0.42496532924471975],
   type: ObjectiveType.DELIVER,
@@ -15,7 +15,7 @@ const CovertResearch_Objective1_LRI: objective = {
 }
 
 const CovertResearch_Objective1_MMS: objective = {
-  name: "Covert Research - Cargo",
+  name: "Cargo",
   description: "Retrieve the cargo from the fortified hideout in Nam Thaven and report back to Lab Rat",
   position: [0.5240534847301731, -0.7203785424083998],
   type: ObjectiveType.DELIVER,
@@ -23,7 +23,7 @@ const CovertResearch_Objective1_MMS: objective = {
 }
 
 const CovertResearch_Objective1_CSI: objective = {
-  name: "Covert Research - Cargo",
+  name: "Cargo",
   description: "Retrieve the cargo from the fortified hideout in Kiu Vongsa and report back to Lab Rat",
   position: [0.9300319890170154, -0.9370192352283137],
   type: ObjectiveType.DELIVER,
