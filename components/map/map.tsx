@@ -1,7 +1,9 @@
 import { MapContainer, TileLayer, useMapEvents } from "react-leaflet"
-import L, { CRS, LatLngBoundsExpression } from "leaflet"
+import L, { CRS, LatLngBoundsExpression, LatLngExpression, LatLngTuple } from "leaflet"
 import MapMarkers from "./markers";
 import "leaflet/dist/leaflet.css"
+import { useSearchParams } from "next/navigation";
+import { Tasks } from "@/lib/data/tasks";
 
 export default function Map() {
   const MapEvents = () => {
@@ -13,6 +15,30 @@ export default function Map() {
     return false;
   }
 
+  function formatParam(param: string | null | undefined) {
+    if (typeof param === "string") {
+      return param
+      .replaceAll(" ", "-")
+      .replaceAll("'", "")
+      .toLowerCase()
+      .trim()
+    } else {
+      return null
+    }
+  }
+
+  const params = useSearchParams();
+
+  const factionParam = params.get("faction");
+  const taskParam = params.get("task");
+  const objectiveParam = params.get("objective");
+
+  const task = Tasks.find((task) => formatParam(task.name) === formatParam(taskParam));
+  const objective = task?.objectives.find((objective) => (formatParam(objective.name) === formatParam(objectiveParam)) && (formatParam(objective.faction?.shorthand) === formatParam(factionParam)))
+
+  const paramPosition = objective?.position as LatLngExpression;
+
+  const centerPosition = [0.7521535241589289, -0.7050094818702314] as LatLngExpression
   const maxBounds = [[0.3662, -0.0985], [1.049, -1.308]] as LatLngBoundsExpression
 
   return (
@@ -22,9 +48,9 @@ export default function Map() {
       preferCanvas={true}
       zoomControl={false}
       crs={L.CRS.EPSG3395 as CRS}
-      center={[0.7521535241589289, -0.7050094818702314]}
+      center={paramPosition || centerPosition}
       maxBoundsViscosity={10}
-      zoom={12}
+      zoom={paramPosition && 15 || 12}
       zoomSnap={0}
       zoomDelta={100}
       zoomAnimation
