@@ -1,4 +1,4 @@
-import { MapContainer, TileLayer, useMap, useMapEvents } from "react-leaflet"
+import { MapContainer, TileLayer, useMapEvents } from "react-leaflet"
 import L, { CRS, LatLngBoundsExpression } from "leaflet"
 import MapMarkers from "./markers";
 import "leaflet/dist/leaflet.css"
@@ -26,10 +26,12 @@ export default function Map() {
       maxBoundsViscosity={10}
       zoom={12}
       zoomSnap={0}
-      zoomDelta={1}
+      zoomDelta={100}
       zoomAnimation
       minZoom={9}
       maxZoom={15}
+      inertiaDeceleration={2500}
+      wheelDebounceTime={200}
       doubleClickZoom={true}
       scrollWheelZoom={true}
       boxZoom={false}
@@ -39,8 +41,11 @@ export default function Map() {
       <TileLayer
         className="tile-map"
         bounds={maxBounds}
+        noWrap
         tileSize={256}
-        keepBuffer={12}
+        keepBuffer={32}
+        updateWhenZooming
+        updateInterval={0.1}
         url="https://tiles.gzwmap.com/v1/{z}/{y}/{x}"
         updateWhenIdle={false}
       />
