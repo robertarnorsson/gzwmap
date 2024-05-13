@@ -5,7 +5,7 @@ const UninvitedGuests_Objective1: objective = {
     name: "Hostiles",
     description: "Eliminate 20 hostiles in Ban Pa",
     position: [0.69272500381395, -0.4185533523559571],
-    type: ObjectiveType.LOCATE,
+    type: ObjectiveType.ELIMINATION,
 }
 
 export const UninvitedGuests: task = {

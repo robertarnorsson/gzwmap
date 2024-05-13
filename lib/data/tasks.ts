@@ -33,7 +33,7 @@ import { TheShadowOverBanPa }      from "@/lib/data/tasks/the-shadow-over-ban-pa
 import { LineInTheSand }           from "@/lib/data/tasks/line-in-the-sand"
 import { TheValueOfSharing }       from "@/lib/data/tasks/the-value-of-sharing"
 import { UninvitedGuests }         from "@/lib/data/tasks/uninvited-guests"
-import { WarmWelcome }         from "@/lib/data/tasks/warm-welcome"
+import { WarmWelcome }             from "@/lib/data/tasks/warm-welcome"
 
 export const Tasks: task[] = [
   FirstRecon,
