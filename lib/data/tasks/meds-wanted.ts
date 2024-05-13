@@ -12,7 +12,7 @@ const MedsWanted_Objective1_LRI: objective = {
   position: [0.9140398374202118, -0.4583787918090821],
   type: ObjectiveType.DELIVER,
   faction: LamangRecoveryInitiative,
-  image: "/items/objectives/unlra-medical-supplies.png"
+  image: "/objectives/unlra-medical-supplies.png"
 }
 
 const MedsWanted_Objective1_MMS: objective = {
@@ -21,7 +21,7 @@ const MedsWanted_Objective1_MMS: objective = {
   position: [0.5377593062048597, -0.6875038146972657],
   type: ObjectiveType.DELIVER,
   faction: MithrasSecuritySystems,
-  image: "/items/objectives/unlra-medical-supplies.png"
+  image: "/objectives/unlra-medical-supplies.png"
 }
 
 const MedsWanted_Objective1_CSI: objective = {
@@ -30,7 +30,7 @@ const MedsWanted_Objective1_CSI: objective = {
   position: [0.8982289680777165, -0.9536218643188478],
   type: ObjectiveType.DELIVER,
   faction: CrimsonShieldInternational,
-  image: "/items/objectives/unlra-medical-supplies.png"
+  image: "/objectives/unlra-medical-supplies.png"
 }
 
 

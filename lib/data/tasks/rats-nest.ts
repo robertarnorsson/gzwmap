@@ -11,7 +11,8 @@ const RatsNest_Objective1_LRI: objective = {
   description: "Gather intel from the hideout in the north part of Pha Lang and report back to Handshake",
   position: [0.9144483943069508, -0.45361875221039855],
   type: ObjectiveType.DELIVER,
-  faction: LamangRecoveryInitiative
+  faction: LamangRecoveryInitiative,
+  image: "/objectives/thugs-smartphone.png"
 }
 
 const RatsNest_Objective2_LRI: objective = {
@@ -19,7 +20,8 @@ const RatsNest_Objective2_LRI: objective = {
   description: "Gather intel from the hideout in the south part of Pha Lang and report back to Handshake",
   position: [0.8881263691610816, -0.4449349111980894],
   type: ObjectiveType.DELIVER,
-  faction: LamangRecoveryInitiative
+  faction: LamangRecoveryInitiative,
+  image: "/objectives/convicts-notepad.png"
 }
 
 
@@ -28,7 +30,8 @@ const RatsNest_Objective1_MMS: objective = {
   description: "Gather intel from the hideout in the east part of Nam Thaven and report back to Handshake",
   position: [0.5343998073371484, -0.6904566932274393],
   type: ObjectiveType.DELIVER,
-  faction: MithrasSecuritySystems
+  faction: MithrasSecuritySystems,
+  image: "/objectives/thugs-smartphone.png"
 }
 
 const RatsNest_Objective2_MMS: objective = {
@@ -36,7 +39,8 @@ const RatsNest_Objective2_MMS: objective = {
   description: "Gather intel from the hideout in the west part of Kiu Thaven and report back to Handshake",
   position: [0.548413152772869, -0.7141665063284465],
   type: ObjectiveType.DELIVER,
-  faction: MithrasSecuritySystems
+  faction: MithrasSecuritySystems,
+  image: "/objectives/convicts-notepad.png"
 }
 
 
@@ -45,7 +49,8 @@ const RatsNest_Objective1_CSI: objective = {
   description: "Gather intel from the hideout in the southwest part of Kiu Vongsa and report back to Handshake",
   position: [0.903579123728169, -0.952890824793853],
   type: ObjectiveType.DELIVER,
-  faction: CrimsonShieldInternational
+  faction: CrimsonShieldInternational,
+  image: "/objectives/thugs-smartphone.png"
 }
 
 const RatsNest_Objective2_CSI: objective = {
@@ -53,7 +58,8 @@ const RatsNest_Objective2_CSI: objective = {
   description: "Gather intel from the hideout in the southeast part of Kiu Vongsa and report back to Handshake",
   position: [0.9073768244433983, -0.9262863980220893],
   type: ObjectiveType.DELIVER,
-  faction: CrimsonShieldInternational
+  faction: CrimsonShieldInternational,
+  image: "/objectives/convicts-notepad.png"
 }
 
 

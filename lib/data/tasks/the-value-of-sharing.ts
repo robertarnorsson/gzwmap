@@ -5,7 +5,7 @@ const TheValueOfSharing_Objective1: objective = {
     name: "Stash of high-grade fentanyl",
     description: "Locate a stash of high-grade fentanyl under a house",
     position: [0.6947554678567497, -0.42198657989501953],
-    image: "/items/objectives/stash-of-high-grade-fentanyl.webp",
+    image: "/objectives/stash-of-high-grade-fentanyl.webp",
     type: ObjectiveType.LOCATE,
 }
 
