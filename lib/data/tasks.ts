@@ -29,7 +29,8 @@ import { FinalCheckout }      from "@/lib/data/tasks/final-checkout"
 import { ManifestDestiny }    from "@/lib/data/tasks/manifest-destiny"
 import { AtTheMoundsOfMadness }    from "@/lib/data/tasks/at-the-mounds-of-madness"
 import { ItsInTheWater }      from "@/lib/data/tasks/its-in-the-water"
-import { TheShadowOverBanPa }      from "@/lib/data/tasks/the-shadow-over-ban-pa"
+import { TheShadowOverBanPa } from "@/lib/data/tasks/the-shadow-over-ban-pa"
+import { LineInTheSand }      from "@/lib/data/tasks/line-in-the-sand"
 
 export const Tasks: task[] = [
   FirstRecon,
@@ -62,4 +63,5 @@ export const Tasks: task[] = [
   AtTheMoundsOfMadness,
   ItsInTheWater,
   TheShadowOverBanPa,
+  LineInTheSand,
 ]
