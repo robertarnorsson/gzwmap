@@ -29,6 +29,7 @@ import { FinalCheckout }           from "@/lib/data/tasks/final-checkout"
 import { ManifestDestiny }         from "@/lib/data/tasks/manifest-destiny"
 import { AtTheMoundsOfMadness }    from "@/lib/data/tasks/at-the-mounds-of-madness"
 import { ItsInTheWaterPartOne }    from "@/lib/data/tasks/its-in-the-water-part-1"
+import { ItsInTheWaterPartTwo }    from "@/lib/data/tasks/its-in-the-water-part-2"
 import { TheShadowOverBanPa }      from "@/lib/data/tasks/the-shadow-over-ban-pa"
 import { LineInTheSand }           from "@/lib/data/tasks/line-in-the-sand"
 import { TheValueOfSharing }       from "@/lib/data/tasks/the-value-of-sharing"
@@ -65,6 +66,7 @@ export const Tasks: task[] = [
   ManifestDestiny,
   AtTheMoundsOfMadness,
   ItsInTheWaterPartOne,
+  ItsInTheWaterPartTwo,
   TheShadowOverBanPa,
   LineInTheSand,
   TheValueOfSharing,
