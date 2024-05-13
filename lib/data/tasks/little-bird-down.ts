@@ -21,8 +21,7 @@ const LittleBirdDown_Objective2_LRI: objective = {
   description: "Find out what happened to the rest of the crew",
   position: [0.8701061856898239, -0.4595375061035157],
   type: ObjectiveType.DISCOVER,
-  faction: LamangRecoveryInitiative,
-  image: "/objectives/little-bird-down.webp"
+  faction: LamangRecoveryInitiative
 }
 
 const LittleBirdDown_Objective1_MMS: objective = {
@@ -47,7 +46,8 @@ const LittleBirdDown_Objective1_CSI: objective = {
   description: "Find the Crashed Helicopter south of the gas station",
   position: [0.8809060508184482, -0.9125518798828126],
   type: ObjectiveType.DISCOVER,
-  faction: CrimsonShieldInternational
+  faction: CrimsonShieldInternational,
+  image: "/objectives/little-bird-down.webp"
 }
 
 const LittleBirdDown_Objective2_CSI: objective = {
