@@ -20,9 +20,14 @@ export default function TaskMarker({ map, task, objective }: { map: Map, task: t
           <p className="text-xs text-muted-foreground">{objective.faction?.shorthand || "All Factions"}</p>
           <p className="text-xs text-muted-foreground">▪</p>
           <p className="text-xs text-muted-foreground">{objective.type}</p>
-            </div>
-            <p className="pt-4 text-sm text-primary text-pretty font-semibold">{objective.name}</p>
-          <p className="text-primary/85 text-pretty">{objective.description}</p>
+        </div>
+        <p className="pt-4 text-sm text-primary text-pretty font-semibold">{objective.name}</p>
+        <p className="text-primary/85 text-pretty">{objective.description}</p>
+        {objective.image && (
+            <a href={objective.image} target="_blank">
+              <Image className='mt-4' quality={100} src={objective.image} width={260} height={100} alt={`${task.name} - ${objective.name}`}></Image>
+            </a>
+        )}
         {task.note && (
             <div className="flex flex-row gap-2 pt-2">
               <p className="text-xs text-gray-500">Notes</p>

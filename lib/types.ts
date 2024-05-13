@@ -60,7 +60,8 @@ export type objective = {
   position: LatLngTuple
   type: ObjectiveType
   faction?: faction
-  subobjective?: subobjective
+  subobjective?: subobjective,
+  image?: string
 }
 
 export type subobjective = {

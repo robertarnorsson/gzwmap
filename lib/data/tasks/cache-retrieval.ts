@@ -44,7 +44,8 @@ const CacheRetrieval_Objective1_CSI: objective = {
   description: "Find and mark the cache in one of the town's warehouses",
   position: [0.9106271147195721, -0.9572267532348634],
   type: ObjectiveType.MARK,
-  faction: CrimsonShieldInternational
+  faction: CrimsonShieldInternational,
+  image: "/objectives/warehouse-cache.webp"
 }
 
 const CacheRetrieval_Objective2_CSI: objective = {
@@ -52,7 +53,8 @@ const CacheRetrieval_Objective2_CSI: objective = {
   description: "Find and mark the cache in a shed at the town's Lumberyard",
   position: [0.8939522455555373, -0.9435796737670898],
   type: ObjectiveType.MARK,
-  faction: CrimsonShieldInternational
+  faction: CrimsonShieldInternational,
+  image: "/objectives/lumberyard-cache.webp"
 }
 
 
