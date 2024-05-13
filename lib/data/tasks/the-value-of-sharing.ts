@@ -2,8 +2,8 @@ import {ObjectiveType, objective, task} from "@/lib/types";
 import {Turncoat} from "@/lib/data/vendors";
 
 const TheValueOfSharing_Objective1: objective = {
-    name: "At the Mounds of Madness - Ominous mural",
-    description: "Find an ominous mural",
+    name: "Stash of high-grade fentanyl",
+    description: "Locate a stash of high-grade fentanyl under a house",
     position: [0.6947554678567497, -0.42198657989501953],
     type: ObjectiveType.LOCATE,
 }
