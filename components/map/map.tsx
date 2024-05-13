@@ -19,6 +19,7 @@ export default function Map() {
     <MapContainer
       className="map"
       attributionControl={false}
+      preferCanvas={true}
       zoomControl={false}
       crs={L.CRS.EPSG3395 as CRS}
       center={[0.7521535241589289, -0.7050094818702314]}
@@ -29,18 +30,18 @@ export default function Map() {
       zoomAnimation
       minZoom={9}
       maxZoom={15}
-      trackResize
       doubleClickZoom={true}
       scrollWheelZoom={true}
       boxZoom={false}
+      fadeAnimation={true}
       bounceAtZoomLimits={false}
     >
       <TileLayer
         className="tile-map"
         bounds={maxBounds}
         tileSize={256}
-        keepBuffer={24}
-        url="https://tiles.gzwmap.com/{z}/{y}/{x}"
+        keepBuffer={12}
+        url="https://tiles.gzwmap.com/v1/{z}/{y}/{x}"
         updateWhenIdle={false}
       />
       <MapEvents />
