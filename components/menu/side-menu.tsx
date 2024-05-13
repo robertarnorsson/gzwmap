@@ -59,8 +59,13 @@ export default function SideMenu() {
         }
       </button>
       <div className={`h-full w-full overflow-y-auto overflow-x-hidden p-4 py-8 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}>
-        <Command className='h-fit rounded-lg border shadow-md'>
-          <CommandInput onInput={onQueryChange} placeholder="Search..." />
+        <div className="flex gap-2 mb-5 place-content-center">
+          <Image src='/lamang_logo.webp' className="p-2 cursor-pointer" alt='logo' width={100} height={100} />
+          <Image src='/crimson_logo.webp' className="p-2 cursor-pointer" alt='logo' width={100} height={100} />
+          <Image src='/mithras_logo.webp' className="p-2 cursor-pointer bg-green-500 bg-opacity-20 border-2" alt='logo' width={100} height={100} />
+        </div>
+        <Command shouldFilter={false} className='h-fit rounded-lg border shadow-md'>
+        <CommandInput onInput={onQueryChange} placeholder="Search..." />
           <CommandList>
             <CommandEmpty>No results found.</CommandEmpty>
             {searchQuery && (
