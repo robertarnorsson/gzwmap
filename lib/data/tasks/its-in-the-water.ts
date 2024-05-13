@@ -2,21 +2,21 @@ import {ObjectiveType, objective, task} from "@/lib/types";
 import {LabRat} from "@/lib/data/vendors";
 
 const ItsInTheWater_Objective1: objective = {
-    name: "Its in the water - Avian tissue samples",
+    name: "Avian tissue samples",
     description: "Collect avian tissue samples",
     position: [0.6830046850581373, -0.41705131530761724],
     type: ObjectiveType.COLLECT,
 }
 
 const ItsInTheWater_Objective2: objective = {
-    name: "Its in the water - Well",
+    name: "Well",
     description: "Collect water samples from a well",
     position: [0.6946258637953076, -0.4208707809448243],
     type: ObjectiveType.COLLECT,
 }
 
 const ItsInTheWater_Objective3: objective = {
-    name: "Its in the water - Ground samples",
+    name: "Ground samples",
     description: "Collect ground samples from a mound of soil",
     position: [0.6947122665033343, -0.4116868972778321],
     type: ObjectiveType.COLLECT,
