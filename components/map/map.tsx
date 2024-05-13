@@ -34,7 +34,7 @@ export default function Map() {
       wheelDebounceTime={200}
       doubleClickZoom={true}
       scrollWheelZoom={true}
-      boxZoom={false}
+      boxZoom={true}
       fadeAnimation={true}
       bounceAtZoomLimits={false}
     >
