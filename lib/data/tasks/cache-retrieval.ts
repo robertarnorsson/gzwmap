@@ -45,7 +45,7 @@ const CacheRetrieval_Objective1_CSI: objective = {
   position: [0.9106271147195721, -0.9572267532348634],
   type: ObjectiveType.MARK,
   faction: CrimsonShieldInternational,
-  image: "/objectives/warehouse-cache.png"
+  image: "/objectives/warehouse-cache.webp"
 }
 
 const CacheRetrieval_Objective2_CSI: objective = {
@@ -54,7 +54,7 @@ const CacheRetrieval_Objective2_CSI: objective = {
   position: [0.8939522455555373, -0.9435796737670898],
   type: ObjectiveType.MARK,
   faction: CrimsonShieldInternational,
-  image: "/objectives/lumberyard-cache.png"
+  image: "/objectives/lumberyard-cache.webp"
 }
 
 

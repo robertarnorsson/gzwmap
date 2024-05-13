@@ -12,7 +12,7 @@ const RatsNest_Objective1_LRI: objective = {
   position: [0.9144483943069508, -0.45361875221039855],
   type: ObjectiveType.DELIVER,
   faction: LamangRecoveryInitiative,
-  image: "/objectives/thugs-smartphone.png"
+  image: "/objectives/thugs-smartphone.webp"
 }
 
 const RatsNest_Objective2_LRI: objective = {
@@ -21,7 +21,7 @@ const RatsNest_Objective2_LRI: objective = {
   position: [0.8881263691610816, -0.4449349111980894],
   type: ObjectiveType.DELIVER,
   faction: LamangRecoveryInitiative,
-  image: "/objectives/convicts-notepad.png"
+  image: "/objectives/convicts-notepad.webp"
 }
 
 
@@ -31,7 +31,7 @@ const RatsNest_Objective1_MMS: objective = {
   position: [0.5343998073371484, -0.6904566932274393],
   type: ObjectiveType.DELIVER,
   faction: MithrasSecuritySystems,
-  image: "/objectives/thugs-smartphone.png"
+  image: "/objectives/thugs-smartphone.webp"
 }
 
 const RatsNest_Objective2_MMS: objective = {
@@ -40,7 +40,7 @@ const RatsNest_Objective2_MMS: objective = {
   position: [0.548413152772869, -0.7141665063284465],
   type: ObjectiveType.DELIVER,
   faction: MithrasSecuritySystems,
-  image: "/objectives/convicts-notepad.png"
+  image: "/objectives/convicts-notepad.webp"
 }
 
 
@@ -50,7 +50,7 @@ const RatsNest_Objective1_CSI: objective = {
   position: [0.903579123728169, -0.952890824793853],
   type: ObjectiveType.DELIVER,
   faction: CrimsonShieldInternational,
-  image: "/objectives/thugs-smartphone.png"
+  image: "/objectives/thugs-smartphone.webp"
 }
 
 const RatsNest_Objective2_CSI: objective = {
@@ -59,7 +59,7 @@ const RatsNest_Objective2_CSI: objective = {
   position: [0.9073768244433983, -0.9262863980220893],
   type: ObjectiveType.DELIVER,
   faction: CrimsonShieldInternational,
-  image: "/objectives/convicts-notepad.png"
+  image: "/objectives/convicts-notepad.webp"
 }
 
 
