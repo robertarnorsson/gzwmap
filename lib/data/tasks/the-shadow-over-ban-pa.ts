@@ -2,14 +2,14 @@ import {ObjectiveType, objective, task} from "@/lib/types";
 import {Handshake} from "@/lib/data/vendors";
 
 const TheShadowOverBanPa_Objective1: objective = {
-    name: "The Shadow Over Ban Pa - Southern Entry Point",
+    name: "Southern Entry Point",
     description: "Scout the main southern entry point to Ban Pa",
     position: [0.6876704405646646, -0.4261064529418946],
     type: ObjectiveType.DISCOVER,
 }
 
 const TheShadowOverBanPa_Objective2: objective = {
-    name: "The Shadow Over Ban Pa - Northern Entry Point",
+    name: "Northern Entry Point",
     description: "Scout the main northern entry point to Ban Pa",
     position: [0.7005012442841853, -0.41679382324218756],
     type: ObjectiveType.DISCOVER,
