@@ -37,6 +37,15 @@ import { TheValueOfSharing }       from "@/lib/data/tasks/the-value-of-sharing"
 import { UninvitedGuests }         from "@/lib/data/tasks/uninvited-guests"
 import { WarmWelcome }             from "@/lib/data/tasks/warm-welcome"
 import { LamangConnection }        from "@/lib/data/tasks/lamang-connection"
+import { TheMostDangerousGame }    from "@/lib/data/tasks/the-most-dangerous-game";
+import { OnTheRange }              from "@/lib/data/tasks/on-the-range";
+import { GunsAndAmmo }             from "@/lib/data/tasks/guns-and-ammo";
+import { ShootingGallery }         from "@/lib/data/tasks/shooting-gallery";
+import { TrueGrit }                from "@/lib/data/tasks/true-grit";
+import { OneShotOneKill }          from "@/lib/data/tasks/one-shot-one-kill";
+import { TheBrave }                from "@/lib/data/tasks/the-brave";
+import { Carnivore }               from "@/lib/data/tasks/carnivore";
+import { UpToSnuff }               from "@/lib/data/tasks/up-to-snuff";
 
 export const Tasks: task[] = [
   FirstRecon,
@@ -75,5 +84,14 @@ export const Tasks: task[] = [
   TheValueOfSharing,
   UninvitedGuests,
   WarmWelcome,
-  LamangConnection
+  LamangConnection,
+  TheMostDangerousGame,
+  OnTheRange,
+  GunsAndAmmo,
+  ShootingGallery,
+  TrueGrit,
+  OneShotOneKill,
+  TheBrave,
+  Carnivore,
+  UpToSnuff
 ]
