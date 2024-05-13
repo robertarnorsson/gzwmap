@@ -25,7 +25,7 @@ const LittleBirdDown_Objective2_LRI: objective = {
 
 const LittleBirdDown_Objective1_MMS: objective = {
   name: "Crashed Helicopter",
-  description: "Find the Crashed Helicopter south of the gas station",
+  description: "Find the Crashed Helicopter north of the gas station",
   position: [0.577160050808248, -0.7074991377609388],
   type: ObjectiveType.DISCOVER,
   faction: MithrasSecuritySystems
@@ -41,7 +41,7 @@ const LittleBirdDown_Objective2_MMS: objective = {
 
 const LittleBirdDown_Objective1_CSI: objective = {
   name: "Crashed Helicopter",
-  description: "Find the Crashed Helicopter south of the gas station",
+  description: "Find the Crashed Helicopter south-east of the gas station",
   position: [0.8809060508184482, -0.9125518798828126],
   type: ObjectiveType.DISCOVER,
   faction: CrimsonShieldInternational
