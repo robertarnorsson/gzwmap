@@ -47,6 +47,7 @@ import { TheBrave }                       from "@/lib/data/tasks/the-brave";
 import { Carnivore }                      from "@/lib/data/tasks/carnivore";
 import { UpToSnuff }                      from "@/lib/data/tasks/up-to-snuff";
 import { IWentISawIConqueredPartOne }     from "@/lib/data/tasks/i-went-i-saw-i-conquered-part-1";
+import { IWentISawIConqueredPartTwo }     from "@/lib/data/tasks/i-went-i-saw-i-conquered-part-2";
 
 export const Tasks: task[] = [
   FirstRecon,
@@ -95,5 +96,6 @@ export const Tasks: task[] = [
   TheBrave,
   Carnivore,
   UpToSnuff,
-  IWentISawIConqueredPartOne
+  IWentISawIConqueredPartOne,
+  IWentISawIConqueredPartTwo,
 ]
