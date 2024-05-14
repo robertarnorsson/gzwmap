@@ -51,6 +51,8 @@ import { IWentISawIConqueredPartTwo }     from "@/lib/data/tasks/i-went-i-saw-i-
 import { IWentISawIConqueredPartThree }   from "@/lib/data/tasks/i-went-i-saw-i-conquered-part-3";
 import { InvadersFromAfar }               from "@/lib/data/tasks/invaders-from-afar";
 import { Timber }                         from "@/lib/data/tasks/timber";
+import { FuelShortage }                   from "@/lib/data/tasks/fuel-shortage";
+import { EOD }                            from "@/lib/data/tasks/eod";
 
 export const Tasks: task[] = [
   FirstRecon,
@@ -103,5 +105,7 @@ export const Tasks: task[] = [
   IWentISawIConqueredPartTwo,
   IWentISawIConqueredPartThree,
   InvadersFromAfar,
-  Timber
+  Timber,
+  FuelShortage,
+  EOD
 ]
