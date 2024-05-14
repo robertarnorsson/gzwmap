@@ -53,6 +53,7 @@ import { InvadersFromAfar }               from "@/lib/data/tasks/invaders-from-a
 import { Timber }                         from "@/lib/data/tasks/timber";
 import { FuelShortage }                   from "@/lib/data/tasks/fuel-shortage";
 import { EOD }                            from "@/lib/data/tasks/eod";
+import { HazardousTreasures }             from "@/lib/data/tasks/hazardous-treasures";
 
 export const Tasks: task[] = [
   FirstRecon,
@@ -107,5 +108,6 @@ export const Tasks: task[] = [
   InvadersFromAfar,
   Timber,
   FuelShortage,
-  EOD
+  EOD,
+  HazardousTreasures,
 ]
