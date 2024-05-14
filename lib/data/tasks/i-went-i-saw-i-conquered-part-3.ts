@@ -2,7 +2,7 @@ import {ObjectiveType, objective, task} from "@/lib/types";
 import {Handshake} from "@/lib/data/vendors";
 
 const IWentISawIConqueredPartThree_Objective1: objective = {
-    name: "Hostiles",
+    name: "Neutralize Hostiles",
     description: "Neutralize 20 hostiles at sawmill",
     position: [0.752774871297847, -0.9632348755448474],
     type: ObjectiveType.ELIMINATION,
