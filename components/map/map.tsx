@@ -1,13 +1,13 @@
 import { MapContainer, TileLayer, useMapEvents } from "react-leaflet"
-import L, { CRS, LatLngBoundsExpression, LatLngExpression, LatLngTuple } from "leaflet"
+import L, { CRS, LatLngBoundsExpression, LatLngExpression, Map } from "leaflet"
 import MapMarkers from "./markers";
 import "leaflet/dist/leaflet.css"
 import { useSearchParams } from "next/navigation";
 import { Tasks } from "@/lib/data/tasks";
 
-export default function Map() {
+export default function MapComponent({ setMapRef }: { setMapRef: (value: L.Map | null) => void }) {
   const MapEvents = () => {
-    useMapEvents({
+    const map = useMapEvents({
       click(e) {
         console.log(`${e.latlng.lat}, ${e.latlng.lng}`);
       }
@@ -44,6 +44,7 @@ export default function Map() {
   return (
     <MapContainer
       className="map"
+      ref={(ref) => setMapRef(ref)}
       attributionControl={false}
       preferCanvas={true}
       zoomControl={false}

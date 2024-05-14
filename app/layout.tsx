@@ -4,7 +4,6 @@ import { Rubik } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 
-
 const rubik = Rubik({ subsets: ["latin"] });
 
 export const metadata: Metadata = {

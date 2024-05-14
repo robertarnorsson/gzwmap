@@ -1,5 +1,4 @@
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { useMap } from 'react-leaflet'; // Import the useMap hook
+import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import {
   Command,
   CommandEmpty,
@@ -8,16 +7,20 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command"
+import {
+  ToggleGroup,
+  ToggleGroupItem,
+} from "@/components/ui/toggle-group"
 import { useState } from 'react';
 import Image from 'next/image';
-import { lz, task, faction, objective } from '@/lib/types';
+import { task, faction, objective } from '@/lib/types';
 import { Tasks } from '@/lib/data/tasks';
-import { LZs } from '@/lib/data/lzs';
 import { Factions } from '@/lib/data/factions';
 
-export default function SideMenu() {
+export default function SideMenu({ mapRef }: { mapRef: L.Map | null }) {
   const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedFaction, setSelectedFaction] = useState<faction | null>(null);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -27,45 +30,94 @@ export default function SideMenu() {
     setSearchQuery(e.currentTarget.value);
   }
 
+  function onFactionChange(value: string) {
+    const faction = Factions.find(faction => faction.shorthand.toLowerCase() === value.toLowerCase());
+    setSelectedFaction(faction || null);
+  }
+
+  function formatQuery(query: string) {
+    return query
+      .replaceAll("'", "")
+      .replaceAll("&", "")
+      .toLowerCase()
+      .trim()
+  }
+
   function searchTasks(query: string): task[] {
     return Tasks.filter(task =>
-      task.name.toLowerCase().includes(query.toLowerCase())
+      formatQuery(task.name).includes(formatQuery(query))
     );
   }
-  
-  const TaskGroup = ({ task }: { task: task }) => (
-    <CommandGroup heading={task.name}>
-      {task.objectives.map((objective, index) => (
-        <ObjectiveItem key={`${task.name}${index}`} objective={objective} />
-      ))}
-    </CommandGroup>
-  );
 
-  const ObjectiveItem = ({ objective }: { objective: objective }) => (
-    <CommandItem>
-      {objective.faction
-        ? `${objective.faction?.shorthand} - ${objective.name}`
-        : `${objective.name}`
-      }
-    </CommandItem>
-  );
+  const TaskGroup = ({ task }: { task: task }) => {
+    const filteredObjectives = task.objectives.filter(objective => {
+      return !selectedFaction || (objective.faction?.shorthand === selectedFaction.shorthand) || !objective.faction;
+    });
+
+    return (
+      <CommandGroup heading={task.name}>
+        {filteredObjectives.map((objective, index) => (
+          <ObjectiveItem key={`${task.name}${index}`} task={task} objective={objective} />
+        ))}
+      </CommandGroup>
+    );
+  };
+
+  const ObjectiveItem = ({ task, objective }: { task: task, objective: objective }) => {
+    const handleClick = () => {
+      if (mapRef) {mapRef.flyTo(objective.position, 15)}
+    };
+  
+    return (
+      <CommandItem onSelect={handleClick} className="cursor-pointer">
+        {selectedFaction
+          ? `${objective.name}`
+          : objective.faction
+          ? `${objective.faction?.shorthand} - ${objective.name}`
+          : `${objective.name}`
+        }
+      </CommandItem>
+    );
+  };
+  
+
+  const FactionButton = ({ faction }: { faction: faction }) => (
+    <ToggleGroupItem
+      value={faction.shorthand}
+      aria-label={`Select ${faction.name}`}
+      className='px-0 w-[100px] h-[100px] cursor-pointer'
+    >
+      <Image src={`/${faction.image}`} className="p-2 cursor-pointer" alt={faction.name} width={100} height={100} />
+    </ToggleGroupItem>
+  )
 
   return (
-    <div className={`fixed inset-y-0 w-[400px] z-[9998] bg-background shadow-lg transition-all duration-300 ${isOpen ? 'left-0' : '-left-[400px]'}`}>
-      <button className='absolute top-0 -right-10 flex items-center justify-center z-[9999] w-10 h-12 bg-background md:w-6 md:-right-6' onClick={toggleMenu}>
+    <div className={`fixed inset-y-0 md:w-[400px] w-full z-[9998] bg-background shadow-lg transition-all duration-300 ${isOpen ? 'left-0' : '-left-full md:-left-[400px]'}`}>
+      <div className={`absolute top-0 ${isOpen ? 'right-0' : '-right-12'} cursor-pointer flex items-center justify-center z-[9999] w-12 h-12 bg-background md:w-8 md:-right-8`} onClick={toggleMenu}>
         {isOpen
-          ? <ChevronLeft />
+          ? <>
+              <ChevronLeft className='hidden md:block' />
+              <X className='block md:hidden' />
+            </>
           : <ChevronRight />
         }
-      </button>
+      </div>
       <div className={`h-full w-full overflow-y-auto overflow-x-hidden p-4 py-8 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}>
-        <div className="flex gap-2 mb-5 place-content-center">
-          <Image src='/lamang_logo.webp' className="p-2 cursor-pointer" alt='logo' width={100} height={100} />
-          <Image src='/crimson_logo.webp' className="p-2 cursor-pointer" alt='logo' width={100} height={100} />
-          <Image src='/mithras_logo.webp' className="p-2 cursor-pointer bg-green-500 bg-opacity-20 border-2" alt='logo' width={100} height={100} />
-        </div>
+        <p className='font-bold text-4xl text-center pb-4'>Search</p>
+        <ToggleGroup
+          type="single"
+          className='py-4 gap-5'
+          onValueChange={(value) => onFactionChange(value)}
+        >
+          {Factions.map((faction, index) => (
+            <FactionButton key={index} faction={faction} />
+          ))}
+        </ToggleGroup>
         <Command shouldFilter={false} className='h-fit rounded-lg border shadow-md'>
-        <CommandInput onInput={onQueryChange} placeholder="Search..." />
+          <div className='relative'>
+            <CommandInput onInput={onQueryChange} placeholder="Search tasks..." />
+            <span className='absolute top-1/2 right-2 -translate-y-1/2 pb-[3px] text-muted-foreground text-center'>{selectedFaction?.shorthand || "All"}</span>
+          </div>
           <CommandList>
             <CommandEmpty>No results found.</CommandEmpty>
             {searchQuery && (

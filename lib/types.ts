@@ -9,6 +9,7 @@ export type faction = {
   shorthand: string
   description: string
   position: LatLngTuple
+  image: string
 };
 
 export type lz = {
