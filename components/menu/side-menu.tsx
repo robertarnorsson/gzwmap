@@ -73,13 +73,7 @@ export default function SideMenu({ mapRef }: { mapRef: L.Map | null }) {
       if (!acc[faction]) {
         acc[faction] = [];
       }
-      if (
-        selectedFactions.size === 0 ||
-        selectedFactions.has(faction) ||
-        faction === "no-faction"
-      ) {
-        acc[faction].push(objective);
-      }
+      acc[faction].push(objective);
       return acc;
     }, {} as Record<string, objective[]>);
   
@@ -87,11 +81,14 @@ export default function SideMenu({ mapRef }: { mapRef: L.Map | null }) {
   
     return (
       <CommandGroup className="mt-1">
-        <div className="p-3 bg-accent/20 rounded-xl mb-4 last:mb-1">
-          <p className="text-lg font-bold">{task.name}</p>
+        <div className="p-3 bg-accent/20 rounded-[var(--radius)] mb-4 last:mb-1">
+          <div className="flex flex-col mb-2">
+            <p className="text-lg font-bold">{task.name}</p>
+            <p className="text-xs font-light text-muted-foreground">{task.vendor.name}</p>
+          </div>
           {factions.map((faction, index) => {
             const isSelected = selectedFactions.has(faction);
-            if (isSelected || selectedFactions.size === 0) {
+            if (isSelected || selectedFactions.size === 0 || faction === "no-faction") {
               return (
                 <div key={index}>
                   {factions.length > 0 && (
@@ -138,21 +135,25 @@ export default function SideMenu({ mapRef }: { mapRef: L.Map | null }) {
       <Image
         src={`/${objective.faction.image}`}
         alt={objective.faction.name}
-        width={20}
-        height={20}
-        className="inline-block mr-2"
+        width={30}
+        height={30}
+        quality={5}
+        className="inline-block mr-4"
       />
     );
 
     return (
       <CommandItem onSelect={handleClick} className="cursor-pointer rounded-md flex items-center">
         {factionImage}
-        <span>
-          {objective.name}
+        <div>
+          <div className="flex flex-col">
+            <span>{objective.name}</span>
+            <span className="text-xs text-muted-foreground">{`${task.name} ▪ ${objective.type}`}</span>
+          </div>
           <span className='sr-only'>
-            {`${objective.faction?.shorthand} - ${objective.name}`}
+            {`${objective.faction?.name} - ${objective.name}`}
           </span>
-        </span>
+        </div>
       </CommandItem>
     );
   };
@@ -193,7 +194,7 @@ export default function SideMenu({ mapRef }: { mapRef: L.Map | null }) {
         }
       </div>
       {isMobile && <div className='h-10'></div>}
-      <div className={`h-full w-full overflow-y-auto overflow-x-hidden p-4 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}>
+      <div className={`h-fit w-full overflow-y-auto overflow-x-hidden p-4 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}>
         <Command className='border' shouldFilter={false}>
           <div className="rounded-[var(--radius)] w-full">
             <div className="flex justify-around py-2 bg-transparent">
@@ -213,7 +214,7 @@ export default function SideMenu({ mapRef }: { mapRef: L.Map | null }) {
               )}
             </span>
           </div>
-          <CommandList className="h-[500px]">
+          <CommandList className="px-1">
           <CommandEmpty>No results found.</CommandEmpty>
             {searchQuery && (
               <>
