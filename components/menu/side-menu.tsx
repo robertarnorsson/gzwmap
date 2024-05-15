@@ -65,11 +65,14 @@ export default function SideMenu({ mapRef }: { mapRef: L.Map | null }) {
 
   const ObjectiveItem = ({ task, objective }: { task: task, objective: objective }) => {
     const handleClick = () => {
-      if (mapRef) {mapRef.flyTo(objective.position, 15)}
+      if (mapRef) {
+        mapRef.closePopup()
+        mapRef.flyTo(objective.position, 15)
+      }
     };
   
     return (
-      <CommandItem onSelect={handleClick} className="cursor-pointer">
+      <CommandItem onSelect={handleClick} className="cursor-pointer rounded-md">
         {selectedFaction
           ? `${objective.name}`
           : objective.faction

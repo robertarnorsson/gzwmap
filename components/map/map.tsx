@@ -68,7 +68,6 @@ export default function MapComponent({ setMapRef }: { setMapRef: (value: L.Map |
       <TileLayer
         className="tile-map"
         bounds={maxBounds}
-        noWrap
         tileSize={256}
         keepBuffer={32}
         updateWhenZooming
