@@ -17,6 +17,7 @@ import Image from 'next/image';
 import { task, faction, objective } from '@/lib/types';
 import { Tasks } from '@/lib/data/tasks';
 import { Factions } from '@/lib/data/factions';
+import { cn } from "@/lib/utils";
 
 export function SearchMenu({ mapRef }: { mapRef: L.Map | null }) {
   const [open, setOpen] = useState(false)
@@ -25,7 +26,7 @@ export function SearchMenu({ mapRef }: { mapRef: L.Map | null }) {
  
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
-      if (e.key === "a" && (e.metaKey || e.ctrlKey)) {
+      if (e.key === "q" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault()
         setOpen((open) => !open)
       }
@@ -45,9 +46,6 @@ export function SearchMenu({ mapRef }: { mapRef: L.Map | null }) {
 
   function onSearchOpenChange(open: boolean) {
     setOpen(open);
-    if (open) {
-
-    }
   }
 
   function formatQuery(query: string) {
@@ -106,7 +104,13 @@ export function SearchMenu({ mapRef }: { mapRef: L.Map | null }) {
     <ToggleGroupItem
       value={faction.shorthand}
       aria-label={`Select ${faction.name}`}
-      className='px-0 w-[100px] h-[100px] cursor-pointer'
+      variant='default'
+      className={cn(
+        'outline outline-2 -outline-offset-2 px-0 w-[100px] h-[100px] cursor-pointer bg-transparent hover:bg-muted-foreground/10',
+        faction === selectedFaction
+          ? 'outline-muted-foreground bg-muted-foreground/10'
+          : 'outline-transparent',
+      )}
     >
       <Image src={`/${faction.image}`} className="p-2 cursor-pointer" alt={faction.name} width={100} height={100} />
     </ToggleGroupItem>
@@ -118,7 +122,8 @@ export function SearchMenu({ mapRef }: { mapRef: L.Map | null }) {
           <div className="rounded-[var(--radius)] w-full">
             <ToggleGroup
               type="single"
-              className='flex justify-around px-16 py-4'
+              value={selectedFaction?.shorthand}
+              className='flex justify-around px-12 py-4 bg-transparent'
               onValueChange={(value) => onFactionChange(value)}
             >
               {Factions.map((faction, index) => (
@@ -128,7 +133,7 @@ export function SearchMenu({ mapRef }: { mapRef: L.Map | null }) {
             <div className="-mx-1 h-px bg-border" role="separator"></div>
           </div>
           <div className='relative'>
-            <CommandInput value={searchQuery} onInput={onQueryChange} placeholder="Search tasks..." />
+            <CommandInput autoFocus value={searchQuery} onInput={onQueryChange} placeholder="Search tasks..." />
             <span className='absolute top-1/2 right-2 -translate-y-1/2 pb-[3px] text-muted-foreground text-center'>{selectedFaction?.shorthand || "All"}</span>
           </div>
           <CommandList className="max-h-[300px]">

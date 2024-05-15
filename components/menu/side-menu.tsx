@@ -16,6 +16,7 @@ import Image from 'next/image';
 import { task, faction, objective } from '@/lib/types';
 import { Tasks } from '@/lib/data/tasks';
 import { Factions } from '@/lib/data/factions';
+import { cn } from '@/lib/utils';
 
 export default function SideMenu({ mapRef }: { mapRef: L.Map | null }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -88,7 +89,13 @@ export default function SideMenu({ mapRef }: { mapRef: L.Map | null }) {
     <ToggleGroupItem
       value={faction.shorthand}
       aria-label={`Select ${faction.name}`}
-      className='px-0 w-[100px] h-[100px] cursor-pointer'
+      variant='default'
+      className={cn(
+        'outline outline-2 -outline-offset-2 px-0 w-[100px] h-[100px] cursor-pointer bg-transparent hover:bg-muted-foreground/10',
+        faction === selectedFaction
+          ? 'outline-muted-foreground bg-muted-foreground/10'
+          : 'outline-transparent',
+      )}
     >
       <Image src={`/${faction.image}`} className="p-2 cursor-pointer" alt={faction.name} width={100} height={100} />
     </ToggleGroupItem>
