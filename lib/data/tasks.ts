@@ -54,6 +54,13 @@ import { Timber }                         from "@/lib/data/tasks/timber";
 import { FuelShortage }                   from "@/lib/data/tasks/fuel-shortage";
 import { EOD }                            from "@/lib/data/tasks/eod";
 import { HazardousTreasures }             from "@/lib/data/tasks/hazardous-treasures";
+import { NightOcean }                     from "@/lib/data/tasks/night-ocean";
+import { DeepWaters }                     from "@/lib/data/tasks/deep-waters";
+import { FreshMeatPartOne }               from "@/lib/data/tasks/fresh-meat-part-1";
+import { FreshMeatPartTwo }               from "@/lib/data/tasks/fresh-meat-part-2";
+import { FreshMeatPartThree }             from "@/lib/data/tasks/fresh-meat-part-3";
+import { WhatWasLeft }                    from "@/lib/data/tasks/what-was-left";
+import { OutOfTheBlue }                   from "@/lib/data/tasks/out-of-the-blue";
 
 export const Tasks: task[] = [
   FirstRecon,
@@ -110,4 +117,11 @@ export const Tasks: task[] = [
   FuelShortage,
   EOD,
   HazardousTreasures,
+  NightOcean,
+  DeepWaters,
+  FreshMeatPartOne,
+  FreshMeatPartTwo,
+  FreshMeatPartThree,
+  WhatWasLeft,
+  OutOfTheBlue,
 ]
