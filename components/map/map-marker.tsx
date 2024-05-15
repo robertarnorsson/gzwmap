@@ -6,11 +6,12 @@ import React, { useState } from "react";
 interface MapMarkerProps {
   map: Map;
   position: LatLngTuple;
-  iconSize?: [number, number]
+  iconSize?: [number, number];
   showZoom?: number;
   riseOnHover?: boolean;
   children: React.ReactNode;
   popup?: React.ReactNode;
+  positionOffset?: LatLngTuple;
 }
 
 export default function MapMarker({
@@ -20,7 +21,8 @@ export default function MapMarker({
   showZoom,
   riseOnHover = true,
   children,
-  popup
+  popup,
+  positionOffset = [0, 0],
 }: MapMarkerProps) {
   const [shouldRender, setShouldRender] = useState(
     map.getZoom() > (showZoom || map.getMinZoom())
@@ -34,17 +36,20 @@ export default function MapMarker({
     },
   });
 
-  
+  const adjustedPosition: LatLngTuple = [
+    position[0] - positionOffset[0],
+    position[1] - positionOffset[1],
+  ];
 
   return shouldRender || !showZoom ? (
     <Marker
       riseOnHover={riseOnHover}
-      position={position}
+      position={adjustedPosition}
       icon={L.divIcon({
         className: "marker",
         html: ReactDOMServer.renderToString(children),
         iconSize: iconSize,
-        iconAnchor: [iconSize[0]/2, iconSize[1]/2],
+        iconAnchor: [iconSize[0] / 2, iconSize[1] / 2],
       })}
     >
       {popup && popup !== "" && <Popup className="map-popup">{popup}</Popup>}
