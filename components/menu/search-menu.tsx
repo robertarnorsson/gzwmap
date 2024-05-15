@@ -48,18 +48,22 @@ export function SearchMenu({ mapRef }: { mapRef: L.Map | null }) {
     });
   }
 
-  function onSearchOpenChange(open: boolean) {
-    setOpen(open);
-  }
-
   function formatQuery(query: string) {
-    return query.replaceAll("'", "").replaceAll("&", "").toLowerCase().trim();
+    return query
+      .replaceAll("'", "")
+      .replaceAll("&", "")
+      .toLowerCase()
+      .trim()
   }
 
   function searchTasks(query: string): task[] {
-    return Tasks.filter((task) =>
+    return Tasks.filter(task =>
       formatQuery(task.name).includes(formatQuery(query))
     );
+  }
+
+  function onSearchOpenChange(open: boolean) {
+    setOpen(open);
   }
 
   const TaskGroup = ({ task }: { task: task }) => {
@@ -68,13 +72,7 @@ export function SearchMenu({ mapRef }: { mapRef: L.Map | null }) {
       if (!acc[faction]) {
         acc[faction] = [];
       }
-      if (
-        selectedFactions.size === 0 ||
-        selectedFactions.has(faction) ||
-        faction === "no-faction"
-      ) {
-        acc[faction].push(objective);
-      }
+      acc[faction].push(objective);
       return acc;
     }, {} as Record<string, objective[]>);
   
@@ -82,11 +80,14 @@ export function SearchMenu({ mapRef }: { mapRef: L.Map | null }) {
   
     return (
       <CommandGroup className="mt-1">
-        <div className="p-3 bg-accent/20 rounded-xl mb-4 last:mb-1">
-          <p className="text-lg font-bold">{task.name}</p>
+        <div className="p-3 bg-accent/20 rounded-[var(--radius)] mb-4 last:mb-1">
+          <div className="flex flex-col mb-2">
+            <p className="text-lg font-bold">{task.name}</p>
+            <p className="text-xs font-light text-muted-foreground">{task.vendor.name}</p>
+          </div>
           {factions.map((faction, index) => {
             const isSelected = selectedFactions.has(faction);
-            if (isSelected || selectedFactions.size === 0) {
+            if (isSelected || selectedFactions.size === 0 || faction === "no-faction") {
               return (
                 <div key={index}>
                   {factions.length > 0 && (
@@ -131,8 +132,8 @@ export function SearchMenu({ mapRef }: { mapRef: L.Map | null }) {
       <Image
         src={`/${objective.faction.image}`}
         alt={objective.faction.name}
-        width={40}
-        height={40}
+        width={30}
+        height={30}
         quality={5}
         className="inline-block mr-4"
       />
@@ -144,7 +145,7 @@ export function SearchMenu({ mapRef }: { mapRef: L.Map | null }) {
         <div>
           <div className="flex flex-col">
             <span>{objective.name}</span>
-            <span className="text-xs text-muted-foreground">{task.name}</span>
+            <span className="text-xs text-muted-foreground">{`${task.name} ▪ ${objective.type}`}</span>
           </div>
           <span className='sr-only'>
             {`${objective.faction?.name} - ${objective.name}`}
@@ -192,7 +193,7 @@ export function SearchMenu({ mapRef }: { mapRef: L.Map | null }) {
         <div className="relative">
           <CommandInput autoFocus value={searchQuery} onInput={onQueryChange} placeholder="Search tasks..." />
         </div>
-        <CommandList className="h-[500px]">
+        <CommandList>
         <CommandEmpty>No results found.</CommandEmpty>
           {searchQuery && (
             <>
