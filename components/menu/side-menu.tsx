@@ -182,8 +182,8 @@ export default function SideMenu({ mapRef }: { mapRef: L.Map | null }) {
   };
 
   return (
-    <div className={`fixed inset-y-0 md:w-[400px] w-full z-[9998] bg-background shadow-lg transition-all duration-300 ${isOpen ? 'left-0' : '-left-full md:-left-[400px]'}`}>
-      <div className={`absolute top-0 ${isOpen ? 'right-0' : '-right-12'} cursor-pointer flex items-center justify-center z-[9999] w-12 h-12 bg-background md:w-8 md:-right-8`} onClick={toggleMenu}>
+    <div className={`fixed inset-y-0 md:w-[400px] w-full z-[9998] ${!isMobile && "border-r"} bg-background shadow-lg transition-all duration-300 ${isOpen ? 'left-0' : '-left-full md:-left-[400px]'}`}>
+      <div className={`absolute ${isMobile ? "top-0" : "top-4"} ${isOpen ? 'right-0' : '-right-12'} ${!isMobile ? "border" : !isOpen && "border-b border-r"} cursor-pointer flex items-center justify-center z-[9999] w-12 h-12 bg-background hover:bg-accent md:w-8 md:-right-8`} onClick={toggleMenu}>
         {isOpen
           ? <>
               <ChevronLeft className='hidden md:block' />
@@ -192,7 +192,8 @@ export default function SideMenu({ mapRef }: { mapRef: L.Map | null }) {
           : <ChevronRight />
         }
       </div>
-      <div className={`h-full w-full overflow-y-auto overflow-x-hidden border-r p-4 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}>
+      {isMobile && <div className='h-10'></div>}
+      <div className={`h-full w-full overflow-y-auto overflow-x-hidden p-4 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}>
         <Command className='border' shouldFilter={false}>
           <div className="rounded-[var(--radius)] w-full">
             <div className="flex justify-around py-2 bg-transparent">
