@@ -1,11 +1,21 @@
+"use client";
+
 import { MapContainer, TileLayer, useMapEvents } from "react-leaflet"
 import L, { CRS, LatLngBoundsExpression, LatLngExpression, Map } from "leaflet"
 import MapMarkers from "./markers";
 import "leaflet/dist/leaflet.css"
 import { useSearchParams } from "next/navigation";
 import { Tasks } from "@/lib/data/tasks";
+import { useEffect, useState } from "react";
 
 export default function MapComponent({ setMapRef }: { setMapRef: (value: L.Map | null) => void }) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const userAgent = navigator.userAgent.toLowerCase();
+    setIsMobile(/mobile|android|iphone|ipad/.test(userAgent));
+  }, []);
+  
   const MapEvents = () => {
     const map = useMapEvents({
       click(e) {
@@ -46,7 +56,7 @@ export default function MapComponent({ setMapRef }: { setMapRef: (value: L.Map |
       className="map"
       ref={(ref) => setMapRef(ref)}
       attributionControl={false}
-      preferCanvas={true}
+      renderer={L.canvas()}
       zoomControl={false}
       crs={L.CRS.EPSG3395 as CRS}
       center={paramPosition || centerPosition}
@@ -69,11 +79,11 @@ export default function MapComponent({ setMapRef }: { setMapRef: (value: L.Map |
         className="tile-map"
         bounds={maxBounds}
         tileSize={256}
-        keepBuffer={32}
-        updateWhenZooming
-        updateInterval={0.1}
+        keepBuffer={isMobile ? 0 : 24}
+        updateWhenZooming={!isMobile}
+        updateInterval={isMobile ? 400 : 10}
         url="https://tiles.gzwmap.com/v1/{z}/{y}/{x}"
-        updateWhenIdle={false}
+        updateWhenIdle={isMobile}
       />
       <MapEvents />
       <MapMarkers />
