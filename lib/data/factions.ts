@@ -13,7 +13,7 @@ export const MithrasSecuritySystems: faction = {
   shorthand: "MSS",
   description: "Mithras bills itself as a PMC run by soldiers for soldiers, and it doesn't ask too many questions about an operator's motivations or past history. The only real bar to Mithras membership is a lack of field experience or military competence. It prides itself on only accepting the best and pays accordingly. The organization itself is inspired by the Roman Legion system, where the spoils of war were shared among the troops.",
   position: [0.45446406328786265, -0.6891775131225587],
-  image: "crimson_logo.webp"
+  image: "mithras_logo.webp"
 }
 
 export const CrimsonShieldInternational: faction = {
@@ -21,7 +21,7 @@ export const CrimsonShieldInternational: faction = {
   shorthand: "CSI",
   description: "This Private Military Company rose to infamy during the early stages of the Syrian civil war. While they boast an impressive 95% success rate, some of their methods can be seen as somewhat questionable, often resulting in collateral damage. That said, no one can deny their effectiveness and cold-blooded approach to any job that needs to be done. This gung-ho nature attracts not just ex-military personnel but basically anyone with a lust for adventure and action.",
   position: [0.9759434526158224, -1.00825309753418],
-  image: "mithras_logo.webp"
+  image: "crimson_logo.webp"
 }
 
 export const Factions: faction[] = [
