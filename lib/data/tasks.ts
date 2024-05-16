@@ -61,6 +61,7 @@ import { FreshMeatPartTwo }               from "@/lib/data/tasks/fresh-meat-part
 import { FreshMeatPartThree }             from "@/lib/data/tasks/fresh-meat-part-3";
 import { WhatWasLeft }                    from "@/lib/data/tasks/what-was-left";
 import { OutOfTheBlue }                   from "@/lib/data/tasks/out-of-the-blue";
+import { JetNMark }                       from "@/lib/data/tasks/jets-n-marks";
 
 export const Tasks: task[] = [
   FirstRecon,
@@ -124,4 +125,5 @@ export const Tasks: task[] = [
   FreshMeatPartThree,
   WhatWasLeft,
   OutOfTheBlue,
+  JetNMark
 ]
