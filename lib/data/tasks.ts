@@ -69,6 +69,7 @@ import { NeighbourlyHelp }                from "@/lib/data/tasks/neighbourly-hel
 import { FamilyHeirloom }                 from "@/lib/data/tasks/family-heirloom";
 import { MissingColleaguePartOne }        from "@/lib/data/tasks/missing-colleague-part-1";
 import { MissingColleaguePartTwo }        from "@/lib/data/tasks/missing-colleague-part-2";
+import { LostLover }        from "@/lib/data/tasks/lost-lover";
 
 export const Tasks: task[] = [
   FirstRecon,
@@ -139,5 +140,6 @@ export const Tasks: task[] = [
   NeighbourlyHelp,
   FamilyHeirloom,
   MissingColleaguePartOne,
-  MissingColleaguePartTwo
+  MissingColleaguePartTwo,
+  LostLover,
 ]
