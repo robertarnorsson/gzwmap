@@ -66,6 +66,7 @@ import { HackerPartOne }                  from "@/lib/data/tasks/hacker-part-1";
 import { HackerPartTwo }                  from "@/lib/data/tasks/hacker-part-2";
 import { ForthNarithStroll }              from "@/lib/data/tasks/forth-narith-stroll";
 import { NeighbourlyHelp }                from "@/lib/data/tasks/neighbourly-help";
+import { FamilyHeirloom }                from "@/lib/data/tasks/family-heirloom";
 
 export const Tasks: task[] = [
   FirstRecon,
@@ -134,4 +135,5 @@ export const Tasks: task[] = [
   HackerPartTwo,
   ForthNarithStroll,
   NeighbourlyHelp,
+  FamilyHeirloom,
 ]
