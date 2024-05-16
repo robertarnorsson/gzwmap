@@ -64,6 +64,7 @@ import { OutOfTheBlue }                   from "@/lib/data/tasks/out-of-the-blue
 import { JetNMark }                       from "@/lib/data/tasks/jets-n-marks";
 import { HackerPartOne }                  from "@/lib/data/tasks/hacker-part-1";
 import { HackerPartTwo }                  from "@/lib/data/tasks/hacker-part-2";
+import { ForthNarithStroll }              from "@/lib/data/tasks/forth-narith-stroll";
 
 export const Tasks: task[] = [
   FirstRecon,
@@ -129,5 +130,6 @@ export const Tasks: task[] = [
   OutOfTheBlue,
   JetNMark,
   HackerPartOne,
-  HackerPartTwo
+  HackerPartTwo,
+  ForthNarithStroll
 ]
