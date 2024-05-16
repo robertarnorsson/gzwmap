@@ -39,7 +39,7 @@ export enum ObjectiveType {
   DELIVER = "Deliver",
   ELIMINATION = "Elimination",
   LOCATE = "Locate",
-  HACK = "hack",
+  HACK = "Hack",
 }
 
 export type task = {

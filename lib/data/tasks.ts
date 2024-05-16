@@ -62,6 +62,7 @@ import { FreshMeatPartThree }             from "@/lib/data/tasks/fresh-meat-part
 import { WhatWasLeft }                    from "@/lib/data/tasks/what-was-left";
 import { OutOfTheBlue }                   from "@/lib/data/tasks/out-of-the-blue";
 import { JetNMark }                       from "@/lib/data/tasks/jets-n-marks";
+import { HackerPartOne }                  from "@/lib/data/tasks/hacker-part-1";
 import { HackerPartTwo }                  from "@/lib/data/tasks/hacker-part-2";
 
 export const Tasks: task[] = [
@@ -127,5 +128,6 @@ export const Tasks: task[] = [
   WhatWasLeft,
   OutOfTheBlue,
   JetNMark,
+  HackerPartOne,
   HackerPartTwo
 ]

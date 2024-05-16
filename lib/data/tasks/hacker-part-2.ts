@@ -36,6 +36,7 @@ export const HackerPartTwo: task = {
     name: "Hacker - Part 2",
     briefing: "Guess what I have for you, champ. That's right, another clandestine hacking mission. Go to Fort Narith and seize the means of communication. It's not that I dislike utter gibberish, but if that's the only thing we manage to get out of their transmissions, that's just blatantly miserable. Take these apparatuses and hack their transmitters. There should not be the slightest interchange that we do not know about. Also, we need to know what they are saying, so bring back some document that can help us translate the fucking balderdash we are receiving.",
     debriefing: "Sensational! Thanks to your hard work, we now know more about the plans of the Lamang army. Not a single word goes undetected.",
+    note: "Make sure you have the 3 listening devices with you.",
     objectives: [
         HackerPartTwo_Objective1,
         HackerPartTwo_Objective2,
