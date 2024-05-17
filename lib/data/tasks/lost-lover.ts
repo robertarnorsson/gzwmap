@@ -5,7 +5,8 @@ const LostLover_Objective1: objective = {
     name: "Document",
     description: "Search in and around Fort Narith and uncover what happened to Atsawin Xiong",
     position: [0.6367718112100171, -0.908416781880861],
-    type: ObjectiveType.LOCATE
+    type: ObjectiveType.LOCATE,
+    image: "/objectives/lost-lover-diary.webp"
 }
 
 export const LostLover: task = {

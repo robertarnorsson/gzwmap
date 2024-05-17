@@ -29,7 +29,8 @@ const HackerPartTwo_Objective4: objective = {
     description: "Hack the satellite at Fort Narith HQ",
     position: [0.6255885427037918, -0.9299325933068704],
     type: ObjectiveType.HACK,
-    note: "On the roof of the HQ."
+    note: "On the roof of the HQ.",
+    image: "/objectives/hacker-2-satellite.webp"
 }
 
 export const HackerPartTwo: task = {
