@@ -6,6 +6,7 @@ const OutOfTheBlue_Objective1_LRI: objective = {
   description: "Retrieve intel about hostile group in the Blue Lagoon and hand it over to Gunny",
   position: [0.5236320253434265, -0.4378223419189453],
   type: ObjectiveType.COLLECT,
+  image: "/objectives/out-of-the-blue-intel.webp"
 }
 
 
