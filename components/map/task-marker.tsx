@@ -29,12 +29,20 @@ export default function TaskMarker({ map, task, objective }: { map: Map, task: t
           </a>
       )}
       {task.note && (
-          <div className="flex flex-row gap-2 pt-2">
-            <p className="text-xs text-gray-500">Notes</p>
+          <div className="flex flex-row gap-2 pt-3">
+            <p className="text-xs text-gray-500">Task Note</p>
           </div>
       )}
       {task.note && (
-          <p className="pt-2 text-blue-500/85">{task.note}</p>
+          <p className="pt-2 text-yellow-500/85">{task.note}</p>
+      )}
+      {objective.note && (
+          <div className="flex flex-row gap-2 pt-3">
+            <p className="text-xs text-gray-500">Objective Note</p>
+          </div>
+      )}
+      {objective.note && (
+          <p className="pt-2 text-orange-500/85">{objective.note}</p>
       )}
     </div>
   );

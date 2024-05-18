@@ -61,6 +61,15 @@ import { FreshMeatPartTwo }               from "@/lib/data/tasks/fresh-meat-part
 import { FreshMeatPartThree }             from "@/lib/data/tasks/fresh-meat-part-3";
 import { WhatWasLeft }                    from "@/lib/data/tasks/what-was-left";
 import { OutOfTheBlue }                   from "@/lib/data/tasks/out-of-the-blue";
+import { JetNMark }                       from "@/lib/data/tasks/jets-n-marks";
+import { HackerPartOne }                  from "@/lib/data/tasks/hacker-part-1";
+import { HackerPartTwo }                  from "@/lib/data/tasks/hacker-part-2";
+import { ForthNarithStroll }              from "@/lib/data/tasks/forth-narith-stroll";
+import { NeighbourlyHelp }                from "@/lib/data/tasks/neighbourly-help";
+import { FamilyHeirloom }                 from "@/lib/data/tasks/family-heirloom";
+import { MissingColleaguePartOne }        from "@/lib/data/tasks/missing-colleague-part-1";
+import { MissingColleaguePartTwo }        from "@/lib/data/tasks/missing-colleague-part-2";
+import { LostLover }                      from "@/lib/data/tasks/lost-lover";
 
 export const Tasks: task[] = [
   FirstRecon,
@@ -124,4 +133,13 @@ export const Tasks: task[] = [
   FreshMeatPartThree,
   WhatWasLeft,
   OutOfTheBlue,
+  JetNMark,
+  HackerPartOne,
+  HackerPartTwo,
+  ForthNarithStroll,
+  NeighbourlyHelp,
+  FamilyHeirloom,
+  MissingColleaguePartOne,
+  MissingColleaguePartTwo,
+  LostLover,
 ]

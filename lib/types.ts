@@ -39,6 +39,7 @@ export enum ObjectiveType {
   DELIVER = "Deliver",
   ELIMINATION = "Elimination",
   LOCATE = "Locate",
+  HACK = "Hack",
 }
 
 export type task = {
@@ -63,6 +64,7 @@ export type objective = {
   faction?: faction
   subobjective?: subobjective,
   image?: string
+  note?: string
 }
 
 export type subobjective = {
