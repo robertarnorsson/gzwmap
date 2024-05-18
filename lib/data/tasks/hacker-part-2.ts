@@ -6,7 +6,8 @@ const HackerPartTwo_Objective1: objective = {
     description: "Locate the codebook from the radio room",
     position: [0.628950000322223, -0.9330815517000103],
     type: ObjectiveType.COLLECT,
-    note: "In the communication room, second floor of the HQ."
+    note: "In the communication room, second floor of the HQ.",
+    image: "/objectives/hacker-part-2-codebook.webp",
 }
 
 const HackerPartTwo_Objective2: objective = {
@@ -22,6 +23,7 @@ const HackerPartTwo_Objective3: objective = {
     description: "Hack the radio tower in the base",
     position: [0.6331936154627917, -0.9298038472654225],
     type: ObjectiveType.HACK,
+    image: "/objectives/hacker-part-2-radio-tower-base.webp",
 }
 
 const HackerPartTwo_Objective4: objective = {

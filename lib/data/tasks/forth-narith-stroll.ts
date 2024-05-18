@@ -6,6 +6,7 @@ const ForthNarithStroll_Objective1: objective = {
     description: "Check the barracks/northern entrance",
     position: [0.6474051996779876, -0.933788291726352],
     type: ObjectiveType.DISCOVER,
+    image: "/objectives/hacker-camera-northern-entrance.webp"
 }
 
 const ForthNarithStroll_Objective2: objective = {
@@ -13,6 +14,7 @@ const ForthNarithStroll_Objective2: objective = {
     description: "Check the main entrance",
     position: [0.6334006457514472, -0.9221844175856476],
     type: ObjectiveType.DISCOVER,
+    image: "/objectives/hacker-camera-main-entrance.webp"
 }
 
 const ForthNarithStroll_Objective3: objective = {

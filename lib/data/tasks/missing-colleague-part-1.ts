@@ -5,7 +5,7 @@ const MissingColleaguePartOne_Objective1: objective = {
     name: "Note",
     description: "Locate any intel about the colleague's whereabouts",
     position: [0.6282650689997253, -0.9129726636371727],
-    type: ObjectiveType.COLLECT
+    type: ObjectiveType.COLLECT,
 }
 
 export const MissingColleaguePartOne: task = {
