@@ -13,14 +13,15 @@ const HazardousTreasures_Objective2: objective = {
     description: "Retrieve the container from Sawmill",
     position: [0.7501356154582371, -0.9634404703453714],
     type: ObjectiveType.COLLECT,
-    image: "/objectives/hazardous-treasures-sawmill.webp"
+    image: "/objectives/hazardous-treasures-sawmill.webp",
+    note: "You will need SM Office Storage key."
 }
 
 const HazardousTreasures_Objective3: objective = {
     name: "Eliminate (Blue Lagoon)",
     description: "Eliminate 10 hostiles at Blue Lagoon",
     position: [0.526306927744574, -0.43116168536865956],
-    type: ObjectiveType.ELIMINATION
+    type: ObjectiveType.ELIMINATION,
 }
 
 const HazardousTreasures_Objective4: objective = {
@@ -29,7 +30,6 @@ const HazardousTreasures_Objective4: objective = {
     position: [0.5276032706670536, -0.4289291690255071],
     type: ObjectiveType.COLLECT,
     image: "/objectives/hazardous-treasures-blue-lagoon.webp",
-    note: "You will need SM Office Storage key."
 }
 
 const HazardousTreasures_Objective5: objective = {
