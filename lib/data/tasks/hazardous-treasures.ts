@@ -35,7 +35,7 @@ const HazardousTreasures_Objective4: objective = {
 const HazardousTreasures_Objective5: objective = {
     name: "Eliminate (Hunters Paradise)",
     description: "Eliminate 10 hostiles at Hunters Paradise",
-    position: [0.526306927744574, -0.43116168536865956],
+    position: [0.9529145063347765, -0.7940944024978048],
     type: ObjectiveType.ELIMINATION
 }
 
@@ -44,6 +44,8 @@ const HazardousTreasures_Objective6: objective = {
     description: "Retrieve the container from Hunters Paradise",
     position: [0.9543491895615298, -0.7974472149318923],
     type: ObjectiveType.COLLECT,
+    image: "/objectives/hazardous-treasures-hunters-paradise.webp",
+    note: "You will need a HP Wep key."
 }
 
 export const HazardousTreasures: task = {
