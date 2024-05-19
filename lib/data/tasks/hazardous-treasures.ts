@@ -28,7 +28,8 @@ const HazardousTreasures_Objective4: objective = {
     description: "Retrieve the container from Blue Lagoon",
     position: [0.5276032706670536, -0.4289291690255071],
     type: ObjectiveType.COLLECT,
-    image: "/objectives/hazardous-treasures-blue-lagoon.webp"
+    image: "/objectives/hazardous-treasures-blue-lagoon.webp",
+    note: "You will need SM Office Storage key."
 }
 
 const HazardousTreasures_Objective5: objective = {
