@@ -2,28 +2,29 @@ import {ObjectiveType, objective, task} from "@/lib/types";
 import {Banshee} from "@/lib/data/vendors";
 
 const HazardousTreasures_Objective1: objective = {
-    name: "Eliminate",
+    name: "Eliminate (Sawmill)",
     description: "Eliminate 10 hostiles at Sawmill",
     position: [0.7525546864768021, -0.9618089454451508],
     type: ObjectiveType.ELIMINATION
 }
 
 const HazardousTreasures_Objective2: objective = {
-    name: "Container",
+    name: "Container (Sawmill)",
     description: "Retrieve the container from Sawmill",
     position: [0.7501356154582371, -0.9634404703453714],
     type: ObjectiveType.COLLECT,
+    image: "/objectives/hazardous-treasures-sawmill.webp"
 }
 
 const HazardousTreasures_Objective3: objective = {
-    name: "Eliminate",
+    name: "Eliminate (Blue Lagoon)",
     description: "Eliminate 10 hostiles at Blue Lagoon",
     position: [0.526306927744574, -0.43116168536865956],
     type: ObjectiveType.ELIMINATION
 }
 
 const HazardousTreasures_Objective4: objective = {
-    name: "Container",
+    name: "Container (Blue Lagoon)",
     description: "Retrieve the container from Blue Lagoon",
     position: [0.5276032706670536, -0.4289291690255071],
     type: ObjectiveType.COLLECT,
@@ -31,14 +32,14 @@ const HazardousTreasures_Objective4: objective = {
 }
 
 const HazardousTreasures_Objective5: objective = {
-    name: "Eliminate",
+    name: "Eliminate (Hunters Paradise)",
     description: "Eliminate 10 hostiles at Hunters Paradise",
     position: [0.526306927744574, -0.43116168536865956],
     type: ObjectiveType.ELIMINATION
 }
 
 const HazardousTreasures_Objective6: objective = {
-    name: "Container",
+    name: "Container (Hunters Paradise)",
     description: "Retrieve the container from Hunters Paradise",
     position: [0.9543491895615298, -0.7974472149318923],
     type: ObjectiveType.COLLECT,
