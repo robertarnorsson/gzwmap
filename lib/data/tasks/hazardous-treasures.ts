@@ -1,5 +1,5 @@
 import {ObjectiveType, objective, task} from "@/lib/types";
-import {Banshee} from "@/lib/data/vendors";
+import {Handshake} from "@/lib/data/vendors";
 
 const HazardousTreasures_Objective1: objective = {
     name: "Eliminate (Sawmill)",
@@ -114,6 +114,6 @@ export const HazardousTreasures: task = {
         HazardousTreasures_Objective11,
         HazardousTreasures_Objective12,
     ],
-    vendor: Banshee,
+    vendor: Handshake,
     level: 0,
 }
