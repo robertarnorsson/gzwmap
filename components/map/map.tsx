@@ -1,94 +1,86 @@
 "use client";
 
-import { MapContainer, TileLayer, useMapEvents } from "react-leaflet"
-import L, { CRS, LatLngBoundsExpression, LatLngExpression, Map } from "leaflet"
-import MapMarkers from "./markers";
-import "leaflet/dist/leaflet.css"
-import { useSearchParams } from "next/navigation";
-import { Tasks } from "@/lib/data/tasks";
-import { useEffect, useState } from "react";
+import 'ol/ol.css';
+import Map from 'ol/Map';
+import View from 'ol/View';
+import { Extent, getCenter } from 'ol/extent';
+import Tile from 'ol/layer/Tile';
+import { Projection } from 'ol/proj';
+import XYZ from 'ol/source/XYZ';
+import { useEffect, useRef } from 'react';
+/* import { addTaskMarkers } from '@/components/map/task-markers'; */
+import { addLocationMarkers } from '@/components/map/location-markers';
+import { Tasks } from '@/lib/data/tasks';
+import { TileGrid } from 'ol/tilegrid';
+import { Locations } from '@/lib/data/locations';
 
-export default function MapComponent({ setMapRef }: { setMapRef: (value: L.Map | null) => void }) {
-  const [isMobile, setIsMobile] = useState(false);
+export default function MapComponent() {
+  const mapContainer = useRef();
 
-  useEffect(() => {
-    const userAgent = navigator.userAgent.toLowerCase();
-    setIsMobile(/mobile|android|iphone|ipad/.test(userAgent));
-  }, []);
+  const extent1: number = 0;
+  const extent2: number = 0;
+  const extent3: number = 32768;
+  const extent4: number = 32768;
+
+  const maxExtent: Extent = [extent1, extent2, extent3, extent4];
+
+  const projection = new Projection({
+    code: 'gzw-map',
+    units: 'pixels',
+    extent: maxExtent,
+  });
   
-  const MapEvents = () => {
-    const map = useMapEvents({
-      click(e) {
-        console.log(`${e.latlng.lat}, ${e.latlng.lng}`);
-      }
+  const tilegrid = new TileGrid({
+    extent: maxExtent,
+    resolutions: [128, 64, 32, 16, 8, 4, 2, 1]
+  });
+  
+  useEffect(() => {
+    const map = new Map({
+      layers: [
+        new Tile({
+          preload: 64,
+          source: new XYZ({
+            url: 'http://127.0.0.1:5000/v2/{z}/{y}/{x}',
+            tileGrid: tilegrid,
+            projection: projection,
+            tileSize: 256,
+            cacheSize: 64,
+          }),
+        })
+      ],
+      view: new View({
+        center: getCenter(maxExtent),
+        zoom: 1,
+        projection: projection,
+        resolutions: tilegrid.getResolutions(),
+        enableRotation: false,
+      }),
+      target: mapContainer.current,
+      maxTilesLoading: 50
     });
-    return false;
-  }
 
-  function formatParam(param: string | null | undefined) {
-    if (typeof param === "string") {
-      return param
-      .replaceAll(" ", "-")
-      .replaceAll("'", "")
-      .toLowerCase()
-      .trim()
-    } else {
-      return null
-    }
-  }
+    /* addTaskMarkers(map, Tasks); */
+    addLocationMarkers(map, Locations);
 
-  const params = useSearchParams();
+    map.on("click", (e) => {
+      console.log(e.coordinate.toString())
+    })
 
-  const factionParam = params.get("faction");
-  const taskParam = params.get("task");
-  const objectiveParam = params.get("objective");
+    return () => {
+      map.setTarget(undefined);
+    };
+  })
 
-  const task = Tasks.find((task) => formatParam(task.name) === formatParam(taskParam));
-  const objective = task?.objectives.find((objective) => (formatParam(objective.name) === formatParam(objectiveParam)) && (formatParam(objective.faction?.shorthand) === formatParam(factionParam)))
-
-  const paramPosition = objective?.position as LatLngExpression;
-
-  const centerPosition = [0.7521535241589289, -0.7050094818702314] as LatLngExpression
-  const maxBounds = [[0.3662, -0.0985], [1.049, -1.308]] as LatLngBoundsExpression
+  Locations.forEach((loc) => {
+    console.log(loc.name)
+  })
 
   return (
-    <MapContainer
-      className="map"
-      ref={(ref) => setMapRef(ref)}
-      attributionControl={false}
-      renderer={L.canvas()}
-      zoomControl={false}
-      crs={L.CRS.EPSG3395 as CRS}
-      center={paramPosition || centerPosition}
-      maxBoundsViscosity={10}
-      zoom={paramPosition && 15 || 12}
-      zoomSnap={0}
-      zoomDelta={100}
-      zoomAnimation
-      minZoom={9}
-      maxZoom={15}
-      inertiaDeceleration={2500}
-      wheelDebounceTime={200}
-      doubleClickZoom={true}
-      scrollWheelZoom={true}
-      boxZoom={true}
-      fadeAnimation={true}
-      bounceAtZoomLimits={false}
-    >
-      <TileLayer
-        className="tile-map"
-        bounds={maxBounds}
-        tileSize={256}
-        keepBuffer={isMobile ? 0 : 24}
-        updateWhenZooming={!isMobile}
-        updateInterval={isMobile ? 400 : 10}
-        url="https://tiles.gzwmap.com/v1/{z}/{y}/{x}"
-        updateWhenIdle={isMobile}
-      />
-      <MapEvents />
-      <MapMarkers />
-    </MapContainer>
-  )
+    <div ref={mapContainer as any}  className="h-screen w-full bg-[#0a1616]">
+
+    </div>
+  );
 }
 
 //https://tiles.mapgenie.io/games/gray-zone-warfare/lamang-island/default-v3

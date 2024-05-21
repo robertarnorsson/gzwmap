@@ -6,76 +6,76 @@ import {
   MithrasSecuritySystems
 } from "@/lib/data/factions";
 
-const FirstRecon_Objective1_LRI: objective = {
+export const FirstRecon_Objective1_LRI: objective = {
   name: "Gas Station",
   description: "Check the area around the gas station",
-  position: [0.8850531906202619, -0.46048164367675787],
+  position: [22075.84432866189, 20422.99499176002],
   type: ObjectiveType.DISCOVER,
   faction: LamangRecoveryInitiative
 }
 
-const FirstRecon_Objective2_LRI: objective = {
+export const FirstRecon_Objective2_LRI: objective = {
   name: "Convenience Store",
   description: "Check the convenience store",
-  position: [0.9103887911042275, -0.450171234804766],
+  position: [22289.40524522441, 21006.90451003156],
   type: ObjectiveType.DISCOVER,
   faction: LamangRecoveryInitiative
 }
 
-const FirstRecon_Objective3_LRI: objective = {
+export const FirstRecon_Objective3_LRI: objective = {
   name: "Demolished Building",
   description: "Check the demolished building",
-  position: [0.914428628405645, -0.4313850402832032],
+  position: [22722.64472028925, 21091.559573592087],
   type: ObjectiveType.DISCOVER,
   faction: LamangRecoveryInitiative
 }
 
 
-const FirstRecon_Objective1_MMS: objective = {
+export const FirstRecon_Objective1_MMS: objective = {
   name: "Gas Station",
   description: "Check the area around the gas station",
-  position: [0.5611318903643601, -0.704326629638672],
+  position: [16338.961491854141, 12947.36975247615],
   type: ObjectiveType.DISCOVER,
   faction: MithrasSecuritySystems
 }
 
-const FirstRecon_Objective2_MMS: objective = {
+export const FirstRecon_Objective2_MMS: objective = {
   name: "Convenience Store",
   description: "Check the convenience store",
-  position: [0.5348353745577434, -0.6961697419754388],
+  position: [16546.782554411337, 12362.026819719438],
   type: ObjectiveType.DISCOVER,
   faction: MithrasSecuritySystems
 }
 
-const FirstRecon_Objective3_MMS: objective = {
+export const FirstRecon_Objective3_MMS: objective = {
   name: "Demolished Building",
   description: "Check the demolished building",
-  position: [0.5197869799764396, -0.7078027725219728],
+  position: [16274.375483255433, 12019.522610698068],
   type: ObjectiveType.DISCOVER,
   faction: MithrasSecuritySystems
 }
 
 
-const FirstRecon_Objective1_CSI: objective = {
+export const FirstRecon_Objective1_CSI: objective = {
   name: "Gas Station",
   description: "Check the area around the gas station",
-  position: [0.8911442936782111, -0.9258985519409181],
+  position: [11180.569842049776, 20593.872251165554],
   type: ObjectiveType.DISCOVER,
   faction: CrimsonShieldInternational
 }
 
-const FirstRecon_Objective2_CSI: objective = {
+export const FirstRecon_Objective2_CSI: objective = {
   name: "Convenience Store",
   description: "Check the convenience store",
-  position: [0.9061982281012511, -0.9488904036533642],
+  position: [10647.30182356712, 20910.74990842797],
   type: ObjectiveType.DISCOVER,
   faction: CrimsonShieldInternational
 }
 
-const FirstRecon_Objective3_CSI: objective = {
+export const FirstRecon_Objective3_CSI: objective = {
   name: "Demolished Building",
   description: "Check the demolished building",
-  position: [0.9257467472046368, -0.9496307373046876],
+  position: [10638.418686730296, 21345.96401653563],
   type: ObjectiveType.DISCOVER,
   faction: CrimsonShieldInternational
 }

@@ -27,6 +27,21 @@
   }
 }
 
+@font-face {
+  font-family: 'RMO';
+  src: url('/font/RMO.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('/font/Rubik.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'KodeMono';
+  src: url('/font/KodeMono.ttf') format('truetype');
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -39,27 +54,32 @@
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    position: relative;
     background: #0a1616 !important;
     cursor: crosshair !important;
   }
 
+  #info {
+    position: absolute;
+    display: inline-block;
+    height: auto;
+    width: auto;
+    z-index: 100;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    padding: 5px;
+    left: 50%;
+    transform: translateX(3%);
+    visibility: hidden;
+    pointer-events: none;
+  }
+
   .marker {
-    background: transparent;
-    cursor: crosshair !important;
-  }
-
-  .map-popup .leaflet-popup-content-wrapper {
-    border-radius: 0px;
-    background-color: #0a1616;
-    color: fff;
-  }
-
-  .map-popup .leaflet-popup-content p {
-    margin: 0;
-  }
-
-  .map-popup .leaflet-popup-tip {
-    display: none;
+    @apply bg-background;
+    @apply w-96;
+    @apply mb-4;
   }
 
 }
