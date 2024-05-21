@@ -9,7 +9,7 @@ import { Projection } from 'ol/proj';
 import XYZ from 'ol/source/XYZ';
 import { useEffect, useRef } from 'react';
 /* import { addTaskMarkers } from '@/components/map/task-markers'; */
-import { addLocationMarkers } from '@/components/map/location-markers';
+import { addLocationMarkers } from '@/components/old/map/location-markers';
 import { Tasks } from '@/lib/data/tasks';
 import { TileGrid } from 'ol/tilegrid';
 import { Locations } from '@/lib/data/locations';

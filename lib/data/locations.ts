@@ -19,7 +19,8 @@ export const PhaLang: location = {
     FirstRecon_Objective1_LRI,
     FirstRecon_Objective2_LRI,
     FirstRecon_Objective3_LRI,
-  ]
+  ],
+  types: []
 }
 
 export const NamThaven: location = {
@@ -30,7 +31,8 @@ export const NamThaven: location = {
     FirstRecon_Objective1_MMS,
     FirstRecon_Objective2_MMS,
     FirstRecon_Objective3_MMS,
-  ]
+  ],
+  types: []
 }
 
 export const KiuVongsa: location = {
@@ -41,70 +43,80 @@ export const KiuVongsa: location = {
     FirstRecon_Objective1_CSI,
     FirstRecon_Objective2_CSI,
     FirstRecon_Objective3_CSI,
-  ]
+  ],
+  types: []
 }
 
 export const BanPa: location = {
   id: "L-004",
   name: "Ban Pa",
   position: [23208.13506808619,15918.636745379685],
-  objectives: []
+  objectives: [],
+  types: []
 }
 
 export const HuntersParadise: location = {
   id: "L-005",
   name: "Hunter's Paradise",
   position: [14184.600722838573,22317.02116986508],
-  objectives: []
+  objectives: [],
+  types: []
 }
 
 export const YBL1: location = {
   id: "L-006",
   name: "YBL-1",
   position: [11072.318675322842,13086.462000224528],
-  objectives: []
+  objectives: [],
+  types: []
 }
 
 export const BlueLagoon: location = {
   id: "L-006",
   name: "Blue Lagoon",
   position: [22630.933286472067,11952.919152073879],
-  objectives: []
+  objectives: [],
+  types: []
 }
 
 export const Sawmill: location = {
   id: "L-007",
   name: "Sawmill",
   position: [10328.194139464867,17332.425926079006],
-  objectives: []
+  objectives: [],
+  types: []
 }
 
 export const PhaLangAirfield: location = {
   id: "L-008",
   name: "Pha Lang Airfield",
   position: [18527.491460769867,19945.878314875386],
-  objectives: []
+  objectives: [],
+  types: []
 }
 
 export const FortNarith: location = {
   id: "L-009",
   name: "Fort Narith",
   position: [10962.758529537185,14300.126583471781],
-  objectives: []
+  objectives: [],
+  types: []
 }
 
 export const MidnightSapphire: location = {
   id: "L-010",
   name: "Midnight Sapphire",
   position: [16390.199169785596,21381.445167069425],
-  objectives: []
+  objectives: [],
+  types: []
 }
 
 export const TigerBay: location = {
   id: "L-011",
   name: "Tiger Bay",
   position: [21775.17599488606,14724.287943772208],
-  objectives: []
+  objectives: [],
+  types: []
 }
 
 

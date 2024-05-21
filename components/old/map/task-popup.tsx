@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const rubik = Rubik({ subsets: ["latin"] });
 
-export const popupContent = (task: task, objective: objective) => (
+export const taskPopup = (task: task, objective: objective) => (
   <div className={cn(rubik.className, "p-6 relative")}>
     <h2 className="text-lg font-bold text-primary">{task.name}</h2>
     <div className="flex flex-row gap-2">

@@ -2,7 +2,7 @@ import { Map, Feature, Overlay } from 'ol';
 import { Point } from 'ol/geom';
 import { Style, Icon } from 'ol/style';
 import { objective, task } from '@/lib/types';
-import { popupContent } from '@/components/map/task-popup';
+import { taskPopup } from '@/components/old/map/task-popup';
 import ReactDOMServer from "react-dom/server";
 import VectorSource from 'ol/source/Vector';
 import VectorLayer from 'ol/layer/Vector';
@@ -69,7 +69,7 @@ export const addTaskMarkers = (map: Map, tasks: task[]) => {
       const featTask = feature.get('task') as task;
       const featObjective = feature.get('objective') as objective;
 
-      popupElement.innerHTML = ReactDOMServer.renderToString(popupContent(featTask, featObjective));
+      popupElement.innerHTML = ReactDOMServer.renderToString(taskPopup(featTask, featObjective));
       popupOverlay.setPosition(coordinates);
     } else {
       popupOverlay.setPosition(undefined);

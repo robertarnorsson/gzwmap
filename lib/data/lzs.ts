@@ -2,27 +2,31 @@ import { lz } from "@/lib/types";
 import { LamangRecoveryInitiative, MithrasSecuritySystems, CrimsonShieldInternational } from "./factions";
 
 export const ALPHA1: lz = {
+  id: "LZ-001",
   name: "ALPHA 1",
-  position: [0.9031536725764605, -0.40756702423095703],
+  position: [23270.286021054624,20831.08761001807],
   discoverable: false,
   faction: LamangRecoveryInitiative
 };
 
 export const ALPHA2: lz = {
+  id: "LZ-002",
   name: "ALPHA 2",
-  position: [0.9218588479058658, -0.49163818359375006],
+  position: [21313.972388869504,21263.689082468252],
   discoverable: false,
   faction: LamangRecoveryInitiative
 };
 
 export const ALPHA3: lz = {
+  id: "LZ-003",
   name: "ALPHA 3",
-  position: [0.8684646034375607, -0.47863483428955084],
+  position: [21612.34636213281,20033.121282091568],
   discoverable: true,
   faction: LamangRecoveryInitiative
 };
 
 export const BRAVO1: lz = {
+  id: "LZ-004",
   name: "BRAVO 1",
   position: [0.5114152317539321, -0.7335181370487321],
   discoverable: false,
@@ -30,6 +34,7 @@ export const BRAVO1: lz = {
 };
 
 export const BRAVO2: lz = {
+  id: "LZ-005",
   name: "BRAVO 2",
   position: [0.5529314673851344, -0.6610552240322409],
   discoverable: false,
@@ -37,6 +42,7 @@ export const BRAVO2: lz = {
 };
 
 export const BRAVO3: lz = {
+  id: "LZ-006",
   name: "BRAVO 3",
   position: [0.5837737812689557, -0.7014497204265348],
   discoverable: true,
@@ -44,6 +50,7 @@ export const BRAVO3: lz = {
 };
 
 export const CHARLIE1: lz = {
+  id: "LZ-007",
   name: "CHARLIE 1",
   position: [0.948823878029034, -0.934514906546864],
   discoverable: false,
@@ -51,6 +58,7 @@ export const CHARLIE1: lz = {
 };
 
 export const CHARLIE2: lz = {
+  id: "LZ-008",
   name: "CHARLIE 2",
   position: [0.8669526191449345, -0.9667968750000001],
   discoverable: false,
@@ -58,6 +66,7 @@ export const CHARLIE2: lz = {
 };
 
 export const CHARLIE3: lz = {
+  id: "LZ-009",
   name: "CHARLIE 3",
   position: [0.8710997745961968, -0.9132814407348634],
   discoverable: true,
@@ -65,129 +74,150 @@ export const CHARLIE3: lz = {
 };
 
 export const FOXTROT1: lz = {
+  id: "LZ-010",
   name: "FOXTROT 1",
-  position: [0.9553378378784053, -0.764751434326172],
+  position: [14902.045283641288,22064.538811683913],
   discoverable: false,
 };
 
 export const FOXTROT2: lz = {
+  id: "LZ-011",
   name: "FOXTROT 2",
-  position: [0.9492468458991019, -0.8151340484619141],
+  position: [13791.906718522056,21927.03530999337],
   discoverable: true,
 };
 
 export const INDIA1: lz = {
+  id: "LZ-012",
   name: "INDIA 1",
-  position: [0.7080742020067341, -0.40727573620937385],
+  position: [23287.97850184789,16349.985310665721],
   discoverable: false,
 };
 
 export const INDIA2: lz = {
+  id: "LZ-013",
   name: "INDIA 2",
-  position: [0.6840415200129121, -0.4398393630981446],
+  position: [22529.838916313038,15800.615167153941],
   discoverable: true,
 };
 
 export const LIMA1: lz = {
+  id: "LZ-014",
   name: "LIMA 1",
-  position: [0.5837737812689557, -0.9365964264898732],
+  position: [10909.912078540192,13509.568465485141],
   discoverable: true,
 };
 
 export const LIMA2: lz = {
+  id: "LZ-015",
   name: "LIMA 2",
-  position: [0.5503121549891202, -0.9200093144439083],
+  position: [11333.923259713902,12769.041895547958],
   discoverable: false,
 };
 
 export const ECHO1: lz = {
+  id: "LZ-016",
   name: "ECHO 1",
-  position: [0.7697082486471709, -0.9804001624634506],
-  discoverable: false,
+  position: [9915.064408436621,17783.13562439619],
+  discoverable: true,
 };
 
 export const ECHO2: lz = {
+  id: "LZ-017",
   name: "ECHO 2",
-  position: [0.7336807224896637, -0.9617659776084622],
+  position: [10340.70736014786,16943.07204126685],
   discoverable: false,
 };
 
 export const KILO1: lz = {
+  id: "LZ-018",
   name: "KILO 1",
-  position: [0.5364673701387217, -0.44769910018049647],
-  discoverable: false,
+  position: [22341.787128684362,12398.897199174731],
+  discoverable: true,
 };
 
 export const KILO2: lz = {
+  id: "LZ-019",
   name: "KILO 2",
-  position: [0.5321498355892613, -0.41644493828086665],
-  discoverable: false,
+  position: [23070.972291004495,12308.131493655163],
+  discoverable: true,
 };
 
 export const JULIET1: lz = {
+  id: "LZ-0",
   name: "JULIET 1",
-  position: [0.6831126690399042, -0.48999574199418483],
-  discoverable: false,
+  position: [21388.824282878133,15769.441888599353],
+  discoverable: true,
 };
 
 export const JULIET2: lz = {
+  id: "LZ-020",
   name: "JULIET 2",
-  position: [0.6060933744878431, -0.5085313332785059],
-  discoverable: false,
+  position: [20945.209997484264,13986.83238920378],
+  discoverable: true,
 };
 
 export const JULIET3: lz = {
+  id: "LZ-021",
   name: "JULIET 3",
-  position: [0.5906823044423134, -0.45434474945068365],
-  discoverable: false,
+  position: [22195.25300435851,13640.402185786621],
+  discoverable: true,
 };
 
 export const DELTA1: lz = {
+  id: "LZ-022",
   name: "DELTA 1",
-  position: [0.6055474861847417, -0.8880179867538085],
-  discoverable: false,
+  position: [12073.959220514631,13995.946200897608],
+  discoverable: true,
 };
 
 export const DELTA2: lz = {
+  id: "LZ-023",
   name: "DELTA 2",
-  position: [0.6779019943276287, -0.9139480958377445],
-  discoverable: false,
+  position: [11449.533934716892,15689.2994753938],
+  discoverable: true,
 };
 
 export const DELTA3: lz = {
+  id: "LZ-024",
   name: "DELTA 3",
-  position: [0.641774495761992, -0.9739915803704526],
-  discoverable: false,
+  position: [10056.136766239302,14830.683785385934],
+  discoverable: true,
 };
 
 export const HOTEL1: lz = {
+  id: "LZ-025",
   name: "HOTEL 1",
-  position: [0.9463525409309237, -0.6605100631713867],
+  position: [17329.56391838899,21825.108210557086],
   discoverable: false,
 };
 
 export const HOTEL2: lz = {
+  id: "LZ-026",
   name: "HOTEL 2",
-  position: [0.883670811207371, -0.6673336029052734],
-  discoverable: false,
+  position: [17210.292847033175,20357.691513243117],
+  discoverable: true,
 };
 
 export const HOTEL3: lz = {
+  id: "LZ-027",
   name: "HOTEL 3",
-  position: [0.900907316974989, -0.7487869262695314],
-  discoverable: false,
+  position: [15277.580874311128,20786.173789744047],
+  discoverable: true,
 };
 
 export const GOLF1: lz = {
+  id: "LZ-028",
   name: "GOLF 1",
-  position: [0.8825908269282846, -0.6198692321777345],
-  discoverable: false,
+  position: [18318.74433486675,20370.88667329696],
+  discoverable: true,
 };
 
 export const GOLF2: lz = {
+  id: "LZ-029",
   name: "GOLF 2",
-  position: [0.8572327055572856, -0.5890560150146485],
-  discoverable: false,
+  position: [19079.193631948197,19755.691359744593],
+  discoverable: true,
 };
 
 export const LZs: lz[] = [

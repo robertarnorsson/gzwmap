@@ -2,7 +2,7 @@ import { Map, Feature, Overlay } from 'ol';
 import { Point } from 'ol/geom';
 import { Fill, Stroke, Style, Text } from 'ol/style';
 import { location } from '@/lib/types';
-import { popupContent } from '@/components/map/location-popup';
+import { popupContent } from '@/components/old/map/location-popup';
 import ReactDOMServer from "react-dom/server";
 import VectorSource from 'ol/source/Vector';
 import VectorLayer from 'ol/layer/Vector';

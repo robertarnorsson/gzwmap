@@ -2,8 +2,7 @@ import Overlay from "ol/Overlay";
 import { MarkerType } from "../types";
 import { Map } from "ol";
 
-
-interface MarkerData {
+export interface MarkerData {
   id: string;
   coordinates: [number, number];
   content: string;
@@ -21,14 +20,6 @@ class MarkerOverlay extends Overlay {
   }
 }
 
-/**
- * Create an overlay for a marker
- * @param id - Unique identifier for the marker
- * @param coordinates - Coordinates for the marker [longitude, latitude]
- * @param content - HTML content for the marker
- * @param types - Types associated with the marker
- * @returns The created overlay
- */
 export const createMarkerOverlay = (
   id: string,
   coordinates: [number, number],
@@ -36,7 +27,7 @@ export const createMarkerOverlay = (
   types: MarkerType[]
 ): MarkerOverlay => {
   const element = document.createElement('div');
-  element.className = 'marker';
+  element.className = 'overlay-marker';
   element.innerHTML = content;
 
   const overlay = new Overlay({

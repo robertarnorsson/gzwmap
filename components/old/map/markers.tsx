@@ -1,10 +1,10 @@
 import React, { Dispatch, SetStateAction, useEffect } from "react";
 import { useMap } from "react-leaflet";
-import LZMarker from "@/components/map/lz-marker";
-import LocationMarker from "@/components/map/location-marker";
-import FactionMarker from "@/components/map/faction-marker";
-import TaskMarker from "@/components/map/task-marker";
-import POIMarker from "@/components/map/poi-marker";
+import LZMarker from "@/components/old/map/lz-marker";
+import LocationMarker from "@/components/old/map/location-marker";
+import FactionMarker from "@/components/old/map/faction-marker";
+import TaskMarker from "@/components/old/map/task-marker";
+import POIMarker from "@/components/old/map/poi-marker";
 import { Factions } from "@/lib/data/factions";
 import { LZs } from "@/lib/data/lzs";
 import { Locations } from "@/lib/data/locations";

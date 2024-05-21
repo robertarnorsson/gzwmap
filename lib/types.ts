@@ -1,4 +1,4 @@
-import { LatLngTuple } from "leaflet"
+import { LatLngTuple, Marker } from "leaflet"
 
 export type vendor = {
   name: string
@@ -25,6 +25,7 @@ export type location = {
   name: string
   position: [number, number]
   objectives: objective[]
+  types: MarkerType[]
 };
 
 export type poi = {
@@ -96,6 +97,7 @@ export type objective = {
   description: string
   position: [number, number]
   type: ObjectiveType
+  types: MarkerType[]
   faction?: faction
   image?: string
   note?: string
