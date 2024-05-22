@@ -24,11 +24,29 @@ export const createMarkerOverlay = (
   id: string,
   coordinates: [number, number],
   content: string,
-  types: MarkerType[]
+  types: MarkerType[],
+  popupContent?: string,
+  popupOverlay?: Overlay,
 ): MarkerOverlay => {
+  let dragging = false;
   const element = document.createElement('div');
   element.className = 'overlay-marker';
   element.innerHTML = content;
+  
+  if (popupContent && popupOverlay) {
+    element.onmousemove = (e) => {
+      dragging = true;
+    }
+    element.onmousedown = (e) => {
+      dragging = false;
+    }
+    element.onmouseup = (e) => {
+      if (!dragging) {
+        popupOverlay.getElement()!.innerHTML = popupContent
+        popupOverlay.setPosition(coordinates)
+      }
+    }
+  }
 
   const overlay = new Overlay({
     position: coordinates,
@@ -43,20 +61,10 @@ export const createMarkerOverlay = (
   return overlay;
 };
 
-/**
- * Add an overlay to the map
- * @param map - The OpenLayers map instance
- * @param overlay - The overlay to add
- */
 export const addOverlayToMap = (map: Map, overlay: MarkerOverlay): void => {
   map.addOverlay(overlay);
 };
 
-/**
- * Remove an overlay from the map
- * @param map - The OpenLayers map instance
- * @param overlayId - The unique identifier of the overlay to remove
- */
 export const removeOverlayFromMap = (map: Map, overlayId: string): void => {
   const overlays = map.getOverlays().getArray() as MarkerOverlay[];
   const overlayToRemove = overlays.find(overlay => overlay.id === overlayId);
@@ -65,12 +73,6 @@ export const removeOverlayFromMap = (map: Map, overlayId: string): void => {
   }
 };
 
-/**
- * Toggle visibility of markers by type
- * @param map - The OpenLayers map instance
- * @param type - The type of marker to toggle
- * @param visible - Whether to show or hide the markers
- */
 export const toggleMarkersByType = (
   map: Map,
   type: MarkerType,

@@ -2,10 +2,9 @@
 
 import 'ol/ol.css';
 import { useEffect, useRef } from 'react';
-import { mapView, rasterTileLayer } from '@/lib/map/map';
-import { Map } from 'ol';
+import { addPopup, mapView, rasterTileLayer } from '@/lib/map/map';
+import { Map, Overlay } from 'ol';
 import { locationOverlays, taskOverlays } from '@/lib/map/markers';
-import { locationMarker } from '@/components/overlays/location-overlay';
 
 export default function Page() {
   const mapRef = useRef();
@@ -20,11 +19,14 @@ export default function Page() {
 
     map.setTarget(mapRef.current)
 
-    taskOverlays(map);
-    locationOverlays(map);
+    const popupOverlay = addPopup(map);
+
+    taskOverlays(map, popupOverlay);
+    locationOverlays(map, popupOverlay);
 
     map.on("click", (e) => {
-      console.log(e.coordinate.toString());
+      console.log(e.coordinate);
+      popupOverlay.setPosition(undefined)
     })
 
     return () => {

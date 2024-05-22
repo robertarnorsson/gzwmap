@@ -1,4 +1,4 @@
-import { View } from "ol";
+import { Map, Overlay, View } from "ol";
 import { Extent, getCenter } from "ol/extent";
 import Tile from 'ol/layer/Tile';
 import Projection from "ol/proj/Projection";
@@ -31,10 +31,10 @@ export const tilegrid = new TileGrid({
 });
 
 export const rasterTileLayer = new Tile({
-  preload: 64,
+  preload: 128,
   extent: maxExtent,
   source: new XYZ({
-    url: 'http://127.0.0.1:5000/v2/{z}/{y}/{x}',
+    url: 'https://tiles.gzwmap.com/v2/{z}/{y}/{x}',
     tileGrid: tilegrid,
     projection: projection,
     tileSize: 256,
@@ -49,3 +49,18 @@ export const mapView = new View({
   resolutions: tilegrid.getResolutions(),
   enableRotation: false,
 });
+
+export function addPopup(map: Map) {
+  const popupElement = document.createElement('div');
+  popupElement.className = 'marker';
+
+  const popupOverlay = new Overlay({
+    element: popupElement,
+    autoPan: true,
+    positioning: 'bottom-center',
+    stopEvent: false,
+  });
+
+  map.addOverlay(popupOverlay);
+  return popupOverlay;
+}
