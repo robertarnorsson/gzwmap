@@ -1,22 +1,25 @@
-import { LatLngTuple, Marker } from "leaflet"
+import { LatLngTuple } from "leaflet"
 
 export type vendor = {
   name: string
 }
 
 export type faction = {
+  id: string
   name: string
   shorthand: string
   description: string
-  position: LatLngTuple
+  position: [number, number]
   image: string
+  types: MarkerType[]
 };
 
 export type lz = {
   id: string
   name: string
-  position: LatLngTuple
+  position: [number, number]
   discoverable: boolean
+  types: MarkerType[]
   faction?: faction
 };
 
@@ -25,14 +28,15 @@ export type location = {
   name: string
   position: [number, number]
   objectives: objective[]
+  pois: poi[]
   types: MarkerType[]
 };
 
 export type poi = {
   id: string
   name: string
-  position: LatLngTuple
-  faction?: faction
+  position: [number, number]
+  types: MarkerType[]
 }
 
 export enum MarkerType {
@@ -41,6 +45,11 @@ export enum MarkerType {
   LZ = "Landing Zone",
   LOCATION = "Location",
   POI = "Place of Interest",
+
+  // Factions
+  LRI = "Lamang Recovery Initiative",
+  MSS = "Mithras Security Systems",
+  CSI ="Crimson Shield International",
 
   // Vendors
   HANDSHAKE = "Handshake",
@@ -63,14 +72,20 @@ export enum MarkerType {
   FORTNARITH = "Fort Narith",
   MIDNIGHTSAPPHIRE = "Midnight Sapphire",
   TIGERBAY = "Tiger Bay",
-}
 
-export enum ObjectiveType {
-  DISCOVER = "Discover",
+  // Task varients
   COLLECT = "Collect",
   MARK = "Mark",
   STASH = "Stash",
-  DELIVER = "Deliver",
+  ELIMINATION = "Elimination",
+  LOCATE = "Locate",
+  HACK = "Hack",
+}
+
+export enum ObjectiveType {
+  COLLECT = "Collect",
+  MARK = "Mark",
+  STASH = "Stash",
   ELIMINATION = "Elimination",
   LOCATE = "Locate",
   HACK = "Hack",

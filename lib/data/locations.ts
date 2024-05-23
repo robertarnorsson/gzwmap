@@ -1,4 +1,4 @@
-import { location } from "@/lib/types";
+import { MarkerType, location } from "@/lib/types";
 import {
   FirstRecon_Objective1_LRI,
   FirstRecon_Objective2_LRI,
@@ -20,7 +20,8 @@ export const PhaLang: location = {
     FirstRecon_Objective2_LRI,
     FirstRecon_Objective3_LRI,
   ],
-  types: []
+  pois: [],
+  types: [MarkerType.LOCATION, MarkerType.PHALANG]
 }
 
 export const NamThaven: location = {
@@ -32,7 +33,8 @@ export const NamThaven: location = {
     FirstRecon_Objective2_MMS,
     FirstRecon_Objective3_MMS,
   ],
-  types: []
+  pois: [],
+  types: [MarkerType.LOCATION, MarkerType.NAMTHAVEN]
 }
 
 export const KiuVongsa: location = {
@@ -44,7 +46,8 @@ export const KiuVongsa: location = {
     FirstRecon_Objective2_CSI,
     FirstRecon_Objective3_CSI,
   ],
-  types: []
+  pois: [],
+  types: [MarkerType.LOCATION, MarkerType.KIUVONGSA]
 }
 
 export const BanPa: location = {
@@ -52,7 +55,8 @@ export const BanPa: location = {
   name: "Ban Pa",
   position: [23208.13506808619,15918.636745379685],
   objectives: [],
-  types: []
+  pois: [],
+  types: [MarkerType.LOCATION, MarkerType.BANPA]
 }
 
 export const HuntersParadise: location = {
@@ -60,7 +64,8 @@ export const HuntersParadise: location = {
   name: "Hunter's Paradise",
   position: [14184.600722838573,22317.02116986508],
   objectives: [],
-  types: []
+  pois: [],
+  types: [MarkerType.LOCATION, MarkerType.HUNTERSPARADISE]
 }
 
 export const YBL1: location = {
@@ -68,7 +73,8 @@ export const YBL1: location = {
   name: "YBL-1",
   position: [11072.318675322842,13086.462000224528],
   objectives: [],
-  types: []
+  pois: [],
+  types: [MarkerType.LOCATION, MarkerType.YBL1]
 }
 
 export const BlueLagoon: location = {
@@ -76,7 +82,8 @@ export const BlueLagoon: location = {
   name: "Blue Lagoon",
   position: [22630.933286472067,11952.919152073879],
   objectives: [],
-  types: []
+  pois: [],
+  types: [MarkerType.LOCATION, MarkerType.BLUELAGOON]
 }
 
 export const Sawmill: location = {
@@ -84,7 +91,8 @@ export const Sawmill: location = {
   name: "Sawmill",
   position: [10328.194139464867,17332.425926079006],
   objectives: [],
-  types: []
+  pois: [],
+  types: [MarkerType.LOCATION, MarkerType.SAWMILL]
 }
 
 export const PhaLangAirfield: location = {
@@ -92,7 +100,8 @@ export const PhaLangAirfield: location = {
   name: "Pha Lang Airfield",
   position: [18527.491460769867,19945.878314875386],
   objectives: [],
-  types: []
+  pois: [],
+  types: [MarkerType.LOCATION, MarkerType.PHALANGAIRFIELD]
 }
 
 export const FortNarith: location = {
@@ -100,7 +109,8 @@ export const FortNarith: location = {
   name: "Fort Narith",
   position: [10962.758529537185,14300.126583471781],
   objectives: [],
-  types: []
+  pois: [],
+  types: [MarkerType.LOCATION, MarkerType.FORTNARITH]
 }
 
 export const MidnightSapphire: location = {
@@ -108,7 +118,8 @@ export const MidnightSapphire: location = {
   name: "Midnight Sapphire",
   position: [16390.199169785596,21381.445167069425],
   objectives: [],
-  types: []
+  pois: [],
+  types: [MarkerType.LOCATION, MarkerType.MIDNIGHTSAPPHIRE]
 }
 
 export const TigerBay: location = {
@@ -116,7 +127,8 @@ export const TigerBay: location = {
   name: "Tiger Bay",
   position: [21775.17599488606,14724.287943772208],
   objectives: [],
-  types: []
+  pois: [],
+  types: [MarkerType.LOCATION, MarkerType.TIGERBAY]
 }
 
 

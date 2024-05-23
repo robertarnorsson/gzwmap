@@ -1,0 +1,37 @@
+
+
+.marker-pin {
+  width: auto;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.marker-pin-img {
+  flex-direction: column;
+  gap: 3px;
+}
+
+
+
+.faction-marker-img {
+  width: 30px !important;
+  filter: drop-shadow(0 0 0.75rem black);
+  border: #0d1311;
+  border-width: 2px;
+}
+
+.faction-marker-text {
+  width: fit-content;
+  letter-spacing: 0.7px;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 1.5px 4px;
+  text-wrap: nowrap;
+  color: #f0f0f0;
+  text-align: center;
+  filter: drop-shadow(0 0 0.75rem black);
+  text-shadow:
+    0 0 5px black
+}

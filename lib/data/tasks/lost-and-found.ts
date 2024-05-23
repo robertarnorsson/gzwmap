@@ -1,4 +1,4 @@
-import { ObjectiveType, objective, task } from "@/lib/types";
+import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { LabRat } from "@/lib/data/vendors";
 import {
   CrimsonShieldInternational,
@@ -8,31 +8,38 @@ import {
 import { MedsWanted } from "@/lib/data/tasks/meds-wanted";
 
 const LostAndFound_Objective1_LRI: objective = {
+  id: "",
   name: "Kanoa Sinarath",
   description: "Find Kanoa Sinarath and proof of identity",
   position: [0.9059363177502301, -0.45895264706439687],
-  type: ObjectiveType.DELIVER,
-  faction: LamangRecoveryInitiative
+  type: ObjectiveType.COLLECT,
+  faction: LamangRecoveryInitiative,
+  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.PHALANG]
 }
 
 const LostAndFound_Objective1_MMS: objective = {
+  id: "",
   name: "Kanoa Sinarath",
   description: "Find Kanoa Sinarath and proof of identity",
   position: [0.5438293518085245, -0.6919527856864982],
-  type: ObjectiveType.DELIVER,
-  faction: MithrasSecuritySystems
+  type: ObjectiveType.COLLECT,
+  faction: MithrasSecuritySystems,
+  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.NAMTHAVEN]
 }
 
 const LostAndFound_Objective1_CSI: objective = {
+  id: "",
   name: "Kanoa Sinarath",
   description: "Find Kanoa Sinarath and proof of identity",
   position: [0.8970313544357956, -0.9461584087281374],
-  type: ObjectiveType.DELIVER,
-  faction: CrimsonShieldInternational
+  type: ObjectiveType.COLLECT,
+  faction: CrimsonShieldInternational,
+  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.KIUVONGSA]
 }
 
 
 export const LostAndFound: task = {
+  id: "",
   name: "Lost and Found",
   briefing: "We have a pressing matter at hand. Several individuals went missing amid the chaotic evacuation, and their families are desperate for answers. It's our duty to help bring them some semblance of closure. I've compiled a list of names and last know locations. Your task is to search for any leads, gather information, and track down these missing individuals. We'll start with the first one and take it from there. Kanoa Siharath. He is a clerk in the local construction shop and was last seen during the final stages of the evacuation. Remember, we're not just searching for answers. We're offering hope to those left behind, waiting for news. Our efforts can bring them solace in a time of uncertainty. Let's not disappoint them.",
   debriefing: "I see... that is very unfortunate, but rest assured that your efforts were not in vain. By finding Kanoa, we've unveiled the truth, and sometimes that's all one can hope for. Knowing what happened is better than living in uncertainty. At least, I think so. Hopefully, his family will feel the same way.",

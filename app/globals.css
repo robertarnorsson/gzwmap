@@ -90,8 +90,13 @@
 }
 
 @layer base {
+  .marker-text {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
   .lz-marker-pin {
-    width: 100px;
+    width: auto;
     height: fit-content;
     gap: 3px;
     display: flex;
@@ -110,10 +115,10 @@
     font-weight: 700;
     font-size: 8px;
     padding: 1.5px 4px;
-    padding-bottom: 0.5px;
     background: #000;
     color: #c0c0c0;
     text-align: center;
+    pointer-events: none;
   }
 
   

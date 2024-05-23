@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Rubik } from "next/font/google";
 import "./globals.css";
+import "@/components/overlays/overlay.css";
 import ReactDOM from "react-dom";
 
 const rubik = Rubik({ subsets: ["latin"] });

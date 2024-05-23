@@ -1,6 +1,7 @@
 import Overlay from "ol/Overlay";
 import { MarkerType } from "../types";
 import { Map } from "ol";
+import { debounce } from "ts-debounce";
 
 export interface MarkerData {
   id: string;
@@ -9,7 +10,7 @@ export interface MarkerData {
   types: MarkerType[];
 }
 
-class MarkerOverlay extends Overlay {
+export class MarkerOverlay extends Overlay {
   id: string;
   types: MarkerType[];
 
@@ -22,6 +23,7 @@ class MarkerOverlay extends Overlay {
 
 export const createMarkerOverlay = (
   id: string,
+  map: Map,
   coordinates: [number, number],
   content: string,
   types: MarkerType[],
@@ -29,7 +31,7 @@ export const createMarkerOverlay = (
   popupOverlay?: Overlay,
 ): MarkerOverlay => {
   let dragging = false;
-  const element = document.createElement('div');
+  let element = document.createElement('div');
   element.className = 'overlay-marker';
   element.innerHTML = content;
   

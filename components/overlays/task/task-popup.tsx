@@ -6,7 +6,7 @@ import Image from "next/image";
 const rubik = Rubik({ subsets: ["latin"] });
 
 export const taskPopup = (task: task, objective: objective) => (
-  <div className={cn(rubik.className, "p-6 relative")}>
+  <div className={cn(rubik.className, "p-6 relative marker-text")}>
     <h2 className="text-lg font-bold text-primary">{task.name}</h2>
     <div className="flex flex-row gap-2">
       <p className="text-xs text-muted-foreground">{task.vendor.name}</p>
@@ -30,11 +30,11 @@ export const taskPopup = (task: task, objective: objective) => (
     {task.note && (
       <p className="pt-2 text-blue-500/85">{task.note}</p>
     )}
-    <div className="absolute -bottom-[12px] w-0 h-0
+    <div className="absolute -bottom-[15px] w-0 h-0
       left-1/2 transform -translate-x-1/2
-      border-l-[20px] border-l-transparent
-      border-t-[12px] border-t-background
-      border-r-[20px] border-r-transparent">
+      border-l-[25px] border-l-transparent
+      border-t-[15px] border-t-background
+      border-r-[25px] border-r-transparent">
     </div>
   </div>
 );
