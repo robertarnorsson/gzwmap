@@ -29,6 +29,7 @@ export const createMarkerOverlay = (
   types: MarkerType[],
   popupContent?: string,
   popupOverlay?: Overlay,
+  stopEvent?: boolean,
 ): MarkerOverlay => {
   let dragging = false;
   let element = document.createElement('div');
@@ -46,6 +47,7 @@ export const createMarkerOverlay = (
       if (!dragging) {
         popupOverlay.getElement()!.innerHTML = popupContent
         popupOverlay.setPosition(coordinates)
+        popupOverlay.getElement()!.classList.add("visible")
       }
     }
   }
@@ -54,7 +56,7 @@ export const createMarkerOverlay = (
     position: coordinates,
     positioning: 'center-center',
     element: element,
-    stopEvent: false,
+    stopEvent: stopEvent || false
   }) as MarkerOverlay;
 
   overlay.id = id;

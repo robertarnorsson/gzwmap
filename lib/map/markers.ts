@@ -24,7 +24,7 @@ export const taskOverlays = (map: Map, popupOverlay: Overlay) => {
         ReactDOMServer.renderToString(taskMarker(task, objective)),
         objective.types,
         ReactDOMServer.renderToString(taskPopup(task, objective)),
-        popupOverlay
+        popupOverlay,
       );
 
       map.addOverlay(overlay);

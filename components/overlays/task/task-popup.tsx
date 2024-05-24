@@ -18,8 +18,8 @@ export const taskPopup = (task: task, objective: objective) => (
     <p className="pt-4 text-sm text-primary text-pretty font-semibold">{objective.name}</p>
     <p className="text-xs text-primary/85 text-pretty">{objective.description}</p>
     {objective.image && (
-      <a href={objective.image} target="_blank">
-        <Image className='mt-4' quality={100} src={objective.image} width={260} height={100} alt={`${task.name} - ${objective.name}`}></Image>
+      <a href={objective.image} target="_blank" draggable={false} >
+        <Image className='mt-4' quality={100} draggable={false} src={objective.image} width={260} height={100} alt={`${task.name} - ${objective.name}`}></Image>
       </a>
     )}
     {task.note && (

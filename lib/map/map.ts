@@ -24,6 +24,7 @@ export const projection = new Projection({
   code: 'gzw-map',
   units: 'pixels',
   extent: tileExtent,
+  worldExtent: tileExtent
 });
 
 /* export const tilegrid = new TileGrid({
@@ -64,7 +65,7 @@ export function addPopup(map: Map) {
     element: popupElement,
     autoPan: true,
     positioning: 'bottom-center',
-    stopEvent: false,
+    stopEvent: true,
   });
 
   map.addOverlay(popupOverlay);

@@ -32,9 +32,25 @@ export default function Page() {
     locationOverlays(map, popupOverlay);
     poiOverlays(map, popupOverlay);
 
+    map.getOverlays().forEach((overlay) => {
+      const element = overlay.getElement();
+      if (element && element.children.item(0)?.classList.contains("task-marker-pin")) {
+        element.addEventListener('mouseenter', () => {
+          element.parentElement!.style.zIndex = "1000";
+        });
+        element.addEventListener('mouseleave', () => {
+          element.parentElement!.style.zIndex = '0';
+        });
+      }
+    })
+
     map.on("click", (e) => {
       console.log(e.coordinate);
-      popupOverlay.setPosition(undefined)
+      popupOverlay.getElement()!.classList.remove("visible")
+      setTimeout(() => {
+        if (!popupOverlay.getElement()!.classList.contains("visible"))
+        popupOverlay.setPosition(undefined)
+      }, 200)
     })
 
     return () => {
@@ -46,7 +62,7 @@ export default function Page() {
 
   return (
     <div className='relative h-screen'>
-      <div ref={mapRef as any}  className="h-screen w-full bg-[#0a1616] z-0">
+      <div ref={mapRef as any}  className="map h-screen w-full bg-background z-0">
         
       </div>
       <div className="absolute bg-black/50 flex flex-row gap-2 px-2 py-0.5 bottom-1.5 right-1.5 rounded-lg z-10">
