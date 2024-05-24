@@ -1,5 +1,6 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {Handshake} from "@/lib/data/vendors";
+import { PhaLangAirfield } from "../locations";
 
 const ManifestDestiny_Objective1: objective = {
     id: "",
@@ -7,7 +8,8 @@ const ManifestDestiny_Objective1: objective = {
     description: "Access the flight manifest database",
     position: [0.8686806011436445, -0.6063508987426759],
     type: ObjectiveType.LOCATE,
-    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.PHALANGAIRFIELD]
+    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.PHALANGAIRFIELD],
+    location: PhaLangAirfield
 }
 
 

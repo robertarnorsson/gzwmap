@@ -1,5 +1,6 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Gunny } from "@/lib/data/vendors";
+import { PhaLangAirfield } from "@/lib/data/locations";
 
 const ASingleDrop_Objective1: objective = {
     id: "",
@@ -7,7 +8,8 @@ const ASingleDrop_Objective1: objective = {
     description: "White truck with gas tank trailer. Interact with the panel that's open on the side of the tank.",
     position: [0.8560596795971459, -0.6101538486616099],
     type: ObjectiveType.MARK,
-    types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.PHALANGAIRFIELD]
+    types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.PHALANGAIRFIELD],
+    location: PhaLangAirfield
 }
 
 const ASingleDrop_Objective2: objective = {
@@ -16,7 +18,8 @@ const ASingleDrop_Objective2: objective = {
     description: "White truck with gas tank trailer. Interact with the panel that's open on the side of the tank.",
     position: [0.8665863792221234, -0.6037748179723758],
     type: ObjectiveType.MARK,
-    types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.PHALANGAIRFIELD]
+    types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.PHALANGAIRFIELD],
+    location: PhaLangAirfield
 }
 
 const ASingleDrop_Objective3: objective = {
@@ -25,7 +28,8 @@ const ASingleDrop_Objective3: objective = {
     description: "White truck with gas tank trailer. Interact with the panel that's open on the side of the tank.",
     position: [0.8705514284140237, -0.60143932586211],
     type: ObjectiveType.MARK,
-    types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.PHALANGAIRFIELD]
+    types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.PHALANGAIRFIELD],
+    location: PhaLangAirfield
 }
 
 export const ASingleDrop: task = {

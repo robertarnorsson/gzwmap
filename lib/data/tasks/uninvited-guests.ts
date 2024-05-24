@@ -1,5 +1,6 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {Turncoat} from "@/lib/data/vendors";
+import { BanPa } from "../locations";
 
 const UninvitedGuests_Objective1: objective = {
     id: "",
@@ -7,7 +8,8 @@ const UninvitedGuests_Objective1: objective = {
     description: "Eliminate 20 hostiles in Ban Pa",
     position: [0.69272500381395, -0.4185533523559571],
     type: ObjectiveType.ELIMINATION,
-    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.TURNCOAT, MarkerType.BANPA]
+    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.TURNCOAT, MarkerType.BANPA],
+    location: BanPa
 }
 
 export const UninvitedGuests: task = {

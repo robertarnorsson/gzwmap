@@ -6,6 +6,7 @@ import {
     MithrasSecuritySystems
 } from "@/lib/data/factions";
 import { GPSTracker } from "@/lib/data/items";
+import { KiuVongsa, NamThaven, PhaLang } from "../locations";
 
 const CacheRetrieval_Objective1_LRI: objective = {
     id: "",
@@ -15,7 +16,8 @@ const CacheRetrieval_Objective1_LRI: objective = {
     type: ObjectiveType.MARK,
     faction: LamangRecoveryInitiative,
     image: "/objectives/warehouse-cache.webp",
-    types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.PHALANG]
+    types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.PHALANG],
+    location: PhaLang
 }
 
 const CacheRetrieval_Objective2_LRI: objective = {
@@ -26,7 +28,8 @@ const CacheRetrieval_Objective2_LRI: objective = {
     type: ObjectiveType.MARK,
     faction: LamangRecoveryInitiative,
     image: "/objectives/lumberyard-cache.webp",
-    types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.PHALANG]
+    types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.PHALANG],
+    location: PhaLang
 }
 
 const CacheRetrieval_Objective1_MMS: objective = {
@@ -37,7 +40,8 @@ const CacheRetrieval_Objective1_MMS: objective = {
     type: ObjectiveType.MARK,
     faction: MithrasSecuritySystems,
     image: "/objectives/warehouse-cache.webp",
-    types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.NAMTHAVEN]
+    types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.NAMTHAVEN],
+    location: NamThaven
 }
 
 const CacheRetrieval_Objective2_MMS: objective = {
@@ -48,7 +52,8 @@ const CacheRetrieval_Objective2_MMS: objective = {
     type: ObjectiveType.MARK,
     faction: MithrasSecuritySystems,
     image: "/objectives/lumberyard-cache.webp",
-    types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.NAMTHAVEN]
+    types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.NAMTHAVEN],
+    location: NamThaven
 }
 
 const CacheRetrieval_Objective1_CSI: objective = {
@@ -59,7 +64,8 @@ const CacheRetrieval_Objective1_CSI: objective = {
     type: ObjectiveType.MARK,
     faction: CrimsonShieldInternational,
     image: "/objectives/warehouse-cache.webp",
-    types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.KIUVONGSA]
+    types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.KIUVONGSA],
+    location: KiuVongsa
 }
 
 const CacheRetrieval_Objective2_CSI: objective = {
@@ -70,7 +76,8 @@ const CacheRetrieval_Objective2_CSI: objective = {
     type: ObjectiveType.MARK,
     faction: CrimsonShieldInternational,
     image: "/objectives/lumberyard-cache.webp",
-    types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.KIUVONGSA]
+    types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.KIUVONGSA],
+    location: KiuVongsa
 }
 
 

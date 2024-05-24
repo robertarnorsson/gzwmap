@@ -1,5 +1,6 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Gunny } from "@/lib/data/vendors";
+import { HuntersParadise } from "../locations";
 
 const OnTheRange_Objective1: objective = {
     id: "",
@@ -7,7 +8,8 @@ const OnTheRange_Objective1: objective = {
     description: "Scout the shooting lanes at Hunter’s Paradise",
     position: [0.9543010740570032, -0.7927751541137695],
     type: ObjectiveType.LOCATE,
-    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.GUNNY, MarkerType.HUNTERSPARADISE]
+    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.GUNNY, MarkerType.HUNTERSPARADISE],
+    location: HuntersParadise
 }
 
 const OnTheRange_Objective2: objective = {
@@ -16,7 +18,8 @@ const OnTheRange_Objective2: objective = {
     description: "Scout the motel at Hunter’s Paradise",
     position: [0.9493317441587608, -0.7855864257597391],
     type: ObjectiveType.LOCATE,
-    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.GUNNY, MarkerType.HUNTERSPARADISE]
+    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.GUNNY, MarkerType.HUNTERSPARADISE],
+    location: HuntersParadise
 }
 
 const OnTheRange_Objective3: objective = {
@@ -25,7 +28,8 @@ const OnTheRange_Objective3: objective = {
     description: "Scout the dumping ground at Hunter’s Paradise",
     position: [0.9480804844903913, -0.8003282546997071],
     type: ObjectiveType.LOCATE,
-    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.GUNNY, MarkerType.HUNTERSPARADISE]
+    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.GUNNY, MarkerType.HUNTERSPARADISE],
+    location: HuntersParadise
 }
 
 export const OnTheRange: task = {

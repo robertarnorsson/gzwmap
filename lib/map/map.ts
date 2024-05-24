@@ -1,10 +1,15 @@
-import { Map, Overlay, View } from "ol";
+import { Graticule, Map, Overlay, View } from "ol";
 import { Extent, getCenter } from "ol/extent";
+import LineString from "ol/geom/LineString";
 import Tile from 'ol/layer/Tile';
+import VectorLayer from "ol/layer/Vector";
 import Projection from "ol/proj/Projection";
+import Feature from 'ol/Feature';
+import VectorSource from "ol/source/Vector";
 import XYZ from "ol/source/XYZ";
+import Stroke from "ol/style/Stroke";
+import Style from "ol/style/Style";
 import { createXYZ } from "ol/tilegrid";
-import TileGrid from "ol/tilegrid/TileGrid";
 
 export const tileExtent: Extent = [
   0,
@@ -48,6 +53,77 @@ export const rasterTileLayer = new Tile({
     transition: 0
   })
 });
+
+/* const bigGridSpacing = (maxExtent[3] - maxExtent[1]) / 8
+
+const smallGridFeatures = [];
+const smallGridSpacing = bigGridSpacing / 10;
+
+for (let x = maxExtent[0] + 300; x < maxExtent[2]; x += smallGridSpacing) {
+  smallGridFeatures.push(new Feature({
+    geometry: new LineString([
+      [x, maxExtent[1]],
+      [x, maxExtent[3]]
+    ])
+  }));
+}
+
+for (let y = maxExtent[1] + 300; y < maxExtent[3]; y += smallGridSpacing) {
+  smallGridFeatures.push(new Feature({
+    geometry: new LineString([
+      [maxExtent[0], y],
+      [maxExtent[2], y]
+    ])
+  }));
+}
+
+export const smallGridLayer = new VectorLayer({
+  renderBuffer: 1000,
+  source: new VectorSource({
+    features: smallGridFeatures
+  }),
+  minZoom: 5,
+  style: new Style({
+    stroke: new Stroke({
+      color: 'rgba(220, 220, 220, 0.8)',
+      width: 0.4
+    })
+  })
+});
+
+// Define the big grid layer
+const bigGridFeatures = [];
+
+for (let x = maxExtent[0] + 300; x < maxExtent[2]; x += bigGridSpacing) {
+  bigGridFeatures.push(new Feature({
+    geometry: new LineString([
+      [x, maxExtent[1]],
+      [x, maxExtent[3]]
+    ])
+  }));
+}
+
+for (let y = maxExtent[1] + 300; y < maxExtent[3]; y += bigGridSpacing) {
+  bigGridFeatures.push(new Feature({
+    geometry: new LineString([
+      [maxExtent[0], y],
+      [maxExtent[2], y]
+    ])
+  }));
+}
+
+export const bigGridLayer = new VectorLayer({
+  renderBuffer: 1000,
+  source: new VectorSource({
+    features: bigGridFeatures
+  }),
+  style: new Style({
+    stroke: new Stroke({
+      color: 'rgba(220, 220, 220, 0.6)',
+      width: 0.8
+    })
+  })
+}); */
 
 export const mapView = new View({
   center: getCenter(tileExtent),

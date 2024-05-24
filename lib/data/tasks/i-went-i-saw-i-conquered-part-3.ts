@@ -1,5 +1,6 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {Handshake} from "@/lib/data/vendors";
+import { Sawmill } from "../locations";
 
 const IWentISawIConqueredPartThree_Objective1: objective = {
     id: "",
@@ -7,7 +8,8 @@ const IWentISawIConqueredPartThree_Objective1: objective = {
     description: "Neutralize 20 hostiles at sawmill",
     position: [0.752774871297847, -0.9632348755448474],
     type: ObjectiveType.ELIMINATION,
-    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.SAWMILL]
+    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.SAWMILL],
+    location: Sawmill
 }
 
 export const IWentISawIConqueredPartThree: task = {

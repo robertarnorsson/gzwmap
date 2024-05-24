@@ -1,5 +1,6 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Handshake } from "@/lib/data/vendors";
+import { HuntersParadise } from "../locations";
 
 const UpToSnuff_Objective1: objective = {
     id: "",
@@ -7,7 +8,8 @@ const UpToSnuff_Objective1: objective = {
     description: "Locate the client list at Hunter’s Paradise and hand it to Handshake",
     position: [0.9556834257484467, -0.7917881011962891],
     type: ObjectiveType.COLLECT,
-    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.HUNTERSPARADISE]
+    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.HUNTERSPARADISE],
+    location: HuntersParadise
 }
 
 export const UpToSnuff: task = {

@@ -1,5 +1,6 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Gunny } from "@/lib/data/vendors";
+import { HuntersParadise } from "../locations";
 
 const GunsAndAmmo_Objective1: objective = {
     id: "",
@@ -7,7 +8,8 @@ const GunsAndAmmo_Objective1: objective = {
     description: "Investigate the weapon storage at Hunter’s Paradise",
     position: [0.9542146770575887, -0.7983970642089844],
     type: ObjectiveType.LOCATE,
-    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.GUNNY, MarkerType.HUNTERSPARADISE]
+    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.GUNNY, MarkerType.HUNTERSPARADISE],
+    location: HuntersParadise
 }
 
 export const GunsAndAmmo: task = {

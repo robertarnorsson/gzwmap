@@ -1,5 +1,6 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Banshee } from "@/lib/data/vendors";
+import { BlueLagoon } from "../locations";
 
 const WhatWasLeft_Objective1_LRI: objective = {
   id: "",
@@ -7,7 +8,8 @@ const WhatWasLeft_Objective1_LRI: objective = {
   description: "Retrieve the personal documents and hand it over to Banshee",
   position: [0.5238048363151709, -0.43859481811523443],
   type: ObjectiveType.COLLECT,
-  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.BANSHEE, MarkerType.BLUELAGOON]
+  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.BANSHEE, MarkerType.BLUELAGOON],
+  location: BlueLagoon
 }
 
 

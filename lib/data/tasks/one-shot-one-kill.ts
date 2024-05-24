@@ -1,5 +1,6 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Handshake } from "@/lib/data/vendors";
+import { HuntersParadise } from "../locations";
 
 const OneShotOneKill_Objective1: objective = {
     id: "",
@@ -7,7 +8,8 @@ const OneShotOneKill_Objective1: objective = {
     description: "Eliminate the hostile commander at Hunter's Paradise",
     position: [0.9541714785570418, -0.7945346832275392],
     type: ObjectiveType.ELIMINATION,
-    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.ELIMINATION, MarkerType.HUNTERSPARADISE]
+    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.ELIMINATION, MarkerType.HUNTERSPARADISE],
+    location: HuntersParadise
 }
 
 export const OneShotOneKill: task = {

@@ -1,5 +1,6 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Banshee } from "@/lib/data/vendors";
+import { Sawmill } from "../locations";
 
 const EOD_Objective1: objective = {
     id: "",
@@ -8,7 +9,8 @@ const EOD_Objective1: objective = {
     position: [0.7500917526701437, -0.9633636462356578],
     type: ObjectiveType.COLLECT,
     image: "/objectives/detonators-sawmill.webp",
-    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.BANSHEE, MarkerType.SAWMILL]
+    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.BANSHEE, MarkerType.SAWMILL],
+    location: Sawmill
 }
 
 export const EOD: task = {

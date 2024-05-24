@@ -1,5 +1,6 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {Banshee} from "@/lib/data/vendors";
+import { PhaLangAirfield } from "../locations";
 
 const SkycrawlersPartTwo_Objective1: objective = {
     id: "",
@@ -7,7 +8,8 @@ const SkycrawlersPartTwo_Objective1: objective = {
     description: "Retrieve and locate the logbook and report back",
     position: [0.8699765871172558, -0.6057071685791016],
     type: ObjectiveType.COLLECT,
-    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.BANSHEE, MarkerType.PHALANGAIRFIELD]
+    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.BANSHEE, MarkerType.PHALANGAIRFIELD],
+    location: PhaLangAirfield
 }
 
 

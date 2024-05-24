@@ -6,6 +6,7 @@ import {
   MithrasSecuritySystems
 } from "@/lib/data/factions";
 import { MedsWanted } from "@/lib/data/tasks/meds-wanted";
+import { KiuVongsa, NamThaven, PhaLang } from "../locations";
 
 const LostAndFound_Objective1_LRI: objective = {
   id: "",
@@ -14,7 +15,8 @@ const LostAndFound_Objective1_LRI: objective = {
   position: [0.9059363177502301, -0.45895264706439687],
   type: ObjectiveType.COLLECT,
   faction: LamangRecoveryInitiative,
-  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.PHALANG]
+  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.PHALANG],
+  location: PhaLang
 }
 
 const LostAndFound_Objective1_MMS: objective = {
@@ -24,7 +26,8 @@ const LostAndFound_Objective1_MMS: objective = {
   position: [0.5438293518085245, -0.6919527856864982],
   type: ObjectiveType.COLLECT,
   faction: MithrasSecuritySystems,
-  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.NAMTHAVEN]
+  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.NAMTHAVEN],
+  location: NamThaven
 }
 
 const LostAndFound_Objective1_CSI: objective = {
@@ -34,7 +37,8 @@ const LostAndFound_Objective1_CSI: objective = {
   position: [0.8970313544357956, -0.9461584087281374],
   type: ObjectiveType.COLLECT,
   faction: CrimsonShieldInternational,
-  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.KIUVONGSA]
+  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.KIUVONGSA],
+  location: KiuVongsa
 }
 
 

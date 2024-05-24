@@ -2,11 +2,9 @@
 
 import 'ol/ol.css';
 import { useEffect, useRef, useState } from 'react';
-import { debounce } from "ts-debounce";
 import { addPopup, mapView, rasterTileLayer } from '@/lib/map/map';
 import { Map } from 'ol';
 import { factionOverlays, locationOverlays, lzOverlays, poiOverlays, taskOverlays } from '@/lib/map/markers';
-import { MarkerOverlay } from '@/lib/map/marker-comp';
 
 export default function Page() {
   const mapRef = useRef();
@@ -16,7 +14,9 @@ export default function Page() {
 
   useEffect(() => {
     const map = new Map({
-      layers: [ rasterTileLayer ],
+      layers: [
+        rasterTileLayer,
+      ],
       view: mapView,
       controls: [],
       maxTilesLoading: 64,

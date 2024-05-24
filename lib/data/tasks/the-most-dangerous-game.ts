@@ -1,5 +1,6 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Artisan } from "@/lib/data/vendors";
+import { HuntersParadise } from "../locations";
 
 const TheMostDangerousGame_Objective1: objective = {
     id: "",
@@ -7,7 +8,8 @@ const TheMostDangerousGame_Objective1: objective = {
     description: "Ascertain the true nature of the VIP section",
     position: [0.9560722120601184, -0.801529884338379],
     type: ObjectiveType.COLLECT,
-    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.ARTISAN, MarkerType.HUNTERSPARADISE]
+    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.ARTISAN, MarkerType.HUNTERSPARADISE],
+    location: HuntersParadise
 }
 
 const TheMostDangerousGame_Objective2: objective = {
@@ -16,7 +18,8 @@ const TheMostDangerousGame_Objective2: objective = {
     description: "Retrieve intel about Hunter's Paradise VIP program",
     position: [0.9543874710542167, -0.7971525192260743],
     type: ObjectiveType.COLLECT,
-    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.ARTISAN, MarkerType.HUNTERSPARADISE]
+    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.ARTISAN, MarkerType.HUNTERSPARADISE],
+    location: HuntersParadise
 }
 
 export const TheMostDangerousGame: task = {

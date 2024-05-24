@@ -1,5 +1,6 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {Artisan} from "@/lib/data/vendors";
+import { PhaLangAirfield } from "../locations";
 
 const LastFlight_Objective1: objective = {
     id: "",
@@ -7,7 +8,8 @@ const LastFlight_Objective1: objective = {
     description: "Search the airfield and uncover what happened to Liko Savang.",
     position: [0.8478899729655405, -0.5872263135531665],
     type: ObjectiveType.LOCATE,
-    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.ARTISAN, MarkerType.PHALANGAIRFIELD]
+    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.ARTISAN, MarkerType.PHALANGAIRFIELD],
+    location: PhaLangAirfield
 }
 
 export const LastFlight: task = {

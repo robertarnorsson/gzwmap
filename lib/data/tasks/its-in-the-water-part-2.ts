@@ -1,5 +1,6 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {LabRat} from "@/lib/data/vendors";
+import { BanPa } from "../locations";
 
 const ItsInTheWaterPartTwo_Objective1: objective = {
     id: "",
@@ -7,7 +8,8 @@ const ItsInTheWaterPartTwo_Objective1: objective = {
     description: "Search Ban Pa and find anything related to chemical production",
     position: [0.6921201845668441, -0.41679382324218756],
     type: ObjectiveType.COLLECT,
-    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.BANPA]
+    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.BANPA],
+    location: BanPa
 }
 
 export const ItsInTheWaterPartTwo: task = {

@@ -5,6 +5,7 @@ import {
     LamangRecoveryInitiative,
     MithrasSecuritySystems
 } from "@/lib/data/factions";
+import { KiuVongsa, NamThaven, PhaLang } from "../locations";
 
 const CovertResearch_Objective1_LRI: objective = {
     id: "",
@@ -13,7 +14,8 @@ const CovertResearch_Objective1_LRI: objective = {
     position: [0.9027279143946259, -0.42496532924471975],
     type: ObjectiveType.COLLECT,
     faction: LamangRecoveryInitiative,
-    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.PHALANG]
+    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.PHALANG],
+    location: PhaLang
 }
 
 const CovertResearch_Objective1_MMS: objective = {
@@ -23,7 +25,8 @@ const CovertResearch_Objective1_MMS: objective = {
     position: [0.5240534847301731, -0.7203785424083998],
     type: ObjectiveType.COLLECT,
     faction: MithrasSecuritySystems,
-    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.NAMTHAVEN]
+    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.NAMTHAVEN],
+    location: NamThaven
 }
 
 const CovertResearch_Objective1_CSI: objective = {
@@ -33,7 +36,8 @@ const CovertResearch_Objective1_CSI: objective = {
     position: [0.9300319890170154, -0.9370192352283137],
     type: ObjectiveType.COLLECT,
     faction: CrimsonShieldInternational,
-    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.KIUVONGSA]
+    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.KIUVONGSA],
+    location: KiuVongsa
 }
 
 

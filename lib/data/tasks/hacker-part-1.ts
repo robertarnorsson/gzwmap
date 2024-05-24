@@ -1,5 +1,6 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {Handshake} from "@/lib/data/vendors";
+import { FortNarith } from "../locations";
 
 const HackerPartOne_Objective1: objective = {
     id: "",
@@ -8,7 +9,8 @@ const HackerPartOne_Objective1: objective = {
     position: [0.6225538171181662, -0.9400397060105027],
     type: ObjectiveType.HACK,
     image:"/objectives/hacker-camera-air-traffic-control-building.webp",
-    types: [MarkerType.TASK, MarkerType.HACK, MarkerType.HANDSHAKE, MarkerType.FORTNARITH]
+    types: [MarkerType.TASK, MarkerType.HACK, MarkerType.HANDSHAKE, MarkerType.FORTNARITH],
+    location: FortNarith
 }
 
 const HackerPartOne_Objective2: objective = {
@@ -18,7 +20,8 @@ const HackerPartOne_Objective2: objective = {
     position: [0.6342316308779556, -0.9222942777356248],
     type: ObjectiveType.HACK,
     image:"/objectives/hacker-camera-main-entrance.webp",
-    types: [MarkerType.TASK, MarkerType.HACK, MarkerType.HANDSHAKE, MarkerType.FORTNARITH]
+    types: [MarkerType.TASK, MarkerType.HACK, MarkerType.HANDSHAKE, MarkerType.FORTNARITH],
+    location: FortNarith
 
 }
 
@@ -29,7 +32,8 @@ const HackerPartOne_Objective3: objective = {
     position: [0.6480950970010751, -0.9342072925215519],
     type: ObjectiveType.HACK,
     image:"/objectives/hacker-camera-northern-entrance.webp",
-    types: [MarkerType.TASK, MarkerType.HACK, MarkerType.HANDSHAKE, MarkerType.FORTNARITH]
+    types: [MarkerType.TASK, MarkerType.HACK, MarkerType.HANDSHAKE, MarkerType.FORTNARITH],
+    location: FortNarith
 }
 
 const HackerPartOne_Objective4: objective = {
@@ -39,7 +43,8 @@ const HackerPartOne_Objective4: objective = {
     position: [0.6271425239793826, -0.9316388579253856],
     type: ObjectiveType.HACK,
     image:"/objectives/hacker-camera-army-headquarters.webp",
-    types: [MarkerType.TASK, MarkerType.HACK, MarkerType.HANDSHAKE, MarkerType.FORTNARITH]
+    types: [MarkerType.TASK, MarkerType.HACK, MarkerType.HANDSHAKE, MarkerType.FORTNARITH],
+    location: FortNarith
 }
 
 export const HackerPartOne: task = {

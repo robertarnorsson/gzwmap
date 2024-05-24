@@ -1,5 +1,6 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {Banshee} from "@/lib/data/vendors";
+import { BanPa } from "../locations";
 
 const LamangConnection_Objective1: objective = {
     id: "",
@@ -7,7 +8,8 @@ const LamangConnection_Objective1: objective = {
     description: "Retrieve the evidence from Ban Pa and report back",
     position: [0.6930706147771847, -0.41615009307861334],
     type: ObjectiveType.COLLECT,
-    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.BANSHEE, MarkerType.BANPA]
+    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.BANSHEE, MarkerType.BANPA],
+    location: BanPa
 }
 
 export const LamangConnection: task = {

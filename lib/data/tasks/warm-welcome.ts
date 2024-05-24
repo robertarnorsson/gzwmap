@@ -1,5 +1,6 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {Turncoat} from "@/lib/data/vendors";
+import { BanPa } from "../locations";
 
 const WarmWelcome_Objective1: objective = {
     id: "",
@@ -7,7 +8,8 @@ const WarmWelcome_Objective1: objective = {
     description: "Eliminate the gang leader in Ban Pa",
     position: [0.6892688927788, -0.41473388671875006],
     type: ObjectiveType.ELIMINATION,
-    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.TURNCOAT, MarkerType.BANPA]
+    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.TURNCOAT, MarkerType.BANPA],
+    location: BanPa
 }
 
 export const WarmWelcome: task = {

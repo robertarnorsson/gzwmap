@@ -1,5 +1,6 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Handshake } from "@/lib/data/vendors";
+import { FortNarith } from "../locations";
 
 const ForthNarithStroll_Objective1: objective = {
   id: "",
@@ -8,7 +9,8 @@ const ForthNarithStroll_Objective1: objective = {
     position: [0.6474051996779876, -0.933788291726352],
     type: ObjectiveType.LOCATE,
     image: "/objectives/hacker-camera-northern-entrance.webp",
-    types: [MarkerType. TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.FORTNARITH]
+    types: [MarkerType. TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.FORTNARITH],
+    location: FortNarith
 }
 
 const ForthNarithStroll_Objective2: objective = {
@@ -18,7 +20,8 @@ const ForthNarithStroll_Objective2: objective = {
     position: [0.6334006457514472, -0.9221844175856476],
     type: ObjectiveType.LOCATE,
     image: "/objectives/hacker-camera-main-entrance.webp",
-    types: [MarkerType. TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.FORTNARITH]
+    types: [MarkerType. TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.FORTNARITH],
+    location: FortNarith
 }
 
 const ForthNarithStroll_Objective3: objective = {
@@ -27,7 +30,8 @@ const ForthNarithStroll_Objective3: objective = {
     description: "Check the fuel supply entrance",
     position: [0.6124957273291104, -0.908842367526346],
     type: ObjectiveType.LOCATE,
-    types: [MarkerType. TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.FORTNARITH]
+    types: [MarkerType. TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.FORTNARITH],
+    location: FortNarith
 }
 
 const ForthNarithStroll_Objective4: objective = {
@@ -36,7 +40,8 @@ const ForthNarithStroll_Objective4: objective = {
     description: "Check the airfield back entrance",
     position: [0.6123181631880324, -0.9474409878248858],
     type: ObjectiveType.LOCATE,
-    types: [MarkerType. TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.FORTNARITH]
+    types: [MarkerType. TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.FORTNARITH],
+    location: FortNarith
 }
 
 export const ForthNarithStroll: task = {

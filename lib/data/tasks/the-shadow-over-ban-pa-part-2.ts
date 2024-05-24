@@ -1,5 +1,6 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {Handshake} from "@/lib/data/vendors";
+import { BanPa } from "../locations";
 
 const TheShadowOverBanPaPartTwo_Objective1: objective = {
     id: "",
@@ -7,7 +8,8 @@ const TheShadowOverBanPaPartTwo_Objective1: objective = {
     description: "Find intel regarding the cult in Ban Pa",
     position: [0.6925521983227592, -0.4175662994384766],
     type: ObjectiveType.COLLECT,
-    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.BANPA]
+    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.BANPA],
+    location: BanPa
 }
 
 export const TheShadowOverBanPaPartTwo: task = {

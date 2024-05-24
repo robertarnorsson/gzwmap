@@ -5,6 +5,7 @@ import {
   LamangRecoveryInitiative,
   MithrasSecuritySystems
 } from "@/lib/data/factions";
+import { KiuVongsa, NamThaven, PhaLang } from "../locations";
 
 const NativeNegotiations_Objective1_LRI: objective = {
   id: "",
@@ -13,7 +14,8 @@ const NativeNegotiations_Objective1_LRI: objective = {
   position: [0.982576992463779, -0.40044242241598527],
   type: ObjectiveType.COLLECT,
   faction: LamangRecoveryInitiative,
-  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.PHALANG]
+  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.PHALANG],
+  location: PhaLang
 }
 
 const NativeNegotiations_Objective2_LRI: objective = {
@@ -23,7 +25,8 @@ const NativeNegotiations_Objective2_LRI: objective = {
   position: [0.9086208979379335, -0.4387228751181361],
   type: ObjectiveType.STASH,
   faction: LamangRecoveryInitiative,
-  types: [MarkerType.TASK, MarkerType.STASH, MarkerType.HANDSHAKE, MarkerType.PHALANG]
+  types: [MarkerType.TASK, MarkerType.STASH, MarkerType.HANDSHAKE, MarkerType.PHALANG],
+  location: PhaLang
 }
 
 
@@ -34,7 +37,8 @@ const NativeNegotiations_Objective1_MMS: objective = {
   position: [0.44668473032998596, -0.6884727445317518],
   type: ObjectiveType.COLLECT,
   faction: MithrasSecuritySystems,
-  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.NAMTHAVEN]
+  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.NAMTHAVEN],
+  location: NamThaven
 }
 
 const NativeNegotiations_Objective2_MMS: objective = {
@@ -44,7 +48,8 @@ const NativeNegotiations_Objective2_MMS: objective = {
   position: [0.5286700422306424, -0.7060680928001074],
   type: ObjectiveType.STASH,
   faction: MithrasSecuritySystems,
-  types: [MarkerType.TASK, MarkerType.STASH, MarkerType.HANDSHAKE, MarkerType.NAMTHAVEN]
+  types: [MarkerType.TASK, MarkerType.STASH, MarkerType.HANDSHAKE, MarkerType.NAMTHAVEN],
+  location: NamThaven
 }
 
 
@@ -55,7 +60,8 @@ const NativeNegotiations_Objective1_CSI: objective = {
   position: [0.968696024391699, -1.0107180507109528],
   type: ObjectiveType.COLLECT,
   faction: CrimsonShieldInternational,
-  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.KIUVONGSA]
+  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.KIUVONGSA],
+  location: KiuVongsa
 }
 
 const NativeNegotiations_Objective2_CSI: objective = {
@@ -65,7 +71,8 @@ const NativeNegotiations_Objective2_CSI: objective = {
   position: [0.917427616279107, -0.9449550300110833],
   type: ObjectiveType.STASH,
   faction: CrimsonShieldInternational,
-  types: [MarkerType.TASK, MarkerType.STASH, MarkerType.HANDSHAKE, MarkerType.KIUVONGSA]
+  types: [MarkerType.TASK, MarkerType.STASH, MarkerType.HANDSHAKE, MarkerType.KIUVONGSA],
+  location: KiuVongsa
 }
 
 

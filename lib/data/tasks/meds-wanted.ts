@@ -5,6 +5,7 @@ import {
   LamangRecoveryInitiative,
   MithrasSecuritySystems
 } from "@/lib/data/factions";
+import { KiuVongsa, NamThaven, PhaLang } from "../locations";
 
 const MedsWanted_Objective1_LRI: objective = {
   id: "",
@@ -14,7 +15,8 @@ const MedsWanted_Objective1_LRI: objective = {
   type: ObjectiveType.COLLECT,
   faction: LamangRecoveryInitiative,
   image: "/objectives/unlra-medical-supplies.webp",
-  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.PHALANG]
+  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.PHALANG],
+  location: PhaLang
 }
 
 const MedsWanted_Objective1_MMS: objective = {
@@ -25,7 +27,8 @@ const MedsWanted_Objective1_MMS: objective = {
   type: ObjectiveType.COLLECT,
   faction: MithrasSecuritySystems,
   image: "/objectives/unlra-medical-supplies.webp",
-  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.NAMTHAVEN]
+  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.NAMTHAVEN],
+  location: NamThaven
 }
 
 const MedsWanted_Objective1_CSI: objective = {
@@ -36,7 +39,8 @@ const MedsWanted_Objective1_CSI: objective = {
   type: ObjectiveType.COLLECT,
   faction: CrimsonShieldInternational,
   image: "/objectives/unlra-medical-supplies.webp",
-  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.KIUVONGSA]
+  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.KIUVONGSA],
+  location: KiuVongsa
 }
 
 

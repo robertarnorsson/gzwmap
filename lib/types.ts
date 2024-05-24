@@ -27,7 +27,6 @@ export type location = {
   id: string
   name: string
   position: [number, number]
-  objectives: objective[]
   pois: poi[]
   types: MarkerType[]
 };
@@ -113,6 +112,7 @@ export type objective = {
   position: [number, number]
   type: ObjectiveType
   types: MarkerType[]
+  location: location 
   faction?: faction
   image?: string
   note?: string

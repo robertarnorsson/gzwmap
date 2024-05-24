@@ -1,5 +1,6 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {LabRat} from "@/lib/data/vendors";
+import { BanPa } from "../locations";
 
 const ItsInTheWaterPartOne_Objective1: objective = {
     id: "",
@@ -7,7 +8,8 @@ const ItsInTheWaterPartOne_Objective1: objective = {
     description: "Collect avian tissue samples",
     position: [0.6830046850581373, -0.41705131530761724],
     type: ObjectiveType.COLLECT,
-    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.BANPA]
+    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.BANPA],
+    location: BanPa
 }
 
 const ItsInTheWaterPartOne_Objective2: objective = {
@@ -16,7 +18,8 @@ const ItsInTheWaterPartOne_Objective2: objective = {
     description: "Collect water samples from a well",
     position: [0.6946258637953076, -0.4208707809448243],
     type: ObjectiveType.COLLECT,
-    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.BANPA]
+    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.BANPA],
+    location: BanPa
 }
 
 const ItsInTheWaterPartOne_Objective3: objective = {
@@ -25,7 +28,8 @@ const ItsInTheWaterPartOne_Objective3: objective = {
     description: "Collect ground samples from a mound of soil",
     position: [0.6947122665033343, -0.4116868972778321],
     type: ObjectiveType.COLLECT,
-    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.BANPA]
+    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.BANPA],
+    location: BanPa
 }
 
 export const ItsInTheWaterPartOne: task = {

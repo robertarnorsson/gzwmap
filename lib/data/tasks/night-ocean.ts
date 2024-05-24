@@ -1,5 +1,6 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Artisan } from "@/lib/data/vendors";
+import { BlueLagoon } from "../locations";
 
 const NightOcean_Objective1_LRI: objective = {
   id: "",
@@ -7,7 +8,8 @@ const NightOcean_Objective1_LRI: objective = {
   description: "Neutralize Malo Luangrath",
   position: [0.5243664719399703, -0.4352903366088868],
   type: ObjectiveType.ELIMINATION,
-  types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.ARTISAN, MarkerType.BLUELAGOON]
+  types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.ARTISAN, MarkerType.BLUELAGOON],
+  location: BlueLagoon
 }
 
 

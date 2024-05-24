@@ -1,5 +1,6 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Gunny } from "@/lib/data/vendors";
+import { BlueLagoon } from "../locations";
 
 const OutOfTheBlue_Objective1: objective = {
   id: "",
@@ -8,7 +9,8 @@ const OutOfTheBlue_Objective1: objective = {
   position: [0.5236320253434265, -0.4378223419189453],
   type: ObjectiveType.COLLECT,
   image: "/objectives/out-of-the-blue-intel.webp",
-  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.GUNNY, MarkerType.GUNNY, MarkerType.BLUELAGOON]
+  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.GUNNY, MarkerType.GUNNY, MarkerType.BLUELAGOON],
+  location: BlueLagoon
 }
 
 

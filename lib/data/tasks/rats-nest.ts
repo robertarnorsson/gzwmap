@@ -5,6 +5,7 @@ import {
   LamangRecoveryInitiative,
   MithrasSecuritySystems
 } from "@/lib/data/factions";
+import { KiuVongsa, NamThaven, PhaLang } from "../locations";
 
 const RatsNest_Objective1_LRI: objective = {
   id: "",
@@ -14,7 +15,8 @@ const RatsNest_Objective1_LRI: objective = {
   type: ObjectiveType.COLLECT,
   faction: LamangRecoveryInitiative,
   image: "/objectives/thugs-smartphone.webp",
-  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.PHALANG]
+  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.PHALANG],
+  location: PhaLang
 }
 
 const RatsNest_Objective2_LRI: objective = {
@@ -25,7 +27,8 @@ const RatsNest_Objective2_LRI: objective = {
   type: ObjectiveType.COLLECT,
   faction: LamangRecoveryInitiative,
   image: "/objectives/convicts-notepad.webp",
-  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.PHALANG]
+  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.PHALANG],
+  location: PhaLang
 }
 
 
@@ -37,7 +40,8 @@ const RatsNest_Objective1_MMS: objective = {
   type: ObjectiveType.COLLECT,
   faction: MithrasSecuritySystems,
   image: "/objectives/thugs-smartphone.webp",
-  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.NAMTHAVEN]
+  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.NAMTHAVEN],
+  location: NamThaven
 }
 
 const RatsNest_Objective2_MMS: objective = {
@@ -48,7 +52,8 @@ const RatsNest_Objective2_MMS: objective = {
   type: ObjectiveType.COLLECT,
   faction: MithrasSecuritySystems,
   image: "/objectives/convicts-notepad.webp",
-  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.NAMTHAVEN]
+  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.NAMTHAVEN],
+  location: NamThaven
 }
 
 
@@ -60,7 +65,8 @@ const RatsNest_Objective1_CSI: objective = {
   type: ObjectiveType.COLLECT,
   faction: CrimsonShieldInternational,
   image: "/objectives/thugs-smartphone.webp",
-  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.KIUVONGSA]
+  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.KIUVONGSA],
+  location: KiuVongsa
 }
 
 const RatsNest_Objective2_CSI: objective = {
@@ -71,7 +77,8 @@ const RatsNest_Objective2_CSI: objective = {
   type: ObjectiveType.COLLECT,
   faction: CrimsonShieldInternational,
   image: "/objectives/convicts-notepad.webp",
-  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.KIUVONGSA]
+  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.KIUVONGSA],
+  location: KiuVongsa
 }
 
 

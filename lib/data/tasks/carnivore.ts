@@ -1,5 +1,6 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { LabRat } from "@/lib/data/vendors";
+import { HuntersParadise } from "../locations";
 
 const Carnivore_Objective1: objective = {
     id: "",
@@ -7,7 +8,8 @@ const Carnivore_Objective1: objective = {
     description: "Collect biological samples from the fridge at Hunter’s Paradise",
     position: [0.9508883909099196, -0.7938480377197267],
     type: ObjectiveType.COLLECT,
-    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.HUNTERSPARADISE]
+    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.HUNTERSPARADISE],
+    location: HuntersParadise
 }
 
 export const Carnivore: task = {

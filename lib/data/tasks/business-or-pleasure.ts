@@ -1,5 +1,6 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Handshake } from "@/lib/data/vendors";
+import { PhaLangAirfield } from "@/lib/data/locations";
 
 const BusinessOrPleasure_Objective1: objective = {
     id: "",
@@ -7,7 +8,8 @@ const BusinessOrPleasure_Objective1: objective = {
     description: "Retrieve the intel and report back to Handshake",
     position: [0.8724821587198835, -0.601630210876465],
     type: ObjectiveType.COLLECT,
-    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.PHALANGAIRFIELD]
+    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.PHALANGAIRFIELD],
+    location: PhaLangAirfield
 }
 
 

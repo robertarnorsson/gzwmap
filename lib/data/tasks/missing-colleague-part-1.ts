@@ -1,5 +1,6 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {Artisan} from "@/lib/data/vendors";
+import { FortNarith } from "../locations";
 
 const MissingColleaguePartOne_Objective1: objective = {
     id: "",
@@ -7,7 +8,8 @@ const MissingColleaguePartOne_Objective1: objective = {
     description: "Locate any intel about the colleague's whereabouts",
     position: [0.6282650689997253, -0.9129726636371727],
     type: ObjectiveType.COLLECT,
-    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.ARTISAN, MarkerType.FORTNARITH]
+    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.ARTISAN, MarkerType.FORTNARITH],
+    location: FortNarith
 }
 
 export const MissingColleaguePartOne: task = {

@@ -1,5 +1,6 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {Gunny} from "@/lib/data/vendors";
+import { Sawmill } from "../locations";
 
 const FuelShortage_Objective1: objective = {
     id: "",
@@ -8,7 +9,8 @@ const FuelShortage_Objective1: objective = {
     position: [0.7533756757128911, -0.9619045243744018],
     type: ObjectiveType.LOCATE,
     image: "/objectives/fuel-truck-sawmill.webp",
-    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.GUNNY, MarkerType.SAWMILL]
+    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.GUNNY, MarkerType.SAWMILL],
+    location: Sawmill
 }
 
 export const FuelShortage: task = {

@@ -6,6 +6,7 @@ import {
     MithrasSecuritySystems
 } from "@/lib/data/factions";
 import { RatsNest } from "@/lib/data/tasks/rats-nest";
+import { KiuVongsa, NamThaven, PhaLang } from "../locations";
 
 const HelpingHand_Objective1_LRI: objective = {
     id: "",
@@ -14,7 +15,8 @@ const HelpingHand_Objective1_LRI: objective = {
     position: [0.913078943048676, -0.4350616565740784],
     type: ObjectiveType.COLLECT,
     faction: LamangRecoveryInitiative,
-    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.PHALANG]
+    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.PHALANG],
+    location: PhaLang
 }
 
 const HelpingHand_Objective1_MMS: objective = {
@@ -24,7 +26,8 @@ const HelpingHand_Objective1_MMS: objective = {
     position: [0.5227110808369654, -0.7061656640474491],
     type: ObjectiveType.COLLECT,
     faction: MithrasSecuritySystems,
-    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.NAMTHAVEN]
+    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.NAMTHAVEN],
+    location: NamThaven
 }
 
 const HelpingHand_Objective1_CSI: objective = {
@@ -34,7 +37,8 @@ const HelpingHand_Objective1_CSI: objective = {
     position: [0.9218800751974064, -0.9486952611587008],
     type: ObjectiveType.COLLECT,
     faction: CrimsonShieldInternational,
-    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.KIUVONGSA]
+    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.KIUVONGSA],
+    location: KiuVongsa
 }
 
 

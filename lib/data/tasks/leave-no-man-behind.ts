@@ -7,6 +7,7 @@ import {
 } from "@/lib/data/factions";
 import { GPSTracker } from "@/lib/data/items";
 import { CacheRetrieval } from "@/lib/data/tasks/cache-retrieval";
+import { KiuVongsa, NamThaven, PhaLang } from "../locations";
 
 const LeaveNoManBehind_Objective1_LRI: objective = {
   id: "",
@@ -15,7 +16,8 @@ const LeaveNoManBehind_Objective1_LRI: objective = {
   position: [0.8940818432820015, -0.44516086578369146],
   type: ObjectiveType.MARK,
   faction: LamangRecoveryInitiative,
-  types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.PHALANG]
+  types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.PHALANG],
+  location: PhaLang
   
 }
 
@@ -26,7 +28,8 @@ const LeaveNoManBehind_Objective1_MMS: objective = {
   position: [0.5440668888476972, -0.7097768783569336],
   type: ObjectiveType.MARK,
   faction: MithrasSecuritySystems,
-  types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.NAMTHAVEN]
+  types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.NAMTHAVEN],
+  location: NamThaven
   
 }
 
@@ -37,7 +40,8 @@ const LeaveNoManBehind_Objective1_CSI: objective = {
   position: [0.9085535600864155, -0.9320354461669923],
   type: ObjectiveType.MARK,
   faction: CrimsonShieldInternational,
-  types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.KIUVONGSA]
+  types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.KIUVONGSA],
+  location: KiuVongsa
   
 }
 

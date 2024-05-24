@@ -1,5 +1,6 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Handshake } from "@/lib/data/vendors";
+import { HuntersParadise } from "../locations";
 
 const TrueGrit_Objective1: objective = {
     id: "",
@@ -7,7 +8,8 @@ const TrueGrit_Objective1: objective = {
     description: "Retrieve the antique revolver and hand it over to Handshake",
     position: [0.9475189029293601, -0.7853078842163086],
     type: ObjectiveType.COLLECT,
-    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.HUNTERSPARADISE]
+    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.HUNTERSPARADISE],
+    location: HuntersParadise
 
 }
 

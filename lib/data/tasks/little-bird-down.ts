@@ -6,6 +6,7 @@ import {
   MithrasSecuritySystems
 } from "@/lib/data/factions";
 import { FirstRecon } from "@/lib/data/tasks/first-recon";
+import { KiuVongsa, NamThaven, PhaLang } from "../locations";
 
 const LittleBirdDown_Objective1_LRI: objective = {
   id: "",
@@ -15,7 +16,8 @@ const LittleBirdDown_Objective1_LRI: objective = {
   type: ObjectiveType.LOCATE,
   faction: LamangRecoveryInitiative,
   image: "/objectives/little-bird-down.webp",
-  types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.PHALANG]
+  types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.PHALANG],
+  location: PhaLang
 }
 
 const LittleBirdDown_Objective2_LRI: objective = {
@@ -25,7 +27,8 @@ const LittleBirdDown_Objective2_LRI: objective = {
   position: [0.8701061856898239, -0.4595375061035157],
   type: ObjectiveType.LOCATE,
   faction: LamangRecoveryInitiative,
-  types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.PHALANG]
+  types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.PHALANG],
+  location: PhaLang
 }
 
 const LittleBirdDown_Objective1_MMS: objective = {
@@ -36,7 +39,8 @@ const LittleBirdDown_Objective1_MMS: objective = {
   type: ObjectiveType.LOCATE,
   faction: MithrasSecuritySystems,
   image: "/objectives/little-bird-down.webp",
-  types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.NAMTHAVEN]
+  types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.NAMTHAVEN],
+  location: NamThaven
 }
 
 const LittleBirdDown_Objective2_MMS: objective = {
@@ -46,7 +50,8 @@ const LittleBirdDown_Objective2_MMS: objective = {
   position: [0.5718559643080323, -0.7144592200704315],
   type: ObjectiveType.LOCATE,
   faction: MithrasSecuritySystems,
-  types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.NAMTHAVEN]
+  types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.NAMTHAVEN],
+  location: NamThaven
 }
 
 const LittleBirdDown_Objective1_CSI: objective = {
@@ -57,7 +62,8 @@ const LittleBirdDown_Objective1_CSI: objective = {
   type: ObjectiveType.LOCATE,
   faction: CrimsonShieldInternational,
   image: "/objectives/little-bird-down.webp",
-  types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.KIUVONGSA]
+  types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.KIUVONGSA],
+  location: KiuVongsa
 }
 
 const LittleBirdDown_Objective2_CSI: objective = {
@@ -67,7 +73,8 @@ const LittleBirdDown_Objective2_CSI: objective = {
   position: [0.8894163222135618, -0.9114360809326172],
   type: ObjectiveType.LOCATE,
   faction: CrimsonShieldInternational,
-  types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.KIUVONGSA]
+  types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.KIUVONGSA],
+  location: KiuVongsa
 }
 
 

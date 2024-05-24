@@ -6,6 +6,7 @@ import {
   MithrasSecuritySystems
 } from "@/lib/data/factions";
 import { LittleBirdDown } from "@/lib/data/tasks/little-bird-down";
+import { KiuVongsa, NamThaven, PhaLang } from "../locations";
 
 const RestoringOrder_Objective1_LRI: objective = {
   id: "",
@@ -14,7 +15,8 @@ const RestoringOrder_Objective1_LRI: objective = {
   position: [0.9012219281561347, -0.4402840150754029],
   type: ObjectiveType.ELIMINATION,
   faction: LamangRecoveryInitiative,
-  types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.PHALANG]
+  types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.PHALANG],
+  location: PhaLang
 }
 
 const RestoringOrder_Objective1_MMS: objective = {
@@ -24,7 +26,8 @@ const RestoringOrder_Objective1_MMS: objective = {
   position: [0.5353820522417571, -0.7095481339548538],
   type: ObjectiveType.ELIMINATION,
   faction: MithrasSecuritySystems,
-  types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.NAMTHAVEN]
+  types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.NAMTHAVEN],
+  location: NamThaven
 }
 
 const RestoringOrder_Objective1_CSI: objective = {
@@ -34,7 +37,8 @@ const RestoringOrder_Objective1_CSI: objective = {
   position: [0.9144194438812896, -0.9381876736336638],
   type: ObjectiveType.ELIMINATION,
   faction: CrimsonShieldInternational,
-  types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.KIUVONGSA]
+  types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.KIUVONGSA],
+  location: KiuVongsa
 }
 
 

@@ -5,6 +5,7 @@ import {
   LamangRecoveryInitiative,
   MithrasSecuritySystems
 } from "@/lib/data/factions";
+import { KiuVongsa, NamThaven, PhaLang } from "../locations";
 
 const ToolsOfTheTrade_Objective1_LRI: objective = {
   id: "",
@@ -13,7 +14,8 @@ const ToolsOfTheTrade_Objective1_LRI: objective = {
   position: [0.9072131305302487, -0.4420728212764469],
   type: ObjectiveType.COLLECT,
   faction: LamangRecoveryInitiative,
-  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.ARTISAN, MarkerType.PHALANG]
+  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.ARTISAN, MarkerType.PHALANG],
+  location: PhaLang
 }
 
 const ToolsOfTheTrade_Objective1_MMS: objective = {
@@ -23,7 +25,8 @@ const ToolsOfTheTrade_Objective1_MMS: objective = {
   position: [0.5320096774049402, -0.7044744290937466],
   type: ObjectiveType.COLLECT,
   faction: MithrasSecuritySystems,
-  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.ARTISAN, MarkerType.NAMTHAVEN]
+  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.ARTISAN, MarkerType.NAMTHAVEN],
+  location: NamThaven
 }
 
 const ToolsOfTheTrade_Objective1_CSI: objective = {
@@ -33,7 +36,8 @@ const ToolsOfTheTrade_Objective1_CSI: objective = {
   position: [0.9135971875686003, -0.9444996975235489],
   type: ObjectiveType.COLLECT,
   faction: CrimsonShieldInternational,
-  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.ARTISAN, MarkerType.KIUVONGSA]
+  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.ARTISAN, MarkerType.KIUVONGSA],
+  location: KiuVongsa
 }
 
 

@@ -5,6 +5,7 @@ import {
     LamangRecoveryInitiative,
     MithrasSecuritySystems
 } from "@/lib/data/factions";
+import { KiuVongsa, NamThaven, PhaLang } from "../locations";
 
 export const FirstRecon_Objective1_LRI: objective = {
     id: "",
@@ -13,7 +14,8 @@ export const FirstRecon_Objective1_LRI: objective = {
     position: [22075.84432866189, 20422.99499176002],
     type: ObjectiveType.LOCATE,
     faction: LamangRecoveryInitiative,
-    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.PHALANG]
+    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.PHALANG],
+    location: PhaLang
 }
 
 export const FirstRecon_Objective2_LRI: objective = {
@@ -23,7 +25,8 @@ export const FirstRecon_Objective2_LRI: objective = {
     position: [22289.40524522441, 21006.90451003156],
     type: ObjectiveType.LOCATE,
     faction: LamangRecoveryInitiative,
-    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.PHALANG]
+    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.PHALANG],
+    location: PhaLang
 }
 
 export const FirstRecon_Objective3_LRI: objective = {
@@ -33,7 +36,8 @@ export const FirstRecon_Objective3_LRI: objective = {
     position: [22722.64472028925, 21091.559573592087],
     type: ObjectiveType.LOCATE,
     faction: LamangRecoveryInitiative,
-    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.PHALANG]
+    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.PHALANG],
+    location: PhaLang
 }
 
 
@@ -44,7 +48,8 @@ export const FirstRecon_Objective1_MMS: objective = {
     position: [16338.961491854141, 12947.36975247615],
     type: ObjectiveType.LOCATE,
     faction: MithrasSecuritySystems,
-    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.NAMTHAVEN]
+    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.NAMTHAVEN],
+    location: NamThaven
 }
 
 export const FirstRecon_Objective2_MMS: objective = {
@@ -54,7 +59,8 @@ export const FirstRecon_Objective2_MMS: objective = {
     position: [16546.782554411337, 12362.026819719438],
     type: ObjectiveType.LOCATE,
     faction: MithrasSecuritySystems,
-    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.NAMTHAVEN]
+    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.NAMTHAVEN],
+    location: NamThaven
 }
 
 export const FirstRecon_Objective3_MMS: objective = {
@@ -64,7 +70,8 @@ export const FirstRecon_Objective3_MMS: objective = {
     position: [16274.375483255433, 12019.522610698068],
     type: ObjectiveType.LOCATE,
     faction: MithrasSecuritySystems,
-    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.NAMTHAVEN]
+    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.NAMTHAVEN],
+    location: NamThaven
 }
 
 
@@ -75,7 +82,8 @@ export const FirstRecon_Objective1_CSI: objective = {
     position: [11180.569842049776, 20593.872251165554],
     type: ObjectiveType.LOCATE,
     faction: CrimsonShieldInternational,
-    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.KIUVONGSA]
+    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.KIUVONGSA],
+    location: KiuVongsa
 }
 
 export const FirstRecon_Objective2_CSI: objective = {
@@ -85,7 +93,8 @@ export const FirstRecon_Objective2_CSI: objective = {
     position: [10647.30182356712, 20910.74990842797],
     type: ObjectiveType.LOCATE,
     faction: CrimsonShieldInternational,
-    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.KIUVONGSA]
+    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.KIUVONGSA],
+    location: KiuVongsa
 }
 
 export const FirstRecon_Objective3_CSI: objective = {
@@ -95,7 +104,8 @@ export const FirstRecon_Objective3_CSI: objective = {
     position: [10638.418686730296, 21345.96401653563],
     type: ObjectiveType.LOCATE,
     faction: CrimsonShieldInternational,
-    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.KIUVONGSA]
+    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.KIUVONGSA],
+    location: KiuVongsa
 }
 
 

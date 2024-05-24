@@ -1,5 +1,6 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Banshee } from "@/lib/data/vendors";
+import { BlueLagoon } from "../locations";
 
 const FreshMeatPartTwo_Objective1_LRI: objective = {
   id: "",
@@ -7,7 +8,8 @@ const FreshMeatPartTwo_Objective1_LRI: objective = {
   description: "Find a building being used for the human-trafficking operation",
   position: [0.5170220020654129, -0.42799472808837896],
   type: ObjectiveType.LOCATE,
-  types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.BANSHEE, MarkerType.BLUELAGOON]
+  types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.BANSHEE, MarkerType.BLUELAGOON],
+  location: BlueLagoon
 }
 
 

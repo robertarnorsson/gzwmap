@@ -1,5 +1,6 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Artisan } from "@/lib/data/vendors";
+import { BlueLagoon } from "../locations";
 
 const DeepWaters_Objective1_LRI: objective = {
     id: "",
@@ -7,7 +8,8 @@ const DeepWaters_Objective1_LRI: objective = {
     description: "Eliminate 20 gang members in the Blue Lagoon",
     position: [0.5294211902589422, -0.4322433471679688],
     type: ObjectiveType.ELIMINATION,
-    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.ARTISAN, MarkerType.BLUELAGOON]
+    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.ARTISAN, MarkerType.BLUELAGOON],
+    location: BlueLagoon
 }
 
 

@@ -1,5 +1,6 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {Handshake} from "@/lib/data/vendors";
+import { FortNarith } from "../locations";
 
 const HackerPartTwo_Objective1: objective = {
     id: "",
@@ -9,7 +10,8 @@ const HackerPartTwo_Objective1: objective = {
     type: ObjectiveType.COLLECT,
     note: "In the communication room, second floor of the HQ.",
     image: "/objectives/hacker-part-2-codebook.webp",
-    types: [MarkerType.TASK, MarkerType.HACK, MarkerType.HANDSHAKE, MarkerType.FORTNARITH]
+    types: [MarkerType.TASK, MarkerType.HACK, MarkerType.HANDSHAKE, MarkerType.FORTNARITH],
+    location: FortNarith
 }
 
 const HackerPartTwo_Objective2: objective = {
@@ -19,7 +21,8 @@ const HackerPartTwo_Objective2: objective = {
     position: [0.6019090406927083, -0.91392516882042],
     type: ObjectiveType.HACK,
     image: "/objectives/hacker-2-airfield-radio-tower.webp",
-    types: [MarkerType.TASK, MarkerType.HACK, MarkerType.HANDSHAKE, MarkerType.FORTNARITH]
+    types: [MarkerType.TASK, MarkerType.HACK, MarkerType.HANDSHAKE, MarkerType.FORTNARITH],
+    location: FortNarith
 }
 
 const HackerPartTwo_Objective3: objective = {
@@ -29,7 +32,8 @@ const HackerPartTwo_Objective3: objective = {
     position: [0.6331936154627917, -0.9298038472654225],
     type: ObjectiveType.HACK,
     image: "/objectives/hacker-part-2-radio-tower-base.webp",
-    types: [MarkerType.TASK, MarkerType.HACK, MarkerType.HANDSHAKE, MarkerType.FORTNARITH]
+    types: [MarkerType.TASK, MarkerType.HACK, MarkerType.HANDSHAKE, MarkerType.FORTNARITH],
+    location: FortNarith
 }
 
 const HackerPartTwo_Objective4: objective = {
@@ -40,7 +44,8 @@ const HackerPartTwo_Objective4: objective = {
     type: ObjectiveType.HACK,
     note: "On the roof of the HQ.",
     image: "/objectives/hacker-2-satellite.webp",
-    types: [MarkerType.TASK, MarkerType.HACK, MarkerType.HANDSHAKE, MarkerType.FORTNARITH]
+    types: [MarkerType.TASK, MarkerType.HACK, MarkerType.HANDSHAKE, MarkerType.FORTNARITH],
+    location: FortNarith
 }
 
 export const HackerPartTwo: task = {

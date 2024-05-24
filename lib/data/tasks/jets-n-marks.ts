@@ -1,5 +1,6 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {Banshee} from "@/lib/data/vendors";
+import { FortNarith } from "../locations";
 
 const JetsNMark_Objective1: objective = {
     id: "",
@@ -8,7 +9,8 @@ const JetsNMark_Objective1: objective = {
     position: [0.6097684389884, -0.9201905627591247],
     type: ObjectiveType.MARK,
     image: "/objectives/jets-n-marks-jet-1.webp",
-    types: [MarkerType.TASK, MarkerType.MARK, MarkerType.BANSHEE, MarkerType.FORTNARITH]
+    types: [MarkerType.TASK, MarkerType.MARK, MarkerType.BANSHEE, MarkerType.FORTNARITH],
+    location: FortNarith
 }
 
 const JetsNMark_Objective2: objective = {
@@ -18,7 +20,8 @@ const JetsNMark_Objective2: objective = {
     position: [0.6139598852111069, -0.9210059543549477],
     type: ObjectiveType.MARK,
     image: "/objectives/jets-n-marks-jet-2.webp",
-    types: [MarkerType.TASK, MarkerType.MARK, MarkerType.BANSHEE, MarkerType.FORTNARITH]
+    types: [MarkerType.TASK, MarkerType.MARK, MarkerType.BANSHEE, MarkerType.FORTNARITH],
+    location: FortNarith
 }
 
 const JetsNMark_Objective3: objective = {
@@ -28,7 +31,8 @@ const JetsNMark_Objective3: objective = {
     position: [0.6138734636730515, -0.9285161401059595],
     type: ObjectiveType.MARK,
     image: "/objectives/jets-n-marks-jet-3.webp",
-    types: [MarkerType.TASK, MarkerType.MARK, MarkerType.BANSHEE, MarkerType.FORTNARITH]
+    types: [MarkerType.TASK, MarkerType.MARK, MarkerType.BANSHEE, MarkerType.FORTNARITH],
+    location: FortNarith
 }
 
 export const JetNMark: task = {

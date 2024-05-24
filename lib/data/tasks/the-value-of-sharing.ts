@@ -1,5 +1,6 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {Turncoat} from "@/lib/data/vendors";
+import { BanPa } from "../locations";
 
 const TheValueOfSharing_Objective1: objective = {
     id: "",
@@ -8,7 +9,8 @@ const TheValueOfSharing_Objective1: objective = {
     position: [0.6947554678567497, -0.42198657989501953],
     image: "/objectives/stash-of-high-grade-fentanyl.webp",
     type: ObjectiveType.LOCATE,
-    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.TURNCOAT, MarkerType.BANPA]
+    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.TURNCOAT, MarkerType.BANPA],
+    location: BanPa
 }
 
 export const TheValueOfSharing: task = {

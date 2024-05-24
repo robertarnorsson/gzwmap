@@ -1,5 +1,6 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {Artisan} from "@/lib/data/vendors";
+import { Sawmill } from "../locations";
 
 const InvadersFromAfar_Objective1: objective = {
     id: "",
@@ -8,7 +9,8 @@ const InvadersFromAfar_Objective1: objective = {
     position: [0.7544600415954911, -0.9586000180528044],
     type: ObjectiveType.LOCATE,
     image: "/objectives/invaders-from-afar-search-for-leads.webp",
-    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.ARTISAN, MarkerType.SAWMILL]
+    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.ARTISAN, MarkerType.SAWMILL],
+    location: Sawmill
 }
 
 const InvadersFromAfar_Objective2: objective = {
@@ -18,7 +20,8 @@ const InvadersFromAfar_Objective2: objective = {
     position: [0.7496637859386945, -0.9601020552030028],
     type: ObjectiveType.COLLECT,
     image: "/objectives/invaders-from-afar-medics-notes.webp",
-    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.ARTISAN, MarkerType.SAWMILL]
+    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.ARTISAN, MarkerType.SAWMILL],
+    location: Sawmill
 }
 
 export const InvadersFromAfar: task = {

@@ -1,5 +1,6 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {Gunny} from "@/lib/data/vendors";
+import { FortNarith } from "../locations";
 
 const NeighbourlyHelp_Objective1: objective = {
     id: "",
@@ -8,7 +9,8 @@ const NeighbourlyHelp_Objective1: objective = {
     position: [0.6061458180044782, -0.9156317437382812],
     type: ObjectiveType.LOCATE,
     image:"/objectives/neighbourly-help-fuel-gauges.webp",
-    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.GUNNY, MarkerType.FORTNARITH]
+    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.GUNNY, MarkerType.FORTNARITH],
+    location: FortNarith
 }
 
 const NeighbourlyHelp_Objective2: objective = {
@@ -18,7 +20,8 @@ const NeighbourlyHelp_Objective2: objective = {
     position: [0.6057117175351846, -0.9149393313471779],
     type: ObjectiveType.LOCATE,
     image:"/objectives/neighbourly-help-fuel-gauges.webp",
-    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.GUNNY, MarkerType.FORTNARITH]
+    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.GUNNY, MarkerType.FORTNARITH],
+    location: FortNarith
 }
 
 export const NeighbourlyHelp: task = {

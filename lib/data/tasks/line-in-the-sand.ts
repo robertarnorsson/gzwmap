@@ -1,5 +1,6 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {Artisan} from "@/lib/data/vendors";
+import { BanPa } from "../locations";
 
 const LineInTheSand_Objective1: objective = {
     id: "",
@@ -7,7 +8,8 @@ const LineInTheSand_Objective1: objective = {
     description: "Dispose of the drugs at the northern pier",
     position: [0.6971315416774295, -0.4079532623291016],
     type: ObjectiveType.STASH,
-    types: [MarkerType.TASK, MarkerType.STASH, MarkerType.ARTISAN, MarkerType.BANPA]
+    types: [MarkerType.TASK, MarkerType.STASH, MarkerType.ARTISAN, MarkerType.BANPA],
+    location: BanPa
 }
 
 export const LineInTheSand: task = {

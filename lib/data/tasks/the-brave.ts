@@ -1,5 +1,6 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { LabRat } from "@/lib/data/vendors";
+import { HuntersParadise } from "../locations";
 
 const TheBrave_Objective1: objective = {
     id: "",
@@ -7,7 +8,8 @@ const TheBrave_Objective1: objective = {
     description: "Find Aulii Syvongsa and pickup the goodbye letter",
     position: [0.9541282800559733, -0.8009719848632814],
     type: ObjectiveType.ELIMINATION,
-    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.LABRAT, MarkerType.HUNTERSPARADISE]
+    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.LABRAT, MarkerType.HUNTERSPARADISE],
+    location: HuntersParadise
 }
 
 export const TheBrave: task = {

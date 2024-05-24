@@ -6,6 +6,7 @@ import {
   MithrasSecuritySystems
 } from "@/lib/data/factions";
 import { LeaveNoManBehind } from "@/lib/data/tasks/leave-no-man-behind";
+import { KiuVongsa, NamThaven, PhaLang } from "../locations";
 
 const MedicalDetective_Objective1_LRI: objective = {
   id: "",
@@ -14,7 +15,8 @@ const MedicalDetective_Objective1_LRI: objective = {
   position: [0.910734961284329, -0.42277983496990645],
   type: ObjectiveType.COLLECT,
   faction: LamangRecoveryInitiative,
-  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.GUNNY, MarkerType.PHALANG]
+  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.GUNNY, MarkerType.PHALANG],
+  location: PhaLang
 }
 
 const MedicalDetective_Objective1_MMS: objective = {
@@ -24,7 +26,8 @@ const MedicalDetective_Objective1_MMS: objective = {
   position: [0.5166650742814851, -0.7170144347480178],
   type: ObjectiveType.COLLECT,
   faction: MithrasSecuritySystems,
-  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.GUNNY, MarkerType.NAMTHAVEN]
+  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.GUNNY, MarkerType.NAMTHAVEN],
+  location: NamThaven
 }
 
 const MedicalDetective_Objective1_CSI: objective = {
@@ -34,7 +37,8 @@ const MedicalDetective_Objective1_CSI: objective = {
   position: [0.9335705682347442, -0.9445126594327947],
   type: ObjectiveType.COLLECT,
   faction: CrimsonShieldInternational,
-  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.GUNNY, MarkerType.KIUVONGSA]
+  types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.GUNNY, MarkerType.KIUVONGSA],
+  location: KiuVongsa
 }
 
 

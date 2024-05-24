@@ -1,5 +1,6 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {Handshake} from "@/lib/data/vendors";
+import { BanPa, BlueLagoon, HuntersParadise, PhaLangAirfield, Sawmill, YBL1 } from "../locations";
 
 const HazardousTreasures_Objective1: objective = {
     id: "",
@@ -7,7 +8,8 @@ const HazardousTreasures_Objective1: objective = {
     description: "Eliminate 10 hostiles at Sawmill",
     position: [0.7525546864768021, -0.9618089454451508],
     type: ObjectiveType.ELIMINATION,
-    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.SAWMILL]
+    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.SAWMILL],
+    location: Sawmill
 }
 
 const HazardousTreasures_Objective2: objective = {
@@ -18,7 +20,8 @@ const HazardousTreasures_Objective2: objective = {
     type: ObjectiveType.COLLECT,
     image: "/objectives/hazardous-treasures-sawmill.webp",
     note: "You will need SM Office Storage key.",
-    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.SAWMILL]
+    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.SAWMILL],
+    location: Sawmill
 }
 
 const HazardousTreasures_Objective3: objective = {
@@ -27,7 +30,8 @@ const HazardousTreasures_Objective3: objective = {
     description: "Eliminate 10 hostiles at Blue Lagoon",
     position: [0.526306927744574, -0.43116168536865956],
     type: ObjectiveType.ELIMINATION,
-    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.BLUELAGOON]
+    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.BLUELAGOON],
+    location: BlueLagoon
 }
 
 const HazardousTreasures_Objective4: objective = {
@@ -37,7 +41,8 @@ const HazardousTreasures_Objective4: objective = {
     position: [0.5276032706670536, -0.4289291690255071],
     type: ObjectiveType.COLLECT,
     image: "/objectives/hazardous-treasures-blue-lagoon.webp",
-    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.BLUELAGOON]
+    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.BLUELAGOON],
+    location: BlueLagoon
 }
 
 const HazardousTreasures_Objective5: objective = {
@@ -46,7 +51,8 @@ const HazardousTreasures_Objective5: objective = {
     description: "Eliminate 10 hostiles at Hunters Paradise",
     position: [0.9529145063347765, -0.7940944024978048],
     type: ObjectiveType.ELIMINATION,
-    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.HUNTERSPARADISE]
+    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.HUNTERSPARADISE],
+    location: HuntersParadise
 }
 
 const HazardousTreasures_Objective6: objective = {
@@ -57,7 +63,8 @@ const HazardousTreasures_Objective6: objective = {
     type: ObjectiveType.COLLECT,
     image: "/objectives/hazardous-treasures-hunters-paradise.webp",
     note: "You will need a HP Wep key.",
-    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.HUNTERSPARADISE]
+    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.HUNTERSPARADISE],
+    location: HuntersParadise
 }
 
 const HazardousTreasures_Objective7: objective = {
@@ -66,7 +73,8 @@ const HazardousTreasures_Objective7: objective = {
     description: "Eliminate 10 hostiles at Ban Pa",
     position: [0.6951812100138812, -0.416576396872439],
     type: ObjectiveType.ELIMINATION,
-    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.BANPA]
+    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.BANPA],
+    location: BanPa
 }
 
 const HazardousTreasures_Objective8: objective = {
@@ -77,7 +85,8 @@ const HazardousTreasures_Objective8: objective = {
     type: ObjectiveType.COLLECT,
     image: "/objectives/hazardous-treasures-ban-pa.webp",
     note: "You can find the container in the Elder's House upstairs under a pink table.",
-    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.BANPA]
+    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.BANPA],
+    location: BanPa
 }
 
 const HazardousTreasures_Objective9: objective = {
@@ -86,7 +95,8 @@ const HazardousTreasures_Objective9: objective = {
     description: "Eliminate 10 hostiles at Pha Lang Airfield",
     position: [0.8668607328155087, -0.6058182169262194],
     type: ObjectiveType.ELIMINATION,
-    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.PHALANGAIRFIELD]
+    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.PHALANGAIRFIELD],
+    location: PhaLangAirfield
 }
 
 const HazardousTreasures_Objective10: objective = {
@@ -97,7 +107,8 @@ const HazardousTreasures_Objective10: objective = {
     type: ObjectiveType.COLLECT,
     image: "/objectives/hazardous-treasures-airfield.webp",
     note: "You will need a PLA STRG key.",
-    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.PHALANGAIRFIELD]
+    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.PHALANGAIRFIELD],
+    location: PhaLangAirfield
 }
 
 const HazardousTreasures_Objective11: objective = {
@@ -106,7 +117,8 @@ const HazardousTreasures_Objective11: objective = {
     description: "Eliminate 10 hostiles at YBL-1",
     position: [0.567005873136639, -0.9307348273810013],
     type: ObjectiveType.ELIMINATION,
-    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.YBL1]
+    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.YBL1],
+    location: YBL1
 }
 
 const HazardousTreasures_Objective12: objective = {
@@ -117,7 +129,8 @@ const HazardousTreasures_Objective12: objective = {
     type: ObjectiveType.COLLECT,
     image: "/objectives/hazardous-treasures-ybl-1.webp",
     note: "Back room in the office with wooden wall panels next to the communications room.",
-    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.YBL1]
+    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.YBL1],
+    location: YBL1
 }
 
 export const HazardousTreasures: task = {

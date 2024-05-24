@@ -1,5 +1,6 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {Banshee} from "@/lib/data/vendors";
+import { Sawmill } from "../locations";
 
 const Timber_Objective1: objective = {
     id: "",
@@ -8,7 +9,8 @@ const Timber_Objective1: objective = {
     position: [0.7515189734461651, -0.9627628314396232],
     type: ObjectiveType.ELIMINATION,
     image: "/objectives/leader-sawmill.webp",
-    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.BANSHEE, MarkerType.SAWMILL]
+    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.BANSHEE, MarkerType.SAWMILL],
+    location: Sawmill
 }
 
 export const Timber: task = {

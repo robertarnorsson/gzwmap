@@ -1,5 +1,6 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Handshake } from "@/lib/data/vendors";
+import { PhaLangAirfield } from "../locations";
 
 const FinalCheckout_Objective1: objective = {
     id: "",
@@ -7,7 +8,8 @@ const FinalCheckout_Objective1: objective = {
     description: "Look for the purple spinner case standing upright adjacent to the wooden post, underneath the Hangar.",
     position: [0.867557412935466, -0.6015443801879884],
     type: ObjectiveType.LOCATE,
-    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.PHALANGAIRFIELD]
+    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.PHALANGAIRFIELD],
+    location: PhaLangAirfield
 }
 
 

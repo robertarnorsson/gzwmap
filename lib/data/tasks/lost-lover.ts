@@ -1,5 +1,6 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {Artisan} from "@/lib/data/vendors";
+import { FortNarith } from "../locations";
 
 const LostLover_Objective1: objective = {
     id: "",
@@ -9,7 +10,8 @@ const LostLover_Objective1: objective = {
     type: ObjectiveType.LOCATE,
     image: "/objectives/lost-lover-document.webp",
     note: "Read the document on the shelf inside the house",
-    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.ARTISAN, MarkerType.FORTNARITH]
+    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.ARTISAN, MarkerType.FORTNARITH],
+    location: FortNarith
 }
 
 const LostLover_Objective2: objective = {
@@ -19,7 +21,8 @@ const LostLover_Objective2: objective = {
     position: [0.6501258046800503, -0.9471352535642377],
     type: ObjectiveType.COLLECT,
     image: "/objectives/lost-lover-diary.webp",
-    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.ARTISAN, MarkerType.FORTNARITH]
+    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.ARTISAN, MarkerType.FORTNARITH],
+    location: FortNarith
 }
 
 export const LostLover: task = {

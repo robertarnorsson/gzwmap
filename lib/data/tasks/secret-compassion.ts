@@ -6,6 +6,7 @@ import {
   MithrasSecuritySystems
 } from "@/lib/data/factions";
 import { MedicalDetective } from "@/lib/data/tasks/medical-detective";
+import { KiuVongsa, NamThaven, PhaLang } from "../locations";
 
 const SecretCompassion_Objective1_LRI: objective = {
   id: "",
@@ -14,7 +15,8 @@ const SecretCompassion_Objective1_LRI: objective = {
   position: [0.8712657678111906, -0.44314610499706536],
   type: ObjectiveType.STASH,
   faction: LamangRecoveryInitiative,
-  types: [MarkerType.TASK, MarkerType.STASH, MarkerType.LABRAT, MarkerType.PHALANG]
+  types: [MarkerType.TASK, MarkerType.STASH, MarkerType.LABRAT, MarkerType.PHALANG],
+  location: PhaLang
 }
 
 const SecretCompassion_Objective2_LRI: objective = {
@@ -24,7 +26,8 @@ const SecretCompassion_Objective2_LRI: objective = {
   position: [0.9144949402662516, -0.4720064915621825],
   type: ObjectiveType.STASH,
   faction: LamangRecoveryInitiative,
-  types: [MarkerType.TASK, MarkerType.STASH, MarkerType.LABRAT, MarkerType.PHALANG]
+  types: [MarkerType.TASK, MarkerType.STASH, MarkerType.LABRAT, MarkerType.PHALANG],
+  location: PhaLang
 }
 
 const SecretCompassion_Objective3_LRI: objective = {
@@ -34,7 +37,8 @@ const SecretCompassion_Objective3_LRI: objective = {
   position: [0.9210288702513367, -0.4533260384684135],
   type: ObjectiveType.STASH,
   faction: LamangRecoveryInitiative,
-  types: [MarkerType.TASK, MarkerType.STASH, MarkerType.LABRAT, MarkerType.PHALANG]
+  types: [MarkerType.TASK, MarkerType.STASH, MarkerType.LABRAT, MarkerType.PHALANG],
+  location: PhaLang
 }
 
 
@@ -45,7 +49,8 @@ const SecretCompassion_Objective1_MMS: objective = {
   position: [0.5618384032046484, -0.7269009856792841],
   type: ObjectiveType.STASH,
   faction: MithrasSecuritySystems,
-  types: [MarkerType.TASK, MarkerType.STASH, MarkerType.LABRAT, MarkerType.NAMTHAVEN]
+  types: [MarkerType.TASK, MarkerType.STASH, MarkerType.LABRAT, MarkerType.NAMTHAVEN],
+  location: NamThaven
 }
 
 const SecretCompassion_Objective2_MMS: objective = {
@@ -55,7 +60,8 @@ const SecretCompassion_Objective2_MMS: objective = {
   position: [0.545875887819414, -0.677249609977626],
   type: ObjectiveType.STASH,
   faction: MithrasSecuritySystems,
-  types: [MarkerType.TASK, MarkerType.STASH, MarkerType.LABRAT, MarkerType.NAMTHAVEN]
+  types: [MarkerType.TASK, MarkerType.STASH, MarkerType.LABRAT, MarkerType.NAMTHAVEN],
+  location: NamThaven
 }
 
 const SecretCompassion_Objective3_MMS: objective = {
@@ -65,7 +71,8 @@ const SecretCompassion_Objective3_MMS: objective = {
   position: [0.5284621857447294, -0.6870197193898854],
   type: ObjectiveType.STASH,
   faction: MithrasSecuritySystems,
-  types: [MarkerType.TASK, MarkerType.STASH, MarkerType.LABRAT, MarkerType.NAMTHAVEN]
+  types: [MarkerType.TASK, MarkerType.STASH, MarkerType.LABRAT, MarkerType.NAMTHAVEN],
+  location: NamThaven
 }
 
 
@@ -76,7 +83,8 @@ const SecretCompassion_Objective1_CSI: objective = {
   position: [0.9068183278177685, -0.9093634948019782],
   type: ObjectiveType.STASH,
   faction: CrimsonShieldInternational,
-  types: [MarkerType.TASK, MarkerType.STASH, MarkerType.LABRAT, MarkerType.KIUVONGSA]
+  types: [MarkerType.TASK, MarkerType.STASH, MarkerType.LABRAT, MarkerType.KIUVONGSA],
+  location: KiuVongsa
 }
 
 const SecretCompassion_Objective2_CSI: objective = {
@@ -86,7 +94,8 @@ const SecretCompassion_Objective2_CSI: objective = {
   position: [0.8849842640209445, -0.9564419247927481],
   type: ObjectiveType.STASH,
   faction: CrimsonShieldInternational,
-  types: [MarkerType.TASK, MarkerType.STASH, MarkerType.LABRAT, MarkerType.KIUVONGSA]
+  types: [MarkerType.TASK, MarkerType.STASH, MarkerType.LABRAT, MarkerType.KIUVONGSA],
+  location: KiuVongsa
 }
 
 const SecretCompassion_Objective3_CSI: objective = {
@@ -96,7 +105,8 @@ const SecretCompassion_Objective3_CSI: objective = {
   position: [0.9051807776224845, -0.9598434029805626],
   type: ObjectiveType.STASH,
   faction: CrimsonShieldInternational,
-  types: [MarkerType.TASK, MarkerType.STASH, MarkerType.LABRAT, MarkerType.KIUVONGSA]
+  types: [MarkerType.TASK, MarkerType.STASH, MarkerType.LABRAT, MarkerType.KIUVONGSA],
+  location: KiuVongsa
 }
 
 

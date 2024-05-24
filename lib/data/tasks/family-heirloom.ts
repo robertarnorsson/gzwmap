@@ -1,5 +1,6 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Turncoat } from "@/lib/data/vendors";
+import { FortNarith } from "../locations";
 
 const FamilyHeirloom_Objective1: objective = {
     id: "",
@@ -8,7 +9,8 @@ const FamilyHeirloom_Objective1: objective = {
     position: [0.6747959845638559, -0.9517051567439717],
     type: ObjectiveType.COLLECT,
     image:"/objectives/family-heirloom-valuables.webp",
-    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.TURNCOAT, MarkerType.FORTNARITH]
+    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.TURNCOAT, MarkerType.FORTNARITH],
+    location: FortNarith
 }
 
 export const FamilyHeirloom: task = {

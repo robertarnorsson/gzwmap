@@ -8,7 +8,7 @@ export const locationPopup = (location: location) => (
   <div className={cn(rubik.className, "p-6 relative marker-text")}>
     <h2 className="text-lg font-bold text-primary">{location.name}</h2>
     <div className="flex flex-row gap-2">
-      <p className="text-xs text-muted-foreground">{`${location.objectives.length} objectives`}</p>
+      <p className="text-xs text-muted-foreground">{`0 objectives`}</p>
       <p className="text-xs text-muted-foreground">▪</p>
       <p className="text-xs text-muted-foreground">{`${location.pois.length} pois`}</p>
     </div>

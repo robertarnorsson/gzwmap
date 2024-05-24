@@ -1,5 +1,6 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Handshake } from "@/lib/data/vendors";
+import { HuntersParadise } from "../locations";
 
 const ShootingGallery_Objective1: objective = {
     id: "",
@@ -7,7 +8,8 @@ const ShootingGallery_Objective1: objective = {
     description: "Neutralize 20 hostiles at Hunter’s Paradise",
     position: [0.9549490514825124, -0.790543556213379],
     type: ObjectiveType.COLLECT,
-    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.HUNTERSPARADISE]
+    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.HUNTERSPARADISE],
+    location: HuntersParadise
 }
 
 export const ShootingGallery: task = {

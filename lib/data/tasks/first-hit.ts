@@ -5,6 +5,7 @@ import {
     LamangRecoveryInitiative,
     MithrasSecuritySystems
 } from "@/lib/data/factions";
+import { KiuVongsa, NamThaven, PhaLang } from "../locations";
 
 const FirstHit_Objective1_LRI: objective = {
     id: "",
@@ -13,7 +14,8 @@ const FirstHit_Objective1_LRI: objective = {
     position: [0.9032189967270826, -0.4536837997086064],
     type: ObjectiveType.ELIMINATION,
     faction: LamangRecoveryInitiative,
-    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.PHALANG]
+    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.PHALANG],
+    location: PhaLang
 }
 
 const FirstHit_Objective1_MMS: objective = {
@@ -23,7 +25,8 @@ const FirstHit_Objective1_MMS: objective = {
     position: [0.5425851766511464, -0.6980022030209022],
     type: ObjectiveType.ELIMINATION,
     faction: MithrasSecuritySystems,
-    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.NAMTHAVEN]
+    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.NAMTHAVEN],
+    location: NamThaven
 }
 
 const FirstHit_Objective1_CSI: objective = {
@@ -33,7 +36,8 @@ const FirstHit_Objective1_CSI: objective = {
     position: [0.9016802718607833, -0.9424832250787475],
     type: ObjectiveType.ELIMINATION,
     faction: CrimsonShieldInternational,
-    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.KIUVONGSA]
+    types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.KIUVONGSA],
+    location: KiuVongsa
 }
 
 
