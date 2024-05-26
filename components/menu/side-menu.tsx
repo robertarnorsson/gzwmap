@@ -124,11 +124,20 @@ export default function SideMenu({ map, popupOverlay }: { map: Map | undefined, 
     const handleClick = () => {
       if (map && popupOverlay) {
         const view = map.getView();
-        view.animate({zoom: (view.getMaxZoom() - 1), center: objective.position})
-
-        popupOverlay.getElement()!.innerHTML = ReactDOMServer.renderToString(taskPopup(task, objective)),
-        popupOverlay.setPosition(objective.position)
-        popupOverlay.getElement()!.classList.add("visible")
+        const maxZoom = view.getMaxZoom() - 1;
+        const targetPosition = objective.position;
+  
+        const handleViewChange = () => {
+          popupOverlay.getElement()!.innerHTML = ReactDOMServer.renderToString(taskPopup(task, objective));
+          popupOverlay.getElement()!.classList.add("visible");
+  
+          view.un('change:center', handleViewChange);
+        };
+  
+        view.on('change:center', handleViewChange);
+  
+        view.animate({ zoom: maxZoom, center: targetPosition });
+        popupOverlay.setPosition(targetPosition);
       }
     };
 
