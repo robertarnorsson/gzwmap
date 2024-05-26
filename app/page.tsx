@@ -18,7 +18,7 @@ export default function Page() {
       layers: [rasterTileLayer],
       view: mapView,
       controls: [],
-      maxTilesLoading: 256,
+      maxTilesLoading: 64,
     });
 
     map.setTarget(mapRef.current as HTMLDivElement);
