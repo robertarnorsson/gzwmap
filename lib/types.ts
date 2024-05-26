@@ -20,6 +20,7 @@ export type lz = {
   position: [number, number]
   discoverable: boolean
   types: MarkerType[]
+  location: location
   faction?: faction
 };
 
@@ -36,6 +37,7 @@ export type poi = {
   name: string
   position: [number, number]
   types: MarkerType[]
+  location: location
 }
 
 export enum MarkerType {

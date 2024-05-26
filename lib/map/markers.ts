@@ -13,6 +13,7 @@ import { factionMarker } from "@/components/overlays/faction-overlay";
 import { POIs } from "../data/pois";
 import { poiMarker } from "@/components/overlays/poi-overlay";
 import { locationPopup } from "@/components/overlays/location/location-popup";
+import { MarkerType } from "../types";
 
 export const taskOverlays = (map: Map, popupOverlay: Overlay) => {
   Tasks.map((task) => {

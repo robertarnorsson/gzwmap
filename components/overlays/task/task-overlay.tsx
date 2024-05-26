@@ -14,7 +14,7 @@ export function taskMarker(task: task, objective: objective) {
     <div className={cn(rubik.className, "task-marker-pin flex flex-row")}>
       <Image
         className="task-marker-image shadow-2xl m-2 cursor-pointer"
-        src='/task.png'
+        src='/task.svg'
         width={15}
         height={15}
         draggable={false}

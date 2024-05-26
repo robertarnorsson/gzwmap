@@ -1,15 +1,10 @@
 import { Graticule, Map, Overlay, View } from "ol";
 import { Extent, getCenter } from "ol/extent";
-import LineString from "ol/geom/LineString";
 import Tile from 'ol/layer/Tile';
-import VectorLayer from "ol/layer/Vector";
 import Projection from "ol/proj/Projection";
-import Feature from 'ol/Feature';
-import VectorSource from "ol/source/Vector";
 import XYZ from "ol/source/XYZ";
-import Stroke from "ol/style/Stroke";
-import Style from "ol/style/Style";
 import { createXYZ } from "ol/tilegrid";
+import TileState from 'ol/TileState';
 
 export const tileExtent: Extent = [
   0,
@@ -53,6 +48,29 @@ export const rasterTileLayer = new Tile({
     transition: 0
   })
 });
+
+export const mapView = new View({
+  center: getCenter(tileExtent),
+  zoom: 3,
+  projection: projection,
+  enableRotation: false,
+  maxZoom: 8
+});
+
+export function addPopup(map: Map) {
+  const popupElement = document.createElement('div');
+  popupElement.className = 'marker';
+
+  const popupOverlay = new Overlay({
+    element: popupElement,
+    autoPan: true,
+    positioning: 'bottom-center',
+    stopEvent: true,
+  });
+
+  map.addOverlay(popupOverlay);
+  return popupOverlay;
+}
 
 /* const bigGridSpacing = (maxExtent[3] - maxExtent[1]) / 8
 
@@ -124,26 +142,3 @@ export const bigGridLayer = new VectorLayer({
     })
   })
 }); */
-
-export const mapView = new View({
-  center: getCenter(tileExtent),
-  zoom: 3,
-  projection: projection,
-  enableRotation: false,
-  maxZoom: 8
-});
-
-export function addPopup(map: Map) {
-  const popupElement = document.createElement('div');
-  popupElement.className = 'marker';
-
-  const popupOverlay = new Overlay({
-    element: popupElement,
-    autoPan: true,
-    positioning: 'bottom-center',
-    stopEvent: true,
-  });
-
-  map.addOverlay(popupOverlay);
-  return popupOverlay;
-}

@@ -9,18 +9,20 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command"
-import {
-  ToggleGroup,
-  ToggleGroupItem,
-} from "@/components/ui/toggle-group"
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { task, faction, objective } from '@/lib/types';
 import { Tasks } from '@/lib/data/tasks';
 import { Factions } from '@/lib/data/factions';
 import { cn } from '@/lib/utils';
+import { Map, Overlay } from 'ol';
+import { add } from 'ol/coordinate';
+import { fromLonLat } from 'ol/proj';
+import { Coordinate } from 'openlayers';
+import ReactDOMServer from 'react-dom/server';
+import { taskPopup } from '../overlays/task/task-popup';
 
-export default function SideMenu({ mapRef }: { mapRef: L.Map | null }) {
+export default function SideMenu({ map, popupOverlay }: { map: Map | undefined, popupOverlay: Overlay | undefined }) {
   const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedFactions, setSelectedFactions] = useState<Set<string>>(new Set());
@@ -120,14 +122,13 @@ export default function SideMenu({ mapRef }: { mapRef: L.Map | null }) {
 
   const ObjectiveItem = ({ task, objective }: { task: task, objective: objective }) => {
     const handleClick = () => {
-      if (mapRef) {
-        mapRef.closePopup()
-        if (isMobile) {
-          setIsOpen(false);
-          mapRef.setView(objective.position, 15)
-        } else {
-          mapRef.flyTo(objective.position, 15)
-        }
+      if (map && popupOverlay) {
+        const view = map.getView();
+        view.animate({zoom: (view.getMaxZoom() - 1), center: objective.position})
+
+        popupOverlay.getElement()!.innerHTML = ReactDOMServer.renderToString(taskPopup(task, objective)),
+        popupOverlay.setPosition(objective.position)
+        popupOverlay.getElement()!.classList.add("visible")
       }
     };
 
