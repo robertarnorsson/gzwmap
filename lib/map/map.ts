@@ -63,7 +63,7 @@ export function addPopup(map: Map) {
 
   const popupOverlay = new Overlay({
     element: popupElement,
-    autoPan: true,
+    autoPan: false,
     positioning: 'bottom-center',
     stopEvent: true,
   });
