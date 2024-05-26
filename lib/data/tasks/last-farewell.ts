@@ -1,5 +1,5 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
-import { Handshake } from "@/lib/data/vendors";
+import { Gunny } from "@/lib/data/vendors";
 import {
   CrimsonShieldInternational,
   LamangRecoveryInitiative,
@@ -14,7 +14,7 @@ const LastFarewell_Objective1_LRI: objective = {
   position: [22434.271907727114, 19716.16022712469],
   type: ObjectiveType.MARK,
   faction: LamangRecoveryInitiative,
-  types: [MarkerType.TASK, MarkerType.MARK, MarkerType.HANDSHAKE, MarkerType.PHALANG],
+  types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.PHALANG],
   location: PhaLang
 }
 
@@ -25,7 +25,7 @@ const LastFarewell_Objective1_MMS: objective = {
   position: [15609.016458728505, 13261.125004666106],
   type: ObjectiveType.MARK,
   faction: MithrasSecuritySystems,
-  types: [MarkerType.TASK, MarkerType.MARK, MarkerType.HANDSHAKE, MarkerType.NAMTHAVEN],
+  types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.NAMTHAVEN],
   location: NamThaven
 }
 
@@ -36,7 +36,7 @@ const LastFarewell_Objective1_CSI: objective = {
   position: [11944.519831278469, 20824.900989189373],
   type: ObjectiveType.MARK,
   faction: CrimsonShieldInternational,
-  types: [MarkerType.TASK, MarkerType.MARK, MarkerType.HANDSHAKE, MarkerType.KIUVONGSA],
+  types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.KIUVONGSA],
   location: KiuVongsa
 }
 
@@ -50,6 +50,6 @@ export const LastFarewell: task = {
     LastFarewell_Objective1_MMS,
     LastFarewell_Objective1_CSI,
   ],
-  vendor: Handshake,
+  vendor: Gunny,
   level: 0
 }
