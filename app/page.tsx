@@ -1,18 +1,17 @@
 "use client";
 
 import 'ol/ol.css';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { addPopup, mapView, rasterTileLayer } from '@/lib/map/map';
 import { Map, Overlay } from 'ol';
 import { factionOverlays, locationOverlays, lzOverlays, taskOverlays } from '@/lib/map/markers';
-import { debounce } from 'ts-debounce';
 import SideMenu from '@/components/menu/side-menu';
 import { SearchMenu } from '@/components/menu/search-menu';
 
 export default function Page() {
   const mapRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<Map | undefined>(undefined);
-  const popupOverlayRef = useRef<Overlay | undefined>(undefined);
+  const [popupOverlay, setPopupOverlay] = useState<Overlay | undefined>(undefined);
 
   useEffect(() => {
     const map = new Map({
@@ -25,14 +24,14 @@ export default function Page() {
     map.setTarget(mapRef.current as HTMLDivElement);
     mapInstanceRef.current = map;
 
-    const popupOverlay = addPopup(map);
-    popupOverlayRef.current = popupOverlay;
+    const popupOverlayInstance = addPopup(map);
+    setPopupOverlay(popupOverlayInstance);
 
-    taskOverlays(map, popupOverlay);
-    lzOverlays(map, popupOverlay);
-    factionOverlays(map, popupOverlay);
-    locationOverlays(map, popupOverlay);
-    /* poiOverlays(map, popupOverlay); */
+    taskOverlays(map, popupOverlayInstance);
+    lzOverlays(map, popupOverlayInstance);
+    factionOverlays(map, popupOverlayInstance);
+    locationOverlays(map, popupOverlayInstance);
+    /* poiOverlays(map, popupOverlayInstance); */
 
     map.getOverlays().forEach((overlay) => {
       const element = overlay.getElement();
@@ -44,16 +43,16 @@ export default function Page() {
           element.parentElement!.style.zIndex = '0';
         });
       }
-    })
+    });
 
     map.on("click", (e) => {
       console.log(e.coordinate);
-      popupOverlay.getElement()!.classList.remove("visible")
+      popupOverlayInstance.getElement()!.classList.remove("visible");
       setTimeout(() => {
-        if (!popupOverlay.getElement()!.classList.contains("visible"))
-        popupOverlay.setPosition(undefined)
-      }, 200)
-    })
+        if (!popupOverlayInstance.getElement()!.classList.contains("visible"))
+          popupOverlayInstance.setPosition(undefined);
+      }, 200);
+    });
 
     return () => {
       map.setTarget(undefined);
@@ -63,8 +62,8 @@ export default function Page() {
   return (
     <div className='relative h-screen'>
       <div ref={mapRef} className="map h-screen w-full bg-background z-0"></div>
-      <SideMenu map={mapInstanceRef.current} popupOverlay={popupOverlayRef.current} />
-      <SearchMenu map={mapInstanceRef.current} popupOverlay={popupOverlayRef.current} />
+      <SideMenu map={mapInstanceRef.current} popupOverlay={popupOverlay} />
+      <SearchMenu map={mapInstanceRef.current} popupOverlay={popupOverlay} />
       <div className="absolute bg-black/50 flex flex-row gap-2 px-2 py-0.5 bottom-1.5 right-1.5 rounded-lg z-10">
         <a href="https://github.com/robertarnorsson/gzwmap" target="_blank" rel="noopener noreferrer" className="text-primary text-xs hover:text-muted-foreground transition duration-300">Github</a>
         <p className="text-xs text-muted-foreground">▪</p>
