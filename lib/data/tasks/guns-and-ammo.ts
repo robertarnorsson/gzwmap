@@ -6,7 +6,7 @@ const GunsAndAmmo_Objective1: objective = {
     id: "",
     name: "Weapon Storage",
     description: "Investigate the weapon storage at Hunter’s Paradise",
-    position: [0.9542146770575887, -0.7983970642089844],
+    position: [14162.9620680349, 22002.75041031785],
     type: ObjectiveType.LOCATE,
     types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.GUNNY, MarkerType.HUNTERSPARADISE],
     location: HuntersParadise

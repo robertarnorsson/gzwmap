@@ -6,7 +6,7 @@ const SkycrawlersPartTwo_Objective1: objective = {
     id: "",
     name: "Logbook",
     description: "Retrieve and locate the logbook and report back",
-    position: [0.8699765871172558, -0.6057071685791016],
+    position: [18666.839793599123, 20081.996386885352],
     type: ObjectiveType.COLLECT,
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.BANSHEE, MarkerType.PHALANGAIRFIELD],
     location: PhaLangAirfield

@@ -6,7 +6,7 @@ const FreshMeatPartThree_Objective1_LRI: objective = {
   id: "",
   name: "Intel",
   description: "Explore the roads leading from the Blue Lagoon and try to retrieve any pertinent intel and hand it over to Banshee",
-  position: [0.5533554401408691, -0.4277372360229493],
+  position: [22808.028211309447, 12792.557048747458],
   type: ObjectiveType.COLLECT,
   types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.BANSHEE, MarkerType.BLUELAGOON],
   location: BlueLagoon

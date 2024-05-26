@@ -6,7 +6,7 @@ const LamangConnection_Objective1: objective = {
     id: "",
     name: "Evidence",
     description: "Retrieve the evidence from Ban Pa and report back",
-    position: [0.6930706147771847, -0.41615009307861334],
+    position: [23071.115826117348, 16004.651070715194],
     type: ObjectiveType.COLLECT,
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.BANSHEE, MarkerType.BANPA],
     location: BanPa

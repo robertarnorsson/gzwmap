@@ -6,7 +6,7 @@ const Timber_Objective1: objective = {
     id: "",
     name: "Eliminate Leader",
     description: "Eliminate the leader of the hostile group occupying the Sawmill",
-    position: [0.7515189734461651, -0.9627628314396232],
+    position: [10326.077475540524, 17381.656500374687],
     type: ObjectiveType.ELIMINATION,
     image: "/objectives/leader-sawmill.webp",
     types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.BANSHEE, MarkerType.SAWMILL],

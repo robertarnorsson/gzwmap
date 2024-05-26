@@ -6,7 +6,7 @@ const TheShadowOverBanPaPartTwo_Objective1: objective = {
     id: "",
     name: "Intel",
     description: "Find intel regarding the cult in Ban Pa",
-    position: [0.6925521983227592, -0.4175662994384766],
+    position: [23054.992024563187, 15985.894441674185],
     type: ObjectiveType.COLLECT,
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.BANPA],
     location: BanPa

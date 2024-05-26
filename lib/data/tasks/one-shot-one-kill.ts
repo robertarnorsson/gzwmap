@@ -6,7 +6,7 @@ const OneShotOneKill_Objective1: objective = {
     id: "",
     name: "Hostile Commander",
     description: "Eliminate the hostile commander at Hunter's Paradise",
-    position: [0.9541714785570418, -0.7945346832275392],
+    position: [14240.92676770643, 22012.212590073224],
     type: ObjectiveType.ELIMINATION,
     types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.ELIMINATION, MarkerType.HUNTERSPARADISE],
     location: HuntersParadise

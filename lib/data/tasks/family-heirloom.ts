@@ -6,7 +6,7 @@ const FamilyHeirloom_Objective1: objective = {
     id: "",
     name: "Valuables",
     description: "Retrieve the valuables and report back to Turncoat",
-    position: [0.6747959845638559, -0.9517051567439717],
+    position: [10584.666303078553, 15588.819103574482],
     type: ObjectiveType.COLLECT,
     image:"/objectives/family-heirloom-valuables.webp",
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.TURNCOAT, MarkerType.FORTNARITH],

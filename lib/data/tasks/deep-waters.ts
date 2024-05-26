@@ -6,7 +6,7 @@ const DeepWaters_Objective1_LRI: objective = {
     id: "",
     name: "Gang Members",
     description: "Eliminate 20 gang members in the Blue Lagoon",
-    position: [0.5294211902589422, -0.4322433471679688],
+    position: [22703.69038944502, 12258.246442272266],
     type: ObjectiveType.ELIMINATION,
     types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.ARTISAN, MarkerType.BLUELAGOON],
     location: BlueLagoon

@@ -1,12 +1,12 @@
-import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
-import {Gunny} from "@/lib/data/vendors";
+import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
+import { Gunny} from "@/lib/data/vendors";
 import { Sawmill } from "../locations";
 
 const FuelShortage_Objective1: objective = {
     id: "",
     name: "Fuel Truck",
     description: "Check the fuel truck",
-    position: [0.7533756757128911, -0.9619045243744018],
+    position: [10350.106155246936, 17334.2028172309],
     type: ObjectiveType.LOCATE,
     image: "/objectives/fuel-truck-sawmill.webp",
     types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.GUNNY, MarkerType.SAWMILL],

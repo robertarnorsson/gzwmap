@@ -6,7 +6,7 @@ const IWentISawIConqueredPartThree_Objective1: objective = {
     id: "",
     name: "Neutralize Hostiles",
     description: "Neutralize 20 hostiles at sawmill",
-    position: [0.752774871297847, -0.9632348755448474],
+    position: [10310.322239278214, 17363.442215755753],
     type: ObjectiveType.ELIMINATION,
     types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.SAWMILL],
     location: Sawmill

@@ -6,7 +6,7 @@ const NightOcean_Objective1_LRI: objective = {
   id: "",
   name: "Malo Luangrath",
   description: "Neutralize Malo Luangrath",
-  position: [0.5243664719399703, -0.4352903366088868],
+  position: [22613.20103410914, 12136.520234294876],
   type: ObjectiveType.ELIMINATION,
   types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.ARTISAN, MarkerType.BLUELAGOON],
   location: BlueLagoon

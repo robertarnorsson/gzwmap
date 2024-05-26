@@ -6,7 +6,7 @@ const AtTheMoundsOfMadness_Objective1: objective = {
     id: "",
     name: "Ominous mural",
     description: "Find an ominous mural",
-    position: [0.6796781713830262, -0.4192399978637696],
+    position: [23002.453108533176, 15703.731091965486],
     type: ObjectiveType.LOCATE,
     types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.ARTISAN, MarkerType.BANPA],
     location: BanPa
@@ -16,7 +16,7 @@ const AtTheMoundsOfMadness_Objective2: objective = {
     id: "",
     name: "Eerie mural",
     description: "Find an eerie mural",
-    position: [0.695965105589753, -0.42366027832031256],
+    position: [22927.08971980861, 16082.924417897804],
     type: ObjectiveType.LOCATE,
     types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.ARTISAN, MarkerType.BANPA],
     location: BanPa
@@ -26,7 +26,7 @@ const AtTheMoundsOfMadness_Objective3: objective = {
     id: "",
     name: "Chilling mural",
     description: "Find a chilling mural",
-    position: [0.6991188024854903, -0.40928363800048834],
+    position: [23243.91895304809, 16122.161938222464],
     type: ObjectiveType.LOCATE,
     types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.ARTISAN, MarkerType.BANPA],
     location: BanPa
@@ -36,7 +36,7 @@ const AtTheMoundsOfMadness_Objective4: objective = {
     id: "",
     name: "Disturbing statue",
     description: "Find a disturbing statue",
-    position: [0.6953170854147008, -0.40263175964355474],
+    position: [23354.782997580827, 16062.182871592066],
     type: ObjectiveType.LOCATE,
     types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.ARTISAN, MarkerType.BANPA],
     location: BanPa

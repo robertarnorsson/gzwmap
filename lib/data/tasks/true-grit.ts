@@ -6,7 +6,7 @@ const TrueGrit_Objective1: objective = {
     id: "",
     name: "Antique Revolver",
     description: "Retrieve the antique revolver and hand it over to Handshake",
-    position: [0.9475189029293601, -0.7853078842163086],
+    position: [14473.24249645224, 21851.38757002083],
     type: ObjectiveType.COLLECT,
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.HUNTERSPARADISE],
     location: HuntersParadise

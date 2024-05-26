@@ -6,7 +6,7 @@ const TheBrave_Objective1: objective = {
     id: "",
     name: "Aulii Syvongsa and Letter",
     description: "Find Aulii Syvongsa and pickup the goodbye letter",
-    position: [0.9541282800559733, -0.8009719848632814],
+    position: [14108.003734323835, 22003.067700425356],
     type: ObjectiveType.ELIMINATION,
     types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.LABRAT, MarkerType.HUNTERSPARADISE],
     location: HuntersParadise

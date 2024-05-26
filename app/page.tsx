@@ -46,7 +46,7 @@ export default function Page() {
     });
 
     map.on("click", (e) => {
-      console.log(e.coordinate);
+      console.log(`${e.coordinate.at(0)}, ${e.coordinate.at(1)}`);
       popupOverlayInstance.getElement()!.classList.remove("visible");
       setTimeout(() => {
         if (!popupOverlayInstance.getElement()!.classList.contains("visible"))

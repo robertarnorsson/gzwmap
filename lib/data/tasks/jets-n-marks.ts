@@ -4,9 +4,9 @@ import { FortNarith } from "../locations";
 
 const JetsNMark_Objective1: objective = {
     id: "",
-    name: "Jet",
+    name: "Jet 1",
     description: "Confirm the existence and position of military jet",
-    position: [0.6097684389884, -0.9201905627591247],
+    position: [11317.979827236257, 14093.88597064779],
     type: ObjectiveType.MARK,
     image: "/objectives/jets-n-marks-jet-1.webp",
     types: [MarkerType.TASK, MarkerType.MARK, MarkerType.BANSHEE, MarkerType.FORTNARITH],
@@ -15,9 +15,9 @@ const JetsNMark_Objective1: objective = {
 
 const JetsNMark_Objective2: objective = {
     id: "",
-    name: "Jet",
+    name: "Jet 2",
     description: "Confirm the existence and position of military jet",
-    position: [0.6139598852111069, -0.9210059543549477],
+    position: [11300.368998988524, 14189.238626171518],
     type: ObjectiveType.MARK,
     image: "/objectives/jets-n-marks-jet-2.webp",
     types: [MarkerType.TASK, MarkerType.MARK, MarkerType.BANSHEE, MarkerType.FORTNARITH],
@@ -26,9 +26,9 @@ const JetsNMark_Objective2: objective = {
 
 const JetsNMark_Objective3: objective = {
     id: "",
-    name: "Jet",
+    name: "Jet 3",
     description: "Confirm the existence and position of military jet",
-    position: [0.6138734636730515, -0.9285161401059595],
+    position: [11124.46658493078, 14186.320131061748],
     type: ObjectiveType.MARK,
     image: "/objectives/jets-n-marks-jet-3.webp",
     types: [MarkerType.TASK, MarkerType.MARK, MarkerType.BANSHEE, MarkerType.FORTNARITH],

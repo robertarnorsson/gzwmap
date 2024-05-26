@@ -6,7 +6,7 @@ const FinalCheckout_Objective1: objective = {
     id: "",
     name: "Purple Suitcase",
     description: "Look for the purple spinner case standing upright adjacent to the wooden post, underneath the Hangar.",
-    position: [0.867557412935466, -0.6015443801879884],
+    position: [18756.942598443176, 20011.059693050818],
     type: ObjectiveType.LOCATE,
     types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.PHALANGAIRFIELD],
     location: PhaLangAirfield

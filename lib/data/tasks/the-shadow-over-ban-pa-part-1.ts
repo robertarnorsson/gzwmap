@@ -6,9 +6,9 @@ const TheShadowOverBanPaPartOne_Objective1: objective = {
     id: "",
     name: "Southern Entry Point",
     description: "Scout the main southern entry point to Ban Pa",
-    position: [0.6876704405646646, -0.4261064529418946],
-    type: ObjectiveType.COLLECT,
-    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.BANPA],
+    position: [22831.016360322225, 15877.925846181417],
+    type: ObjectiveType.LOCATE,
+    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.BANPA],
     location: BanPa
 }
 
@@ -16,9 +16,9 @@ const TheShadowOverBanPaPartOne_Objective2: objective = {
     id: "",
     name: "Northern Entry Point",
     description: "Scout the main northern entry point to Ban Pa",
-    position: [0.7005012442841853, -0.41679382324218756],
-    type: ObjectiveType.COLLECT,
-    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.BANPA],
+    position: [23062.043042315352, 16144.894701962065],
+    type: ObjectiveType.LOCATE,
+    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.BANPA],
     location: BanPa
 }
 

@@ -6,7 +6,7 @@ const OnTheRange_Objective1: objective = {
     id: "",
     name: "Shooting Lanes",
     description: "Scout the shooting lanes at Hunter’s Paradise",
-    position: [0.9543010740570032, -0.7927751541137695],
+    position: [14288.806634954743, 22016.244578894133],
     type: ObjectiveType.LOCATE,
     types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.GUNNY, MarkerType.HUNTERSPARADISE],
     location: HuntersParadise
@@ -16,7 +16,7 @@ const OnTheRange_Objective2: objective = {
     id: "",
     name: "Motel",
     description: "Scout the motel at Hunter’s Paradise",
-    position: [0.9493317441587608, -0.7855864257597391],
+    position: [14458.384384921754, 21886.451900134587],
     type: ObjectiveType.LOCATE,
     types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.GUNNY, MarkerType.HUNTERSPARADISE],
     location: HuntersParadise
@@ -26,7 +26,7 @@ const OnTheRange_Objective3: objective = {
     id: "",
     name: "Dumping Ground",
     description: "Scout the dumping ground at Hunter’s Paradise",
-    position: [0.9480804844903913, -0.8003282546997071],
+    position: [14117.177330952207, 21877.883923890153],
     type: ObjectiveType.LOCATE,
     types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.GUNNY, MarkerType.HUNTERSPARADISE],
     location: HuntersParadise

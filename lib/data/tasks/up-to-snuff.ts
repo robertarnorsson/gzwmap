@@ -6,7 +6,7 @@ const UpToSnuff_Objective1: objective = {
     id: "",
     name: "Client List",
     description: "Locate the client list at Hunter’s Paradise and hand it to Handshake",
-    position: [0.9556834257484467, -0.7917881011962891],
+    position: [14318.494068377002, 22040.620985804435],
     type: ObjectiveType.COLLECT,
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.HUNTERSPARADISE],
     location: HuntersParadise

@@ -6,7 +6,7 @@ const EOD_Objective1: objective = {
     id: "",
     name: "Detonators",
     description: "Retrieve the detonators and bring them back",
-    position: [0.7500917526701437, -0.9633636462356578],
+    position: [10310.721893010174, 17308.508438581055],
     type: ObjectiveType.COLLECT,
     image: "/objectives/detonators-sawmill.webp",
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.BANSHEE, MarkerType.SAWMILL],

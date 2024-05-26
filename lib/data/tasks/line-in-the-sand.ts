@@ -6,7 +6,8 @@ const LineInTheSand_Objective1: objective = {
     id: "",
     name: "Drop Location",
     description: "Dispose of the drugs at the northern pier",
-    position: [0.6971315416774295, -0.4079532623291016],
+    note: "You have to be at the very end and look at the left corner of the pier to dispose of the drugs",
+    position: [23266.04598399198, 16085.520594860025],
     type: ObjectiveType.STASH,
     types: [MarkerType.TASK, MarkerType.STASH, MarkerType.ARTISAN, MarkerType.BANPA],
     location: BanPa

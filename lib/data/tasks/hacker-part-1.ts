@@ -1,12 +1,12 @@
-import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
-import {Handshake} from "@/lib/data/vendors";
+import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
+import { Handshake } from "@/lib/data/vendors";
 import { FortNarith } from "../locations";
 
 const HackerPartOne_Objective1: objective = {
     id: "",
     name: "Camera 1",
     description: "Hack the camera at the air traffic control building",
-    position: [0.6225538171181662, -0.9400397060105027],
+    position: [10853.763538411224, 14387.533767426123],
     type: ObjectiveType.HACK,
     image:"/objectives/hacker-camera-air-traffic-control-building.webp",
     types: [MarkerType.TASK, MarkerType.HACK, MarkerType.HANDSHAKE, MarkerType.FORTNARITH],
@@ -17,7 +17,7 @@ const HackerPartOne_Objective2: objective = {
     id: "",
     name: "Camera 2",
     description: "Hack the camera at the main entrance",
-    position: [0.6342316308779556, -0.9222942777356248],
+    position: [11269.041876753225, 14666.354082435442],
     type: ObjectiveType.HACK,
     image:"/objectives/hacker-camera-main-entrance.webp",
     types: [MarkerType.TASK, MarkerType.HACK, MarkerType.HANDSHAKE, MarkerType.FORTNARITH],
@@ -29,7 +29,7 @@ const HackerPartOne_Objective3: objective = {
     id: "",
     name: "Camera 3",
     description: "Hack the camera at the northern entrance",
-    position: [0.6480950970010751, -0.9342072925215519],
+    position: [10985.343601402163, 14975.76206507615],
     type: ObjectiveType.HACK,
     image:"/objectives/hacker-camera-northern-entrance.webp",
     types: [MarkerType.TASK, MarkerType.HACK, MarkerType.HANDSHAKE, MarkerType.FORTNARITH],
@@ -40,7 +40,7 @@ const HackerPartOne_Objective4: objective = {
     id: "",
     name: "Camera 4",
     description: "Hack the camera in the army HQ",
-    position: [0.6271425239793826, -0.9316388579253856],
+    position: [11061.847616030645, 14482.873185881284],
     type: ObjectiveType.HACK,
     image:"/objectives/hacker-camera-army-headquarters.webp",
     types: [MarkerType.TASK, MarkerType.HACK, MarkerType.HANDSHAKE, MarkerType.FORTNARITH],

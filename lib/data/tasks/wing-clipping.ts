@@ -6,7 +6,7 @@ const WingClipping_Objective1: objective = {
     id: "",
     name: "Hostiles",
     description: "Neutralize 20 hostiles at the Pha Lang Airfield",
-    position: [0.8693285941867842, -0.6031751632690431],
+    position: [18644.48716626207, 19970.125378423963],
     type: ObjectiveType.ELIMINATION,
     types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.PHALANGAIRFIELD],
     location: PhaLangAirfield

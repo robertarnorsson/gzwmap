@@ -6,7 +6,7 @@ const MissingColleaguePartTwo_Objective1: objective = {
     id: "",
     name: "Transcript",
     description: "Find the interrogation transcript",
-    position: [0.6278272136589077, -0.9337043227677656],
+    position: [11007.80893368746, 14507.750694659095],
     type: ObjectiveType.COLLECT,
     image: "/objectives/missing-colleague-part-2-transcript.webp",
     note: "You can find the transcript on the third floor in the northern office on the desk",

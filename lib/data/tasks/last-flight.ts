@@ -6,7 +6,7 @@ const LastFlight_Objective1: objective = {
     id: "",
     name: "Downed Plane/Liko Savang",
     description: "Search the airfield and uncover what happened to Liko Savang.",
-    position: [0.8478899729655405, -0.5872263135531665],
+    position: [19085.697340483934, 19570.155143950928],
     type: ObjectiveType.LOCATE,
     types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.ARTISAN, MarkerType.PHALANGAIRFIELD],
     location: PhaLangAirfield

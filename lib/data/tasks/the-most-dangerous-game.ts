@@ -6,7 +6,7 @@ const TheMostDangerousGame_Objective1: objective = {
     id: "",
     name: "The True Nature",
     description: "Ascertain the true nature of the VIP section",
-    position: [0.9560722120601184, -0.801529884338379],
+    position: [14089.503734323835, 22052.567700425356],
     type: ObjectiveType.COLLECT,
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.ARTISAN, MarkerType.HUNTERSPARADISE],
     location: HuntersParadise
@@ -16,7 +16,7 @@ const TheMostDangerousGame_Objective2: objective = {
     id: "",
     name: "Intel",
     description: "Retrieve intel about Hunter's Paradise VIP program",
-    position: [0.9543874710542167, -0.7971525192260743],
+    position: [14178.003734323835, 22005.067700425356],
     type: ObjectiveType.COLLECT,
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.ARTISAN, MarkerType.HUNTERSPARADISE],
     location: HuntersParadise

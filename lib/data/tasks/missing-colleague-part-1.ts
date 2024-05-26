@@ -6,7 +6,7 @@ const MissingColleaguePartOne_Objective1: objective = {
     id: "",
     name: "Note",
     description: "Locate any intel about the colleague's whereabouts",
-    position: [0.6282650689997253, -0.9129726636371727],
+    position: [11484.682293582751, 14520.6220660369],
     type: ObjectiveType.COLLECT,
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.ARTISAN, MarkerType.FORTNARITH],
     location: FortNarith

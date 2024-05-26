@@ -1,12 +1,12 @@
-import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
-import {Artisan} from "@/lib/data/vendors";
+import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
+import { Artisan} from "@/lib/data/vendors";
 import { FortNarith } from "../locations";
 
 const LostLover_Objective1: objective = {
     id: "",
     name: "Document",
     description: "Search in and around Fort Narith and uncover what happened to Atsawin Xiong.",
-    position: [0.6367718112100171, -0.908416781880861],
+    position: [11594.24540498363, 14720.197344102531],
     type: ObjectiveType.LOCATE,
     image: "/objectives/lost-lover-document.webp",
     note: "Read the document on the shelf inside the house",
@@ -18,7 +18,7 @@ const LostLover_Objective2: objective = {
     id: "",
     name: "Diary",
     description: "Find out what happened after Atsawin Xiong was conscripted and taken to Fort Narith barracks.",
-    position: [0.6501258046800503, -0.9471352535642377],
+    position: [10688.70419634185, 15021.047052969103],
     type: ObjectiveType.COLLECT,
     image: "/objectives/lost-lover-diary.webp",
     types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.ARTISAN, MarkerType.FORTNARITH],

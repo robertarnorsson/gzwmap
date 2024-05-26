@@ -6,7 +6,7 @@ const IWentISawIConqueredPartTwo_Objective1: objective = {
     id: "",
     name: "Long Table",
     description: "Explore the sawmill and find out the hostile group's intentions",
-    position: [0.7544600415954911, -0.9657668810266286],
+    position: [10260.132001749596, 17412.88650657878],
     type: ObjectiveType.LOCATE,
     types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.SAWMILL],
     location: Sawmill

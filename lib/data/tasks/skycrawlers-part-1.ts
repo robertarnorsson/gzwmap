@@ -6,7 +6,7 @@ const SkycrawlersPartOne_Objective1: objective = {
     id: "",
     name: "Proof",
     description: "Investigate Pha Lang Airfield and find a proof of drug trade",
-    position: [0.852739937032516, -0.6099128723144532],
+    position: [18557.853276242517, 19674.681709333672],
     type: ObjectiveType.COLLECT,
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.BANSHEE, MarkerType.PHALANGAIRFIELD],
     location: PhaLangAirfield

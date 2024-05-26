@@ -6,7 +6,7 @@ const FreshMeatPartTwo_Objective1_LRI: objective = {
   id: "",
   name: "Building",
   description: "Find a building being used for the human-trafficking operation",
-  position: [0.5170220020654129, -0.42799472808837896],
+  position: [22801.804278948886, 11963.20241777538],
   type: ObjectiveType.LOCATE,
   types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.BANSHEE, MarkerType.BLUELAGOON],
   location: BlueLagoon

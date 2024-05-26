@@ -4,9 +4,9 @@ import { FortNarith } from "../locations";
 
 const NeighbourlyHelp_Objective1: objective = {
     id: "",
-    name: "Fuel Gauge",
+    name: "Fuel Gauge 1",
     description: "Check the first fuel gauge",
-    position: [0.6061458180044782, -0.9156317437382812],
+    position: [11423.056770251693, 14015.867950540009],
     type: ObjectiveType.LOCATE,
     image:"/objectives/neighbourly-help-fuel-gauges.webp",
     types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.GUNNY, MarkerType.FORTNARITH],
@@ -15,9 +15,9 @@ const NeighbourlyHelp_Objective1: objective = {
 
 const NeighbourlyHelp_Objective2: objective = {
     id: "",
-    name: "Fuel Gauge",
+    name: "Fuel Gauge 2",
     description: "Check the second fuel gauge",
-    position: [0.6057117175351846, -0.9149393313471779],
+    position: [11440.056770251693, 14004.367950540009],
     type: ObjectiveType.LOCATE,
     image:"/objectives/neighbourly-help-fuel-gauges.webp",
     types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.GUNNY, MarkerType.FORTNARITH],

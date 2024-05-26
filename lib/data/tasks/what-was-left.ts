@@ -6,7 +6,7 @@ const WhatWasLeft_Objective1_LRI: objective = {
   id: "",
   name: "Box of Passports",
   description: "Retrieve the personal documents and hand it over to Banshee",
-  position: [0.5238048363151709, -0.43859481811523443],
+  position: [22550.467615895264, 12118.705719676276],
   type: ObjectiveType.COLLECT,
   types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.BANSHEE, MarkerType.BLUELAGOON],
   location: BlueLagoon

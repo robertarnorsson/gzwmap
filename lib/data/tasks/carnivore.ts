@@ -6,7 +6,7 @@ const Carnivore_Objective1: objective = {
     id: "",
     name: "Biological Sample",
     description: "Collect biological samples from the fridge at Hunter’s Paradise",
-    position: [0.9508883909099196, -0.7938480377197267],
+    position: [14271.482238172774, 21927.366601560356],
     type: ObjectiveType.COLLECT,
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.HUNTERSPARADISE],
     location: HuntersParadise

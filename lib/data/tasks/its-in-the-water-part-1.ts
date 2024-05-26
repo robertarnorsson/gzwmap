@@ -6,7 +6,7 @@ const ItsInTheWaterPartOne_Objective1: objective = {
     id: "",
     name: "Avian tissue samples",
     description: "Collect avian tissue samples",
-    position: [0.6830046850581373, -0.41705131530761724],
+    position: [23042.562326863925, 15805.796687325583],
     type: ObjectiveType.COLLECT,
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.BANPA],
     location: BanPa
@@ -16,7 +16,7 @@ const ItsInTheWaterPartOne_Objective2: objective = {
     id: "",
     name: "Well",
     description: "Collect water samples from a well",
-    position: [0.6946258637953076, -0.4208707809448243],
+    position: [22998.5004018268, 16020.705897539328],
     type: ObjectiveType.COLLECT,
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.BANPA],
     location: BanPa
@@ -26,7 +26,7 @@ const ItsInTheWaterPartOne_Objective3: objective = {
     id: "",
     name: "Ground samples",
     description: "Collect ground samples from a mound of soil",
-    position: [0.6947122665033343, -0.4116868972778321],
+    position: [23174.911223938536, 16048.588061961671],
     type: ObjectiveType.COLLECT,
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.BANPA],
     location: BanPa

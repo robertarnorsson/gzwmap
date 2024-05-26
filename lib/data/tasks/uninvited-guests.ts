@@ -6,7 +6,7 @@ const UninvitedGuests_Objective1: objective = {
     id: "",
     name: "Hostiles",
     description: "Eliminate 20 hostiles in Ban Pa",
-    position: [0.69272500381395, -0.4185533523559571],
+    position: [23068.48549313735, 16053.485681969149],
     type: ObjectiveType.ELIMINATION,
     types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.TURNCOAT, MarkerType.BANPA],
     location: BanPa

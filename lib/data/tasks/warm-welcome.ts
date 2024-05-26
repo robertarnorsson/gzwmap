@@ -6,7 +6,7 @@ const WarmWelcome_Objective1: objective = {
     id: "",
     name: "Gang Leader",
     description: "Eliminate the gang leader in Ban Pa",
-    position: [0.6892688927788, -0.41473388671875006],
+    position: [23109.22397131015, 15885.825645493795],
     type: ObjectiveType.ELIMINATION,
     types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.TURNCOAT, MarkerType.BANPA],
     location: BanPa

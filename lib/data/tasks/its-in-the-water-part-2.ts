@@ -6,7 +6,7 @@ const ItsInTheWaterPartTwo_Objective1: objective = {
     id: "",
     name: "Chemical production",
     description: "Search Ban Pa and find anything related to chemical production",
-    position: [0.6921201845668441, -0.41679382324218756],
+    position: [23060.911223938536, 15997.588061961671],
     type: ObjectiveType.COLLECT,
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.BANPA],
     location: BanPa

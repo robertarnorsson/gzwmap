@@ -6,7 +6,7 @@ const BusinessOrPleasure_Objective1: objective = {
     id: "",
     name: "Flash Drive",
     description: "Retrieve the intel and report back to Handshake",
-    position: [0.8724821587198835, -0.601630210876465],
+    position: [18752.361360440726, 20124.32123396376],
     type: ObjectiveType.COLLECT,
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.PHALANGAIRFIELD],
     location: PhaLangAirfield
