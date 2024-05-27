@@ -15,6 +15,7 @@ import { poiMarker } from "@/components/overlays/poi-overlay";
 import { locationPopup } from "@/components/overlays/location/location-popup";
 
 export const taskOverlays = (map: Map, popupOverlay: Overlay) => {
+
   Tasks.map((task) => {
     task.objectives.map((objective) => {
       const overlay = createMarkerOverlay(

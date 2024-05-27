@@ -62,15 +62,17 @@
   }
 
   .marker {
-    @apply bg-background;
-    @apply w-96;
-    @apply mb-4;
     opacity: 0;
     transition: opacity 200ms ease-in-out;
   }
 
   .marker.visible {
     opacity: 1;
+  }
+
+  .expand-on-hover:hover {
+    transform: scale(2);
+    transition: transform 0.2s ease-in-out;
   }
 }
 

@@ -1,7 +1,6 @@
 import Overlay from "ol/Overlay";
 import { MarkerType } from "../types";
 import { Map } from "ol";
-import { debounce } from "ts-debounce";
 
 export interface MarkerData {
   id: string;
