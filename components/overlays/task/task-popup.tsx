@@ -23,7 +23,7 @@ export const taskPopup = (task: task, objective: objective) => (
     {objective.image && (
       <div className="pt-4 group">
         <div className="w-full h-full aspect-video relative group-hover:scale-[2] duration-300 z-50">
-          <Image src={objective.image} alt={objective.name} fill className="object-cover outline outline-1 outline-muted-foreground"></Image>
+          <Image src={objective.image} alt={objective.name} sizes="50vw" quality={50} placeholder="blur" blurDataURL={objective.image} loading="eager" fill className="object-cover outline outline-1 outline-muted-foreground"></Image>
         </div>
       </div>
     )}
