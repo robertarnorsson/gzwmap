@@ -14,7 +14,7 @@ export const locationPopup = (location: location) => {
   const lzs = getAllLZsForLocation(location);
 
   return (
-    <div className={cn(rubik.className, "p-6 relative marker-text")}>
+    <div className={cn(rubik.className, "p-6 relative bg-background mb-[18px] w-[300px]")}>
       <h2 className="text-lg font-bold text-primary">{location.name}</h2>
       <div className="flex flex-row gap-2">
         <p className="text-xs text-muted-foreground">{`${objectives.length} objectives`}</p>

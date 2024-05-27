@@ -11,10 +11,6 @@
   gap: 3px;
 }
 
-.overlay-marker {
-  background: transparent;
-}
-
 .faction-marker-img {
   width: 30px !important;
   filter: drop-shadow(0 0 0.75rem black);
