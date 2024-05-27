@@ -21,9 +21,8 @@ export const taskPopup = (task: task, objective: objective) => (
     <p className="pt-4 text-sm text-primary text-pretty font-semibold">{objective.name}</p>
     <p className="text-xs text-primary/85 text-pretty">{objective.description}</p>
     {objective.image && (
-      
-      <div className="flex flex-col gap-1 pt-4">
-        <div className="w-full h-full aspect-video relative">
+      <div className="pt-4 group">
+        <div className="w-full h-full aspect-video relative group-hover:scale-[2] duration-300 z-50">
           <Image src={objective.image} alt={objective.name} fill className="object-cover outline outline-1 outline-muted-foreground"></Image>
         </div>
       </div>
@@ -40,7 +39,7 @@ export const taskPopup = (task: task, objective: objective) => (
         <p className="text-xs text-orange-400/85">{objective.note}</p>
       </div>
     )}
-    <div className="absolute -bottom-[12px] w-0 h-0
+    <div className="absolute -bottom-[12px] w-0 h-0 z-40
       left-1/2 transform -translate-x-1/2
       border-l-[20px] border-l-transparent
       border-t-[12px] border-t-background
