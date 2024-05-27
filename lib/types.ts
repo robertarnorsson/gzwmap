@@ -5,44 +5,95 @@ export type vendor = {
 }
 
 export type faction = {
+  id: string
   name: string
   shorthand: string
   description: string
-  position: LatLngTuple
+  position: [number, number]
   image: string
+  types: MarkerType[]
 };
 
 export type lz = {
+  id: string
   name: string
-  position: LatLngTuple
+  position: [number, number]
   discoverable: boolean
+  types: MarkerType[]
+  location: location
   faction?: faction
 };
 
 export type location = {
+  id: string
   name: string
-  position: LatLngTuple
-  tasks: task[]
+  position: [number, number]
+  pois: poi[]
+  types: MarkerType[]
 };
 
 export type poi = {
+  id: string
   name: string
-  position: LatLngTuple
-  faction?: faction
+  position: [number, number]
+  types: MarkerType[]
+  location: location
 }
 
-export enum ObjectiveType {
-  DISCOVER = "Discover",
+export enum MarkerType {
+  // Generic
+  TASK = "Task",
+  LZ = "Landing Zone",
+  LOCATION = "Location",
+  POI = "Place of Interest",
+
+  // Factions
+  LRI = "Lamang Recovery Initiative",
+  MSS = "Mithras Security Systems",
+  CSI ="Crimson Shield International",
+
+  // Vendors
+  HANDSHAKE = "Handshake",
+  GUNNY = "Gunny",
+  LABRAT = "Lab Rat",
+  ARTISAN = "Artisan",
+  TURNCOAT = "Turncoat",
+  BANSHEE = "Banshee",
+
+  // Locations
+  PHALANG = "Pha Lang",
+  NAMTHAVEN = "Nam Thaven",
+  KIUVONGSA = "Kiu Vongsa",
+  BANPA = "Ban Pa",
+  HUNTERSPARADISE = "Hunter's Paradise",
+  YBL1 = "YBL-1",
+  BLUELAGOON = "Blue Lagoon",
+  SAWMILL = "Sawmill",
+  PHALANGAIRFIELD = "Pha Lang Airfield",
+  FORTNARITH = "Fort Narith",
+  MIDNIGHTSAPPHIRE = "Midnight Sapphire",
+  TIGERBAY = "Tiger Bay",
+
+  // Task varients
   COLLECT = "Collect",
   MARK = "Mark",
   STASH = "Stash",
-  DELIVER = "Deliver",
+  ELIMINATION = "Elimination",
+  LOCATE = "Locate",
+  HACK = "Hack",
+}
+
+export enum ObjectiveType {
+  COLLECT = "Collect",
+  MARK = "Mark",
+  STASH = "Stash",
   ELIMINATION = "Elimination",
   LOCATE = "Locate",
   HACK = "Hack",
 }
 
 export type task = {
+  id: string
   name: string
   briefing?: string
   debriefing?: string
@@ -57,30 +108,27 @@ export type task = {
 };
 
 export type objective = {
+  id: string
   name: string
   description: string
-  position: LatLngTuple
+  position: [number, number]
   type: ObjectiveType
+  types: MarkerType[]
+  location: location 
   faction?: faction
-  subobjective?: subobjective,
   image?: string
   note?: string
 }
 
-export type subobjective = {
-  description: string
-  position: LatLngTuple
-  type: ObjectiveType
-  faction?: faction
-}
-
 export type item = {
+  id: string
   name: string
   description: string
   vendor: vendor
 }
 
 export type key = {
+  id: string
   name: string
   locations: location[]
   position: LatLngTuple

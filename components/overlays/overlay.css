@@ -1,0 +1,97 @@
+.marker-pin {
+  width: auto;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.marker-pin-img {
+  flex-direction: column;
+  gap: 3px;
+}
+
+.overlay-marker {
+  background: transparent;
+}
+
+.faction-marker-img {
+  width: 30px !important;
+  filter: drop-shadow(0 0 0.75rem black);
+  border: #0d1311;
+  border-width: 2px;
+}
+
+.faction-marker-text {
+  width: fit-content;
+  letter-spacing: 0.7px;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 1.5px 4px;
+  text-wrap: nowrap;
+  color: #f0f0f0;
+  text-align: center;
+  filter: drop-shadow(0 0 0.75rem black);
+  text-shadow: 0 0 5px black;
+}
+
+.task-marker-pin {
+  position: relative;
+  width: 100% !important;
+  height: 100% !important;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+
+.task-marker-image {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 2px;
+  will-change: filter;
+  transition: filter 200ms ease-in-out;
+}
+
+.task-marker-text {
+  position: absolute;
+  top: 50%;
+  left: 120%;
+  transform: translateY(-50%);
+  max-width: 0;
+  white-space: nowrap;
+  background: #000;
+  color: #c0c0c0;
+  padding: 1px 5px;
+  font-size: 10px;
+  font-weight: 500;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: pre;
+  letter-spacing: 0.4px;
+  filter: drop-shadow(0px 10px 10px #00000070);
+  transition: all 200ms ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.task-marker-text::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  height: 100%;
+  width: 12px;
+  transform: translateY(-50%);
+  background-color: #000;
+  filter: drop-shadow(0px 10px 10px #00000070);
+  clip-path: polygon(100% 0, 60% 50%, 100% 100%);
+}
+
+.task-marker-pin:hover .task-marker-text {
+  opacity: 1;
+  max-width: 300px;
+}
+
+.task-marker-pin:hover .task-marker-image {
+  filter: drop-shadow(0px 4px 4px #00000090);
+}

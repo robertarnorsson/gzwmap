@@ -15,8 +15,11 @@ import { task, faction, objective } from "@/lib/types";
 import { Tasks } from "@/lib/data/tasks";
 import { Factions } from "@/lib/data/factions";
 import { cn } from "@/lib/utils";
+import { Map, Overlay } from "ol";
+import ReactDOMServer from "react-dom/server";
+import { taskPopup } from "../overlays/task/task-popup";
 
-export function SearchMenu({ mapRef }: { mapRef: L.Map | null }) {
+export function SearchMenu({ map, popupOverlay }: { map: Map | undefined, popupOverlay: Overlay | undefined }) {
   const [open, setOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedFactions, setSelectedFactions] = useState<Set<string>>(new Set());
@@ -119,12 +122,17 @@ export function SearchMenu({ mapRef }: { mapRef: L.Map | null }) {
 
   const ObjectiveItem = ({ task, objective }: { task: task; objective: objective }) => {
     const handleClick = () => {
-      if (mapRef) {
+      if (map && popupOverlay) {
         setOpen(false);
         setSearchQuery("");
         setSelectedFactions(new Set());
-        mapRef.closePopup();
-        mapRef.flyTo(objective.position, 15);
+        
+        const view = map.getView();
+        view.animate({zoom: (view.getMaxZoom() - 1), center: objective.position})
+
+        popupOverlay.getElement()!.innerHTML = ReactDOMServer.renderToString(taskPopup(task, objective)),
+        popupOverlay.setPosition(objective.position)
+        popupOverlay.getElement()!.classList.add("visible")
       }
     };
 

@@ -1,83 +1,101 @@
-import { location } from "@/lib/types";
-import { FirstRecon } from "@/lib/data/tasks/first-recon";
+import { MarkerType, location } from "@/lib/types";
 
 export const PhaLang: location = {
+  id: "L-001",
   name: "Pha Lang",
-  position: [0.9044496463221368, -0.4476499557495118],
-  tasks: [
-    FirstRecon
-  ]
-}
-
-export const MidnightSapphire: location = {
-  name: "Midnight Sapphire",
-  position: [0.926783519622124, -0.6973743438720704],
-  tasks: []
-}
-
-export const HuntersParadise: location = {
-  name: "Hunter's Paradise",
-  position: [0.9710188518207048, -0.798482894897461],
-  tasks: []
-}
-
-export const KiuVongsa: location = {
-  name: "Kiu Vongsa",
-  position: [0.9165021796068686, -0.9450817108154298],
-  tasks: [
-    FirstRecon
-  ]
-}
-
-export const Sawmill: location = {
-  name: "Sawmill",
-  position: [0.7507440764255938, -0.9621191024780275],
-  tasks: []
-}
-
-export const FortNarith: location = {
-  name: "Fort Narith",
-  position: [0.6213558113436232, -0.938558578491211],
-  tasks: []
-}
-
-export const YBL1: location = {
-  name: "YBL-1",
-  position: [0.5658970463920925, -0.9308722466465681],
-  tasks: []
+  position: [22360.37585245062,20866.74056911505],
+  pois: [],
+  types: [MarkerType.LOCATION, MarkerType.PHALANG]
 }
 
 export const NamThaven: location = {
+  id: "L-002",
   name: "Nam Thaven",
-  position: [0.5390121827373863, -0.7022666931152345],
-  tasks: [
-    FirstRecon
-  ]
+  position: [16401.93511663384,12424.766484447806],
+  pois: [],
+  types: [MarkerType.LOCATION, MarkerType.NAMTHAVEN]
 }
 
-export const BlueLagoon: location = {
-  name: "Blue Lagoon",
-  position: [0.5179565396467, -0.4330579549372882],
-  tasks: []
-}
-
-export const TigerBay: location = {
-  name: "Tiger Bay",
-  position: [0.6364332864547015, -0.4724550247192383],
-  tasks: []
+export const KiuVongsa: location = {
+  id: "L-003",
+  name: "Kiu Vongsa",
+  position: [10799.378070005234,20952.55265726935],
+  pois: [],
+  types: [MarkerType.LOCATION, MarkerType.KIUVONGSA]
 }
 
 export const BanPa: location = {
+  id: "L-004",
   name: "Ban Pa",
-  position: [0.6889664829421054, -0.4114723205566406],
-  tasks: []
+  position: [23208.13506808619,15918.636745379685],
+  pois: [],
+  types: [MarkerType.LOCATION, MarkerType.BANPA]
+}
+
+export const HuntersParadise: location = {
+  id: "L-005",
+  name: "Hunter's Paradise",
+  position: [14184.600722838573,22317.02116986508],
+  pois: [],
+  types: [MarkerType.LOCATION, MarkerType.HUNTERSPARADISE]
+}
+
+export const YBL1: location = {
+  id: "L-006",
+  name: "YBL-1",
+  position: [11072.318675322842,13086.462000224528],
+  pois: [],
+  types: [MarkerType.LOCATION, MarkerType.YBL1]
+}
+
+export const BlueLagoon: location = {
+  id: "L-006",
+  name: "Blue Lagoon",
+  position: [22630.933286472067,11952.919152073879],
+  pois: [],
+  types: [MarkerType.LOCATION, MarkerType.BLUELAGOON]
+}
+
+export const Sawmill: location = {
+  id: "L-007",
+  name: "Sawmill",
+  position: [10328.194139464867,17332.425926079006],
+  pois: [],
+  types: [MarkerType.LOCATION, MarkerType.SAWMILL]
 }
 
 export const PhaLangAirfield: location = {
+  id: "L-008",
   name: "Pha Lang Airfield",
-  position: [0.8646630417659631, -0.6118011474609376],
-  tasks: []
+  position: [18527.491460769867,19945.878314875386],
+  pois: [],
+  types: [MarkerType.LOCATION, MarkerType.PHALANGAIRFIELD]
 }
+
+export const FortNarith: location = {
+  id: "L-009",
+  name: "Fort Narith",
+  position: [10962.758529537185,14300.126583471781],
+  pois: [],
+  types: [MarkerType.LOCATION, MarkerType.FORTNARITH]
+}
+
+export const MidnightSapphire: location = {
+  id: "L-010",
+  name: "Midnight Sapphire",
+  position: [16390.199169785596,21381.445167069425],
+  pois: [],
+  types: [MarkerType.LOCATION, MarkerType.MIDNIGHTSAPPHIRE]
+}
+
+export const TigerBay: location = {
+  id: "L-011",
+  name: "Tiger Bay",
+  position: [21775.17599488606,14724.287943772208],
+  pois: [],
+  types: [MarkerType.LOCATION, MarkerType.TIGERBAY]
+}
+
 
 export const Locations: location[] = [
   PhaLang,

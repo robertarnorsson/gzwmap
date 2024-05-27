@@ -27,6 +27,21 @@
   }
 }
 
+@font-face {
+  font-family: 'RMO';
+  src: url('/font/RMO.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('/font/Rubik.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'KodeMono';
+  src: url('/font/KodeMono.ttf') format('truetype');
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -39,34 +54,34 @@
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    position: relative;
     background: #0a1616 !important;
     cursor: crosshair !important;
+    user-select: none;
+    -webkit-user-select: none;
   }
 
   .marker {
-    background: transparent;
-    cursor: crosshair !important;
+    @apply bg-background;
+    @apply w-96;
+    @apply mb-4;
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
   }
 
-  .map-popup .leaflet-popup-content-wrapper {
-    border-radius: 0px;
-    background-color: #0a1616;
-    color: fff;
+  .marker.visible {
+    opacity: 1;
   }
-
-  .map-popup .leaflet-popup-content p {
-    margin: 0;
-  }
-
-  .map-popup .leaflet-popup-tip {
-    display: none;
-  }
-
 }
 
 @layer base {
+  .marker-text {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
   .lz-marker-pin {
-    width: 100px;
+    width: auto;
     height: fit-content;
     gap: 3px;
     display: flex;
@@ -76,7 +91,8 @@
   }
   
   .lz-marker-icon {
-    width: 23px !important;
+    width: 25px !important;
+    transition: outline 100ms ease-in-out;
  }
 
   .lz-marker-text {
@@ -85,10 +101,14 @@
     font-weight: 700;
     font-size: 8px;
     padding: 1.5px 4px;
-    padding-bottom: 0.5px;
     background: #000;
     color: #c0c0c0;
     text-align: center;
+    pointer-events: none;
+  }
+
+  .lz-marker-pin:hover .lz-marker-icon {
+    outline: 1.5px solid #fff;
   }
 
   
@@ -113,8 +133,7 @@
 
   .location-text-border {
     filter: drop-shadow(0 0 0.75rem black);
-    text-shadow:
-      0 0 5px black
+    text-shadow: 0 0 5px black;
   }
 
   
@@ -139,87 +158,6 @@
 
   .poi-text-border {
     filter: drop-shadow(0 0 0.75rem black);
-    text-shadow:
-      0 0 5px black
-  }
-
-
-  .faction-marker-pin {
-    width: 100px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .faction-marker-text {
-    width: fit-content;
-    letter-spacing: 0.7px;
-    font-weight: 600;
-    font-size: 14px;
-    padding: 1.5px 4px;
-    text-wrap: nowrap;
-    color: #ffffff;
-    text-align: center;
-  }
-
-  .faction-text-border {
-    filter: drop-shadow(0 0 0.75rem black);
-    text-shadow:
-      0 0 5px black
-  }
-
-  .task-marker-pin {
-    position: relative;
-    width: 100% !important;
-    height: 100% !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .task-marker-icon {
-    width: 15px !important;
-    height: 15px !important;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
-  .task-marker-text {
-    position: absolute;
-    top: 50%;
-    left: 120%;
-    transform: translateY(-50%);
-    width: fit-content;
-    letter-spacing: 0.4px;
-    font-weight: 500;
-    font-size: 9px;
-    padding: 0.5px 3px;
-    padding-bottom: 0.5px;
-    background: #000;
-    color: #c0c0c0;
-    text-align: center;
-    white-space: nowrap;
-  }
-
-  .task-marker-text::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: 100%;
-    height: 100%;
-    width: 12px;
-    transform: translateY(-50%);
-    background-color: #000;
-    clip-path: polygon(100% 0, 60% 50%, 100% 100%);
-  }
-  
-  .task-marker-text {
-    display: none;
-  }
-
-  .task-marker-pin:hover .task-marker-text {
-    display: block;
+    text-shadow: 0 0 5px black;
   }
 }

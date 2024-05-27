@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Rubik } from "next/font/google";
 import "./globals.css";
+import "@/components/overlays/overlay.css";
+import ReactDOM from "react-dom";
 
 const rubik = Rubik({ subsets: ["latin"] });
 
@@ -95,6 +97,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  ReactDOM.preconnect("https://tiles.gzwmap.com/", { crossOrigin: "anonymous" });
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={rubik.className}>
