@@ -8,6 +8,7 @@ const LamangConnection_Objective1: objective = {
     description: "Retrieve the evidence from Ban Pa and report back",
     position: [23071.115826117348, 16004.651070715194],
     type: ObjectiveType.COLLECT,
+    image: "/objectives/lamang-connection.webp",
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.BANSHEE, MarkerType.BANPA],
     location: BanPa
 }

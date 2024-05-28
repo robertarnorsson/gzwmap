@@ -8,6 +8,7 @@ const FreshMeatPartOne_Objective1_LRI: objective = {
   description: "Retrieve intel about the true nature of the Blue Lagoon and hand it over to Banshee",
   position: [22793.804545972147, 12183.217314075344],
   type: ObjectiveType.COLLECT,
+  image: "/objectives/fresh-meat-part-1.webp",
   types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.BANSHEE, MarkerType.BLUELAGOON],
   location: BlueLagoon
 }

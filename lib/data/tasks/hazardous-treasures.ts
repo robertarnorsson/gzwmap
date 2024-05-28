@@ -106,7 +106,7 @@ const HazardousTreasures_Objective10: objective = {
     position: [18547.62469130929, 19658.656022310017],
     type: ObjectiveType.COLLECT,
     image: "/objectives/hazardous-treasures-airfield.webp",
-    note: "You will need a PLA STRG key.",
+    note: "You will need a PLA STRG key. The container is behind the desk.",
     types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.PHALANGAIRFIELD],
     location: PhaLangAirfield
 }
