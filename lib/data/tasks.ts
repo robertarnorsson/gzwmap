@@ -70,6 +70,15 @@ import { FamilyHeirloom }                 from "@/lib/data/tasks/family-heirloom
 import { MissingColleaguePartOne }        from "@/lib/data/tasks/missing-colleague-part-1";
 import { MissingColleaguePartTwo }        from "@/lib/data/tasks/missing-colleague-part-2";
 import { LostLover }                      from "@/lib/data/tasks/lost-lover";
+import { Prisoner23 }                     from "@/lib/data/tasks/prisoner-23";
+import { SaveTheRebellion }               from "@/lib/data/tasks/save-the-rebellion";
+import { DeepDepravity }                  from "@/lib/data/tasks/deep-depravity";
+import { TheNegotiator }                  from "@/lib/data/tasks/the-negotiator";
+import { LivingInBurrows }                from "@/lib/data/tasks/living-in-burrows";
+import { NewNeighbours }                  from "@/lib/data/tasks/new-neighbours";
+import { RebelScum }                      from "@/lib/data/tasks/rebel-scum";
+import { DutyToTheCountry }               from "@/lib/data/tasks/duty-to-the-country";
+import { FinalLiberation }                from "@/lib/data/tasks/final-liberation";
 
 export const Tasks: task[] = [
   FirstRecon,
@@ -126,6 +135,15 @@ export const Tasks: task[] = [
   FuelShortage,
   EOD,
   HazardousTreasures,
+  Prisoner23,
+  SaveTheRebellion,
+  DeepDepravity,
+  TheNegotiator,
+  LivingInBurrows,
+  NewNeighbours,
+  RebelScum,
+  DutyToTheCountry,
+  FinalLiberation,
   NightOcean,
   DeepWaters,
   FreshMeatPartOne,
