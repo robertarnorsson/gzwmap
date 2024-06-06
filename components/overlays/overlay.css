@@ -16,6 +16,8 @@
   filter: drop-shadow(0 0 0.75rem black);
   border: #0d1311;
   border-width: 2px;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .faction-marker-text {
@@ -46,6 +48,8 @@
   margin: 2px;
   will-change: filter;
   transition: filter 200ms ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .task-marker-text {
@@ -68,6 +72,8 @@
   transition: all 200ms ease-in-out;
   opacity: 0;
   pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .task-marker-text::after {

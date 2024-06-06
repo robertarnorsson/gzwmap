@@ -70,8 +70,6 @@ export default function Page() {
         <a href="https://twitter.com/gzwmap" target="_blank" rel="noopener noreferrer" className="text-primary text-xs hover:text-muted-foreground transition duration-300">Twitter</a>
         <p className="text-xs text-muted-foreground">▪</p>
         <a href="/donate" target="_blank" rel="noopener noreferrer" className="text-primary text-xs hover:text-muted-foreground transition duration-300">Donate</a>
-        <p className="text-xs text-muted-foreground">▪</p>
-        <a href="/about" target="_blank" rel="noopener noreferrer" className="text-primary text-xs hover:text-muted-foreground transition duration-300">About</a>
       </div>
     </div>
   );

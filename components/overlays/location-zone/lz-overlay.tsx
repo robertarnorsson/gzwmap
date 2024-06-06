@@ -11,7 +11,7 @@ export const lzMarker = (lz: lz) => {
 
   return (
     <div className='lz-marker-pin'>
-      <Image className='lz-marker-icon' src='/lz.jpg' draggable={false} unoptimized={true} width={22} height={12} alt={lz.name}></Image>
+      <Image className='lz-marker-img' src='/lz.jpg' draggable={false} unoptimized={true} width={22} height={12} alt={lz.name}></Image>
       <span className={cn(
         inter.className,
         'lz-marker-text marker-text'

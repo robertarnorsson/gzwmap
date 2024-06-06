@@ -1,7 +1,6 @@
 "use client";
 
 import { objective, task } from "@/lib/types";
-import Image from "next/image";
 import React from "react";
 import { PopUp } from "../popup";
 import ImageShowcase from "@/components/menu/image-showcase";
