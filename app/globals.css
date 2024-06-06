@@ -48,6 +48,8 @@
   }
   body {
     @apply bg-background text-foreground;
+    user-select: none;
+    -webkit-user-select: none;
   }
   
   .map {
@@ -57,8 +59,10 @@
     position: relative;
     background: #0a1616 !important;
     cursor: crosshair !important;
+  }
+
+  .overlay-marker {
     user-select: none;
-    -webkit-user-select: none;
   }
 
   .marker {
@@ -66,13 +70,8 @@
     transition: opacity 200ms ease-in-out;
   }
 
-  .marker.visible {
+  .visible {
     opacity: 1;
-  }
-
-  .expand-on-hover:hover {
-    transform: scale(2);
-    transition: transform 0.2s ease-in-out;
   }
 }
 
@@ -92,9 +91,11 @@
     align-items: center;
   }
   
-  .lz-marker-icon {
+  .lz-marker-img {
     width: 25px !important;
     transition: outline 100ms ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
  }
 
   .lz-marker-text {
@@ -109,7 +110,7 @@
     pointer-events: none;
   }
 
-  .lz-marker-pin:hover .lz-marker-icon {
+  .lz-marker-pin:hover .lz-marker-img {
     outline: 1.5px solid #fff;
   }
 

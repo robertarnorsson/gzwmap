@@ -10,6 +10,7 @@ import { SearchMenu } from '@/components/menu/search-menu';
 
 export default function Page() {
   const mapRef = useRef<HTMLDivElement>(null);
+  const popupRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<Map | undefined>(undefined);
   const [popupOverlay, setPopupOverlay] = useState<Overlay | undefined>(undefined);
 
@@ -24,7 +25,7 @@ export default function Page() {
     map.setTarget(mapRef.current as HTMLDivElement);
     mapInstanceRef.current = map;
 
-    const popupOverlayInstance = addPopup(map);
+    const popupOverlayInstance = addPopup(map, popupRef.current!);
     setPopupOverlay(popupOverlayInstance);
 
     taskOverlays(map, popupOverlayInstance);
@@ -48,10 +49,7 @@ export default function Page() {
     map.on("click", (e) => {
       console.log(`${e.coordinate.at(0)}, ${e.coordinate.at(1)}`);
       popupOverlayInstance.getElement()!.classList.remove("visible");
-      setTimeout(() => {
-        if (!popupOverlayInstance.getElement()!.classList.contains("visible"))
-          popupOverlayInstance.setPosition(undefined);
-      }, 200);
+      popupOverlayInstance.setPosition(undefined);
     });
 
     return () => {
@@ -61,7 +59,9 @@ export default function Page() {
 
   return (
     <div className='relative h-screen'>
-      <div ref={mapRef} className="map h-screen w-full bg-background z-0"></div>
+      <div ref={mapRef} className="map h-screen w-full bg-background z-0">
+        <div ref={popupRef} className='marker'></div>
+      </div>
       <SideMenu map={mapInstanceRef.current} popupOverlay={popupOverlay} />
       <SearchMenu map={mapInstanceRef.current} popupOverlay={popupOverlay} />
       <div className="absolute bg-black/50 flex flex-row gap-2 px-2 py-0.5 bottom-1.5 right-1.5 rounded-lg z-10">
@@ -70,8 +70,6 @@ export default function Page() {
         <a href="https://twitter.com/gzwmap" target="_blank" rel="noopener noreferrer" className="text-primary text-xs hover:text-muted-foreground transition duration-300">Twitter</a>
         <p className="text-xs text-muted-foreground">▪</p>
         <a href="/donate" target="_blank" rel="noopener noreferrer" className="text-primary text-xs hover:text-muted-foreground transition duration-300">Donate</a>
-        <p className="text-xs text-muted-foreground">▪</p>
-        <a href="/about" target="_blank" rel="noopener noreferrer" className="text-primary text-xs hover:text-muted-foreground transition duration-300">About</a>
       </div>
     </div>
   );

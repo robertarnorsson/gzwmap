@@ -57,12 +57,9 @@ export const mapView = new View({
   maxZoom: 8
 });
 
-export function addPopup(map: Map) {
-  const popupElement = document.createElement('div');
-  popupElement.className = 'marker';
-
+export function addPopup(map: Map, element: HTMLElement) {
   const popupOverlay = new Overlay({
-    element: popupElement,
+    element: element,
     autoPan: false,
     positioning: 'bottom-center',
     stopEvent: true,

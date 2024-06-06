@@ -5,14 +5,16 @@ import { Locations } from "../data/locations";
 import { MarkerOverlay, createMarkerOverlay } from "./marker-comp";
 import { taskMarker } from "@/components/overlays/task/task-overlay";
 import { locationMarker } from "@/components/overlays/location/location-overlay";
-import { taskPopup } from "@/components/overlays/task/task-popup";
-import { lzMarker } from "@/components/overlays/lz-overlay";
+import { TaskPopup } from "@/components/overlays/task/task-popup";
+import { lzMarker } from "@/components/overlays/location-zone/lz-overlay";
 import { LZs } from "../data/lzs";
 import { Factions } from "../data/factions";
 import { factionMarker } from "@/components/overlays/faction-overlay";
 import { POIs } from "../data/pois";
 import { poiMarker } from "@/components/overlays/poi-overlay";
-import { locationPopup } from "@/components/overlays/location/location-popup";
+import { LocationPopup } from "@/components/overlays/location/location-popup";
+import { closePopup } from "./utils";
+import { LZPopup } from "@/components/overlays/location-zone/lz-popup";
 
 export const taskOverlays = (map: Map, popupOverlay: Overlay) => {
 
@@ -24,7 +26,7 @@ export const taskOverlays = (map: Map, popupOverlay: Overlay) => {
         objective.position,
         ReactDOMServer.renderToString(taskMarker(task, objective)),
         objective.types,
-        ReactDOMServer.renderToString(taskPopup(task, objective)),
+        TaskPopup(task, objective, () => closePopup(popupOverlay)),
         popupOverlay,
       );
 
@@ -54,7 +56,9 @@ export const lzOverlays = (map: Map, popupOverlay: Overlay) => {
       map,
       lz.position,
       ReactDOMServer.renderToString(lzMarker(lz)),
-      lz.types
+      lz.types,
+      LZPopup(lz, () => closePopup(popupOverlay)),
+      popupOverlay
     );
 
     map.addOverlay(overlay);
@@ -69,7 +73,7 @@ export const locationOverlays = (map: Map, popupOverlay: Overlay) => {
       location.position,
       ReactDOMServer.renderToString(locationMarker(location)),
       location.types,
-      ReactDOMServer.renderToString(locationPopup(location)),
+      LocationPopup(location, () => closePopup(popupOverlay)),
       popupOverlay
     );
 

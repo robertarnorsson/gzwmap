@@ -16,11 +16,9 @@ import { Tasks } from '@/lib/data/tasks';
 import { Factions } from '@/lib/data/factions';
 import { cn } from '@/lib/utils';
 import { Map, Overlay } from 'ol';
-import { add } from 'ol/coordinate';
-import { fromLonLat } from 'ol/proj';
-import { Coordinate } from 'openlayers';
 import ReactDOMServer from 'react-dom/server';
-import { taskPopup } from '../overlays/task/task-popup';
+import { TaskPopup } from '../overlays/task/task-popup';
+import { closePopup, openPopup } from '@/lib/map/utils';
 
 export default function SideMenu({ map, popupOverlay }: { map: Map | undefined, popupOverlay: Overlay | undefined }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -130,9 +128,7 @@ export default function SideMenu({ map, popupOverlay }: { map: Map | undefined, 
         const view = map.getView();
         view.animate({zoom: (view.getMaxZoom() - 1), center: objective.position})
 
-        popupOverlay.getElement()!.innerHTML = ReactDOMServer.renderToString(taskPopup(task, objective)),
-        popupOverlay.setPosition(objective.position)
-        popupOverlay.getElement()!.classList.add("visible")
+        openPopup(popupOverlay, objective.position, TaskPopup(task, objective, () => closePopup(popupOverlay)));
       }
     };
 

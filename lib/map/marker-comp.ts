@@ -1,6 +1,8 @@
 import Overlay from "ol/Overlay";
 import { MarkerType } from "../types";
 import { Map } from "ol";
+import { Root, createRoot } from "react-dom/client";
+import { openPopup } from "./utils";
 
 export interface MarkerData {
   id: string;
@@ -26,7 +28,7 @@ export const createMarkerOverlay = (
   coordinates: [number, number],
   content: string,
   types: MarkerType[],
-  popupContent?: string,
+  popupContent?: React.ReactNode,
   popupOverlay?: Overlay,
   stopEvent?: boolean,
 ): MarkerOverlay => {
@@ -44,9 +46,7 @@ export const createMarkerOverlay = (
     }
     element.onmouseup = (e) => {
       if (!dragging) {
-        popupOverlay.getElement()!.innerHTML = popupContent
-        popupOverlay.setPosition(coordinates)
-        popupOverlay.getElement()!.classList.add("visible")
+        openPopup(popupOverlay, coordinates, popupContent);
       }
     }
   }
@@ -62,29 +62,4 @@ export const createMarkerOverlay = (
   overlay.types = types;
 
   return overlay;
-};
-
-export const addOverlayToMap = (map: Map, overlay: MarkerOverlay): void => {
-  map.addOverlay(overlay);
-};
-
-export const removeOverlayFromMap = (map: Map, overlayId: string): void => {
-  const overlays = map.getOverlays().getArray() as MarkerOverlay[];
-  const overlayToRemove = overlays.find(overlay => overlay.id === overlayId);
-  if (overlayToRemove) {
-    map.removeOverlay(overlayToRemove);
-  }
-};
-
-export const toggleMarkersByType = (
-  map: Map,
-  type: MarkerType,
-  visible: boolean
-): void => {
-  const overlays = map.getOverlays().getArray() as MarkerOverlay[];
-  overlays.forEach(overlay => {
-    if (overlay.types.includes(type)) {
-      overlay.getElement()!.style.display = visible ? '' : 'none';
-    }
-  });
 };
