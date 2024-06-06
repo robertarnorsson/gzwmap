@@ -1,6 +1,7 @@
 import Overlay from "ol/Overlay";
 import { MarkerType } from "../types";
 import { Map } from "ol";
+import { Root, createRoot } from "react-dom/client";
 
 export interface MarkerData {
   id: string;
@@ -26,7 +27,7 @@ export const createMarkerOverlay = (
   coordinates: [number, number],
   content: string,
   types: MarkerType[],
-  popupContent?: string,
+  popupContent?: React.ReactNode,
   popupOverlay?: Overlay,
   stopEvent?: boolean,
 ): MarkerOverlay => {
@@ -44,9 +45,17 @@ export const createMarkerOverlay = (
     }
     element.onmouseup = (e) => {
       if (!dragging) {
-        popupOverlay.getElement()!.innerHTML = popupContent
-        popupOverlay.setPosition(coordinates)
-        popupOverlay.getElement()!.classList.add("visible")
+        const popupElement = popupOverlay.getElement()!;
+        let root: Root | null = (popupElement as any).__reactRoot;
+
+        if (!root) {
+          root = createRoot(popupElement);
+          (popupElement as any).__reactRoot = root;
+        }
+
+        root.render(popupContent);
+        popupOverlay.setPosition(coordinates);
+        popupElement.classList.add("visible");
       }
     }
   }
