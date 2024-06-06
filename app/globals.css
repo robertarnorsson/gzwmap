@@ -69,11 +69,6 @@
   .visible {
     opacity: 1;
   }
-
-  .expand-on-hover:hover {
-    transform: scale(2);
-    transition: transform 0.2s ease-in-out;
-  }
 }
 
 @layer base {
