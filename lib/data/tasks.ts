@@ -89,6 +89,14 @@ import { Paparazzi }                      from "@/lib/data/tasks/paparazzi";
 import { LipOut }                         from "@/lib/data/tasks/lip-out";
 import { LeftBehindPartTwo }              from "@/lib/data/tasks/left-behind-part-2";
 import { TheCongressman }                 from "@/lib/data/tasks/the-congressman";
+import { CelebrityCrash }                 from "./tasks/celebrity-crash";
+import { SweetLittleLies }                from "./tasks/sweet-little-lies";
+import { LastResort }                     from "./tasks/last-resort";
+import { Weeding }                        from "./tasks/weeding";
+import { TheManWhoDisappeared } from "./tasks/the-man-who-disappeared";
+import { GirlsJustWannaHaveFun } from "./tasks/girls-just-wanna-have-fun";
+import { KnowYourEnemy } from "./tasks/know-your-enemy";
+import { AcademicIntrest } from "./tasks/academic-intrest";
 
 export const Tasks: task[] = [
   FirstRecon,
@@ -180,4 +188,12 @@ export const Tasks: task[] = [
   LipOut,
   LeftBehindPartTwo,
   TheCongressman,
+  CelebrityCrash,
+  SweetLittleLies,
+  LastResort,
+  Weeding,
+  TheManWhoDisappeared,
+  GirlsJustWannaHaveFun,
+  KnowYourEnemy,
+  AcademicIntrest
 ]

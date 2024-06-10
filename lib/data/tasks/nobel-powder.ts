@@ -4,7 +4,7 @@ import { MidnightSapphire } from "@/lib/data/locations";
 
 const NobelPowder_Objective1: objective = {
     id: "",
-    name: "Evidence of drug trade",
+    name: "Suspicious Box",
     description: "Retrieve evidence of drug trade in Midnight Sapphire and report back to Banshee",
     position: [16538.73054286704, 21616.076155810195],
     type: ObjectiveType.COLLECT,
