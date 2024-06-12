@@ -30,8 +30,8 @@ import { ManifestDestiny }                from "@/lib/data/tasks/manifest-destin
 import { AtTheMoundsOfMadness }           from "@/lib/data/tasks/at-the-mounds-of-madness"
 import { ItsInTheWaterPartOne }           from "@/lib/data/tasks/its-in-the-water-part-1"
 import { ItsInTheWaterPartTwo }           from "@/lib/data/tasks/its-in-the-water-part-2"
-import {TheShadowOverBanPaPartOne}        from "@/lib/data/tasks/the-shadow-over-ban-pa-part-1"
-import {TheShadowOverBanPaPartTwo}        from "@/lib/data/tasks/the-shadow-over-ban-pa-part-2"
+import { TheShadowOverBanPaPartOne }      from "@/lib/data/tasks/the-shadow-over-ban-pa-part-1"
+import { TheShadowOverBanPaPartTwo }      from "@/lib/data/tasks/the-shadow-over-ban-pa-part-2"
 import { LineInTheSand }                  from "@/lib/data/tasks/line-in-the-sand"
 import { TheValueOfSharing }              from "@/lib/data/tasks/the-value-of-sharing"
 import { UninvitedGuests }                from "@/lib/data/tasks/uninvited-guests"
@@ -79,6 +79,28 @@ import { NewNeighbours }                  from "@/lib/data/tasks/new-neighbours"
 import { RebelScum }                      from "@/lib/data/tasks/rebel-scum";
 import { DutyToTheCountry }               from "@/lib/data/tasks/duty-to-the-country";
 import { FinalLiberation }                from "@/lib/data/tasks/final-liberation";
+import { CrimeDoesntPay }                 from "@/lib/data/tasks/crime-doesnt-pay";
+import { DirtDigger }                     from "@/lib/data/tasks/dirt-digger";
+import { FelonyAndPunishment }            from "@/lib/data/tasks/felony-and-punishment";
+import { NobelPowder }                    from "@/lib/data/tasks/nobel-powder";
+import { LastFarewellPartTwo }            from "@/lib/data/tasks/last-farewell-part-2";
+import { DeepestDarkestFantasies }        from "@/lib/data/tasks/deepest-darkest-fantasies";
+import { Paparazzi }                      from "@/lib/data/tasks/paparazzi";
+import { LipOut }                         from "@/lib/data/tasks/lip-out";
+import { LeftBehindPartTwo }              from "@/lib/data/tasks/left-behind-part-2";
+import { TheCongressman }                 from "@/lib/data/tasks/the-congressman";
+import { CelebrityCrash }                 from "@/lib/data/tasks/celebrity-crash";
+import { SweetLittleLies }                from "@/lib/data/tasks/sweet-little-lies";
+import { LastResort }                     from "@/lib/data/tasks/last-resort";
+import { Weeding }                        from "@/lib/data/tasks/weeding";
+import { TheManWhoDisappeared }           from "@/lib/data/tasks/the-man-who-disappeared";
+import { GirlsJustWannaHaveFun }          from "@/lib/data/tasks/girls-just-wanna-have-fun";
+import { KnowYourEnemy }                  from "@/lib/data/tasks/know-your-enemy";
+import { AcademicIntrest }                from "@/lib/data/tasks/academic-intrest";
+import { LocalGolfStar }                  from "@/lib/data/tasks/local-golf-star";
+import { PricelessPossessions }           from "@/lib/data/tasks/priceless-possessions";
+import { NoQuestionsAsked }               from "@/lib/data/tasks/no-questions-asked";
+import { WhatsInTheBox }                  from "@/lib/data/tasks/whats-in-the-box";
 
 export const Tasks: task[] = [
   FirstRecon,
@@ -160,4 +182,26 @@ export const Tasks: task[] = [
   MissingColleaguePartOne,
   MissingColleaguePartTwo,
   LostLover,
+  CrimeDoesntPay,
+  DirtDigger,
+  FelonyAndPunishment,
+  NobelPowder,
+  LastFarewellPartTwo,
+  DeepestDarkestFantasies,
+  Paparazzi,
+  LipOut,
+  LeftBehindPartTwo,
+  TheCongressman,
+  CelebrityCrash,
+  SweetLittleLies,
+  LastResort,
+  Weeding,
+  TheManWhoDisappeared,
+  GirlsJustWannaHaveFun,
+  KnowYourEnemy,
+  AcademicIntrest,
+  LocalGolfStar,
+  PricelessPossessions,
+  NoQuestionsAsked,
+  WhatsInTheBox
 ]
