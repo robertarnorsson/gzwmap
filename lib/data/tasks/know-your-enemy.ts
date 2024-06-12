@@ -10,7 +10,7 @@ const KnowYourEnemy_Objective1: objective = {
     type: ObjectiveType.LOCATE,
     types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.TURNCOAT, MarkerType.MIDNIGHTSAPPHIRE],
     location: MidnightSapphire,
-    note: "You will need the Kate Key (VILLA KATHERINE KEY)"
+    note: "You will need the Villa Katherine Key"
 }
 
 export const KnowYourEnemy: task = {

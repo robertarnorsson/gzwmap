@@ -89,14 +89,18 @@ import { Paparazzi }                      from "@/lib/data/tasks/paparazzi";
 import { LipOut }                         from "@/lib/data/tasks/lip-out";
 import { LeftBehindPartTwo }              from "@/lib/data/tasks/left-behind-part-2";
 import { TheCongressman }                 from "@/lib/data/tasks/the-congressman";
-import { CelebrityCrash }                 from "./tasks/celebrity-crash";
-import { SweetLittleLies }                from "./tasks/sweet-little-lies";
-import { LastResort }                     from "./tasks/last-resort";
-import { Weeding }                        from "./tasks/weeding";
-import { TheManWhoDisappeared } from "./tasks/the-man-who-disappeared";
-import { GirlsJustWannaHaveFun } from "./tasks/girls-just-wanna-have-fun";
-import { KnowYourEnemy } from "./tasks/know-your-enemy";
-import { AcademicIntrest } from "./tasks/academic-intrest";
+import { CelebrityCrash }                 from "@/lib/data/tasks/celebrity-crash";
+import { SweetLittleLies }                from "@/lib/data/tasks/sweet-little-lies";
+import { LastResort }                     from "@/lib/data/tasks/last-resort";
+import { Weeding }                        from "@/lib/data/tasks/weeding";
+import { TheManWhoDisappeared }           from "@/lib/data/tasks/the-man-who-disappeared";
+import { GirlsJustWannaHaveFun }          from "@/lib/data/tasks/girls-just-wanna-have-fun";
+import { KnowYourEnemy }                  from "@/lib/data/tasks/know-your-enemy";
+import { AcademicIntrest }                from "@/lib/data/tasks/academic-intrest";
+import { LocalGolfStar }                  from "@/lib/data/tasks/local-golf-star";
+import { PricelessPossessions }           from "@/lib/data/tasks/priceless-possessions";
+import { NoQuestionsAsked }               from "@/lib/data/tasks/no-questions-asked";
+import { WhatsInTheBox }                  from "@/lib/data/tasks/whats-in-the-box";
 
 export const Tasks: task[] = [
   FirstRecon,
@@ -195,5 +199,9 @@ export const Tasks: task[] = [
   TheManWhoDisappeared,
   GirlsJustWannaHaveFun,
   KnowYourEnemy,
-  AcademicIntrest
+  AcademicIntrest,
+  LocalGolfStar,
+  PricelessPossessions,
+  NoQuestionsAsked,
+  WhatsInTheBox
 ]
