@@ -10,9 +10,11 @@ const rubik = Rubik({ subsets: ["latin"] });
 
 export const PopUp = ({
   children,
+  id,
   onClick
 }: Readonly<{
   children: React.ReactNode;
+  id: string;
   onClick: () => void;
 }>) => {
   return ( 
@@ -20,6 +22,9 @@ export const PopUp = ({
       <Button variant='ghost' size='icon' className="absolute top-2 right-2 h-6 w-6" onClick={onClick}>
         <X className="w-4 h-4" />
       </Button>
+      <span className="absolute bottom-1 right-2 text-[9px] text-[#193b3b]">
+        {id}
+      </span>
       <div>
         {children}
       </div>

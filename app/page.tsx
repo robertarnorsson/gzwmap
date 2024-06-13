@@ -4,7 +4,7 @@ import 'ol/ol.css';
 import { useEffect, useRef, useState } from 'react';
 import { addPopup, mapView, rasterTileLayer } from '@/lib/map/map';
 import { Map, Overlay } from 'ol';
-import { factionOverlays, locationOverlays, lzOverlays, taskOverlays } from '@/lib/map/markers';
+import { factionOverlays, keyOverlays, locationOverlays, lzOverlays, taskOverlays } from '@/lib/map/markers';
 import SideMenu from '@/components/menu/side-menu';
 import { SearchMenu } from '@/components/menu/search-menu';
 
@@ -29,6 +29,7 @@ export default function Page() {
     setPopupOverlay(popupOverlayInstance);
 
     taskOverlays(map, popupOverlayInstance);
+    keyOverlays(map, popupOverlayInstance);
     lzOverlays(map, popupOverlayInstance);
     factionOverlays(map, popupOverlayInstance);
     locationOverlays(map, popupOverlayInstance);

@@ -15,6 +15,9 @@ import { poiMarker } from "@/components/overlays/poi-overlay";
 import { LocationPopup } from "@/components/overlays/location/location-popup";
 import { closePopup } from "./utils";
 import { LZPopup } from "@/components/overlays/location-zone/lz-popup";
+import { Keys } from "../data/keys";
+import { keyMarker } from "@/components/overlays/key/key-overlay";
+import { KeyPopup } from "@/components/overlays/key/key-popup";
 
 export const taskOverlays = (map: Map, popupOverlay: Overlay) => {
 
@@ -35,7 +38,25 @@ export const taskOverlays = (map: Map, popupOverlay: Overlay) => {
   })
 }
 
+export const keyOverlays = (map: Map, popupOverlay: Overlay) => {
+
+  Keys.map((key) => {
+    const overlay = createMarkerOverlay(
+      key.id,
+      map,
+      key.position,
+      ReactDOMServer.renderToString(keyMarker(key)),
+      key.types,
+      KeyPopup(key, () => closePopup(popupOverlay)),
+      popupOverlay
+    );
+
+    map.addOverlay(overlay);
+  })
+}
+
 export const factionOverlays = (map: Map, popupOverlay: Overlay) => {
+
   Factions.map((faction) => {
     const overlay = createMarkerOverlay(
       faction.id,
@@ -50,6 +71,7 @@ export const factionOverlays = (map: Map, popupOverlay: Overlay) => {
 }
 
 export const lzOverlays = (map: Map, popupOverlay: Overlay) => {
+
   LZs.map((lz) => {
     const overlay = createMarkerOverlay(
       lz.id,
@@ -66,6 +88,7 @@ export const lzOverlays = (map: Map, popupOverlay: Overlay) => {
 }
 
 export const locationOverlays = (map: Map, popupOverlay: Overlay) => {
+
   Locations.map((location) => {
     const overlay = createMarkerOverlay(
       location.id,
@@ -82,6 +105,7 @@ export const locationOverlays = (map: Map, popupOverlay: Overlay) => {
 }
 
 export const poiOverlays = (map: Map, popupOverlay: Overlay) => {
+
   POIs.map((poi) => {
     const overlay = createMarkerOverlay(
       poi.id,

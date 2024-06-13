@@ -1,5 +1,3 @@
-import { LatLngTuple } from "leaflet"
-
 export type vendor = {
   name: string
 }
@@ -46,6 +44,10 @@ export enum MarkerType {
   LZ = "Landing Zone",
   LOCATION = "Location",
   POI = "Place of Interest",
+
+  // Keys
+  KEY = "Key",
+  NEEDFORTASK = "Need For Task",
 
   // Factions
   LRI = "Lamang Recovery Initiative",
@@ -117,6 +119,7 @@ export type objective = {
   location: location 
   faction?: faction
   image?: string
+  key?: key
   note?: string
 }
 
@@ -130,6 +133,8 @@ export type item = {
 export type key = {
   id: string
   name: string
-  locations: location[]
-  position: LatLngTuple
+  image?: string
+  types: MarkerType[]
+  location: location
+  position: [number, number]
 }

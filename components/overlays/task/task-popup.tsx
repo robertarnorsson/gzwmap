@@ -4,9 +4,11 @@ import { objective, task } from "@/lib/types";
 import React from "react";
 import { PopUp } from "../popup";
 import ImageShowcase from "@/components/menu/image-showcase";
+import Image from "next/image";
 
 export const TaskPopup = (task: task, objective: objective, onClick: () => void) => (
   <PopUp
+    id={`${task.id} - ${objective.id}`}
     onClick={onClick}
   >
     <h2 className="text-lg font-bold text-primary text-pretty">{task.name}</h2>
@@ -19,6 +21,24 @@ export const TaskPopup = (task: task, objective: objective, onClick: () => void)
     </div>
     <p className="pt-4 text-sm text-primary text-pretty font-semibold">{objective.name}</p>
     <p className="text-xs text-primary/85 text-pretty">{objective.description}</p>
+    {objective.key && (
+      <div  className="pt-4">
+        <div className="flex flex-row gap-2">
+          <p className="text-xs text-muted-foreground">Keys</p>
+        </div>
+        <div className="flex flex-wrap gap-1">
+          {objective.key?.image ? (
+            <div className="flex gap-1">
+              <Image className='item-key-image' quality={100} width={50} height={50} src={objective.key.image} alt={objective.key.name} />
+            </div>
+          ) : (
+            <div className="flex gap-1">
+              <p className="text-sm text-red-200">{objective.key.name}</p>
+            </div>
+          )}
+        </div>
+      </div>
+    )}
     {objective.image && (
       <div className="pt-4">
         <ImageShowcase
