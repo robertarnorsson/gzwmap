@@ -47,7 +47,7 @@ export enum MarkerType {
 
   // Keys
   KEY = "Key",
-  NEEDFORTASK = "Need For Task",
+  QUESTKEY = "Quest Key",
 
   // Factions
   LRI = "Lamang Recovery Initiative",
@@ -130,11 +130,21 @@ export type item = {
   vendor: vendor
 }
 
+export enum KeyTypes {
+  ROUNDKEY = "/items/keys/key-round.png",
+  ROUNDGOLDKEY = "/items/keys/key-round-gold.png",
+  SQUAREKEY = "/items/keys/key-square.png",
+  SKINNYKEY = "/items/keys/key-skinny.png",
+}
+
 export type key = {
   id: string
   name: string
-  image?: string
+  shortName: string
+  description: string
+  keyType: KeyTypes
   types: MarkerType[]
+  questKey: boolean
   location: location
   position: [number, number]
 }

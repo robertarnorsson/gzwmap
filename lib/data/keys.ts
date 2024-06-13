@@ -1,4 +1,4 @@
-import { MarkerType, key } from "@/lib/types";
+import { KeyTypes, MarkerType, key } from "@/lib/types";
 import {
   BanPa,
   FortNarith,
@@ -11,8 +11,56 @@ import {
   NamThaven
 } from "@/lib/data/locations";
 
-export const BPWarehouse: key = {
-    id: "K-001",
+export const PLDoctorsOffice: key = {
+    id: "N/A",
+    name: "Pha Lang Doctor's Office Key",
+    shortName: "PL Doc",
+    description: "A key for the local doctor's office in Pha Lang.",
+    keyType: KeyTypes.SQUAREKEY,
+    types: [MarkerType.KEY, MarkerType.PHALANG, MarkerType.QUESTKEY],
+    questKey: true,
+    location: PhaLang,
+    position: [22914.900970484305, 21013.597589003977]
+}
+
+export const PLAttic: key = {
+    id: "N/A",
+    name: "Pha Lang Resturant Storage Key",
+    shortName: "PL Attic",
+    description: "A key for the attic storage space of a resturant in Pha Lang.",
+    keyType: KeyTypes.ROUNDKEY,
+    types: [MarkerType.KEY, MarkerType.PHALANG, MarkerType.QUESTKEY],
+    questKey: true,
+    location: PhaLang,
+    position: [22643.21175250135, 21063.447756478625]
+}
+
+export const PLMotel: key = {
+    id: "N/A",
+    name: "PL Motel",
+    shortName: "PL Doc",
+    description: "A key to one of the room in the Pha Lang motel.",
+    keyType: KeyTypes.SQUAREKEY,
+    types: [MarkerType.KEY, MarkerType.PHALANG],
+    questKey: false,
+    location: PhaLang,
+    position: [22643.21175250135, 21063.447756478625]
+}
+
+export const PLLumber: key = {
+    id: "N/A",
+    name: "PL Motel",
+    shortName: "PL Doc",
+    description: "Description needed!",
+    keyType: KeyTypes.SQUAREKEY,
+    types: [MarkerType.KEY, MarkerType.PHALANG],
+    questKey: false,
+    location: PhaLang,
+    position: [22643.21175250135, 21063.447756478625]
+}
+
+/* export const BPWarehouse: key = {
+    id: "N/A",
     name: "BP Warehouse",
     image: "/items/keys/bp-warehouse.png",
     types: [MarkerType.KEY, MarkerType.BANPA],
@@ -21,7 +69,7 @@ export const BPWarehouse: key = {
 }
 
 export const FNDumpingGroundStorageShed: key = {
-    id: "K-002",
+    id: "N/A",
     name: "FN Dumping Ground Storage Shed",
     image: "/items/keys/fn-dumping-ground-storage-shed.png",
     types: [MarkerType.KEY, MarkerType.FORTNARITH],
@@ -30,7 +78,7 @@ export const FNDumpingGroundStorageShed: key = {
 }
 
 export const HP101: key = {
-    id: "K-003",
+    id: "N/A",
     name: "HP 101",
     image: "/items/keys/hp-101.png",
     types: [MarkerType.KEY, MarkerType.HUNTERSPARADISE],
@@ -39,7 +87,7 @@ export const HP101: key = {
 }
 
 export const HP102: key = {
-    id: "K-004",
+    id: "N/A",
     name: "HP 102",
     image: "/items/keys/hp-102.png",
     types: [MarkerType.KEY, MarkerType.HUNTERSPARADISE],
@@ -47,8 +95,17 @@ export const HP102: key = {
     position: [16186.635394344388, 17344.667035158986]
 }
 
+export const PLAttic: key = {
+    id: "N/A",
+    name: "PL Attic",
+    image: "/items/keys/kv-attic.png",
+    types: [MarkerType.KEY, MarkerType.PHALANG],
+    location: PhaLang,
+    position: [22643.21175250135, 21063.447756478625]
+}
+
 export const HPWeaponStorage: key = {
-    id: "K-005",
+    id: "N/A",
     name: "HP Weapon Storage",
     image: "/items/keys/hp-weapon-storage.png",
     types: [MarkerType.KEY, MarkerType.HUNTERSPARADISE],
@@ -57,7 +114,7 @@ export const HPWeaponStorage: key = {
 }
 
 export const KVAttic: key = {
-    id: "K-006",
+    id: "N/A",
     name: "KV Attic",
     image: "/items/keys/kv-attic.png",
     types: [MarkerType.KEY, MarkerType.KIUVONGSA],
@@ -66,7 +123,7 @@ export const KVAttic: key = {
 }
 
 export const KVDoctorsOffice: key = {
-    id: "K-007",
+    id: "N/A",
     name: "KV Doctor's Office",
     image: "/items/keys/kv-doctors-office.png",
     types: [MarkerType.KEY, MarkerType.KIUVONGSA],
@@ -75,7 +132,7 @@ export const KVDoctorsOffice: key = {
 }
 
 export const PLDoctorsOffice: key = {
-    id: "K-008",
+    id: "N/A",
     name: "PL Doctor's Office",
     // image: "/items/keys/pl-doctors-office.png",
     types: [MarkerType.KEY, MarkerType.PHALANG],
@@ -84,7 +141,7 @@ export const PLDoctorsOffice: key = {
 }
 
 export const NTDoctorsOffice: key = {
-    id: "K-009",
+    id: "N/A",
     name: "NT Doctor's Office",
     // image: "/items/keys/nt-doctors-office.png",
     types: [MarkerType.KEY, MarkerType.NAMTHAVEN],
@@ -93,7 +150,7 @@ export const NTDoctorsOffice: key = {
 }
 
 export const KVLumber: key = {
-    id: "K-010",
+    id: "N/A",
     name: "KV Lumber",
     image: "/items/keys/kv-lumber.png",
     types: [MarkerType.KEY, MarkerType.KIUVONGSA],
@@ -102,7 +159,7 @@ export const KVLumber: key = {
 }
 
 export const KVMotel: key = {
-    id: "K-011",
+    id: "N/A",
     name: "KV Motel",
     image: "/items/keys/kv-motel.png",
     types: [MarkerType.KEY, MarkerType.KIUVONGSA],
@@ -111,7 +168,7 @@ export const KVMotel: key = {
 }
 
 export const KVUnlra: key = {
-    id: "K-012",
+    id: "N/A",
     name: "KV Unlra",
     image: "/items/keys/kv-unlra.png",
     types: [MarkerType.KEY, MarkerType.KIUVONGSA],
@@ -120,7 +177,7 @@ export const KVUnlra: key = {
 }
 
 export const PLAStorageShed: key = {
-    id: "K-013",
+    id: "N/A",
     name: "PLA Storage Shed",
     image: "/items/keys/pla-storage-shed.png",
     types: [MarkerType.KEY, MarkerType.PHALANGAIRFIELD],
@@ -129,7 +186,7 @@ export const PLAStorageShed: key = {
 }
 
 export const SMOffice: key = {
-    id: "K-014",
+    id: "N/A",
     name: "SM Office",
     image: "/items/keys/sm-office.png",
     types: [MarkerType.KEY, MarkerType.SAWMILL],
@@ -138,7 +195,7 @@ export const SMOffice: key = {
 }
 
 export const SMStorageShed: key = {
-    id: "K-015",
+    id: "N/A",
     name: "SM Storage Shed",
     image: "/items/keys/sm-storage-shed.png",
     types: [MarkerType.KEY, MarkerType.SAWMILL],
@@ -147,7 +204,7 @@ export const SMStorageShed: key = {
 }
 
 export const YBL1CorridorDStorageRoom: key = {
-    id: "K-016",
+    id: "N/A",
     name: "YBL 1 Corridor D Storage Room",
     image: "/items/keys/ybl-1-corridor-d-storage-room.png",
     types: [MarkerType.KEY, MarkerType.YBL1],
@@ -156,7 +213,7 @@ export const YBL1CorridorDStorageRoom: key = {
 }
 
 export const YBL1GeneratorRoom: key = {
-    id: "K-017",
+    id: "N/A",
     name: "YBL 1 Generator Room",
     image: "/items/keys/ybl-1-generator-room.png",
     types: [MarkerType.KEY, MarkerType.YBL1],
@@ -165,7 +222,7 @@ export const YBL1GeneratorRoom: key = {
 }
 
 export const YBL1MaintenanceDoor: key = {
-    id: "K-018",
+    id: "N/A",
     name: "YBL 1 Maintenance Door",
     image: "/items/keys/ybl-1-maintenance-door.png",
     types: [MarkerType.KEY, MarkerType.YBL1],
@@ -174,7 +231,7 @@ export const YBL1MaintenanceDoor: key = {
 }
 
 export const YBL1Office01: key = {
-    id: "K-019",
+    id: "N/A",
     name: "YBL 1 Office 01",
     image: "/items/keys/ybl-1-office-01.png",
     types: [MarkerType.KEY, MarkerType.YBL1],
@@ -183,7 +240,7 @@ export const YBL1Office01: key = {
 }
 
 export const YBL1Office02: key = {
-    id: "K-020",
+    id: "N/A",
     name: "YBL 1 Office 02",
     image: "/items/keys/ybl-1-office-02.png",
     types: [MarkerType.KEY, MarkerType.YBL1],
@@ -192,15 +249,17 @@ export const YBL1Office02: key = {
 }
 
 export const YBL1WeaponStorage: key = {
-    id: "K-021",
+    id: "N/A",
     name: "YBL 1 Weapon Storage",
     image: "/items/keys/ybl-1-weapon-storage.png",
     types: [MarkerType.KEY, MarkerType.YBL1],
     location: YBL1,
     position: [16186.635394344388, 17344.667035158986]
-}
+} */
 
 export const Keys: key[] = [
+    PLDoctorsOffice
+    /* PLAttic,
     BPWarehouse,
     FNDumpingGroundStorageShed,
     HP101,
@@ -221,5 +280,5 @@ export const Keys: key[] = [
     YBL1MaintenanceDoor,
     YBL1Office01,
     YBL1Office02,
-    YBL1WeaponStorage,
+    YBL1WeaponStorage, */
 ]

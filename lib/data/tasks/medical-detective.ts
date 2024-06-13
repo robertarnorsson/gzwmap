@@ -7,7 +7,7 @@ import {
 } from "@/lib/data/factions";
 import { LeaveNoManBehind } from "@/lib/data/tasks/leave-no-man-behind";
 import { KiuVongsa, NamThaven, PhaLang } from "../locations";
-import { KVDoctorsOffice, NTDoctorsOffice, PLDoctorsOffice } from "../keys";
+import { PLDoctorsOffice } from "../keys";
 
 const MedicalDetective_Objective1_LRI: objective = {
   id: "",
@@ -29,8 +29,7 @@ const MedicalDetective_Objective1_MMS: objective = {
   type: ObjectiveType.COLLECT,
   faction: MithrasSecuritySystems,
   types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.GUNNY, MarkerType.NAMTHAVEN],
-  location: NamThaven,
-  key: NTDoctorsOffice,
+  location: NamThaven
 }
 
 const MedicalDetective_Objective1_CSI: objective = {
@@ -41,8 +40,7 @@ const MedicalDetective_Objective1_CSI: objective = {
   type: ObjectiveType.COLLECT,
   faction: CrimsonShieldInternational,
   types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.GUNNY, MarkerType.KIUVONGSA],
-  location: KiuVongsa,
-  key: KVDoctorsOffice,
+  location: KiuVongsa
 }
 
 

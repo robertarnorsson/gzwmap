@@ -5,6 +5,7 @@ import React from "react";
 import { PopUp } from "../popup";
 import ImageShowcase from "@/components/menu/image-showcase";
 import Image from "next/image";
+import { Item } from "@/components/comp/item";
 
 export const TaskPopup = (task: task, objective: objective, onClick: () => void) => (
   <PopUp
@@ -27,15 +28,13 @@ export const TaskPopup = (task: task, objective: objective, onClick: () => void)
           <p className="text-xs text-muted-foreground">Keys</p>
         </div>
         <div className="flex flex-wrap gap-1">
-          {objective.key?.image ? (
-            <div className="flex gap-1">
-              <Image className='item-key-image' quality={100} width={50} height={50} src={objective.key.image} alt={objective.key.name} />
-            </div>
-          ) : (
-            <div className="flex gap-1">
-              <p className="text-sm text-red-200">{objective.key.name}</p>
-            </div>
-          )}
+          <div className="flex gap-1">
+            <Item
+              name={objective.key.shortName}
+              imageUrl={objective.key.keyType}
+              size={50}
+            ></Item>
+          </div>
         </div>
       </div>
     )}
