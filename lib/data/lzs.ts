@@ -113,7 +113,7 @@ export const FOXTROT2: lz = {
 export const FOXTROT3: lz = {
   id: "LZ-012",
   name: "FOXTROT 3",
-  position: [13842.669382541088, 20694.11502616339],
+  position: [13870.829500613861, 20642.248046024877],
   discoverable: true,
   types: [MarkerType.LZ, MarkerType.HUNTERSPARADISE],
   location: HuntersParadise,
@@ -140,7 +140,7 @@ export const INDIA2: lz = {
 export const INDIA3: lz = {
   id: "LZ-015",
   name: "INDIA 3",
-  position: [21808.223304648498, 16880.8063101462],
+  position: [21798.863034746497, 16813.980815632818],
   discoverable: true,
   types: [MarkerType.LZ, MarkerType.BANPA],
   location: BanPa,
@@ -167,7 +167,7 @@ export const LIMA2: lz = {
 export const LIMA3: lz = {
   id: "LZ-018",
   name: "LIMA 3",
-  position: [12073.959220514631,13995.946200897608],
+  position: [12076.15934793099, 13995.011202306481],
   discoverable: false,
   types: [MarkerType.LZ, MarkerType.YBL1],
   location: YBL1,
@@ -221,7 +221,7 @@ export const KILO2: lz = {
 export const KILO3: lz = {
   id: "LZ-024",
   name: "KILO 3",
-  position: [23022.96197640521, 13179.43993870512],
+  position: [23062.693711837863, 13205.558185429007],
   discoverable: true,
   types: [MarkerType.LZ, MarkerType.BLUELAGOON],
   location: BlueLagoon,
@@ -266,7 +266,7 @@ export const JULIET4: lz = {
 export const DELTA1: lz = {
   id: "LZ-029",
   name: "DELTA 1",
-  position: [13044.513422706972, 15081.087937383383],
+  position: [13070.35783252685, 15074.9596685017],
   discoverable: true,
   types: [MarkerType.LZ, MarkerType.FORTNARITH],
   location: FortNarith,
@@ -293,7 +293,7 @@ export const DELTA3: lz = {
 export const DELTA4: lz = {
   id: "LZ-032",
   name: "DELTA 4",
-  position: [8860.10163478709, 15820.5304824928],
+  position: [8921.522208799672, 15786.740383854158],
   discoverable: true,
   types: [MarkerType.LZ, MarkerType.FORTNARITH],
   location: FortNarith,
@@ -356,7 +356,7 @@ export const GOLF2: lz = {
 export const GOLF3: lz = {
   id: "LZ-039",
   name: "GOLF 3",
-  position: [17897.429115313134, 19437.954633820453],
+  position: [17902.657412599187, 19433.08063280357],
   discoverable: true,
   types: [MarkerType.LZ, MarkerType.PHALANGAIRFIELD],
   location: PhaLangAirfield,
