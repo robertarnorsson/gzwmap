@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 type ItemProps = {
   name: string;
   imageUrl: string;
-  size: number;
+  size: [number, number];
 };
 
 export const Item = ({
@@ -17,6 +17,8 @@ export const Item = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLSpanElement>(null);
   const [scrollAnimation, setScrollAnimation] = useState<string | null>(null);
+
+  const itemSize = [size[0] * 50, size[1] * 50]
 
   useEffect(() => {
     const containerElement = containerRef.current;
@@ -40,7 +42,7 @@ export const Item = ({
         setScrollAnimation(animationName);
       }
     }
-  }, [name, size]);
+  }, [name]);
 
   const handleMouseEnter = () => {
     if (isOverflowing && textRef.current) {
@@ -58,7 +60,7 @@ export const Item = ({
     <div
       ref={containerRef}
       className={cn(
-        `w-[${size}px] h-[${size}px]`,
+        `w-[${itemSize[0]}px] h-[${itemSize[1]}px]`,
         "relative overflow-hidden"
       )}
       onMouseEnter={handleMouseEnter}
@@ -73,7 +75,7 @@ export const Item = ({
         </span>
       </div>
       <div className="w-full h-full bg-[#252628] border border-1 border-[#454548]">
-        <Image width={size} height={size} src={imageUrl} alt={name} />
+        <Image width={itemSize[0]} height={itemSize[1]} src={imageUrl} alt={name} />
       </div>
     </div>
   );

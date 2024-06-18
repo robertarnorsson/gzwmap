@@ -22,6 +22,24 @@ export const TaskPopup = (task: task, objective: objective, onClick: () => void)
     </div>
     <p className="pt-4 text-sm text-primary text-pretty font-semibold">{objective.name}</p>
     <p className="text-xs text-primary/85 text-pretty">{objective.description}</p>
+    {objective.items && (
+      <div  className="pt-4">
+        <div className="flex flex-row gap-2">
+          <p className="text-xs text-muted-foreground">Required Items</p>
+        </div>
+        <div className="pt-1 flex flex-wrap gap-1">
+          <div className="flex gap-1">
+            {objective.items.map((item) => (
+              <Item key={item.id}
+                name={item.shortName || item.name}
+                imageUrl={item.image}
+                size={item.size}
+              ></Item>
+            ))}
+          </div>
+        </div>
+      </div>
+    )}
     {objective.key && (
       <div  className="pt-4">
         <div className="flex flex-row gap-2">
@@ -30,9 +48,9 @@ export const TaskPopup = (task: task, objective: objective, onClick: () => void)
         <div className="flex flex-wrap gap-1">
           <div className="flex gap-1">
             <Item
-              name={objective.key.shortName}
-              imageUrl={objective.key.keyType}
-              size={50}
+              name={objective.key.shortName || objective.key.name}
+              imageUrl={objective.key.image}
+              size={objective.key.size}
             ></Item>
           </div>
         </div>

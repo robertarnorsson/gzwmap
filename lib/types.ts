@@ -49,6 +49,10 @@ export enum MarkerType {
   KEY = "Key",
   QUESTKEY = "Quest Key",
 
+  // Items
+  ITEM = "Item",
+  TOOL = "Tool",
+
   // Factions
   LRI = "Lamang Recovery Initiative",
   MSS = "Mithras Security Systems",
@@ -104,8 +108,8 @@ export type task = {
   vendor: vendor
   level: number
   prerequisites?: task
-  items?: item[]
   key?: key
+  items?: item[]
   faction?: faction
 };
 
@@ -120,14 +124,19 @@ export type objective = {
   faction?: faction
   image?: string
   key?: key
+  items?: item[]
   note?: string
 }
 
 export type item = {
   id: string
   name: string
+  shortName?: string
   description: string
-  vendor: vendor
+  types: MarkerType[]
+  vendor?: vendor
+  size: [number, number]
+  image: string | KeyTypes
 }
 
 export enum KeyTypes {
@@ -137,13 +146,8 @@ export enum KeyTypes {
   SKINNYKEY = "/items/keys/key-skinny.png",
 }
 
-export type key = {
-  id: string
-  name: string
-  shortName: string
-  description: string
-  keyType: KeyTypes
-  types: MarkerType[]
+export type key = item & {
+  image: KeyTypes
   questKey: boolean
   location: location
   position: [number, number]

@@ -1,6 +1,7 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Handshake } from "@/lib/data/vendors";
 import { FortNarith } from "../locations";
+import { CameraWiretap } from "../items";
 
 const HackerPartOne_Objective1: objective = {
     id: "",
@@ -10,7 +11,8 @@ const HackerPartOne_Objective1: objective = {
     type: ObjectiveType.HACK,
     image:"/objectives/hacker-camera-air-traffic-control-building.webp",
     types: [MarkerType.TASK, MarkerType.HACK, MarkerType.HANDSHAKE, MarkerType.FORTNARITH],
-    location: FortNarith
+    location: FortNarith,
+    items: [CameraWiretap]
 }
 
 const HackerPartOne_Objective2: objective = {
@@ -21,7 +23,8 @@ const HackerPartOne_Objective2: objective = {
     type: ObjectiveType.HACK,
     image:"/objectives/hacker-camera-main-entrance.webp",
     types: [MarkerType.TASK, MarkerType.HACK, MarkerType.HANDSHAKE, MarkerType.FORTNARITH],
-    location: FortNarith
+    location: FortNarith,
+    items: [CameraWiretap]
 
 }
 
@@ -33,7 +36,8 @@ const HackerPartOne_Objective3: objective = {
     type: ObjectiveType.HACK,
     image:"/objectives/hacker-camera-northern-entrance.webp",
     types: [MarkerType.TASK, MarkerType.HACK, MarkerType.HANDSHAKE, MarkerType.FORTNARITH],
-    location: FortNarith
+    location: FortNarith,
+    items: [CameraWiretap]
 }
 
 const HackerPartOne_Objective4: objective = {
@@ -44,7 +48,8 @@ const HackerPartOne_Objective4: objective = {
     type: ObjectiveType.HACK,
     image:"/objectives/hacker-camera-army-headquarters.webp",
     types: [MarkerType.TASK, MarkerType.HACK, MarkerType.HANDSHAKE, MarkerType.FORTNARITH],
-    location: FortNarith
+    location: FortNarith,
+    items: [CameraWiretap]
 }
 
 export const HackerPartOne: task = {
@@ -60,5 +65,6 @@ export const HackerPartOne: task = {
         HackerPartOne_Objective4,
     ],
     vendor: Handshake,
+    items: [CameraWiretap, CameraWiretap, CameraWiretap, CameraWiretap],
     level: 0,
 }
