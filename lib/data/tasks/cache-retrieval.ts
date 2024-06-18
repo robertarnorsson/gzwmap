@@ -9,7 +9,7 @@ import { GPSTracker } from "@/lib/data/items";
 import { KiuVongsa, NamThaven, PhaLang } from "../locations";
 
 const CacheRetrieval_Objective1_LRI: objective = {
-    id: "",
+    id: "N/A",
     name: "Warehouse Cache",
     description: "Find and mark the cache in one of Pha Lang's warehouses",
     position: [22351.614281876133, 21208.327357796472],
@@ -21,7 +21,7 @@ const CacheRetrieval_Objective1_LRI: objective = {
 }
 
 const CacheRetrieval_Objective2_LRI: objective = {
-    id: "",
+    id: "N/A",
     name: "Lumberyard Cache",
     description: "Find and mark the cache in a shed at Pha Lang's Lumberyard",
     position: [22032.5, 20837.5],
@@ -33,7 +33,7 @@ const CacheRetrieval_Objective2_LRI: objective = {
 }
 
 const CacheRetrieval_Objective1_MMS: objective = {
-    id: "",
+    id: "N/A",
     name: "Warehouse Cache",
     description: "Find and mark the cache in one of Nam Thaven's warehouses",
     position: [16630.41218690416, 12167.812386418878],
@@ -45,7 +45,7 @@ const CacheRetrieval_Objective1_MMS: objective = {
 }
 
 const CacheRetrieval_Objective2_MMS: objective = {
-    id: "",
+    id: "N/A",
     name: "Lumberyard Cache",
     description: "Find and mark the cache in a shed at Nam Thaven's Lumberyard",
     position: [16639.577605067865, 12656.98797938061],
@@ -57,7 +57,7 @@ const CacheRetrieval_Objective2_MMS: objective = {
 }
 
 const CacheRetrieval_Objective1_CSI: objective = {
-    id: "",
+    id: "N/A",
     name: "Warehouse Cache",
     description: "Find and mark the cache in one of Kiu Vongsa's warehouses",
     position: [10459.588012501905, 20998.130589535205],
@@ -69,7 +69,7 @@ const CacheRetrieval_Objective1_CSI: objective = {
 }
 
 const CacheRetrieval_Objective2_CSI: objective = {
-    id: "",
+    id: "N/A",
     name: "Lumberyard Cache",
     description: "Find and mark the cache in a shed at Kiu Vongsa's Lumberyard",
     position: [10771.66995589244, 20626.047345183382],
@@ -82,7 +82,7 @@ const CacheRetrieval_Objective2_CSI: objective = {
 
 
 export const CacheRetrieval: task = {
-    id: "",
+    id: "N/A",
     name: "Cache Retrieval",
     briefing: "",
     debriefing: "Great job! You managed to gather some valuable intel. I knew I could count on you. Don't forget our primary objective at all times is to ensure the smooth running of our operation while safeguarding the interests of our employers. We're in uncharted territory here, and it's up to us to make it work.",
