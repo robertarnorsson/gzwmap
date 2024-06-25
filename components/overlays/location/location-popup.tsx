@@ -12,6 +12,7 @@ export const LocationPopup = (location: location, onClick: () => void) => {
 
   return (
     <PopUp
+      id={location.id}
       onClick={onClick}
     >
       <h2 className="text-lg font-bold text-primary">{location.name}</h2>

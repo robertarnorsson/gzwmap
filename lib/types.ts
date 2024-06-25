@@ -1,5 +1,3 @@
-import { LatLngTuple } from "leaflet"
-
 export type vendor = {
   name: string
 }
@@ -46,6 +44,14 @@ export enum MarkerType {
   LZ = "Landing Zone",
   LOCATION = "Location",
   POI = "Place of Interest",
+
+  // Keys
+  KEY = "Key",
+  QUESTKEY = "Quest Key",
+
+  // Items
+  ITEM = "Item",
+  TOOL = "Tool",
 
   // Factions
   LRI = "Lamang Recovery Initiative",
@@ -102,8 +108,8 @@ export type task = {
   vendor: vendor
   level: number
   prerequisites?: task
-  items?: item[]
   key?: key
+  items?: item[]
   faction?: faction
 };
 
@@ -117,19 +123,32 @@ export type objective = {
   location: location 
   faction?: faction
   image?: string
+  key?: key
+  items?: item[]
   note?: string
 }
 
 export type item = {
   id: string
   name: string
+  shortName?: string
   description: string
-  vendor: vendor
+  types: MarkerType[]
+  vendor?: vendor
+  size: [number, number]
+  image: string | KeyTypes
 }
 
-export type key = {
-  id: string
-  name: string
-  locations: location[]
-  position: LatLngTuple
+export enum KeyTypes {
+  ROUNDKEY = "/items/keys/key-round.png",
+  ROUNDGOLDKEY = "/items/keys/key-round-gold.png",
+  SQUAREKEY = "/items/keys/key-square.png",
+  SKINNYKEY = "/items/keys/key-skinny.png",
+}
+
+export type key = item & {
+  image: KeyTypes
+  questKey: boolean
+  location: location
+  position: [number, number]
 }

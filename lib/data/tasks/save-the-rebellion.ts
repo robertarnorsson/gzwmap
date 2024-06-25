@@ -3,7 +3,7 @@ import { Artisan } from "@/lib/data/vendors";
 import { YBL1 } from "../locations";
 
 const SaveTheRebellion_Objective1_LRI: objective = {
-    id: "",
+    id: "N/A",
     name: "Flash Drive",
     description: "Collect the flash drive at the command tent in the Lamang Recovery Initiative's Base Camp",
     position: [23449.148816118646, 22659.690642673566],
@@ -13,7 +13,7 @@ const SaveTheRebellion_Objective1_LRI: objective = {
 }
 
 const SaveTheRebellion_Objective1_MSS: objective = {
-    id: "",
+    id: "N/A",
     name: "Flash Drive",
     description: "Collect the flash drive at the command tent in the Mithras Security Systems's Base Camp",
     position: [16724.880988050376, 10351.07033223358],
@@ -23,7 +23,7 @@ const SaveTheRebellion_Objective1_MSS: objective = {
 }
 
 const SaveTheRebellion_Objective1_CSI: objective = {
-    id: "",
+    id: "N/A",
     name: "Flash Drive",
     description: "Collect the flash drive at the command tent in the Crimson Shield International's Base Camp",
     position: [9219.678526143574, 22331.891720295775],
@@ -33,7 +33,7 @@ const SaveTheRebellion_Objective1_CSI: objective = {
 }
 
 const SaveTheRebellion_Objective2: objective = {
-    id: "",
+    id: "N/A",
     name: "Guard House",
     description: "Place the flash drive in the guardhouse",
     position: [11091.473984788052, 13175.044582283132],
@@ -43,7 +43,7 @@ const SaveTheRebellion_Objective2: objective = {
 }
 
 export const SaveTheRebellion: task = {
-    id: "",
+    id: "N/A",
     name: "Save The Rebellion",
     briefing: "Merc, I heard you were assigned to kill the rebels in The Hole. Look, I know you guys have had your differences, but just killing them isn't going to change anything. These guys have been fighting the government and other assholes for decades, and you killing a bunch of them won't change their fighting spirit. It will only strengthen their resolve. I don't agree with everything they do; in fact, I think many of their methods are over the top, but I think they deserve at least some respect for what they have done for the people of Lamang. I know there's always a price, so don't worry, I'm prepared to reward you handsomely. Just go to The Hole and leave this flash drive in their guardhouse. I have recorded a message for them. They will lay low for a while after listening to it. Trust me on this.",
     debriefing: "Well, color me surprised. When I saw you going into The Hole, I was pretty sure you were going to kill everyone. Murder was in your eyes. Anyway, you did the right thing by bringing them the flash drive... and not killing them all. The rebels deserve at least that.",

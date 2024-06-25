@@ -10,16 +10,23 @@ const rubik = Rubik({ subsets: ["latin"] });
 
 export const PopUp = ({
   children,
-  onClick
+  id,
+  onClick,
+  addPadding = true
 }: Readonly<{
   children: React.ReactNode;
+  id: string;
   onClick: () => void;
+  addPadding?: boolean;
 }>) => {
   return ( 
-    <div className={cn(rubik.className, "p-6 relative bg-background mb-[18px] w-[300px]")}>
-      <Button variant='ghost' size='icon' className="absolute top-2 right-2 h-6 w-6" onClick={onClick}>
+    <div className={cn(rubik.className, addPadding && "p-6", "relative bg-background mb-[18px] w-[300px]")}>
+      <Button variant='ghost' size='icon' className="absolute top-2 right-2 h-6 w-6 z-50" onClick={onClick}>
         <X className="w-4 h-4" />
       </Button>
+      <span className="absolute bottom-1 right-2 text-[9px] text-[#193b3b]">
+        {id}
+      </span>
       <div>
         {children}
       </div>
