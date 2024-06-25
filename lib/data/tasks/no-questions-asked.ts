@@ -9,8 +9,7 @@ const NoQuestionsAsked_Objective1: objective = {
     position: [16667.21836378558, 21300.81646078751],
     type: ObjectiveType.COLLECT,
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.TURNCOAT, MarkerType.MIDNIGHTSAPPHIRE],
-    location: MidnightSapphire,
-    note: "You will need the Villa Anna Jana Key"
+    location: MidnightSapphire
 }
 
 const NoQuestionsAsked_Objective2: objective = {

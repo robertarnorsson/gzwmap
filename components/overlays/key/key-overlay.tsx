@@ -16,7 +16,7 @@ export const keyMarker = (key: key) => (
       alt={key.name}
     />
     <p className="task-marker-text">
-      {key.name}
+      {key.shortName || key.name}
     </p>
   </div>
 );

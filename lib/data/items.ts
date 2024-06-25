@@ -28,7 +28,7 @@ export const BoxOfSupplies: item = {
   name: "Box of Supplies",
   shortName: "Supplies",
   description: "A box full of various items intended to bring relief to the locals.",
-  size: [1, 1],
+  size: [2, 2],
   image: "/items/tools/supplies.png",
   types: [MarkerType.ITEM, MarkerType.TOOL, MarkerType.LABRAT],
   vendor: LabRat

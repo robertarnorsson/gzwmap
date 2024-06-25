@@ -17,7 +17,8 @@ const CacheRetrieval_Objective1_LRI: objective = {
     faction: LamangRecoveryInitiative,
     image: "/objectives/warehouse-cache.webp",
     types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.PHALANG],
-    location: PhaLang
+    location: PhaLang,
+    items: [GPSTracker]
 }
 
 const CacheRetrieval_Objective2_LRI: objective = {
@@ -29,7 +30,8 @@ const CacheRetrieval_Objective2_LRI: objective = {
     faction: LamangRecoveryInitiative,
     image: "/objectives/lumberyard-cache.webp",
     types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.PHALANG],
-    location: PhaLang
+    location: PhaLang,
+    items: [GPSTracker]
 }
 
 const CacheRetrieval_Objective1_MMS: objective = {
@@ -41,7 +43,8 @@ const CacheRetrieval_Objective1_MMS: objective = {
     faction: MithrasSecuritySystems,
     image: "/objectives/warehouse-cache.webp",
     types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.NAMTHAVEN],
-    location: NamThaven
+    location: NamThaven,
+    items: [GPSTracker]
 }
 
 const CacheRetrieval_Objective2_MMS: objective = {
@@ -53,7 +56,8 @@ const CacheRetrieval_Objective2_MMS: objective = {
     faction: MithrasSecuritySystems,
     image: "/objectives/lumberyard-cache.webp",
     types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.NAMTHAVEN],
-    location: NamThaven
+    location: NamThaven,
+    items: [GPSTracker]
 }
 
 const CacheRetrieval_Objective1_CSI: objective = {
@@ -65,7 +69,8 @@ const CacheRetrieval_Objective1_CSI: objective = {
     faction: CrimsonShieldInternational,
     image: "/objectives/warehouse-cache.webp",
     types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.KIUVONGSA],
-    location: KiuVongsa
+    location: KiuVongsa,
+    items: [GPSTracker]
 }
 
 const CacheRetrieval_Objective2_CSI: objective = {
@@ -77,16 +82,16 @@ const CacheRetrieval_Objective2_CSI: objective = {
     faction: CrimsonShieldInternational,
     image: "/objectives/lumberyard-cache.webp",
     types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.KIUVONGSA],
-    location: KiuVongsa
+    location: KiuVongsa,
+    items: [GPSTracker]
 }
 
 
 export const CacheRetrieval: task = {
     id: "N/A",
     name: "Cache Retrieval",
-    briefing: "",
+    briefing: "So, you're one of the new recruits, huh? Answering the call for action and adventure, or just in it for the paycheck? Makes no damn difference to me. Just do your job well, don’t get killed, and you and I won’t have any problems, got it? The name’s Jackson. Anton Jackson. But everyone here just calls me Gunny. Now that we have the pleasantries out of the way, I have a job for you. Some people here don’t want to admit it, but we took a beating, plain and simple. Whoever was behind the attack was no ordinary local force. They were trained, well-equipped, and put some serious hurt on us. We had to abandon our positions, leaving behind a lot of gear. Now it's your turn to help us clean up this mess. We've got weapons caches unaccounted for out there, and your job is to find them and mark their exact locations. I can give you their last known whereabouts, but we need to be sure they’re still there. We can't let those weapons fall into the wrong hands, so once you’re done, we'll dispatch a team to recover or destroy them if needed. You got all that? Good, now go make yourself useful!",
     debriefing: "Great job! You managed to gather some valuable intel. I knew I could count on you. Don't forget our primary objective at all times is to ensure the smooth running of our operation while safeguarding the interests of our employers. We're in uncharted territory here, and it's up to us to make it work.",
-    note: "You will need two GPS Markers to complete this task",
     objectives: [
         CacheRetrieval_Objective1_LRI,
         CacheRetrieval_Objective2_LRI,

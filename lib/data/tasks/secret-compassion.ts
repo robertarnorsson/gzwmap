@@ -7,6 +7,7 @@ import {
 } from "@/lib/data/factions";
 import { MedicalDetective } from "@/lib/data/tasks/medical-detective";
 import { KiuVongsa, NamThaven, PhaLang } from "../locations";
+import { BoxOfSupplies } from "../items";
 
 const SecretCompassion_Objective1_LRI: objective = {
   id: "N/A",
@@ -15,8 +16,10 @@ const SecretCompassion_Objective1_LRI: objective = {
   position: [22432.20490818161, 20063.288871003875],
   type: ObjectiveType.STASH,
   faction: LamangRecoveryInitiative,
+  image: "/objectives/secret-compassion-farm-1.webp",
   types: [MarkerType.TASK, MarkerType.STASH, MarkerType.LABRAT, MarkerType.PHALANG],
-  location: PhaLang
+  location: PhaLang,
+  items: [BoxOfSupplies]
 }
 
 const SecretCompassion_Objective2_LRI: objective = {
@@ -26,8 +29,10 @@ const SecretCompassion_Objective2_LRI: objective = {
   position: [21781.620310295577, 21086.216380201255],
   type: ObjectiveType.STASH,
   faction: LamangRecoveryInitiative,
+  image: "/objectives/secret-compassion-farm-2.webp",
   types: [MarkerType.TASK, MarkerType.STASH, MarkerType.LABRAT, MarkerType.PHALANG],
-  location: PhaLang
+  location: PhaLang,
+  items: [BoxOfSupplies]
 }
 
 const SecretCompassion_Objective3_LRI: objective = {
@@ -37,8 +42,10 @@ const SecretCompassion_Objective3_LRI: objective = {
   position: [22214.420868114288, 21245.607947426426],
   type: ObjectiveType.STASH,
   faction: LamangRecoveryInitiative,
+  image: "/objectives/secret-compassion-logging-shed.webp",
   types: [MarkerType.TASK, MarkerType.STASH, MarkerType.LABRAT, MarkerType.PHALANG],
-  location: PhaLang
+  location: PhaLang,
+  items: [BoxOfSupplies]
 }
 
 
@@ -50,7 +57,8 @@ const SecretCompassion_Objective1_MMS: objective = {
   type: ObjectiveType.STASH,
   faction: MithrasSecuritySystems,
   types: [MarkerType.TASK, MarkerType.STASH, MarkerType.LABRAT, MarkerType.NAMTHAVEN],
-  location: NamThaven
+  location: NamThaven,
+  items: [BoxOfSupplies]
 }
 
 const SecretCompassion_Objective2_MMS: objective = {
@@ -61,7 +69,8 @@ const SecretCompassion_Objective2_MMS: objective = {
   type: ObjectiveType.STASH,
   faction: MithrasSecuritySystems,
   types: [MarkerType.TASK, MarkerType.STASH, MarkerType.LABRAT, MarkerType.NAMTHAVEN],
-  location: NamThaven
+  location: NamThaven,
+  items: [BoxOfSupplies]
 }
 
 const SecretCompassion_Objective3_MMS: objective = {
@@ -72,7 +81,8 @@ const SecretCompassion_Objective3_MMS: objective = {
   type: ObjectiveType.STASH,
   faction: MithrasSecuritySystems,
   types: [MarkerType.TASK, MarkerType.STASH, MarkerType.LABRAT, MarkerType.NAMTHAVEN],
-  location: NamThaven
+  location: NamThaven,
+  items: [BoxOfSupplies]
 }
 
 
@@ -84,7 +94,8 @@ const SecretCompassion_Objective1_CSI: objective = {
   type: ObjectiveType.STASH,
   faction: CrimsonShieldInternational,
   types: [MarkerType.TASK, MarkerType.STASH, MarkerType.LABRAT, MarkerType.KIUVONGSA],
-  location: KiuVongsa
+  location: KiuVongsa,
+  items: [BoxOfSupplies]
 }
 
 const SecretCompassion_Objective2_CSI: objective = {
@@ -95,7 +106,8 @@ const SecretCompassion_Objective2_CSI: objective = {
   type: ObjectiveType.STASH,
   faction: CrimsonShieldInternational,
   types: [MarkerType.TASK, MarkerType.STASH, MarkerType.LABRAT, MarkerType.KIUVONGSA],
-  location: KiuVongsa
+  location: KiuVongsa,
+  items: [BoxOfSupplies]
 }
 
 const SecretCompassion_Objective3_CSI: objective = {
@@ -106,7 +118,8 @@ const SecretCompassion_Objective3_CSI: objective = {
   type: ObjectiveType.STASH,
   faction: CrimsonShieldInternational,
   types: [MarkerType.TASK, MarkerType.STASH, MarkerType.LABRAT, MarkerType.KIUVONGSA],
-  location: KiuVongsa
+  location: KiuVongsa,
+  items: [BoxOfSupplies]
 }
 
 
@@ -115,7 +128,6 @@ export const SecretCompassion: task = {
   name: "Secret Compassion",
   briefing: "Listen, I need your help with something... something I'm not proud of, but I believe it's the right thing to do. You see, our medical supplies have been disappearing, and I have to come clean. It was me. I've been secretly providing medical aid to the local civilians. The people here are suffering, and I couldn't stand by and watch them endure without help. I know it goes against our mission protocols, but my heart couldn't bear the thought of leaving them in despair. Now I need your assistance more than ever. We must continue our efforts to bring aid to those in need, but we have to be even more discreet. I'll provide you with three sets of various supplies, and I need you to distribute them to the civilians covertly. I have to stress that this is a delicate operation. We'll make a difference in their lives, but we must do so while maintaining the integrity of our mission. Together, we can provide hope amidst the chaos.",
   debriefing: "You did it! Against all odds, we've managed to provide much-needed aid to the local civilians. From the bottom of my heart, thank you. I won't ask you to keep this secret forever, but for now, it's crucial that we exercise caution. Our focus must remain on the greater good, even if it means working in the shadows.",
-  note: "You will need 3 supply boxes to complete this task",
   objectives: [
     SecretCompassion_Objective1_LRI,
     SecretCompassion_Objective2_LRI,
@@ -129,5 +141,10 @@ export const SecretCompassion: task = {
   ],
   vendor: LabRat,
   level: 0,
+  items: [
+    BoxOfSupplies,
+    BoxOfSupplies,
+    BoxOfSupplies
+  ],
   prerequisites: MedicalDetective
 }
