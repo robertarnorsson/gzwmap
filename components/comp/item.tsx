@@ -10,7 +10,7 @@ import {
 
 type ItemProps = {
   name: string
-  shortName: string
+  shortName?: string
   imageUrl: string
   size: [number, number]
 };
@@ -82,7 +82,7 @@ export const Item = ({
                 ref={textRef}
                 className="inline-block"
               >
-                {shortName}
+                {shortName || name}
               </span>
             </div>
             <div className="w-full h-full bg-[#252628] border border-1 border-[#454548]">
