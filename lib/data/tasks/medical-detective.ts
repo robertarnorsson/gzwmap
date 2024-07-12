@@ -58,5 +58,10 @@ export const MedicalDetective: task = {
   ],
   vendor: Gunny,
   level: 0,
-  prerequisites: LeaveNoManBehind
+  prerequisites: LeaveNoManBehind,
+  key: [
+    PLDoctorsOffice,
+    NTDoctorsOffice,
+    KVDoctorsOffice,
+  ]
 }

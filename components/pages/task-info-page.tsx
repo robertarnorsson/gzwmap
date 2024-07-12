@@ -56,32 +56,41 @@ export default function TaskInfoPage({ task }: { task: task }) {
                                 key={index}
                                 className="p-4 border-b last:border-none flex flex-row items-start"
                               >
-                                <div className="flex-1">
-                                  <p className="block text-xs font-light text-muted-foreground">
-                                    {`Stage ${index + 1}`}
-                                  </p>
-                                  <h2
-                                    id={toSlug(objective.name)}
-                                    className="text-xl font-semibold"
-                                  >
-                                    {objective.name}
-                                  </h2>
-                                  {objective.location && (
-                                    <p className="text-xs text-muted-foreground mb-2">
-                                      {objective.location.name}
+                                <div className="flex flex-1 flex-col justify-around">
+                                  <div>
+                                    <p className="block text-xs font-light text-muted-foreground">
+                                      {`Stage ${index + 1}`}
                                     </p>
-                                  )}
-                                  <p>{objective.description}</p>
-                                  {objective.faction && (
-                                    <p>
-                                      <strong>Faction:</strong>{" "}
-                                      {objective.faction.name}
-                                    </p>
-                                  )}
-                                  {objective.items && (
-                                    <div>
-                                      <h2 className="text-xl font-semibold mt-6 mb-2">Items</h2>
-                                      <div className="flex flex-wrap gap-1">
+                                    <h2
+                                      id={toSlug(objective.name)}
+                                      className="text-xl font-semibold"
+                                    >
+                                      {objective.name}
+                                    </h2>
+                                    <div className="flex flex-row gap-2">
+                                      <p className="text-xs text-muted-foreground">
+                                        {objective.type}
+                                      </p>
+                                      <p className="text-xs text-muted-foreground">▪</p>
+                                      <p className="text-xs text-muted-foreground">
+                                        {task.vendor.name}
+                                      </p>
+                                      <p className="text-xs text-muted-foreground">▪</p>
+                                      <p className="text-xs text-muted-foreground">
+                                        {objective.location?.name}
+                                      </p>
+                                    </div>
+                                    <p>{objective.description}</p>
+                                    {objective.faction && (
+                                      <p>
+                                        <strong>Faction:</strong>{" "}
+                                        {objective.faction.name}
+                                      </p>
+                                    )}
+                                  </div>
+                                  <div>
+                                    {objective.items && (
+                                      <div className="flex flex-wrap mt-2 gap-1">
                                         <div className="flex gap-1">
                                           {objective.items.map((item, index) => (
                                             <Item
@@ -94,8 +103,21 @@ export default function TaskInfoPage({ task }: { task: task }) {
                                           ))}
                                         </div>
                                       </div>
-                                    </div>
-                                  )}
+                                    )}
+                                    {objective.key && (
+                                      <div className="flex flex-wrap mt-2 gap-1">
+                                        <div className="flex gap-1">
+                                          <Item
+                                              key={index}
+                                              name={objective.key.name}
+                                              shortName={objective.key.shortName}
+                                              size={objective.key.size}
+                                              imageUrl={objective.key.image}
+                                            />
+                                        </div>
+                                      </div>
+                                    )}
+                                  </div>
                                 </div>
                                 {objective.image && (
                                   <div className="relative ml-4 max-w-xs rounded-lg overflow-hidden">
@@ -173,19 +195,9 @@ export default function TaskInfoPage({ task }: { task: task }) {
           </div>
           <div className="bg-card p-4 rounded-lg">
             <h2 className="text-2xl font-semibold mb-2">{task.name}</h2>
-            <div className="flex flex-row gap-2">
-              <p className="text-sm text-muted-foreground">
-                {task.objectives[0].type}
-              </p>
-              <p className="text-sm text-muted-foreground">▪</p>
-              <p className="text-sm text-muted-foreground">
-                {task.vendor.name}
-              </p>
-              <p className="text-sm text-muted-foreground">▪</p>
-              <p className="text-sm text-muted-foreground">
-                {task.objectives[0].location?.name}
-              </p>
-            </div>
+            <p className="text-sm text-muted-foreground">
+              {task.vendor.name}
+            </p>
             {task.items ? task.items.length > 0 && (
               <div>
                 <h2 className="text-2xl font-semibold mt-3 mb-2">Items</h2>
@@ -206,6 +218,24 @@ export default function TaskInfoPage({ task }: { task: task }) {
             ) : (
               <div className="flex h-24 justify-center items-center">
                 <p className="text-muted-foreground">No items needed</p>
+              </div>
+            )}
+            {task.key && task.key.length > 0 && (
+              <div>
+                <h2 className="text-2xl font-semibold mt-3 mb-2">{task.key.length == 1 ? "Key" : "Keys"}</h2>
+                <div className="flex flex-wrap gap-1">
+                  <div className="flex gap-1">
+                    {task.key.map((key, index) => (
+                      <Item
+                        key={index}
+                        name={key.name}
+                        shortName={key.shortName}
+                        size={key.size}
+                        imageUrl={key.image}
+                      />
+                    ))}
+                  </div>
+                </div>
               </div>
             )}
           </div>

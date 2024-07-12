@@ -77,7 +77,7 @@ export const Item = ({
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            <div className="absolute top-0.5 left-1 text-[10px] font-base whitespace-nowrap overflow-hidden">
+            <div className="absolute top-0.25 left-1 text-[10px] font-base whitespace-nowrap overflow-hidden">
               <span
                 ref={textRef}
                 className="inline-block"
