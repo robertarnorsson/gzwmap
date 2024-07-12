@@ -108,7 +108,7 @@ export type task = {
   vendor: vendor
   level: number
   prerequisites?: task
-  key?: key
+  key?: key[]
   items?: item[]
   faction?: faction
 };

@@ -58,5 +58,10 @@ export const HelpingHand: task = {
     ],
     vendor: Handshake,
     level: 0,
-    prerequisites: RatsNest
+    prerequisites: RatsNest,
+    key: [
+        PLAttic,
+        NTAttic,
+        KVAttic
+    ]
 }

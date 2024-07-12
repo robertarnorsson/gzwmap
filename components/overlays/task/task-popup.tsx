@@ -6,6 +6,10 @@ import { PopUp } from "../popup";
 import ImageShowcase from "@/components/menu/image-showcase";
 import Image from "next/image";
 import { Item } from "@/components/comp/item";
+import { Button } from "@/components/ui/button";
+import { ClipboardList, LinkIcon } from "lucide-react";
+import Link from "next/link";
+import { toSlug } from "@/lib/utils";
 
 export const TaskPopup = (task: task, objective: objective, onClick: () => void) => (
   <PopUp
@@ -17,27 +21,29 @@ export const TaskPopup = (task: task, objective: objective, onClick: () => void)
       <Image 
         src={`/task_banners/${task.vendor.name.replaceAll(" ", "").toLocaleLowerCase()}_task_banner.webp`}
         alt={task.name}
-        className="w-full h-auto"
-        layout="responsive"
-        objectFit="contain"
+        className="w-full h-auto object-contain"
         height={50}
         width={320}
       />
-      <div className="absolute top-1/2 left-0 right-0 bottom-0 bg-gradient-to-t from-background">
-
-      </div>
+      <div className="absolute top-1/2 left-0 right-0 bottom-0 bg-gradient-to-t from-background"></div>
     </div>
-    <div className="p-6 pt-3">
-      <h2 className="text-xl font-bold text-primary text-pretty">{task.name}</h2>
-      <div className="flex flex-row gap-2">
-        <p className="text-xs text-muted-foreground">{task.vendor.name}</p>
-        <p className="text-xs text-muted-foreground">▪</p>
-        <p className="text-xs text-muted-foreground">{objective.faction?.shorthand || "All Factions"}</p>
-        <p className="text-xs text-muted-foreground">▪</p>
-        <p className="text-xs text-muted-foreground">{objective.type}</p>
+    <div className="relative p-6 pt-3">
+      <Link href={`/tasks/${toSlug(task.name)}`}>
+        <div className="group cursor-pointer">
+          <span className="fancy-underline text-xl font-bold text-primary text-pretty group-hover:fancy-underline-hover">{task.name}</span>
+          <div className="flex flex-row gap-2">
+            <p className="text-xs text-muted-foreground">{task.vendor.name}</p>
+            <p className="text-xs text-muted-foreground">▪</p>
+            <p className="text-xs text-muted-foreground">{objective.faction?.shorthand || "All Factions"}</p>
+            <p className="text-xs text-muted-foreground">▪</p>
+            <p className="text-xs text-muted-foreground">{objective.type}</p>
+          </div>
+        </div>
+      </Link>
+      <div className="mt-3">
+        <span className="text-sm text-primary text-pretty font-semibold">{objective.name}</span>
+        <p className="text-xs text-primary/85 text-pretty">{objective.description}</p>
       </div>
-      <p className="pt-4 text-sm text-primary text-pretty font-semibold">{objective.name}</p>
-      <p className="text-xs text-primary/85 text-pretty">{objective.description}</p>
       {objective.items && (
         <div  className="pt-4">
           <div className="flex flex-row gap-2">

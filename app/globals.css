@@ -6,11 +6,11 @@
   :root {
     --background: 180 38% 6%;
     --foreground: 0 0% 98%;
-    --card: 180 38% 6%;
+    --card: 180 39% 5%;
     --card-foreground: 0 0% 98%;
     --popover: 180 38% 5%;
     --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
+    --primary: 0 0% 90%;
     --primary-foreground: 0 0% 9%;
     --secondary: 0 0% 14.9%;
     --secondary-foreground: 0 0% 98%;
@@ -46,6 +46,7 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
     user-select: none;
@@ -72,6 +73,26 @@
 
   .visible {
     opacity: 1;
+  }
+
+  .overlay-scrollbar {
+    scrollbar-gutter: stable both-edges;
+    scrollbar-color: rgba(0, 0, 0, 0.35) transparent;
+    scrollbar-width: thin;
+  }
+
+  .fancy-underline {
+    padding-bottom: 0px;
+    text-decoration: none;
+    color: inherit;
+    line-height: 1;
+    background: linear-gradient(0deg, white, white) no-repeat right bottom / 0 2px;
+    transition: background-size 350ms;
+  }
+
+  .fancy-underline-hover {
+    background-size: 100% 2px;
+    background-position-x: left;
   }
 }
 
