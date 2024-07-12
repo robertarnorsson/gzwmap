@@ -21,9 +21,7 @@ export const TaskPopup = (task: task, objective: objective, onClick: () => void)
       <Image 
         src={`/task_banners/${task.vendor.name.replaceAll(" ", "").toLocaleLowerCase()}_task_banner.webp`}
         alt={task.name}
-        className="w-full h-auto"
-        layout="responsive"
-        objectFit="contain"
+        className="w-full h-auto object-contain"
         height={50}
         width={320}
       />

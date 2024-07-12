@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/accordion";
 import { Item } from "../comp/item";
 import { toSlug } from "@/lib/utils";
+import ImageShowcase from "../menu/image-showcase";
 
 export default function TaskInfoPage({ task }: { task: task }) {
   const groupedObjectives = useMemo(() => {
@@ -81,12 +82,6 @@ export default function TaskInfoPage({ task }: { task: task }) {
                                       </p>
                                     </div>
                                     <p>{objective.description}</p>
-                                    {objective.faction && (
-                                      <p>
-                                        <strong>Faction:</strong>{" "}
-                                        {objective.faction.name}
-                                      </p>
-                                    )}
                                   </div>
                                   <div>
                                     {objective.items && (
@@ -120,13 +115,10 @@ export default function TaskInfoPage({ task }: { task: task }) {
                                   </div>
                                 </div>
                                 {objective.image && (
-                                  <div className="relative ml-4 max-w-xs rounded-lg overflow-hidden">
-                                    <Image
-                                      src={objective.image}
+                                  <div className="relative h-[180px] ml-4 max-w-xs rounded-lg overflow-hidden">
+                                    <ImageShowcase
+                                      url={objective.image}
                                       alt={objective.name}
-                                      className="w-full h-full aspect-video rounded-lg object-cover"
-                                      height={400}
-                                      width={600}
                                     />
                                   </div>
                                 )}

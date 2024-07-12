@@ -4,7 +4,6 @@ import { objective, task } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { Rubik } from "next/font/google";
 import Image from "next/image";
-import { useState } from "react";
 
 const rubik = Rubik({ subsets: ["latin"] });
 
