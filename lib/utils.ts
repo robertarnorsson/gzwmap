@@ -11,6 +11,7 @@ export function toSlug(input: string) {
     .replaceAll(",", "")
     .replaceAll("- ", "")
     .replaceAll("-", "")
+    .replaceAll("'", "")
     .replaceAll("/", "")
     .replaceAll("/ ", "")
     .replaceAll(" ", "-")
