@@ -25,11 +25,11 @@ export default function ImageShowcase({
           <Image src={url} alt={alt} sizes="50vw" quality={50} loading="eager" fill className="object-cover outline outline-1 outline-muted-foreground"></Image>
         </div>
       </DialogTrigger>
-      <DialogContent className="outline-none ring-transparent w-full max-w-md sm:max-w-lg md:max-w-screen-lg lg:max-w-screen-xl xl:max-w-screen-2xl p-4 mx-auto">
+      <DialogContent className="outline-none ring-transparent border-none w-full max-w-md sm:max-w-lg md:max-w-screen-lg lg:max-w-screen-xl xl:max-w-screen-2xl p-0 mx-auto">
         <div className="aspect-video p-4 relative">
-          <div className="absolute top-2 right-2 z-50">
+          <div className="absolute top-4 right-4 z-50">
             <DialogClose asChild>
-              <Button variant='outline' size='icon' className="h-8 w-8">
+              <Button variant='ghost' size='icon' className="h-8 w-8 bg-accent/15 ring-0 hover:bg-accent/50 focus-visible:ring-0 focus-visible:ring-ring">
                 <X className="w-4 h-4" />
               </Button>
             </DialogClose>

@@ -16,7 +16,6 @@ import { Tasks } from "@/lib/data/tasks";
 import { Factions } from "@/lib/data/factions";
 import { cn } from "@/lib/utils";
 import { Map, Overlay } from "ol";
-import ReactDOMServer from "react-dom/server";
 import { TaskPopup } from "../overlays/task/task-popup";
 import { closePopup, openPopup } from "@/lib/map/utils";
 
