@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
@@ -10,7 +10,7 @@ export default function Layout({
 }>) {
   return (
     <div className="flex flex-col">
-      <div className="mx-auto w-full max-w-4xl gap-2 pt-10">
+      <div className="mx-auto px-4 sm:px-0 w-full max-w-4xl gap-2 pt-10">
         <div className="flex flex-row justify-between items-end pb-2">
           <h1 className="text-4xl font-semibold">Settings</h1>
           <Link href='/' className="text-muted-foreground">

@@ -7,7 +7,7 @@ const FinishedObjectives = () => {
     <SettingsCard
       title="Finished Objectives"
       description="View and manage all of your completed objectives."
-      onSave={() => {}}
+      onClick={() => {}}
       onCancel={() => {}}
       hasChanges={false}
     >

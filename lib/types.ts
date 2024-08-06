@@ -152,3 +152,5 @@ export type key = item & {
   location: location
   position: [number, number]
 }
+
+export type Option = Record<"value" | "label", string> & Record<string, string>

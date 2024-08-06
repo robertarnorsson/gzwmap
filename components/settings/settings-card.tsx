@@ -9,29 +9,68 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ReactNode } from "react";
+import { ReactNode, ReactElement } from "react";
 
 interface SettingsCardProps {
   title: string;
   description: string;
-  children: ReactNode;
-  onSave: () => void;
-  onCancel: () => void;
-  hasChanges: boolean;
+  children?: ReactNode;
+  onClick?: () => void;
+  onCancel?: () => void;
+  hasChanges?: boolean;
+  hasContent?: boolean;
+  hasCancelButton?: boolean;
+  hasSaveButton?: boolean;
+  customSaveButton?: ReactElement;
+  customCancelButton?: ReactElement;
 }
 
-const SettingsCard = ({ title, description, children, onSave, onCancel, hasChanges }: SettingsCardProps) => {
+const SettingsCard = ({
+  title,
+  description,
+  children,
+  onClick,
+  onCancel,
+  hasChanges = false,
+  hasContent = true,
+  hasCancelButton = true,
+  hasSaveButton = true,
+  customSaveButton,
+  customCancelButton,
+}: SettingsCardProps) => {
   return (
     <Card>
       <CardHeader>
         <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
-      <CardContent>{children}</CardContent>
-      <CardFooter className="flex flex-row gap-2 border-t px-6 py-4">
-        <Button onClick={onSave} disabled={!hasChanges}>Save</Button>
-        <Button onClick={onCancel} disabled={!hasChanges} variant="outline" className="bg-transparent">Cancel</Button>
-      </CardFooter>
+      {hasContent && <CardContent>{children}</CardContent>}
+      {(hasSaveButton || hasCancelButton) && (
+        <CardFooter className="flex flex-row gap-2 border-t px-6 py-4">
+          {hasSaveButton && (
+            customSaveButton ? (
+              customSaveButton
+            ) : (
+              <Button onClick={onClick} disabled={!hasChanges}>
+                Save
+              </Button>
+            )
+          )}
+          {hasCancelButton && (
+            customCancelButton ? (
+              customCancelButton
+            ) : (
+              <Button
+                onClick={onCancel}
+                disabled={!hasChanges}
+                variant="outline"
+              >
+                Cancel
+              </Button>
+            )
+          )}
+        </CardFooter>
+      )}
     </Card>
   );
 };
