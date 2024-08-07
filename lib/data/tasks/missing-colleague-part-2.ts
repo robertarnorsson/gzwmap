@@ -16,7 +16,7 @@ const MissingColleaguePartTwo_Objective1: objective = {
 
 export const MissingColleaguePartTwo: task = {
     id: "N/A",
-    name: "Missing Colleague - Part 2",
+    name: "Missing Colleague II",
     briefing: "Merc, I want you to go back to Fort Narith and get me information on the arrested mechanic. I don't know what happened that led to his imprisonment, but I need to know as much as possible. Look for an interrogation document or similar file that will shed light on why he was taken into custody. The reward is in place, don't worry. You don't have to remind me that you only work for the right price, mercenary. I know our relationship. Now, don't waste any more time and go.",
     debriefing: "So he sabotaged the vehicles at Fort Narith? God,   you old fool! He was always opposing the government, but to be so reckless... it's not like him at all. I must make some calls and find him quickly.",
     objectives: [
