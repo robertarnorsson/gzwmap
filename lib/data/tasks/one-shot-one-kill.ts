@@ -15,8 +15,8 @@ const OneShotOneKill_Objective1: objective = {
 export const OneShotOneKill: task = {
     id: "N/A",
     name: "One Shot, One Kill",
-    briefing: "Okay, it’s time to end this. The hostiles at Hunter’s Paradise are still at it and keep causing us trouble. We need to eliminate the head of their little operation, and hopefully, the rest will follow soon. If I were you, I’d look for any commander-type dude, and shoot him promptly in the face. Anybody with better gear would be a hot target, so observe them carefully and take the shot. I know you got this.",
-    debriefing: "Nicely done. Now let’s hope this will show the rest of those asshole not to play with us anymore. I’d say we’re done here, good job.",
+    briefing: "Okay, it's time to end this. The hostiles at Hunter's Paradise are still at it and keep causing us trouble. We need to eliminate the head of their little operation, and hopefully, the rest will follow soon. If I were you, I'd look for any commander-type dude, and shoot him promptly in the face. Anybody with better gear would be a hot target, so observe them carefully and take the shot. I know you got this.",
+    debriefing: "Nicely done. Now let's hope this will show the rest of those asshole not to play with us anymore. I'd say we're done here, good job.",
     objectives: [
         OneShotOneKill_Objective1,
     ],
