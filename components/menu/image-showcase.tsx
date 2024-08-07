@@ -3,11 +3,13 @@ import {
   DialogContent,
   DialogTrigger,
   DialogClose,
+  DialogHeader,
 } from "@/components/ui/dialog";
 import Image from "next/image";
 import { Loader2, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "../ui/button";
+import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
 
 export default function ImageShowcase({
   url,
@@ -26,6 +28,11 @@ export default function ImageShowcase({
         </div>
       </DialogTrigger>
       <DialogContent className="outline-none ring-transparent w-full max-w-md sm:max-w-lg md:max-w-screen-lg lg:max-w-screen-xl xl:max-w-screen-2xl p-4 mx-auto">
+        <VisuallyHidden.Root>
+          <DialogHeader>
+            {alt}
+          </DialogHeader>
+        </VisuallyHidden.Root>
         <div className="aspect-video p-4 relative">
           <div className="absolute top-2 right-2 z-50">
             <DialogClose asChild>

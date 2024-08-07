@@ -9,7 +9,8 @@ const PricelessPossessions_Objective1: objective = {
     position: [16011.869230751492, 22096.213723589804],
     type: ObjectiveType.COLLECT,
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.MIDNIGHTSAPPHIRE],
-    location: MidnightSapphire
+    location: MidnightSapphire,
+    image: "/objectives/priceless-possessions.webp"
 }
 
 export const PricelessPossessions: task = {

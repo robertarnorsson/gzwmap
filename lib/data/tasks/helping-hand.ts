@@ -7,7 +7,10 @@ import {
 } from "@/lib/data/factions";
 import { RatsNest } from "@/lib/data/tasks/rats-nest";
 import { KiuVongsa, NamThaven, PhaLang } from "../locations";
-import { KVAttic, NTAttic, PLAttic } from "../keys";
+
+import { PLAttic } from "@/lib/data/keys/pha-lang";
+import { NTAttic } from "@/lib/data/keys/nam-thaven";
+import { KVAttic } from "@/lib/data/keys/kiu-vongsa";
 
 const HelpingHand_Objective1_LRI: objective = {
     id: "N/A",
