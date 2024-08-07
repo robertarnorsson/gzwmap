@@ -101,9 +101,31 @@ import { LocalGolfStar }                  from "@/lib/data/tasks/local-golf-star
 import { PricelessPossessions }           from "@/lib/data/tasks/priceless-possessions";
 import { NoQuestionsAsked }               from "@/lib/data/tasks/no-questions-asked";
 import { WhatsInTheBox }                  from "@/lib/data/tasks/whats-in-the-box";
+import { ArtisansList }                   from "@/lib/data/tasks/artisans-list";
+import { ArtisansListPartTwo }            from "@/lib/data/tasks/artisans-list-part-2";
+import { Baked }                          from "@/lib/data/tasks/baked";
+import { AyeAyeCaptain }                  from "@/lib/data/tasks/aye-aye-captain";
+import { Incognito }                      from "@/lib/data/tasks/incognito";
+import { LostGirl }                       from "@/lib/data/tasks/lost-girl";
+import { LostGirlPartTwo }                from "@/lib/data/tasks/lost-girl-part-2";
+import { Unnameable }                     from "@/lib/data/tasks/unnameable";
+import { BigEntrance }                    from "@/lib/data/tasks/big-entrance";
+import { Unlra }                          from "@/lib/data/tasks/unlra";
+import { UnlraPartTwo }                   from "@/lib/data/tasks/unlra-part-2";
+import { UnlraPartThree }                 from "@/lib/data/tasks/unlra-part-3";
+import { UnlraPartFour }                  from "@/lib/data/tasks/unlra-part-4";
+import { MallVigilante }                  from "@/lib/data/tasks/mall-vigilante";
+import { HideAndSeek }                    from "@/lib/data/tasks/hide-and-seek";
+import { WhatRemains }                    from "@/lib/data/tasks/what-remains";
+import { TestResults }                    from "@/lib/data/tasks/test-results";
+import { Ripper }                         from "@/lib/data/tasks/ripper";
+import { Peacekeeper }                    from "@/lib/data/tasks/peacekeeper";
+import { CrumbCollector }                 from "@/lib/data/tasks/crumb-collector";
+import { BuyerOfUntoldTruths }            from "@/lib/data/tasks/buyer-of-untold-truths";
+import { NarcoticBargains }               from "@/lib/data/tasks/narcotic-bargain";
 
 export const Tasks: task[] = [
-  FirstRecon,
+  FirstRecon, 
   CacheRetrieval,
   MedsWanted,
   LeaveNoManBehind,
@@ -203,5 +225,27 @@ export const Tasks: task[] = [
   LocalGolfStar,
   PricelessPossessions,
   NoQuestionsAsked,
-  WhatsInTheBox
+  WhatsInTheBox,
+  ArtisansList,
+  ArtisansListPartTwo,
+  Baked,
+  AyeAyeCaptain,
+  Incognito,
+  LostGirl,
+  LostGirlPartTwo,
+  Unnameable,
+  BigEntrance,
+  Unlra,
+  UnlraPartTwo,
+  UnlraPartThree,
+  UnlraPartFour,
+  MallVigilante,
+  HideAndSeek,
+  WhatRemains,
+  TestResults,
+  Ripper,
+  Peacekeeper,
+  CrumbCollector,
+  BuyerOfUntoldTruths,
+  NarcoticBargains
 ]

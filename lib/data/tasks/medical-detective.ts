@@ -7,7 +7,9 @@ import {
 } from "@/lib/data/factions";
 import { LeaveNoManBehind } from "@/lib/data/tasks/leave-no-man-behind";
 import { KiuVongsa, NamThaven, PhaLang } from "../locations";
-import { KVDoctorsOffice, NTDoctorsOffice, PLDoctorsOffice } from "../keys";
+import { PLDoctorsOffice } from "@/lib/data/keys/pha-lang";
+import { NTDoctorsOffice } from "@/lib/data/keys/nam-thaven";
+import { KVDoctorsOffice } from "@/lib/data/keys/kiu-vongsa";
 
 const MedicalDetective_Objective1_LRI: objective = {
   id: "N/A",
