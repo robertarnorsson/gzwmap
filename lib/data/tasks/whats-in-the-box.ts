@@ -1,6 +1,7 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Banshee } from "@/lib/data/vendors";
 import { MidnightSapphire } from "@/lib/data/locations";
+import { AnnaJana } from "@/lib/data/keys/midnight-sapphire";
 
 const WhatsInTheBox_Objective1: objective = {
     id: "N/A",
@@ -10,7 +11,7 @@ const WhatsInTheBox_Objective1: objective = {
     type: ObjectiveType.COLLECT,
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.BANSHEE, MarkerType.MIDNIGHTSAPPHIRE],
     location: MidnightSapphire,
-    note: "You will need the Villa Anna Jana Key"
+    key: AnnaJana
 }
 
 export const WhatsInTheBox: task = {
@@ -23,4 +24,7 @@ export const WhatsInTheBox: task = {
     ],
     vendor: Banshee,
     level: 0,
+    key: [
+      AnnaJana
+    ]
 }

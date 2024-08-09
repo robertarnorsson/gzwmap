@@ -27,6 +27,16 @@ import {
     TBUNLab
 } from "@/lib/data/keys/tiger-bay";
 
+import {
+    AnnaJana,
+    Kate,
+    Lusia
+} from "@/lib/data/keys/midnight-sapphire";
+
+import {
+    BLStrg
+} from "@/lib/data/keys/blue-lagoon";
+
 export const Keys: key[] = [
     PLDoctorsOffice,
     PLAttic,
@@ -42,5 +52,9 @@ export const Keys: key[] = [
     KVLumber,
     TBUNLab,
     TBDorm,
-    TBQr
+    TBQr,
+    Lusia,
+    Kate,
+    AnnaJana,
+    BLStrg
 ]

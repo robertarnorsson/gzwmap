@@ -27,6 +27,8 @@ import { WingClipping }                   from "@/lib/data/tasks/wing-clipping";
 import { BusinessOrPleasure }             from "@/lib/data/tasks/business-or-pleasure";
 import { FinalCheckout }                  from "@/lib/data/tasks/final-checkout"
 import { ManifestDestiny }                from "@/lib/data/tasks/manifest-destiny"
+import { WhatComesUp }                    from "@/lib/data/tasks/what-comes-up";
+import { TooCloseToTheSun }               from "@/lib/data/tasks/too-close-to-the-sun";
 import { AtTheMoundsOfMadness }           from "@/lib/data/tasks/at-the-mounds-of-madness"
 import { ItsInTheWaterPartOne }           from "@/lib/data/tasks/its-in-the-water-part-1"
 import { ItsInTheWaterPartTwo }           from "@/lib/data/tasks/its-in-the-water-part-2"
@@ -46,6 +48,11 @@ import { OneShotOneKill }                 from "@/lib/data/tasks/one-shot-one-ki
 import { TheBrave }                       from "@/lib/data/tasks/the-brave";
 import { Carnivore }                      from "@/lib/data/tasks/carnivore";
 import { UpToSnuff }                      from "@/lib/data/tasks/up-to-snuff";
+import { AShotInTheDark }                 from "@/lib/data/tasks/a-shot-in-the-dark";
+import { InTheRightHands }                from "@/lib/data/tasks/in-the-right-hands";
+import { EvacuationQuestion }             from "@/lib/data/tasks/evacuation-question";
+import { Dragonslayer }                   from "@/lib/data/tasks/dragonslayer";
+import { Downsizing }                     from "@/lib/data/tasks/downsizing";
 import { IWentISawIConqueredPartOne }     from "@/lib/data/tasks/i-went-i-saw-i-conquered-part-1";
 import { IWentISawIConqueredPartTwo }     from "@/lib/data/tasks/i-went-i-saw-i-conquered-part-2";
 import { IWentISawIConqueredPartThree }   from "@/lib/data/tasks/i-went-i-saw-i-conquered-part-3";
@@ -61,6 +68,7 @@ import { FreshMeatPartTwo }               from "@/lib/data/tasks/fresh-meat-part
 import { FreshMeatPartThree }             from "@/lib/data/tasks/fresh-meat-part-3";
 import { WhatWasLeft }                    from "@/lib/data/tasks/what-was-left";
 import { OutOfTheBlue }                   from "@/lib/data/tasks/out-of-the-blue";
+import { OneMansTrash }                   from "@/lib/data/tasks/one-mans-trash";
 import { JetNMark }                       from "@/lib/data/tasks/jets-n-marks";
 import { HackerPartOne }                  from "@/lib/data/tasks/hacker-part-1";
 import { HackerPartTwo }                  from "@/lib/data/tasks/hacker-part-2";
@@ -79,6 +87,7 @@ import { NewNeighbours }                  from "@/lib/data/tasks/new-neighbours"
 import { RebelScum }                      from "@/lib/data/tasks/rebel-scum";
 import { DutyToTheCountry }               from "@/lib/data/tasks/duty-to-the-country";
 import { FinalLiberation }                from "@/lib/data/tasks/final-liberation";
+import { CheckOutComputers }              from "@/lib/data/tasks/check-out-computers";
 import { CrimeDoesntPay }                 from "@/lib/data/tasks/crime-doesnt-pay";
 import { DirtDigger }                     from "@/lib/data/tasks/dirt-digger";
 import { FelonyAndPunishment }            from "@/lib/data/tasks/felony-and-punishment";
@@ -115,6 +124,7 @@ import { UnlraPartTwo }                   from "@/lib/data/tasks/unlra-part-2";
 import { UnlraPartThree }                 from "@/lib/data/tasks/unlra-part-3";
 import { UnlraPartFour }                  from "@/lib/data/tasks/unlra-part-4";
 import { MallVigilante }                  from "@/lib/data/tasks/mall-vigilante";
+import { FriendlySuggestion }             from "@/lib/data/tasks/friendly-suggestion";
 import { HideAndSeek }                    from "@/lib/data/tasks/hide-and-seek";
 import { WhatRemains }                    from "@/lib/data/tasks/what-remains";
 import { TestResults }                    from "@/lib/data/tasks/test-results";
@@ -123,6 +133,7 @@ import { Peacekeeper }                    from "@/lib/data/tasks/peacekeeper";
 import { CrumbCollector }                 from "@/lib/data/tasks/crumb-collector";
 import { BuyerOfUntoldTruths }            from "@/lib/data/tasks/buyer-of-untold-truths";
 import { NarcoticBargains }               from "@/lib/data/tasks/narcotic-bargain";
+import { TerminalInitiative }             from "@/lib/data/tasks/terminal-initiative";
 
 export const Tasks: task[] = [
   FirstRecon, 
@@ -152,6 +163,8 @@ export const Tasks: task[] = [
   BusinessOrPleasure,
   FinalCheckout,
   ManifestDestiny,
+  WhatComesUp,
+  TooCloseToTheSun,
   AtTheMoundsOfMadness,
   ItsInTheWaterPartOne,
   ItsInTheWaterPartTwo,
@@ -171,6 +184,7 @@ export const Tasks: task[] = [
   TheBrave,
   Carnivore,
   UpToSnuff,
+  AShotInTheDark,
   IWentISawIConqueredPartOne,
   IWentISawIConqueredPartTwo,
   IWentISawIConqueredPartThree,
@@ -188,6 +202,7 @@ export const Tasks: task[] = [
   RebelScum,
   DutyToTheCountry,
   FinalLiberation,
+  CheckOutComputers,
   NightOcean,
   DeepWaters,
   FreshMeatPartOne,
@@ -195,6 +210,7 @@ export const Tasks: task[] = [
   FreshMeatPartThree,
   WhatWasLeft,
   OutOfTheBlue,
+  OneMansTrash,
   JetNMark,
   HackerPartOne,
   HackerPartTwo,
@@ -204,6 +220,10 @@ export const Tasks: task[] = [
   MissingColleaguePartOne,
   MissingColleaguePartTwo,
   LostLover,
+  InTheRightHands,
+  EvacuationQuestion,
+  Dragonslayer,
+  Downsizing,
   CrimeDoesntPay,
   DirtDigger,
   FelonyAndPunishment,
@@ -240,6 +260,7 @@ export const Tasks: task[] = [
   UnlraPartThree,
   UnlraPartFour,
   MallVigilante,
+  FriendlySuggestion,
   HideAndSeek,
   WhatRemains,
   TestResults,
@@ -247,5 +268,6 @@ export const Tasks: task[] = [
   Peacekeeper,
   CrumbCollector,
   BuyerOfUntoldTruths,
-  NarcoticBargains
+  NarcoticBargains,
+  TerminalInitiative
 ]

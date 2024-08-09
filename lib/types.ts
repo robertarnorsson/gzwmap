@@ -143,7 +143,10 @@ export enum KeyTypes {
   ROUNDKEY = "/items/keys/key-round.png",
   ROUNDGOLDKEY = "/items/keys/key-round-gold.png",
   SQUAREKEY = "/items/keys/key-square.png",
+  SQUAREGOLDKEY = "/items/keys/key-gold-square.png",
   SKINNYKEY = "/items/keys/key-skinny.png",
+  SKINNYGOLDKEY = "/items/keys/key-gold-skinny.png",
+  BLUETHICKKEY = "/items/keys/key-blue-thick.png",
 }
 
 export type key = item & {

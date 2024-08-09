@@ -1,6 +1,7 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Banshee } from "@/lib/data/vendors";
-import { BlueLagoon } from "../locations";
+import { BlueLagoon } from "@/lib/data/locations";
+import { BLStrg } from "@/lib/data/keys/blue-lagoon";
 
 const WhatWasLeft_Objective1_LRI: objective = {
   id: "N/A",
@@ -9,7 +10,8 @@ const WhatWasLeft_Objective1_LRI: objective = {
   position: [22550.467615895264, 12118.705719676276],
   type: ObjectiveType.COLLECT,
   types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.BANSHEE, MarkerType.BLUELAGOON],
-  location: BlueLagoon
+  location: BlueLagoon,
+  key: BLStrg
 }
 
 
@@ -22,5 +24,8 @@ export const WhatWasLeft: task = {
     WhatWasLeft_Objective1_LRI,
   ],
   vendor: Banshee,
-  level: 0
+  level: 0,
+  key: [
+    BLStrg
+  ]
 }

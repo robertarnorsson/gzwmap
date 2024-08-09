@@ -1,6 +1,7 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Turncoat } from "@/lib/data/vendors";
 import { MidnightSapphire } from "@/lib/data/locations";
+import { Kate } from "@/lib/data/keys/midnight-sapphire";
 
 const KnowYourEnemy_Objective1: objective = {
     id: "N/A",
@@ -10,7 +11,7 @@ const KnowYourEnemy_Objective1: objective = {
     type: ObjectiveType.LOCATE,
     types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.TURNCOAT, MarkerType.MIDNIGHTSAPPHIRE],
     location: MidnightSapphire,
-    note: "You will need the Villa Katherine Key"
+    key: Kate
 }
 
 export const KnowYourEnemy: task = {
@@ -23,4 +24,7 @@ export const KnowYourEnemy: task = {
     ],
     vendor: Turncoat,
     level: 0,
+    key: [
+      Kate
+    ]
 }
