@@ -56,7 +56,7 @@ export const KVLumber: key = {
 export const KVUNLRA: key = {
   id: "K-HX41FV",
   name: "Kiu Vongsa UNLRA Office Room Key",
-  shortName: "UNLRA",
+  shortName: "KV UNLRA",
   description: "A key to the UNLRA office in Kiu Vongsa.",
   size: [1, 1],
   image: KeyTypes.SQUAREKEY,
@@ -69,12 +69,25 @@ export const KVUNLRA: key = {
 export const KVMarOfc: key = {
   id: "K-7DXKVR",
   name: "Kiu Vongsa Marketplace Office Key",
-  shortName: "MarOfc",
+  shortName: "KV MarOfc",
   description: "A key for an office in the Kiu Vongsa marketplace.",
   size: [1, 1],
   image: KeyTypes.ROUNDGOLDKEY,
-  types: [MarkerType.KEY, MarkerType.PHALANG],
+  types: [MarkerType.KEY, MarkerType.KIUVONGSA],
   questKey: false,
   location: KiuVongsa,
   position: [10822.441298295296, 20761.22714849532]
+}
+
+export const KVMarStr: key = {
+  id: "K-HBKXG3",
+  name: "Kiu Vongsa Marketplace Storeroom Key",
+  shortName: "KV MarStr",
+  description: "A key for an storeroom in the Kiu Vongsa marketplace.",
+  size: [1, 1],
+  image: KeyTypes.ROUNDKEY,
+  types: [MarkerType.KEY, MarkerType.KIUVONGSA],
+  questKey: false,
+  location: KiuVongsa,
+  position: [10809.4430742678, 20755.55498997356]
 }

@@ -1,6 +1,7 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {LabRat} from "@/lib/data/vendors";
 import { BanPa } from "../locations";
+import { BPElder } from "../keys/ban-pa";
 
 const ItsInTheWaterPartTwo_Objective1: objective = {
     id: "O-8J5IKS",
@@ -9,7 +10,8 @@ const ItsInTheWaterPartTwo_Objective1: objective = {
     position: [23060.911223938536, 15997.588061961671],
     type: ObjectiveType.COLLECT,
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.BANPA],
-    location: BanPa
+    location: BanPa,
+    key: BPElder
 }
 
 export const ItsInTheWaterPartTwo: task = {
@@ -22,4 +24,7 @@ export const ItsInTheWaterPartTwo: task = {
     ],
     vendor: LabRat,
     level: 0,
+    key: [
+        BPElder
+    ]
 }

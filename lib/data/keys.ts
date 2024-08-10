@@ -5,6 +5,7 @@ import {
     PLDoctorsOffice,
     PLLumber,
     PLMarOfc,
+    PLMarStr,
     PLMotel,
     PLUNLRA
 } from "@/lib/data/keys/pha-lang";
@@ -14,6 +15,7 @@ import {
     NTDoctorsOffice,
     NTLumber,
     NTMarOfc,
+    NTMarStr,
     NTMotel,
     NTUNLRA
 } from "@/lib/data/keys/nam-thaven";
@@ -23,6 +25,7 @@ import {
     KVDoctorsOffice,
     KVLumber,
     KVMarOfc,
+    KVMarStr,
     KVMotel,
     KVUNLRA
 } from "@/lib/data/keys/kiu-vongsa";
@@ -34,6 +37,18 @@ import {
     HP104,
     HPWep
 } from "@/lib/data/keys/hunters-paradise";
+
+import {
+    BPElder,
+    BPHut,
+    BPWare
+} from "@/lib/data/keys/ban-pa";
+
+import {
+    PLA03,
+    PLAShed,
+    PLAStrg
+} from "@/lib/data/keys/pha-lang-airfield";
 
 import {
     TBDorm,
@@ -49,6 +64,7 @@ import {
 } from "@/lib/data/keys/midnight-sapphire";
 
 import {
+    BLOffice,
     BLShack,
     BLStrg
 } from "@/lib/data/keys/blue-lagoon";
@@ -60,23 +76,32 @@ export const Keys: key[] = [
     PLLumber,
     PLUNLRA,
     PLMarOfc,
+    PLMarStr,
     NTDoctorsOffice,
     NTAttic,
     NTMotel,
     NTLumber,
     NTUNLRA,
     NTMarOfc,
+    NTMarStr,
     KVDoctorsOffice,
     KVAttic,
     KVMotel,
     KVLumber,
     KVUNLRA,
     KVMarOfc,
+    KVMarStr,
     HPWep,
     HP101,
     HP102,
     HP103,
     HP104,
+    BPElder,
+    BPHut,
+    BPWare,
+    PLAStrg,
+    PLA03,
+    PLAShed,
     TBUNLab,
     TBDorm,
     TBQr,
@@ -86,4 +111,5 @@ export const Keys: key[] = [
     MSElenaGar,
     BLStrg,
     BLShack,
+    BLOffice,
 ]

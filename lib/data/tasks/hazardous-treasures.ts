@@ -1,6 +1,7 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {Handshake} from "@/lib/data/vendors";
 import { BanPa, BlueLagoon, HuntersParadise, PhaLangAirfield, Sawmill, YBL1 } from "../locations";
+import { PLAStrg } from "../keys/pha-lang-airfield";
 
 const HazardousTreasures_Objective1: objective = {
     id: "O-CU3VR6",
@@ -108,7 +109,8 @@ const HazardousTreasures_Objective10: objective = {
     image: "/objectives/hazardous-treasures-airfield.webp",
     note: "You will need a PLA STRG key. The container is behind the desk.",
     types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.PHALANGAIRFIELD],
-    location: PhaLangAirfield
+    location: PhaLangAirfield,
+    key: PLAStrg
 }
 
 const HazardousTreasures_Objective11: objective = {
@@ -154,4 +156,7 @@ export const HazardousTreasures: task = {
     ],
     vendor: Handshake,
     level: 0,
+    key: [
+        PLAStrg
+    ]
 }

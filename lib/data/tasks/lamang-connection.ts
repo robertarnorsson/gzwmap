@@ -1,6 +1,7 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {Banshee} from "@/lib/data/vendors";
 import { BanPa } from "../locations";
+import { BPHut } from "../keys/ban-pa";
 
 const LamangConnection_Objective1: objective = {
     id: "O-HVGY5A",
@@ -10,7 +11,8 @@ const LamangConnection_Objective1: objective = {
     type: ObjectiveType.COLLECT,
     image: "/objectives/lamang-connection.webp",
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.BANSHEE, MarkerType.BANPA],
-    location: BanPa
+    location: BanPa,
+    key: BPHut
 }
 
 export const LamangConnection: task = {
@@ -23,4 +25,7 @@ export const LamangConnection: task = {
     ],
     vendor: Banshee,
     level: 0,
+    key: [
+        BPHut
+    ]
 }

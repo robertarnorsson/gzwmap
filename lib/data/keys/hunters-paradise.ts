@@ -55,9 +55,9 @@ export const HP103: key = {
 
 export const HP104: key = {
   id: "K-PBRFQI",
-  name: "Hunter's Paradise Motel Room 104 Key",
+  name: "Hunter's Paradise Improvised Motel Armory Key",
   shortName: "HP 104",
-  description: "A key to motel room 104 in Hunter's Paradise.",
+  description: "A key to an improvised armory in the Hunter's Paradise Motel.",
   size: [1, 1],
   image: KeyTypes.SQUAREKEY,
   types: [MarkerType.KEY, MarkerType.HUNTERSPARADISE],

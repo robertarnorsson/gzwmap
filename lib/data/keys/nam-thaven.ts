@@ -56,7 +56,7 @@ export const NTLumber: key = {
 export const NTUNLRA: key = {
   id: "K-7OBSDE",
   name: "Nam Thaven UNLRA Office Room Key",
-  shortName: "UNLRA",
+  shortName: "PL UNLRA",
   description: "A key to the UNLRA office in Nam Thaven.",
   size: [1, 1],
   image: KeyTypes.SQUAREKEY,
@@ -69,12 +69,25 @@ export const NTUNLRA: key = {
 export const NTMarOfc: key = {
   id: "K-6S9UE7",
   name: "Nam Thaven Marketplace Office Key",
-  shortName: "MarOfc",
+  shortName: "PL MarOfc",
   description: "A key for an office in the Nam Thaven marketplace.",
   size: [1, 1],
   image: KeyTypes.ROUNDGOLDKEY,
-  types: [MarkerType.KEY, MarkerType.PHALANG],
+  types: [MarkerType.KEY, MarkerType.NAMTHAVEN],
   questKey: false,
   location: NamThaven,
   position: [16504.980087429096, 12581.50519073759]
+}
+
+export const NTMarStr: key = {
+  id: "K-UW5S17",
+  name: "Nam Thaven Marketplace Storeroom Key",
+  shortName: "NT MarStr",
+  description: "A key for an storeroom in the Nam Thaven marketplace.",
+  size: [1, 1],
+  image: KeyTypes.ROUNDKEY,
+  types: [MarkerType.KEY, MarkerType.NAMTHAVEN],
+  questKey: false,
+  location: NamThaven,
+  position: [16522.041995672604, 12577.938308724099]
 }
