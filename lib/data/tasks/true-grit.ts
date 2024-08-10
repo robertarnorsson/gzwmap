@@ -1,16 +1,17 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Handshake } from "@/lib/data/vendors";
-import { HuntersParadise } from "../locations";
+import { HuntersParadise } from "@/lib/data/locations";
+import { HP102 } from "@/lib/data/keys/hunters-paradise";
 
 const TrueGrit_Objective1: objective = {
     id: "N/A",
     name: "Antique Revolver",
     description: "Retrieve the antique revolver and hand it over to Handshake",
-    position: [14473.24249645224, 21851.38757002083],
+    position: [14457.222337997006, 21848.283781303744],
     type: ObjectiveType.COLLECT,
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.HUNTERSPARADISE],
-    location: HuntersParadise
-
+    location: HuntersParadise,
+    key: HP102
 }
 
 export const TrueGrit: task = {
@@ -23,4 +24,7 @@ export const TrueGrit: task = {
     ],
     vendor: Handshake,
     level: 0,
+    key: [
+        HP102
+    ],
 }

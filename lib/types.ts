@@ -153,5 +153,5 @@ export type key = item & {
   image: KeyTypes
   questKey: boolean
   location: location
-  position: [number, number]
+  position: [number, number] | [number, number][]
 }

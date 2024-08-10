@@ -22,6 +22,14 @@ import {
 } from "@/lib/data/keys/kiu-vongsa";
 
 import {
+    HP101,
+    HP102,
+    HP103,
+    HP104,
+    HPWep
+} from "@/lib/data/keys/hunters-paradise";
+
+import {
     TBDorm,
     TBQr,
     TBUNLab
@@ -50,6 +58,11 @@ export const Keys: key[] = [
     KVAttic,
     KVMotel,
     KVLumber,
+    HPWep,
+    HP101,
+    HP102,
+    HP103,
+    HP104,
     TBUNLab,
     TBDorm,
     TBQr,
