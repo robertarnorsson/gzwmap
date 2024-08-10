@@ -6,8 +6,6 @@ import { PopUp } from "../popup";
 import ImageShowcase from "@/components/menu/image-showcase";
 import Image from "next/image";
 import { Item } from "@/components/comp/item";
-import { Button } from "@/components/ui/button";
-import { ClipboardList, LinkIcon } from "lucide-react";
 import Link from "next/link";
 import { toSlug } from "@/lib/utils";
 
