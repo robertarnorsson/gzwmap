@@ -52,3 +52,42 @@ export const MSElenaGar: key = {
   location: MidnightSapphire,
   position: [16932.68522871777, 21335.172149040653]
 }
+
+export const MSGCStor: key = {
+  id: "K-FSRATW",
+  name: "Golf Club Storage Key",
+  shortName: "GCStor",
+  description: "A key to the Midnight Sapphire Golf Club storage room.",
+  size: [1, 1],
+  image: KeyTypes.SQUAREKEY,
+  types: [MarkerType.KEY, MarkerType.MIDNIGHTSAPPHIRE],
+  questKey: false,
+  location: MidnightSapphire,
+  position: [16156.494969625115, 21679.905040246424]
+}
+
+export const MSHOfc: key = {
+  id: "K-BE2Q9V",
+  name: "Midnight Sapphire Hotel Office Key",
+  shortName: "MSH Ofc",
+  description: "A key to one of the offices in the Midnight Sapphire Hotel.",
+  size: [1, 1],
+  image: KeyTypes.SKINNYGOLDKEY,
+  types: [MarkerType.KEY, MarkerType.MIDNIGHTSAPPHIRE],
+  questKey: false,
+  location: MidnightSapphire,
+  position: [16497.390942816866, 21678.799682811532]
+}
+
+export const MSSupply: key = {
+  id: "K-G9DK40",
+  name: "Hotel Supply Closet Key",
+  shortName: "MS Supply",
+  description: "A key to a supply closet in the Midnight Sapphire Hotel.",
+  size: [1, 1],
+  image: KeyTypes.ROUNDKEY,
+  types: [MarkerType.KEY, MarkerType.MIDNIGHTSAPPHIRE, MarkerType.QUESTKEY],
+  questKey: true,
+  location: MidnightSapphire,
+  position: [16506.510256003225, 21683.78939723673]
+}

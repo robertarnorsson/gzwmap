@@ -83,16 +83,24 @@ import {
 } from "@/lib/data/keys/fort-narith";
 
 import {
+    TBCArm,
     TBDorm,
+    TBLookout,
+    TBPier,
     TBQr,
-    TBUNLab
+    TBUNCon,
+    TBUNLab,
+    TBUNMed
 } from "@/lib/data/keys/tiger-bay";
 
 import {
     MSAnnaJana,
     MSElenaGar,
+    MSGCStor,
+    MSHOfc,
     MSKate,
-    MSLusia
+    MSLusia,
+    MSSupply
 } from "@/lib/data/keys/midnight-sapphire";
 
 import {
@@ -161,10 +169,18 @@ export const Keys: key[] = [
     TBUNLab,
     TBDorm,
     TBQr,
+    TBCArm,
+    TBPier,
+    TBUNCon,
+    TBUNMed,
+    TBLookout,
     MSLusia,
     MSKate,
     MSAnnaJana,
     MSElenaGar,
+    MSGCStor,
+    MSHOfc,
+    MSSupply,
     BLStrg,
     BLShack,
     BLOffice,
