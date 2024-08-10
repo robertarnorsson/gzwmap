@@ -67,6 +67,22 @@ import {
 } from "@/lib/data/keys/ybl-1";
 
 import {
+    FNA103,
+    FNA208,
+    FNA210,
+    FNC101,
+    FNC108,
+    FNDump,
+    FNGOfc,
+    FNHQRec,
+    FNHQStrg,
+    FNMotel,
+    FNOArm,
+    FNSROfc,
+    FNTrnHouse
+} from "@/lib/data/keys/fort-narith";
+
+import {
     TBDorm,
     TBQr,
     TBUNLab
@@ -128,6 +144,20 @@ export const Keys: key[] = [
     YBLOfc2,
     YBLStrg,
     YBLWep,
+    FNA103,
+    FNA208,
+    FNA210,
+    FNC101,
+    FNC108,
+    FNDump,
+    FNGOfc,
+    FNHQRec,
+    FNHQRec,
+    FNHQStrg,
+    FNMotel,
+    FNOArm,
+    FNSROfc,
+    FNTrnHouse,
     TBUNLab,
     TBDorm,
     TBQr,
