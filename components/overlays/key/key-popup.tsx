@@ -15,8 +15,6 @@ export const KeyPopup = (key: key, onClick: () => void) => {
           <div className="flex flex-row gap-2">
             <p className="text-xs text-muted-foreground">{key.location.name}</p>
             <p className="text-xs text-muted-foreground">▪</p>
-            <p className="text-xs text-muted-foreground">{key.shortName || "No short name"}</p>
-            <p className="text-xs text-muted-foreground">▪</p>
             <p className="text-xs text-muted-foreground">{key.questKey ? "Quest Key" : "Not Quest Key"}</p>
           </div>
         </div>
