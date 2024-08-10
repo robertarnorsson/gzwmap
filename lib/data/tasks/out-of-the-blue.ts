@@ -1,6 +1,6 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Gunny } from "@/lib/data/vendors";
-import { BlueLagoon } from "../locations";
+import { BlueLagoon } from "@/lib/data/locations";
 
 const OutOfTheBlue_Objective1: objective = {
   id: "O-HDJWR5",

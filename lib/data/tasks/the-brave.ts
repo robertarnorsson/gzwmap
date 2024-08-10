@@ -1,6 +1,6 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { LabRat } from "@/lib/data/vendors";
-import { HuntersParadise } from "../locations";
+import { HuntersParadise } from "@/lib/data/locations";
 
 const TheBrave_Objective1: objective = {
     id: "O-FOQ7JT",

@@ -1,6 +1,6 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Handshake } from "@/lib/data/vendors";
-import { HuntersParadise } from "../locations";
+import { HuntersParadise } from "@/lib/data/locations";
 
 const UpToSnuff_Objective1: objective = {
     id: "O-INAHB0",

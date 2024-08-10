@@ -6,7 +6,7 @@ import {
   MithrasSecuritySystems
 } from "@/lib/data/factions";
 import { LeaveNoManBehind } from "@/lib/data/tasks/leave-no-man-behind";
-import { KiuVongsa, NamThaven, PhaLang } from "../locations";
+import { KiuVongsa, NamThaven, PhaLang } from "@/lib/data/locations";
 import { PLDoctorsOffice } from "@/lib/data/keys/pha-lang";
 import { NTDoctorsOffice } from "@/lib/data/keys/nam-thaven";
 import { KVDoctorsOffice } from "@/lib/data/keys/kiu-vongsa";

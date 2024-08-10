@@ -1,7 +1,9 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {Handshake} from "@/lib/data/vendors";
-import { BanPa, BlueLagoon, HuntersParadise, PhaLangAirfield, Sawmill, YBL1 } from "../locations";
-import { PLAStrg } from "../keys/pha-lang-airfield";
+import { BanPa, BlueLagoon, HuntersParadise, PhaLangAirfield, Sawmill, YBL1 } from "@/lib/data/locations";
+import { SMOstrg } from "@/lib/data/keys/sawmill";
+import { HPWep } from "@/lib/data/keys/hunters-paradise";
+import { PLAStrg } from "@/lib/data/keys/pha-lang-airfield";
 
 const HazardousTreasures_Objective1: objective = {
     id: "O-CU3VR6",
@@ -17,12 +19,12 @@ const HazardousTreasures_Objective2: objective = {
     id: "O-96FFAD",
     name: "Container (Sawmill)",
     description: "Retrieve the container from Sawmill",
-    position: [10306.081243139115, 17293.701847856064],
+    position: [10308.675731601135, 17317.32988742429],
     type: ObjectiveType.COLLECT,
     image: "/objectives/hazardous-treasures-sawmill.webp",
-    note: "You will need SM Office Storage key.",
     types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.SAWMILL],
-    location: Sawmill
+    location: Sawmill,
+    key: SMOstrg
 }
 
 const HazardousTreasures_Objective3: objective = {
@@ -60,12 +62,12 @@ const HazardousTreasures_Objective6: objective = {
     id: "O-0KD7NY",
     name: "Container (Hunters Paradise)",
     description: "Retrieve the container from Hunters Paradise",
-    position: [14160.009359179032, 22010.35754681658],
+    position: [14159.81469349933, 22007.76764842343],
     type: ObjectiveType.COLLECT,
     image: "/objectives/hazardous-treasures-hunters-paradise.webp",
-    note: "You will need a HP Wep key.",
     types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.HUNTERSPARADISE],
-    location: HuntersParadise
+    location: HuntersParadise,
+    key: HPWep
 }
 
 const HazardousTreasures_Objective7: objective = {
@@ -157,6 +159,8 @@ export const HazardousTreasures: task = {
     vendor: Handshake,
     level: 0,
     key: [
+        SMOstrg,
+        HPWep,
         PLAStrg
     ]
 }

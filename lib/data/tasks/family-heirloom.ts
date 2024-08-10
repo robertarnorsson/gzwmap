@@ -1,6 +1,6 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Turncoat } from "@/lib/data/vendors";
-import { FortNarith } from "../locations";
+import { FortNarith } from "@/lib/data/locations";
 
 const FamilyHeirloom_Objective1: objective = {
     id: "O-X37G0A",

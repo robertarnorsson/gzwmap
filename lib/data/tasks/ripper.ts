@@ -1,7 +1,7 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { LabRat } from "@/lib/data/vendors";
 import { TigerBay } from "@/lib/data/locations";
-import { TBDorm } from "../keys/tiger-bay";
+import { TBDorm } from "@/lib/data/keys/tiger-bay";
 
 const Ripper_Objective1: objective = {
     id: "O-644T0Z",

@@ -1,6 +1,6 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {LabRat} from "@/lib/data/vendors";
-import { BanPa } from "../locations";
+import { BanPa } from "@/lib/data/locations";
 
 const ItsInTheWaterPartOne_Objective1: objective = {
     id: "O-NN5IGH",

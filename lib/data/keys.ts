@@ -51,6 +51,22 @@ import {
 } from "@/lib/data/keys/pha-lang-airfield";
 
 import {
+    SMOfc,
+    SMOstrg,
+    SMStrg
+} from "@/lib/data/keys/sawmill";
+
+import {
+    YBLGen,
+    YBLBed,
+    YBLMain,
+    YBLOfc1,
+    YBLOfc2,
+    YBLStrg,
+    YBLWep
+} from "@/lib/data/keys/ybl-1";
+
+import {
     TBDorm,
     TBQr,
     TBUNLab
@@ -102,6 +118,16 @@ export const Keys: key[] = [
     PLAStrg,
     PLA03,
     PLAShed,
+    SMOfc,
+    SMOstrg,
+    SMStrg,
+    YBLGen,
+    YBLBed,
+    YBLMain,
+    YBLOfc1,
+    YBLOfc2,
+    YBLStrg,
+    YBLWep,
     TBUNLab,
     TBDorm,
     TBQr,

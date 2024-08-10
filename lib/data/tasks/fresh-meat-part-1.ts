@@ -1,6 +1,6 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Banshee } from "@/lib/data/vendors";
-import { BlueLagoon } from "../locations";
+import { BlueLagoon } from "@/lib/data/locations";
 
 const FreshMeatPartOne_Objective1_LRI: objective = {
   id: "O-6JZMLK",

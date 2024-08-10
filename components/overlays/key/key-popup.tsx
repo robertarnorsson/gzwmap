@@ -30,6 +30,12 @@ export const KeyPopup = (key: key, onClick: () => void) => {
             size={key.size}
           />
         </div>
+        {key.note && (
+          <div className="flex flex-col gap-1">
+            <p className="text-xs text-muted-foreground">Notes</p>
+            <p className="text-xs text-blue-400/85">{key.note}</p>
+          </div>
+        )}
       </div>
     </PopUp>
   );

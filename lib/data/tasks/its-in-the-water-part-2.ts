@@ -1,7 +1,7 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {LabRat} from "@/lib/data/vendors";
-import { BanPa } from "../locations";
-import { BPElder } from "../keys/ban-pa";
+import { BanPa } from "@/lib/data/locations";
+import { BPElder } from "@/lib/data/keys/ban-pa";
 
 const ItsInTheWaterPartTwo_Objective1: objective = {
     id: "O-8J5IKS",

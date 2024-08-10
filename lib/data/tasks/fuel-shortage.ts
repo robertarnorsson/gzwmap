@@ -1,6 +1,6 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Gunny} from "@/lib/data/vendors";
-import { Sawmill } from "../locations";
+import { Sawmill } from "@/lib/data/locations";
 
 const FuelShortage_Objective1: objective = {
     id: "O-8C3X3O",

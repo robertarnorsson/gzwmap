@@ -1,6 +1,6 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {Handshake} from "@/lib/data/vendors";
-import { Sawmill } from "../locations";
+import { Sawmill } from "@/lib/data/locations";
 
 const IWentISawIConqueredPartThree_Objective1: objective = {
     id: "O-YVAVUV",

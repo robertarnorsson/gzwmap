@@ -1,6 +1,6 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { LabRat } from "@/lib/data/vendors";
-import { YBL1 } from "../locations";
+import { YBL1 } from "@/lib/data/locations";
 
 const FinalLiberation_Objective1: objective = {
     id: "O-H0IPDO",

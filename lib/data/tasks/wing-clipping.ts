@@ -1,6 +1,6 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {Handshake} from "@/lib/data/vendors";
-import { PhaLangAirfield } from "../locations";
+import { PhaLangAirfield } from "@/lib/data/locations";
 
 const WingClipping_Objective1: objective = {
     id: "O-V9CQ86",

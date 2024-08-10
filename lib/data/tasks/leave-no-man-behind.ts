@@ -7,7 +7,7 @@ import {
 } from "@/lib/data/factions";
 import { GPSTracker } from "@/lib/data/items";
 import { CacheRetrieval } from "@/lib/data/tasks/cache-retrieval";
-import { KiuVongsa, NamThaven, PhaLang } from "../locations";
+import { KiuVongsa, NamThaven, PhaLang } from "@/lib/data/locations";
 
 const LeaveNoManBehind_Objective1_LRI: objective = {
   id: "O-YUMZRU",

@@ -1,6 +1,6 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {Turncoat} from "@/lib/data/vendors";
-import { BanPa } from "../locations";
+import { BanPa } from "@/lib/data/locations";
 
 const TheValueOfSharing_Objective1: objective = {
     id: "O-1AJPSM",

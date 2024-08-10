@@ -5,7 +5,7 @@ import {
   LamangRecoveryInitiative,
   MithrasSecuritySystems
 } from "@/lib/data/factions";
-import { KiuVongsa, NamThaven, PhaLang } from "../locations";
+import { KiuVongsa, NamThaven, PhaLang } from "@/lib/data/locations";
 
 const MedsWanted_Objective1_LRI: objective = {
   id: "O-5F3BTA",

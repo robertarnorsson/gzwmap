@@ -1,6 +1,6 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {Turncoat} from "@/lib/data/vendors";
-import { BanPa } from "../locations";
+import { BanPa } from "@/lib/data/locations";
 
 const WarmWelcome_Objective1: objective = {
     id: "O-FE4CFK",

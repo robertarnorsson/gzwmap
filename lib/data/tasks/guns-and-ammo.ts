@@ -1,6 +1,7 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Gunny } from "@/lib/data/vendors";
-import { HuntersParadise } from "../locations";
+import { HuntersParadise } from "@/lib/data/locations"; 
+import { HPWep } from "@/lib/data/keys/hunters-paradise";
 
 const GunsAndAmmo_Objective1: objective = {
     id: "O-TVGDAW",
@@ -9,7 +10,8 @@ const GunsAndAmmo_Objective1: objective = {
     position: [14162.9620680349, 22002.75041031785],
     type: ObjectiveType.LOCATE,
     types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.GUNNY, MarkerType.HUNTERSPARADISE],
-    location: HuntersParadise
+    location: HuntersParadise,
+    key: HPWep
 }
 
 export const GunsAndAmmo: task = {
@@ -22,4 +24,7 @@ export const GunsAndAmmo: task = {
     ],
     vendor: Gunny,
     level: 0,
+    key: [
+        HPWep
+    ]
 }

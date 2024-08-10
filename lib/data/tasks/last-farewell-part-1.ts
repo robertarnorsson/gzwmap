@@ -5,8 +5,8 @@ import {
   LamangRecoveryInitiative,
   MithrasSecuritySystems
 } from "@/lib/data/factions";
-import { KiuVongsa, NamThaven, PhaLang } from "../locations";
-import { GPSTracker } from "../items";
+import { KiuVongsa, NamThaven, PhaLang } from "@/lib/data/locations";
+import { GPSTracker } from "@/lib/data/items";
 
 const LastFarewell_Objective1_LRI: objective = {
   id: "O-12TF5R",

@@ -6,7 +6,7 @@ import {
     MithrasSecuritySystems
 } from "@/lib/data/factions";
 import { RatsNest } from "@/lib/data/tasks/rats-nest";
-import { KiuVongsa, NamThaven, PhaLang } from "../locations";
+import { KiuVongsa, NamThaven, PhaLang } from "@/lib/data/locations";
 
 import { PLAttic } from "@/lib/data/keys/pha-lang";
 import { NTAttic } from "@/lib/data/keys/nam-thaven";

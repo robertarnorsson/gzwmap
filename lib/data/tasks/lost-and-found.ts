@@ -6,7 +6,7 @@ import {
   MithrasSecuritySystems
 } from "@/lib/data/factions";
 import { MedsWanted } from "@/lib/data/tasks/meds-wanted";
-import { KiuVongsa, NamThaven, PhaLang } from "../locations";
+import { KiuVongsa, NamThaven, PhaLang } from "@/lib/data/locations";
 
 const LostAndFound_Objective1_LRI: objective = {
   id: "O-DUPFE0",

@@ -1,7 +1,7 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Handshake } from "@/lib/data/vendors";
-import { FortNarith } from "../locations";
-import { CameraWiretap } from "../items";
+import { FortNarith } from "@/lib/data/locations";
+import { CameraWiretap } from "@/lib/data/items";
 
 const HackerPartOne_Objective1: objective = {
     id: "O-CM6I13",

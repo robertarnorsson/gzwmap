@@ -6,7 +6,7 @@ import {
     MithrasSecuritySystems
 } from "@/lib/data/factions";
 import { GPSTracker } from "@/lib/data/items";
-import { KiuVongsa, NamThaven, PhaLang } from "../locations";
+import { KiuVongsa, NamThaven, PhaLang } from "@/lib/data/locations";
 
 const CacheRetrieval_Objective1_LRI: objective = {
     id: "O-6LR8FI",

@@ -6,7 +6,7 @@ import {
   MithrasSecuritySystems
 } from "@/lib/data/factions";
 import { FirstRecon } from "@/lib/data/tasks/first-recon";
-import { KiuVongsa, NamThaven, PhaLang } from "../locations";
+import { KiuVongsa, NamThaven, PhaLang } from "@/lib/data/locations";
 
 const LittleBirdDown_Objective1_LRI: objective = {
   id: "O-V13RAF",

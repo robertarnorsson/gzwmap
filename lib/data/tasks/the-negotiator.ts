@@ -1,6 +1,7 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Gunny } from "@/lib/data/vendors";
-import { YBL1 } from "../locations";
+import { YBL1 } from "@/lib/data/locations";
+import { YBLOfc2 } from "@/lib/data/keys/ybl-1";
 
 const TheNegotiator_Objective1: objective = {
     id: "O-1FU95A",
@@ -9,7 +10,8 @@ const TheNegotiator_Objective1: objective = {
     position: [11014.03902408218, 12968.448916078934],
     type: ObjectiveType.COLLECT,
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.GUNNY, MarkerType.YBL1],
-    location: YBL1
+    location: YBL1,
+    key: YBLOfc2,
 }
 
 export const TheNegotiator: task = {
@@ -22,4 +24,7 @@ export const TheNegotiator: task = {
     ],
     vendor: Gunny,
     level: 0,
+    key: [
+        YBLOfc2
+    ]
 }

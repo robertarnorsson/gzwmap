@@ -1,6 +1,6 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {Banshee} from "@/lib/data/vendors";
-import { PhaLangAirfield } from "../locations";
+import { PhaLangAirfield } from "@/lib/data/locations";
 
 const SkycrawlersPartTwo_Objective1: objective = {
     id: "O-WO5GKQ",

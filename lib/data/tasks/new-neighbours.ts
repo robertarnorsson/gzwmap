@@ -1,6 +1,6 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Handshake } from "@/lib/data/vendors";
-import { YBL1 } from "../locations";
+import { YBL1 } from "@/lib/data/locations";
 
 const NewNeighbours_Objective1: objective = {
     id: "O-S6L0BR",

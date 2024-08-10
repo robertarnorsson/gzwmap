@@ -1,6 +1,6 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {Artisan} from "@/lib/data/vendors";
-import { FortNarith } from "../locations";
+import { FortNarith } from "@/lib/data/locations";
 
 const MissingColleaguePartTwo_Objective1: objective = {
     id: "O-18ELUI",

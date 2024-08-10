@@ -1,6 +1,7 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Gunny } from "@/lib/data/vendors";
-import { YBL1 } from "../locations";
+import { YBL1 } from "@/lib/data/locations";
+import { YBLGen } from "@/lib/data/keys/ybl-1";
 
 const LivingInBurrows_Objective1: objective = {
     id: "O-CIERAY",
@@ -19,7 +20,8 @@ const LivingInBurrows_Objective2: objective = {
   position: [11019.99929610872, 13042.087987377512],
   type: ObjectiveType.LOCATE,
   types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.GUNNY, MarkerType.YBL1],
-  location: YBL1
+  location: YBL1,
+  key: YBLGen
 }
 
 export const LivingInBurrows: task = {
@@ -33,4 +35,7 @@ export const LivingInBurrows: task = {
     ],
     vendor: Gunny,
     level: 0,
+    key: [
+        YBLGen
+    ]
 }

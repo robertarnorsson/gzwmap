@@ -1,16 +1,18 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Banshee } from "@/lib/data/vendors";
-import { Sawmill } from "../locations";
+import { Sawmill } from "@/lib/data/locations";
+import { SMOfc } from "@/lib/data/keys/sawmill";
 
 const EOD_Objective1: objective = {
     id: "O-7GYLOA",
     name: "Detonators",
     description: "Retrieve the detonators and bring them back",
-    position: [10310.721893010174, 17308.508438581055],
+    position: [10308.175731601135, 17290.82988742429],
     type: ObjectiveType.COLLECT,
     image: "/objectives/detonators-sawmill.webp",
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.BANSHEE, MarkerType.SAWMILL],
-    location: Sawmill
+    location: Sawmill,
+    key: SMOfc
 }
 
 export const EOD: task = {
@@ -23,4 +25,7 @@ export const EOD: task = {
     ],
     vendor: Banshee,
     level: 0,
+    key: [
+        SMOfc
+    ]
 }

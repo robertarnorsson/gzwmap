@@ -1,7 +1,7 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {Banshee} from "@/lib/data/vendors";
-import { FortNarith } from "../locations";
-import { GPSTracker } from "../items";
+import { FortNarith } from "@/lib/data/locations";
+import { GPSTracker } from "@/lib/data/items";
 
 const JetsNMark_Objective1: objective = {
     id: "O-KXG0WS",

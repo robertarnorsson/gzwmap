@@ -1,7 +1,7 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { LabRat } from "@/lib/data/vendors";
 import { TigerBay } from "@/lib/data/locations";
-import { TBQr } from "../keys/tiger-bay";
+import { TBQr } from "@/lib/data/keys/tiger-bay";
 
 const Peacekeeper_Objective1: objective = {
     id: "O-YOL82T",

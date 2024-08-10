@@ -1,6 +1,6 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {Artisan} from "@/lib/data/vendors";
-import { BanPa } from "../locations";
+import { BanPa } from "@/lib/data/locations";
 
 const LineInTheSand_Objective1: objective = {
     id: "O-24Q8G7",

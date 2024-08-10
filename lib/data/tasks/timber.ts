@@ -1,6 +1,6 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {Banshee} from "@/lib/data/vendors";
-import { Sawmill } from "../locations";
+import { Sawmill } from "@/lib/data/locations";
 
 const Timber_Objective1: objective = {
     id: "O-SRPBN9",

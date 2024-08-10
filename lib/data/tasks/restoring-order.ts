@@ -6,7 +6,7 @@ import {
   MithrasSecuritySystems
 } from "@/lib/data/factions";
 import { LittleBirdDown } from "@/lib/data/tasks/little-bird-down";
-import { KiuVongsa, NamThaven, PhaLang } from "../locations";
+import { KiuVongsa, NamThaven, PhaLang } from "@/lib/data/locations";
 
 const RestoringOrder_Objective1_LRI: objective = {
   id: "O-0NLSHB",

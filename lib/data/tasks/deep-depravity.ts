@@ -1,6 +1,6 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Banshee } from "@/lib/data/vendors";
-import { YBL1 } from "../locations";
+import { YBL1 } from "@/lib/data/locations";
 
 const DeepDepravity_Objective1: objective = {
     id: "O-O3PR12",

@@ -1,6 +1,6 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Artisan } from "@/lib/data/vendors";
-import { HuntersParadise } from "../locations";
+import { HuntersParadise } from "@/lib/data/locations";
 
 const TheMostDangerousGame_Objective1: objective = {
     id: "O-R6U68K",

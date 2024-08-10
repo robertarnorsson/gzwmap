@@ -1,6 +1,6 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Artisan } from "@/lib/data/vendors";
-import { BlueLagoon } from "../locations";
+import { BlueLagoon } from "@/lib/data/locations";
 
 const DeepWaters_Objective1_LRI: objective = {
     id: "O-VR9PEE",

@@ -137,6 +137,7 @@ export type item = {
   vendor?: vendor
   size: [number, number]
   image: string | KeyTypes
+  note?: string
 }
 
 export enum KeyTypes {

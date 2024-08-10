@@ -1,7 +1,7 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {Banshee} from "@/lib/data/vendors";
-import { BanPa } from "../locations";
-import { BPHut } from "../keys/ban-pa";
+import { BanPa } from "@/lib/data/locations";
+import { BPHut } from "@/lib/data/keys/ban-pa";
 
 const LamangConnection_Objective1: objective = {
     id: "O-HVGY5A",
