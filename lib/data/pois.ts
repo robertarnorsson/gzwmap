@@ -2,7 +2,7 @@ import { MarkerType, poi } from "@/lib/types";
 import { KiuVongsa, NamThaven, PhaLang } from "./locations";
 
 export const MOTEL_PHALANG: poi = {
-  id: "POI-001",
+  id: "POI-KZIMFC",
   name: "Motel",
   position: [22700.219996540563, 21134.808780727086],
   types: [MarkerType.POI, MarkerType.PHALANG],
@@ -10,7 +10,7 @@ export const MOTEL_PHALANG: poi = {
 };
 
 export const WAREHOUSE_PHALANG: poi = {
-  id: "POI-002",
+  id: "POI-T1XW3Y",
   name: "Warehouse",
   position: [22341.80062064942, 21181.04076569218],
   types: [MarkerType.POI, MarkerType.PHALANG],
@@ -18,7 +18,7 @@ export const WAREHOUSE_PHALANG: poi = {
 };
 
 export const TOWNHALL_PHALANG: poi = {
-  id: "POI-003",
+  id: "POI-SYXWHM",
   name: "Town Hall",
   position: [22547.879602748482, 20698.030081674322],
   types: [MarkerType.POI, MarkerType.PHALANG],
@@ -26,7 +26,7 @@ export const TOWNHALL_PHALANG: poi = {
 };
 
 export const GASSTATION_PHALANG: poi = {
-  id: "POI-004",
+  id: "POI-KKZCM0",
   name: "Gas Station",
   position: [22083.319953629423, 20400.270142459864],
   types: [MarkerType.POI, MarkerType.PHALANG],
@@ -34,7 +34,7 @@ export const GASSTATION_PHALANG: poi = {
 };
 
 export const MARKETPLACE_PHALANG: poi = {
-  id: "POI-005",
+  id: "POI-OJG9AJ",
   name: "Marketplace",
   position: [22245.63242828605, 20772.462480076807],
   types: [MarkerType.POI, MarkerType.PHALANG],
@@ -42,7 +42,7 @@ export const MARKETPLACE_PHALANG: poi = {
 };
 
 export const LUMBERYARD_PHALANG: poi = {
-  id: "POI-006",
+  id: "POI-R1DUD4",
   name: "Lumberyard",
   position: [21975.092646862056, 20811.091949439244],
   types: [MarkerType.POI, MarkerType.PHALANG],
@@ -50,7 +50,7 @@ export const LUMBERYARD_PHALANG: poi = {
 };
 
 export const WATERTOWER_PHALANG: poi = {
-  id: "POI-007",
+  id: "POI-LIQ1NV",
   name: "Water Tower",
   position: [22035.497785251962, 21024.879992963324],
   types: [MarkerType.POI, MarkerType.PHALANG],
@@ -58,7 +58,7 @@ export const WATERTOWER_PHALANG: poi = {
 };
 
 export const CONVENIENCESTORE_PHALANG: poi = {
-  id: "POI-008",
+  id: "POI-OZ2KVI",
   name: "Convenience Store",
   position: [22271.321948340483, 20988.44186635051],
   types: [MarkerType.POI, MarkerType.PHALANG],
@@ -66,7 +66,7 @@ export const CONVENIENCESTORE_PHALANG: poi = {
 };
 
 export const CONSTRUCTIONSITE_PHALANG: poi = {
-  id: "POI-009",
+  id: "POI-YVTUWI",
   name: "Construction Site",
   position: [22446.707407565365, 20960.16937683953],
   types: [MarkerType.POI, MarkerType.PHALANG],
@@ -76,7 +76,7 @@ export const CONSTRUCTIONSITE_PHALANG: poi = {
 
 
 export const MOTEL_NAMTHAVEN: poi = {
-  id: "POI-010",
+  id: "POI-IA3N70",
   name: "Motel",
   position: [16322.015809467683, 11998.429836104577],
   types: [MarkerType.POI, MarkerType.NAMTHAVEN],
@@ -84,7 +84,7 @@ export const MOTEL_NAMTHAVEN: poi = {
 };
 
 export const WAREHOUSE_NAMTHAVEN: poi = {
-  id: "POI-011",
+  id: "POI-N0ATO6",
   name: "Warehouse",
   position: [16622.795196533632, 12198.463032601068],
   types: [MarkerType.POI, MarkerType.NAMTHAVEN],
@@ -92,7 +92,7 @@ export const WAREHOUSE_NAMTHAVEN: poi = {
 };
 
 export const TOWNHALL_NAMTHAVEN: poi = {
-  id: "POI-012",
+  id: "POI-1Y64QJ",
   name: "Town Hall",
   position: [16153.478420566122, 12431.625729264295],
   types: [MarkerType.POI, MarkerType.NAMTHAVEN],
@@ -100,7 +100,7 @@ export const TOWNHALL_NAMTHAVEN: poi = {
 };
 
 export const GASSTATION_NAMTHAVEN: poi = {
-  id: "POI-013",
+  id: "POI-KYGVT9",
   name: "Gas Station",
   position: [16319.719754272366, 12961.167531174891],
   types: [MarkerType.POI, MarkerType.NAMTHAVEN],
@@ -108,7 +108,7 @@ export const GASSTATION_NAMTHAVEN: poi = {
 };
 
 export const MARKETPLACE_NAMTHAVEN: poi = {
-  id: "POI-014",
+  id: "POI-YX9TXO",
   name: "Marketplace",
   position: [16421.06101429802, 12565.904642273445],
   types: [MarkerType.POI, MarkerType.NAMTHAVEN],
@@ -116,7 +116,7 @@ export const MARKETPLACE_NAMTHAVEN: poi = {
 };
 
 export const LUMBERYARD_NAMTHAVEN: poi = {
-  id: "POI-015",
+  id: "POI-GUQH03",
   name: "Lumberyard",
   position: [16666.44164977695, 12711.891127522693],
   types: [MarkerType.POI, MarkerType.NAMTHAVEN],
@@ -124,7 +124,7 @@ export const LUMBERYARD_NAMTHAVEN: poi = {
 };
 
 export const WATERTOWER_NAMTHAVEN: poi = {
-  id: "POI-016",
+  id: "POI-BCI56O",
   name: "Water Tower",
   position: [16755.911512166007, 12514.238850033991],
   types: [MarkerType.POI, MarkerType.NAMTHAVEN],
@@ -132,7 +132,7 @@ export const WATERTOWER_NAMTHAVEN: poi = {
 };
 
 export const CONVENIENCESTORE_NAMTHAVEN: poi = {
-  id: "POI-017",
+  id: "POI-OQ19YH",
   name: "Convenience Store",
   position: [16550.499301986012, 12383.955549624892],
   types: [MarkerType.POI, MarkerType.NAMTHAVEN],
@@ -140,7 +140,7 @@ export const CONVENIENCESTORE_NAMTHAVEN: poi = {
 };
 
 export const CONSTRUCTIONSITE_NAMTHAVEN: poi = {
-  id: "POI-018",
+  id: "POI-4MRXT7",
   name: "Construction Site",
   position: [16398.4111092243, 12297.193828921903],
   types: [MarkerType.POI, MarkerType.NAMTHAVEN],
@@ -150,7 +150,7 @@ export const CONSTRUCTIONSITE_NAMTHAVEN: poi = {
 
 
 export const MOTEL_KIUVONGSA: poi = {
-  id: "POI-019",
+  id: "POI-SUOV0X",
   name: "Motel",
   position: [10583.625895172272, 21334.578694617732],
   types: [MarkerType.POI, MarkerType.KIUVONGSA],
@@ -158,7 +158,7 @@ export const MOTEL_KIUVONGSA: poi = {
 };
 
 export const WAREHOUSE_KIUVONGSA: poi = {
-  id: "POI-020",
+  id: "POI-OQ61W9",
   name: "Warehouse",
   position: [10484.556585030117, 20979.612531386498],
   types: [MarkerType.POI, MarkerType.KIUVONGSA],
@@ -166,7 +166,7 @@ export const WAREHOUSE_KIUVONGSA: poi = {
 };
 
 export const TOWNHALL_KIUVONGSA: poi = {
-  id: "POI-021",
+  id: "POI-40ICCQ",
   name: "Town Hall",
   position: [10993.962202820294, 21105.875462291755],
   types: [MarkerType.POI, MarkerType.KIUVONGSA],
@@ -174,7 +174,7 @@ export const TOWNHALL_KIUVONGSA: poi = {
 };
 
 export const GASSTATION_KIUVONGSA: poi = {
-  id: "POI-022",
+  id: "POI-JP2U2W",
   name: "Gas Station",
   position: [11207.819561609867, 20583.910915047174],
   types: [MarkerType.POI, MarkerType.KIUVONGSA],
@@ -182,7 +182,7 @@ export const GASSTATION_KIUVONGSA: poi = {
 };
 
 export const MARKETPLACE_KIUVONGSA: poi = {
-  id: "POI-023",
+  id: "POI-E659T2",
   name: "Marketplace",
   position: [10873.547329515799, 20822.025054273032],
   types: [MarkerType.POI, MarkerType.KIUVONGSA],
@@ -190,7 +190,7 @@ export const MARKETPLACE_KIUVONGSA: poi = {
 };
 
 export const LUMBERYARD_KIUVONGSA: poi = {
-  id: "POI-024",
+  id: "POI-1GDHUW",
   name: "Lumberyard",
   position: [10784.192771265263, 20567.677968530013],
   types: [MarkerType.POI, MarkerType.KIUVONGSA],
@@ -198,7 +198,7 @@ export const LUMBERYARD_KIUVONGSA: poi = {
 };
 
 export const WATERTOWER_KIUVONGSA: poi = {
-  id: "POI-025",
+  id: "POI-8S0VT2",
   name: "Water Tower",
   position: [10584.941171689172, 20655.71059141125],
   types: [MarkerType.POI, MarkerType.KIUVONGSA],
@@ -206,7 +206,7 @@ export const WATERTOWER_KIUVONGSA: poi = {
 };
 
 export const CONVENIENCESTORE_KIUVONGSA: poi = {
-  id: "POI-026",
+  id: "POI-5MRZV9",
   name: "Convenience Store",
   position: [10658.432210927049, 20888.111161894103],
   types: [MarkerType.POI, MarkerType.KIUVONGSA],
@@ -214,7 +214,7 @@ export const CONVENIENCESTORE_KIUVONGSA: poi = {
 };
 
 export const CONSTRUCTIONSITE_KIUVONGSA: poi = {
-  id: "POI-027",
+  id: "POI-4K3B6C",
   name: "Construction Site",
   position: [10719.354243117607, 21052.11186615951],
   types: [MarkerType.POI, MarkerType.KIUVONGSA],

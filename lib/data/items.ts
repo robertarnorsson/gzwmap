@@ -2,7 +2,7 @@ import { MarkerType, item } from "@/lib/types";
 import { Gunny, Handshake, LabRat, Turncoat } from "@/lib/data/vendors";
 
 export const GPSTracker: item = {
-  id: "IT-001",
+  id: "I-3CAOWP",
   name: "GPS Tracker",
   shortName: "Tracker",
   description: "A device that uses satellite signals to determine and record the precise location of an object or person. Commonly used for vehicle tracking or personal safety.",
@@ -13,7 +13,7 @@ export const GPSTracker: item = {
 }
 
 export const CameraWiretap: item = {
-  id: "IT-002",
+  id: "I-NLRFZ7",
   name: "Camera Wiretap",
   shortName: "Wiretap",
   description: "A device that can be used to tap into any survaillance stream.",
@@ -24,7 +24,7 @@ export const CameraWiretap: item = {
 }
 
 export const BoxOfSupplies: item = {
-  id: "IT-003",
+  id: "I-O5VEHR",
   name: "Box of Supplies",
   shortName: "Supplies",
   description: "A box full of various items intended to bring relief to the locals.",
@@ -35,7 +35,7 @@ export const BoxOfSupplies: item = {
 }
 
 export const SampleCollectionKit: item = {
-  id: "IT-004",
+  id: "I-5ZTRVC",
   name: "Sample Collection Kit",
   shortName: "Kit",
   description: "This kit is used to safely collect various samples.",
@@ -46,7 +46,7 @@ export const SampleCollectionKit: item = {
 }
 
 export const PoisonVial: item = {
-  id: "IT-005",
+  id: "I-ULCZX9",
   name: "Poison Vial",
   shortName: "Poison",
   description: "Contains a potent water-solluable toxin.",

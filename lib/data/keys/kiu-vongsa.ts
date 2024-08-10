@@ -2,7 +2,7 @@ import { key, KeyTypes, MarkerType } from "@/lib/types"
 import { KiuVongsa } from "@/lib/data/locations"
 
 export const KVDoctorsOffice: key = {
-  id: "N/A",
+  id: "K-ROD483",
   name: "Kiu Vongsa Doctor's Office Key",
   shortName: "KV Doc",
   description: "A key for the local doctor's office in Kiu Vongsa.",
@@ -15,7 +15,7 @@ export const KVDoctorsOffice: key = {
 }
 
 export const KVAttic: key = {
-  id: "N/A",
+  id: "K-QL0TPU",
   name: "Kiu Vongsa Resturant Storage Key",
   shortName: "KV Attic",
   description: "A key for the attic storage space of a resturant in Kiu Vongsa.",
@@ -28,7 +28,7 @@ export const KVAttic: key = {
 }
 
 export const KVMotel: key = {
-  id: "N/A",
+  id: "K-E2RH0L",
   name: "Kiu Vongsa Motel Room Key",
   shortName: "KV Motel",
   description: "A key to one of the room in the Kiu Vongsa motel.",
@@ -41,7 +41,7 @@ export const KVMotel: key = {
 }
 
 export const KVLumber: key = {
-  id: "N/A",
+  id: "K-P1TCK9",
   name: "Kiu Vongsa Lumberyard Maintenance Room Key",
   shortName: "KV Lubmer",
   description: "No description",

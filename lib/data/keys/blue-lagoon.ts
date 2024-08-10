@@ -2,7 +2,7 @@ import { key, KeyTypes, MarkerType } from "@/lib/types"
 import { BlueLagoon } from "@/lib/data/locations"
 
 export const BLStrg: key = {
-  id: "N/A",
+  id: "K-L0RBD3",
   name: "Blue Lagoon Resturant Storage Key",
   shortName: "BL Strg",
   description: "A key to a storage room in the Blue Lagoon.",

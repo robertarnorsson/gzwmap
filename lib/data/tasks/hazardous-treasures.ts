@@ -3,7 +3,7 @@ import {Handshake} from "@/lib/data/vendors";
 import { BanPa, BlueLagoon, HuntersParadise, PhaLangAirfield, Sawmill, YBL1 } from "../locations";
 
 const HazardousTreasures_Objective1: objective = {
-    id: "N/A",
+    id: "O-CU3VR6",
     name: "Eliminate (Sawmill)",
     description: "Eliminate 10 hostiles at Sawmill",
     position: [10338.581243139115, 17361.701847856064],
@@ -13,7 +13,7 @@ const HazardousTreasures_Objective1: objective = {
 }
 
 const HazardousTreasures_Objective2: objective = {
-    id: "N/A",
+    id: "O-96FFAD",
     name: "Container (Sawmill)",
     description: "Retrieve the container from Sawmill",
     position: [10306.081243139115, 17293.701847856064],
@@ -25,7 +25,7 @@ const HazardousTreasures_Objective2: objective = {
 }
 
 const HazardousTreasures_Objective3: objective = {
-    id: "N/A",
+    id: "O-ZNYVQG",
     name: "Eliminate (Blue Lagoon)",
     description: "Eliminate 10 hostiles at Blue Lagoon",
     position: [22719.24375249368, 12216.951908114108],
@@ -35,7 +35,7 @@ const HazardousTreasures_Objective3: objective = {
 }
 
 const HazardousTreasures_Objective4: objective = {
-    id: "N/A",
+    id: "O-OJEVLH",
     name: "Container (Blue Lagoon)",
     description: "Retrieve the container from Blue Lagoon",
     position: [22785.68694339168, 12197.50006123458],
@@ -46,7 +46,7 @@ const HazardousTreasures_Objective4: objective = {
 }
 
 const HazardousTreasures_Objective5: objective = {
-    id: "N/A",
+    id: "O-KIVOEL",
     name: "Eliminate (Hunters Paradise)",
     description: "Eliminate 10 hostiles at Hunters Paradise",
     position: [14255.009359179032, 21973.35754681658],
@@ -56,7 +56,7 @@ const HazardousTreasures_Objective5: objective = {
 }
 
 const HazardousTreasures_Objective6: objective = {
-    id: "N/A",
+    id: "O-0KD7NY",
     name: "Container (Hunters Paradise)",
     description: "Retrieve the container from Hunters Paradise",
     position: [14160.009359179032, 22010.35754681658],
@@ -68,7 +68,7 @@ const HazardousTreasures_Objective6: objective = {
 }
 
 const HazardousTreasures_Objective7: objective = {
-    id: "N/A",
+    id: "O-6OGJA9",
     name: "Eliminate (Ban Pa)",
     description: "Eliminate 10 hostiles at Ban Pa",
     position: [23089.767597996575, 16070.757603081283],
@@ -78,7 +78,7 @@ const HazardousTreasures_Objective7: objective = {
 }
 
 const HazardousTreasures_Objective8: objective = {
-    id: "N/A",
+    id: "O-RDJSSQ",
     name: "Container (Ban Pa)",
     description: "Retrieve the container from Ban Pa",
     position: [23047.267597996575, 15985.757603081283],
@@ -90,7 +90,7 @@ const HazardousTreasures_Objective8: objective = {
 }
 
 const HazardousTreasures_Objective9: objective = {
-    id: "N/A",
+    id: "O-JR3YYG",
     name: "Eliminate (Pha Lang Airfield)",
     description: "Eliminate 10 hostiles at Pha Lang Airfield",
     position: [18633.696966059757, 19947.307636785845],
@@ -100,7 +100,7 @@ const HazardousTreasures_Objective9: objective = {
 }
 
 const HazardousTreasures_Objective10: objective = {
-    id: "N/A",
+    id: "O-YSM98T",
     name: "Container (Pha Lang Airfield)",
     description: "Retrieve the container from Pha Lang Airfield",
     position: [18547.62469130929, 19658.656022310017],
@@ -112,7 +112,7 @@ const HazardousTreasures_Objective10: objective = {
 }
 
 const HazardousTreasures_Objective11: objective = {
-    id: "N/A",
+    id: "O-HLAQSF",
     name: "Eliminate (YBL-1)",
     description: "Eliminate 10 hostiles at YBL-1",
     position: [11071.218423652977, 13112.975395786707],
@@ -122,7 +122,7 @@ const HazardousTreasures_Objective11: objective = {
 }
 
 const HazardousTreasures_Objective12: objective = {
-    id: "N/A",
+    id: "O-1BI5OD",
     name: "Container (YBL-1)",
     description: "Retrieve the container from YBL-1",
     position: [10983.47018390438, 12987.693226897089],
@@ -134,7 +134,7 @@ const HazardousTreasures_Objective12: objective = {
 }
 
 export const HazardousTreasures: task = {
-    id: "N/A",
+    id: "T-6J3QNM",
     name: "Hazardous Treasures",
     briefing: "Listen up! I've got an important task for you, and I need your full commitment, okay? We got reports of materials being transported from Ground Zero, and they are popping all over the place. It is of utmost importance that we secure them all. The boss was very clear about that, so I suggest you stop whatever you're doing and focus strictly on this. The reports are still coming in, and I'm gonna keep updating you as you progress. What we know now is that those paramilitaries at the Sawmill got a hold of one of the containers used to transport whatever is in there, so pack your gear, head out there, neutralize any threats, and secure the cargo. By the time you're done, we'll hopefully have more info about other possible points of interest. Understood? Good. Don't waste any time, and get to it!",
     debriefing: "Fantastic! I know this shit wasn't easy, but you've exceeded all expectations. The boss is gonna be fucking ecstatic! I think you're starting to figure out that whatever is in these is very important to him and absolutely crucial for our mission here. I'd tell you more, but I'm afraid I know as much as you. But hey, why ask questions when the pay is so good, right?",

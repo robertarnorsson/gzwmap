@@ -2,7 +2,7 @@ import { key, KeyTypes, MarkerType } from "@/lib/types"
 import { TigerBay } from "@/lib/data/locations"
 
 export const TBUNLab: key = {
-  id: "N/A",
+  id: "K-ORR1EF",
   name: "UNLRA HQ Lab Key",
   shortName: "UNLab",
   description: "A key for the UNLRA HQ laboratory in Tiger Bay.",
@@ -15,7 +15,7 @@ export const TBUNLab: key = {
 }
 
 export const TBDorm: key = {
-  id: "N/A",
+  id: "K-V9Q0YC",
   name: "UNLRA Dorm Container Key",
   shortName: "UNDrm",
   description: "A key for the UNLRA dorm container in Tiger Bay.",
@@ -28,7 +28,7 @@ export const TBDorm: key = {
 }
 
 export const TBQr: key = {
-  id: "N/A",
+  id: "K-JP69O8",
   name: "UNLRA Quarantine Key",
   shortName: "UNQr",
   description: "A key for the UNLRA quarantine section in Tiger Bay.",

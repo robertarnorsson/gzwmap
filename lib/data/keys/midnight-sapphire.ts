@@ -2,7 +2,7 @@ import { key, KeyTypes, MarkerType } from "@/lib/types"
 import { MidnightSapphire } from "@/lib/data/locations"
 
 export const Lusia: key = {
-  id: "N/A",
+  id: "K-E5W79V",
   name: "Villa Lusia Key",
   shortName: "Lusia",
   description: "A key to the Villa Lusia in the Midnight Sapphire Resort.",
@@ -15,7 +15,7 @@ export const Lusia: key = {
 }
 
 export const Kate: key = {
-  id: "N/A",
+  id: "K-6BJ1A2",
   name: "Villa Katherine Key",
   shortName: "Kate",
   description: "A key to Villa Katherine in the Midnight Sapphire Resort.",
@@ -28,7 +28,7 @@ export const Kate: key = {
 }
 
 export const AnnaJana: key = {
-  id: "N/A",
+  id: "K-5C4OVU",
   name: "Villa Anna Jana Key",
   shortName: "Anna Jana",
   description: "A key to Villa Anna Jana in the Midnight Sapphire Resort.",

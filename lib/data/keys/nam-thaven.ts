@@ -2,7 +2,7 @@ import { key, KeyTypes, MarkerType } from "@/lib/types"
 import { NamThaven } from "@/lib/data/locations"
 
 export const NTDoctorsOffice: key = {
-  id: "N/A",
+  id: "K-W68678",
   name: "Nam Thaven Doctor's Office Key",
   shortName: "NT Doc",
   description: "A key for the local doctor's office in Nam Thaven.",
@@ -15,7 +15,7 @@ export const NTDoctorsOffice: key = {
 }
 
 export const NTAttic: key = {
-  id: "N/A",
+  id: "K-C197YO",
   name: "Nam Thaven Resturant Storage Key",
   shortName: "NT Attic",
   description: "A key for the attic storage space of a resturant in Nam Thaven.",
@@ -28,7 +28,7 @@ export const NTAttic: key = {
 }
 
 export const NTMotel: key = {
-  id: "N/A",
+  id: "K-WRPKPY",
   name: "Nam Thaven Motel Room Key",
   shortName: "NT Motel",
   description: "A key to one of the room in the Nam Thaven motel.",
@@ -41,7 +41,7 @@ export const NTMotel: key = {
 }
 
 export const NTLumber: key = {
-  id: "N/A",
+  id: "K-RPE1PL",
   name: "Nam Thaven Lumberyard Maintenance Room Key",
   shortName: "NT Lubmer",
   description: "No description",
