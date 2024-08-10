@@ -1,7 +1,7 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Handshake } from "@/lib/data/vendors";
 import { MidnightSapphire } from "@/lib/data/locations";
-import { Lusia } from "@/lib/data/keys/midnight-sapphire";
+import { MSLusia } from "@/lib/data/keys/midnight-sapphire";
 
 const SweetLittleLies_Objective1: objective = {
     id: "O-PLN1UP",
@@ -11,7 +11,7 @@ const SweetLittleLies_Objective1: objective = {
     type: ObjectiveType.COLLECT,
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.MIDNIGHTSAPPHIRE],
     location: MidnightSapphire,
-    key: Lusia
+    key: MSLusia
 }
 
 export const SweetLittleLies: task = {
@@ -25,6 +25,6 @@ export const SweetLittleLies: task = {
     vendor: Handshake,
     level: 0,
     key: [
-      Lusia
+      MSLusia
     ]
 }

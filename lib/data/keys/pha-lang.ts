@@ -44,11 +44,37 @@ export const PLLumber: key = {
   id: "K-MPI03V",
   name: "Pha Lang Lumberyard Maintenance Room Key",
   shortName: "PL Lubmer",
-  description: "No description",
+  description: "A key to the Pha Lang lumberyard maintenance room.",
   size: [1, 1],
   image: KeyTypes.SQUAREKEY,
   types: [MarkerType.KEY, MarkerType.PHALANG],
   questKey: false,
   location: PhaLang,
   position: [21994.037382036768, 20872.94422465671]
+}
+
+export const PLUNLRA: key = {
+  id: "K-MPI03V",
+  name: "Pha Lang UNLRA Office Room Key",
+  shortName: "UNLRA",
+  description: "A key to the UNLRA office in Pha Lang.",
+  size: [1, 1],
+  image: KeyTypes.SQUAREKEY,
+  types: [MarkerType.KEY, MarkerType.PHALANG],
+  questKey: false,
+  location: PhaLang,
+  position: [22089.08300610559, 21068.975830186708]
+}
+
+export const PLMarOfc: key = {
+  id: "K-4WMBDZ",
+  name: "Pha Lang Marketplace Office Key",
+  shortName: "MarOfc",
+  description: "A key for an office in the Pha Lang marketplace.",
+  size: [1, 1],
+  image: KeyTypes.ROUNDGOLDKEY,
+  types: [MarkerType.KEY, MarkerType.PHALANG],
+  questKey: false,
+  location: PhaLang,
+  position: [22180.241877875305, 20809.72203654915]
 }

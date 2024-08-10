@@ -44,11 +44,37 @@ export const KVLumber: key = {
   id: "K-P1TCK9",
   name: "Kiu Vongsa Lumberyard Maintenance Room Key",
   shortName: "KV Lubmer",
-  description: "No description",
+  description: "A key to the Kiu Vongsa lumberyard maintenance room.",
   size: [1, 1],
   image: KeyTypes.SQUAREKEY,
   types: [MarkerType.KEY, MarkerType.KIUVONGSA],
   questKey: false,
   location: KiuVongsa,
   position: [10722.207849909322, 20590.45838811121]
+}
+
+export const KVUNLRA: key = {
+  id: "K-HX41FV",
+  name: "Kiu Vongsa UNLRA Office Room Key",
+  shortName: "UNLRA",
+  description: "A key to the UNLRA office in Kiu Vongsa.",
+  size: [1, 1],
+  image: KeyTypes.SQUAREKEY,
+  types: [MarkerType.KEY, MarkerType.KIUVONGSA],
+  questKey: false,
+  location: KiuVongsa,
+  position: [16746.86205830489, 12441.711765655544]
+}
+
+export const KVMarOfc: key = {
+  id: "K-7DXKVR",
+  name: "Kiu Vongsa Marketplace Office Key",
+  shortName: "MarOfc",
+  description: "A key for an office in the Kiu Vongsa marketplace.",
+  size: [1, 1],
+  image: KeyTypes.ROUNDGOLDKEY,
+  types: [MarkerType.KEY, MarkerType.PHALANG],
+  questKey: false,
+  location: KiuVongsa,
+  position: [10822.441298295296, 20761.22714849532]
 }

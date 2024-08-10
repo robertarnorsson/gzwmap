@@ -4,21 +4,27 @@ import {
     PLAttic,
     PLDoctorsOffice,
     PLLumber,
-    PLMotel
+    PLMarOfc,
+    PLMotel,
+    PLUNLRA
 } from "@/lib/data/keys/pha-lang";
 
 import {
     NTAttic,
     NTDoctorsOffice,
     NTLumber,
-    NTMotel
+    NTMarOfc,
+    NTMotel,
+    NTUNLRA
 } from "@/lib/data/keys/nam-thaven";
 
 import {
     KVAttic,
     KVDoctorsOffice,
     KVLumber,
-    KVMotel
+    KVMarOfc,
+    KVMotel,
+    KVUNLRA
 } from "@/lib/data/keys/kiu-vongsa";
 
 import {
@@ -36,12 +42,14 @@ import {
 } from "@/lib/data/keys/tiger-bay";
 
 import {
-    AnnaJana,
-    Kate,
-    Lusia
+    MSAnnaJana,
+    MSElenaGar,
+    MSKate,
+    MSLusia
 } from "@/lib/data/keys/midnight-sapphire";
 
 import {
+    BLShack,
     BLStrg
 } from "@/lib/data/keys/blue-lagoon";
 
@@ -50,14 +58,20 @@ export const Keys: key[] = [
     PLAttic,
     PLMotel,
     PLLumber,
+    PLUNLRA,
+    PLMarOfc,
     NTDoctorsOffice,
     NTAttic,
     NTMotel,
     NTLumber,
+    NTUNLRA,
+    NTMarOfc,
     KVDoctorsOffice,
     KVAttic,
     KVMotel,
     KVLumber,
+    KVUNLRA,
+    KVMarOfc,
     HPWep,
     HP101,
     HP102,
@@ -66,8 +80,10 @@ export const Keys: key[] = [
     TBUNLab,
     TBDorm,
     TBQr,
-    Lusia,
-    Kate,
-    AnnaJana,
-    BLStrg
+    MSLusia,
+    MSKate,
+    MSAnnaJana,
+    MSElenaGar,
+    BLStrg,
+    BLShack,
 ]

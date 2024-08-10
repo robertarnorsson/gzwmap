@@ -13,3 +13,16 @@ export const BLStrg: key = {
   location: BlueLagoon,
   position: [22554.86603645881, 12113.842134573713]
 }
+
+export const BLShack: key = {
+  id: "K-BV6KFK",
+  name: "Blue Lagoon Shack Key",
+  shortName: "BL Shack",
+  description: "A key to the back room of an old shack in the Blue Lagoon.",
+  size: [1, 1],
+  image: KeyTypes.SKINNYKEY,
+  types: [MarkerType.KEY, MarkerType.BLUELAGOON, MarkerType.QUESTKEY],
+  questKey: true,
+  location: BlueLagoon,
+  position: [22799.5950195818, 11971.518927656503]
+}
