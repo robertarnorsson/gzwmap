@@ -24,7 +24,7 @@ export const PLA03: key = {
   types: [MarkerType.KEY, MarkerType.PHALANGAIRFIELD, MarkerType.QUESTKEY],
   questKey: true,
   location: PhaLangAirfield,
-  position: [18476.331984260043, 19706.429501665214]
+  position: [18476.51300790585, 19711.799700158237]
 }
 
 export const PLAShed: key = {

@@ -19,6 +19,7 @@ import { CrumbCollector }                 from "@/lib/data/tasks/crumb-collector
 import { DeepDepravity }                  from "@/lib/data/tasks/deep-depravity";
 import { DeepWaters }                     from "@/lib/data/tasks/deep-waters";
 import { DeepestDarkestFantasies }        from "@/lib/data/tasks/deepest-darkest-fantasies";
+import { DelayedPackage }                 from "@/lib/data/tasks/delayed-package";
 import { DirtDigger }                     from "@/lib/data/tasks/dirt-digger";
 import { Downsizing }                     from "@/lib/data/tasks/downsizing";
 import { Dragonslayer }                   from "@/lib/data/tasks/dragonslayer";
@@ -156,6 +157,7 @@ export const Tasks: task[] = [
   DeepDepravity,
   DeepWaters,
   DeepestDarkestFantasies,
+  DelayedPackage,
   DirtDigger,
   Downsizing,
   Dragonslayer,
