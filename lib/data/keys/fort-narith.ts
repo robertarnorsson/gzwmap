@@ -155,7 +155,7 @@ export const FNC108: key = {
   types: [MarkerType.KEY, MarkerType.FORTNARITH],
   questKey: false,
   location: FortNarith,
-  position: [10729.813977660084, 14999.304526231546]
+  position: [10742.171654652322, 15006.053389293644]
 }
 
 export const FNTrnHouse: key = {

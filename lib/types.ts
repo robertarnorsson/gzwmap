@@ -52,6 +52,7 @@ export enum MarkerType {
   // Items
   ITEM = "Item",
   TOOL = "Tool",
+  INTEL = "Intel",
 
   // Factions
   LRI = "Lamang Recovery Initiative",

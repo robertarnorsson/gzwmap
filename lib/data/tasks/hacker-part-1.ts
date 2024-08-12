@@ -1,7 +1,7 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Handshake } from "@/lib/data/vendors";
 import { FortNarith } from "@/lib/data/locations";
-import { CameraWiretap } from "@/lib/data/items";
+import { CameraWiretap } from "@/lib/data/items/tools";
 
 const HackerPartOne_Objective1: objective = {
     id: "O-CM6I13",
@@ -44,7 +44,7 @@ const HackerPartOne_Objective4: objective = {
     id: "O-LA337F",
     name: "Camera 4",
     description: "Hack the camera in the army HQ",
-    position: [11061.847616030645, 14482.873185881284],
+    position: [11058.191010095135, 14489.455400905184],
     type: ObjectiveType.HACK,
     image:"/objectives/hacker-1-camera-4.webp",
     types: [MarkerType.TASK, MarkerType.HACK, MarkerType.HANDSHAKE, MarkerType.FORTNARITH],

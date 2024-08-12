@@ -7,7 +7,7 @@ import {
 } from "@/lib/data/factions";
 import { MedicalDetective } from "@/lib/data/tasks/medical-detective";
 import { KiuVongsa, NamThaven, PhaLang } from "@/lib/data/locations";
-import { BoxOfSupplies } from "@/lib/data/items";
+import { BoxOfSupplies } from "@/lib/data/items/tools";
 
 const SecretCompassion_Objective1_LRI: objective = {
   id: "O-SP8PXL",

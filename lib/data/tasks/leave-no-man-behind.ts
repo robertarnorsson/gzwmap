@@ -5,7 +5,7 @@ import {
   LamangRecoveryInitiative,
   MithrasSecuritySystems
 } from "@/lib/data/factions";
-import { GPSTracker } from "@/lib/data/items";
+import { GPSTracker } from "@/lib/data/items/tools";
 import { CacheRetrieval } from "@/lib/data/tasks/cache-retrieval";
 import { KiuVongsa, NamThaven, PhaLang } from "@/lib/data/locations";
 

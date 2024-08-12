@@ -6,7 +6,7 @@ import {
   MithrasSecuritySystems
 } from "@/lib/data/factions";
 import { KiuVongsa, NamThaven, PhaLang } from "@/lib/data/locations";
-import { GPSTracker } from "@/lib/data/items";
+import { GPSTracker } from "@/lib/data/items/tools";
 
 const LastFarewell_Objective1_LRI: objective = {
   id: "O-12TF5R",

@@ -78,6 +78,7 @@ import { MedicalDetective }               from "@/lib/data/tasks/medical-detecti
 import { MedsWanted }                     from "@/lib/data/tasks/meds-wanted";
 import { MissingColleaguePartOne }        from "@/lib/data/tasks/missing-colleague-part-1";
 import { MissingColleaguePartTwo }        from "@/lib/data/tasks/missing-colleague-part-2";
+import { NameYourPoison }                 from "@/lib/data/tasks/name-your-poison";
 import { NarcoticBargains }               from "@/lib/data/tasks/narcotic-bargain";
 import { NativeNegotiations }             from "@/lib/data/tasks/native-negotiations";
 import { NeighbourlyHelp }                from "@/lib/data/tasks/neighbourly-help";
@@ -100,15 +101,20 @@ import { RestoringOrder }                 from "@/lib/data/tasks/restoring-order
 import { Ripper }                         from "@/lib/data/tasks/ripper";
 import { SaveTheRebellion }               from "@/lib/data/tasks/save-the-rebellion";
 import { SecretCompassion }               from "@/lib/data/tasks/secret-compassion";
+import { SeekerOfChange }                 from "@/lib/data/tasks/seeker-of-change";
 import { ShootingGallery }                from "@/lib/data/tasks/shooting-gallery";
 import { SkycrawlersPartOne }             from "@/lib/data/tasks/skycrawlers-part-1";
 import { SkycrawlersPartTwo }             from "@/lib/data/tasks/skycrawlers-part-2";
+import { SpitOutThePoison }               from "@/lib/data/tasks/spit-out-the-poison";
+import { StateOfWeaponShipment }          from "@/lib/data/tasks/state-of-weapon-shipment";
 import { SweetLittleLies }                from "@/lib/data/tasks/sweet-little-lies";
 import { TerminalInitiative }             from "@/lib/data/tasks/terminal-initiative";
 import { TestResults }                    from "@/lib/data/tasks/test-results";
+import { TheArtOfDeception }              from "@/lib/data/tasks/the-art-of-deception";
 import { TheBrave }                       from "@/lib/data/tasks/the-brave";
 import { TheCongressman }                 from "@/lib/data/tasks/the-congressman";
 import { TheManWhoDisappeared }           from "@/lib/data/tasks/the-man-who-disappeared";
+import { TheMoreTheMerrier }              from "@/lib/data/tasks/the-more-the-merrier";
 import { TheMostDangerousGame }           from "@/lib/data/tasks/the-most-dangerous-game";
 import { TheNegotiator }                  from "@/lib/data/tasks/the-negotiator";
 import { TheShadowOverBanPaPartOne }      from "@/lib/data/tasks/the-shadow-over-ban-pa-part-1";
@@ -118,6 +124,7 @@ import { Timber }                         from "@/lib/data/tasks/timber";
 import { TooCloseToTheSun }               from "@/lib/data/tasks/too-close-to-the-sun";
 import { ToolsOfTheTrade }                from "@/lib/data/tasks/tools-of-the-trade";
 import { TrueGrit }                       from "@/lib/data/tasks/true-grit";
+import { UncannyFiles }                   from "@/lib/data/tasks/uncanny-files";
 import { UninvitedGuests }                from "@/lib/data/tasks/uninvited-guests";
 import { Unlra }                          from "@/lib/data/tasks/unlra-part-1";
 import { UnlraPartTwo }                   from "@/lib/data/tasks/unlra-part-2";
@@ -125,12 +132,15 @@ import { UnlraPartThree }                 from "@/lib/data/tasks/unlra-part-3";
 import { UnlraPartFour }                  from "@/lib/data/tasks/unlra-part-4";
 import { Unnameable }                     from "@/lib/data/tasks/unnameable";
 import { UpToSnuff }                      from "@/lib/data/tasks/up-to-snuff";
+import { WantedManPartOne }               from "@/lib/data/tasks/wanted-man-part-1";
+import { WantedManPartTwo }               from "@/lib/data/tasks/wanted-man-part-2";
 import { WarmWelcome }                    from "@/lib/data/tasks/warm-welcome";
 import { Weeding }                        from "@/lib/data/tasks/weeding";
 import { WhatComesUp }                    from "@/lib/data/tasks/what-comes-up";
 import { WhatRemains }                    from "@/lib/data/tasks/what-remains";
 import { WhatWasLeft }                    from "@/lib/data/tasks/what-was-left";
 import { WhatsInTheBox }                  from "@/lib/data/tasks/whats-in-the-box";
+import { WhosInCharge }                   from "@/lib/data/tasks/whos-in-charge";
 import { WingClipping }                   from "@/lib/data/tasks/wing-clipping";
 
 import { task } from "@/lib/types";
@@ -216,6 +226,7 @@ export const Tasks: task[] = [
   MedsWanted,
   MissingColleaguePartOne,
   MissingColleaguePartTwo,
+  NameYourPoison,
   NarcoticBargains,
   NativeNegotiations,
   NeighbourlyHelp,
@@ -238,15 +249,20 @@ export const Tasks: task[] = [
   Ripper,
   SaveTheRebellion,
   SecretCompassion,
+  SeekerOfChange,
   ShootingGallery,
   SkycrawlersPartOne,
   SkycrawlersPartTwo,
+  SpitOutThePoison,
+  StateOfWeaponShipment,
   SweetLittleLies,
   TerminalInitiative,
   TestResults,
+  TheArtOfDeception,
   TheBrave,
   TheCongressman,
   TheManWhoDisappeared,
+  TheMoreTheMerrier,
   TheMostDangerousGame,
   TheNegotiator,
   TheShadowOverBanPaPartOne,
@@ -256,6 +272,7 @@ export const Tasks: task[] = [
   TooCloseToTheSun,
   ToolsOfTheTrade,
   TrueGrit,
+  UncannyFiles,
   UninvitedGuests,
   Unlra,
   UnlraPartTwo,
@@ -263,11 +280,14 @@ export const Tasks: task[] = [
   UnlraPartFour,
   Unnameable,
   UpToSnuff,
+  WantedManPartOne,
+  WantedManPartTwo,
   WarmWelcome,
   Weeding,
   WhatComesUp,
   WhatRemains,
   WhatWasLeft,
   WhatsInTheBox,
+  WhosInCharge,
   WingClipping,
 ]

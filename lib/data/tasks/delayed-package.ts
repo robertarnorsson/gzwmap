@@ -2,7 +2,7 @@ import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Turncoat } from "@/lib/data/vendors";
 import { PhaLang, NamThaven, KiuVongsa, PhaLangAirfield } from "@/lib/data/locations";
 import { PLA03 } from "../keys/pha-lang-airfield";
-import { BoxOfSupplies } from "../items";
+import { BoxOfSupplies } from "@/lib/data/items/tools";
 
 const DelayedPackage_Objective1_LRI: objective = {
     id: "O-X98YRR",
