@@ -1,5 +1,6 @@
 import { AShotInTheDark }                 from "@/lib/data/tasks/a-shot-in-the-dark";
 import { ASingleDrop }                    from "@/lib/data/tasks/a-single-drop";
+import { ASmallFavor }                    from "@/lib/data/tasks/a-small-favor";
 import { AcademicIntrest }                from "@/lib/data/tasks/academic-intrest";
 import { ArtisansList }                   from "@/lib/data/tasks/artisans-list-part-1";
 import { ArtisansListPartTwo }            from "@/lib/data/tasks/artisans-list-part-2";
@@ -83,6 +84,7 @@ import { NarcoticBargains }               from "@/lib/data/tasks/narcotic-bargai
 import { NativeNegotiations }             from "@/lib/data/tasks/native-negotiations";
 import { NeighbourlyHelp }                from "@/lib/data/tasks/neighbourly-help";
 import { NightOcean }                     from "@/lib/data/tasks/night-ocean";
+import { NoEscape }                       from "@/lib/data/tasks/no-escape";
 import { NoQuestionsAsked }               from "@/lib/data/tasks/no-questions-asked";
 import { NobelPowder }                    from "@/lib/data/tasks/nobel-powder";
 import { OnTheRange }                     from "@/lib/data/tasks/on-the-range";
@@ -97,6 +99,7 @@ import { RadioSilence }                   from "@/lib/data/tasks/radio-silence";
 import { RatsNest }                       from "@/lib/data/tasks/rats-nest";
 import { RebelScum }                      from "@/lib/data/tasks/rebel-scum";
 import { Reclamation }                    from "@/lib/data/tasks/reclamation";
+import { ReconnaissanceInForce }          from "@/lib/data/tasks/reconnaissance-in-force";
 import { RestoringOrder }                 from "@/lib/data/tasks/restoring-order";
 import { Ripper }                         from "@/lib/data/tasks/ripper";
 import { SaveTheRebellion }               from "@/lib/data/tasks/save-the-rebellion";
@@ -148,6 +151,7 @@ import { task } from "@/lib/types";
 export const Tasks: task[] = [
   AShotInTheDark,
   ASingleDrop,
+  ASmallFavor,
   AcademicIntrest,
   ArtisansList,
   ArtisansListPartTwo,
@@ -231,6 +235,7 @@ export const Tasks: task[] = [
   NativeNegotiations,
   NeighbourlyHelp,
   NightOcean,
+  NoEscape,
   NoQuestionsAsked,
   NobelPowder,
   OnTheRange,
@@ -245,6 +250,7 @@ export const Tasks: task[] = [
   RatsNest,
   RebelScum,
   Reclamation,
+  ReconnaissanceInForce,
   RestoringOrder,
   Ripper,
   SaveTheRebellion,
