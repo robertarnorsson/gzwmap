@@ -1,6 +1,7 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Gunny } from "@/lib/data/vendors";
 import { TigerBay } from "@/lib/data/locations";
+import { Difficulty4 } from "../difficulty";
 
 const BigEntrance_Objective1: objective = {
     id: "O-JU3VU7",
@@ -8,8 +9,9 @@ const BigEntrance_Objective1: objective = {
     description: "Find the LAF weapon cache in the south part of Tiger Bay Central",
     position: [21754.998927401128, 14358.171063071788],
     type: ObjectiveType.LOCATE,
-    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.GUNNY, MarkerType.TIGERBAY],
-    location: TigerBay
+    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.GUNNY, MarkerType.TIGERBAY, MarkerType.DIFFICULTY_4],
+    location: TigerBay,
+    difficulty: Difficulty4
 }
 
 const BigEntrance_Objective2: objective = {
@@ -18,8 +20,9 @@ const BigEntrance_Objective2: objective = {
     description: "Find the LAF weapon caches in the north part of Tiger Bay Central",
     position: [21476.906023491963, 14637.54211503504],
     type: ObjectiveType.LOCATE,
-    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.GUNNY, MarkerType.TIGERBAY],
-    location: TigerBay
+    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.GUNNY, MarkerType.TIGERBAY, MarkerType.DIFFICULTY_4],
+    location: TigerBay,
+    difficulty: Difficulty4
 }
 
 export const BigEntrance: task = {
@@ -33,4 +36,5 @@ export const BigEntrance: task = {
     ],
     vendor: Gunny,
     level: 0,
+    difficulty: Difficulty4
 }

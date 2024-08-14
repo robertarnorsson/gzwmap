@@ -1,6 +1,7 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Banshee } from "@/lib/data/vendors";
 import { HuntersParadise } from "@/lib/data/locations";
+import { Difficulty3 } from "@/lib/data/difficulty";
 
 const AShotInTheDark_Objective1: objective = {
     id: "O-IKLQZR",
@@ -8,8 +9,9 @@ const AShotInTheDark_Objective1: objective = {
     description: "Locate the client list at Hunter's Paradise and hand it to Banshee",
     position: [14318.494068376996, 22033.120985804435],
     type: ObjectiveType.COLLECT,
-    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.BANSHEE, MarkerType.HUNTERSPARADISE],
-    location: HuntersParadise
+    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.BANSHEE, MarkerType.HUNTERSPARADISE, MarkerType.DIFFICULTY_3],
+    location: HuntersParadise,
+    difficulty: Difficulty3,
 }
 
 export const AShotInTheDark: task = {
@@ -22,4 +24,6 @@ export const AShotInTheDark: task = {
     ],
     vendor: Banshee,
     level: 0,
+    difficulty: Difficulty3,
+    note: 'Will cancel "Up To Snuff"'
 }

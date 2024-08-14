@@ -1,6 +1,7 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Artisan } from "@/lib/data/vendors";
 import { TigerBay } from "@/lib/data/locations";
+import { Difficulty4 } from "@/lib/data/difficulty";
 
 const ArtisansListPartTwo_Objective1: objective = {
     id: "O-T9MR9K",
@@ -8,8 +9,9 @@ const ArtisansListPartTwo_Objective1: objective = {
     description: "Retrieve the documents from the UNLRA camp in Tiger Bay",
     position: [22174.353075717765, 15210.521486392414],
     type: ObjectiveType.COLLECT,
-    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.ARTISAN, MarkerType.TIGERBAY],
-    location: TigerBay
+    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.ARTISAN, MarkerType.TIGERBAY, MarkerType.DIFFICULTY_4],
+    location: TigerBay,
+    difficulty: Difficulty4
 }
 
 export const ArtisansListPartTwo: task = {
@@ -22,4 +24,5 @@ export const ArtisansListPartTwo: task = {
     ],
     vendor: Artisan,
     level: 0,
+    difficulty: Difficulty4
 }

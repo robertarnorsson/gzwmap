@@ -1,6 +1,7 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Artisan } from "@/lib/data/vendors";
 import { BanPa } from "@/lib/data/locations";
+import { Difficulty3 } from "@/lib/data/difficulty";
 
 const AtTheMoundsOfMadness_Objective1: objective = {
     id: "O-A8VMNP",
@@ -8,8 +9,9 @@ const AtTheMoundsOfMadness_Objective1: objective = {
     description: "Find an ominous mural",
     position: [23002.453108533176, 15703.731091965486],
     type: ObjectiveType.LOCATE,
-    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.ARTISAN, MarkerType.BANPA],
-    location: BanPa
+    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.ARTISAN, MarkerType.BANPA, MarkerType.DIFFICULTY_3],
+    location: BanPa,
+    difficulty: Difficulty3
 }
 
 const AtTheMoundsOfMadness_Objective2: objective = {
@@ -18,8 +20,9 @@ const AtTheMoundsOfMadness_Objective2: objective = {
     description: "Find an eerie mural",
     position: [22927.08971980861, 16082.924417897804],
     type: ObjectiveType.LOCATE,
-    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.ARTISAN, MarkerType.BANPA],
-    location: BanPa
+    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.ARTISAN, MarkerType.BANPA, MarkerType.DIFFICULTY_3],
+    location: BanPa,
+    difficulty: Difficulty3
 }
 
 const AtTheMoundsOfMadness_Objective3: objective = {
@@ -28,8 +31,9 @@ const AtTheMoundsOfMadness_Objective3: objective = {
     description: "Find a chilling mural",
     position: [23243.91895304809, 16122.161938222464],
     type: ObjectiveType.LOCATE,
-    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.ARTISAN, MarkerType.BANPA],
-    location: BanPa
+    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.ARTISAN, MarkerType.BANPA, MarkerType.DIFFICULTY_3],
+    location: BanPa,
+    difficulty: Difficulty3
 }
 
 const AtTheMoundsOfMadness_Objective4: objective = {
@@ -38,8 +42,9 @@ const AtTheMoundsOfMadness_Objective4: objective = {
     description: "Find a disturbing statue",
     position: [23354.782997580827, 16062.182871592066],
     type: ObjectiveType.LOCATE,
-    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.ARTISAN, MarkerType.BANPA],
-    location: BanPa
+    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.ARTISAN, MarkerType.BANPA, MarkerType.DIFFICULTY_3],
+    location: BanPa,
+    difficulty: Difficulty3
 }
 
 export const AtTheMoundsOfMadness: task = {
@@ -55,4 +60,5 @@ export const AtTheMoundsOfMadness: task = {
     ],
     vendor: Artisan,
     level: 0,
+    difficulty: Difficulty3
 }

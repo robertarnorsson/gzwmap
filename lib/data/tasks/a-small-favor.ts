@@ -1,6 +1,7 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Turncoat } from "@/lib/data/vendors";
 import { FortNarith } from "@/lib/data/locations";
+import { Difficulty4 } from "@/lib/data/difficulty";
 
 const ASmallFavor_Objective1: objective = {
     id: "O-IO10TB",
@@ -8,8 +9,9 @@ const ASmallFavor_Objective1: objective = {
     description: "Retrieve the Folder from Fort Narith and report back to Turncoat",
     position: [11092.0695765838, 14481.788009202894],
     type: ObjectiveType.COLLECT,
-    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.TURNCOAT, MarkerType.FORTNARITH],
-    location: FortNarith
+    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.TURNCOAT, MarkerType.FORTNARITH, MarkerType.DIFFICULTY_4],
+    location: FortNarith,
+    difficulty: Difficulty4
 }
 
 export const ASmallFavor: task = {
@@ -22,5 +24,6 @@ export const ASmallFavor: task = {
     ],
     vendor: Turncoat,
     level: 0,
+    difficulty: Difficulty4,
     note: 'Will cancel "No Escape"'
 }

@@ -8,6 +8,7 @@ import Image from "next/image";
 import { Item } from "@/components/comp/item";
 import Link from "next/link";
 import { toSlug } from "@/lib/utils";
+import { Difficulty } from "@/components/comp/difficulty";
 
 export const TaskPopup = (task: task, objective: objective, onClick: () => void) => (
   <PopUp
@@ -26,6 +27,9 @@ export const TaskPopup = (task: task, objective: objective, onClick: () => void)
       <div className="absolute top-1/2 left-0 right-0 bottom-0 bg-gradient-to-t from-background"></div>
     </div>
     <div className="relative p-6 pt-3">
+      {objective.difficulty && (
+        <Difficulty difficulty={objective.difficulty} className="absolute top-2 right-2" />
+      )}
       <Link href={`/tasks/${toSlug(task.name)}`}>
         <div className="group cursor-pointer">
           <span className="fancy-underline text-xl font-bold text-primary text-pretty group-hover:fancy-underline-hover">{task.name}</span>

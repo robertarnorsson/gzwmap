@@ -1,6 +1,7 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Banshee } from "@/lib/data/vendors";
 import { MidnightSapphire } from "@/lib/data/locations";
+import { Difficulty4 } from "../difficulty";
 
 const NobelPowder_Objective1: objective = {
     id: "O-M2KK98",
@@ -8,8 +9,9 @@ const NobelPowder_Objective1: objective = {
     description: "Retrieve evidence of drug trade in Midnight Sapphire and report back to Banshee",
     position: [16538.73054286704, 21616.076155810195],
     type: ObjectiveType.COLLECT,
-    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.BANSHEE, MarkerType.MIDNIGHTSAPPHIRE],
-    location: MidnightSapphire
+    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.BANSHEE, MarkerType.MIDNIGHTSAPPHIRE, MarkerType.DIFFICULTY_4],
+    location: MidnightSapphire,
+    difficulty: Difficulty4
 }
 
 export const NobelPowder: task = {
@@ -22,4 +24,6 @@ export const NobelPowder: task = {
     ],
     vendor: Banshee,
     level: 0,
+    difficulty: Difficulty4,
+    note: 'Will cancel "Academic Intrest"'
 }

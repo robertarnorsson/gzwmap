@@ -88,6 +88,15 @@ export enum MarkerType {
   ELIMINATION = "Elimination",
   LOCATE = "Locate",
   HACK = "Hack",
+
+  // Difficuly
+  
+  DIFFICULTY_1 = "Easy",
+  DIFFICULTY_2 = "Normal",
+  DIFFICULTY_3 = "Difficult",
+  DIFFICULTY_4 = "Hard",
+  DIFFICULTY_5 = "Extreme",
+  DIFFICULTY_6 = "Insane",
 }
 
 export enum ObjectiveType {
@@ -111,7 +120,8 @@ export type task = {
   prerequisites?: task
   key?: key[]
   items?: item[]
-  faction?: faction
+  faction?: faction,
+  difficulty?: difficulty,  
 };
 
 export type objective = {
@@ -126,7 +136,8 @@ export type objective = {
   image?: string
   key?: key
   items?: item[]
-  note?: string
+  note?: string,
+  difficulty?: difficulty,  
 }
 
 export type item = {
@@ -156,4 +167,10 @@ export type key = item & {
   questKey: boolean
   location: location
   position: [number, number] | [number, number][]
+}
+
+export type difficulty = {
+  name: string
+  description: string
+  level: number
 }

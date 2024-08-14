@@ -1,6 +1,7 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Gunny } from "@/lib/data/vendors";
 import { TigerBay } from "@/lib/data/locations";
+import { Difficulty4 } from "@/lib/data/difficulty";
 
 const AyeAyeCaptain_Objective1: objective = {
     id: "O-7WRF1D",
@@ -8,9 +9,10 @@ const AyeAyeCaptain_Objective1: objective = {
     description: "Search for usable ships on water",
     position: [22308.851586038247, 14798.736164797996],
     type: ObjectiveType.LOCATE,
-    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.GUNNY, MarkerType.TIGERBAY],
+    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.GUNNY, MarkerType.TIGERBAY, MarkerType.DIFFICULTY_4],
     location: TigerBay,
-    image: "/objectives/aye-aye-captain.webp"
+    image: "/objectives/aye-aye-captain.webp",
+    difficulty: Difficulty4
 }
 
 export const AyeAyeCaptain: task = {
@@ -23,4 +25,5 @@ export const AyeAyeCaptain: task = {
     ],
     vendor: Gunny,
     level: 0,
+    difficulty: Difficulty4
 }

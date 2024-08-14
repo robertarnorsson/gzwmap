@@ -1,6 +1,7 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Handshake } from "@/lib/data/vendors";
 import { HuntersParadise } from "@/lib/data/locations";
+import { Difficulty3 } from "../difficulty";
 
 const UpToSnuff_Objective1: objective = {
     id: "O-INAHB0",
@@ -8,8 +9,9 @@ const UpToSnuff_Objective1: objective = {
     description: "Locate the client list at Hunter's Paradise and hand it to Handshake",
     position: [14318.494068377002, 22040.620985804435],
     type: ObjectiveType.COLLECT,
-    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.HUNTERSPARADISE],
-    location: HuntersParadise
+    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.HUNTERSPARADISE, MarkerType.DIFFICULTY_3],
+    location: HuntersParadise,
+    difficulty: Difficulty3
 }
 
 export const UpToSnuff: task = {
@@ -22,4 +24,6 @@ export const UpToSnuff: task = {
     ],
     vendor: Handshake,
     level: 0,
+    difficulty: Difficulty3,
+    note: 'Will cancel "A Shot In The Dark"'
 }

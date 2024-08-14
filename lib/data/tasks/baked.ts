@@ -1,6 +1,7 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Banshee } from "@/lib/data/vendors";
 import { TigerBay } from "@/lib/data/locations";
+import { Difficulty4 } from "../difficulty";
 
 const Baked_Objective1: objective = {
     id: "O-KUH65F",
@@ -8,8 +9,9 @@ const Baked_Objective1: objective = {
     description: "Retrieve evidence of drug trade in Tiger Bay and report back to Banshee",
     position: [21727.17601269473, 14484.070829775519],
     type: ObjectiveType.COLLECT,
-    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.BANSHEE, MarkerType.TIGERBAY],
-    location: TigerBay
+    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.BANSHEE, MarkerType.TIGERBAY, MarkerType.DIFFICULTY_4],
+    location: TigerBay,
+    difficulty: Difficulty4
 }
 
 export const Baked: task = {
@@ -22,4 +24,6 @@ export const Baked: task = {
     ],
     vendor: Banshee,
     level: 0,
+    difficulty: Difficulty4,
+    note: 'Will cancel "Narcotic Bargains"'
 }

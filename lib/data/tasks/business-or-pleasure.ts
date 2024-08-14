@@ -1,6 +1,7 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Handshake } from "@/lib/data/vendors";
 import { PhaLangAirfield } from "@/lib/data/locations";
+import { Difficulty3 } from "../difficulty";
 
 const BusinessOrPleasure_Objective1: objective = {
     id: "O-39SIOL",
@@ -9,8 +10,9 @@ const BusinessOrPleasure_Objective1: objective = {
     position: [18752.361360440726, 20124.32123396376],
     type: ObjectiveType.COLLECT,
     image: "/objectives/business-or-pleasure.webp",
-    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.PHALANGAIRFIELD],
-    location: PhaLangAirfield
+    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.PHALANGAIRFIELD, MarkerType.DIFFICULTY_3],
+    location: PhaLangAirfield,
+    difficulty: Difficulty3
 }
 
 
@@ -24,4 +26,5 @@ export const BusinessOrPleasure: task = {
     ],
     vendor: Handshake,
     level: 0,
+    difficulty: Difficulty3
 }

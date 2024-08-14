@@ -1,6 +1,7 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Turncoat } from "@/lib/data/vendors";
 import { TigerBay } from "@/lib/data/locations";
+import { Difficulty4 } from "../difficulty";
 
 const NarcoticBargains_Objective1: objective = {
     id: "O-S7RK8U",
@@ -8,8 +9,9 @@ const NarcoticBargains_Objective1: objective = {
     description: "Retrieve evidence of drug trade in Tiger Bay and report back to Turncoat",
     position: [21732.393692315905, 14478.77037410165],
     type: ObjectiveType.COLLECT,
-    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.TURNCOAT, MarkerType.TIGERBAY],
-    location: TigerBay
+    types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.TURNCOAT, MarkerType.TIGERBAY, MarkerType.DIFFICULTY_4],
+    location: TigerBay,
+    difficulty: Difficulty4,
 }
 
 export const NarcoticBargains: task = {
@@ -22,4 +24,6 @@ export const NarcoticBargains: task = {
     ],
     vendor: Turncoat,
     level: 0,
+    difficulty: Difficulty4,
+    note: 'Will cancel "Narcotic Bargains"',
 }

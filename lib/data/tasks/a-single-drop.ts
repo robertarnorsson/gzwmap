@@ -1,6 +1,7 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Gunny } from "@/lib/data/vendors";
 import { PhaLangAirfield } from "@/lib/data/locations";
+import { Difficulty2 } from "../difficulty";
 
 const ASingleDrop_Objective1: objective = {
     id: "O-J57FQZ",
@@ -8,8 +9,9 @@ const ASingleDrop_Objective1: objective = {
     description: "White truck with gas tank trailer. Interact with the panel that's open on the side of the tank.",
     position: [18551.026055441052, 19752.614250877567],
     type: ObjectiveType.MARK,
-    types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.PHALANGAIRFIELD],
-    location: PhaLangAirfield
+    types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.PHALANGAIRFIELD, MarkerType.DIFFICULTY_2],
+    location: PhaLangAirfield,
+    difficulty: Difficulty2
 }
 
 const ASingleDrop_Objective2: objective = {
@@ -19,8 +21,9 @@ const ASingleDrop_Objective2: objective = {
     position: [18703.590535590494, 19992.511205904735],
     type: ObjectiveType.MARK,
     image: "/objectives/a-single-drop-second-tanker.webp",
-    types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.PHALANGAIRFIELD],
-    location: PhaLangAirfield
+    types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.PHALANGAIRFIELD, MarkerType.DIFFICULTY_2],
+    location: PhaLangAirfield,
+    difficulty: Difficulty2
 }
 
 const ASingleDrop_Objective3: objective = {
@@ -30,8 +33,9 @@ const ASingleDrop_Objective3: objective = {
     position: [18754.927298622453, 20085.16929079341],
     type: ObjectiveType.MARK,
     image: "/objectives/a-single-drop-third-tanker.webp",
-    types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.PHALANGAIRFIELD],
-    location: PhaLangAirfield
+    types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.PHALANGAIRFIELD, MarkerType.DIFFICULTY_2],
+    location: PhaLangAirfield,
+    difficulty: Difficulty2
 }
 
 export const ASingleDrop: task = {
@@ -46,4 +50,5 @@ export const ASingleDrop: task = {
     ],
     vendor: Gunny,
     level: 0,
+    difficulty: Difficulty2
 }

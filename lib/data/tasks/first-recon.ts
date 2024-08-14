@@ -6,6 +6,7 @@ import {
     MithrasSecuritySystems
 } from "@/lib/data/factions";
 import { KiuVongsa, NamThaven, PhaLang } from "@/lib/data/locations";
+import { Difficulty1 } from "../difficulty";
 
 export const FirstRecon_Objective1_LRI: objective = {
     id: "O-YG0BIE",
@@ -15,7 +16,8 @@ export const FirstRecon_Objective1_LRI: objective = {
     type: ObjectiveType.LOCATE,
     faction: LamangRecoveryInitiative,
     types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.PHALANG],
-    location: PhaLang
+    location: PhaLang,
+    difficulty: Difficulty1
 }
 
 export const FirstRecon_Objective2_LRI: objective = {
@@ -26,7 +28,8 @@ export const FirstRecon_Objective2_LRI: objective = {
     type: ObjectiveType.LOCATE,
     faction: LamangRecoveryInitiative,
     types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.PHALANG],
-    location: PhaLang
+    location: PhaLang,
+    difficulty: Difficulty1
 }
 
 export const FirstRecon_Objective3_LRI: objective = {
@@ -37,7 +40,8 @@ export const FirstRecon_Objective3_LRI: objective = {
     type: ObjectiveType.LOCATE,
     faction: LamangRecoveryInitiative,
     types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.PHALANG],
-    location: PhaLang
+    location: PhaLang,
+    difficulty: Difficulty1
 }
 
 
@@ -49,7 +53,8 @@ export const FirstRecon_Objective1_MMS: objective = {
     type: ObjectiveType.LOCATE,
     faction: MithrasSecuritySystems,
     types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.NAMTHAVEN],
-    location: NamThaven
+    location: NamThaven,
+    difficulty: Difficulty1
 }
 
 export const FirstRecon_Objective2_MMS: objective = {
@@ -60,7 +65,8 @@ export const FirstRecon_Objective2_MMS: objective = {
     type: ObjectiveType.LOCATE,
     faction: MithrasSecuritySystems,
     types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.NAMTHAVEN],
-    location: NamThaven
+    location: NamThaven,
+    difficulty: Difficulty1
 }
 
 export const FirstRecon_Objective3_MMS: objective = {
@@ -71,7 +77,8 @@ export const FirstRecon_Objective3_MMS: objective = {
     type: ObjectiveType.LOCATE,
     faction: MithrasSecuritySystems,
     types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.NAMTHAVEN],
-    location: NamThaven
+    location: NamThaven,
+    difficulty: Difficulty1
 }
 
 
@@ -83,7 +90,8 @@ export const FirstRecon_Objective1_CSI: objective = {
     type: ObjectiveType.LOCATE,
     faction: CrimsonShieldInternational,
     types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.KIUVONGSA],
-    location: KiuVongsa
+    location: KiuVongsa,
+    difficulty: Difficulty1
 }
 
 export const FirstRecon_Objective2_CSI: objective = {
@@ -94,7 +102,8 @@ export const FirstRecon_Objective2_CSI: objective = {
     type: ObjectiveType.LOCATE,
     faction: CrimsonShieldInternational,
     types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.KIUVONGSA],
-    location: KiuVongsa
+    location: KiuVongsa,
+    difficulty: Difficulty1
 }
 
 export const FirstRecon_Objective3_CSI: objective = {
@@ -104,8 +113,9 @@ export const FirstRecon_Objective3_CSI: objective = {
     position: [10638.418686730296, 21345.96401653563],
     type: ObjectiveType.LOCATE,
     faction: CrimsonShieldInternational,
-    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.KIUVONGSA],
-    location: KiuVongsa
+    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.KIUVONGSA, MarkerType.DIFFICULTY_1],
+    location: KiuVongsa,
+    difficulty: Difficulty1
 }
 
 
@@ -126,5 +136,6 @@ export const FirstRecon: task = {
         FirstRecon_Objective3_CSI,
     ],
     vendor: Handshake,
-    level: 0
+    level: 0,
+    difficulty: Difficulty1
 }

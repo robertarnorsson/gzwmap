@@ -1,6 +1,7 @@
 import { MarkerType, ObjectiveType, objective, task } from "@/lib/types";
 import { Turncoat } from "@/lib/data/vendors";
 import { MidnightSapphire } from "@/lib/data/locations";
+import { Difficulty4 } from "@/lib/data/difficulty";
 
 const AcademicIntrest_Objective1: objective = {
     id: "O-40EFLW",
@@ -8,8 +9,9 @@ const AcademicIntrest_Objective1: objective = {
     description: "Retrieve evidence of drug trade in Midnight Sapphire and report back to Turncoat",
     position: [16546.15859099954, 21620.638883484327],
     type: ObjectiveType.LOCATE,
-    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.TURNCOAT, MarkerType.MIDNIGHTSAPPHIRE],
-    location: MidnightSapphire
+    types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.TURNCOAT, MarkerType.MIDNIGHTSAPPHIRE, MarkerType.DIFFICULTY_4],
+    location: MidnightSapphire,
+    difficulty: Difficulty4
 }
 
 export const AcademicIntrest: task = {
@@ -22,4 +24,6 @@ export const AcademicIntrest: task = {
     ],
     vendor: Turncoat,
     level: 0,
+    difficulty: Difficulty4,
+    note: 'Will cancel "Nobel Powder"'
 }
