@@ -106,6 +106,7 @@ import { SaveTheRebellion }               from "@/lib/data/tasks/save-the-rebell
 import { SecretCompassion }               from "@/lib/data/tasks/secret-compassion";
 import { SeekerOfChange }                 from "@/lib/data/tasks/seeker-of-change";
 import { ShootingGallery }                from "@/lib/data/tasks/shooting-gallery";
+import { Shortcut }                       from "@/lib/data/tasks/shortcut";
 import { SkycrawlersPartOne }             from "@/lib/data/tasks/skycrawlers-part-1";
 import { SkycrawlersPartTwo }             from "@/lib/data/tasks/skycrawlers-part-2";
 import { SpitOutThePoison }               from "@/lib/data/tasks/spit-out-the-poison";
@@ -143,6 +144,7 @@ import { WhatComesUp }                    from "@/lib/data/tasks/what-comes-up";
 import { WhatRemains }                    from "@/lib/data/tasks/what-remains";
 import { WhatWasLeft }                    from "@/lib/data/tasks/what-was-left";
 import { WhatsInTheBox }                  from "@/lib/data/tasks/whats-in-the-box";
+import { WhenATreeFalls }                 from "@/lib/data/tasks/when-a-tree-falls";
 import { WhosInCharge }                   from "@/lib/data/tasks/whos-in-charge";
 import { WingClipping }                   from "@/lib/data/tasks/wing-clipping";
 
@@ -257,6 +259,7 @@ export const Tasks: task[] = [
   SecretCompassion,
   SeekerOfChange,
   ShootingGallery,
+  Shortcut,
   SkycrawlersPartOne,
   SkycrawlersPartTwo,
   SpitOutThePoison,
@@ -294,6 +297,7 @@ export const Tasks: task[] = [
   WhatRemains,
   WhatWasLeft,
   WhatsInTheBox,
+  WhenATreeFalls,
   WhosInCharge,
   WingClipping,
 ]
