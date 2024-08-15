@@ -4,7 +4,8 @@ import { ASmallFavor }                    from "@/lib/data/tasks/a-small-favor";
 import { AcademicIntrest }                from "@/lib/data/tasks/academic-intrest";
 import { ArtisansList }                   from "@/lib/data/tasks/artisans-list-part-1";
 import { ArtisansListPartTwo }            from "@/lib/data/tasks/artisans-list-part-2";
-import { AtTheMoundsOfMadness }           from "@/lib/data/tasks/at-the-mounds-of-madness";
+import { AtTheMoundsOfMadnessPartOne }    from "@/lib/data/tasks/at-the-mounds-of-madness-part-1";
+import { AtTheMoundsOfMadnessPartTwo }    from "@/lib/data/tasks/at-the-mounds-of-madness-part-2";
 import { AyeAyeCaptain }                  from "@/lib/data/tasks/aye-aye-captain";
 import { Baked }                          from "@/lib/data/tasks/baked";
 import { BigEntrance }                    from "@/lib/data/tasks/big-entrance";
@@ -157,7 +158,8 @@ export const Tasks: task[] = [
   AcademicIntrest,
   ArtisansList,
   ArtisansListPartTwo,
-  AtTheMoundsOfMadness,
+  AtTheMoundsOfMadnessPartOne,
+  AtTheMoundsOfMadnessPartTwo,
   AyeAyeCaptain,
   Baked,
   BigEntrance,

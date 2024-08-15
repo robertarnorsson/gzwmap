@@ -3,7 +3,7 @@ import { Artisan } from "@/lib/data/vendors";
 import { BanPa } from "@/lib/data/locations";
 import { Difficulty3 } from "@/lib/data/difficulty";
 
-const AtTheMoundsOfMadness_Objective1: objective = {
+const AtTheMoundsOfMadnessPartOne_Objective1: objective = {
     id: "O-A8VMNP",
     name: "Ominous mural",
     description: "Find an ominous mural",
@@ -14,7 +14,7 @@ const AtTheMoundsOfMadness_Objective1: objective = {
     difficulty: Difficulty3
 }
 
-const AtTheMoundsOfMadness_Objective2: objective = {
+const AtTheMoundsOfMadnessPartOne_Objective2: objective = {
     id: "O-LE9HF8",
     name: "Eerie mural",
     description: "Find an eerie mural",
@@ -25,7 +25,7 @@ const AtTheMoundsOfMadness_Objective2: objective = {
     difficulty: Difficulty3
 }
 
-const AtTheMoundsOfMadness_Objective3: objective = {
+const AtTheMoundsOfMadnessPartOne_Objective3: objective = {
     id: "O-NXMOQ7",
     name: "Chilling mural",
     description: "Find a chilling mural",
@@ -36,7 +36,7 @@ const AtTheMoundsOfMadness_Objective3: objective = {
     difficulty: Difficulty3
 }
 
-const AtTheMoundsOfMadness_Objective4: objective = {
+const AtTheMoundsOfMadnessPartOne_Objective4: objective = {
     id: "O-J5JJL9",
     name: "Disturbing statue",
     description: "Find a disturbing statue",
@@ -47,16 +47,16 @@ const AtTheMoundsOfMadness_Objective4: objective = {
     difficulty: Difficulty3
 }
 
-export const AtTheMoundsOfMadness: task = {
+export const AtTheMoundsOfMadnessPartOne: task = {
     id: "T-GOTOAG",
     name: "At the Mounds of Madness",
     briefing: "Hey, merc. I've noticed you've been taking little sightseeing trips to Ban Pa. This is all probably some big fucking joke to Mr big-dick stone-cold-killer like you, but people here were terrified just to go near that place, and when somebody did, they would find them later cut to pieces lying in a ditch somewhere with their faces torn to shreds. Cut off limbs, eyes gauged out, nose and ears missing… I know it's giving you a hard-on just thinking about it, but for people that aren't fucking evil, this is not okay. I want to know what was happening there and why. The most widespread rumors were about some kind of cult worshipping dark spirits, so I want you to go there and look around for anything like that. Murals, statues, weird symbols, anything, ok? I'd normally say be careful, but honestly, I couldn't care less. If you get killed, I'll just find somebody else to do it.",
     debriefing: "Really? This is what you found out? Honestly, it looks like a complete amateur hour. All this cult shit was most likely used only to scare people off. The question is why… Run along, merc. You did your job; now get out of my sight.",
     objectives: [
-        AtTheMoundsOfMadness_Objective1,
-        AtTheMoundsOfMadness_Objective2,
-        AtTheMoundsOfMadness_Objective3,
-        AtTheMoundsOfMadness_Objective4,
+        AtTheMoundsOfMadnessPartOne_Objective1,
+        AtTheMoundsOfMadnessPartOne_Objective2,
+        AtTheMoundsOfMadnessPartOne_Objective3,
+        AtTheMoundsOfMadnessPartOne_Objective4,
     ],
     vendor: Artisan,
     level: 0,
