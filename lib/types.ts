@@ -52,6 +52,7 @@ export enum MarkerType {
   // Items
   ITEM = "Item",
   TOOL = "Tool",
+  INTEL = "Intel",
 
   // Factions
   LRI = "Lamang Recovery Initiative",
@@ -87,6 +88,15 @@ export enum MarkerType {
   ELIMINATION = "Elimination",
   LOCATE = "Locate",
   HACK = "Hack",
+
+  // Difficuly
+  
+  DIFFICULTY_1 = "Easy",
+  DIFFICULTY_2 = "Normal",
+  DIFFICULTY_3 = "Difficult",
+  DIFFICULTY_4 = "Hard",
+  DIFFICULTY_5 = "Extreme",
+  DIFFICULTY_6 = "Insane",
 }
 
 export enum ObjectiveType {
@@ -110,7 +120,8 @@ export type task = {
   prerequisites?: task
   key?: key[]
   items?: item[]
-  faction?: faction
+  faction?: faction,
+  difficulty?: difficulty,  
 };
 
 export type objective = {
@@ -125,7 +136,8 @@ export type objective = {
   image?: string
   key?: key
   items?: item[]
-  note?: string
+  note?: string,
+  difficulty?: difficulty,  
 }
 
 export type item = {
@@ -137,18 +149,28 @@ export type item = {
   vendor?: vendor
   size: [number, number]
   image: string | KeyTypes
+  note?: string
 }
 
 export enum KeyTypes {
   ROUNDKEY = "/items/keys/key-round.png",
   ROUNDGOLDKEY = "/items/keys/key-round-gold.png",
   SQUAREKEY = "/items/keys/key-square.png",
+  SQUAREGOLDKEY = "/items/keys/key-gold-square.png",
   SKINNYKEY = "/items/keys/key-skinny.png",
+  SKINNYGOLDKEY = "/items/keys/key-gold-skinny.png",
+  BLUETHICKKEY = "/items/keys/key-blue-thick.png",
 }
 
 export type key = item & {
   image: KeyTypes
   questKey: boolean
   location: location
-  position: [number, number]
+  position: [number, number] | [number, number][]
+}
+
+export type difficulty = {
+  name: string
+  description: string
+  level: number
 }

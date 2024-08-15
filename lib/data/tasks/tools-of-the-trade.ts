@@ -5,10 +5,10 @@ import {
   LamangRecoveryInitiative,
   MithrasSecuritySystems
 } from "@/lib/data/factions";
-import { KiuVongsa, NamThaven, PhaLang } from "../locations";
+import { KiuVongsa, NamThaven, PhaLang } from "@/lib/data/locations";
 
 const ToolsOfTheTrade_Objective1_LRI: objective = {
-  id: "N/A",
+  id: "O-O7E9K2",
   name: "Tools",
   description: "Retrieve the tools from Pha Lang and hand them over to Artisan",
   position: [22474.10647014295, 20925.304519225738],
@@ -19,7 +19,7 @@ const ToolsOfTheTrade_Objective1_LRI: objective = {
 }
 
 const ToolsOfTheTrade_Objective1_MMS: objective = {
-  id: "N/A",
+  id: "O-V8823Z",
   name: "Tools",
   description: "Retrieve the tools from Nam Thaven and hand them over to Artisan",
   position: [16359.021396627895, 12306.987713170607],
@@ -30,7 +30,7 @@ const ToolsOfTheTrade_Objective1_MMS: objective = {
 }
 
 const ToolsOfTheTrade_Objective1_CSI: objective = {
-  id: "N/A",
+  id: "O-XSQ1NO",
   name: "Tools",
   description: "Retrieve the tools from Kiu Vongsa and hand them over to Artisan",
   position: [10756.287264628463, 21073.39498708641],
@@ -42,7 +42,7 @@ const ToolsOfTheTrade_Objective1_CSI: objective = {
 
 
 export const ToolsOfTheTrade: task = {
-  id: "N/A",
+  id: "T-3LXMUF",
   name: "Tools of the Trade",
   briefing: "Merc, let's get this straight. i don't give a fuck how you see me, but remember this - I don't like you. That will never change; your kind disgusts me, but we can still work on professional basis. You do something for me, and I'll reward you. Plain and simple. Do we understand each other? Good. I need you to go back to the nearby town and bring me the tools that are stored in a small house next to the construction site. And if you ask why I need the tools, when I can get new ones here at the base? Well, my answer is: What the fuck do you care? Shut up, do your job, and you will get what you deserve. Oh, and call me Artisan. I don't want any of you butchers getting my real name misspelled.",
   debriefing: "I'm glad you're not dumber than you look, hireling. I was afraid you might lose the tools, and that would be bad. And I mean bad for your camp, because I would have left. Well, whatever. Give me the tools and get lost.",

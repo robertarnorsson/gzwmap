@@ -5,10 +5,10 @@ import {
   LamangRecoveryInitiative,
   MithrasSecuritySystems
 } from "@/lib/data/factions";
-import { KiuVongsa, NamThaven, PhaLang } from "../locations";
+import { KiuVongsa, NamThaven, PhaLang } from "@/lib/data/locations";
 
 const Reclamation_Objective1_LRI: objective = {
-  id: "N/A",
+  id: "O-RQ4L65",
   name: "Cargo",
   description: "Retrieve the cargo from the fortified hideout in Pha Lang and hand it to Handshake",
   position: [22862.641139271276, 20844.334008332935],
@@ -19,7 +19,7 @@ const Reclamation_Objective1_LRI: objective = {
 }
 
 const Reclamation_Objective1_MMS: objective = {
-  id: "N/A",
+  id: "O-PS9EIM",
   name: "Cargo",
   description: "Retrieve the cargo from the fortified hideout in Nam Thaven and hand it to Handshake",
   position: [16007.356253306134, 12116.577628373137],
@@ -30,7 +30,7 @@ const Reclamation_Objective1_MMS: objective = {
 }
 
 const Reclamation_Objective1_CSI: objective = {
-  id: "N/A",
+  id: "O-VWZ0TN",
   name: "Cargo",
   description: "Retrieve the cargo from the fortified hideout in Kiu Vongsa and hand it to Handshake",
   position: [10908.974181058677, 21443.049637976947],
@@ -43,7 +43,7 @@ const Reclamation_Objective1_CSI: objective = {
 
 
 export const Reclamation: task = {
-  id: "N/A",
+  id: "T-DVLO2Q",
   name: "Reclamation",
   briefing: "After all we've seen, it is now more than clear that the cargo from the crashed helicopter has been taken by the rats in the town. I don't know how, and i don't know why, but I want it back, okay? Your mission is to locate their main base of operations and recover the stolen container. It's highly probable that they would stow the thing in the most fortified place around, so keep your eyes open for a building like that, especially if it has any familiar markings on it. Once you know where it is, find a way in, secure the area, and recover the container at all costs. I'm sure you'll do a great job. Don't let me down now.",
   debriefing: "Thank fuck! I was a bit worried there for a while, but now everything is back on track, thanks to you. I see that the seal on the container is still intact and has not been tampered with, so we should be golden. Great fucking job, man. You sure deserve that bonus! Now that we've taken care of this little problem, we can focus again on reclaiming our territory and figuring out what exactly we are dealing with here. Take some rest, and I'll contact you soon with your next assignment. You know what? I think this is the beginning of a beautiful friendship…",

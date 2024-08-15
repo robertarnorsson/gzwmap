@@ -41,17 +41,21 @@ export const taskOverlays = (map: Map, popupOverlay: Overlay) => {
 export const keyOverlays = (map: Map, popupOverlay: Overlay) => {
 
   Keys.map((key) => {
-    const overlay = createMarkerOverlay(
-      key.id,
-      map,
-      key.position,
-      ReactDOMServer.renderToString(keyMarker(key)),
-      key.types,
-      KeyPopup(key, () => closePopup(popupOverlay)),
-      popupOverlay
-    );
+    const positions = Array.isArray(key.position[0]) ? key.position as [number, number][] : [key.position] as [number, number][];
 
-    map.addOverlay(overlay);
+    positions.forEach(position => {
+      const overlay = createMarkerOverlay(
+        key.id,
+        map,
+        position,
+        ReactDOMServer.renderToString(keyMarker(key)),
+        key.types,
+        KeyPopup(key, () => closePopup(popupOverlay)),
+        popupOverlay
+      );
+
+      map.addOverlay(overlay);
+    });
   })
 }
 

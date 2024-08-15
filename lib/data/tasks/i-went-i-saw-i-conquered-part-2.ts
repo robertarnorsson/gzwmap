@@ -1,9 +1,9 @@
 import {MarkerType, ObjectiveType, objective, task} from "@/lib/types";
 import {Handshake} from "@/lib/data/vendors";
-import { Sawmill } from "../locations";
+import { Sawmill } from "@/lib/data/locations";
 
 const IWentISawIConqueredPartTwo_Objective1: objective = {
-    id: "N/A",
+    id: "O-6E09XA",
     name: "Long Table",
     description: "Explore the sawmill and find out the hostile group's intentions",
     position: [10260.132001749596, 17412.88650657878],
@@ -13,7 +13,7 @@ const IWentISawIConqueredPartTwo_Objective1: objective = {
 }
 
 export const IWentISawIConqueredPartTwo: task = {
-    id: "N/A",
+    id: "T-CD3AU8",
     name: "I went, I saw, I conquered II",
     briefing: "All right, it's confirmed: we've got hostiles at the sawmill. Now the big question is, who the hell are they, and what's their game? We've received reports indicating that they might not even be local, which makes this entire situation even worse. Just what we needed, more assholes trying to pick this damn island apart. Great. Anyway, I need you to infiltrate the compound and report back with anything that‘ll help us find out what we're dealing with here before we make a move. Think you're up for it?",
     debriefing: "Well, this is just getting better and better, doesn't it? Not only are they supposedly some assholes from afar, but from what you're telling me, they're making fucking explosives! Only God knows what they're planning to do with them… This has to be dealt with pronto, understand?",

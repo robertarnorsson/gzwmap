@@ -27,7 +27,7 @@ export default function ImageShowcase({
           <Image src={url} alt={alt} sizes="50vw" quality={50} loading="eager" fill className="object-cover outline outline-1 outline-muted-foreground"></Image>
         </div>
       </DialogTrigger>
-      <DialogContent className="outline-none ring-transparent w-full max-w-md sm:max-w-lg md:max-w-screen-lg lg:max-w-screen-xl xl:max-w-screen-2xl p-4 mx-auto">
+      <DialogContent className="outline-none ring-transparent w-full max-w-md sm:max-w-lg md:max-w-screen-lg lg:max-w-screen-xl xl:max-w-screen-2xl p-0 mx-auto">
         <VisuallyHidden.Root>
           <DialogHeader>
             {alt}
@@ -36,7 +36,7 @@ export default function ImageShowcase({
         <div className="aspect-video p-4 relative">
           <div className="absolute top-2 right-2 z-50">
             <DialogClose asChild>
-              <Button variant='outline' size='icon' className="h-8 w-8">
+              <Button variant='outline' size='icon' className="h-8 w-8 bg-black/50 hover:bg-black/70 focus-visible:ring-0">
                 <X className="w-4 h-4" />
               </Button>
             </DialogClose>

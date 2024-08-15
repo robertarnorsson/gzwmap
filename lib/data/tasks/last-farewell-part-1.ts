@@ -5,11 +5,11 @@ import {
   LamangRecoveryInitiative,
   MithrasSecuritySystems
 } from "@/lib/data/factions";
-import { KiuVongsa, NamThaven, PhaLang } from "../locations";
-import { GPSTracker } from "../items";
+import { KiuVongsa, NamThaven, PhaLang } from "@/lib/data/locations";
+import { GPSTracker } from "@/lib/data/items/tools";
 
 const LastFarewell_Objective1_LRI: objective = {
-  id: "N/A",
+  id: "O-12TF5R",
   name: "Body",
   description: "Locate and mark the location of the body",
   position: [22434.271907727114, 19716.16022712469],
@@ -21,7 +21,7 @@ const LastFarewell_Objective1_LRI: objective = {
 }
 
 const LastFarewell_Objective1_MMS: objective = {
-  id: "N/A",
+  id: "O-8K09RM",
   name: "Body",
   description: "Locate and mark the location of the body",
   position: [15609.016458728505, 13261.125004666106],
@@ -33,7 +33,7 @@ const LastFarewell_Objective1_MMS: objective = {
 }
 
 const LastFarewell_Objective1_CSI: objective = {
-  id: "N/A",
+  id: "O-B3B47A",
   name: "Body",
   description: "Locate and mark the location of the body",
   position: [11944.519831278469, 20824.900989189373],
@@ -46,7 +46,7 @@ const LastFarewell_Objective1_CSI: objective = {
 
 
 export const LastFarewell: task = {
-  id: "N/A",
+  id: "T-2C93QQ",
   name: "Last Farewell",
   briefing: "I've got another assignment for you: Steven Clarke. He got separated from his squad during the retreat while seeking cover in a farmhouse southeast of the town's gas station. The last thing they heard on the comms was him screaming in terror and then suddendly dead silence. I need you to investigate and mark the body like before. Be extra careful on this one. I remember the guy, and he was tough as nails. No idea what happened to him to make him scream like that, so make sure the same thing doesn't happen to you. I'll provide you with a tracker right away.",
   objectives: [
