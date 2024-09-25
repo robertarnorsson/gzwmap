@@ -27,6 +27,7 @@ export const TaskPopup = (task: task | task[], objective: objective, onClick: ()
             className="w-full h-auto object-contain"
             height={50}
             width={320}
+            priority
           />
           <div className="absolute top-1/2 left-0 right-0 bottom-0 bg-gradient-to-t from-background"></div>
         </div>
