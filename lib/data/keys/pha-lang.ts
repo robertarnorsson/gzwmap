@@ -41,7 +41,7 @@ export const PLMotel: key = {
 }
 
 export const PLLumber: key = {
-  id: "K-MPI03V",
+  id: "K-ICENED",
   name: "Pha Lang Lumberyard Maintenance Room Key",
   shortName: "PL Lubmer",
   description: "A key to the Pha Lang lumberyard maintenance room.",
@@ -54,7 +54,7 @@ export const PLLumber: key = {
 }
 
 export const PLUNLRA: key = {
-  id: "K-MPI03V",
+  id: "K-ZO8GZV",
   name: "Pha Lang UNLRA Office Room Key",
   shortName: "PL UNLRA",
   description: "A key to the UNLRA office in Pha Lang.",
