@@ -22,5 +22,5 @@ export const EvacuationQuestion: task = {
     ],
     vendor: Artisan,
     level: 0,
-    note: 'Will cancel "In the Right Hands"'
+    cancelTaskId: "T-57K99U"
 }

@@ -22,5 +22,5 @@ export const NoEscape: task = {
     ],
     vendor: Banshee,
     level: 0,
-    note: 'Will cancel "A Small Favor"'
+    cancelTaskId: "T-AEKSXE"
 }

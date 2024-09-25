@@ -26,5 +26,5 @@ export const AtTheMoundsOfMadnessPartTwo: task = {
     vendor: Artisan,
     level: 0,
     difficulty: Difficulty3,
-    note: 'Will cancel "The Shadow Over Ban Pa II"'
+    cancelTaskId: "T-4V85R5"
 }

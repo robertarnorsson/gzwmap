@@ -25,5 +25,5 @@ export const NameYourPoison: task = {
     vendor: Turncoat,
     level: 0,
     items: [ PoisonVial ],
-    note: 'Will cancel "Spit Out The Poison"'
+    cancelTaskId: "T-B758JQ"
 }

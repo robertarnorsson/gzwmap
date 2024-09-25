@@ -22,5 +22,5 @@ export const WhatComesUp: task = {
     ],
     vendor: Handshake,
     level: 0,
-    note: 'Will cancel "Too Close To The Sun"'
+    cancelTaskId: "T-EUBU8Y"
 }

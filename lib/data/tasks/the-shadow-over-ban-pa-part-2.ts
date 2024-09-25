@@ -23,5 +23,5 @@ export const TheShadowOverBanPaPartTwo: task = {
     ],
     vendor: Handshake,
     level: 0,
-    note: 'Will cancel "At The Mounds Of Madness II"'
+    cancelTaskId: "T-P3IO7D"
 }
