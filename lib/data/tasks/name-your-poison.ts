@@ -25,5 +25,5 @@ export const NameYourPoison: task = {
     vendor: Turncoat,
     level: 0,
     items: [ PoisonVial ],
-    cancelTask: () => require('./spit-out-the-poison').SpitOutThePoison
+    cancelTaskId: "T-B758JQ"
 }

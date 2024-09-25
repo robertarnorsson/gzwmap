@@ -53,5 +53,5 @@ export const LeftBehindPartOne: task = {
   ],
   vendor: Handshake,
   level: 0,
-  cancelTask: () => require('./last-farewell-part-1').LastFarewellPartOne
+  cancelTaskId: "T-2C93QQ"
 }

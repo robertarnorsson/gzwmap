@@ -22,5 +22,5 @@ export const WhatComesUp: task = {
     ],
     vendor: Handshake,
     level: 0,
-    cancelTask: () => require('./too-close-to-the-sun').TooCloseToTheSun
+    cancelTaskId: "T-EUBU8Y"
 }

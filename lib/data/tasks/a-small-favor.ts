@@ -25,5 +25,5 @@ export const ASmallFavor: task = {
     vendor: Turncoat,
     level: 0,
     difficulty: Difficulty4,
-    cancelTask: () => require('./no-escape').NoEscape
+    cancelTaskId: "T-FXMEM3"
 }

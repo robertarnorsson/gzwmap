@@ -25,5 +25,5 @@ export const AcademicIntrest: task = {
     vendor: Turncoat,
     level: 0,
     difficulty: Difficulty4,
-    cancelTask: () => require('./nobel-powder').NobelPowder
+    cancelTaskId: "T-4O3FOB"
 }

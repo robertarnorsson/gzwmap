@@ -25,5 +25,5 @@ export const UpToSnuff: task = {
     vendor: Handshake,
     level: 0,
     difficulty: Difficulty3,
-    cancelTask: () => require('./a-shot-in-the-dark').AShotInTheDark
+    cancelTaskId: "T-FMVOJS"
 }

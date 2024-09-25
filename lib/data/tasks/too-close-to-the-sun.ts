@@ -22,5 +22,5 @@ export const TooCloseToTheSun: task = {
     ],
     vendor: LabRat,
     level: 0,
-    cancelTask: () => require('./what-comes-up').WhatComesUp
+    cancelTaskId: "T-33E578"
 }

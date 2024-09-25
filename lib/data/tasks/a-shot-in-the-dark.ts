@@ -25,5 +25,5 @@ export const AShotInTheDark: task = {
     vendor: Banshee,
     level: 0,
     difficulty: Difficulty3,
-    cancelTask: () => require('./up-to-snuff').UpToSnuff
+    cancelTaskId: "T-DDC9ZM"
 }

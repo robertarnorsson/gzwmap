@@ -22,5 +22,5 @@ export const NoEscape: task = {
     ],
     vendor: Banshee,
     level: 0,
-    cancelTask: () => require('./a-small-favor').ASmallFavor
+    cancelTaskId: "T-AEKSXE"
 }

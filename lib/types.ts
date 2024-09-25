@@ -117,7 +117,7 @@ export type task = {
   vendor: vendor
   level: number
   prerequisites?: task
-  cancelTask?: () => task,
+  cancelTaskId?: string,
   key?: key[]
   items?: item[]
   faction?: faction,

@@ -57,5 +57,5 @@ export const LastFarewellPartOne: task = {
   vendor: Gunny,
   items: [GPSTracker],
   level: 0,
-  cancelTask: () => require('./left-behind-part-1').LeftBehindPartOne
+  cancelTaskId: "T-F226H9"
 }

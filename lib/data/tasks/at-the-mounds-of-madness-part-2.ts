@@ -26,5 +26,5 @@ export const AtTheMoundsOfMadnessPartTwo: task = {
     vendor: Artisan,
     level: 0,
     difficulty: Difficulty3,
-    cancelTask: () => require('./the-shadow-over-ban-pa-part-2').TheShadowOverBanPaPartTwo
+    cancelTaskId: "T-4V85R5"
 }

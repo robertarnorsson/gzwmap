@@ -7,7 +7,7 @@ import ImageShowcase from "@/components/menu/image-showcase";
 import Image from "next/image";
 import { Item } from "@/components/comp/item";
 import Link from "next/link";
-import { toSlug } from "@/lib/utils";
+import { getTaskById, toSlug } from "@/lib/utils";
 import { Difficulty } from "@/components/comp/difficulty";
 
 export const TaskPopup = (task: task | task[], objective: objective, onClick: () => void) => {
@@ -106,10 +106,10 @@ export const TaskPopup = (task: task | task[], objective: objective, onClick: ()
               <p className="text-xs text-orange-400/85">{objective.note}</p>
             </div>
           )}
-          {task.cancelTask && (
+          {task.cancelTaskId && (
             <div className="flex flex-col gap-1 pt-4">
               <p className="text-xs text-muted-foreground">Cancels</p>
-              <Link href={`/tasks/${toSlug(task.cancelTask().name)}`} className="text-xs text-red-400/85 underline">{task.cancelTask().name}</Link>
+              <Link href={`/tasks/${toSlug(getTaskById(task.cancelTaskId)!.name)}`} className="text-xs text-red-400/85 underline">{getTaskById(task.cancelTaskId)!.name}</Link>
             </div>
           )}
         </div>
