@@ -56,7 +56,7 @@ export const NTLumber: key = {
 export const NTUNLRA: key = {
   id: "K-7OBSDE",
   name: "Nam Thaven UNLRA Office Room Key",
-  shortName: "PL UNLRA",
+  shortName: "NT UNLRA",
   description: "A key to the UNLRA office in Nam Thaven.",
   size: [1, 1],
   image: KeyTypes.SQUAREKEY,
@@ -69,7 +69,7 @@ export const NTUNLRA: key = {
 export const NTMarOfc: key = {
   id: "K-6S9UE7",
   name: "Nam Thaven Marketplace Office Key",
-  shortName: "PL MarOfc",
+  shortName: "NT MarOfc",
   description: "A key for an office in the Nam Thaven marketplace.",
   size: [1, 1],
   image: KeyTypes.ROUNDGOLDKEY,

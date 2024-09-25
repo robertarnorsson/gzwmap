@@ -90,7 +90,6 @@ export enum MarkerType {
   HACK = "Hack",
 
   // Difficuly
-  
   DIFFICULTY_1 = "Easy",
   DIFFICULTY_2 = "Normal",
   DIFFICULTY_3 = "Difficult",
@@ -118,10 +117,11 @@ export type task = {
   vendor: vendor
   level: number
   prerequisites?: task
+  cancelTask?: () => task,
   key?: key[]
   items?: item[]
   faction?: faction,
-  difficulty?: difficulty,  
+  difficulty?: difficulty,
 };
 
 export type objective = {

@@ -25,5 +25,5 @@ export const ASmallFavor: task = {
     vendor: Turncoat,
     level: 0,
     difficulty: Difficulty4,
-    note: 'Will cancel "No Escape"'
+    cancelTask: () => require('./no-escape').NoEscape
 }

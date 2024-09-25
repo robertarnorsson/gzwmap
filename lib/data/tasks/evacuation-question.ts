@@ -22,5 +22,5 @@ export const EvacuationQuestion: task = {
     ],
     vendor: Artisan,
     level: 0,
-    note: 'Will cancel "In the Right Hands"'
+    cancelTask: () => require('./in-the-right-hands').InTheRightHands
 }

@@ -25,5 +25,5 @@ export const NarcoticBargains: task = {
     vendor: Turncoat,
     level: 0,
     difficulty: Difficulty4,
-    note: 'Will cancel "Narcotic Bargains"',
+    cancelTask: () => require('./baked').Baked
 }

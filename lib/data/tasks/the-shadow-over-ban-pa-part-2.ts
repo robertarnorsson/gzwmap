@@ -23,5 +23,5 @@ export const TheShadowOverBanPaPartTwo: task = {
     ],
     vendor: Handshake,
     level: 0,
-    note: 'Will cancel "At The Mounds Of Madness II"'
+    cancelTask: () => require('./at-the-mounds-of-madness-part-2').AtTheMoundsOfMadnessPartTwo
 }

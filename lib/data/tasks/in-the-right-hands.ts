@@ -22,5 +22,5 @@ export const InTheRightHands: task = {
     ],
     vendor: Turncoat,
     level: 0,
-    note: 'Will cancel "Evacuation Question"'
+    cancelTask: () => require('./evacuation-question').EvacuationQuestion
 }

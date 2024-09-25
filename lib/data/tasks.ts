@@ -58,12 +58,12 @@ import { ItsInTheWaterPartTwo }           from "@/lib/data/tasks/its-in-the-wate
 import { JetsNMark }                      from "@/lib/data/tasks/jets-n-marks";
 import { KnowYourEnemy }                  from "@/lib/data/tasks/know-your-enemy";
 import { LamangConnection }               from "@/lib/data/tasks/lamang-connection";
-import { LastFarewell }                   from "@/lib/data/tasks/last-farewell-part-1";
+import { LastFarewellPartOne }            from "@/lib/data/tasks/last-farewell-part-1";
 import { LastFarewellPartTwo }            from "@/lib/data/tasks/last-farewell-part-2";
 import { LastFlight }                     from "@/lib/data/tasks/last-flight";
 import { LastResort }                     from "@/lib/data/tasks/last-resort";
 import { LeaveNoManBehind }               from "@/lib/data/tasks/leave-no-man-behind";
-import { LeftBehind }                     from "@/lib/data/tasks/left-behind-part-1";
+import { LeftBehindPartOne }              from "@/lib/data/tasks/left-behind-part-1";
 import { LeftBehindPartTwo }              from "@/lib/data/tasks/left-behind-part-2";
 import { LineInTheSand }                  from "@/lib/data/tasks/line-in-the-sand";
 import { LipOut }                         from "@/lib/data/tasks/lip-out";
@@ -81,7 +81,7 @@ import { MedsWanted }                     from "@/lib/data/tasks/meds-wanted";
 import { MissingColleaguePartOne }        from "@/lib/data/tasks/missing-colleague-part-1";
 import { MissingColleaguePartTwo }        from "@/lib/data/tasks/missing-colleague-part-2";
 import { NameYourPoison }                 from "@/lib/data/tasks/name-your-poison";
-import { NarcoticBargains }               from "@/lib/data/tasks/narcotic-bargain";
+import { NarcoticBargains }               from "@/lib/data/tasks/narcotic-bargains";
 import { NativeNegotiations }             from "@/lib/data/tasks/native-negotiations";
 import { NeighbourlyHelp }                from "@/lib/data/tasks/neighbourly-help";
 import { NightOcean }                     from "@/lib/data/tasks/night-ocean";
@@ -212,12 +212,12 @@ export const Tasks: task[] = [
   JetsNMark,
   KnowYourEnemy,
   LamangConnection,
-  LastFarewell,
+  LastFarewellPartOne,
   LastFarewellPartTwo,
   LastFlight,
   LastResort,
   LeaveNoManBehind,
-  LeftBehind,
+  LeftBehindPartOne,
   LeftBehindPartTwo,
   LineInTheSand,
   LipOut,

@@ -63,7 +63,7 @@ export const KVUNLRA: key = {
   types: [MarkerType.KEY, MarkerType.KIUVONGSA],
   questKey: false,
   location: KiuVongsa,
-  position: [16746.86205830489, 12441.711765655544]
+  position: [10549.297447200293, 20714.896804213342]
 }
 
 export const KVMarOfc: key = {

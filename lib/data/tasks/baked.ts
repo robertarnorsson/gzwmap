@@ -25,5 +25,5 @@ export const Baked: task = {
     vendor: Banshee,
     level: 0,
     difficulty: Difficulty4,
-    note: 'Will cancel "Narcotic Bargains"'
+    cancelTask: () => require('./narcotic-bargains').NarcoticBargains
 }

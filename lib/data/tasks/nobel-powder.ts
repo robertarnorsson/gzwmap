@@ -25,5 +25,5 @@ export const NobelPowder: task = {
     vendor: Banshee,
     level: 0,
     difficulty: Difficulty4,
-    note: 'Will cancel "Academic Intrest"'
+    cancelTask: () => require('./academic-intrest').AcademicIntrest
 }
