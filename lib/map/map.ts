@@ -36,7 +36,7 @@ export const rasterTileLayer = new Tile({
   preload: 128,
   extent: maxExtent,
   source: new XYZ({
-    url: 'https://tiles.gzwmap.com/v2/{z}/{y}/{x}',
+    url: 'https://tiles.gzwmap.com/{z}/{x}/{y}',
     tileGrid: createXYZ({
       maxZoom: 7,
       minZoom: 1,
@@ -44,8 +44,8 @@ export const rasterTileLayer = new Tile({
     }),
     projection: projection,
     tileSize: 256,
-    cacheSize: 128,
-    transition: 0
+    cacheSize: 256,
+    transition: 100
   })
 });
 
