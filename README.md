@@ -1,52 +1,47 @@
-# [GZW Map](https://gzwmap.com/)
+# Welcome to Remix + Cloudflare!
 
-## About
+- 📖 [Remix docs](https://remix.run/docs)
+- 📖 [Remix Cloudflare docs](https://remix.run/guides/vite#cloudflare)
 
-Welcome to GZW Map! This site aims to be your go-to tool for exploring the Gray Zone Warfare game world. We want to provide you with an easy-to-use map over Lamang so you know where to go and what to do.
+## Development
 
-**Note** - GZW Map is still in development, but we're working hard to make it better every day! Updates happen almost daily, so stay tuned for improvements and new features.
+Run the dev server:
 
-## Contributors
+```sh
+npm run dev
+```
 
-- [Robert Arnorsson](https://github.com/robertarnorsson)
-- [CodeWithDennis](https://github.com/CodeWithDennis)
+To run Wrangler:
 
-Big shoutout to these awesome folks who've helped shape GZW Map into what it is today!
+```sh
+npm run build
+npm run start
+```
 
-## Things to come
+## Typegen
 
-### Markers
-- Keys, doors and spawn areas
-- Loot containers
-- Enemy spawns (unsure)
+Generate types for your Cloudflare bindings in `wrangler.toml`:
 
-### Map features
-- Search for markers on the map
-- Filtering system for markers on the map
+```sh
+npm run typegen
+```
 
-## Other
-- Images
+You will need to rerun typegen whenever you make changes to `wrangler.toml`.
 
-## How to Contribute
+## Deployment
 
-We love when the community gets involved! Whether you're a seasoned coder or just have a keen eye for bugs, there are plenty of ways to contribute:
+First, build your app for production:
 
-- **Code Contributions**: Help us improve and expand the functionality of GZW Map by submitting code contributions via GitHub. Check out our repository and see where you can lend a hand.
+```sh
+npm run build
+```
 
-- **Bug Reports**: Notice a bug or glitch while using the map? Let us know by submitting a detailed bug report. Your feedback helps us maintain a smooth and seamless user experience for all players.
+Then, deploy your app to Cloudflare Pages:
 
-- **Feature Requests**: Have an idea for a new feature or enhancement? Share it with us! We're always looking for ways to enhance GZW Map and make it even more useful for our users.
+```sh
+npm run deploy
+```
 
-**[Submit your changes](https://github.com/robertarnorsson/gzwmap)**
+## Styling
 
-## How to Donate
-
-If you appreciate the work we're doing and would like to support GZW Map's development, consider making a donation. Your contributions help cover hosting costs, domain fees, and other expenses associated with maintaining the website.
-
-**[Donate Here](https://gzwmap.com/donate)**
-
-Stay tuned for more updates and features coming soon to GZW Map. Thank you for being a part of our community!
-
----
-
-**Note**: GZW Map is not endorsed by or affiliated by MADFINGER Games. This website is a fan-made project created for the benefit of the gaming community.
+This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.
