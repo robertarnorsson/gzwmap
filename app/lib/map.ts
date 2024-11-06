@@ -1,8 +1,5 @@
 import { Extent } from "ol/extent";
-import Tile from "ol/layer/Tile";
 import { Projection } from "ol/proj";
-import XYZ from "ol/source/XYZ";
-import { createXYZ } from "ol/tilegrid";
 
 export const tileExtent: Extent = [
   0,
@@ -23,21 +20,4 @@ export const projection = new Projection({
   units: 'pixels',
   extent: tileExtent,
   worldExtent: tileExtent
-});
-
-export const rasterTileLayer = new Tile({
-  preload: 128,
-  extent: maxExtent,
-  source: new XYZ({
-    url: 'https://tiles.gzwmap.com/{z}/{x}/{y}',
-    tileGrid: createXYZ({
-      maxZoom: 7,
-      minZoom: 1,
-      extent: tileExtent
-    }),
-    projection: projection,
-    tileSize: 256,
-    cacheSize: 256,
-    transition: 100
-  })
 });
