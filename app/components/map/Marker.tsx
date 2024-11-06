@@ -8,7 +8,7 @@ interface MarkerWrapperProps {
   children: ReactNode;
 }
 
-export const MarkerWrapper = ({ position, children }: MarkerWrapperProps) => {
+export const Marker = ({ position, children }: MarkerWrapperProps) => {
   const { map } = useMap();
   const markerRef = useRef<HTMLDivElement | null>(null);
   const overlayRef = useRef<Overlay | null>(null);

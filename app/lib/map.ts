@@ -25,11 +25,6 @@ export const projection = new Projection({
   worldExtent: tileExtent
 });
 
-/* export const tilegrid = new TileGrid({
-  extent: tileExtent,
-  resolutions: [128, 64, 32, 16, 8, 4, 2, 1]
-}); */
-
 export const rasterTileLayer = new Tile({
   preload: 128,
   extent: maxExtent,

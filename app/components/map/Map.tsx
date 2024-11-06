@@ -16,7 +16,7 @@ const Map: React.FC = () => {
     };
   }, [map]);
 
-  return <div ref={mapContainerRef} style={{ width: '100%', height: '100%' }} className='z-10 rounded-xl overflow-hidden' />;
+  return <div ref={mapContainerRef} style={{ width: '100%', height: '100%' }} className='z-10' />;
 };
 
 export default Map;

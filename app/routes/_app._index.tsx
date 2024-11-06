@@ -1,7 +1,11 @@
 import type { MetaFunction } from "@remix-run/cloudflare";
-import { LZMarker } from "~/components/custom/lzmarker";
+import { LocationMarker } from "~/components/markers/location-marker";
+import { LZMarker } from "~/components/markers/lz-marker";
+import { ObjectiveMarker } from "~/components/markers/objective-marker";
 import Map from "~/components/map/Map";
-import { LZs } from "~/lib/data";
+import { Locations } from "~/data/locations";
+import { LZs } from "~/data/lzs";
+import { Tasks } from "~/data/tasks";
 
 export const meta: MetaFunction = () => {
   return [
@@ -14,8 +18,14 @@ export default function Index() {
   return (
     <div className="flex w-full items-center justify-center">
       <Map />
+      {Tasks.map((task) => task.objectives.map((objective) => (
+        <ObjectiveMarker key={objective.id} objective={objective} />
+      )))}
       {LZs.map((lz) => (
-        <LZMarker key={lz.id} position={lz.position} />
+        <LZMarker key={lz.id} lz={lz} />
+      ))}
+      {Locations.map((location) => (
+        <LocationMarker key={location.id} location={location} />
       ))}
     </div>
   );

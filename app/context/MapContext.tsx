@@ -4,7 +4,7 @@ import { createContext, ReactNode, useContext, useEffect, useState } from 'react
 // Openlayers
 import Map from 'ol/Map';
 import { View } from 'ol';
-import {  maxExtent, projection, rasterTileLayer } from '~/lib/map-values';
+import {  maxExtent, projection, rasterTileLayer } from '~/lib/map';
 import { getCenter } from 'ol/extent';
 
 interface MapContextType {

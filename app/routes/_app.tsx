@@ -1,4 +1,4 @@
-import { SidebarInset, SidebarProvider } from "~/components/ui/sidebar";
+import { SidebarProvider } from "~/components/ui/sidebar";
 import { Outlet, } from "@remix-run/react";
 import { AppSidebar } from "~/components/sidebar/app-sidebar";
 import { AppSidebarTrigger } from "~/components/sidebar/app-sidebar-trigger";
@@ -9,16 +9,16 @@ export default function AppLayout() {
   const [open, setOpen] = useState(false)
 
   return (
-    <MapProvider>
-      <SidebarProvider open={open} onOpenChange={setOpen}>
-        <AppSidebar />
-        <SidebarInset>
+    <div className="relative">
+      <MapProvider>
+        <SidebarProvider open={open} onOpenChange={setOpen}>
+          <AppSidebar />
           <div className="flex flex-1 w-full">
             <AppSidebarTrigger />
             <Outlet />
           </div>
-        </SidebarInset>
-      </SidebarProvider>
-    </MapProvider>
+        </SidebarProvider>
+      </MapProvider>
+    </div>
   )
 }
