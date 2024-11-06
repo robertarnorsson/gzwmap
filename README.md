@@ -1,47 +1,12 @@
-# Welcome to Remix + Cloudflare!
+# [GZW Map](https://gzwmap.com/)
 
-- 📖 [Remix docs](https://remix.run/docs)
-- 📖 [Remix Cloudflare docs](https://remix.run/guides/vite#cloudflare)
+## About
 
-## Development
+Link to the new map ([New GZW Map](https://new.gzwmap.com/))<br/>
+Welcome to the new and evolving GZW Map! Our goal is to provide an unparalleled interactive map for exploring the Gray Zone Warfare game world. This tool is undergoing a major transformation to enhance your experience with faster performance, more detailed data, and powerful new features. **Please note that GZW Map is under heavy construction** – expect frequent updates, feature changes, and enhancements as we work to make this the best resource possible for navigating Lamang.
 
-Run the dev server:
+**Note** - GZW Map is actively being improved. Features may change, bugs may appear, and everything is subject to refinement as we develop. We appreciate your patience and feedback during this transformative period!
 
-```sh
-npm run dev
-```
+## Rewritten by
 
-To run Wrangler:
-
-```sh
-npm run build
-npm run start
-```
-
-## Typegen
-
-Generate types for your Cloudflare bindings in `wrangler.toml`:
-
-```sh
-npm run typegen
-```
-
-You will need to rerun typegen whenever you make changes to `wrangler.toml`.
-
-## Deployment
-
-First, build your app for production:
-
-```sh
-npm run build
-```
-
-Then, deploy your app to Cloudflare Pages:
-
-```sh
-npm run deploy
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.
+- [Robert Arnorsson](https://github.com/robertarnorsson)

@@ -6,6 +6,7 @@ import Map from "~/components/map/Map";
 import { Locations } from "~/data/locations";
 import { LZs } from "~/data/lzs";
 import { Tasks } from "~/data/tasks";
+import { Popup } from "~/components/map/Popup";
 
 export const meta: MetaFunction = () => {
   return [
@@ -18,8 +19,9 @@ export default function Index() {
   return (
     <div className="flex w-full items-center justify-center">
       <Map />
+      <Popup />
       {Tasks.map((task) => task.objectives.map((objective) => (
-        <ObjectiveMarker key={objective.id} objective={objective} />
+        <ObjectiveMarker key={objective.id} task={task} objective={objective} />
       )))}
       {LZs.map((lz) => (
         <LZMarker key={lz.id} lz={lz} />

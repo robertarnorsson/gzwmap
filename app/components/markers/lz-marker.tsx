@@ -1,7 +1,7 @@
 import { Marker } from "../map/Marker";
-import { MapPin, MapPinCheck, MapPinCheckInside } from "lucide-react";
 import { useSettings } from "~/context/SettingsProvider";
 import { lz } from "~/lib/types";
+import clsx from "clsx";
 
 interface LZMarkerProps {
   lz: lz;
@@ -12,7 +12,6 @@ export const LZMarker = ({ lz }: LZMarkerProps) => {
 
   const isLocated = settings.lzsLocated.includes(lz.id);
 
-  // Handle click to add/remove the LZ ID
   const handleLZClick = () => {
     console.log(lz.name);
     const updatedLzsLocated = isLocated
@@ -25,14 +24,19 @@ export const LZMarker = ({ lz }: LZMarkerProps) => {
   return (
     <Marker position={lz.position}>
       <button
+        className="group/marker"
         onClick={handleLZClick}
       >
-        <div className="flex flex-col items-center">
-          {isLocated
-            ? <MapPinCheckInside />
-            : <MapPin />
-          }
-          <p className="text-xs">{lz.name}</p>
+        <div className="flex flex-col items-center space-y-1">
+          <div className="w-min h-min outline-none outline-offset-0 group-hover/marker:outline-1 group-hover/marker:outline-white">
+            <div className={clsx(
+              "w-[26px] h-[15px] border-2 border-black flex items-center justify-center",
+              isLocated ? 'bg-[#fded05]' : 'bg-slate-300'
+            )}>
+              <span className="text-[9px] text-center font-bold tracking-wider text-black px-[8px]">LZ</span>
+            </div>
+          </div>
+          <span className="bg-black text-gray-200/95 text-[8px] text-center tracking-widest px-1 py-[1px]">{lz.name}</span>
         </div>
       </button>
     </Marker>
