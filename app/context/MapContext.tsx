@@ -25,6 +25,7 @@ export const MapProvider = ({ children }: { children: ReactNode }) => {
         layers: [
           new Tile({
             preload: 128,
+            cacheSize: 256,
             extent: maxExtent,
             source: new XYZ({
               url: 'https://tiles.gzwmap.com/{z}/{x}/{y}',

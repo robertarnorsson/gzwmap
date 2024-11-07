@@ -1,6 +1,7 @@
 import { MarkerType, ObjectiveType, objective, task } from "~/lib/types";
 import { Artisan } from "~/data/vendors";
 import { YBL1 } from "~/data/locations";
+import { CrimsonShieldInternational, LamangRecoveryInitiative, MithrasSecuritySystems } from "../factions";
 
 const SaveTheRebellion_Objective1_LRI: objective = {
     id: "O-MWCIA0",
@@ -8,6 +9,7 @@ const SaveTheRebellion_Objective1_LRI: objective = {
     description: "Collect the flash drive at the command tent in the Lamang Recovery Initiative's Base Camp",
     position: [23449.148816118646, 22659.690642673566],
     type: ObjectiveType.COLLECT,
+    faction: LamangRecoveryInitiative,
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.ARTISAN, MarkerType.YBL1],
     location: YBL1
 }
@@ -18,6 +20,7 @@ const SaveTheRebellion_Objective1_MSS: objective = {
     description: "Collect the flash drive at the command tent in the Mithras Security Systems's Base Camp",
     position: [16724.880988050376, 10351.07033223358],
     type: ObjectiveType.COLLECT,
+    faction: MithrasSecuritySystems,
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.ARTISAN, MarkerType.YBL1],
     location: YBL1
 }
@@ -28,6 +31,7 @@ const SaveTheRebellion_Objective1_CSI: objective = {
     description: "Collect the flash drive at the command tent in the Crimson Shield International's Base Camp",
     position: [9219.678526143574, 22331.891720295775],
     type: ObjectiveType.COLLECT,
+    faction: CrimsonShieldInternational,
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.ARTISAN, MarkerType.YBL1],
     location: YBL1
 }

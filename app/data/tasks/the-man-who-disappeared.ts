@@ -1,6 +1,7 @@
 import { MarkerType, ObjectiveType, objective, task } from "~/lib/types";
 import { Handshake } from "~/data/vendors";
 import { MidnightSapphire } from "~/data/locations";
+import { CrimsonShieldInternational, LamangRecoveryInitiative, MithrasSecuritySystems } from "../factions";
 
 const TheManWhoDisappeared_Objective1_LRI: objective = {
   id: "O-U0CXXL",
@@ -8,6 +9,7 @@ const TheManWhoDisappeared_Objective1_LRI: objective = {
   description: "Collect the passport at the command tent in the Lamang Recovery Initiative's Base Camp",
   position: [23443.70496157549, 22667.825856197487],
   type: ObjectiveType.COLLECT,
+  faction: LamangRecoveryInitiative,
   types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.MIDNIGHTSAPPHIRE],
   location: MidnightSapphire,
   note: "If you die and loose the passport you will have to pick it up from the tent."
@@ -19,6 +21,7 @@ const TheManWhoDisappeared_Objective1_MSS: objective = {
   description: "Collect the passport at the command tent in the Mithras Security Systems's Base Camp",
   position: [16732.37816122813, 10347.757074372661],
   type: ObjectiveType.COLLECT,
+  faction: MithrasSecuritySystems,
   types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.MIDNIGHTSAPPHIRE],
   location: MidnightSapphire,
   note: "If you die and loose the passport you will have to pick it up from the tent."
@@ -30,6 +33,7 @@ const TheManWhoDisappeared_Objective1_CSI: objective = {
   description: "Collect the passport at the command tent in the Crimson Shield International's Base Camp",
   position: [9210.434758612446, 22330.913960359343],
   type: ObjectiveType.COLLECT,
+  faction: CrimsonShieldInternational,
   types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.MIDNIGHTSAPPHIRE],
   location: MidnightSapphire,
   note: "If you die and loose the passport you will have to pick it up from the tent."

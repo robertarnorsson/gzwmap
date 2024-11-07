@@ -13,6 +13,10 @@ export const ObjectiveMarker = ({ task, objective }: ObjectiveMarkerProps) => {
   const { settings } = useSettings();
   const { showPopup } = usePopup();
 
+  const selectedFaction = settings.faction;
+
+  const shouldHide = !!(selectedFaction && objective.faction && objective.faction.id !== selectedFaction);
+
   const isComplete = settings.objectivesComplete.includes(objective.id);
 
   const handleClick = () => {
@@ -20,7 +24,7 @@ export const ObjectiveMarker = ({ task, objective }: ObjectiveMarkerProps) => {
   };
 
   return (
-    <Marker position={objective.position}>
+    <Marker position={objective.position} hide={shouldHide}>
       <button
         className="p-2"
         onClick={handleClick}

@@ -3,6 +3,7 @@ import { Turncoat } from "~/data/vendors";
 import { PhaLang, NamThaven, KiuVongsa, PhaLangAirfield } from "~/data/locations";
 import { PLA03 } from "../keys/pha-lang-airfield";
 import { BoxOfSupplies } from "~/data/items/tools";
+import { CrimsonShieldInternational, LamangRecoveryInitiative, MithrasSecuritySystems } from "../factions";
 
 const DelayedPackage_Objective1_LRI: objective = {
     id: "O-X98YRR",
@@ -10,6 +11,7 @@ const DelayedPackage_Objective1_LRI: objective = {
     description: "Collect the package at the command tent in Lamang Recovery Initiative's Base Camp",
     position: [23449.527260647137, 22673.593782152464],
     type: ObjectiveType.COLLECT,
+    faction: LamangRecoveryInitiative,
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.TURNCOAT, MarkerType.PHALANG],
     location: PhaLang
 }
@@ -20,6 +22,7 @@ const DelayedPackage_Objective1_MMS: objective = {
   description: "Collect the package at the command tent in Mithras Security Systems's Base Camp",
   position: [16731.921532613327, 10355.03929533017],
   type: ObjectiveType.COLLECT,
+  faction: MithrasSecuritySystems,
   types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.TURNCOAT, MarkerType.NAMTHAVEN],
   location: NamThaven
 }
@@ -30,6 +33,7 @@ const DelayedPackage_Objective1_CSI: objective = {
   description: "Collect the package at the command tent in Crimson Shield International's Base Camp",
   position: [9207.637082808887, 22337.920549105445],
   type: ObjectiveType.COLLECT,
+  faction: CrimsonShieldInternational,
   types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.TURNCOAT, MarkerType.KIUVONGSA],
   location: KiuVongsa
 }
