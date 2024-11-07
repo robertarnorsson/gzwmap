@@ -7,9 +7,10 @@ interface MarkerWrapperProps {
   position: [number, number];
   hide?: boolean;
   children: ReactNode;
+  enableHoverEffect?: boolean; // New boolean parameter to enable/disable hover effect
 }
 
-export const Marker = ({ position, hide = false, children }: MarkerWrapperProps) => {
+export const Marker = ({ position, hide = false, children, enableHoverEffect = false }: MarkerWrapperProps) => {
   const { map } = useMap();
   const markerRef = useRef<HTMLDivElement | null>(null);
   const overlayRef = useRef<Overlay | null>(null);
@@ -32,6 +33,17 @@ export const Marker = ({ position, hide = false, children }: MarkerWrapperProps)
     // Create marker container and overlay if not already created
     if (!markerRef.current) {
       markerRef.current = document.createElement("div");
+      markerRef.current.style.userSelect = 'none';
+
+      // Add hover effect if enabled
+      if (enableHoverEffect) {
+        markerRef.current.addEventListener('mouseenter', () => {
+          markerRef.current!.parentElement!.style.zIndex = "1000";
+        });
+        markerRef.current.addEventListener('mouseleave', () => {
+          markerRef.current!.parentElement!.style.zIndex = '0';
+        });
+      }
     }
 
     if (!overlayRef.current) {
@@ -57,7 +69,7 @@ export const Marker = ({ position, hide = false, children }: MarkerWrapperProps)
         overlayRef.current = null;
       }
     };
-  }, [map, position, hide]); // Include `hide` as a dependency
+  }, [map, position, hide, enableHoverEffect]); // Include `hide` and `enableHoverEffect` as dependencies
 
   // Render children in portal only when overlay is ready and hide is false
   return overlayReady && markerRef.current && !hide

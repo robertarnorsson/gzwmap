@@ -20,6 +20,7 @@ export const Popup = () => {
 
     if (!overlayRef.current) {
       overlayRef.current = new Overlay({
+        offset: [0, -20],
         element: popupRef.current,
         positioning: "bottom-center",
         stopEvent: true,
@@ -59,13 +60,21 @@ export const Popup = () => {
 
   return overlayReady && popupRef.current && popupPosition && popupContent
     ? createPortal(
-        <div className="bg-background/60 backdrop-blur-md p-4 shadow-md relative mb-[6px]">
+        <div className="grid-background border border-border min-w-80 p-4 shadow-md relative">
           {popupContent}
-          <div className="absolute bottom-[-7.5px] left-1/2 transform -translate-x-1/2 w-4 h-2 bg-background/60 backdrop-blur-md"
-            style={{
-              clipPath: 'polygon(50% 100%, 0 0, 100% 0)'
-            }}
-          />
+          <div className="absolute -bottom-[13px] left-1/2 transform -translate-x-1/2">
+          <svg
+            width="24"
+            height="12"
+            viewBox="0 0 24 12"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <polygon
+              points="12,10 2,2 22,2"
+              style={{ fill: "hsl(var(--background))", stroke: "hsl(var(--border))" }}
+            />
+          </svg>
+          </div>
         </div>,
         popupRef.current
       )

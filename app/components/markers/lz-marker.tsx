@@ -2,7 +2,6 @@ import { Marker } from "../map/Marker";
 import { useSettings } from "~/context/SettingsProvider";
 import { lz } from "~/lib/types";
 import clsx from "clsx";
-import { useEffect, useMemo } from "react";
 
 interface LZMarkerProps {
   lz: lz;
@@ -25,10 +24,10 @@ export const LZMarker = ({ lz }: LZMarkerProps) => {
   };
 
   return (
-    <Marker position={lz.position} hide={shouldHide}>
-      <button className="group/marker" onClick={handleLZClick}>
+    <Marker position={lz.position} hide={shouldHide} enableHoverEffect>
+      <button className="group/lz" onClick={handleLZClick}>
         <div className="flex flex-col items-center space-y-1">
-          <div className="w-min h-min outline-none outline-offset-0 group-hover/marker:outline-1 group-hover/marker:outline-white">
+          <div className="w-min h-min outline-none outline-offset-0 group-hover/lz:outline-[1.5px] group-hover/lz:outline-white">
             <div
               className={clsx(
                 "w-[26px] h-[15px] border-2 border-black flex items-center justify-center",

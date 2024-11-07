@@ -16,6 +16,7 @@ interface SettingsContextType {
   settings: Settings;
   isSettingsLoaded: boolean;
   saveSettings: (value: Settings) => void;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   updateSetting: (key: keyof Settings, value: any) => void;
   resetSettings: () => void;
   storageKey: string;
