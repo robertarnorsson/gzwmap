@@ -63,7 +63,7 @@ export const Popup = () => {
 
   return overlayReady && popupRef.current && popupPosition && popupContent
     ? createPortal(
-      <div className="relative w-96 grid-bg p-4 border border-border border-l-2 border-l-[#f0b600] min-w-80shadow-md">
+      <div className="relative w-80 md:w-96 grid-bg p-4 border border-border border-l-2 border-l-[#f0b600] min-w-80shadow-md">
         <div className="absolute top-2 right-2">
           <button
             className="p-1"
