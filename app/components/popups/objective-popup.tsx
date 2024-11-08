@@ -68,7 +68,7 @@ export const ObjectivePopupContent = ({ task, objective }: ObjectivePopupContent
               if (typeof document === 'undefined') return;
               if (typeof window === 'undefined') return;
 
-              copy(`${window.location.hostname}?marker=${task.id}:${objective.id}&zoom=6`);
+              copy(`https://${window.location.hostname}?marker=${task.id}:${objective.id}&zoom=6`);
             }}
           >
             <Link className="w-4 h-4" />
