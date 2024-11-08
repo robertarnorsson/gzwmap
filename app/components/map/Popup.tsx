@@ -5,7 +5,7 @@ import { useMap } from "~/context/MapContext";
 import { usePopup } from "~/context/PopupContext";
 
 export const Popup = () => {
-  const { popupPosition, popupContent, hidePopup } = usePopup();
+  const { popupPosition, popupContent, popupOffset, hidePopup } = usePopup();
   const { map } = useMap();
   const popupRef = useRef<HTMLDivElement | null>(null);
   const overlayRef = useRef<Overlay | null>(null);
@@ -20,13 +20,15 @@ export const Popup = () => {
 
     if (!overlayRef.current) {
       overlayRef.current = new Overlay({
-        offset: [0, -20],
+        offset: popupOffset, // Use the custom offset here
         element: popupRef.current,
         positioning: "bottom-center",
         stopEvent: true,
       });
       map.addOverlay(overlayRef.current);
       setOverlayReady(true);
+    } else {
+      overlayRef.current.setOffset(popupOffset); // Update offset if already created
     }
 
     overlayRef.current.setPosition(popupPosition);
@@ -37,7 +39,7 @@ export const Popup = () => {
         overlayRef.current = null;
       }
     };
-  }, [map, popupPosition, popupContent]);
+  }, [map, popupPosition, popupContent, popupOffset]);
 
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

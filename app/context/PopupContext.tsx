@@ -3,7 +3,8 @@ import { createContext, useContext, useState, ReactNode, useCallback } from "rea
 interface PopupContextType {
   popupPosition: [number, number] | null;
   popupContent: ReactNode | null;
-  showPopup: (position: [number, number], content: ReactNode) => void;
+  popupOffset: [number, number];
+  showPopup: (position: [number, number], content: ReactNode, offset?: [number, number]) => void;
   hidePopup: () => void;
 }
 
@@ -12,10 +13,12 @@ const PopupContext = createContext<PopupContextType | undefined>(undefined);
 export const PopupProvider = ({ children }: { children: ReactNode }) => {
   const [popupPosition, setPopupPosition] = useState<[number, number] | null>(null);
   const [popupContent, setPopupContent] = useState<ReactNode | null>(null);
+  const [popupOffset, setPopupOffset] = useState<[number, number]>([0, -20]);
 
-  const showPopup = useCallback((position: [number, number], content: ReactNode) => {
+  const showPopup = useCallback((position: [number, number], content: ReactNode, offset: [number, number] = [0, -20]) => {
     setPopupPosition(position);
     setPopupContent(content);
+    setPopupOffset(offset);
   }, []);
 
   const hidePopup = useCallback(() => {
@@ -24,7 +27,7 @@ export const PopupProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   return (
-    <PopupContext.Provider value={{ popupPosition, popupContent, showPopup, hidePopup }}>
+    <PopupContext.Provider value={{ popupPosition, popupContent, popupOffset, showPopup, hidePopup }}>
       {children}
     </PopupContext.Provider>
   );

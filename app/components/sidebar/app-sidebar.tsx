@@ -31,7 +31,7 @@ export function AppSidebar() {
   ) || null;
 
   return (
-    <Sidebar className="bg-transparent">
+    <Sidebar className="grid-background">
       <SidebarHeader className="bg-transparent">
         <SidebarMenu>
           <h1 className="text-bold">Faction</h1>

@@ -2,30 +2,27 @@ import { Marker } from "../map/Marker";
 import { useSettings } from "~/context/SettingsProvider";
 import { lz } from "~/lib/types";
 import clsx from "clsx";
+import { usePopup } from "~/context/PopupContext";
 
 interface LZMarkerProps {
   lz: lz;
 }
 
 export const LZMarker = ({ lz }: LZMarkerProps) => {
-  const { settings, updateSetting } = useSettings();
+  const { settings } = useSettings();
+  const { showPopup } = usePopup();
   const selectedFaction = settings.faction;
   const isLocated = settings.lzsLocated.includes(lz.id);
 
   const shouldHide = !!(selectedFaction && lz.faction && lz.faction.id !== selectedFaction);
 
   const handleLZClick = () => {
-    console.log(lz.name);
-    const updatedLzsLocated = isLocated
-      ? settings.lzsLocated.filter((llz) => llz !== lz.id)
-      : [...settings.lzsLocated, lz.id];
-
-    updateSetting("lzsLocated", updatedLzsLocated);
+    showPopup(lz.position, <LZPopupContent lz={lz} />, [0, -27]);
   };
 
   return (
     <Marker position={lz.position} hide={shouldHide} enableHoverEffect>
-      <button className="group/lz" onClick={handleLZClick}>
+      <button className="group/lz relative" onClick={handleLZClick}>
         <div className="flex flex-col items-center space-y-1">
           <div className="w-min h-min outline-none outline-offset-0 group-hover/lz:outline-[1.5px] group-hover/lz:outline-white">
             <div
@@ -45,5 +42,19 @@ export const LZMarker = ({ lz }: LZMarkerProps) => {
         </div>
       </button>
     </Marker>
+  );
+};
+
+// Popup content component
+interface LZPopupContentProps {
+  lz: lz;
+}
+
+const LZPopupContent = ({ lz }: LZPopupContentProps) => {
+  return (
+    <div className="">
+      <h2 className="text-lg font-bold">{lz.name}</h2>
+      <p className="text-sm">{lz.location.name}</p>
+    </div>
   );
 };
