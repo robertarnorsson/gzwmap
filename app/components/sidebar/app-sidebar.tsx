@@ -2,17 +2,13 @@ import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
-  SidebarGroup,
   SidebarHeader,
   SidebarMenu,
-  SidebarMenuAction,
-  SidebarMenuButton,
-  SidebarMenuItem,
 } from "~/components/ui/sidebar";
 import { useSettings } from "~/context/SettingsProvider";
 import { Factions } from "~/data/factions";
 import { faction } from "~/lib/types";
-import { Switch } from "../ui/switch";
+import { AppSidebarTrigger } from "./app-sidebar-trigger";
 
 export function AppSidebar() {
   const { settings, updateSetting } = useSettings();
@@ -31,21 +27,24 @@ export function AppSidebar() {
   ) || null;
 
   return (
-    <Sidebar className="grid-background">
+    <Sidebar className="grid-bg">
       <SidebarHeader className="bg-transparent">
         <SidebarMenu>
           <h1 className="text-bold">Faction</h1>
           <div className="flex justify-evenly items-center">
             {Factions.map((f) => (
-              <img
+              <button
                 key={f.id}
-                src={`/${f.image}`}
-                alt={f.name}
-                className={`w-24 h-24 cursor-pointer rounded p-1 ${
-                  selectedFactionId === f.id ? "ring-1 ring-border" : "ring-1 ring-transparent"
-                }`}
                 onClick={() => handleFactionSelect(f.id)}
-              />
+              >
+                <img
+                  src={`/${f.image}`}
+                  alt={f.name}
+                  className={`w-24 h-24 cursor-pointer rounded p-1 ${
+                    selectedFactionId === f.id ? "ring-1 ring-border" : "ring-1 ring-transparent"
+                  }`}
+                />
+              </button>
             ))}
           </div>
         </SidebarMenu>
@@ -60,12 +59,15 @@ export function AppSidebar() {
               <img
                 src={`/${selectedFaction.image}`}
                 alt={selectedFaction.name}
-                className="w-12 h-12" // Adjust the size as needed
+                className="w-12 h-12"
               />
             )}
           </div>
         </SidebarMenu>
       </SidebarFooter>
+      <div className="absolute right-0">
+        <AppSidebarTrigger />
+      </div>
     </Sidebar>
   );
 }

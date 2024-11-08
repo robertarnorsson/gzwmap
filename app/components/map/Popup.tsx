@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 import { MapBrowserEvent, Overlay } from "ol";
 import { useMap } from "~/context/MapContext";
 import { usePopup } from "~/context/PopupContext";
+import { X } from "lucide-react";
 
 export const Popup = () => {
   const { popupPosition, popupContent, popupOffset, hidePopup } = usePopup();
@@ -62,9 +63,17 @@ export const Popup = () => {
 
   return overlayReady && popupRef.current && popupPosition && popupContent
     ? createPortal(
-        <div className="grid-background border border-border min-w-80 p-4 shadow-md relative">
-          {popupContent}
-          <div className="absolute -bottom-[13px] left-1/2 transform -translate-x-1/2">
+      <div className="relative w-96 grid-bg p-4 border border-border border-l-2 border-l-[#f0b600] min-w-80shadow-md">
+        <div className="absolute top-2 right-2">
+          <button
+            className="p-1"
+            onClick={hidePopup}
+          >
+            <X className="w-4 h-4" />
+          </button>
+        </div>
+        {popupContent}
+        <div className="absolute -bottom-[13px] left-1/2 transform -translate-x-1/2">
           <svg
             width="24"
             height="12"
@@ -76,8 +85,8 @@ export const Popup = () => {
               style={{ fill: "hsl(var(--background))", stroke: "hsl(var(--border))" }}
             />
           </svg>
-          </div>
-        </div>,
+        </div>
+      </div>,
         popupRef.current
       )
     : null;

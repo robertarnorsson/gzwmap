@@ -3,6 +3,7 @@ import { useSettings } from "~/context/SettingsProvider";
 import { lz } from "~/lib/types";
 import clsx from "clsx";
 import { usePopup } from "~/context/PopupContext";
+import { LZPopupContent } from "../popups/lz-popup";
 
 interface LZMarkerProps {
   lz: lz;
@@ -42,19 +43,5 @@ export const LZMarker = ({ lz }: LZMarkerProps) => {
         </div>
       </button>
     </Marker>
-  );
-};
-
-// Popup content component
-interface LZPopupContentProps {
-  lz: lz;
-}
-
-const LZPopupContent = ({ lz }: LZPopupContentProps) => {
-  return (
-    <div className="">
-      <h2 className="text-lg font-bold">{lz.name}</h2>
-      <p className="text-sm">{lz.location.name}</p>
-    </div>
   );
 };

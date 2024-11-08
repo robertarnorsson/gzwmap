@@ -2,7 +2,7 @@ import { Marker } from "../map/Marker";
 import { useSettings } from "~/context/SettingsProvider";
 import { objective, task } from "~/lib/types";
 import { usePopup } from "~/context/PopupContext";
-import { Checkbox } from "../ui/checkbox";
+import { ObjectivePopupContent } from "../popups/objective-popup";
 
 interface ObjectiveMarkerProps {
   task: task;
@@ -33,59 +33,15 @@ export const ObjectiveMarker = ({ task, objective }: ObjectiveMarkerProps) => {
             <div className="absolute w-[21px] h-[1px] bg-black transform rotate-45"></div>
             <div className="absolute w-[22px] h-[1px] bg-black transform -rotate-45"></div>
           </div>
-          <div className="absolute bottom-1/2 left-6 transform translate-y-6 group-hover/objective:translate-y-1/2 grid-background border border-border text-primary text-xs px-2 py-1 shadow-lg opacity-0 group-hover/objective:opacity-100 transition-all text-nowrap pointer-events-none">
+          <div className="absolute bottom-1/2 left-6 transform translate-y-6 group-hover/objective:translate-y-1/2 grid-bg border border-border text-primary text-xs px-2 py-1 shadow-lg opacity-0 group-hover/objective:opacity-100 transition-all text-nowrap pointer-events-none">
             <div className="relative space-x-2">
-              <span className="text-xs">{task.name}</span>
-              <span className="text-xs">▪</span>
-              <span className="text-xs">{objective.name}</span>
+              <span className="text-xs text-primary/85">{task.name}</span>
+              <span className="text-xs text-primary/85">▪</span>
+              <span className="text-xs text-primary/85">{objective.name}</span>
             </div>
           </div>
         </div>
       </button>
     </Marker>
-  );
-};
-
-interface ObjectivePopupContentProps {
-  task: task;
-  objective: objective;
-}
-
-const ObjectivePopupContent = ({ task, objective }: ObjectivePopupContentProps) => {
-  const { settings, updateSetting } = useSettings();
-  const isComplete = settings.objectivesComplete.includes(objective.id);
-
-  const handleCheckboxChange = () => {
-    const updatedObjectives = isComplete
-      ? settings.objectivesComplete.filter(id => id !== objective.id)
-      : [...settings.objectivesComplete, objective.id];
-
-    updateSetting('objectivesComplete', updatedObjectives);
-  };
-
-  return (
-    <>
-      <div className="relative">
-        <Checkbox
-          checked={isComplete}
-          onCheckedChange={handleCheckboxChange}
-          className="absolute top-0 right-0"
-        />
-        <div className="group">
-          <span className="text-xl font-bold text-primary text-pretty">{task.name}</span>
-          <div className="flex flex-row gap-2">
-            <p className="text-xs text-muted-foreground">{task.vendor.name}</p>
-            <p className="text-xs text-muted-foreground">▪</p>
-            <p className="text-xs text-muted-foreground">{objective.faction?.shorthand || "All Factions"}</p>
-            <p className="text-xs text-muted-foreground">▪</p>
-            <p className="text-xs text-muted-foreground">{objective.type}</p>
-          </div>
-        </div>
-        <div className="mt-3">
-          <span className="text-sm text-primary text-pretty font-semibold">{objective.name}</span>
-          <p className="text-xs text-primary/85 text-pretty">{objective.description}</p>
-        </div>
-      </div>
-    </>
   );
 };

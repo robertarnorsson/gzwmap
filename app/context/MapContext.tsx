@@ -12,12 +12,14 @@ import { createXYZ } from 'ol/tilegrid';
 
 interface MapContextType {
   map: Map | null;
+  isMapLoaded: boolean;
 }
 
 const MapContext = createContext<MapContextType | null>(null);
 
 export const MapProvider = ({ children }: { children: ReactNode }) => {
   const [map, setMap] = useState<MapContextType['map']>(null);
+  const [isMapLoaded, setIsMapLoaded] = useState<boolean>(false);
 
   useEffect(() => {
     if (typeof document !== 'undefined') {
@@ -52,17 +54,20 @@ export const MapProvider = ({ children }: { children: ReactNode }) => {
         maxTilesLoading: 64,
       });
 
+      mapInstance.once('rendercomplete', () => {
+        setIsMapLoaded(true);
+      });
+
       setMap(mapInstance);
 
       return () => {
-        // Clean up map on unmount
         mapInstance.setTarget(undefined);
       };
     }
   }, []);
 
   return (
-    <MapContext.Provider value={{ map }}>
+    <MapContext.Provider value={{ map, isMapLoaded }}>
       {children}
     </MapContext.Provider>
   );

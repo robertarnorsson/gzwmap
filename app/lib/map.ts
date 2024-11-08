@@ -1,5 +1,6 @@
 import { Extent } from "ol/extent";
 import { Projection } from "ol/proj";
+import { dataMap, DataMap } from "~/data/map";
 
 export const tileExtent: Extent = [
   0,
@@ -21,3 +22,14 @@ export const projection = new Projection({
   extent: tileExtent,
   worldExtent: tileExtent
 });
+
+export function getDataFromId<T extends keyof DataMap>(id: string): DataMap[T][number] | null {
+  const prefix = id.split('-')[0] as T;
+
+  if (!(prefix in dataMap)) {
+    return null;
+  }
+
+  const dataArray = dataMap[prefix] as DataMap[T];
+  return dataArray.find((item) => item.id === id) || null;
+}

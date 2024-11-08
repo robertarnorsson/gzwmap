@@ -40,7 +40,7 @@
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --background: 0 0% 14%;
+      --background: 0 0% 8%;
       --foreground: 0 0% 98%;
       --card: 0 0% 3.9%;
       --card-foreground: 0 0% 98%;
@@ -75,16 +75,47 @@
     }
   }
 
-  .grid-background {
+  .grid-bg {
     background:
-      linear-gradient(-90deg, rgba(0, 0, 0, 0.1) 2px, transparent 1px),
-      linear-gradient(rgba(0, 0, 0, 0.1) 2px, transparent 1px),
+      linear-gradient(-90deg, rgba(50,50,50,0.1) 1px, transparent 1px),
+      linear-gradient(rgba(50,50,50,0.1) 1px, transparent 1px),
       hsl(var(--background));
     background-size:
-      3px 3px,
-      3px 3px,
+      4px 4px,
+      4px 4px,
       80px 80px;
-    background-color: hsl(var(--background));
+  }
+
+  .grid-bg-plus{
+    background:
+      linear-gradient(-90deg, rgba(50,50,50,0.12) 1px, transparent 1px),
+      linear-gradient(rgba(50,50,50,0.12) 1px, transparent 1px), 
+      linear-gradient(-90deg, rgba(50,50,50,0.15) 1px, transparent 1px),
+      linear-gradient(rgba(50,50,50,0.15) 1px, transparent 1px),
+      linear-gradient(transparent 3px, hsl(var(--background)) 3px, hsl(var(--background)) 78px, transparent 78px),
+      linear-gradient(-90deg, rgba(50,50,50,0.5), 1px, transparent 1px),
+      linear-gradient(-90deg, transparent 3px, hsl(var(--background)) 3px, hsl(var(--background)) 78px, transparent 78px),
+      linear-gradient(rgba(50,50,50,0.5), 1px, transparent 1px),
+      hsl(var(--background));
+    background-size:
+      4px 4px,
+      4px 4px,
+      80px 80px,
+      80px 80px,
+      80px 80px,
+      80px 80px,
+      80px 80px,
+      80px 80px;
+  }
+
+  .grid-ribbon {
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 5px,
+      hsl(var(--border), 0.35) 5px,
+      hsl(var(--border), 0.35) 10px
+    );
   }
 }
 

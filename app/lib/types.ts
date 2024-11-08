@@ -1,41 +1,85 @@
-export type vendor = {
-  name: string
+export type BaseMarker = {
+  id: string;
+  name: string;
+  types: MarkerType[];
 }
 
-export type faction = {
-  id: string
+export type Marker = BaseMarker & {
+  position: [number, number];
+};
+
+export type faction = Marker & {
+  shorthand: string;
+  description: string;
+  image: string;
+  types: MarkerType[];
+};
+
+export type lz = Marker & {
+  discoverable: boolean;
+  location: location;
+  faction?: faction;
+};
+
+export type location = Marker & {
+  pois: poi[];
+};
+
+export type poi = Marker & {
+  location: location;
+};
+
+export type objective = Marker & {
+  description: string;
+  type: ObjectiveType;
+  location: location;
+  faction?: faction;
+  image?: string;
+  key?: key;
+  items?: item[];
+  note?: string;
+  difficulty?: difficulty;
+};
+
+export type item = Marker & {
+  shortName?: string;
+  description: string;
+  vendor?: vendor;
+  size: [number, number];
+  image: string | KeyTypes;
+  note?: string;
+};
+
+export type key = item & {
+  image: KeyTypes;
+  questKey: boolean;
+  location: location;
+  position: [number, number] | [number, number][];
+};
+
+export type task = BaseMarker & {
+  briefing?: string
+  debriefing?: string
+  note?: string
+  objectives: objective[]
+  vendor: vendor
+  level: number
+  prerequisites?: task
+  cancelTaskId?: string,
+  key?: key[]
+  items?: item[]
+  faction?: faction,
+  difficulty?: difficulty,
+};
+
+export type difficulty = {
   name: string
-  shorthand: string
   description: string
-  position: [number, number]
-  image: string
-  types: MarkerType[]
-};
+  level: number
+}
 
-export type lz = {
-  id: string
+export type vendor = {
   name: string
-  position: [number, number]
-  discoverable: boolean
-  types: MarkerType[]
-  location: location
-  faction?: faction
-};
-
-export type location = {
-  id: string
-  name: string
-  position: [number, number]
-  pois: poi[]
-  types: MarkerType[]
-};
-
-export type poi = {
-  id: string
-  name: string
-  position: [number, number]
-  types: MarkerType[]
-  location: location
 }
 
 export enum MarkerType {
@@ -107,50 +151,6 @@ export enum ObjectiveType {
   HACK = "Hack",
 }
 
-export type task = {
-  id: string
-  name: string
-  briefing?: string
-  debriefing?: string
-  note?: string
-  objectives: objective[]
-  vendor: vendor
-  level: number
-  prerequisites?: task
-  cancelTaskId?: string,
-  key?: key[]
-  items?: item[]
-  faction?: faction,
-  difficulty?: difficulty,
-};
-
-export type objective = {
-  id: string
-  name: string
-  description: string
-  position: [number, number]
-  type: ObjectiveType
-  types: MarkerType[]
-  location: location 
-  faction?: faction
-  image?: string
-  key?: key
-  items?: item[]
-  note?: string,
-  difficulty?: difficulty,  
-}
-
-export type item = {
-  id: string
-  name: string
-  shortName?: string
-  description: string
-  types: MarkerType[]
-  vendor?: vendor
-  size: [number, number]
-  image: string | KeyTypes
-  note?: string
-}
 
 export enum KeyTypes {
   ROUNDKEY = "/items/keys/key-round.png",
@@ -160,17 +160,4 @@ export enum KeyTypes {
   SKINNYKEY = "/items/keys/key-skinny.png",
   SKINNYGOLDKEY = "/items/keys/key-gold-skinny.png",
   BLUETHICKKEY = "/items/keys/key-blue-thick.png",
-}
-
-export type key = item & {
-  image: KeyTypes
-  questKey: boolean
-  location: location
-  position: [number, number] | [number, number][]
-}
-
-export type difficulty = {
-  name: string
-  description: string
-  level: number
 }
