@@ -11,7 +11,7 @@ const AyeAyeCaptain_Objective1: objective = {
     type: ObjectiveType.LOCATE,
     types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.GUNNY, MarkerType.TIGERBAY, MarkerType.DIFFICULTY_4],
     location: TigerBay,
-    image: "/objectives/aye-aye-captain.webp",
+    image: "/assets/objectives/aye-aye-captain.webp",
     difficulty: Difficulty4
 }
 

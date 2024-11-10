@@ -8,7 +8,7 @@ const ForthNarithStroll_Objective1: objective = {
     description: "Check the barracks/northern entrance",
     position: [11003.098489773767, 14962.570158955905],
     type: ObjectiveType.LOCATE,
-    image: "/objectives/hacker-camera-northern-entrance.webp",
+    image: "/assets/objectives/hacker-camera-northern-entrance.webp",
     types: [MarkerType. TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.FORTNARITH],
     location: FortNarith
 }
@@ -19,7 +19,7 @@ const ForthNarithStroll_Objective2: objective = {
     description: "Check the main entrance",
     position: [11268.325557739168, 14646.721209283283],
     type: ObjectiveType.LOCATE,
-    image: "/objectives/hacker-camera-main-entrance.webp",
+    image: "/assets/objectives/hacker-camera-main-entrance.webp",
     types: [MarkerType. TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.FORTNARITH],
     location: FortNarith
 }

@@ -9,7 +9,7 @@ const BusinessOrPleasure_Objective1: objective = {
     description: "Retrieve the intel and report back to Handshake",
     position: [18752.361360440726, 20124.32123396376],
     type: ObjectiveType.COLLECT,
-    image: "/objectives/business-or-pleasure.webp",
+    image: "/assets/objectives/business-or-pleasure.webp",
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.PHALANGAIRFIELD, MarkerType.DIFFICULTY_3],
     location: PhaLangAirfield,
     difficulty: Difficulty3

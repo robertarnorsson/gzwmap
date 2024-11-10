@@ -8,7 +8,7 @@ const InvadersFromAfar_Objective1: objective = {
     description: "Search for leads about what happened to the hostiles in the Sawmill",
     position: [10424.322239278214, 17415.442215755753],
     type: ObjectiveType.LOCATE,
-    image: "/objectives/invaders-from-afar-search-for-leads.webp",
+    image: "/assets/objectives/invaders-from-afar-search-for-leads.webp",
     types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.ARTISAN, MarkerType.SAWMILL],
     location: Sawmill
 }
@@ -19,7 +19,7 @@ const InvadersFromAfar_Objective2: objective = {
     description: "Find records of the hostile group's orders",
     position: [10383.822239278214, 17300.442215755753],
     type: ObjectiveType.COLLECT,
-    image: "/objectives/invaders-from-afar-medics-notes.webp",
+    image: "/assets/objectives/invaders-from-afar-medics-notes.webp",
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.ARTISAN, MarkerType.SAWMILL],
     location: Sawmill
 }

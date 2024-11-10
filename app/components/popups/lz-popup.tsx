@@ -1,8 +1,9 @@
 import clsx from "clsx";
 import { Check, Link, X } from "lucide-react";
 import { useSettings } from "~/context/SettingsProvider";
+import { toast } from "~/hooks/use-toast";
 import { lz } from "~/lib/types";
-import { copy } from "~/lib/utils";
+import { copyMarker } from "~/lib/utils";
 
 interface LZPopupContentProps {
   lz: lz;
@@ -53,10 +54,10 @@ export const LZPopupContent = ({ lz }: LZPopupContentProps) => {
           <button
             className="bg-primary/10 p-2.5"
             onClick={() => {
-              if (typeof document === 'undefined') return;
-              if (typeof window === 'undefined') return;
-
-              copy(`https://${window.location.hostname}?marker=${lz.id}&zoom=6`);
+              copyMarker(`${lz.id}`);
+              toast({
+                description: 'Copied to clipboard'
+              })
             }}
           >
             <Link className="w-4 h-4" />

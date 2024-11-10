@@ -16,7 +16,7 @@ const SecretCompassion_Objective1_LRI: objective = {
   position: [22432.20490818161, 20063.288871003875],
   type: ObjectiveType.STASH,
   faction: LamangRecoveryInitiative,
-  image: "/objectives/secret-compassion-farm-1.webp",
+  image: "/assets/objectives/secret-compassion-farm-1.webp",
   types: [MarkerType.TASK, MarkerType.STASH, MarkerType.LABRAT, MarkerType.PHALANG],
   location: PhaLang,
   items: [BoxOfSupplies]
@@ -29,7 +29,7 @@ const SecretCompassion_Objective2_LRI: objective = {
   position: [21781.620310295577, 21086.216380201255],
   type: ObjectiveType.STASH,
   faction: LamangRecoveryInitiative,
-  image: "/objectives/secret-compassion-farm-2.webp",
+  image: "/assets/objectives/secret-compassion-farm-2.webp",
   types: [MarkerType.TASK, MarkerType.STASH, MarkerType.LABRAT, MarkerType.PHALANG],
   location: PhaLang,
   items: [BoxOfSupplies]
@@ -42,7 +42,7 @@ const SecretCompassion_Objective3_LRI: objective = {
   position: [22214.420868114288, 21245.607947426426],
   type: ObjectiveType.STASH,
   faction: LamangRecoveryInitiative,
-  image: "/objectives/secret-compassion-logging-shed.webp",
+  image: "/assets/objectives/secret-compassion-logging-shed.webp",
   types: [MarkerType.TASK, MarkerType.STASH, MarkerType.LABRAT, MarkerType.PHALANG],
   location: PhaLang,
   items: [BoxOfSupplies]

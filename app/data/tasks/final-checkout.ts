@@ -8,7 +8,7 @@ const FinalCheckout_Objective1: objective = {
     description: "Look for the purple spinner case standing upright adjacent to the wooden post, underneath the Hangar.",
     position: [18756.942598443176, 20011.059693050818],
     type: ObjectiveType.LOCATE,
-    image: "/objectives/final-check-out.webp",
+    image: "/assets/objectives/final-check-out.webp",
     types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.PHALANGAIRFIELD],
     location: PhaLangAirfield
 }

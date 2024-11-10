@@ -8,7 +8,7 @@ const FuelShortage_Objective1: objective = {
     description: "Check the fuel truck",
     position: [10350.106155246936, 17334.2028172309],
     type: ObjectiveType.LOCATE,
-    image: "/objectives/fuel-truck-sawmill.webp",
+    image: "/assets/objectives/fuel-truck-sawmill.webp",
     types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.GUNNY, MarkerType.SAWMILL],
     location: Sawmill
 }

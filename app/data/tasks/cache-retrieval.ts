@@ -15,7 +15,7 @@ const CacheRetrieval_Objective1_LRI: objective = {
     position: [22351.614281876133, 21208.327357796472],
     type: ObjectiveType.MARK,
     faction: LamangRecoveryInitiative,
-    image: "/objectives/warehouse-cache.webp",
+    image: "/assets/objectives/warehouse-cache.webp",
     types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.PHALANG],
     location: PhaLang,
     items: [GPSTracker]
@@ -28,7 +28,7 @@ const CacheRetrieval_Objective2_LRI: objective = {
     position: [22032.5, 20837.5],
     type: ObjectiveType.MARK,
     faction: LamangRecoveryInitiative,
-    image: "/objectives/lumberyard-cache.webp",
+    image: "/assets/objectives/lumberyard-cache.webp",
     types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.PHALANG],
     location: PhaLang,
     items: [GPSTracker]
@@ -41,7 +41,7 @@ const CacheRetrieval_Objective1_MMS: objective = {
     position: [16630.41218690416, 12167.812386418878],
     type: ObjectiveType.MARK,
     faction: MithrasSecuritySystems,
-    image: "/objectives/warehouse-cache.webp",
+    image: "/assets/objectives/warehouse-cache.webp",
     types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.NAMTHAVEN],
     location: NamThaven,
     items: [GPSTracker]
@@ -54,7 +54,7 @@ const CacheRetrieval_Objective2_MMS: objective = {
     position: [16639.577605067865, 12656.98797938061],
     type: ObjectiveType.MARK,
     faction: MithrasSecuritySystems,
-    image: "/objectives/lumberyard-cache.webp",
+    image: "/assets/objectives/lumberyard-cache.webp",
     types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.NAMTHAVEN],
     location: NamThaven,
     items: [GPSTracker]
@@ -67,7 +67,7 @@ const CacheRetrieval_Objective1_CSI: objective = {
     position: [10459.588012501905, 20998.130589535205],
     type: ObjectiveType.MARK,
     faction: CrimsonShieldInternational,
-    image: "/objectives/warehouse-cache.webp",
+    image: "/assets/objectives/warehouse-cache.webp",
     types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.KIUVONGSA],
     location: KiuVongsa,
     items: [GPSTracker]
@@ -80,7 +80,7 @@ const CacheRetrieval_Objective2_CSI: objective = {
     position: [10771.66995589244, 20626.047345183382],
     type: ObjectiveType.MARK,
     faction: CrimsonShieldInternational,
-    image: "/objectives/lumberyard-cache.webp",
+    image: "/assets/objectives/lumberyard-cache.webp",
     types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.KIUVONGSA],
     location: KiuVongsa,
     items: [GPSTracker]

@@ -1,15 +1,18 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import { ActionsType, createActions } from "~/helper/settings";
 
-type Settings = {
+export type Settings = {
   faction: string | null;
   objectivesComplete: string[];
   lzsLocated: string[];
+  notes: { [id: string]: string };
 }
 
 const defaultSettings: Settings = {
   faction: null,
   objectivesComplete: [],
   lzsLocated: [],
+  notes: {},
 };
 
 interface SettingsContextType {
@@ -19,6 +22,7 @@ interface SettingsContextType {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   updateSetting: (key: keyof Settings, value: any) => void;
   resetSettings: () => void;
+  actions: ActionsType,
   storageKey: string;
   updateStorageKey: (value: string) => void;
 }
@@ -50,21 +54,21 @@ export const SettingsProvider = ({ children }: { children: React.ReactNode }) =>
    * Initializes the settings by loading them from localStorage if available,
    * or saving the default settings if not.
    */
-  const _init = () => {
-    if (typeof window === 'undefined') return;
-    const storedEncodedSettings = localStorage.getItem(storageKey);
-    if (!storedEncodedSettings) {
-      localStorage.setItem(storageKey, _encodeSettings(defaultSettings));
-      setSettings(defaultSettings);
-    } else {
-      setSettings(_decodeSettings(storedEncodedSettings));
-    }
-    setIsSettingsLoaded(true);
-  }
-
   useEffect(() => {
-    _init();
-  }, []);
+    const init = () => {
+      if (typeof window === 'undefined') return;
+      const storedEncodedSettings = localStorage.getItem(storageKey);
+      if (!storedEncodedSettings) {
+        localStorage.setItem(storageKey, _encodeSettings(defaultSettings));
+        setSettings(defaultSettings);
+      } else {
+        setSettings(_decodeSettings(storedEncodedSettings));
+      }
+      setIsSettingsLoaded(true);
+    };
+  
+    init();
+  }, [storageKey]);
 
   /**
    * Saves the provided settings to localStorage and updates the state.
@@ -81,6 +85,7 @@ export const SettingsProvider = ({ children }: { children: React.ReactNode }) =>
    * @param {keyof Settings} key - The key of the setting to update.
    * @param {any} value - The new value for the specified setting.
    */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const updateSetting = (key: keyof Settings, value: any) => {
     const updatedSettings = { ...settings, [key]: value };
     saveSettings(updatedSettings);
@@ -101,11 +106,16 @@ export const SettingsProvider = ({ children }: { children: React.ReactNode }) =>
     saveSettings(defaultSettings);
   };
 
+  /**
+   * Holds actions to eeasly manage local settings
+   */
+  const actions = createActions(settings, updateSetting);
+
   return (
     <SettingsContext.Provider value={{
       settings, isSettingsLoaded, saveSettings,
-      updateSetting, resetSettings, storageKey,
-      updateStorageKey,
+      updateSetting, resetSettings, actions,
+      storageKey, updateStorageKey,
      }}>
       {children}
     </SettingsContext.Provider>

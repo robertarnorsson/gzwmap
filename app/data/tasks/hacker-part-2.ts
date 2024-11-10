@@ -9,7 +9,7 @@ const HackerPartTwo_Objective1: objective = {
     position: [11020.347616030645, 14532.873185881284],
     type: ObjectiveType.COLLECT,
     note: "In the communication room, second floor of the HQ.",
-    image: "/objectives/hacker-part-2-codebook.webp",
+    image: "/assets/objectives/hacker-part-2-codebook.webp",
     types: [MarkerType.TASK, MarkerType.HACK, MarkerType.HANDSHAKE, MarkerType.FORTNARITH],
     location: FortNarith
 }
@@ -20,7 +20,7 @@ const HackerPartTwo_Objective2: objective = {
     description: "Hack the radio tower at Fort Narith airfield",
     position: [11469.770714879938, 13914.732245422449],
     type: ObjectiveType.HACK,
-    image: "/objectives/hacker-2-airfield-radio-tower.webp",
+    image: "/assets/objectives/hacker-2-airfield-radio-tower.webp",
     types: [MarkerType.TASK, MarkerType.HACK, MarkerType.HANDSHAKE, MarkerType.FORTNARITH],
     location: FortNarith
 }
@@ -31,7 +31,7 @@ const HackerPartTwo_Objective3: objective = {
     description: "Hack the radio tower in the base",
     position: [11094.402362088738, 14634.004029001182],
     type: ObjectiveType.HACK,
-    image: "/objectives/hacker-part-2-radio-tower-base.webp",
+    image: "/assets/objectives/hacker-part-2-radio-tower-base.webp",
     types: [MarkerType.TASK, MarkerType.HACK, MarkerType.HANDSHAKE, MarkerType.FORTNARITH],
     location: FortNarith
 }
@@ -43,7 +43,7 @@ const HackerPartTwo_Objective4: objective = {
     position: [11089.886228669784, 14455.963878800087],
     type: ObjectiveType.HACK,
     note: "On the roof of the HQ.",
-    image: "/objectives/hacker-2-satellite.webp",
+    image: "/assets/objectives/hacker-2-satellite.webp",
     types: [MarkerType.TASK, MarkerType.HACK, MarkerType.HANDSHAKE, MarkerType.FORTNARITH],
     location: FortNarith
 }

@@ -9,7 +9,7 @@ const JetsNMark_Objective1: objective = {
     description: "Confirm the existence and position of military jet",
     position: [11317.979827236257, 14093.88597064779],
     type: ObjectiveType.MARK,
-    image: "/objectives/jets-n-marks-jet-1.webp",
+    image: "/assets/objectives/jets-n-marks-jet-1.webp",
     types: [MarkerType.TASK, MarkerType.MARK, MarkerType.BANSHEE, MarkerType.FORTNARITH],
     location: FortNarith,
     items: [GPSTracker]
@@ -21,7 +21,7 @@ const JetsNMark_Objective2: objective = {
     description: "Confirm the existence and position of military jet",
     position: [11300.368998988524, 14189.238626171518],
     type: ObjectiveType.MARK,
-    image: "/objectives/jets-n-marks-jet-2.webp",
+    image: "/assets/objectives/jets-n-marks-jet-2.webp",
     types: [MarkerType.TASK, MarkerType.MARK, MarkerType.BANSHEE, MarkerType.FORTNARITH],
     location: FortNarith,
     items: [GPSTracker]
@@ -33,7 +33,7 @@ const JetsNMark_Objective3: objective = {
     description: "Confirm the existence and position of military jet",
     position: [11124.46658493078, 14186.320131061748],
     type: ObjectiveType.MARK,
-    image: "/objectives/jets-n-marks-jet-3.webp",
+    image: "/assets/objectives/jets-n-marks-jet-3.webp",
     types: [MarkerType.TASK, MarkerType.MARK, MarkerType.BANSHEE, MarkerType.FORTNARITH],
     location: FortNarith,
     items: [GPSTracker]

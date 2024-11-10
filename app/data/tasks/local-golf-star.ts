@@ -10,7 +10,7 @@ const LocalGolfStar_Objective1: objective = {
     type: ObjectiveType.COLLECT,
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.TURNCOAT, MarkerType.MIDNIGHTSAPPHIRE],
     location: MidnightSapphire,
-    image: "/objectives/local-golf-star.webp"
+    image: "/assets/objectives/local-golf-star.webp"
 }
 
 export const LocalGolfStar: task = {

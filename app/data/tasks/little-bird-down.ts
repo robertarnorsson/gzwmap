@@ -15,7 +15,7 @@ const LittleBirdDown_Objective1_LRI: objective = {
   position: [21867.898970748625, 20074.915036259845],
   type: ObjectiveType.LOCATE,
   faction: LamangRecoveryInitiative,
-  image: "/objectives/little-bird-down.webp",
+  image: "/assets/objectives/little-bird-down.webp",
   types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.PHALANG],
   location: PhaLang
 }
@@ -38,7 +38,7 @@ const LittleBirdDown_Objective1_MMS: objective = {
   position: [16278.358687200945, 13345.219093063928],
   type: ObjectiveType.LOCATE,
   faction: MithrasSecuritySystems,
-  image: "/objectives/little-bird-down.webp",
+  image: "/assets/objectives/little-bird-down.webp",
   types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.NAMTHAVEN],
   location: NamThaven
 }
@@ -61,7 +61,7 @@ const LittleBirdDown_Objective1_CSI: objective = {
   position: [11495.67860568678, 20324.019616535705],
   type: ObjectiveType.LOCATE,
   faction: CrimsonShieldInternational,
-  image: "/objectives/little-bird-down.webp",
+  image: "/assets/objectives/little-bird-down.webp",
   types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.HANDSHAKE, MarkerType.KIUVONGSA],
   location: KiuVongsa
 }

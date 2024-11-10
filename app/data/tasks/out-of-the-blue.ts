@@ -8,7 +8,7 @@ const OutOfTheBlue_Objective1: objective = {
   description: "Retrieve intel about hostile group in the Blue Lagoon and hand it over to Gunny",
   position: [22566.284975706112, 12123.992835127088],
   type: ObjectiveType.COLLECT,
-  image: "/objectives/out-of-the-blue-intel.webp",
+  image: "/assets/objectives/out-of-the-blue-intel.webp",
   types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.GUNNY, MarkerType.GUNNY, MarkerType.BLUELAGOON],
   location: BlueLagoon
 }

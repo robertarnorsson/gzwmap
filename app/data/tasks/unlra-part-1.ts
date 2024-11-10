@@ -10,7 +10,7 @@ const Unlra_Objective1: objective = {
     type: ObjectiveType.COLLECT,
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.HANDSHAKE, MarkerType.TIGERBAY],
     location: TigerBay,
-    image: "/objectives/unlra.webp"
+    image: "/assets/objectives/unlra.webp"
 }
 
 export const Unlra: task = {

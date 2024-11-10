@@ -8,7 +8,7 @@ const MissingColleaguePartTwo_Objective1: objective = {
     description: "Find the interrogation transcript",
     position: [11007.80893368746, 14507.750694659095],
     type: ObjectiveType.COLLECT,
-    image: "/objectives/missing-colleague-part-2-transcript.webp",
+    image: "/assets/objectives/missing-colleague-part-2-transcript.webp",
     note: "You can find the transcript on the third floor in the northern office on the desk",
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.ARTISAN, MarkerType.FORTNARITH],
     location: FortNarith

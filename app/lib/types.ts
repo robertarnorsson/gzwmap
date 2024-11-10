@@ -1,10 +1,10 @@
 export type BaseMarker = {
   id: string;
   name: string;
-  types: MarkerType[];
 }
 
 export type Marker = BaseMarker & {
+  types: MarkerType[];
   position: [number, number];
 };
 

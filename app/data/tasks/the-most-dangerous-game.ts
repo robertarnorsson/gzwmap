@@ -18,7 +18,7 @@ const TheMostDangerousGame_Objective2: objective = {
     description: "Retrieve intel about Hunter's Paradise VIP program",
     position: [14178.003734323835, 22005.067700425356],
     type: ObjectiveType.COLLECT,
-    image: "/objectives/the-most-dangerous-game.webp",
+    image: "/assets/objectives/the-most-dangerous-game.webp",
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.ARTISAN, MarkerType.HUNTERSPARADISE],
     location: HuntersParadise
 }

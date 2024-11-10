@@ -8,7 +8,7 @@ const MissingColleaguePartOne_Objective1: objective = {
     description: "Locate any intel about the colleague's whereabouts",
     position: [11555.733479051223, 14446.909158624401],
     type: ObjectiveType.COLLECT,
-    image: "/objectives/missing-colleague-part-1-note.webp",
+    image: "/assets/objectives/missing-colleague-part-1-note.webp",
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.ARTISAN, MarkerType.FORTNARITH],
     location: FortNarith
 }
