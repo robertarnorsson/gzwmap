@@ -66,5 +66,6 @@ export const HelpingHand: task = {
         PLAttic,
         NTAttic,
         KVAttic
-    ]
+    ],
+    notMultiLocation: true,
 }

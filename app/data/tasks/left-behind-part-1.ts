@@ -53,5 +53,6 @@ export const LeftBehindPartOne: task = {
   ],
   vendor: Handshake,
   level: 0,
-  cancelTaskId: "T-2C93QQ"
+  cancelTaskId: "T-2C93QQ",
+  notMultiLocation: true,
 }

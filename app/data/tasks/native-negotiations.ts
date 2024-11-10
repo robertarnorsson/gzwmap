@@ -91,5 +91,6 @@ export const NativeNegotiations: task = {
     NativeNegotiations_Objective2_CSI,
   ],
   vendor: Handshake,
-  level: 0
+  level: 0,
+  notMultiLocation: true,
 }

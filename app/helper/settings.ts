@@ -1,14 +1,16 @@
-// actions.ts
-
 import { Settings } from "~/context/SettingsProvider";
 
 export type ActionsType = {
   updateNote: (id: string, note: string) => void;
   toggleObjectiveCompletion: (id: string) => void;
+  updateFaction: (id: string) => void;
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const createActions = (settings: Settings, updateSetting: (key: keyof Settings, value: any) => void) => {
+export const createActions = (
+  settings: Settings,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  updateSetting: (key: keyof Settings, value: any) => void
+): ActionsType => {
   return {
     updateNote: (id: string, note: string) => {
       updateSetting('notes', { ...settings.notes, [id]: note });
@@ -21,6 +23,9 @@ export const createActions = (settings: Settings, updateSetting: (key: keyof Set
 
       updateSetting("objectivesComplete", updatedObjectives);
     },
-    // Add other actions as needed
+    updateFaction: (id: string) => {
+      const updatedFaction = settings.faction === id ? null : id;
+      updateSetting("faction", updatedFaction);
+    }
   };
 };

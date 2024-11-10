@@ -57,5 +57,6 @@ export const LastFarewellPartOne: task = {
   vendor: Gunny,
   items: [GPSTracker],
   level: 0,
-  cancelTaskId: "T-F226H9"
+  cancelTaskId: "T-F226H9",
+  notMultiLocation: true,
 }

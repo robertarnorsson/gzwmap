@@ -65,5 +65,6 @@ export const MedsWanted: task = {
     MedsWanted_Objective1_CSI,
   ],
   vendor: LabRat,
-  level: 0
+  level: 0,
+  notMultiLocation: true,
 }

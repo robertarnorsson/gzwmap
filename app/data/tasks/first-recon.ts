@@ -137,5 +137,6 @@ export const FirstRecon: task = {
     ],
     vendor: Handshake,
     level: 0,
-    difficulty: Difficulty1
+    difficulty: Difficulty1,
+    notMultiLocation: true,
 }

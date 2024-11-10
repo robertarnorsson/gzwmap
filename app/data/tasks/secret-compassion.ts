@@ -155,5 +155,6 @@ export const SecretCompassion: task = {
     BoxOfSupplies,
     BoxOfSupplies
   ],
-  prerequisites: MedicalDetective
+  prerequisites: MedicalDetective,
+  notMultiLocation: true,
 }

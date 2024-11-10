@@ -52,5 +52,6 @@ export const RadioSilence: task = {
     RadioSilence_Objective1_CSI,
   ],
   vendor: Handshake,
-  level: 0
+  level: 0,
+  notMultiLocation: true,
 }

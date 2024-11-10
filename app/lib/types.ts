@@ -73,6 +73,7 @@ export type task = BaseMarker & {
   items?: item[]
   faction?: faction,
   difficulty?: difficulty,
+  notMultiLocation?: boolean,
 };
 
 export type difficulty = {

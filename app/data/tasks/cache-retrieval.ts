@@ -123,5 +123,6 @@ export const CacheRetrieval: task = {
     items: [
         GPSTracker,
         GPSTracker
-    ]
+    ],
+    notMultiLocation: true,
 }

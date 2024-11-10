@@ -54,5 +54,6 @@ export const RestoringOrder: task = {
   ],
   vendor: Handshake,
   level: 0,
-  prerequisites: LittleBirdDown
+  prerequisites: LittleBirdDown,
+  notMultiLocation: true,
 }

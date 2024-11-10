@@ -52,5 +52,6 @@ export const ToolsOfTheTrade: task = {
     ToolsOfTheTrade_Objective1_CSI,
   ],
   vendor: Artisan,
-  level: 0
+  level: 0,
+  notMultiLocation: true,
 }

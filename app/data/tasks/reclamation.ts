@@ -54,5 +54,6 @@ export const Reclamation: task = {
     Reclamation_Objective1_CSI,
   ],
   vendor: Handshake,
-  level: 0
+  level: 0,
+  notMultiLocation: true,
 }

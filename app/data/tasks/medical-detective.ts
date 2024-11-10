@@ -65,5 +65,6 @@ export const MedicalDetective: task = {
     PLDoctorsOffice,
     NTDoctorsOffice,
     KVDoctorsOffice,
-  ]
+  ],
+  notMultiLocation: true,
 }

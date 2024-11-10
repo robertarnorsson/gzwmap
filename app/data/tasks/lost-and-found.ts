@@ -54,5 +54,6 @@ export const LostAndFound: task = {
   ],
   vendor: LabRat,
   level: 0,
-  prerequisites: MedsWanted
+  prerequisites: MedsWanted,
+  notMultiLocation: true,
 }

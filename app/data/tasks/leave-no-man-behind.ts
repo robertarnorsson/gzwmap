@@ -61,5 +61,6 @@ export const LeaveNoManBehind: task = {
   prerequisites: CacheRetrieval,
   items: [
     GPSTracker
-  ]
+  ],
+  notMultiLocation: true,
 }
