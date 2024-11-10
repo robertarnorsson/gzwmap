@@ -8,7 +8,10 @@ const DeepDepravity_Objective1: objective = {
     description: "Bring the intel of atrocities to the Banshee",
     position: [11003.53902408218, 13040.448916078934],
     type: ObjectiveType.COLLECT,
-    image: "/assets/objectives/deep-depravity.webp",
+    image: {
+    large: "/assets/objectives/deep-depravity.webp",
+    small: "/assets/objectives/thumbnail/deep-depravity.webp"
+  },
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.BANSHEE, MarkerType.YBL1],
     location: YBL1
 }

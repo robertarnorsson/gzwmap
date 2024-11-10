@@ -8,7 +8,10 @@ const SkycrawlersPartOne_Objective1: objective = {
     description: "Investigate Pha Lang Airfield and find a proof of drug trade",
     position: [18557.853276242517, 19674.681709333672],
     type: ObjectiveType.COLLECT,
-    image: "/assets/objectives/skycrawlers-part-1.webp",
+    image: {
+    large: "/assets/objectives/skycrawlers-part-1.webp",
+    small: "/assets/objectives/thumbnail/skycrawlers-part-1.webp"
+  },
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.BANSHEE, MarkerType.PHALANGAIRFIELD],
     location: PhaLangAirfield
 }

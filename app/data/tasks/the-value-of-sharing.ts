@@ -7,7 +7,10 @@ const TheValueOfSharing_Objective1: objective = {
     name: "Stash of high-grade fentanyl",
     description: "Locate a stash of high-grade fentanyl under a house",
     position: [22944.46418700454, 16058.091541802138],
-    image: "/assets/objectives/stash-of-high-grade-fentanyl.webp",
+    image: {
+    large: "/assets/objectives/stash-of-high-grade-fentanyl.webp",
+    small: "/assets/objectives/thumbnail/stash-of-high-grade-fentanyl.webp"
+  },
     type: ObjectiveType.LOCATE,
     types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.TURNCOAT, MarkerType.BANPA],
     location: BanPa

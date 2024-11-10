@@ -14,7 +14,10 @@ const MedsWanted_Objective1_LRI: objective = {
   position: [22088.811041833964, 21076.77434785609],
   type: ObjectiveType.COLLECT,
   faction: LamangRecoveryInitiative,
-  image: "/assets/objectives/unlra-medical-supplies.webp",
+  image: {
+    large: "/assets/objectives/unlra-medical-supplies.webp",
+    small: "/assets/objectives/thumbnail/unlra-medical-supplies.webp"
+  },
   types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.PHALANG],
   location: PhaLang
 }
@@ -26,7 +29,10 @@ const MedsWanted_Objective1_MMS: objective = {
   position: [16752.58250720719, 12435.176671501109],
   type: ObjectiveType.COLLECT,
   faction: MithrasSecuritySystems,
-  image: "/assets/objectives/unlra-medical-supplies.webp",
+  image: {
+    large: "/assets/objectives/unlra-medical-supplies.webp",
+    small: "/assets/objectives/thumbnail/unlra-medical-supplies.webp"
+  },
   types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.NAMTHAVEN],
   location: NamThaven
 }
@@ -38,7 +44,10 @@ const MedsWanted_Objective1_CSI: objective = {
   position: [10539.690091174749, 20716.974915877196],
   type: ObjectiveType.COLLECT,
   faction: CrimsonShieldInternational,
-  image: "/assets/objectives/unlra-medical-supplies.webp",
+  image: {
+    large: "/assets/objectives/unlra-medical-supplies.webp",
+    small: "/assets/objectives/thumbnail/unlra-medical-supplies.webp"
+  },
   types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.LABRAT, MarkerType.KIUVONGSA],
   location: KiuVongsa
 }

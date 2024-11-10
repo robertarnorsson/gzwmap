@@ -34,7 +34,10 @@ export type objective = Marker & {
   type: ObjectiveType;
   location: location;
   faction?: faction;
-  image?: string;
+  image?: {
+    large: string;
+    small: string;
+  };
   key?: key;
   items?: item[];
   note?: string;

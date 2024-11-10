@@ -14,7 +14,6 @@ const PopupImage = ({ src, alt }: PopupImageProps) => {
     img.src = src;
 
     if (img.complete) {
-      // Image is already cached
       setIsCached(true);
       setIsLoaded(true);
     } else {

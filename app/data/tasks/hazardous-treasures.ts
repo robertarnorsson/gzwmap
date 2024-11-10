@@ -21,7 +21,10 @@ const HazardousTreasures_Objective2: objective = {
     description: "Retrieve the container from Sawmill",
     position: [10308.675731601135, 17317.32988742429],
     type: ObjectiveType.COLLECT,
-    image: "/assets/objectives/hazardous-treasures-sawmill.webp",
+    image: {
+    large: "/assets/objectives/hazardous-treasures-sawmill.webp",
+    small: "/assets/objectives/thumbnail/hazardous-treasures-sawmill.webp"
+  },
     types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.SAWMILL],
     location: Sawmill,
     key: SMOstrg
@@ -43,7 +46,10 @@ const HazardousTreasures_Objective4: objective = {
     description: "Retrieve the container from Blue Lagoon",
     position: [22785.68694339168, 12197.50006123458],
     type: ObjectiveType.COLLECT,
-    image: "/assets/objectives/hazardous-treasures-blue-lagoon.webp",
+    image: {
+    large: "/assets/objectives/hazardous-treasures-blue-lagoon.webp",
+    small: "/assets/objectives/thumbnail/hazardous-treasures-blue-lagoon.webp"
+  },
     types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.BLUELAGOON],
     location: BlueLagoon
 }
@@ -64,7 +70,10 @@ const HazardousTreasures_Objective6: objective = {
     description: "Retrieve the container from Hunters Paradise",
     position: [14159.81469349933, 22007.76764842343],
     type: ObjectiveType.COLLECT,
-    image: "/assets/objectives/hazardous-treasures-hunters-paradise.webp",
+    image: {
+    large: "/assets/objectives/hazardous-treasures-hunters-paradise.webp",
+    small: "/assets/objectives/thumbnail/hazardous-treasures-hunters-paradise.webp"
+  },
     types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.HUNTERSPARADISE],
     location: HuntersParadise,
     key: HPWep
@@ -86,7 +95,10 @@ const HazardousTreasures_Objective8: objective = {
     description: "Retrieve the container from Ban Pa",
     position: [23047.267597996575, 15985.757603081283],
     type: ObjectiveType.COLLECT,
-    image: "/assets/objectives/hazardous-treasures-ban-pa.webp",
+    image: {
+    large: "/assets/objectives/hazardous-treasures-ban-pa.webp",
+    small: "/assets/objectives/thumbnail/hazardous-treasures-ban-pa.webp"
+  },
     note: "You can find the container in the Elder's House upstairs under a pink table.",
     types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.BANPA],
     location: BanPa
@@ -108,7 +120,10 @@ const HazardousTreasures_Objective10: objective = {
     description: "Retrieve the container from Pha Lang Airfield",
     position: [18547.62469130929, 19658.656022310017],
     type: ObjectiveType.COLLECT,
-    image: "/assets/objectives/hazardous-treasures-airfield.webp",
+    image: {
+    large: "/assets/objectives/hazardous-treasures-airfield.webp",
+    small: "/assets/objectives/thumbnail/hazardous-treasures-airfield.webp"
+  },
     note: "You will need a PLA STRG key. The container is behind the desk.",
     types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.PHALANGAIRFIELD],
     location: PhaLangAirfield,
@@ -131,7 +146,10 @@ const HazardousTreasures_Objective12: objective = {
     description: "Retrieve the container from YBL-1",
     position: [10983.47018390438, 12987.693226897089],
     type: ObjectiveType.COLLECT,
-    image: "/assets/objectives/hazardous-treasures-ybl-1.webp",
+    image: {
+    large: "/assets/objectives/hazardous-treasures-ybl-1.webp",
+    small: "/assets/objectives/thumbnail/hazardous-treasures-ybl-1.webp"
+  },
     note: "Back room in the office with wooden wall panels next to the communications room.",
     types: [MarkerType.TASK, MarkerType.ELIMINATION, MarkerType.HANDSHAKE, MarkerType.YBL1],
     location: YBL1

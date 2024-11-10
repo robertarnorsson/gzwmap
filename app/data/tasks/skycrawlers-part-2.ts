@@ -8,7 +8,10 @@ const SkycrawlersPartTwo_Objective1: objective = {
     description: "Retrieve and locate the logbook and report back",
     position: [18666.839793599123, 20081.996386885352],
     type: ObjectiveType.COLLECT,
-    image: "/assets/objectives/skycrawlers-part-2-logbook.webp",
+    image: {
+    large: "/assets/objectives/skycrawlers-part-2-logbook.webp",
+    small: "/assets/objectives/thumbnail/skycrawlers-part-2-logbook.webp"
+  },
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.BANSHEE, MarkerType.PHALANGAIRFIELD],
     location: PhaLangAirfield
 }

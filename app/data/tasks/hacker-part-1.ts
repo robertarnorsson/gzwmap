@@ -9,7 +9,10 @@ const HackerPartOne_Objective1: objective = {
     description: "Hack the camera at the air traffic control building",
     position: [10853.763538411224, 14387.533767426123],
     type: ObjectiveType.HACK,
-    image:"/assets/objectives/hacker-1-camera-1.webp",
+    image: {
+    large: "/assets/objectives/hacker-1-camera-1.webp",
+    small: "/assets/objectives/thumbnail/hacker-1-camera-1.webp"
+  },
     types: [MarkerType.TASK, MarkerType.HACK, MarkerType.HANDSHAKE, MarkerType.FORTNARITH],
     location: FortNarith,
     items: [CameraWiretap]
@@ -21,7 +24,10 @@ const HackerPartOne_Objective2: objective = {
     description: "Hack the camera at the main entrance",
     position: [11269.041876753225, 14666.354082435442],
     type: ObjectiveType.HACK,
-    image:"/assets/objectives/hacker-1-camera-2.webp",
+    image: {
+    large: "/assets/objectives/hacker-1-camera-2.webp",
+    small: "/assets/objectives/thumbnail/hacker-1-camera-2.webp"
+  },
     types: [MarkerType.TASK, MarkerType.HACK, MarkerType.HANDSHAKE, MarkerType.FORTNARITH],
     location: FortNarith,
     items: [CameraWiretap]
@@ -34,7 +40,10 @@ const HackerPartOne_Objective3: objective = {
     description: "Hack the camera at the northern entrance",
     position: [10985.343601402163, 14975.76206507615],
     type: ObjectiveType.HACK,
-    image:"/assets/objectives/hacker-1-camera-3.webp",
+    image: {
+    large: "/assets/objectives/hacker-1-camera-3.webp",
+    small: "/assets/objectives/thumbnail/hacker-1-camera-3.webp"
+  },
     types: [MarkerType.TASK, MarkerType.HACK, MarkerType.HANDSHAKE, MarkerType.FORTNARITH],
     location: FortNarith,
     items: [CameraWiretap]
@@ -46,7 +55,10 @@ const HackerPartOne_Objective4: objective = {
     description: "Hack the camera in the army HQ",
     position: [11058.191010095135, 14489.455400905184],
     type: ObjectiveType.HACK,
-    image:"/assets/objectives/hacker-1-camera-4.webp",
+    image: {
+    large: "/assets/objectives/hacker-1-camera-4.webp",
+    small: "/assets/objectives/thumbnail/hacker-1-camera-4.webp"
+  },
     types: [MarkerType.TASK, MarkerType.HACK, MarkerType.HANDSHAKE, MarkerType.FORTNARITH],
     location: FortNarith,
     items: [CameraWiretap]

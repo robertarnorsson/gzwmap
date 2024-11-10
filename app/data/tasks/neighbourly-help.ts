@@ -8,7 +8,10 @@ const NeighbourlyHelp_Objective1: objective = {
     description: "Check the first fuel gauge",
     position: [11423.056770251693, 14015.867950540009],
     type: ObjectiveType.LOCATE,
-    image:"/assets/objectives/neighbourly-help-fuel-gauges.webp",
+    image: {
+    large: "/assets/objectives/neighbourly-help-fuel-gauges.webp",
+    small: "/assets/objectives/thumbnail/neighbourly-help-fuel-gauges.webp"
+  },
     types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.GUNNY, MarkerType.FORTNARITH],
     location: FortNarith
 }
@@ -19,7 +22,10 @@ const NeighbourlyHelp_Objective2: objective = {
     description: "Check the second fuel gauge",
     position: [11440.056770251693, 14004.367950540009],
     type: ObjectiveType.LOCATE,
-    image:"/assets/objectives/neighbourly-help-fuel-gauges.webp",
+    image: {
+    large: "/assets/objectives/neighbourly-help-fuel-gauges.webp",
+    small: "/assets/objectives/thumbnail/neighbourly-help-fuel-gauges.webp"
+  },
     types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.GUNNY, MarkerType.FORTNARITH],
     location: FortNarith
 }

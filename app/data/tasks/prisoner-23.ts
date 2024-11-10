@@ -8,7 +8,10 @@ const Prisoner23_Objective1: objective = {
     description: "Retrieve the information folder about the prisoner and report back to Artisan",
     position: [10968.047336505448, 13064.802146271039],
     type: ObjectiveType.COLLECT,
-    image: "/assets/objectives/prisoner-23-folder.webp",
+    image: {
+    large: "/assets/objectives/prisoner-23-folder.webp",
+    small: "/assets/objectives/thumbnail/prisoner-23-folder.webp"
+  },
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.ARTISAN, MarkerType.YBL1],
     location: YBL1
 }

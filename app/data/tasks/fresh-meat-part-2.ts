@@ -8,7 +8,10 @@ const FreshMeatPartTwo_Objective1_LRI: objective = {
   description: "Find a building being used for the human-trafficking operation",
   position: [22801.804278948886, 11963.20241777538],
   type: ObjectiveType.LOCATE,
-  image: "/assets/objectives/fresh-meat-part-2.webp",
+  image: {
+    large: "/assets/objectives/fresh-meat-part-2.webp",
+    small: "/assets/objectives/thumbnail/fresh-meat-part-2.webp"
+  },
   types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.BANSHEE, MarkerType.BLUELAGOON],
   location: BlueLagoon
 }

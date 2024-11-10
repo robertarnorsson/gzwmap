@@ -8,7 +8,10 @@ const FamilyHeirloom_Objective1: objective = {
     description: "Retrieve the valuables and report back to Turncoat",
     position: [10584.666303078553, 15588.819103574482],
     type: ObjectiveType.COLLECT,
-    image:"/assets/objectives/family-heirloom-valuables.webp",
+    image: {
+    large: "/assets/objectives/family-heirloom-valuables.webp",
+    small: "/assets/objectives/thumbnail/family-heirloom-valuables.webp"
+  },
     types: [MarkerType.TASK, MarkerType.COLLECT, MarkerType.TURNCOAT, MarkerType.FORTNARITH],
     location: FortNarith,
     note: "You can enter the house from the back and find the briefcase upstairs under the bed."

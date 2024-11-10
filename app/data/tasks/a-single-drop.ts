@@ -20,7 +20,10 @@ const ASingleDrop_Objective2: objective = {
     description: "White truck with gas tank trailer. Interact with the panel that's open on the side of the tank.",
     position: [18703.590535590494, 19992.511205904735],
     type: ObjectiveType.MARK,
-    image: "/assets/objectives/a-single-drop-second-tanker.webp",
+    image: {
+    large: "/assets/objectives/a-single-drop-second-tanker.webp",
+    small: "/assets/objectives/thumbnail/a-single-drop-second-tanker.webp"
+  },
     types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.PHALANGAIRFIELD, MarkerType.DIFFICULTY_2],
     location: PhaLangAirfield,
     difficulty: Difficulty2
@@ -32,7 +35,10 @@ const ASingleDrop_Objective3: objective = {
     description: "White truck with gas tank trailer. Interact with the panel that's open on the side of the tank.",
     position: [18754.927298622453, 20085.16929079341],
     type: ObjectiveType.MARK,
-    image: "/assets/objectives/a-single-drop-third-tanker.webp",
+    image: {
+    large: "/assets/objectives/a-single-drop-third-tanker.webp",
+    small: "/assets/objectives/thumbnail/a-single-drop-third-tanker.webp"
+  },
     types: [MarkerType.TASK, MarkerType.MARK, MarkerType.GUNNY, MarkerType.PHALANGAIRFIELD, MarkerType.DIFFICULTY_2],
     location: PhaLangAirfield,
     difficulty: Difficulty2

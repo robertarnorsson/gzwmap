@@ -8,7 +8,10 @@ const LostLover_Objective1: objective = {
     description: "Search in and around Fort Narith and uncover what happened to Atsawin Xiong.",
     position: [11594.24540498363, 14720.197344102531],
     type: ObjectiveType.LOCATE,
-    image: "/assets/objectives/lost-lover-document.webp",
+    image: {
+    large: "/assets/objectives/lost-lover-document.webp",
+    small: "/assets/objectives/thumbnail/lost-lover-document.webp"
+  },
     note: "Read the document on the shelf inside the house",
     types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.ARTISAN, MarkerType.FORTNARITH],
     location: FortNarith
@@ -20,7 +23,10 @@ const LostLover_Objective2: objective = {
     description: "Find out what happened after Atsawin Xiong was conscripted and taken to Fort Narith barracks.",
     position: [10688.70419634185, 15021.047052969103],
     type: ObjectiveType.COLLECT,
-    image: "/assets/objectives/lost-lover-diary.webp",
+    image: {
+    large: "/assets/objectives/lost-lover-diary.webp",
+    small: "/assets/objectives/thumbnail/lost-lover-diary.webp"
+  },
     types: [MarkerType.TASK, MarkerType.LOCATE, MarkerType.ARTISAN, MarkerType.FORTNARITH],
     location: FortNarith
 }

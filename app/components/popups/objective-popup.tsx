@@ -15,7 +15,7 @@ import {
   Dialog,
   DialogClose,
   DialogContent,
-  DialogHeader,
+  DialogTitle,
   DialogTrigger,
 } from "~/components/ui/dialog";
 import { Textarea } from "../ui/textarea";
@@ -91,18 +91,32 @@ export const ObjectivePopupContent = ({
           <span className="text-sm text-primary font-semibold">
             Image
           </span>
-          <div className="relative w-64 border border-border aspect-video overflow-hidden mt-1">
-            <PopupImage
-              src={objective.image}
-              alt={objective.name}
-            />
-            <div className="absolute bottom-0 left-0 w-full bg-background/60 backdrop-blur-[2px] text-left py-[2px] pl-2 text-[0.5rem] text-muted-foreground">
-              Click the image for a better view
-            </div>
-          </div>
+          <Dialog>
+            <DialogTrigger asChild>
+              <div className="relative w-64 border border-border aspect-video overflow-hidden mt-1 cursor-pointer">
+                <PopupImage
+                  src={objective.image.small}
+                  alt={objective.name}
+                />
+                <div className="absolute bottom-0 left-0 w-full bg-background/60 backdrop-blur-[2px] text-left py-[2px] pl-2 text-[0.5rem] text-muted-foreground">
+                  Click the image for a better view
+                </div>
+              </div>
+            </DialogTrigger>
+            <DialogContent className="p-0 max-w-screen-xl" aria-describedby="">
+              <DialogTitle className="sr-only">
+                {objective.name}
+              </DialogTitle>
+              <img
+                src={objective.image.large}
+                alt={objective.name}
+                className="w-full h-auto"
+              />
+            </DialogContent>
+          </Dialog>
         </div>
       )}
-      {noteText && (
+      {settings.notes?.[objective.id] && (
         <div className="mt-3">
           <span className="text-xs text-muted-foreground">User note</span>
           <p className="text-xs text-muted-foreground">{settings.notes?.[objective.id] || ""}</p>
@@ -164,29 +178,28 @@ export const ObjectivePopupContent = ({
                 </DialogTrigger>
               </DropdownMenuContent>
             </DropdownMenu>
-            <DialogContent>
-              <DialogHeader>
-                <DialogContent>
-                  <span className="text-xl font-semibold">Add a Note</span>
-                  <Textarea
-                    ref={textareaRef}
-                    className="w-full p-2"
-                    placeholder="Enter your note here..."
-                    rows={8}
-                    value={noteText}
-                    onChange={handleNoteChange}
-                    onFocus={() => {
-                      if (textareaRef.current) {
-                        const length = noteText.length;
-                        textareaRef.current.setSelectionRange(length, length);
-                      }
-                    }}
-                  />
-                  <DialogClose asChild>
-                    <Button className="px-6" onClick={handleSaveNote}>Save</Button>
-                  </DialogClose>
-                </DialogContent>
-              </DialogHeader>
+            <DialogContent aria-describedby="">
+              <DialogTitle className="sr-only">
+                Add a Note
+              </DialogTitle>
+              <span className="text-xl font-semibold">Add a Note</span>
+              <Textarea
+                ref={textareaRef}
+                className="w-full p-2"
+                placeholder="Enter your note here..."
+                rows={8}
+                value={noteText}
+                onChange={handleNoteChange}
+                onFocus={() => {
+                  if (textareaRef.current) {
+                    const length = noteText.length;
+                    textareaRef.current.setSelectionRange(length, length);
+                  }
+                }}
+              />
+              <DialogClose asChild>
+                <Button className="px-6" onClick={handleSaveNote}>Save</Button>
+              </DialogClose>
             </DialogContent>
           </Dialog>
         </div>
