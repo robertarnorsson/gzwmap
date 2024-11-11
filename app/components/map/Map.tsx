@@ -6,7 +6,7 @@ const Map: React.FC = () => {
   const { map, isMapLoaded } = useMap();
   const mapContainerRef = useRef<HTMLDivElement>(null);
 
-  useMarkerNavigation({ defaultZoom: 5 });
+  useMarkerNavigation({ defaultZoom: 6 });
 
   useEffect(() => {
     if (map && mapContainerRef.current) {

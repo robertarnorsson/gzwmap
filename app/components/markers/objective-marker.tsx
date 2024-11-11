@@ -1,3 +1,4 @@
+import { memo, useCallback } from "react";
 import { Marker } from "../map/Marker";
 import { useSettings } from "~/context/SettingsProvider";
 import { objective, task } from "~/lib/types";
@@ -9,21 +10,24 @@ interface ObjectiveMarkerProps {
   objective: objective;
 }
 
-export const ObjectiveMarker = ({ task, objective }: ObjectiveMarkerProps) => {
+export const ObjectiveMarker = memo(({ task, objective }: ObjectiveMarkerProps) => {
   const { settings } = useSettings();
   const { showPopup } = usePopup();
 
   const selectedFaction = settings.faction;
-
   const shouldHide = !!(selectedFaction && objective.faction && objective.faction.id !== selectedFaction);
   const isComplete = settings.objectivesComplete.includes(objective.id);
 
-  const handleClick = () => {
+  const handleClick = useCallback(() => {
     showPopup(objective.position, <ObjectivePopupContent task={task} objective={objective} />, [0, -20]);
-  };
+  }, [showPopup, task, objective]);
+
+  if (shouldHide) {
+    return null;
+  }
 
   return (
-    <Marker position={objective.position} hide={shouldHide} enableHoverEffect>
+    <Marker position={objective.position} enableHoverEffect>
       <button
         className='group/objective relative p-1.5'
         onClick={handleClick}
@@ -44,4 +48,6 @@ export const ObjectiveMarker = ({ task, objective }: ObjectiveMarkerProps) => {
       </button>
     </Marker>
   );
-};
+});
+
+ObjectiveMarker.displayName = "ObjectiveMarker";
