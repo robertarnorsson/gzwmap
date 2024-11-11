@@ -18,80 +18,24 @@ import { Link } from "@remix-run/react";
 import { useMemo } from "react";
 import { Tasks } from "~/data/tasks";
 import { LZs } from "~/data/lzs";
-import { objective } from "~/lib/types";
+import { getCompletedObjectivesCount, getCompletedTasksCount, getTotalObjectivesCount } from "~/helper/completions";
 
 export function AppSidebar() {
   const { settings, actions } = useSettings();
   const selectedFactionId = settings.faction;
 
+  // Use memoization for efficiency in calculations
   const completedTasksCount = useMemo(() => {
-    return Tasks.filter((task) => {
-      // Filter objectives based on selected faction, if any
-      const relevantObjectives = task.objectives.filter((objective) => {
-        // Only include objectives for the selected faction or if no faction is selected
-        return (
-          !settings.faction || // No faction selected, include all objectives
-          objective.faction?.id === settings.faction // Only include objectives matching the selected faction
-        );
-      });
-  
-      if (relevantObjectives.length === 0) {
-        // If there are no relevant objectives for the selected faction, this task should not be considered
-        return false;
-      }
-  
-      // If `notMultiLocation` is true, check completion for any location
-      if (task.notMultiLocation) {
-        // Group objectives by location
-        const objectivesByLocation = relevantObjectives.reduce((acc, objective) => {
-          const locationId = objective.location.id;
-          if (!acc[locationId]) acc[locationId] = [];
-          acc[locationId].push(objective);
-          return acc;
-        }, {} as Record<string, objective[]>);
-  
-        // Check if any location's objectives are all completed
-        return Object.values(objectivesByLocation).some((objectives) =>
-          objectives.every((objective) =>
-            settings.objectivesComplete.includes(objective.id)
-          )
-        );
-      } else {
-        // For tasks without `notMultiLocation`, all relevant objectives must be completed
-        return relevantObjectives.every((objective) =>
-          settings.objectivesComplete.includes(objective.id)
-        );
-      }
-    }).length;
-  }, [settings.objectivesComplete, settings.faction]);
+    return getCompletedTasksCount(Tasks, settings.objectivesComplete, selectedFactionId);
+  }, [settings.objectivesComplete, selectedFactionId]);
 
   const completedObjectivesCount = useMemo(() => {
-    return settings.objectivesComplete.filter((objectiveId) => {
-      const matchingObjective = Tasks.flatMap((task) => task.objectives).find(
-        (obj) => obj.id === objectiveId
-      );
-      // Only count objectives if they match the selected faction
-      return (
-        matchingObjective &&
-        (!settings.faction || matchingObjective.faction?.id === settings.faction)
-      );
-    }).length;
-  }, [settings.objectivesComplete, settings.faction]);  
-  
-  // Calculate total objectives, including all objectives for tasks without `notMultiLocation`
-  const totalObjectives = useMemo(() => {
-    return Tasks.flatMap((task) =>
-      task.notMultiLocation
-        ? task.objectives.filter((objective) => {
-            return (
-              !settings.faction || // Include all objectives if no faction is selected
-              objective.faction?.id === settings.faction // Only include matching faction
-            );
-          })
-        : task.objectives // Include all objectives for tasks without `notMultiLocation`
-    ).length;
-  }, [settings.faction]);
-  
+    return getCompletedObjectivesCount(Tasks, settings.objectivesComplete, selectedFactionId);
+  }, [settings.objectivesComplete, selectedFactionId]);
+
+  const totalObjectivesCount = useMemo(() => {
+    return getTotalObjectivesCount(Tasks, selectedFactionId);
+  }, [selectedFactionId]);
 
   const handleFactionSelect = (factionId: string) => {
     actions.updateFaction(factionId);
@@ -139,7 +83,7 @@ export function AppSidebar() {
                 label: "Objectives Completed",
                 value: `${completedObjectivesCount
                   .toString()
-                  .padStart(3, "0")} / ${totalObjectives}`,
+                  .padStart(3, "0")} / ${totalObjectivesCount}`,
               },
               {
                 label: "Tasks Completed",

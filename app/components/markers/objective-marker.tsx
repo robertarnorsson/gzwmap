@@ -22,12 +22,8 @@ export const ObjectiveMarker = memo(({ task, objective }: ObjectiveMarkerProps) 
     showPopup(objective.position, <ObjectivePopupContent task={task} objective={objective} />, [0, -20]);
   }, [showPopup, task, objective]);
 
-  if (shouldHide) {
-    return null;
-  }
-
   return (
-    <Marker position={objective.position} enableHoverEffect>
+    <Marker position={objective.position} hide={shouldHide} enableHoverEffect>
       <button
         className='group/objective relative p-1.5'
         onClick={handleClick}

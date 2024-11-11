@@ -22,6 +22,7 @@ export const Marker = ({ position, hide = false, children, enableHoverEffect = f
     }
 
     if (hide && overlayRef.current) {
+      overlayRef.current.setPosition(undefined);
       map.removeOverlay(overlayRef.current);
       overlayRef.current = null;
       return;
