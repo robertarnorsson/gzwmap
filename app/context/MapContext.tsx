@@ -50,7 +50,7 @@ export const MapProvider = ({ children }: { children: ReactNode }) => {
           maxZoom: 9
         }),
         controls: [],
-        maxTilesLoading: 32,
+        maxTilesLoading: 64,
       });
 
       mapInstance.once('rendercomplete', () => {
