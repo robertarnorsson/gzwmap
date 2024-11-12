@@ -14,7 +14,6 @@ export const Marker = ({ position, hide = false, children, enableHoverEffect = f
   const { map } = useMap();
   const markerRef = useRef<HTMLDivElement | null>(null);
   const overlayRef = useRef<Overlay | null>(null);
-  const overlayReadyRef = useRef(false);
 
   useEffect(() => {
     if (!map) {
@@ -40,7 +39,6 @@ export const Marker = ({ position, hide = false, children, enableHoverEffect = f
         stopEvent: false,
       });
       map.addOverlay(overlayRef.current);
-      overlayReadyRef.current = true;
     }
 
     if (overlayRef.current) {
@@ -53,9 +51,9 @@ export const Marker = ({ position, hide = false, children, enableHoverEffect = f
         overlayRef.current = null;
       }
     };
-  }, [map, position, hide]); // Cleaned up dependencies
+  }, [map, position, hide]);
 
-  return overlayReadyRef.current && markerRef.current && !hide ? (
+  return markerRef.current && !hide ? (
     createPortal(
       <div
         onMouseEnter={enableHoverEffect ? () => (markerRef.current!.parentElement!.style.zIndex = "1000") : undefined}

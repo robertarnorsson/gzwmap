@@ -38,8 +38,7 @@ export const MapProvider = ({ children }: { children: ReactNode }) => {
               }),
               projection: projection,
               tileSize: 256,
-              cacheSize: 256,
-              transition: 100
+              transition: 0
             })
           })
         ],
@@ -51,7 +50,7 @@ export const MapProvider = ({ children }: { children: ReactNode }) => {
           maxZoom: 9
         }),
         controls: [],
-        maxTilesLoading: 64,
+        maxTilesLoading: 32,
       });
 
       mapInstance.once('rendercomplete', () => {

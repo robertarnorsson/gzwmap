@@ -6,7 +6,7 @@ import { cn } from "~/lib/utils"
 import { Button } from "~/components/ui/button"
 import { Input } from "~/components/ui/input"
 import { Separator } from "~/components/ui/separator"
-import { Sheet, SheetContent } from "~/components/ui/sheet"
+import { Sheet, SheetContent, SheetTitle } from "~/components/ui/sheet"
 import { Skeleton } from "~/components/ui/skeleton"
 import {
   Tooltip,
@@ -17,7 +17,7 @@ import {
 import { ViewVerticalIcon } from "@radix-ui/react-icons"
 
 const SIDEBAR_WIDTH = "24rem"
-const SIDEBAR_WIDTH_MOBILE = "18rem"
+const SIDEBAR_WIDTH_MOBILE = "20rem"
 const SIDEBAR_WIDTH_ICON = "3rem"
 const SIDEBAR_KEYBOARD_SHORTCUT = "b"
 
@@ -190,14 +190,16 @@ const Sidebar = React.forwardRef<
           <SheetContent
             data-sidebar="sidebar"
             data-mobile="true"
-            className="w-[--sidebar-width] p-0 text-sidebar-foreground [&>button]:hidden"
+            className="w-[--sidebar-width] grid-bg p-0 text-sidebar-foreground [&>button]:hidden"
             style={
               {
                 "--sidebar-width": SIDEBAR_WIDTH_MOBILE,
               } as React.CSSProperties
             }
             side={side}
+            aria-describedby=""
           >
+            <SheetTitle className="sr-only">Mobile sidebar</SheetTitle>
             <div className="flex h-full w-full flex-col">{children}</div>
           </SheetContent>
         </Sheet>

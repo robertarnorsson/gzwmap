@@ -12,7 +12,14 @@ import { SettingsProvider } from "./context/SettingsProvider";
 import { Toaster } from "./components/ui/toaster";
 
 export const links: LinksFunction = () => [
-  { rel: "preconnect", href: "https://fonts.googleapis.com" },
+  {
+    rel: "manifest",
+    href: "/manifest.webmanifest"
+  },
+  {
+    rel: "preconnect",
+    href: "https://fonts.googleapis.com"
+  },
   {
     rel: "preconnect",
     href: "https://fonts.gstatic.com",
@@ -30,6 +37,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="user-scalable=0, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141414" />
         <Meta />
         <Links />
       </head>

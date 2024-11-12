@@ -54,5 +54,6 @@ export const CovertResearch: task = {
     ],
     vendor: LabRat,
     level: 0,
+    cancelTaskId: 'T-DVLO2Q',
     notMultiLocation: true,
 }

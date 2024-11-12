@@ -1,41 +1,80 @@
-import { task, objective } from "~/lib/types";
+import { task, objective, lz } from "~/lib/types";
 
-// Function to get relevant objectives based on the selected faction
-const getRelevantObjectives = (tasks: task[], selectedFactionId: string | null): objective[] => {
-  return tasks.flatMap(task => 
-    task.objectives.filter(objective => {
-      if (!objective.faction) {
-        return true;
-      }
-
-      return selectedFactionId === null || objective.faction.id === selectedFactionId;
-    })
-  );
+// Function to get relevant objectives based on selected faction and cancelTaskId logic
+const getRelevantObjectives = (tasks: task[], completedTaskIds: Set<string>, selectedFactionId: string | null): objective[] => {
+  return tasks
+    .filter(task => !task.cancelTaskId || !completedTaskIds.has(task.cancelTaskId)) // Exclude objectives of canceled tasks
+    .flatMap(task => 
+      task.objectives.filter(objective => {
+        if (!objective.faction) return true; // Include objectives without a faction
+        return selectedFactionId === null || objective.faction.id === selectedFactionId; // Include based on faction
+      })
+    );
 };
 
-// Function to get the count of completed objectives
+// Function to get relevant LZs based on selected faction
+const getRelevantLZs = (lzs: lz[], selectedFactionId: string | null): lz[] => {
+  return lzs.filter(lz => {
+    if (!lz.faction) return true;
+    return selectedFactionId === null || lz.faction.id === selectedFactionId;
+  });
+};
+
+// Function to calculate completed objectives count
 export const getCompletedObjectivesCount = (
   tasks: task[],
   completedObjectives: string[],
   selectedFactionId: string | null
 ): number => {
-  const relevantObjectives = getRelevantObjectives(tasks, selectedFactionId);
-  return relevantObjectives.filter(objective => completedObjectives.includes(objective.id)).length;
+  const completedTaskIds = new Set<string>();
+  const canceledTaskIds = new Set<string>();
+  
+  // Track completed and canceled tasks
+  tasks.forEach(task => {
+    const isTaskCompleted = task.objectives.every(objective => completedObjectives.includes(objective.id));
+    if (isTaskCompleted) {
+      completedTaskIds.add(task.id);
+      if (task.cancelTaskId) {
+        canceledTaskIds.add(task.cancelTaskId);
+      }
+    }
+  });
+
+  const relevantObjectives = getRelevantObjectives(tasks, completedTaskIds, selectedFactionId);
+  return relevantObjectives.filter(objective => completedObjectives.includes(objective.id) && !canceledTaskIds.has(objective.id)).length;
 };
 
-// Function to get the total number of objectives based on the selected faction
+// Function to calculate total objectives count
 export const getTotalObjectivesCount = (tasks: task[], selectedFactionId: string | null): number => {
-  const relevantObjectives = getRelevantObjectives(tasks, selectedFactionId);
-  return relevantObjectives.length;
+  const completedTaskIds = new Set<string>();
+  const canceledTaskIds = new Set<string>();
+  
+  // Track completed and canceled tasks
+  tasks.forEach(task => {
+    if (task.cancelTaskId && completedTaskIds.has(task.cancelTaskId)) {
+      canceledTaskIds.add(task.id);
+    }
+  });
+
+  const relevantObjectives = getRelevantObjectives(tasks, completedTaskIds, selectedFactionId);
+  return relevantObjectives.filter(objective => !canceledTaskIds.has(objective.id)).length;
 };
 
-// Function to get the count of completed tasks based on completed objectives and selected faction
+// Function to calculate completed tasks count with cancelTaskId logic
 export const getCompletedTasksCount = (
   tasks: task[],
   completedObjectives: string[],
   selectedFactionId: string | null
 ): number => {
+  const completedTaskIds = new Set<string>();
+  const canceledTaskIds = new Set<string>();
+
   return tasks.filter(task => {
+    // Skip tasks that are canceled by completed tasks
+    if (task.cancelTaskId && canceledTaskIds.has(task.cancelTaskId)) {
+      return false;
+    }
+
     const relevantObjectives = task.objectives.filter(objective => {
       return !objective.faction || selectedFactionId === null || objective.faction.id === selectedFactionId;
     });
@@ -44,26 +83,68 @@ export const getCompletedTasksCount = (
       return false;
     }
 
-    if (task.notMultiLocation) {
-      const objectivesByLocation = relevantObjectives.reduce((acc, objective) => {
-        const locationId = objective.location.id;
-        if (!acc[locationId]) acc[locationId] = [];
-        acc[locationId].push(objective);
-        return acc;
-      }, {} as Record<string, objective[]>);
+    const isTaskCompleted = task.notMultiLocation
+      ? // Handle tasks with objectives across different locations
+        Object.values(
+          relevantObjectives.reduce((acc, objective) => {
+            const locationId = objective.location.id;
+            if (!acc[locationId]) acc[locationId] = [];
+            acc[locationId].push(objective);
+            return acc;
+          }, {} as Record<string, objective[]>)
+        ).some(objectives =>
+          objectives.every(objective => completedObjectives.includes(objective.id))
+        )
+      : // Handle tasks requiring all objectives to be completed
+        relevantObjectives.every(objective => completedObjectives.includes(objective.id));
 
-      return Object.values(objectivesByLocation).some(objectives =>
-        objectives.every(objective => completedObjectives.includes(objective.id))
-      );
-    } else {
-      return relevantObjectives.every(objective => completedObjectives.includes(objective.id));
+    if (isTaskCompleted) {
+      completedTaskIds.add(task.id); // Track this task as completed
+      if (task.cancelTaskId) {
+        canceledTaskIds.add(task.cancelTaskId); // Track the canceled task
+      }
     }
+
+    return isTaskCompleted;
   }).length;
 };
 
-// Function to get the total number of tasks based on the selected faction
+// Function to calculate total tasks count with cancelTaskId logic
 export const getTotalTasksCount = (tasks: task[], selectedFactionId: string | null): number => {
+  const countedTasks = new Set<string>();
+  const canceledTaskIds = new Set<string>();
+
   return tasks.filter(task => {
-    return task.objectives.some(objective => !objective.faction || selectedFactionId === null || objective.faction.id === selectedFactionId);
+    // Skip tasks that are canceled by other tasks
+    if (task.cancelTaskId && canceledTaskIds.has(task.cancelTaskId)) {
+      return false;
+    }
+
+    const isRelevant = task.objectives.some(objective => !objective.faction || selectedFactionId === null || objective.faction.id === selectedFactionId);
+
+    if (isRelevant) {
+      countedTasks.add(task.id); // Track this task as counted
+      if (task.cancelTaskId) {
+        canceledTaskIds.add(task.cancelTaskId);
+      }
+    }
+
+    return isRelevant;
   }).length;
+};
+
+// Function to calculate completed LZs count
+export const getCompletedLZsCount = (
+  lzs: lz[],
+  locatedLZs: string[],
+  selectedFactionId: string | null
+): number => {
+  const relevantLZs = getRelevantLZs(lzs, selectedFactionId);
+  return relevantLZs.filter(lz => locatedLZs.includes(lz.id)).length;
+};
+
+// Function to calculate total LZs count
+export const getTotalLZsCount = (lzs: lz[], selectedFactionId: string | null): number => {
+  const relevantLZs = getRelevantLZs(lzs, selectedFactionId);
+  return relevantLZs.length;
 };

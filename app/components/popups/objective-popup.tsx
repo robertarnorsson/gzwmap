@@ -1,7 +1,7 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { useSettings } from "~/context/SettingsProvider";
 import { objective, task } from "~/lib/types";
-import { Check, Ellipsis, Link, Pencil, X } from "lucide-react";
+import { Ban, Check, Ellipsis, Link, Pencil, X } from "lucide-react";
 import { copyMarker } from "~/lib/utils";
 import {
   DropdownMenu,
@@ -22,6 +22,7 @@ import { Textarea } from "../ui/textarea";
 import { toast } from "~/hooks/use-toast";
 import { Button } from "../ui/button";
 import PopupImage from "../common/PopupImage";
+import { Tasks } from "~/data/tasks";
 
 interface ObjectivePopupContentProps {
   task: task;
@@ -33,18 +34,31 @@ export const ObjectivePopupContent = ({
   objective,
 }: ObjectivePopupContentProps) => {
   const { settings, actions } = useSettings();
+  const selectedFaction = settings.faction;
   const isComplete = settings.objectivesComplete.includes(objective.id);
 
-  // State for the note text
+  const isTaskCanceled = useMemo(() => {
+    if (!task.cancelTaskId) return false;
+  
+    const canceledTask = Tasks.find(t => t.id === task.cancelTaskId);
+    if (!canceledTask) return false;
+  
+    // Filter objectives based on selected faction
+    const relevantObjectives = canceledTask.objectives.filter(obj => {
+      return !obj.faction || selectedFaction === null || obj.faction.id === selectedFaction;
+    });
+  
+    // Check if all relevant objectives for the canceled task are completed
+    return relevantObjectives.every(obj => settings.objectivesComplete.includes(obj.id));
+  }, [task.cancelTaskId, selectedFaction, settings.objectivesComplete]);
+
   const [noteText, setNoteText] = useState("");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
-    // Pre-fill the note text if it exists
     const existingNote = settings.notes?.[objective.id] || "";
     setNoteText(existingNote);
 
-    // Set cursor at the end of the text
     if (textareaRef.current) {
       const length = existingNote.length;
       textareaRef.current.setSelectionRange(length, length);
@@ -134,18 +148,27 @@ export const ObjectivePopupContent = ({
           <Button
             className="w-full"
             onClick={() => actions.toggleObjectiveCompletion(objective.id)}
+            disabled={isTaskCanceled}
           >
-            {isComplete ? (
-              <div className="flex justify-center items-center space-x-3">
-                <Check className="w-4 h-4" />
-                <span className="text-xs uppercase">Completed</span>
-              </div>
-            ) : (
-              <div className="flex justify-center items-center space-x-3">
-                <X className="w-4 h-4" />
-                <span className="text-xs uppercase">Complete</span>
-              </div>
-            )}
+            {isTaskCanceled
+              ? (
+                <div className="flex justify-center items-center space-x-3">
+                  <Ban className="w-4 h-4" />
+                  <span className="text-xs uppercase line-through">Canceled</span>
+                </div>
+              )
+              : isComplete ? (
+                <div className="flex justify-center items-center space-x-3">
+                  <Check className="w-4 h-4" />
+                  <span className="text-xs uppercase">Completed</span>
+                </div>
+              ) : (
+                <div className="flex justify-center items-center space-x-3">
+                  <X className="w-4 h-4" />
+                  <span className="text-xs uppercase">Complete</span>
+                </div>
+              )
+            }
           </Button>
           <Button
             size="icon"

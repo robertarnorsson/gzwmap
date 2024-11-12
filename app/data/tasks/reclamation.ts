@@ -55,5 +55,6 @@ export const Reclamation: task = {
   ],
   vendor: Handshake,
   level: 0,
+  cancelTaskId: 'T-83VTBS',
   notMultiLocation: true,
 }

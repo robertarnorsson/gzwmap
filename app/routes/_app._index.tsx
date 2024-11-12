@@ -7,6 +7,8 @@ import { Locations } from "~/data/locations";
 import { LZs } from "~/data/lzs";
 import { Tasks } from "~/data/tasks";
 import { Popup } from "~/components/map/Popup";
+import { AppSidebarTrigger } from "~/components/sidebar/app-sidebar-trigger";
+import { useSidebar } from "~/components/ui/sidebar";
 
 export const meta: MetaFunction = () => {
   return [
@@ -16,8 +18,10 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
+  const { isMobile } = useSidebar()
+
   return (
-    <div className="flex w-full items-center justify-center">
+    <div className="relative flex w-full items-center justify-center">
       <Map />
       <Popup />
       {Tasks.map((task) => task.objectives.map((objective) => (
@@ -29,6 +33,11 @@ export default function Index() {
       {Locations.map((location) => (
         <LocationMarker key={location.id} location={location} />
       ))}
+      {isMobile && (
+        <div className="absolute top-0 left-0">
+          <AppSidebarTrigger />
+        </div>
+      )}
     </div>
   );
 }
