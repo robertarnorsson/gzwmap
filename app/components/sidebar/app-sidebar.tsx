@@ -13,9 +13,10 @@ import { useMemo } from "react";
 import {
   getCompletedObjectivesCount,
   getCompletedTasksCount,
-  getTotalObjectivesCount,
   getCompletedLZsCount,
-  getTotalLZsCount
+  getTotalLZsCount,
+  getTotalTasksCount,
+  getTotalObjectivesCount
 } from "~/helper/completions";
 import { useData } from "~/context/DataContext";
 
@@ -36,6 +37,10 @@ export function AppSidebar() {
 
   const totalObjectivesCount = useMemo(() => {
     return getTotalObjectivesCount(tasks, selectedFactionId);
+  }, [selectedFactionId, tasks]);
+
+  const totalTasksCount = useMemo(() => {
+    return getTotalTasksCount(tasks, selectedFactionId);
   }, [selectedFactionId, tasks]);
 
   const completedLZsCount = useMemo(() => {
@@ -90,7 +95,7 @@ export function AppSidebar() {
               label: "Tasks Completed",
               value: `${completedTasksCount
                 .toString()
-                .padStart(3, "0")} / ${tasks.length}`,
+                .padStart(3, "0")} / ${totalTasksCount}`,
             },
             {
               label: "LZs Found",
@@ -132,7 +137,7 @@ export function AppSidebar() {
         </div>
       </SidebarFooter>
       {!isMobile && (
-        <div className="absolute right-0">
+        <div className="absolute right-0 top-0">
           <AppSidebarTrigger />
         </div>
       )}

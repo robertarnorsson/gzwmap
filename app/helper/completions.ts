@@ -31,7 +31,11 @@ export const getCompletedObjectivesCount = (
   
   // Track completed and canceled tasks
   tasks.forEach(task => {
-    const isTaskCompleted = task.objectives.every(objective => completedObjectives.includes(objective.id));
+    const relevantObjectives = task.objectives.filter(objective => {
+      return !objective.faction || selectedFactionId === null || objective.faction.id === selectedFactionId;
+    });
+
+    const isTaskCompleted = relevantObjectives.every(objective => completedObjectives.includes(objective.id));
     if (isTaskCompleted) {
       completedTaskIds.add(task.id);
       if (task.cancelTaskId) {
@@ -112,25 +116,36 @@ export const getCompletedTasksCount = (
 // Function to calculate total tasks count with cancelTaskId logic
 export const getTotalTasksCount = (tasks: task[], selectedFactionId: string | null): number => {
   const countedTasks = new Set<string>();
-  const canceledTaskIds = new Set<string>();
+  const canceledTaskPairs = new Set<string>(); // Track pairs of canceling tasks
 
-  return tasks.filter(task => {
+  // Count tasks while accounting for mutually exclusive pairs
+  let totalTasks = 0;
+
+  tasks.forEach(task => {
     // Skip tasks that are canceled by other tasks
-    if (task.cancelTaskId && canceledTaskIds.has(task.cancelTaskId)) {
-      return false;
+    if (task.cancelTaskId && countedTasks.has(task.cancelTaskId)) {
+      return;
     }
 
     const isRelevant = task.objectives.some(objective => !objective.faction || selectedFactionId === null || objective.faction.id === selectedFactionId);
 
     if (isRelevant) {
-      countedTasks.add(task.id); // Track this task as counted
       if (task.cancelTaskId) {
-        canceledTaskIds.add(task.cancelTaskId);
+        // Only count the mutually exclusive task pair once
+        const sortedPair = [task.id, task.cancelTaskId].sort().join("-");
+        if (!canceledTaskPairs.has(sortedPair)) {
+          totalTasks += 0.5; // Count as half a task for mutually exclusive tasks
+          canceledTaskPairs.add(sortedPair);
+        }
+      } else {
+        totalTasks += 1; // Count normally for non-mutually exclusive tasks
       }
-    }
 
-    return isRelevant;
-  }).length;
+      countedTasks.add(task.id);
+    }
+  });
+
+  return Math.ceil(totalTasks); // Round up to ensure tasks are correctly counted as integers
 };
 
 // Function to calculate completed LZs count
