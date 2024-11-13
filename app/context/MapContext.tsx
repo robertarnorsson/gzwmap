@@ -53,7 +53,7 @@ export const MapProvider = ({ children }: { children: ReactNode }) => {
         maxTilesLoading: 64,
       });
 
-      mapInstance.once('rendercomplete', () => {
+      mapInstance.once('postrender', () => {
         setIsMapLoaded(true);
       });
 

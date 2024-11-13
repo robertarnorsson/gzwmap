@@ -1,16 +1,16 @@
+import React, { useEffect, useRef } from "react";
 import { Overlay } from "ol";
-import { ReactNode, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { useMap } from "~/context/MapContext";
 
 interface MarkerWrapperProps {
   position: [number, number];
   hide?: boolean;
-  children: ReactNode;
+  children: React.ReactNode;
   enableHoverEffect?: boolean;
 }
 
-export const Marker = ({ position, hide = false, children, enableHoverEffect = false }: MarkerWrapperProps) => {
+const MarkerComponent = ({ position, hide = false, children, enableHoverEffect = false }: MarkerWrapperProps) => {
   const { map } = useMap();
   const markerRef = useRef<HTMLDivElement | null>(null);
   const overlayRef = useRef<Overlay | null>(null);
@@ -29,7 +29,7 @@ export const Marker = ({ position, hide = false, children, enableHoverEffect = f
 
     if (!markerRef.current) {
       markerRef.current = document.createElement("div");
-      markerRef.current.style.userSelect = 'none';
+      markerRef.current.style.userSelect = "none";
     }
 
     if (!overlayRef.current) {
@@ -65,3 +65,15 @@ export const Marker = ({ position, hide = false, children, enableHoverEffect = f
     )
   ) : null;
 };
+
+const areEqual = (prevProps: MarkerWrapperProps, nextProps: MarkerWrapperProps) => {
+  return (
+    prevProps.position[0] === nextProps.position[0] &&
+    prevProps.position[1] === nextProps.position[1] &&
+    prevProps.hide === nextProps.hide &&
+    prevProps.enableHoverEffect === nextProps.enableHoverEffect &&
+    prevProps.children === nextProps.children
+  );
+};
+
+export const Marker = React.memo(MarkerComponent, areEqual);
