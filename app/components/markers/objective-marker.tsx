@@ -4,8 +4,8 @@ import { useSettings } from "~/context/SettingsProvider";
 import { objective, task } from "~/lib/types";
 import { usePopup } from "~/context/PopupContext";
 import { ObjectivePopupContent } from "../popups/objective-popup";
-import { Tasks } from "~/data/tasks";
 import { Check, Minus, X } from "lucide-react";
+import { useData } from "~/context/DataContext";
 
 interface ObjectiveMarkerProps {
   task: task;
@@ -14,6 +14,7 @@ interface ObjectiveMarkerProps {
 
 export const ObjectiveMarker = memo(({ task, objective }: ObjectiveMarkerProps) => {
   const { settings, actions } = useSettings();
+  const { tasks } = useData();
   const { showPopup } = usePopup();
 
   const selectedFaction = settings.faction;
@@ -22,7 +23,7 @@ export const ObjectiveMarker = memo(({ task, objective }: ObjectiveMarkerProps) 
 
   const isCanceledTaskCompleted = task.cancelTaskId
     ? (() => {
-        const canceledTask = Tasks.find(t => t.id === task.cancelTaskId);
+        const canceledTask = tasks.find(t => t.id === task.cancelTaskId);
         if (!canceledTask) return false;
         const relevantObjectives = canceledTask.objectives.filter(obj => {
           return !obj.faction || selectedFaction === null || obj.faction.id === selectedFaction;

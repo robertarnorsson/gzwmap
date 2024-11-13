@@ -4,11 +4,13 @@ import { AppSidebar } from "~/components/sidebar/app-sidebar";
 import { MapProvider } from "~/context/MapContext";
 import { useState } from "react";
 import { PopupProvider } from "~/context/PopupContext";
+import { DataProvider } from "~/context/DataContext";
 
 export default function AppLayout() {
   const [open, setOpen] = useState(false)
 
   return (
+    <DataProvider>
     <MapProvider>
     <PopupProvider>
     <SidebarProvider open={open} onOpenChange={setOpen} className="bg-transparent">
@@ -23,5 +25,6 @@ export default function AppLayout() {
     </SidebarProvider>
     </PopupProvider>
     </MapProvider>
+    </DataProvider>
   )
 }

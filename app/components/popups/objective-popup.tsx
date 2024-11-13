@@ -22,7 +22,7 @@ import { Textarea } from "../ui/textarea";
 import { toast } from "~/hooks/use-toast";
 import { Button } from "../ui/button";
 import PopupImage from "../common/PopupImage";
-import { Tasks } from "~/data/tasks";
+import { useData } from "~/context/DataContext";
 
 interface ObjectivePopupContentProps {
   task: task;
@@ -34,13 +34,14 @@ export const ObjectivePopupContent = ({
   objective,
 }: ObjectivePopupContentProps) => {
   const { settings, actions } = useSettings();
+  const { tasks } = useData();
   const selectedFaction = settings.faction;
   const isComplete = settings.objectivesComplete.includes(objective.id);
 
   const isTaskCanceled = useMemo(() => {
     if (!task.cancelTaskId) return false;
   
-    const canceledTask = Tasks.find(t => t.id === task.cancelTaskId);
+    const canceledTask = tasks.find(t => t.id === task.cancelTaskId);
     if (!canceledTask) return false;
   
     // Filter objectives based on selected faction
@@ -50,7 +51,7 @@ export const ObjectivePopupContent = ({
   
     // Check if all relevant objectives for the canceled task are completed
     return relevantObjectives.every(obj => settings.objectivesComplete.includes(obj.id));
-  }, [task.cancelTaskId, selectedFaction, settings.objectivesComplete]);
+  }, [task.cancelTaskId, tasks, selectedFaction, settings.objectivesComplete]);
 
   const [noteText, setNoteText] = useState("");
   const textareaRef = useRef<HTMLTextAreaElement>(null);

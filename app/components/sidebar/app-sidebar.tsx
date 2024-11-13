@@ -7,12 +7,9 @@ import {
   useSidebar,
 } from "~/components/ui/sidebar";
 import { useSettings } from "~/context/SettingsProvider";
-import { Factions } from "~/data/factions";
 import { AppSidebarTrigger } from "./app-sidebar-trigger";
 import { Link } from "@remix-run/react";
 import { useMemo } from "react";
-import { Tasks } from "~/data/tasks";
-import { LZs } from "~/data/lzs";
 import {
   getCompletedObjectivesCount,
   getCompletedTasksCount,
@@ -20,32 +17,34 @@ import {
   getCompletedLZsCount,
   getTotalLZsCount
 } from "~/helper/completions";
+import { useData } from "~/context/DataContext";
 
 export function AppSidebar() {
   const { settings, actions } = useSettings();
+  const { tasks, lzs, factions } = useData();
   const { isMobile } = useSidebar();
   const selectedFactionId = settings.faction;
 
   // Use memoization for efficiency in calculations
   const completedTasksCount = useMemo(() => {
-    return getCompletedTasksCount(Tasks, settings.objectivesComplete, selectedFactionId);
-  }, [settings.objectivesComplete, selectedFactionId]);
+    return getCompletedTasksCount(tasks, settings.objectivesComplete, selectedFactionId);
+  }, [tasks, settings.objectivesComplete, selectedFactionId]);
 
   const completedObjectivesCount = useMemo(() => {
-    return getCompletedObjectivesCount(Tasks, settings.objectivesComplete, selectedFactionId);
-  }, [settings.objectivesComplete, selectedFactionId]);
+    return getCompletedObjectivesCount(tasks, settings.objectivesComplete, selectedFactionId);
+  }, [tasks, settings.objectivesComplete, selectedFactionId]);
 
   const totalObjectivesCount = useMemo(() => {
-    return getTotalObjectivesCount(Tasks, selectedFactionId);
-  }, [selectedFactionId]);
+    return getTotalObjectivesCount(tasks, selectedFactionId);
+  }, [selectedFactionId, tasks]);
 
   const completedLZsCount = useMemo(() => {
-    return getCompletedLZsCount(LZs, settings.lzsLocated, selectedFactionId);
-  }, [settings.lzsLocated, selectedFactionId]);
+    return getCompletedLZsCount(lzs, settings.lzsLocated, selectedFactionId);
+  }, [lzs, settings.lzsLocated, selectedFactionId]);
 
   const totalLZsCount = useMemo(() => {
-    return getTotalLZsCount(LZs, selectedFactionId);
-  }, [selectedFactionId]);
+    return getTotalLZsCount(lzs, selectedFactionId);
+  }, [lzs, selectedFactionId]);
 
   const handleFactionSelect = (factionId: string) => {
     actions.updateFaction(factionId);
@@ -56,7 +55,7 @@ export function AppSidebar() {
       <SidebarHeader className="bg-transparent">
         <SidebarMenu>
           <div className="flex justify-evenly items-center">
-            {Factions.map((f) => (
+            {factions.map((f) => (
               <button
                 key={f.id}
                 onClick={() => handleFactionSelect(f.id)}
@@ -91,7 +90,7 @@ export function AppSidebar() {
               label: "Tasks Completed",
               value: `${completedTasksCount
                 .toString()
-                .padStart(3, "0")} / ${Tasks.length}`,
+                .padStart(3, "0")} / ${tasks.length}`,
             },
             {
               label: "LZs Found",
