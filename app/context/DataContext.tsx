@@ -1,6 +1,5 @@
-import { createContext, ReactNode, useContext, useEffect, useState } from "react";
-import { API_URL } from "~/lib/constnats";
-import { location, lz, objective, task, faction, key, item } from "~/lib/types";
+import { createContext, ReactNode, useContext, useState } from "react";
+import { lz, objective, task, location, faction, key, item } from "~/lib/types";
 
 interface DataContextType {
   tasks: task[];
@@ -11,13 +10,14 @@ interface DataContextType {
   keys: key[];
   items: item[];
   isLoaded: boolean;
-  fetchTasks: () => void;
-  fetchObjectives: () => void;
-  fetchLZs: () => void;
-  fetchLocations: () => void;
-  fetchFactions: () => void;
-  fetchKeys: () => void;
-  fetchItems: () => void;
+  setIsLoaded: (loaded: boolean) => void;
+  setTasks: (tasks: task[]) => void;
+  setObjectives: (objectives: objective[]) => void;
+  setLzs: (lzs: lz[]) => void;
+  setLocations: (locations: location[]) => void;
+  setFactions: (factions: faction[]) => void;
+  setKeys: (keys: key[]) => void;
+  setItems: (items: item[]) => void;
 }
 
 const DataContext = createContext<DataContextType | undefined>(undefined);
@@ -25,51 +25,17 @@ const DataContext = createContext<DataContextType | undefined>(undefined);
 export const DataProvider = ({ children }: { children: ReactNode }) => {
   const [tasks, setTasks] = useState<task[]>([]);
   const [objectives, setObjectives] = useState<objective[]>([]);
-  const [lzs, setLZs] = useState<lz[]>([]);
+  const [lzs, setLzs] = useState<lz[]>([]);
   const [locations, setLocations] = useState<location[]>([]);
   const [factions, setFactions] = useState<faction[]>([]);
   const [keys, setKeys] = useState<key[]>([]);
   const [items, setItems] = useState<item[]>([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
-  const fetchData = async <T,>(
-    endpoint: string,
-    setData: React.Dispatch<React.SetStateAction<T[]>>,
-    dataType: string
-  ) => {
-    try {
-      const response = await fetch(`${API_URL}/${endpoint}`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      const data = await response.json() as T[];
-      setData(data);
-    } catch (error) {
-      console.error(`Error fetching ${dataType}:`, error);
-    }
+  // Function to set loading status manually
+  const setLoaded = (loaded: boolean) => {
+    setIsLoaded(loaded);
   };
-
-  useEffect(() => {
-    const fetchAllData = async () => {
-      await Promise.all([
-        fetchData<task>('tasks', setTasks, 'tasks'),
-        fetchData<objective>('objectives', setObjectives, 'objectives'),
-        fetchData<lz>('lzs', setLZs, 'lzs'),
-        fetchData<location>('locations', setLocations, 'locations'),
-        fetchData<faction>('factions', setFactions, 'factions'),
-        fetchData<key>('keys', setKeys, 'keys'),
-        fetchData<item>('items', setItems, 'items'),
-      ]);
-      setIsLoaded(true);
-    };
-
-    fetchAllData();
-  }, []);
 
   return (
     <DataContext.Provider
@@ -82,13 +48,14 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
         keys,
         items,
         isLoaded,
-        fetchTasks: () => fetchData<task>('tasks', setTasks, 'tasks'),
-        fetchObjectives: () => fetchData<objective>('objectives', setObjectives, 'objectives'),
-        fetchLZs: () => fetchData<lz>('lzs', setLZs, 'lzs'),
-        fetchLocations: () => fetchData<location>('locations', setLocations, 'locations'),
-        fetchFactions: () => fetchData<faction>('factions', setFactions, 'factions'),
-        fetchKeys: () => fetchData<key>('keys', setKeys, 'keys'),
-        fetchItems: () => fetchData<item>('items', setItems, 'items'),
+        setTasks,
+        setObjectives,
+        setLzs,
+        setLocations,
+        setFactions,
+        setKeys,
+        setItems,
+        setIsLoaded: setLoaded
       }}
     >
       {children}

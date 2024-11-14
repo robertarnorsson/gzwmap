@@ -1,6 +1,6 @@
 import { Extent } from "ol/extent";
 import { Projection } from "ol/proj";
-import { API_URL } from "./constnats";
+import { API_URL } from "./constants";
 import { lz, objective, task, location } from "./types";
 
 export const prefixToEndpointMap = {
