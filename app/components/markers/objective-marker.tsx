@@ -4,7 +4,7 @@ import { useSettings } from "~/context/SettingsProvider";
 import { objective, task } from "~/lib/types";
 import { usePopup } from "~/context/PopupContext";
 import { ObjectivePopupContent } from "../popups/objective-popup";
-import { Check, Minus, X } from "lucide-react";
+import { Check, Dot, Minus, X } from "lucide-react";
 import { useData } from "~/context/DataContext";
 
 interface ObjectiveMarkerProps {
@@ -50,15 +50,10 @@ export const ObjectiveMarker = memo(({ task, objective }: ObjectiveMarkerProps) 
           </div>
         </div>
         <div className="absolute bottom-1/2 left-6 transform translate-y-6 group-hover/objective:translate-y-1/2 grid-bg border border-border text-primary text-xs px-2 py-1 shadow-lg opacity-0 group-hover/objective:opacity-100 transition-all text-nowrap pointer-events-none">
-          <div className="relative space-x-2">
+          <div className="flex flex-row">
             <span className="text-xs text-primary/85">{task.name}</span>
-            <span className="text-xs text-primary/85">▪</span>
+            <Dot className="w-4 h-4 text-primary/85" />
             <span className="text-xs text-primary/85">{objective.name}</span>
-          </div>
-          <div className="absolute top-1/2 -right-5 transform -translate-y-1/2 border border-border bg-background p-[1px]">
-            {isComplete && <Check className="w-3.5 h-3.5 text-green-400" />}
-            {isCanceledTaskCompleted && <X className="w-3.5 h-3.5 text-red-400" />}
-            {!isComplete && !isCanceledTaskCompleted && <Minus className="w-3.5 h-3.5 text-primary/85" />}
           </div>
         </div>
       </button>

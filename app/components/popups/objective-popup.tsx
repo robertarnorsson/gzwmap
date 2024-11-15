@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useMemo } from "react";
 import { useSettings } from "~/context/SettingsProvider";
 import { objective, task } from "~/lib/types";
-import { Ban, Check, Ellipsis, Link, Pencil, X } from "lucide-react";
+import { Ban, Check, Dot, Ellipsis, Link, Pencil, X } from "lucide-react";
 import { copyMarker } from "~/lib/utils";
 import {
   DropdownMenu,
@@ -77,19 +77,23 @@ export const ObjectivePopupContent = ({
     });
   };
 
+  const handleCancelNote = () => {
+    setNoteText(settings.notes?.[objective.id] || "");
+  }
+
   return (
     <>
       <div className="group">
         <span className="text-xl font-bold text-primary text-pretty">
           {task.name}
         </span>
-        <div className="flex flex-row gap-2">
+        <div className="flex flex-row gap-1">
           <p className="text-xs text-muted-foreground">{task.vendor.name}</p>
-          <p className="text-xs text-muted-foreground">▪</p>
+          <Dot className="w-4 h-4 text-muted-foreground" />
           <p className="text-xs text-muted-foreground">
             {objective.faction?.shorthand || "All Factions"}
           </p>
-          <p className="text-xs text-muted-foreground">▪</p>
+          <Dot className="w-4 h-4 text-muted-foreground" />
           <p className="text-xs text-muted-foreground">{objective.type}</p>
         </div>
       </div>
@@ -222,7 +226,21 @@ export const ObjectivePopupContent = ({
                 }}
               />
               <DialogClose asChild>
-                <Button className="px-6" onClick={handleSaveNote}>Save</Button>
+                <div className="flex flex-row space-x-2">
+                  <Button
+                    className="w-full"
+                    onClick={handleSaveNote}
+                  >
+                    <div className="flex justify-center items-center space-x-3">
+                      <span className="text-xs uppercase">Save</span>
+                    </div>
+                  </Button>
+                  <Button onClick={handleCancelNote}>
+                    <div className="flex justify-center items-center space-x-3">
+                      <span className="text-xs uppercase">Cancel</span>
+                    </div>
+                  </Button>
+                </div>
               </DialogClose>
             </DialogContent>
           </Dialog>
