@@ -35,8 +35,8 @@ export const ObjectivePopupContent = ({
 }: ObjectivePopupContentProps) => {
   const { settings, actions } = useSettings();
   const { tasks } = useData();
-  const selectedFaction = settings.faction;
-  const isComplete = settings.objectivesComplete.includes(objective.id);
+  const selectedFaction = settings.user.faction;
+  const isComplete = settings.user.objectivesComplete.includes(objective.id);
 
   const isTaskCanceled = useMemo(() => {
     if (!task.cancelTaskId) return false;
@@ -50,21 +50,21 @@ export const ObjectivePopupContent = ({
     });
   
     // Check if all relevant objectives for the canceled task are completed
-    return relevantObjectives.every(obj => settings.objectivesComplete.includes(obj.id));
-  }, [task.cancelTaskId, tasks, selectedFaction, settings.objectivesComplete]);
+    return relevantObjectives.every(obj => settings.user.objectivesComplete.includes(obj.id));
+  }, [task.cancelTaskId, tasks, selectedFaction, settings.user.objectivesComplete]);
 
   const [noteText, setNoteText] = useState("");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
-    const existingNote = settings.notes?.[objective.id] || "";
+    const existingNote = settings.user.notes?.[objective.id] || "";
     setNoteText(existingNote);
 
     if (textareaRef.current) {
       const length = existingNote.length;
       textareaRef.current.setSelectionRange(length, length);
     }
-  }, [objective.id, settings.notes]);
+  }, [objective.id, settings.user.notes]);
 
   const handleNoteChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setNoteText(event.target.value);
@@ -78,7 +78,7 @@ export const ObjectivePopupContent = ({
   };
 
   const handleCancelNote = () => {
-    setNoteText(settings.notes?.[objective.id] || "");
+    setNoteText(settings.user.notes?.[objective.id] || "");
   }
 
   return (
@@ -135,10 +135,10 @@ export const ObjectivePopupContent = ({
           </Dialog>
         </div>
       )}
-      {settings.notes?.[objective.id] && (
+      {settings.user.notes?.[objective.id] && (
         <div className="mt-3">
           <span className="text-xs text-muted-foreground">User note</span>
-          <p className="text-xs text-muted-foreground">{settings.notes?.[objective.id] || ""}</p>
+          <p className="text-xs text-muted-foreground">{settings.user.notes?.[objective.id] || ""}</p>
         </div>
       )}
       <div className="flex flex-col mt-3">
@@ -152,6 +152,7 @@ export const ObjectivePopupContent = ({
         <div className="flex flex-row space-x-2">
           <Button
             className="w-full"
+            variant='secondary'
             onClick={() => actions.toggleObjectiveCompletion(objective.id)}
             disabled={isTaskCanceled}
           >
@@ -177,6 +178,7 @@ export const ObjectivePopupContent = ({
           </Button>
           <Button
             size="icon"
+            variant='secondary'
             onClick={() => {
               copyMarker(`${task.id}:${objective.id}`);
               toast({
@@ -189,7 +191,10 @@ export const ObjectivePopupContent = ({
           <Dialog>
             <DropdownMenu modal={false}>
               <DropdownMenuTrigger asChild>
-                <Button size="icon">
+                <Button
+                  size="icon"
+                  variant='secondary'
+                >
                   <Ellipsis className="w-4 h-4" />
                 </Button>
               </DropdownMenuTrigger>

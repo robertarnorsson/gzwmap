@@ -4,7 +4,7 @@ import { useSettings } from "~/context/SettingsProvider";
 import { objective, task } from "~/lib/types";
 import { usePopup } from "~/context/PopupContext";
 import { ObjectivePopupContent } from "../popups/objective-popup";
-import { Check, Dot, Minus, X } from "lucide-react";
+import { Dot } from "lucide-react";
 import { useData } from "~/context/DataContext";
 
 interface ObjectiveMarkerProps {
@@ -17,9 +17,9 @@ export const ObjectiveMarker = memo(({ task, objective }: ObjectiveMarkerProps) 
   const { tasks } = useData();
   const { showPopup } = usePopup();
 
-  const selectedFaction = settings.faction;
+  const selectedFaction = settings.user.faction;
   const shouldHide = !!(selectedFaction && objective.faction && objective.faction.id !== selectedFaction);
-  const isComplete = settings.objectivesComplete.includes(objective.id);
+  const isComplete = settings.user.objectivesComplete.includes(objective.id);
 
   const isCanceledTaskCompleted = task.cancelTaskId
     ? (() => {
@@ -28,13 +28,20 @@ export const ObjectiveMarker = memo(({ task, objective }: ObjectiveMarkerProps) 
         const relevantObjectives = canceledTask.objectives.filter(obj => {
           return !obj.faction || selectedFaction === null || obj.faction.id === selectedFaction;
         });
-        return relevantObjectives.every(obj => settings.objectivesComplete.includes(obj.id));
+        return relevantObjectives.every(obj => settings.user.objectivesComplete.includes(obj.id));
       })()
     : false;
-
+  
   const handleClick = useCallback(() => {
     showPopup(objective.position, <ObjectivePopupContent task={task} objective={objective} />, [0, -20]);
   }, [showPopup, task, objective]);
+
+  if (
+    (isComplete && !settings.user.showCompletedObjectives) ||
+    (isCanceledTaskCompleted && !settings.user.showCanceledObjectives)
+  ) {
+    return null;
+  }
 
   return (
     <Marker position={objective.position} hide={shouldHide} enableHoverEffect>

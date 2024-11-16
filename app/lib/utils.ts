@@ -37,3 +37,14 @@ export function copyMarker(id: string) {
     copy(`${hostname}?marker=${firstId}`);
   }
 }
+
+export function sizeToScale(size: "small" | "normal" | "large") {
+  switch (size) {
+    case "small":
+      return 0.8
+    case "normal":
+      return 1
+    case "large":
+      return 1.2
+  }
+}

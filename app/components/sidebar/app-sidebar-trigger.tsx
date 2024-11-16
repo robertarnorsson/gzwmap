@@ -9,7 +9,7 @@ export function AppSidebarTrigger() {
   return (
     <Button
       className={clsx(
-        "group/trigger absolute left-3 top-2 z-20 grid-bg border border-border rounded-none aspect-square",
+        "absolute left-3 top-2 z-20 grid-bg border border-border rounded-none aspect-square",
         !isMobile && 'hover:bg-secondary'
       )}
       variant='ghost'

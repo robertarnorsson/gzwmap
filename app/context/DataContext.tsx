@@ -1,4 +1,5 @@
-import { createContext, ReactNode, useContext, useState } from "react";
+import { createContext, ReactNode, useContext, useState, useEffect } from "react";
+import { API_URL } from "~/lib/constants";
 import { lz, objective, task, location, faction, key, item } from "~/lib/types";
 
 interface DataContextType {
@@ -32,10 +33,56 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
   const [items, setItems] = useState<item[]>([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
-  // Function to set loading status manually
-  const setLoaded = (loaded: boolean) => {
-    setIsLoaded(loaded);
-  };
+  useEffect(() => {
+    const fetchData = async <T,>(endpoint: string): Promise<T[]> => {
+      const response = await fetch(`${API_URL}/${endpoint}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+      });
+      if (!response.ok) {
+        throw new Error(`Error fetching ${endpoint}: ${response.statusText}`);
+      }
+      return await response.json() as T[];
+    };
+
+    const loadAllData = async () => {
+      try {
+        const [
+          tasksData,
+          objectivesData,
+          lzsData,
+          locationsData,
+          factionsData,
+          keysData,
+          itemsData,
+        ] = await Promise.all([
+          fetchData<task>('tasks'),
+          fetchData<objective>('objectives'),
+          fetchData<lz>('lzs'),
+          fetchData<location>('locations'),
+          fetchData<faction>('factions'),
+          fetchData<key>('keys'),
+          fetchData<item>('items'),
+        ]);
+
+        setTasks(tasksData);
+        setObjectives(objectivesData);
+        setLzs(lzsData);
+        setLocations(locationsData);
+        setFactions(factionsData);
+        setKeys(keysData);
+        setItems(itemsData);
+        setIsLoaded(true);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        setIsLoaded(false);
+      }
+    };
+
+    loadAllData();
+  }, []);
 
   return (
     <DataContext.Provider
@@ -55,7 +102,7 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
         setFactions,
         setKeys,
         setItems,
-        setIsLoaded: setLoaded
+        setIsLoaded,
       }}
     >
       {children}

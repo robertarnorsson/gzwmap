@@ -11,12 +11,12 @@ interface LZPopupContentProps {
 
 export const LZPopupContent = ({ lz }: LZPopupContentProps) => {
   const { settings, updateSetting } = useSettings();
-  const isLocated = settings.lzsLocated.includes(lz.id);
+  const isLocated = settings.user.lzsLocated.includes(lz.id);
 
   const handleChange = () => {
     const updatedValue = isLocated
-      ? settings.lzsLocated.filter(id => id !== lz.id)
-      : [...settings.lzsLocated, lz.id];
+      ? settings.user.lzsLocated.filter(id => id !== lz.id)
+      : [...settings.user.lzsLocated, lz.id];
 
     updateSetting('lzsLocated', updatedValue);
   };

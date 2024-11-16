@@ -19,21 +19,22 @@ import {
   getTotalObjectivesCount
 } from "~/helper/completions";
 import { useData } from "~/context/DataContext";
+import { Button } from "../ui/button";
+import { Settings } from "lucide-react";
 
 export function AppSidebar() {
-  const { settings, actions } = useSettings();
-  const { tasks, lzs, factions } = useData();
+  const { settings } = useSettings();
+  const { tasks, lzs } = useData();
   const { isMobile } = useSidebar();
-  const selectedFactionId = settings.faction;
+  const selectedFactionId = settings.user.faction;
 
-  // Use memoization for efficiency in calculations
   const completedTasksCount = useMemo(() => {
-    return getCompletedTasksCount(tasks, settings.objectivesComplete, selectedFactionId);
-  }, [tasks, settings.objectivesComplete, selectedFactionId]);
+    return getCompletedTasksCount(tasks, settings.user.objectivesComplete, selectedFactionId);
+  }, [tasks, settings.user.objectivesComplete, selectedFactionId]);
 
   const completedObjectivesCount = useMemo(() => {
-    return getCompletedObjectivesCount(tasks, settings.objectivesComplete, selectedFactionId);
-  }, [tasks, settings.objectivesComplete, selectedFactionId]);
+    return getCompletedObjectivesCount(tasks, settings.user.objectivesComplete, selectedFactionId);
+  }, [tasks, settings.user.objectivesComplete, selectedFactionId]);
 
   const totalObjectivesCount = useMemo(() => {
     return getTotalObjectivesCount(tasks, selectedFactionId);
@@ -44,39 +45,33 @@ export function AppSidebar() {
   }, [selectedFactionId, tasks]);
 
   const completedLZsCount = useMemo(() => {
-    return getCompletedLZsCount(lzs, settings.lzsLocated, selectedFactionId);
-  }, [lzs, settings.lzsLocated, selectedFactionId]);
+    return getCompletedLZsCount(lzs, settings.user.lzsLocated, selectedFactionId);
+  }, [lzs, settings.user.lzsLocated, selectedFactionId]);
 
   const totalLZsCount = useMemo(() => {
     return getTotalLZsCount(lzs, selectedFactionId);
   }, [lzs, selectedFactionId]);
 
-  const handleFactionSelect = (factionId: string) => {
-    actions.updateFaction(factionId);
-  };
-
   return (
     <Sidebar className="grid-bg p-2">
       <SidebarHeader className="bg-transparent">
         <SidebarMenu>
-          <div className="flex justify-evenly items-center">
-            {factions.map((f) => (
-              <button
-                key={f.id}
-                onClick={() => handleFactionSelect(f.id)}
-                className="relative group"
+          <div className="flex justify-between items-center">
+            <Link
+              to='/'
+            >
+              <h1 className="text-lg font-bold text-primary">GZW Map</h1>
+            </Link>
+            <div className="flex space-x-2">
+              <Link
+                to="/settings"
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
               >
-                <img
-                  src={`/${f.image}`}
-                  alt={f.name}
-                  className={`w-24 h-24 cursor-pointer p-1 transition-transform ${
-                    selectedFactionId === f.id
-                      ? "ring-1 ring-border scale-105"
-                      : "ring-1 ring-transparent"
-                  }`}
-                />
-              </button>
-            ))}
+                <Button variant='ghost' size='icon'>
+                  <Settings />
+                </Button>
+              </Link>
+            </div>
           </div>
         </SidebarMenu>
       </SidebarHeader>

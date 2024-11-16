@@ -12,8 +12,8 @@ interface LZMarkerProps {
 export const LZMarker = ({ lz }: LZMarkerProps) => {
   const { settings } = useSettings();
   const { showPopup } = usePopup();
-  const selectedFaction = settings.faction;
-  const isLocated = settings.lzsLocated.includes(lz.id);
+  const selectedFaction = settings.user.faction;
+  const isLocated = settings.user.lzsLocated.includes(lz.id);
 
   const shouldHide = !!(selectedFaction && lz.faction && lz.faction.id !== selectedFaction);
 
