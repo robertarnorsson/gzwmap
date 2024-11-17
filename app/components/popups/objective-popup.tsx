@@ -82,6 +82,16 @@ export const ObjectivePopupContent = ({
     setNoteText(userSettings.notes?.[objective.id] || "");
   };
 
+  const handleComplete = () => {
+    if (userSettings) {
+      if (isComplete) {
+        actions.user.removeCompletedObjective(objective.id);
+      } else {
+        actions.user.addCompletedObjective(objective.id);
+      }
+    }
+  };
+
   return (
     <>
       <div className="group">
@@ -154,7 +164,7 @@ export const ObjectivePopupContent = ({
           <Button
             className="w-full"
             variant='secondary'
-            onClick={() => actions.user.addCompletedObjective(objective.id)}
+            onClick={handleComplete}
             disabled={isTaskCanceled}
           >
             {isTaskCanceled
