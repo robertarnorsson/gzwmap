@@ -1,19 +1,19 @@
 import { Marker } from "../map/Marker";
-import { useSettings } from "~/context/SettingsProvider";
 import { lz } from "~/lib/types";
 import clsx from "clsx";
 import { usePopup } from "~/context/PopupContext";
 import { LZPopupContent } from "../popups/lz-popup";
+import { useLocalStorage } from "~/context/LocalStorageContext";
 
 interface LZMarkerProps {
   lz: lz;
 }
 
 export const LZMarker = ({ lz }: LZMarkerProps) => {
-  const { settings } = useSettings();
+  const { actions } = useLocalStorage();
   const { showPopup } = usePopup();
-  const selectedFaction = settings.user.faction;
-  const isLocated = settings.user.lzsLocated.includes(lz.id);
+  const selectedFaction = actions.user.getUser().faction;
+  const isLocated = actions.user.getUser().discoveredLZs.includes(lz.id);
 
   const shouldHide = !!(selectedFaction && lz.faction && lz.faction.id !== selectedFaction);
 

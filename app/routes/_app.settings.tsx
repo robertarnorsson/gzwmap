@@ -8,17 +8,11 @@ import {
   CardHeader,
   CardTitle,
 } from "~/components/ui/card";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
-  DropdownMenuTrigger,
-} from "~/components/ui/dropdown-menu";
 import { useData } from "~/context/DataContext";
-import { useSettings } from "~/context/SettingsProvider";
 import { ChevronLeft, SwatchBook, Swords } from "lucide-react";
 import { Switch } from "~/components/ui/switch";
+import { useLocalStorage } from "~/context/LocalStorageContext";
+import { Slider } from "~/components/ui/slider";
 
 export const meta: MetaFunction = () => {
   return [
@@ -28,7 +22,7 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Settings() {
-  const { settings, actions } = useSettings();
+  const { data, actions } = useLocalStorage();
   const { factions, isLoaded } = useData();
 
   return (
@@ -78,14 +72,14 @@ export default function Settings() {
                         factions.map((f) => (
                           <button
                             key={f.id}
-                            onClick={() => actions.updateFaction(f.id)}
+                            onClick={() => actions.user.updateFaction(f.id)}
                             className="relative group"
                           >
                             <img
                               src={`/${f.image}`}
                               alt={f.name}
                               className={`w-20 h-20 md:w-24 md:h-24 cursor-pointer p-1 transition duration-200 ${
-                                settings.user.faction === f.id ? "scale-105" : "filter brightness-50"
+                                data.user.faction === f.id ? "scale-105" : "filter brightness-50"
                               }`}
                             />
                           </button>
@@ -109,8 +103,8 @@ export default function Settings() {
                       <p className="text-sm text-muted-foreground">Show completed objectives markers on the map.</p>
                     </div>
                     <Switch
-                      checked={settings.user.showCompletedObjectives}
-                      onCheckedChange={(checked) => actions.updateShowCompleted(checked)}
+                      checked={data.user.settings.showCompletedObjectives}
+                      onCheckedChange={() => actions.user.setting.toggleShowCompletedObjectives()}
                     />
                   </div>
                   <div className="flex items-center justify-between">
@@ -119,8 +113,8 @@ export default function Settings() {
                       <p className="text-sm text-muted-foreground">Show canceled objectives markers on the map.</p>
                     </div>
                     <Switch
-                      checked={settings.user.showCanceledObjectives}
-                      onCheckedChange={(checked) => actions.updateShowCanceled(checked)}
+                      checked={data.user.settings.showCanceledObjectives}
+                      onCheckedChange={() => actions.user.setting.toggleShowCanceledObjectives()}
                     />
                   </div>
                   <div className="flex items-center justify-between">
@@ -128,20 +122,11 @@ export default function Settings() {
                       <p className="text-sm font-medium leading-none">Marker size</p>
                       <p className="text-sm text-muted-foreground">Adjust the marker size to your preference.</p>
                     </div>
-                    <DropdownMenu>
-                      <DropdownMenuTrigger asChild>
-                        <Button variant="outline" size="sm">
-                          {settings.user.markerSize}
-                        </Button>
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent align="end">
-                        <DropdownMenuRadioGroup value={settings.user.markerSize} onValueChange={(size) => actions.updateMarkerSize(size as unknown as "small" | "normal" | "large")}>
-                          <DropdownMenuRadioItem value="small">Small</DropdownMenuRadioItem>
-                          <DropdownMenuRadioItem value="normal">Normal</DropdownMenuRadioItem>
-                          <DropdownMenuRadioItem value="large">Large</DropdownMenuRadioItem>
-                        </DropdownMenuRadioGroup>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
+                    <Slider
+                      defaultValue={[data.user.settings.markerSize]}
+                      max={5}
+                      step={1}
+                    />
                   </div>
                 </CardContent>
               </Card>

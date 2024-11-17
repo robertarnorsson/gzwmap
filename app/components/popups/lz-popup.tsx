@@ -1,24 +1,27 @@
 import clsx from "clsx";
 import { Check, Link, X } from "lucide-react";
-import { useSettings } from "~/context/SettingsProvider";
 import { toast } from "~/hooks/use-toast";
 import { lz } from "~/lib/types";
 import { copyMarker } from "~/lib/utils";
+import { useLocalStorage } from "~/context/LocalStorageContext";
 
 interface LZPopupContentProps {
   lz: lz;
 }
 
 export const LZPopupContent = ({ lz }: LZPopupContentProps) => {
-  const { settings, updateSetting } = useSettings();
-  const isLocated = settings.user.lzsLocated.includes(lz.id);
+  const { data, actions } = useLocalStorage();
+  const userSettings = data.user;
+  const isLocated = userSettings?.discoveredLZs.includes(lz.id);
 
   const handleChange = () => {
-    const updatedValue = isLocated
-      ? settings.user.lzsLocated.filter(id => id !== lz.id)
-      : [...settings.user.lzsLocated, lz.id];
-
-    updateSetting('lzsLocated', updatedValue);
+    if (userSettings) {
+      if (isLocated) {
+        actions.user.removeDiscoveredLZ(lz.id);
+      } else {
+        actions.user.addDiscoveredLZ(lz.id);
+      }
+    }
   };
 
   return (
@@ -57,7 +60,7 @@ export const LZPopupContent = ({ lz }: LZPopupContentProps) => {
               copyMarker(`${lz.id}`);
               toast({
                 description: 'Copied to clipboard'
-              })
+              });
             }}
           >
             <Link className="w-4 h-4" />

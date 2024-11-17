@@ -2,8 +2,6 @@ import React, { useEffect, useRef } from "react";
 import { Overlay } from "ol";
 import { createPortal } from "react-dom";
 import { useMap } from "~/context/MapContext";
-import { useSettings } from "~/context/SettingsProvider";
-import { sizeToScale } from "~/lib/utils";
 
 interface MarkerWrapperProps {
   position: [number, number];
@@ -14,7 +12,6 @@ interface MarkerWrapperProps {
 
 const MarkerComponent = ({ position, hide = false, children, enableHoverEffect = false }: MarkerWrapperProps) => {
   const { map } = useMap();
-  const { settings } = useSettings();
   const markerRef = useRef<HTMLDivElement | null>(null);
   const overlayRef = useRef<Overlay | null>(null);
 
@@ -59,7 +56,6 @@ const MarkerComponent = ({ position, hide = false, children, enableHoverEffect =
   return markerRef.current && !hide ? (
     createPortal(
       <div
-        style={{ transform: `scale(${sizeToScale(settings.user.markerSize)}, ${sizeToScale(settings.user.markerSize)})`}}
         onMouseEnter={enableHoverEffect ? () => (markerRef.current!.parentElement!.style.zIndex = "1000") : undefined}
         onMouseLeave={enableHoverEffect ? () => (markerRef.current!.parentElement!.style.zIndex = "0") : undefined}
       >

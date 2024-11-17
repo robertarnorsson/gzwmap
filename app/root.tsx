@@ -9,7 +9,7 @@ import {
 
 import "./tailwind.css";
 import { Toaster } from "./components/ui/toaster";
-import { LocalStorageData, LocalStorageProvider } from "./context/LocalStorageContext";
+import { LocalStorageProvider } from "./context/LocalStorageContext";
 
 export const links: LinksFunction = () => [
   {
@@ -30,19 +30,6 @@ export const links: LinksFunction = () => [
     href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
   },
 ];
-
-const initialData: LocalStorageData = {
-  user: {
-    username: '',
-    faction: '',
-    completedObjectives: [],
-    discoveredLZs: [],
-    notes: {}
-  },
-  popup: {
-    dismissedNewMap: false
-  }
-};
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -66,7 +53,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   return (
-    <LocalStorageProvider initialData={initialData}>
+    <LocalStorageProvider>
       <Outlet />
     </LocalStorageProvider>
   );

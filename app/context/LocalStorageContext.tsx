@@ -1,8 +1,10 @@
-import React, { createContext, useContext, ReactNode, useEffect } from 'react';
+import React, { createContext, useContext, ReactNode, useEffect, useState } from 'react';
 
 // Utility functions for base64 encoding/decoding
 const encodeBase64 = (data: string): string => btoa(data);
 const decodeBase64 = (data: string): string => atob(data);
+
+type MarkerSize = 1 | 2 | 3 | 4 | 5;
 
 // Define types for the data stored in localStorage
 interface UserData {
@@ -11,6 +13,11 @@ interface UserData {
   completedObjectives: string[];
   discoveredLZs: string[];
   notes: { [id: string]: string };
+  settings: {
+    showCompletedObjectives: boolean;
+    showCanceledObjectives: boolean;
+    markerSize: MarkerSize;
+  };
 }
 
 interface PopupData {
@@ -23,10 +30,6 @@ export interface LocalStorageData {
   popup: PopupData;
 }
 
-// Type definitions for getKey and setKey functions
-type GetKeyFunction = <K extends keyof LocalStorageData>(key: K) => LocalStorageData[K] | null;
-type SetKeyFunction = <K extends keyof LocalStorageData>(key: K, value: LocalStorageData[K]) => void;
-
 // Define the actions with type safety
 interface LocalStorageActions {
   user: {
@@ -38,161 +41,237 @@ interface LocalStorageActions {
     removeCompletedObjective: (objective: string) => void;
     addDiscoveredLZ: (lz: string) => void;
     removeDiscoveredLZ: (lz: string) => void;
+    setting: {
+      toggleShowCompletedObjectives: () => void;
+      toggleShowCanceledObjectives: () => void;
+      updateMarkerSize: (size: MarkerSize) => void;
+    };
   };
   popup: {
     toggleNewMap: () => void;
-  }
+  };
 }
 
 // Define the context type
 interface LocalStorageContextType {
-  setKey: SetKeyFunction;
-  getKey: GetKeyFunction;
+  data: LocalStorageData;
   actions: LocalStorageActions;
 }
 
 // Create the context
 const LocalStorageContext = createContext<LocalStorageContextType | undefined>(undefined);
 
-// Define the provider component
-export const LocalStorageProvider: React.FC<{
-  children: ReactNode;
-  initialData?: Partial<LocalStorageData>;
-}> = ({ children, initialData }) => {
-  const setKey: SetKeyFunction = (key, value) => {
-    const encodedValue = encodeBase64(JSON.stringify(value));
-    localStorage.setItem(key as string, encodedValue);
-  };
+// Default data
+const defaultData: LocalStorageData = {
+  user: {
+    username: '',
+    faction: '',
+    completedObjectives: [],
+    discoveredLZs: [],
+    notes: {},
+    settings: {
+      showCompletedObjectives: true,
+      showCanceledObjectives: true,
+      markerSize: 3,
+    },
+  },
+  popup: {
+    dismissedNewMap: false,
+  },
+};
 
-  const getKey: GetKeyFunction = (key) => {
-    const encodedValue = localStorage.getItem(key as string);
-    if (encodedValue) {
-      try {
-        return JSON.parse(decodeBase64(encodedValue));
-      } catch (e) {
-        console.error('Error decoding localStorage data:', e);
+// Helper function to merge default data with stored data
+const mergeData = <T extends object>(defaultData: T, storedData: Partial<T>): T => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const result: any = { ...defaultData };
+  for (const key in storedData) {
+    if (Object.prototype.hasOwnProperty.call(storedData, key)) {
+      if (
+        typeof storedData[key] === 'object' &&
+        storedData[key] !== null &&
+        !Array.isArray(storedData[key])
+      ) {
+        result[key] = mergeData(result[key], storedData[key]);
+      } else {
+        result[key] = storedData[key];
       }
     }
-    return null;
-  };
+  }
+  return result;
+};
 
-  // Type guard to check if a value is an object
-  const isObject = (value: unknown): value is object => {
-    return typeof value === 'object' && value !== null;
-  };
+// Define the provider component
+export const LocalStorageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  const [data, setData] = useState<LocalStorageData>(defaultData);
+  const [isLoaded, setIsLoaded] = useState(false);
 
-  useEffect(() => {
-    // Initialize and update default data with missing fields
-    if (initialData) {
-      (Object.keys(initialData) as Array<keyof LocalStorageData>).forEach((key) => {
-        const existingData = getKey(key);
-        const defaultData = initialData[key]!;
-
-        if (existingData !== null) {
-          if (isObject(existingData) && isObject(defaultData)) {
-            // Both are objects, merge them
-            const updatedData = { ...defaultData, ...existingData } as LocalStorageData[typeof key];
-            setKey(key, updatedData);
-          } else {
-            // For primitives, keep the existing data
-            setKey(key, existingData as LocalStorageData[typeof key]);
-          }
-        } else {
-          // Key does not exist, set default data
-          setKey(key, defaultData);
-        }
-      });
+  // Function to set data in state and localStorage
+  const setKey = <K extends keyof LocalStorageData>(key: K, value: LocalStorageData[K]) => {
+    const encodedValue = encodeBase64(JSON.stringify(value));
+    if (typeof window !== 'undefined' && window.localStorage) {
+      localStorage.setItem(key as string, encodedValue);
     }
-  }, [initialData]);
+    setData(prevData => ({ ...prevData, [key]: value }));
+  };
+
+  // Function to get data from state
+  const getKey = <K extends keyof LocalStorageData>(key: K): LocalStorageData[K] => data[key];
+
+  // Load data from localStorage after component mounts
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      try {
+        const userDataString = localStorage.getItem('user');
+        const popupDataString = localStorage.getItem('popup');
+
+        const userData: UserData = userDataString
+          ? mergeData(
+              defaultData.user,
+              JSON.parse(decodeBase64(userDataString)) as Partial<UserData>
+            )
+          : defaultData.user;
+
+        const popupData: PopupData = popupDataString
+          ? mergeData(
+              defaultData.popup,
+              JSON.parse(decodeBase64(popupDataString)) as Partial<PopupData>
+            )
+          : defaultData.popup;
+
+        setData({ user: userData, popup: popupData });
+      } catch (error) {
+        console.error('Error reading localStorage:', error);
+        setData(defaultData);
+      } finally {
+        setIsLoaded(true);
+      }
+    }
+  }, []);
+
+  // Update localStorage whenever data changes
+  useEffect(() => {
+    if (isLoaded && typeof window !== 'undefined' && window.localStorage) {
+      try {
+        const encodedUserData = encodeBase64(JSON.stringify(data.user));
+        const encodedPopupData = encodeBase64(JSON.stringify(data.popup));
+        localStorage.setItem('user', encodedUserData);
+        localStorage.setItem('popup', encodedPopupData);
+      } catch (error) {
+        console.error('Error saving to localStorage:', error);
+      }
+    }
+  }, [data, isLoaded]);
 
   // Define actions with access to getKey and setKey
   const actions: LocalStorageActions = {
     user: {
       getUser: () => {
-        const userData = getKey('user');
-        return userData as UserData;
+        return getKey('user');
       },
       updateUsername: (username: string) => {
         const userData = getKey('user');
-        if (userData && isObject(userData)) {
-          const updatedUserData: UserData = { ...(userData as UserData), username };
-          setKey('user', updatedUserData);
-        }
+        const updatedUserData: UserData = { ...userData, username };
+        setKey('user', updatedUserData);
       },
       updateFaction: (faction: string) => {
         const userData = getKey('user');
-        if (userData && isObject(userData)) {
-          const updatedUserData: UserData = { ...(userData as UserData), faction };
-          setKey('user', updatedUserData);
-        }
+        const updatedUserData: UserData = { ...userData, faction };
+        setKey('user', updatedUserData);
       },
       updateNote: (id: string, note: string) => {
         const userData = getKey('user');
-        if (userData && isObject(userData)) {
-          const updatedUserData: UserData = {
-            ...(userData as UserData),
-            notes: { ...(userData as UserData).notes, [id]: note },
-          };
-          setKey('user', updatedUserData);
-        }
+        const updatedUserData: UserData = {
+          ...userData,
+          notes: { ...userData.notes, [id]: note },
+        };
+        setKey('user', updatedUserData);
       },
       addCompletedObjective: (objective: string) => {
         const userData = getKey('user');
-        if (userData && isObject(userData)) {
+        if (!userData.completedObjectives.includes(objective)) {
           const updatedUserData: UserData = {
-            ...(userData as UserData),
-            completedObjectives: [...(userData as UserData).completedObjectives, objective],
+            ...userData,
+            completedObjectives: [...userData.completedObjectives, objective],
           };
           setKey('user', updatedUserData);
         }
       },
       removeCompletedObjective: (objective: string) => {
         const userData = getKey('user');
-        if (userData && isObject(userData)) {
-          const updatedUserData: UserData = {
-            ...(userData as UserData),
-            completedObjectives: (userData as UserData).completedObjectives.filter((obj) => obj !== objective),
-          };
-          setKey('user', updatedUserData);
-        }
+        const updatedUserData: UserData = {
+          ...userData,
+          completedObjectives: userData.completedObjectives.filter(obj => obj !== objective),
+        };
+        setKey('user', updatedUserData);
       },
       addDiscoveredLZ: (lz: string) => {
         const userData = getKey('user');
-        if (userData && isObject(userData)) {
+        if (!userData.discoveredLZs.includes(lz)) {
           const updatedUserData: UserData = {
-            ...(userData as UserData),
-            discoveredLZs: [...(userData as UserData).discoveredLZs, lz],
+            ...userData,
+            discoveredLZs: [...userData.discoveredLZs, lz],
           };
           setKey('user', updatedUserData);
         }
       },
       removeDiscoveredLZ: (lz: string) => {
         const userData = getKey('user');
-        if (userData && isObject(userData)) {
+        const updatedUserData: UserData = {
+          ...userData,
+          discoveredLZs: userData.discoveredLZs.filter(location => location !== lz),
+        };
+        setKey('user', updatedUserData);
+      },
+      setting: {
+        toggleShowCompletedObjectives: () => {
+          const userData = getKey('user');
           const updatedUserData: UserData = {
-            ...(userData as UserData),
-            discoveredLZs: (userData as UserData).discoveredLZs.filter((location) => location !== lz),
+            ...userData,
+            settings: {
+              ...userData.settings,
+              showCompletedObjectives: !userData.settings.showCompletedObjectives,
+            },
           };
           setKey('user', updatedUserData);
-        }
+        },
+        toggleShowCanceledObjectives: () => {
+          const userData = getKey('user');
+          const updatedUserData: UserData = {
+            ...userData,
+            settings: {
+              ...userData.settings,
+              showCanceledObjectives: !userData.settings.showCanceledObjectives,
+            },
+          };
+          setKey('user', updatedUserData);
+        },
+        updateMarkerSize: (size: MarkerSize) => {
+          const userData = getKey('user');
+          const updatedUserData: UserData = {
+            ...userData,
+            settings: {
+              ...userData.settings,
+              markerSize: size,
+            },
+          };
+          setKey('user', updatedUserData);
+        },
       },
     },
     popup: {
       toggleNewMap: () => {
         const popupData = getKey('popup');
-        if (popupData && isObject(popupData)) {
-          const updatedPopupData: PopupData = {
-            ...(popupData as PopupData),
-            dismissedNewMap: !(popupData as PopupData).dismissedNewMap,
-          };
-          setKey('popup', updatedPopupData);
-        }
+        const updatedPopupData: PopupData = {
+          ...popupData,
+          dismissedNewMap: !popupData.dismissedNewMap,
+        };
+        setKey('popup', updatedPopupData);
       },
-    }
+    },
   };
 
   return (
-    <LocalStorageContext.Provider value={{ setKey, getKey, actions }}>
+    <LocalStorageContext.Provider value={{ data, actions }}>
       {children}
     </LocalStorageContext.Provider>
   );

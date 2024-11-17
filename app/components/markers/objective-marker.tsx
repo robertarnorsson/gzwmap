@@ -1,11 +1,11 @@
 import { memo, useCallback } from "react";
 import { Marker } from "../map/Marker";
-import { useSettings } from "~/context/SettingsProvider";
-import { objective, task } from "~/lib/types";
 import { usePopup } from "~/context/PopupContext";
 import { ObjectivePopupContent } from "../popups/objective-popup";
 import { Dot } from "lucide-react";
 import { useData } from "~/context/DataContext";
+import { useLocalStorage } from "~/context/LocalStorageContext";
+import { objective, task } from "~/lib/types";
 
 interface ObjectiveMarkerProps {
   task: task;
@@ -13,13 +13,13 @@ interface ObjectiveMarkerProps {
 }
 
 export const ObjectiveMarker = memo(({ task, objective }: ObjectiveMarkerProps) => {
-  const { settings, actions } = useSettings();
+  const { data, actions } = useLocalStorage();
   const { tasks } = useData();
   const { showPopup } = usePopup();
 
-  const selectedFaction = settings.user.faction;
+  const selectedFaction = data.user.faction;
   const shouldHide = !!(selectedFaction && objective.faction && objective.faction.id !== selectedFaction);
-  const isComplete = settings.user.objectivesComplete.includes(objective.id);
+  const isComplete = data.user.completedObjectives.includes(objective.id);
 
   const isCanceledTaskCompleted = task.cancelTaskId
     ? (() => {
@@ -28,17 +28,17 @@ export const ObjectiveMarker = memo(({ task, objective }: ObjectiveMarkerProps) 
         const relevantObjectives = canceledTask.objectives.filter(obj => {
           return !obj.faction || selectedFaction === null || obj.faction.id === selectedFaction;
         });
-        return relevantObjectives.every(obj => settings.user.objectivesComplete.includes(obj.id));
+        return relevantObjectives.every(obj => data.user.completedObjectives.includes(obj.id));
       })()
     : false;
-  
+
   const handleClick = useCallback(() => {
     showPopup(objective.position, <ObjectivePopupContent task={task} objective={objective} />, [0, -20]);
   }, [showPopup, task, objective]);
 
   if (
-    (isComplete && !settings.user.showCompletedObjectives) ||
-    (isCanceledTaskCompleted && !settings.user.showCanceledObjectives)
+    (isComplete && !data.user.settings.showCompletedObjectives) ||
+    (isCanceledTaskCompleted && !data.user.settings.showCanceledObjectives)
   ) {
     return null;
   }
@@ -48,7 +48,7 @@ export const ObjectiveMarker = memo(({ task, objective }: ObjectiveMarkerProps) 
       <button
         className="group/objective relative p-1.5"
         onClick={handleClick}
-        onDoubleClick={() => !isCanceledTaskCompleted && actions.toggleObjectiveCompletion(objective.id)}
+        onDoubleClick={() => !isCanceledTaskCompleted && actions.user.addCompletedObjective(objective.id)}
       >
         <div className={isCanceledTaskCompleted ? 'bg-red-500' : isComplete ? 'bg-green-200' : 'bg-orange-500'}>
           <div className="flex justify-center items-center w-3 h-3 border border-black relative overflow-hidden group-hover/objective:outline group-hover/objective:outline-white group-hover/objective:outline-[1.5px]">

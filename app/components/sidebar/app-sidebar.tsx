@@ -6,7 +6,7 @@ import {
   SidebarMenu,
   useSidebar,
 } from "~/components/ui/sidebar";
-import { useSettings } from "~/context/SettingsProvider";
+import { useLocalStorage } from "~/context/LocalStorageContext"; // Updated import
 import { AppSidebarTrigger } from "./app-sidebar-trigger";
 import { Link } from "@remix-run/react";
 import { useMemo } from "react";
@@ -16,25 +16,25 @@ import {
   getCompletedLZsCount,
   getTotalLZsCount,
   getTotalTasksCount,
-  getTotalObjectivesCount
+  getTotalObjectivesCount,
 } from "~/helper/completions";
 import { useData } from "~/context/DataContext";
 import { Button } from "../ui/button";
 import { Settings } from "lucide-react";
 
 export function AppSidebar() {
-  const { settings } = useSettings();
+  const { data } = useLocalStorage(); // Using LocalStorageContext to access data
   const { tasks, lzs } = useData();
   const { isMobile } = useSidebar();
-  const selectedFactionId = settings.user.faction;
+  const selectedFactionId = data.user.faction;
 
   const completedTasksCount = useMemo(() => {
-    return getCompletedTasksCount(tasks, settings.user.objectivesComplete, selectedFactionId);
-  }, [tasks, settings.user.objectivesComplete, selectedFactionId]);
+    return getCompletedTasksCount(tasks, data.user.completedObjectives, selectedFactionId);
+  }, [tasks, data.user.completedObjectives, selectedFactionId]);
 
   const completedObjectivesCount = useMemo(() => {
-    return getCompletedObjectivesCount(tasks, settings.user.objectivesComplete, selectedFactionId);
-  }, [tasks, settings.user.objectivesComplete, selectedFactionId]);
+    return getCompletedObjectivesCount(tasks, data.user.completedObjectives, selectedFactionId);
+  }, [tasks, data.user.completedObjectives, selectedFactionId]);
 
   const totalObjectivesCount = useMemo(() => {
     return getTotalObjectivesCount(tasks, selectedFactionId);
@@ -45,8 +45,8 @@ export function AppSidebar() {
   }, [selectedFactionId, tasks]);
 
   const completedLZsCount = useMemo(() => {
-    return getCompletedLZsCount(lzs, settings.user.lzsLocated, selectedFactionId);
-  }, [lzs, settings.user.lzsLocated, selectedFactionId]);
+    return getCompletedLZsCount(lzs, data.user.discoveredLZs, selectedFactionId);
+  }, [lzs, data.user.discoveredLZs, selectedFactionId]);
 
   const totalLZsCount = useMemo(() => {
     return getTotalLZsCount(lzs, selectedFactionId);
@@ -57,9 +57,7 @@ export function AppSidebar() {
       <SidebarHeader className="bg-transparent">
         <SidebarMenu>
           <div className="flex justify-between items-center">
-            <Link
-              to='/'
-            >
+            <Link to="/">
               <h1 className="text-lg font-bold text-primary">GZW Map</h1>
             </Link>
             <div className="flex space-x-2">
@@ -67,7 +65,7 @@ export function AppSidebar() {
                 to="/settings"
                 className="text-sm text-muted-foreground hover:text-primary transition-colors"
               >
-                <Button variant='ghost' size='icon'>
+                <Button variant="ghost" size="icon">
                   <Settings />
                 </Button>
               </Link>
@@ -82,21 +80,15 @@ export function AppSidebar() {
           {[
             {
               label: "Objectives Completed",
-              value: `${completedObjectivesCount
-                .toString()
-                .padStart(3, "0")} / ${totalObjectivesCount}`,
+              value: `${completedObjectivesCount.toString().padStart(3, "0")} / ${totalObjectivesCount}`,
             },
             {
               label: "Tasks Completed",
-              value: `${completedTasksCount
-                .toString()
-                .padStart(3, "0")} / ${totalTasksCount}`,
+              value: `${completedTasksCount.toString().padStart(3, "0")} / ${totalTasksCount}`,
             },
             {
               label: "LZs Found",
-              value: `${completedLZsCount
-                .toString()
-                .padStart(3, "0")} / ${totalLZsCount.toString().padStart(3, "0")}`,
+              value: `${completedLZsCount.toString().padStart(3, "0")} / ${totalLZsCount.toString().padStart(3, "0")}`,
             },
           ].map(({ label, value }) => (
             <div key={label} className="flex items-end justify-between">

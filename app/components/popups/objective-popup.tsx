@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useMemo } from "react";
-import { useSettings } from "~/context/SettingsProvider";
+import { useLocalStorage } from "~/context/LocalStorageContext"; // Updated import
 import { objective, task } from "~/lib/types";
 import { Ban, Check, Dot, Ellipsis, Link, Pencil, X } from "lucide-react";
 import { copyMarker } from "~/lib/utils";
@@ -33,10 +33,11 @@ export const ObjectivePopupContent = ({
   task,
   objective,
 }: ObjectivePopupContentProps) => {
-  const { settings, actions } = useSettings();
+  const { data, actions } = useLocalStorage(); // Using LocalStorageContext
   const { tasks } = useData();
-  const selectedFaction = settings.user.faction;
-  const isComplete = settings.user.objectivesComplete.includes(objective.id);
+  const userSettings = data.user;
+  const selectedFaction = userSettings.faction;
+  const isComplete = userSettings.completedObjectives.includes(objective.id);
 
   const isTaskCanceled = useMemo(() => {
     if (!task.cancelTaskId) return false;
@@ -50,36 +51,36 @@ export const ObjectivePopupContent = ({
     });
   
     // Check if all relevant objectives for the canceled task are completed
-    return relevantObjectives.every(obj => settings.user.objectivesComplete.includes(obj.id));
-  }, [task.cancelTaskId, tasks, selectedFaction, settings.user.objectivesComplete]);
+    return relevantObjectives.every(obj => userSettings.completedObjectives.includes(obj.id));
+  }, [task.cancelTaskId, tasks, selectedFaction, userSettings.completedObjectives]);
 
   const [noteText, setNoteText] = useState("");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
-    const existingNote = settings.user.notes?.[objective.id] || "";
+    const existingNote = userSettings.notes?.[objective.id] || "";
     setNoteText(existingNote);
 
     if (textareaRef.current) {
       const length = existingNote.length;
       textareaRef.current.setSelectionRange(length, length);
     }
-  }, [objective.id, settings.user.notes]);
+  }, [objective.id, userSettings.notes]);
 
   const handleNoteChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setNoteText(event.target.value);
   };
 
   const handleSaveNote = () => {
-    actions.updateNote(objective.id, noteText);
+    actions.user.updateNote(objective.id, noteText);
     toast({
       description: "Note saved successfully",
     });
   };
 
   const handleCancelNote = () => {
-    setNoteText(settings.user.notes?.[objective.id] || "");
-  }
+    setNoteText(userSettings.notes?.[objective.id] || "");
+  };
 
   return (
     <>
@@ -135,10 +136,10 @@ export const ObjectivePopupContent = ({
           </Dialog>
         </div>
       )}
-      {settings.user.notes?.[objective.id] && (
+      {userSettings.notes?.[objective.id] && (
         <div className="mt-3">
           <span className="text-xs text-muted-foreground">User note</span>
-          <p className="text-xs text-muted-foreground">{settings.user.notes?.[objective.id] || ""}</p>
+          <p className="text-xs text-muted-foreground">{userSettings.notes?.[objective.id] || ""}</p>
         </div>
       )}
       <div className="flex flex-col mt-3">
@@ -153,7 +154,7 @@ export const ObjectivePopupContent = ({
           <Button
             className="w-full"
             variant='secondary'
-            onClick={() => actions.toggleObjectiveCompletion(objective.id)}
+            onClick={() => actions.user.addCompletedObjective(objective.id)}
             disabled={isTaskCanceled}
           >
             {isTaskCanceled
