@@ -1,5 +1,7 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
+import { task } from "./types";
+import { UserData } from "~/context/LocalStorageContext";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -7,7 +9,6 @@ export function cn(...inputs: ClassValue[]) {
 
 export function getHostname() {
   if (typeof document === 'undefined') return;
-  if (typeof navigator === 'undefined') return;
 
   const isDevelopment = window.location.hostname === 'localhost';
 
@@ -47,4 +48,29 @@ export function sizeToScale(size: "small" | "normal" | "large") {
     case "large":
       return 1.2
   }
+}
+
+export function isCanceledTaskCompleted(task: task, tasks: task[], user: UserData): boolean {
+  if (!task.cancelTaskId) return false;
+  
+  const canceledTask = tasks.find(t => t.id === task.cancelTaskId);
+  if (!canceledTask) return false;
+
+  // Filter relevant objectives based on faction
+  const relevantObjectives = canceledTask.objectives.filter(obj => {
+    return !obj.faction || user.faction === null || obj.faction.id === user.faction;
+  });
+
+  // Check if all relevant objectives are completed
+  return relevantObjectives.every(obj => user.completedObjectives.includes(obj.id));
+}
+
+export function detectDevice() {
+  const ua = navigator.userAgent.toLowerCase();
+
+  if (/windows phone|android|iphone|ipad|ipod/i.test(ua)) return 'Mobile';
+  if (/win/i.test(ua)) return 'Windows';
+  if (/mac/i.test(ua)) return 'MacOS';
+
+  return 'Unknown';
 }

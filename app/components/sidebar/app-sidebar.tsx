@@ -6,30 +6,35 @@ import {
   SidebarMenu,
   useSidebar,
 } from "~/components/ui/sidebar";
-import { useLocalStorage } from "~/context/LocalStorageContext"; // Updated import
+import { useLocalStorage } from "~/context/LocalStorageContext";
 import { AppSidebarTrigger } from "./app-sidebar-trigger";
 import { Link } from "@remix-run/react";
 import { useMemo } from "react";
 import {
   getCompletedObjectivesCount,
-  getCompletedTasksCount,
-  getCompletedLZsCount,
-  getTotalLZsCount,
   getTotalTasksCount,
-  getTotalObjectivesCount,
 } from "~/helper/completions";
 import { useData } from "~/context/DataContext";
 import { Button } from "../ui/button";
-import { Settings } from "lucide-react";
+import { Command, Settings } from "lucide-react";
+import { getDiscoveredLZs, getTotalLZs, getTotalObjectives } from "~/helper/counter";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "../ui/hover-card";
+import { Input, Keybind } from "../common/Keybind";
+
+
+const keybinds: Input[] = [
+  { name: "Toggle sidebar", windows: "Ctrl + B", mac: "⌘ + B", type: 'keyboard' },
+  { name: "Complete objective", action: "right", type: 'mouse' },
+]
 
 export function AppSidebar() {
-  const { data } = useLocalStorage(); // Using LocalStorageContext to access data
+  const { data } = useLocalStorage();
   const { tasks, lzs } = useData();
   const { isMobile } = useSidebar();
   const selectedFactionId = data.user.faction;
 
   const completedTasksCount = useMemo(() => {
-    return getCompletedTasksCount(tasks, data.user.completedObjectives, selectedFactionId);
+    return getTotalObjectives(tasks, data.user);
   }, [tasks, data.user.completedObjectives, selectedFactionId]);
 
   const completedObjectivesCount = useMemo(() => {
@@ -37,7 +42,7 @@ export function AppSidebar() {
   }, [tasks, data.user.completedObjectives, selectedFactionId]);
 
   const totalObjectivesCount = useMemo(() => {
-    return getTotalObjectivesCount(tasks, selectedFactionId);
+    return getTotalObjectives(tasks, data.user);
   }, [selectedFactionId, tasks]);
 
   const totalTasksCount = useMemo(() => {
@@ -45,11 +50,11 @@ export function AppSidebar() {
   }, [selectedFactionId, tasks]);
 
   const completedLZsCount = useMemo(() => {
-    return getCompletedLZsCount(lzs, data.user.discoveredLZs, selectedFactionId);
+    return getDiscoveredLZs(lzs, data.user.discoveredLZs, selectedFactionId);
   }, [lzs, data.user.discoveredLZs, selectedFactionId]);
 
   const totalLZsCount = useMemo(() => {
-    return getTotalLZsCount(lzs, selectedFactionId);
+    return getTotalLZs(lzs, selectedFactionId);
   }, [lzs, selectedFactionId]);
 
   return (
@@ -75,19 +80,44 @@ export function AppSidebar() {
       </SidebarHeader>
       <SidebarContent className="bg-transparent"></SidebarContent>
       <SidebarFooter className="pb-1">
-        <div className="w-full h-[1px] bg-border mb-1" />
+        <div className="flex flex-row justify-center items-center space-x-2">
+          <div className="w-full h-[1px] bg-border" />
+          <div className="flex flex-row justify-around items-center space-x-3 text-[10px] text-border">
+          <HoverCard>
+            <HoverCardTrigger>
+              <Command className="w-3 h-3 duration-300 transition-colors hover:text-muted-foreground" />
+            </HoverCardTrigger>
+            <HoverCardContent side="right">
+              <div className="flex flex-col">
+                <h2 className="text-base font-semibold mb-2">Keybinds</h2>
+                <div className="flex flex-row">
+                  <ul className="space-y-1.5 w-full">
+                    {keybinds.map((input, index) => (
+                      <li key={index} className="flex justify-between items-end text-muted-foreground/90">
+                        <span className="text-xs">{input.name}</span>
+                        <span className="flex-1 mx-1.5 mb-[2px] border-b border-dashed border-muted-foreground/30"></span>
+                        <Keybind input={input} />
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </HoverCardContent>
+          </HoverCard>
+          </div>
+        </div>
         <div className="flex flex-col space-y-1 text-muted-foreground/90 px-1.5">
           {[
             {
               label: "Objectives Completed",
-              value: `${completedObjectivesCount.toString().padStart(3, "0")} / ${totalObjectivesCount}`,
+              value: `${completedObjectivesCount.toString().padStart(3, "0")} / ${totalObjectivesCount.toString().padStart(3, "0")}`,
             },
             {
               label: "Tasks Completed",
-              value: `${completedTasksCount.toString().padStart(3, "0")} / ${totalTasksCount}`,
+              value: `${completedTasksCount.toString().padStart(3, "0")} / ${totalTasksCount.toString().padStart(3, "0")}`,
             },
             {
-              label: "LZs Found",
+              label: "LZs Discovered",
               value: `${completedLZsCount.toString().padStart(3, "0")} / ${totalLZsCount.toString().padStart(3, "0")}`,
             },
           ].map(({ label, value }) => (

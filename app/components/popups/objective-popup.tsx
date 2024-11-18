@@ -35,9 +35,8 @@ export const ObjectivePopupContent = ({
 }: ObjectivePopupContentProps) => {
   const { data, actions } = useLocalStorage(); // Using LocalStorageContext
   const { tasks } = useData();
-  const userSettings = data.user;
-  const selectedFaction = userSettings.faction;
-  const isComplete = userSettings.completedObjectives.includes(objective.id);
+  const selectedFaction = data.user.faction;
+  const isComplete = data.user.completedObjectives.includes(objective.id);
 
   const isTaskCanceled = useMemo(() => {
     if (!task.cancelTaskId) return false;
@@ -51,21 +50,21 @@ export const ObjectivePopupContent = ({
     });
   
     // Check if all relevant objectives for the canceled task are completed
-    return relevantObjectives.every(obj => userSettings.completedObjectives.includes(obj.id));
-  }, [task.cancelTaskId, tasks, selectedFaction, userSettings.completedObjectives]);
+    return relevantObjectives.every(obj => data.user.completedObjectives.includes(obj.id));
+  }, [task.cancelTaskId, tasks, selectedFaction, data.user.completedObjectives]);
 
   const [noteText, setNoteText] = useState("");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
-    const existingNote = userSettings.notes?.[objective.id] || "";
+    const existingNote = data.user.notes?.[objective.id] || "";
     setNoteText(existingNote);
 
     if (textareaRef.current) {
       const length = existingNote.length;
       textareaRef.current.setSelectionRange(length, length);
     }
-  }, [objective.id, userSettings.notes]);
+  }, [objective.id, data.user.notes]);
 
   const handleNoteChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setNoteText(event.target.value);
@@ -79,15 +78,15 @@ export const ObjectivePopupContent = ({
   };
 
   const handleCancelNote = () => {
-    setNoteText(userSettings.notes?.[objective.id] || "");
+    setNoteText(data.user.notes?.[objective.id] || "");
   };
 
   const handleComplete = () => {
-    if (userSettings) {
+    if (data.user) {
       if (isComplete) {
         actions.user.removeCompletedObjective(objective.id);
       } else {
-        actions.user.addCompletedObjective(objective.id);
+        actions.user.addCompletedObjective(objective.id, tasks, data.user);
       }
     }
   };
@@ -146,10 +145,10 @@ export const ObjectivePopupContent = ({
           </Dialog>
         </div>
       )}
-      {userSettings.notes?.[objective.id] && (
+      {data.user.notes?.[objective.id] && (
         <div className="mt-3">
           <span className="text-xs text-muted-foreground">User note</span>
-          <p className="text-xs text-muted-foreground">{userSettings.notes?.[objective.id] || ""}</p>
+          <p className="text-xs text-muted-foreground">{data.user.notes?.[objective.id] || ""}</p>
         </div>
       )}
       <div className="flex flex-col mt-3">

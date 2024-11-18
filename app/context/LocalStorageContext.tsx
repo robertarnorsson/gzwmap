@@ -1,13 +1,16 @@
 import React, { createContext, useContext, ReactNode, useEffect, useState } from 'react';
+import { getObjectivesTask, isTaskCanceled } from '~/helper/counter';
+import { task } from '~/lib/types';
+import { isCanceledTaskCompleted } from '~/lib/utils';
 
 // Utility functions for base64 encoding/decoding
 const encodeBase64 = (data: string): string => btoa(data);
 const decodeBase64 = (data: string): string => atob(data);
 
-type MarkerSize = 1 | 2 | 3 | 4 | 5;
+export type MarkerSize = 1 | 2 | 3 | 4 | 5;
 
 // Define types for the data stored in localStorage
-interface UserData {
+export interface UserData {
   username: string;
   faction: string;
   completedObjectives: string[];
@@ -20,7 +23,7 @@ interface UserData {
   };
 }
 
-interface PopupData {
+export interface PopupData {
   dismissedNewMap: boolean;
 }
 
@@ -37,7 +40,7 @@ interface LocalStorageActions {
     updateUsername: (username: string) => void;
     updateFaction: (factionId: string) => void;
     updateNote: (id: string, note: string) => void;
-    addCompletedObjective: (objective: string) => void;
+    addCompletedObjective: (objective: string, tasks: task[], user: UserData) => void;
     removeCompletedObjective: (objective: string) => void;
     addDiscoveredLZ: (lz: string) => void;
     removeDiscoveredLZ: (lz: string) => void;
@@ -186,8 +189,15 @@ export const LocalStorageProvider: React.FC<{ children: ReactNode }> = ({ childr
         };
         setKey('user', updatedUserData);
       },
-      addCompletedObjective: (objective: string) => {
+      addCompletedObjective: (objective: string, tasks: task[], user: UserData) => {
         const userData = getKey('user');
+
+        const task = getObjectivesTask(tasks, objective)
+
+        if (!task) return; 
+      
+        if (isCanceledTaskCompleted(task, tasks, user)) return;
+      
         if (!userData.completedObjectives.includes(objective)) {
           const updatedUserData: UserData = {
             ...userData,

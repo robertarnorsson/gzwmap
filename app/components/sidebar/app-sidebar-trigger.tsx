@@ -12,7 +12,6 @@ export function AppSidebarTrigger() {
         "absolute left-3 top-2 z-20 grid-bg border border-border rounded-none aspect-square",
         !isMobile && 'hover:bg-secondary'
       )}
-      variant='ghost'
       size='icon'
       onClick={toggleSidebar}
     >
