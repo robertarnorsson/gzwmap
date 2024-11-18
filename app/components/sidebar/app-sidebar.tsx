@@ -35,7 +35,7 @@ export function AppSidebar() {
 
   const completedTasksCount = useMemo(() => {
     return getTotalObjectives(tasks, data.user);
-  }, [tasks, data.user.completedObjectives, selectedFactionId]);
+  }, [tasks, data.user]);
 
   const completedObjectivesCount = useMemo(() => {
     return getCompletedObjectivesCount(tasks, data.user.completedObjectives, selectedFactionId);
@@ -43,7 +43,7 @@ export function AppSidebar() {
 
   const totalObjectivesCount = useMemo(() => {
     return getTotalObjectives(tasks, data.user);
-  }, [selectedFactionId, tasks]);
+  }, [data.user, tasks]);
 
   const totalTasksCount = useMemo(() => {
     return getTotalTasksCount(tasks, selectedFactionId);

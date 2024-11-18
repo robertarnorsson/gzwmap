@@ -1,5 +1,5 @@
 import React, { createContext, useContext, ReactNode, useEffect, useState } from 'react';
-import { getObjectivesTask, isTaskCanceled } from '~/helper/counter';
+import { getObjectivesTask } from '~/helper/counter';
 import { task } from '~/lib/types';
 import { isCanceledTaskCompleted } from '~/lib/utils';
 

@@ -10,7 +10,6 @@ export const prefixToEndpointMap = {
   L: 'locations',
 } as const;
 
-// Define a mapping of prefixes to their corresponding types
 export type DataMap = {
   LZ: lz;
   T: task;
@@ -28,10 +27,10 @@ export const tileExtent: Extent = [
 ];
 
 export const maxExtent: Extent = [
-  650,
+  660,
   8473,
   32116,
-  24208,
+  24108,
 ];
 
 export const projection = new Projection({
