@@ -5,7 +5,7 @@ import { useMarkerNavigation } from '~/hooks/useMarkerNavigation';
 
 const Map: React.FC = () => {
   const { map, isMapLoaded } = useMap();
-  const { isLoaded } = useData();
+  const { loaded } = useData();
   const mapContainerRef = useRef<HTMLDivElement>(null);
 
   useMarkerNavigation({ defaultZoom: 6 });
@@ -22,7 +22,7 @@ const Map: React.FC = () => {
 
   return (
     <div className="relative w-full h-full">
-      {!isMapLoaded && isLoaded && (
+      {!isMapLoaded && loaded && (
         <div className="absolute inset-0 z-0 grid-bg-plus flex items-center justify-center">
           <div className='px-8 py-6 bg-background border border-border'>
             <span>Loading map...</span>

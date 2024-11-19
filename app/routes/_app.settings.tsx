@@ -23,7 +23,7 @@ export const meta: MetaFunction = () => {
 
 export default function Settings() {
   const { data, actions } = useLocalStorage();
-  const { factions, isLoaded } = useData();
+  const { factions, loaded } = useData();
 
   return (
     <div className="flex flex-col w-full min-h-screen">
@@ -62,7 +62,7 @@ export default function Settings() {
                 <CardContent>
                   <div className="flex justify-center items-center w-full">
                     <div className="flex max-w-[450px] justify-evenly items-center w-full">
-                      {!isLoaded ? (
+                      {!loaded ? (
                         <>
                           <div className="w-20 h-20 md:w-24 md:h-24 bg-secondary animate-pulse rounded-xl"></div>
                           <div className="w-20 h-20 md:w-24 md:h-24 bg-secondary animate-pulse rounded-xl"></div>

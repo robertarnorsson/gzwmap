@@ -2,6 +2,7 @@ import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 import { task } from "./types";
 import { UserData } from "~/context/LocalStorageContext";
+import { API_URL } from "./constants";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -74,3 +75,16 @@ export function detectDevice() {
 
   return 'Unknown';
 }
+
+export const fetchData = async <T,>(endpoint: string): Promise<T[]> => {
+  const response = await fetch(`${API_URL}/${endpoint}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+  });
+  if (!response.ok) {
+    throw new Error(`Error fetching ${endpoint}: ${response.statusText}`);
+  }
+  return await response.json() as T[];
+};

@@ -35,7 +35,7 @@ export const ObjectiveMarker = memo(({ task, objective }: ObjectiveMarkerProps) 
         actions.user.addCompletedObjective(objective.id, tasks, data.user);
       }
     }
-  }, [data, actions])
+  }, [data.user, isComplete, actions.user, objective.id, tasks])
 
   if (
     (isComplete && !data.user.settings.showCompletedObjectives) ||
