@@ -58,6 +58,7 @@ export type key = item & {
   questKey: boolean;
   location: location;
   position: [number, number] | [number, number][];
+  faction?: faction;
 };
 
 export type task = BaseMarker & {

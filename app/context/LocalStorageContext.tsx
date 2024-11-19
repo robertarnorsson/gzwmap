@@ -14,6 +14,7 @@ export interface UserData {
   username: string;
   faction: string;
   completedObjectives: string[];
+  collectedKeys: string[];
   discoveredLZs: string[];
   notes: { [id: string]: string };
   settings: {
@@ -42,6 +43,8 @@ interface LocalStorageActions {
     updateNote: (id: string, note: string) => void;
     addCompletedObjective: (objective: string, tasks: task[], user: UserData) => void;
     removeCompletedObjective: (objective: string) => void;
+    addCollectedKey: (key: string) => void;
+    removeCollectedKey: (key: string) => void;
     addDiscoveredLZ: (lz: string) => void;
     removeDiscoveredLZ: (lz: string) => void;
     setting: {
@@ -70,6 +73,7 @@ const defaultData: LocalStorageData = {
     username: '',
     faction: '',
     completedObjectives: [],
+    collectedKeys: [],
     discoveredLZs: [],
     notes: {},
     settings: {
@@ -214,6 +218,24 @@ export const LocalStorageProvider: React.FC<{ children: ReactNode }> = ({ childr
         };
         setKey('user', updatedUserData);
       },
+      addCollectedKey: (key: string) => {
+        const userData = getKey('user');
+        if (!userData.collectedKeys.includes(key)) {
+          const updatedUserData: UserData = {
+            ...userData,
+            collectedKeys: [...userData.collectedKeys, key],
+          };
+          setKey('user', updatedUserData);
+        }
+      },
+      removeCollectedKey: (key: string) => {
+        const userData = getKey('user');
+        const updatedUserData: UserData = {
+          ...userData,
+          collectedKeys: userData.collectedKeys.filter(collectedKey => collectedKey !== key),
+        };
+        setKey('user', updatedUserData);
+      },
       addDiscoveredLZ: (lz: string) => {
         const userData = getKey('user');
         if (!userData.discoveredLZs.includes(lz)) {
@@ -228,7 +250,7 @@ export const LocalStorageProvider: React.FC<{ children: ReactNode }> = ({ childr
         const userData = getKey('user');
         const updatedUserData: UserData = {
           ...userData,
-          discoveredLZs: userData.discoveredLZs.filter(location => location !== lz),
+          discoveredLZs: userData.discoveredLZs.filter(discoveredLz => discoveredLz !== lz),
         };
         setKey('user', updatedUserData);
       },

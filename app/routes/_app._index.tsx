@@ -8,6 +8,7 @@ import { AppSidebarTrigger } from "~/components/sidebar/app-sidebar-trigger";
 import { useSidebar } from "~/components/ui/sidebar";
 import { useData } from "~/context/DataContext";
 import { AppSidebar } from "~/components/sidebar/app-sidebar";
+import { KeyMarker } from "~/components/markers/key-marker";
 
 export const meta: MetaFunction = () => {
   return [
@@ -18,7 +19,7 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   const { isMobile } = useSidebar();
-  const { tasks, lzs, locations } = useData();
+  const { tasks, keys, lzs, locations } = useData();
 
   return (
     <div className="relative flex w-full items-center justify-center">
@@ -30,6 +31,9 @@ export default function Index() {
       {tasks.map((task) => task.objectives.map((objective) => (
         <ObjectiveMarker key={objective.id} task={task} objective={objective} />
       )))}
+      {keys.map((key) => (
+        <KeyMarker key={key.id} cKey={key} />
+      ))}
       {lzs.map((lz) => (
         <LZMarker key={lz.id} lz={lz} />
       ))}

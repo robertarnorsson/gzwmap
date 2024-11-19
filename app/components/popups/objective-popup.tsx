@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useMemo } from "react";
-import { useLocalStorage } from "~/context/LocalStorageContext"; // Updated import
+import { useLocalStorage } from "~/context/LocalStorageContext";
 import { objective, task } from "~/lib/types";
 import { Ban, Check, Dot, Ellipsis, Link, Pencil, X } from "lucide-react";
 import { copyMarker } from "~/lib/utils";
@@ -33,7 +33,7 @@ export const ObjectivePopupContent = ({
   task,
   objective,
 }: ObjectivePopupContentProps) => {
-  const { data, actions } = useLocalStorage(); // Using LocalStorageContext
+  const { data, actions } = useLocalStorage();
   const { tasks } = useData();
   const selectedFaction = data.user.faction;
   const isComplete = data.user.completedObjectives.includes(objective.id);
