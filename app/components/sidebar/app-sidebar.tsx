@@ -6,18 +6,10 @@ import {
   SidebarMenu,
   useSidebar,
 } from "~/components/ui/sidebar";
-import { useLocalStorage } from "~/context/LocalStorageContext";
 import { AppSidebarTrigger } from "./app-sidebar-trigger";
 import { Link } from "@remix-run/react";
-import { useMemo } from "react";
-import {
-  getCompletedObjectivesCount,
-  getTotalTasksCount,
-} from "~/helper/completions";
-import { useData } from "~/context/DataContext";
 import { Button } from "../ui/button";
 import { Command, Settings } from "lucide-react";
-import { getDiscoveredLZs, getTotalLZs, getTotalObjectives } from "~/helper/counter";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "../ui/hover-card";
 import { Input, Keybind } from "../common/Keybind";
 
@@ -28,34 +20,7 @@ const keybinds: Input[] = [
 ]
 
 export function AppSidebar() {
-  const { data } = useLocalStorage();
-  const { tasks, lzs } = useData();
   const { isMobile } = useSidebar();
-  const selectedFactionId = data.user.faction;
-
-  const completedTasksCount = useMemo(() => {
-    return getTotalObjectives(tasks, data.user);
-  }, [tasks, data.user]);
-
-  const completedObjectivesCount = useMemo(() => {
-    return getCompletedObjectivesCount(tasks, data.user.completedObjectives, selectedFactionId);
-  }, [tasks, data.user.completedObjectives, selectedFactionId]);
-
-  const totalObjectivesCount = useMemo(() => {
-    return getTotalObjectives(tasks, data.user);
-  }, [data.user, tasks]);
-
-  const totalTasksCount = useMemo(() => {
-    return getTotalTasksCount(tasks, selectedFactionId);
-  }, [selectedFactionId, tasks]);
-
-  const completedLZsCount = useMemo(() => {
-    return getDiscoveredLZs(lzs, data.user.discoveredLZs, selectedFactionId);
-  }, [lzs, data.user.discoveredLZs, selectedFactionId]);
-
-  const totalLZsCount = useMemo(() => {
-    return getTotalLZs(lzs, selectedFactionId);
-  }, [lzs, selectedFactionId]);
 
   return (
     <Sidebar className="grid-bg p-2">
@@ -110,15 +75,15 @@ export function AppSidebar() {
           {[
             {
               label: "Objectives Completed",
-              value: `${completedObjectivesCount.toString().padStart(3, "0")} / ${totalObjectivesCount.toString().padStart(3, "0")}`,
+              value: 'NaN / Nan',
             },
             {
               label: "Tasks Completed",
-              value: `${completedTasksCount.toString().padStart(3, "0")} / ${totalTasksCount.toString().padStart(3, "0")}`,
+              value: 'NaN / Nan',
             },
             {
               label: "LZs Discovered",
-              value: `${completedLZsCount.toString().padStart(3, "0")} / ${totalLZsCount.toString().padStart(3, "0")}`,
+              value: 'NaN / Nan',
             },
           ].map(({ label, value }) => (
             <div key={label} className="flex items-end justify-between">
