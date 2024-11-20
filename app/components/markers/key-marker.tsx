@@ -6,7 +6,7 @@ import { key } from "~/lib/types";
 import { KeyPopupContent } from "../popups/key-popup";
 import { KeyRound } from "lucide-react";
 
-// "cKey" is for custom key because the prop name "key" is a default prop in every react component 
+// "cKey" is for custom key because the prop name "key" is a default prop in every React component 
 interface KeyMarkerProps {
   cKey: key;
 }
@@ -19,8 +19,8 @@ export const KeyMarker = memo(({ cKey: key }: KeyMarkerProps) => {
   const shouldHide = !!(selectedFaction && key.faction && key.faction.id !== selectedFaction);
   const isCollected = data.user.collectedKeys.includes(key.id);
 
-  const handleClick = useCallback(() => {
-    showPopup(key.position, <KeyPopupContent cKey={key} />, [0, -20]);
+  const handleClick = useCallback((position: [number, number]) => {
+    showPopup(position, <KeyPopupContent cKey={key} />, [0, -20]);
   }, [showPopup, key]);
 
   const handleCollected = useCallback((event: MouseEvent<HTMLButtonElement>) => {
@@ -32,13 +32,14 @@ export const KeyMarker = memo(({ cKey: key }: KeyMarkerProps) => {
         actions.user.addCollectedKey(key.id);
       }
     }
-  }, [data.user, isCollected, actions.user, key.id])
+  }, [data.user, isCollected, actions.user, key.id]);
 
-  return (
-    <Marker position={key.position} hide={shouldHide} enableHoverEffect>
+  // Utility function to render a marker for a position
+  const renderMarker = (position: [number, number]) => (
+    <Marker position={position} hide={shouldHide} enableHoverEffect>
       <button
         className="group/key relative p-1.5"
-        onClick={handleClick}
+        onClick={() => handleClick(position)}
         onContextMenu={handleCollected}
       >
         <div className={isCollected ? 'bg-lime-200' : 'bg-yellow-500'}>
@@ -52,6 +53,21 @@ export const KeyMarker = memo(({ cKey: key }: KeyMarkerProps) => {
       </button>
     </Marker>
   );
+
+  // Check if key.position is a single position or an array of positions
+  if (Array.isArray(key.position[0])) {
+    // key.position is an array of positions
+    return (
+      <>
+        {(key.position as [number, number][]).map((pos, index) => (
+          <div key={index}>{renderMarker(pos)}</div>
+        ))}
+      </>
+    );
+  }
+
+  // key.position is a single position
+  return renderMarker(key.position as [number, number]);
 });
 
 KeyMarker.displayName = "KeyMarker";

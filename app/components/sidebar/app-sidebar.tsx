@@ -47,29 +47,31 @@ export function AppSidebar() {
       <SidebarFooter className="pb-1">
         <div className="flex flex-row justify-center items-center space-x-2">
           <div className="w-full h-[1px] bg-border" />
-          <div className="flex flex-row justify-around items-center space-x-3 text-[10px] text-border">
-          <HoverCard>
-            <HoverCardTrigger>
-              <Command className="w-3 h-3 duration-300 transition-colors hover:text-muted-foreground" />
-            </HoverCardTrigger>
-            <HoverCardContent side="right">
-              <div className="flex flex-col">
-                <h2 className="text-base font-semibold mb-2">Keybinds</h2>
-                <div className="flex flex-row">
-                  <ul className="space-y-1.5 w-full">
-                    {keybinds.map((input, index) => (
-                      <li key={index} className="flex justify-between items-end text-muted-foreground/90">
-                        <span className="text-xs">{input.name}</span>
-                        <span className="flex-1 mx-1.5 mb-[2px] border-b border-dashed border-muted-foreground/30"></span>
-                        <Keybind input={input} />
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </HoverCardContent>
-          </HoverCard>
-          </div>
+          {!isMobile && (
+            <div className="flex flex-row justify-around items-center space-x-3 text-[10px] text-border">
+              <HoverCard>
+                <HoverCardTrigger>
+                  <Command className="w-3 h-3 duration-300 transition-colors hover:text-muted-foreground" />
+                </HoverCardTrigger>
+                <HoverCardContent side="right">
+                  <div className="flex flex-col">
+                    <h2 className="text-base font-semibold mb-2">Keybinds</h2>
+                    <div className="flex flex-row">
+                      <ul className="space-y-1.5 w-full">
+                        {keybinds.map((input, index) => (
+                          <li key={index} className="flex justify-between items-end text-muted-foreground/90">
+                            <span className="text-xs">{input.name}</span>
+                            <span className="flex-1 mx-1.5 mb-[2px] border-b border-dashed border-muted-foreground/30"></span>
+                            <Keybind input={input} />
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </HoverCardContent>
+              </HoverCard>
+            </div>
+          )}
         </div>
         <div className="flex flex-col space-y-1 text-muted-foreground/90 px-1.5">
           {[
