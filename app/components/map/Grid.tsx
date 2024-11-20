@@ -12,13 +12,13 @@ export const GridOverlay = () => {
 
   const [minX, minY, maxX, maxY] = maxExtent;
 
-  const coarseGridSizeX = (maxX - minX) / 14; // Calculate coarse grid size for X-axis
-  const coarseGridSizeY = (maxY - minY) / 8; // Calculate coarse grid size for Y-axis
+  const coarseGridSizeX = (maxX - minX) / 14;
+  const coarseGridSizeY = (maxY - minY) / 8;
 
-  const fineGridSizeX = coarseGridSizeX / 10; // Fine grid size based on coarse grid X
-  const fineGridSizeY = coarseGridSizeY / 10; // Fine grid size based on coarse grid Y
+  const fineGridSizeX = coarseGridSizeX / 10;
+  const fineGridSizeY = coarseGridSizeY / 10;
 
-  const gridColor = "#C2C2C290";
+  const gridColor = "#C2C2C260";
 
   useEffect(() => {
     if (!map) return;
@@ -55,8 +55,6 @@ export const GridOverlay = () => {
       }),
       updateWhileAnimating: true,
       updateWhileInteracting: true,
-      minZoom: 0,
-      maxZoom: 5,
     });
 
     // Fine grid layer

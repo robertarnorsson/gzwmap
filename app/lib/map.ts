@@ -26,30 +26,11 @@ export const tileExtent: Extent = [
   32768,
 ];
 
-const originalMaxExtent: Extent = [
-  660,
-  8473,
-  32116,
-  24108,
-];
-
-const [minX, minY] = originalMaxExtent;
-
-const xDivisions = 14;
-const yDivisions = 8;
-
-const width = originalMaxExtent[2] - originalMaxExtent[0];
-const height = originalMaxExtent[3] - originalMaxExtent[1];
-const gridSize = Math.min(width / xDivisions, height / yDivisions);
-
-const adjustedMaxX = minX + gridSize * xDivisions;
-const adjustedMaxY = minY + gridSize * yDivisions;
-
 export const maxExtent: Extent = [
-  minX,
-  minY,
-  adjustedMaxX,
-  adjustedMaxY,
+  2760,
+  8860,
+  29628,
+  24205,
 ];
 
 export const projection = new Projection({
