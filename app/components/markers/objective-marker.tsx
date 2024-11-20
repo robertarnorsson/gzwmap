@@ -19,29 +19,42 @@ export const ObjectiveMarker = memo(({ task, objective }: ObjectiveMarkerProps) 
   const { showPopup } = usePopup();
 
   const selectedFaction = data.user.faction;
-  const shouldHide = !!(selectedFaction && objective.faction && objective.faction.id !== selectedFaction);
   const isComplete = data.user.completedObjectives.includes(objective.id);
 
+  const shouldHide = !!(
+    selectedFaction &&
+    objective.faction &&
+    objective.faction.id !== selectedFaction
+  );
+  const isCanceled = !selectedFaction && isCanceledTaskCompleted(task, tasks, data.user);
+
   const handleClick = useCallback(() => {
-    showPopup(objective.position, <ObjectivePopupContent task={task} objective={objective} />, [0, -20]);
+    showPopup(
+      objective.position,
+      <ObjectivePopupContent task={task} objective={objective} />,
+      [0, -20]
+    );
   }, [showPopup, task, objective]);
 
-  const handleComplete = useCallback((event: MouseEvent<HTMLButtonElement>) => {
-    if (data.user) {
-      event.preventDefault();
-      if (isComplete) {
-        actions.user.removeCompletedObjective(objective.id);
-      } else {
-        actions.user.addCompletedObjective(objective.id, tasks, data.user);
+  const handleComplete = useCallback(
+    (event: MouseEvent<HTMLButtonElement>) => {
+      if (data.user) {
+        event.preventDefault();
+        if (isComplete) {
+          actions.user.removeCompletedObjective(objective.id);
+        } else {
+          actions.user.addCompletedObjective(objective.id, tasks, data.user);
+        }
       }
-    }
-  }, [data.user, isComplete, actions.user, objective.id, tasks])
+    },
+    [data.user, isComplete, actions.user, objective.id, tasks]
+  );
 
   if (
     (isComplete && !data.user.settings.showCompletedObjectives) ||
-    (isCanceledTaskCompleted(task, tasks, data.user) && !data.user.settings.showCanceledObjectives)
+    (isCanceled && !data.user.settings.showCanceledObjectives)
   ) {
-    return null;
+    return null; // Hide the marker if it shouldn't be displayed
   }
 
   return (
@@ -51,7 +64,15 @@ export const ObjectiveMarker = memo(({ task, objective }: ObjectiveMarkerProps) 
         onClick={handleClick}
         onContextMenu={handleComplete}
       >
-        <div className={isCanceledTaskCompleted(task, tasks, data.user) ? 'bg-red-500' : isComplete ? 'bg-green-200' : 'bg-orange-500'}>
+        <div
+          className={
+            isCanceled
+              ? "bg-red-500"
+              : isComplete
+              ? "bg-green-200"
+              : "bg-orange-500"
+          }
+        >
           <div className="flex justify-center items-center w-3 h-3 border border-black relative overflow-hidden group-hover/objective:outline group-hover/objective:outline-white group-hover/objective:outline-[1.5px]">
             <div className="absolute w-[21px] h-[1px] bg-black transform rotate-45"></div>
             <div className="absolute w-[22px] h-[1px] bg-black transform -rotate-45"></div>

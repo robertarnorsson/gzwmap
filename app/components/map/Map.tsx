@@ -29,7 +29,7 @@ const Map: React.FC = () => {
           </div>
         </div>
       )}
-      <div ref={mapContainerRef} style={{ width: '100%', height: '100%' }} className="z-10 grid-bg-plus cursor-crosshair" />
+      <div ref={mapContainerRef} style={{ width: '100%', height: '100%' }} className="grid-bg-plus cursor-crosshair" />
     </div>
   );
 };

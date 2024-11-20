@@ -9,6 +9,7 @@ import { useSidebar } from "~/components/ui/sidebar";
 import { useData } from "~/context/DataContext";
 import { AppSidebar } from "~/components/sidebar/app-sidebar";
 import { KeyMarker } from "~/components/markers/key-marker";
+import { GridOverlay } from "~/components/map/Grid";
 
 export const meta: MetaFunction = () => {
   return [
@@ -27,18 +28,19 @@ export default function Index() {
         <AppSidebar />
       </div>
       <Map />
+      <GridOverlay />
       <Popup />
-      {tasks.map((task) => task.objectives.map((objective) => (
-        <ObjectiveMarker key={objective.id} task={task} objective={objective} />
+      {tasks.map((task) => task.objectives.map((objective, index) => (
+        <ObjectiveMarker key={index} task={task} objective={objective} />
       )))}
-      {keys.map((key) => (
-        <KeyMarker key={key.id} cKey={key} />
+      {keys.map((key, index) => (
+        <KeyMarker key={index} cKey={key} />
       ))}
-      {lzs.map((lz) => (
-        <LZMarker key={lz.id} lz={lz} />
+      {lzs.map((lz, index) => (
+        <LZMarker key={index} lz={lz} />
       ))}
-      {locations.map((location) => (
-        <LocationMarker key={location.id} location={location} />
+      {locations.map((location, index) => (
+        <LocationMarker key={index} location={location} />
       ))}
       {isMobile && (
         <div className="absolute top-0 left-0">

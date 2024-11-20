@@ -3,12 +3,12 @@ import { createContext, ReactNode, useContext, useEffect, useState } from 'react
 
 // Openlayers
 import Map from 'ol/Map';
-import { View } from 'ol';
-import {  maxExtent, projection, tileExtent } from '~/lib/map';
+import { MapBrowserEvent, View } from 'ol';
+import { maxExtent, projection, tileExtent } from '~/lib/map';
 import { getCenter } from 'ol/extent';
-import Tile from 'ol/layer/Tile';
 import { XYZ } from 'ol/source';
 import { createXYZ } from 'ol/tilegrid';
+import TileLayer from 'ol/layer/Tile';
 
 interface MapContextType {
   map: Map | null;
@@ -25,7 +25,7 @@ export const MapProvider = ({ children }: { children: ReactNode }) => {
     if (typeof document !== 'undefined') {
       const mapInstance = new Map({
         layers: [
-          new Tile({
+          new TileLayer({
             preload: 128,
             cacheSize: 1024,
             extent: maxExtent,
@@ -44,18 +44,22 @@ export const MapProvider = ({ children }: { children: ReactNode }) => {
         ],
         view: new View({
           center: getCenter(maxExtent),
-          zoom: 4,
+          zoom: 3,
           projection: projection,
           enableRotation: false,
           maxZoom: 9
         }),
         controls: [],
-        maxTilesLoading: 64,
+        maxTilesLoading: 64
       });
 
       mapInstance.once('postrender', () => {
         setIsMapLoaded(true);
       });
+
+      mapInstance.on('click', (event: MapBrowserEvent<UIEvent>) => {
+        console.log(`${event.coordinate.at(0)}, ${event.coordinate.at(1)}`)
+      })
 
       setMap(mapInstance);
 
