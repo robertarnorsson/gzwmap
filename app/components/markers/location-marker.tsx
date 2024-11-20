@@ -10,7 +10,7 @@ export const LocationMarker = ({ location }: LocationMarkerProps) => {
   return (
     <Marker position={location.position}>
       <div className="flex flex-col items-center">
-        <p className="w-fit tracking-wider font-bold text-[12px] px-1 py-0.5 text-[#e0db95] text-center whitespace-nowrap drop-shadow-lg [text-shadow:_0_0_5px_var(--tw-shadow-color)] select-none">{location.name}</p>
+        <p className="w-fit tracking-wider font-bold text-[12px] px-1 py-0.5 text-[#e0db95] text-center whitespace-nowrap select-none">{location.name}</p>
       </div>
     </Marker>
   );

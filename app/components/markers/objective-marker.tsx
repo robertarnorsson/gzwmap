@@ -78,7 +78,7 @@ export const ObjectiveMarker = memo(({ task, objective }: ObjectiveMarkerProps) 
             <div className="absolute w-[22px] h-[1px] bg-black transform -rotate-45"></div>
           </div>
         </div>
-        <div className="absolute bottom-1/2 left-6 transform translate-y-6 group-hover/objective:translate-y-1/2 grid-bg border border-border text-primary text-xs px-2 py-1 shadow-lg opacity-0 group-hover/objective:opacity-100 transition-all text-nowrap pointer-events-none">
+        <div className="absolute bottom-1/2 left-6 transform translate-y-6 group-hover/objective:translate-y-1/2 grid-bg border border-border text-primary text-xs px-2 py-1 opacity-0 group-hover/objective:opacity-100 transition-all text-nowrap pointer-events-none">
           <div className="flex flex-row">
             <span className="text-xs text-primary/85">{task.name}</span>
             <Dot className="w-4 h-4 text-primary/85" />

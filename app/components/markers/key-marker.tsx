@@ -47,7 +47,7 @@ export const KeyMarker = memo(({ cKey: key }: KeyMarkerProps) => {
             <KeyRound strokeWidth={4} className="w-2 h-2 text-black" />
           </div>
         </div>
-        <div className="absolute bottom-1/2 left-6 transform translate-y-6 group-hover/key:translate-y-1/2 grid-bg border border-border text-primary text-xs px-2 py-1 shadow-lg opacity-0 group-hover/key:opacity-100 transition-all text-nowrap pointer-events-none">
+        <div className="absolute bottom-1/2 left-6 transform translate-y-6 group-hover/key:translate-y-1/2 grid-bg border border-border text-primary text-xs px-2 py-1 opacity-0 group-hover/key:opacity-100 transition-all text-nowrap pointer-events-none">
           <span className="text-xs text-primary/85">{key.name}</span>
         </div>
       </button>

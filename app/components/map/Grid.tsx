@@ -73,7 +73,7 @@ export const GridOverlay = () => {
       updateWhileAnimating: true,
       updateWhileInteracting: true,
       minZoom: 5,
-      maxZoom: 9,
+      maxZoom: 10,
     });
 
     map.addLayer(coarseGridLayer);
