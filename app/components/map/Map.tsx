@@ -35,7 +35,12 @@ const Map: React.FC = () => {
       {isMapLoaded && !isMobile && (
         <Cursor />
       )}
-      <div ref={mapContainerRef} style={{ width: '100%', height: '100%' }} className="grid-bg-plus cursor-crosshair" />
+      <div
+        ref={mapContainerRef}
+        style={{ width: '100%', height: '100%' }}
+        className="grid-bg-plus cursor-crosshair"
+        onContextMenu={(event) => {event.preventDefault(); event.stopPropagation()}}
+      />
     </div>
   );
 };

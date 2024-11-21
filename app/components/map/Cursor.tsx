@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Point } from 'ol/geom';
-import { Feature } from 'ol';
+import { Feature, MapBrowserEvent } from 'ol';
 import { Vector as VectorSource } from 'ol/source';
 import { Vector as VectorLayer } from 'ol/layer';
 import { Style, Text, Fill, Stroke } from 'ol/style';
@@ -37,16 +37,16 @@ export const Cursor = () => {
               offsetY: type === 'gridX' ? -20 : 0,
               offsetX: type === 'gridY' ? 20 : 0,
               fill: new Fill({
-                color: 'rgba(255, 255, 255, 0.8)',
+                color: '#C8C8C8',
               }),
               textAlign: type === 'gridY' ? 'left' : 'center',
               textBaseline: type === 'gridY' ? 'middle' : 'bottom',
-            }),
-            stroke: new Stroke({
-              color: 'rgba(100, 100, 100, 0.8)',
-              width: 1.5,
+              stroke: new Stroke({
+                color: 'rgba(100, 100, 100, 1)',
+                width: 2,
+              })
             })
-          }),
+          })
         ]
       }      
     });
@@ -77,7 +77,7 @@ export const Cursor = () => {
       return { gridX, gridY };
     };
 
-    const handlePointerMove = (event: any) => {
+    const handlePointerMove = (event: MapBrowserEvent<UIEvent>) => {
       const [mapX, mapY] = event.coordinate;
 
       // Calculate grid numbers
@@ -93,14 +93,12 @@ export const Cursor = () => {
     };
 
     map.on('pointermove', handlePointerMove);
-    map.on('change:view', handlePointerMove)
 
     return () => {
       map.un('pointermove', handlePointerMove);
-      map.un('change:view', handlePointerMove);
       map.removeLayer(cursorLayer);
     };
-  }, [map, minX, minY, maxX, maxY, fineGridSizeX, fineGridSizeY]);
+  }, [map, minX, minY, maxX, maxY, fineGridSizeX, fineGridSizeY, isCursorVisible]);
 
   return null;
 };

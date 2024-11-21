@@ -26,7 +26,7 @@ export const ObjectiveMarker = memo(({ task, objective }: ObjectiveMarkerProps) 
     objective.faction &&
     objective.faction.id !== selectedFaction
   );
-  const isCanceled = !selectedFaction && isCanceledTaskCompleted(task, tasks, data.user);
+  const isCanceled = !selectedFaction || isCanceledTaskCompleted(task, tasks, data.user);
 
   const handleClick = useCallback(() => {
     showPopup(
@@ -54,7 +54,7 @@ export const ObjectiveMarker = memo(({ task, objective }: ObjectiveMarkerProps) 
     (isComplete && !data.user.settings.showCompletedObjectives) ||
     (isCanceled && !data.user.settings.showCanceledObjectives)
   ) {
-    return null; // Hide the marker if it shouldn't be displayed
+    return null;
   }
 
   return (
