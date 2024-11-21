@@ -1,20 +1,18 @@
-import { MapBrowserEvent } from 'ol';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Point } from 'ol/geom';
+import { Feature } from 'ol';
+import { Vector as VectorSource } from 'ol/source';
+import { Vector as VectorLayer } from 'ol/layer';
+import { Style, Text, Fill, Stroke } from 'ol/style';
 import { useMap } from '~/context/MapContext';
-import useMousePosition from '~/hooks/use-mouse-position';
 import { maxExtent } from '~/lib/map';
 
 export const Cursor = () => {
   const { map } = useMap();
-  const { x, y } = useMousePosition();
 
-  const cursorRef = useRef<HTMLDivElement | null>(null);
-
-  const [gridNumbers, setGridNumbers] = useState<{ gridX: number; gridY: number }>({ gridX: 100, gridY: 100 });
-  const [isCursorVisible, setIsCursorVisible] = useState<boolean>(false);
+  const [isCursorVisible, setIsCursorVisible] = useState<boolean>(true);
 
   const [minX, minY, maxX, maxY] = maxExtent;
-
   const coarseGridSizeX = (maxX - minX) / 14;
   const coarseGridSizeY = (maxY - minY) / 8;
   const fineGridSizeX = coarseGridSizeX / 10;
@@ -23,55 +21,86 @@ export const Cursor = () => {
   useEffect(() => {
     if (!map) return;
 
+    // Create a source and layer for the cursor
+    const cursorSource = new VectorSource();
+    const cursorLayer = new VectorLayer({
+      source: cursorSource,
+      updateWhileAnimating: true,
+      updateWhileInteracting: true,
+      style: (feature) => {
+        const type = feature.get('type');
+        return [
+          new Style({
+            text: new Text({
+              text: type === 'gridX' ? `${feature.get('gridX')}` : `${feature.get('gridY')}`,
+              font: 'bold 12px "Geist Mono", monospace',
+              offsetY: type === 'gridX' ? -20 : 0,
+              offsetX: type === 'gridY' ? 20 : 0,
+              fill: new Fill({
+                color: 'rgba(255, 255, 255, 0.8)',
+              }),
+              textAlign: type === 'gridY' ? 'left' : 'center',
+              textBaseline: type === 'gridY' ? 'middle' : 'bottom',
+            }),
+            stroke: new Stroke({
+              color: 'rgba(100, 100, 100, 0.8)',
+              width: 1.5,
+            })
+          }),
+        ]
+      }      
+    });
+
+    if (isCursorVisible) {
+      map.addLayer(cursorLayer);
+    }
+
+    // Create two features for gridX and gridY
+    const gridXFeature = new Feature({
+      geometry: new Point([0, 0]),
+      type: 'gridX',
+    });
+    const gridYFeature = new Feature({
+      geometry: new Point([0, 0]),
+      type: 'gridY',
+    });
+    cursorSource.addFeatures([gridXFeature, gridYFeature]);
+
     const calculateGridNumbers = (mapX: number, mapY: number) => {
       const gridX = Math.floor((mapX - minX) / fineGridSizeX) + 100;
       const gridY = Math.floor((mapY - minY) / fineGridSizeY) + 100;
-  
-      const isOutsideBounds =
-        mapX < minX || mapX > maxX || mapY < minY || mapY > maxY;
-  
+
+      const isOutsideBounds = mapX < minX || mapX > maxX || mapY < minY || mapY > maxY;
+
       setIsCursorVisible(!isOutsideBounds);
+
       return { gridX, gridY };
     };
 
-    const handlePointerMove = (event: MapBrowserEvent<UIEvent>) => {
+    const handlePointerMove = (event: any) => {
       const [mapX, mapY] = event.coordinate;
+
+      // Calculate grid numbers
       const { gridX, gridY } = calculateGridNumbers(mapX, mapY);
-      setGridNumbers({ gridX, gridY });
+
+      // Update the gridX feature
+      gridXFeature.setGeometry(new Point([mapX, mapY]));
+      gridXFeature.setProperties({ gridX });
+
+      // Update the gridY feature
+      gridYFeature.setGeometry(new Point([mapX, mapY]));
+      gridYFeature.setProperties({ gridY });
     };
 
     map.on('pointermove', handlePointerMove);
+    map.on('change:view', handlePointerMove)
 
     return () => {
       map.un('pointermove', handlePointerMove);
+      map.un('change:view', handlePointerMove);
+      map.removeLayer(cursorLayer);
     };
-  }, [fineGridSizeX, fineGridSizeY, map, minX, minY, maxX, maxY]);
+  }, [map, minX, minY, maxX, maxY, fineGridSizeX, fineGridSizeY]);
 
-  useEffect(() => {
-    if (!cursorRef.current || !isCursorVisible) return;
-
-    const cursor = cursorRef.current;
-
-    requestAnimationFrame(() => {
-      cursor.style.transform = `translate(${x}px, ${y}px)`;
-    });
-  }, [isCursorVisible, x, y]);
-
-  return (
-    <div
-      ref={cursorRef}
-      className={`w-6 h-6 fixed pointer-events-none z-[9999] transform ${
-        isCursorVisible ? '' : 'hidden'
-      }`}
-    >
-      <div className="relative w-full h-full transform -translate-x-1/2 -translate-y-1/2">
-        <span className="absolute bottom-full left-1/2 drop-shadow-[0_0_2px_rgba(0,0,0,1)] transform -translate-x-1/2 text-xs font-mono px-1 py-0.5 rounded grid-x">
-          {gridNumbers.gridX}
-        </span>
-        <span className="absolute top-1/2 left-full drop-shadow-[0_0_2px_rgba(0,0,0,1)] transform -translate-y-1/2 text-xs font-mono px-1 py-0.5 rounded grid-y">
-          {gridNumbers.gridY}
-        </span>
-      </div>
-    </div>
-  );
+  return null;
 };
