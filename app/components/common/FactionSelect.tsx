@@ -2,7 +2,7 @@ import { useLocalStorage } from "~/context/LocalStorageContext"
 import { faction } from "~/lib/types"
 
 export const FactionSelect = ({ factions }: { factions: faction[] }) => {
-  const { data, actions } = useLocalStorage()
+  const { actions } = useLocalStorage()
 
   function selectFaction(faction: faction) {
     actions.user.updateFaction(faction.id)
