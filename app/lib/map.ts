@@ -2,6 +2,7 @@ import { Extent } from "ol/extent";
 import { Projection } from "ol/proj";
 import { API_URL } from "./constants";
 import { lz, objective, task, location } from "./types";
+import { MarkerSize } from "~/context/LocalStorageContext";
 
 export const prefixToEndpointMap = {
   LZ: 'lzs',
@@ -62,5 +63,20 @@ export async function getDataFromId<T extends Prefix>(
   } catch (error) {
     console.error('Error fetching data:', error);
     return null;
+  }
+}
+
+export const markerSizes = (markerSize: MarkerSize) => {
+  switch (markerSize) {
+    case 1:
+      return 'scale-[0.8]';
+    case 2:
+      return 'scale-[0.9]';
+    case 3:
+      return 'scale-[1]';
+    case 4:
+      return 'scale-[1.1]';
+    case 5:
+      return 'scale-[1.2]';
   }
 }

@@ -26,7 +26,7 @@ export const ObjectiveMarker = memo(({ task, objective }: ObjectiveMarkerProps) 
     objective.faction &&
     objective.faction.id !== selectedFaction
   );
-  const isCanceled = !selectedFaction || isCanceledTaskCompleted(task, tasks, data.user);
+  const isCanceled = isCanceledTaskCompleted(task, tasks, data.user);
 
   const handleClick = useCallback(() => {
     showPopup(

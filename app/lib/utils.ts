@@ -59,7 +59,7 @@ export function isCanceledTaskCompleted(task: task, tasks: task[], user: UserDat
 
   // Filter relevant objectives based on faction
   const relevantObjectives = canceledTask.objectives.filter(obj => {
-    return !obj.faction || user.faction === null || obj.faction.id === user.faction;
+    return !obj.faction || obj.faction.id === user.faction;
   });
 
   // Check if all relevant objectives are completed

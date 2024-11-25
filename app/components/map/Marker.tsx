@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from "react";
 import { Overlay } from "ol";
 import { createPortal } from "react-dom";
 import { useMap } from "~/context/MapContext";
+import { markerSizes } from "~/lib/map";
+import { useLocalStorage } from "~/context/LocalStorageContext";
 
 interface MarkerWrapperProps {
   position: [number, number];
@@ -12,6 +14,7 @@ interface MarkerWrapperProps {
 
 const MarkerComponent = ({ position, hide = false, children, enableHoverEffect = false }: MarkerWrapperProps) => {
   const { map } = useMap();
+  const { data } = useLocalStorage();
   const markerRef = useRef<HTMLDivElement | null>(null);
   const overlayRef = useRef<Overlay | null>(null);
 
@@ -58,6 +61,7 @@ const MarkerComponent = ({ position, hide = false, children, enableHoverEffect =
       <div
         onMouseEnter={enableHoverEffect ? () => (markerRef.current!.parentElement!.style.zIndex = "1000") : undefined}
         onMouseLeave={enableHoverEffect ? () => (markerRef.current!.parentElement!.style.zIndex = "0") : undefined}
+        className={markerSizes(data.user.settings.markerSize)}
       >
         {children}
       </div>,

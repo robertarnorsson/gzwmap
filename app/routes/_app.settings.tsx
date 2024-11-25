@@ -11,7 +11,7 @@ import {
 import { useData } from "~/context/DataContext";
 import { ChevronLeft, SwatchBook, Swords } from "lucide-react";
 import { Switch } from "~/components/ui/switch";
-import { useLocalStorage } from "~/context/LocalStorageContext";
+import { MarkerSize, useLocalStorage } from "~/context/LocalStorageContext";
 import { Slider } from "~/components/ui/slider";
 
 export const meta: MetaFunction = () => {
@@ -123,7 +123,13 @@ export default function Settings() {
                       <p className="text-sm text-muted-foreground">Adjust the marker size to your preference.</p>
                     </div>
                     <Slider
+                      className="w-64"
                       defaultValue={[data.user.settings.markerSize]}
+                      onValueChange={(value) => {
+                        const sliderValue = value.at(0);
+                        if (!sliderValue || sliderValue < 1 || sliderValue > 5) return;
+                        actions.user.setting.updateMarkerSize(sliderValue as MarkerSize)
+                      }}
                       max={5}
                       step={1}
                     />

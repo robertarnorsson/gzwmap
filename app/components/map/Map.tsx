@@ -4,11 +4,15 @@ import { useMap } from '~/context/MapContext';
 import { useMarkerNavigation } from '~/hooks/useMarkerNavigation';
 import { Cursor } from './Cursor';
 import { useSidebar } from '../ui/sidebar';
+import { useLocalStorage } from '~/context/LocalStorageContext';
+import { FactionSelect } from '../common/FactionSelect';
+import { NewMapPopup } from '../common/NewMapPopup';
 
 const Map: React.FC = () => {
   const { map, isMapLoaded } = useMap();
   const { isMobile } = useSidebar();
-  const { loaded } = useData();
+  const { loaded, factions } = useData();
+  const { data } = useLocalStorage();
   const mapContainerRef = useRef<HTMLDivElement>(null);
 
   useMarkerNavigation({ defaultZoom: 6 });
@@ -32,7 +36,13 @@ const Map: React.FC = () => {
           </div>
         </div>
       )}
-      {isMapLoaded && !isMobile && (
+      {isMapLoaded && loaded && data.user.faction === '' && (
+        <FactionSelect factions={factions} />
+      )}
+      {isMapLoaded && loaded && !data.popup.dismissedNewMap && (
+        <NewMapPopup />
+      )}
+      {isMapLoaded && !isMobile && data.user.faction !== '' && (
         <Cursor />
       )}
       <div

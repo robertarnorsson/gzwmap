@@ -6,6 +6,8 @@ import { PopupProvider } from "~/context/PopupContext";
 import { DataProvider } from "~/context/DataContext";
 import { faction, item, key, location, lz, objective, task } from "~/lib/types";
 import { fetchData } from "~/lib/utils";
+import { NewMapPopup } from "~/components/common/NewMapPopup";
+import { useLocalStorage } from "~/context/LocalStorageContext";
 
 export async function loader() {
   const [
@@ -25,7 +27,7 @@ export async function loader() {
     fetchData<item>('items'),
     fetchData<key>('keys'),
   ]);
-  return { data: {
+  return { loaderData: {
     tasks: tasksData,
     objectives: objectivesData,
     lzs: lzsData,
@@ -37,11 +39,11 @@ export async function loader() {
 }
 
 export default function AppLayout() {
-  const { data } = useLoaderData<typeof loader>();
+  const { loaderData } = useLoaderData<typeof loader>();
   const [open, setOpen] = useState(false)
 
   return (
-    <DataProvider data={data} loaded>
+    <DataProvider data={loaderData} loaded>
     <MapProvider>
     <PopupProvider>
     <SidebarProvider open={open} onOpenChange={setOpen} className="bg-transparent">
