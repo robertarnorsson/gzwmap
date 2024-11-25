@@ -1,9 +1,9 @@
-import clsx from "clsx";
 import { Check, Link, X } from "lucide-react";
 import { toast } from "~/hooks/use-toast";
 import { lz } from "~/lib/types";
 import { copyMarker } from "~/lib/utils";
 import { useLocalStorage } from "~/context/LocalStorageContext";
+import { Button } from "../ui/button";
 
 interface LZPopupContentProps {
   lz: lz;
@@ -36,11 +36,9 @@ export const LZPopupContent = ({ lz }: LZPopupContentProps) => {
           <div className="w-full h-[1px] bg-border" />
         </div>
         <div className="flex flex-row space-x-2">
-          <button
-            className={clsx(
-              "bg-primary/10 w-full p-2.5",
-              isLocated && "bg-primary/20"
-            )}
+          <Button
+            className="w-full"
+            variant='secondary'
             onClick={handleChange}
           >
             {isLocated
@@ -53,9 +51,10 @@ export const LZPopupContent = ({ lz }: LZPopupContentProps) => {
                   <span className="text-xs uppercase">Locate</span>
                 </div>
             }
-          </button>
-          <button
-            className="bg-primary/10 p-2.5"
+          </Button>
+          <Button
+            size="icon"
+            variant='secondary'
             onClick={() => {
               copyMarker(`${lz.id}`);
               toast({
@@ -64,7 +63,7 @@ export const LZPopupContent = ({ lz }: LZPopupContentProps) => {
             }}
           >
             <Link className="w-4 h-4" />
-          </button>
+          </Button>
         </div>
       </div>
     </>

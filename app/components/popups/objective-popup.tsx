@@ -23,6 +23,7 @@ import { toast } from "~/hooks/use-toast";
 import { Button } from "../ui/button";
 import PopupImage from "../common/PopupImage";
 import { useData } from "~/context/DataContext";
+import { Item } from "../common/Item";
 
 interface ObjectivePopupContentProps {
   task: task;
@@ -107,7 +108,7 @@ export const ObjectivePopupContent = ({
           <p className="text-xs text-muted-foreground">{objective.type}</p>
         </div>
       </div>
-      <div className="mt-3">
+      <div className="mt-4">
         <span className="text-sm text-primary text-pretty font-semibold">
           {objective.name}
         </span>
@@ -116,7 +117,7 @@ export const ObjectivePopupContent = ({
         </p>
       </div>
       {objective.image && (
-        <div className="mt-3">
+        <div className="mt-4">
           <span className="text-sm text-primary font-semibold">
             Image
           </span>
@@ -145,13 +146,56 @@ export const ObjectivePopupContent = ({
           </Dialog>
         </div>
       )}
-      {data.user.notes?.[objective.id] && (
-        <div className="mt-3">
-          <span className="text-xs text-muted-foreground">User note</span>
-          <p className="text-xs text-muted-foreground">{data.user.notes?.[objective.id] || ""}</p>
+      {objective.key && (
+        <div className="mt-4">
+          <span className="text-xs text-muted-foreground mb-1">
+            Required Keys
+          </span>
+          <Item
+            name={objective.key.name}
+            shortName={objective.key.shortName}
+            image={objective.key.image}
+            size={objective.key.size}
+          />
         </div>
       )}
-      <div className="flex flex-col mt-3">
+      {objective.items && (
+        <div className="mt-4">
+          <span className="text-xs text-muted-foreground mb-1">
+            Required Items
+          </span>
+          <div className="grid grid-cols-3 justify-start gap-2">
+            {objective.items.map((item, idx) => (
+              <Item
+                key={idx}
+                name={item.name}
+                shortName={item.shortName}
+                image={item.image}
+                size={item.size}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+      {task.note && (
+        <div className="flex flex-col gap-1 mt-4">
+          <p className="text-xs text-muted-foreground">Task Note</p>
+          <p className="text-xs text-blue-400/85">{task.note}</p>
+        </div>
+      )}
+      {objective.note && (
+        <div className="flex flex-col gap-1 mt-4">
+          <p className="text-xs text-muted-foreground">Objective Note</p>
+          <p className="text-xs text-orange-400/85">{objective.note}</p>
+        </div>
+      )}
+      {data.user.notes?.[objective.id] && (
+        <div className="mt-4">
+          <span className="text-xs text-muted-foreground">User Note</span>
+          <p className="text-xs text-muted-foreground">{data.user.notes?.[objective.id] || "No Note"}</p>
+        </div>
+      )}
+      <div className="flex flex-col mt-4">
         <div className="flex flex-row items-center space-x-6 mb-3">
           <div className="w-full h-[1px] bg-border" />
           <span className="text-[8px] text-border text-nowrap select-none">

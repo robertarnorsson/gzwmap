@@ -17,7 +17,6 @@ import { Button } from "../ui/button";
 import { Command, Settings } from "lucide-react";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "../ui/hover-card";
 import { Input, Keybind } from "../common/Keybind";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 import { useData } from "~/context/DataContext";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../ui/collapsible";
 import { useMap } from "~/context/MapContext";
@@ -71,13 +70,9 @@ export function AppSidebar() {
     <Sidebar className="grid-bg p-2">
       <SidebarHeader className="bg-transparent">
         <SidebarMenu>
-          <div className="flex justify-between items-start">
+          <div className="flex justify-between items-center">
             <Link to="/">
-              <img
-                src="/assets/icons/icon-72x72.png"
-                width="48"
-                height="48"
-              />
+              <h1 className="text-2xl font-semibold">GZW Map</h1>
             </Link>
             <div className="flex space-x-2">
               <Link
@@ -237,20 +232,14 @@ export function AppSidebar() {
             </div>
           ))}
         </div>
-        <div className="flex flex-row items-center space-x-4">
+        <div className="flex flex-row items-center space-x-2">
           <div className="w-full h-[1px] bg-border" />
-          <div className="flex w-full flex-row justify-around items-center space-x-3 text-[10px] text-border">
+          <div className="flex w-full flex-row justify-around items-center space-x-2 text-[10px] text-border">
             <Link
               to="https://github.com/robertarnorsson/gzwmap"
               className="duration-300 transition-colors hover:text-muted-foreground"
             >
               Github
-            </Link>
-            <Link
-              to="/donate"
-              className="duration-300 transition-colors hover:text-muted-foreground"
-            >
-              Donate
             </Link>
             <Link
               to="/about"

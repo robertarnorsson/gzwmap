@@ -6,8 +6,6 @@ import { PopupProvider } from "~/context/PopupContext";
 import { DataProvider } from "~/context/DataContext";
 import { faction, item, key, location, lz, objective, task } from "~/lib/types";
 import { fetchData } from "~/lib/utils";
-import { NewMapPopup } from "~/components/common/NewMapPopup";
-import { useLocalStorage } from "~/context/LocalStorageContext";
 
 export async function loader() {
   const [

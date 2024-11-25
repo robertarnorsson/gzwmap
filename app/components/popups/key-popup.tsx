@@ -4,6 +4,7 @@ import { Check, Dot, Link, X } from "lucide-react";
 import { copyMarker } from "~/lib/utils";
 import { toast } from "~/hooks/use-toast";
 import { Button } from "../ui/button";
+import { Item } from "../common/Item";
 
 // "cKey" is for custom key because the prop name "key" is a default prop in every react component 
 interface KeyPopupContentProps {
@@ -43,6 +44,19 @@ export const KeyPopupContent = ({
           {key.description}
         </p>
       </div>
+      {key && (
+        <div className="mt-4">
+          <span className="text-xs text-muted-foreground mb-1">
+            Key
+          </span>
+          <Item
+            name={key.name}
+            shortName={key.shortName}
+            image={key.image}
+            size={key.size}
+          />
+        </div>
+      )}
       <div className="flex flex-col mt-3">
         <div className="flex flex-row items-center space-x-6 mb-3">
           <div className="w-full h-[1px] bg-border" />
