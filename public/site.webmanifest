@@ -2,7 +2,7 @@
   "name": "Gray Zone Warfare Map",
   "short_name": "GZW Map",
   "description": "Interactive map for Gray Zone Warfare",
-  "theme_color": "#141414",
+  "theme_color": "#000000",
   "background_color": "#000000",
   "display": "standalone",
   "orientation": "portrait",
