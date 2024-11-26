@@ -2,51 +2,11 @@
 
 ## About
 
-Welcome to GZW Map! This site aims to be your go-to tool for exploring the Gray Zone Warfare game world. We want to provide you with an easy-to-use map over Lamang so you know where to go and what to do.
+Link to the new map ([New GZW Map](https://new.gzwmap.com/))<br/>
+Welcome to the new and evolving GZW Map! Our goal is to provide an unparalleled interactive map for exploring the Gray Zone Warfare game world. This tool is undergoing a major transformation to enhance your experience with faster performance, more detailed data, and powerful new features. **Please note that GZW Map is under heavy construction** – expect frequent updates, feature changes, and enhancements as we work to make this the best resource possible for navigating Lamang.
 
-**Note** - GZW Map is still in development, but we're working hard to make it better every day! Updates happen almost daily, so stay tuned for improvements and new features.
+**Note** - GZW Map is actively being improved. Features may change, bugs may appear, and everything is subject to refinement as we develop. We appreciate your patience and feedback during this transformative period!
 
-## Contributors
+## Rewritten by
 
 - [Robert Arnorsson](https://github.com/robertarnorsson)
-- [CodeWithDennis](https://github.com/CodeWithDennis)
-
-Big shoutout to these awesome folks who've helped shape GZW Map into what it is today!
-
-## Things to come
-
-### Markers
-- Keys, doors and spawn areas
-- Loot containers
-- Enemy spawns (unsure)
-
-### Map features
-- Search for markers on the map
-- Filtering system for markers on the map
-
-## Other
-- Images
-
-## How to Contribute
-
-We love when the community gets involved! Whether you're a seasoned coder or just have a keen eye for bugs, there are plenty of ways to contribute:
-
-- **Code Contributions**: Help us improve and expand the functionality of GZW Map by submitting code contributions via GitHub. Check out our repository and see where you can lend a hand.
-
-- **Bug Reports**: Notice a bug or glitch while using the map? Let us know by submitting a detailed bug report. Your feedback helps us maintain a smooth and seamless user experience for all players.
-
-- **Feature Requests**: Have an idea for a new feature or enhancement? Share it with us! We're always looking for ways to enhance GZW Map and make it even more useful for our users.
-
-**[Submit your changes](https://github.com/robertarnorsson/gzwmap)**
-
-## How to Donate
-
-If you appreciate the work we're doing and would like to support GZW Map's development, consider making a donation. Your contributions help cover hosting costs, domain fees, and other expenses associated with maintaining the website.
-
-**[Donate Here](https://gzwmap.com/donate)**
-
-Stay tuned for more updates and features coming soon to GZW Map. Thank you for being a part of our community!
-
----
-
-**Note**: GZW Map is not endorsed by or affiliated by MADFINGER Games. This website is a fan-made project created for the benefit of the gaming community.
