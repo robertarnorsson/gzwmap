@@ -14,9 +14,9 @@ type MouseInput = {
   type: 'mouse'
 }
 
-export type Input = KeyboardInput | MouseInput
+export type KBInput = KeyboardInput | MouseInput
 
-export const Keybind = ({ input }: { input: Input}) => {
+export const Keybind = ({ input }: { input: KBInput}) => {
   const [isMac, setIsMac] = useState(false)
 
   useEffect(() => {
