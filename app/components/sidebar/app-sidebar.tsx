@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import {
   Sidebar,
   SidebarContent,
@@ -27,7 +28,7 @@ import { KeyPopupContent } from "../popups/key-popup";
 import { useLocalStorage } from "~/context/LocalStorageContext";
 import { Checkbox } from "../ui/checkbox";
 import { Input } from "../ui/input";
-import { useEffect, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
 import { LZPopupContent } from "../popups/lz-popup";
 import { KeyItem, LZItem, MultipleObjectiveTask, SingleObjectiveTask } from "./search-items";
@@ -183,7 +184,7 @@ export function AppSidebar() {
               </div>
             </div>
             <div className="absolute inset-y-0 right-0 w-24 h-10">
-              <Select value={searchCategory} onValueChange={(value) => {
+              <Select value={searchCategory} onValueChange={(value: SetStateAction<string>) => {
                   setSearchCategory(value);
                   setExpandedTask(null);
                 }}>
