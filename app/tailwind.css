@@ -90,3 +90,16 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer base {
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted-foreground)) hsl(var(--background));
+  }
+}
