@@ -8,7 +8,7 @@ export const FactionSelect = () => {
 
   function selectFaction(faction: faction) {
     actions.user.updateFaction(faction.id);
-  };
+  }
 
   return (
     <div className="absolute top-0 left-0 bottom-0 right-0 bg-black/40 z-[99999]">
