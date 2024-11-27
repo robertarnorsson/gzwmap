@@ -37,7 +37,7 @@ const Map: React.FC = () => {
         </div>
       )}
       {isMapLoaded && loaded && data.user.faction === '' && (
-        <FactionSelect factions={factions} />
+        <FactionSelect />
       )}
       {isMapLoaded && loaded && !data.popup.dismissedNewMap && (
         <NewMapPopup />

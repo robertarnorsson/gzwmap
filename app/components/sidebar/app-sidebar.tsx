@@ -44,7 +44,7 @@ export function AppSidebar() {
   const { isMobile, toggleSidebar } = useSidebar();
   const { data, actions } = useLocalStorage();
   const { showPopup } = usePopup();
-  const { tasks, locations, keys, lzs } = useData();
+  const { tasks, locations, keys, lzs, loaded } = useData();
 
   const [searchCategory, setSearchCategory] = useState("tasks");
   const [searchQuery, setSearchQuery] = useState("");
@@ -157,204 +157,211 @@ export function AppSidebar() {
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent className="bg-transparent py-2">
-        <div className="flex w-full px-1">
-          <div className="relative flex-grow">
-            <Input
-              type="text"
-              placeholder="Search..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              onFocus={() => setIsSuggestionsOpen(true)}
-              onBlur={() => setIsSuggestionsOpen(false)}
-              className="h-10 pr-24"
-            />
-            <div className="absolute inset-y-0 right-24 h-10">
-              <div className="flex items-center w-full h-full">
-                <button
-                  onClick={() => {
-                    setSearchQuery("");
-                    setExpandedTask(null);
-                    setIsSuggestionsOpen(false);
-                  }}
-                >
-                  <div className="hover:bg-primary/10 p-1">
-                    <X className="w-4 h-4 text-muted-foreground" />
-                  </div>
-                </button>
+        {loaded && (
+          <div className="flex w-full px-1">
+            <div className="relative flex-grow">
+              <Input
+                type="text"
+                placeholder="Search..."
+                name="search"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                onFocus={() => setIsSuggestionsOpen(true)}
+                onBlur={() => setIsSuggestionsOpen(false)}
+                className="h-10 pr-24"
+              />
+              <div className="absolute inset-y-0 right-24 h-10">
+                <div className="flex items-center w-full h-full">
+                  <button
+                    onClick={() => {
+                      setSearchQuery("");
+                      setExpandedTask(null);
+                      setIsSuggestionsOpen(false);
+                    }}
+                  >
+                    <div className="hover:bg-primary/10 p-1">
+                      <X className="w-4 h-4 text-muted-foreground" />
+                    </div>
+                  </button>
+                </div>
               </div>
-            </div>
-            <div className="absolute inset-y-0 right-0 w-24 h-10">
-              <Select value={searchCategory} onValueChange={(value: SetStateAction<string>) => {
-                  setSearchCategory(value);
-                  setExpandedTask(null);
-                }}>
-                <SelectTrigger className="h-full border-none focus:ring-0">
-                  <SelectValue placeholder="Type" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="tasks">Tasks</SelectItem>
-                  <SelectItem value="keys">Keys</SelectItem>
-                  <SelectItem value="lzs">LZs</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-            <div
-              className={`transition-all duration-300 ease-in-out bg-black/20 overflow-x-hidden ${
-                isSuggestionsOpen ? "max-h-64 ring-1 ring-ring" : "max-h-0"
-              }`}
-              onMouseDown={(e) => e.preventDefault()}
-            >
-              <div className="shadow ">
-                {suggestions.length > 0 ? (
-                  <ul>
-                    <li className="p-2 font-bold">Results</li>
-                    {suggestions.map((item, index) => {
-                      if (searchCategory === "tasks" && "objectives" in item) {
-                        const factionObjectives = filterByFaction(item.objectives, data.user.faction);
-                  
-                        if (factionObjectives.length === 1) {
+              <div className="absolute inset-y-0 right-0 w-24 h-10">
+                <Select value={searchCategory} onValueChange={(value: SetStateAction<string>) => {
+                    setSearchCategory(value);
+                    setExpandedTask(null);
+                  }}>
+                  <SelectTrigger className="h-full border-none focus:ring-0">
+                    <SelectValue placeholder="Type" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="tasks">Tasks</SelectItem>
+                    <SelectItem value="keys">Keys</SelectItem>
+                    <SelectItem value="lzs">LZs</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <div
+                className={`transition-all duration-300 ease-in-out bg-black/20 overflow-x-hidden ${
+                  isSuggestionsOpen ? "max-h-64 ring-1 ring-ring" : "max-h-0 ring-0"
+                }`}
+                onMouseDown={(e) => e.preventDefault()}
+              >
+                <div className="shadow">
+                  {suggestions.length > 0 ? (
+                    <ul>
+                      <li className="p-2 font-bold">Results</li>
+                      {suggestions.map((item, index) => {
+                        if (searchCategory === "tasks" && "objectives" in item) {
+                          const factionObjectives = filterByFaction(item.objectives, data.user.faction);
+                    
+                          if (factionObjectives.length === 1) {
+                            return (
+                              <SingleObjectiveTask
+                                key={index}
+                                task={item}
+                                objective={factionObjectives[0]}
+                                onClick={() => handleObjectiveClick(item, factionObjectives[0])}
+                              />
+                            );
+                          } else {
+                            return (
+                              <MultipleObjectiveTask
+                                key={index}
+                                task={item}
+                                objectives={factionObjectives}
+                                expandedTask={expandedTask}
+                                onExpand={() => setExpandedTask(expandedTask?.name === item.name ? null : item)}
+                                onClick={(objective) => handleObjectiveClick(item, objective)}
+                              />
+                            );
+                          }
+                        } else if (searchCategory === "keys" && "size" in item) {
                           return (
-                            <SingleObjectiveTask
+                            <KeyItem
                               key={index}
-                              task={item}
-                              objective={factionObjectives[0]}
-                              onClick={() => handleObjectiveClick(item, factionObjectives[0])}
+                              keyItem={item}
+                              faction={data.user.faction}
+                              onClick={() => handleKeyClick(item)}
                             />
                           );
-                        } else {
+                        } else if (searchCategory === "lzs" && "discoverable" in item) {
                           return (
-                            <MultipleObjectiveTask
+                            <LZItem
                               key={index}
-                              task={item}
-                              objectives={factionObjectives}
-                              expandedTask={expandedTask}
-                              onExpand={() => setExpandedTask(expandedTask?.name === item.name ? null : item)}
-                              onClick={(objective) => handleObjectiveClick(item, objective)}
+                              lz={item}
+                              faction={data.user.faction}
+                              onClick={() => handleLZClick(item)}
                             />
                           );
                         }
-                      } else if (searchCategory === "keys" && "size" in item) {
-                        return (
-                          <KeyItem
-                            key={index}
-                            keyItem={item}
-                            faction={data.user.faction}
-                            onClick={() => handleKeyClick(item)}
-                          />
-                        );
-                      } else if (searchCategory === "lzs" && "discoverable" in item) {
-                        return (
-                          <LZItem
-                            key={index}
-                            lz={item}
-                            faction={data.user.faction}
-                            onClick={() => handleLZClick(item)}
-                          />
-                        );
-                      }
-                      return null;
-                    })}
-                  </ul>
-                ) : (
-                  <p className="p-2 text-sm text-muted-foreground">
-                    No results found
-                  </p>
-                )}
+                        return null;
+                      })}
+                    </ul>
+                  ) : (
+                    <p className="p-2 text-sm text-muted-foreground">
+                      No results found
+                    </p>
+                  )}
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        )}
         <SidebarMenu>
-          <Collapsible >
-            <SidebarMenuItem>
-              <CollapsibleTrigger asChild>
-                <SidebarMenuButton>
-                  <span className="text-lg font-bold">Tasks</span>
-                </SidebarMenuButton>
-              </CollapsibleTrigger>
-              <CollapsibleContent>
-                {tasks.map((task, idx) => (
-                  <SidebarMenu key={idx}>
-                    <Collapsible className="group/collapsible">
-                      <SidebarMenuItem>
-                        <CollapsibleTrigger asChild>
-                          <SidebarMenuButton>
-                            {task.name}
-                          </SidebarMenuButton>
-                        </CollapsibleTrigger>
-                        <CollapsibleContent>
-                          {task.objectives.filter((objective) => objective.faction === undefined || objective.faction.id === data.user.faction).map((objective, idx) => (
-                            <SidebarMenuSub key={idx}>
-                              <SidebarMenuSubItem>
-                                <SidebarMenuButton
-                                  onClick={() => handleObjectiveClick(task, objective)}
-                                >
-                                  <span className="text-xs">{objective.name}</span>
-                                </SidebarMenuButton>
-                              </SidebarMenuSubItem>
-                            </SidebarMenuSub>
-                          ))}
-                        </CollapsibleContent>
-                        <SidebarMenuBadge>{task.objectives.filter((objective) => objective.faction === undefined || objective.faction.id === data.user.faction).length}</SidebarMenuBadge>
-                      </SidebarMenuItem>
-                    </Collapsible>
-                  </SidebarMenu>
-                ))}
-              </CollapsibleContent>
-            </SidebarMenuItem>
-          </Collapsible>
+          {loaded && (
+            <Collapsible >
+              <SidebarMenuItem>
+                <CollapsibleTrigger asChild>
+                  <SidebarMenuButton>
+                    <span className="text-lg font-bold">Tasks</span>
+                  </SidebarMenuButton>
+                </CollapsibleTrigger>
+                <CollapsibleContent>
+                  {tasks.map((task, idx) => (
+                    <SidebarMenu key={idx}>
+                      <Collapsible className="group/collapsible">
+                        <SidebarMenuItem>
+                          <CollapsibleTrigger asChild>
+                            <SidebarMenuButton>
+                              {task.name}
+                            </SidebarMenuButton>
+                          </CollapsibleTrigger>
+                          <CollapsibleContent>
+                            {task.objectives.filter((objective) => objective.faction === undefined || objective.faction.id === data.user.faction).map((objective, idx) => (
+                              <SidebarMenuSub key={idx}>
+                                <SidebarMenuSubItem>
+                                  <SidebarMenuButton
+                                    onClick={() => handleObjectiveClick(task, objective)}
+                                  >
+                                    <span className="text-xs">{objective.name}</span>
+                                  </SidebarMenuButton>
+                                </SidebarMenuSubItem>
+                              </SidebarMenuSub>
+                            ))}
+                          </CollapsibleContent>
+                          <SidebarMenuBadge>{task.objectives.filter((objective) => objective.faction === undefined || objective.faction.id === data.user.faction).length}</SidebarMenuBadge>
+                        </SidebarMenuItem>
+                      </Collapsible>
+                    </SidebarMenu>
+                  ))}
+                </CollapsibleContent>
+              </SidebarMenuItem>
+            </Collapsible>
+          )}
         </SidebarMenu>
         <SidebarMenu>
-          <Collapsible >
-            <SidebarMenuItem>
-              <CollapsibleTrigger asChild>
-                <SidebarMenuButton>
-                  <span className="text-lg font-bold">Keys</span>
-                </SidebarMenuButton>
-              </CollapsibleTrigger>
-              <CollapsibleContent>
-                {locations.map((location, idx) => (
-                  <SidebarMenu key={idx}>
-                    <Collapsible className="group/collapsible">
-                      <SidebarMenuItem>
-                        <CollapsibleTrigger asChild>
-                          <SidebarMenuButton>
-                            {location.name}
-                          </SidebarMenuButton>
-                        </CollapsibleTrigger>
-                        <CollapsibleContent>
-                          {keys.filter((key) => key.location.id === location.id).map((key, idx) => (
-                            <SidebarMenuSub key={idx}>
-                              <SidebarMenuSubItem>
-                                <SidebarMenuButton
-                                  onClick={() => handleKeyClick(key)}
-                                >
-                                  <span className="text-xs">{key.name}</span>
-                                </SidebarMenuButton>
-                                <SidebarMenuBadge>
-                                  <Checkbox
-                                    className="mr-2 pointer-events-auto"
-                                    onCheckedChange={(checked) => {
-                                      if (checked) {
-                                        actions.user.addCollectedKey(key.id)
-                                      } else {
-                                        actions.user.removeCollectedKey(key.id)
-                                      }
-                                    }}
-                                  />
-                                </SidebarMenuBadge>
-                              </SidebarMenuSubItem>
-                            </SidebarMenuSub>
-                          ))}
-                        </CollapsibleContent>
-                        <SidebarMenuBadge>{keys.filter((key) => key.location.id === location.id).length}</SidebarMenuBadge>
-                      </SidebarMenuItem>
-                    </Collapsible>
-                  </SidebarMenu>
-                ))}
-              </CollapsibleContent>
-            </SidebarMenuItem>
-          </Collapsible>
+          {loaded && (
+            <Collapsible >
+              <SidebarMenuItem>
+                <CollapsibleTrigger asChild>
+                  <SidebarMenuButton>
+                    <span className="text-lg font-bold">Keys</span>
+                  </SidebarMenuButton>
+                </CollapsibleTrigger>
+                <CollapsibleContent>
+                  {locations.map((location, idx) => (
+                    <SidebarMenu key={idx}>
+                      <Collapsible className="group/collapsible">
+                        <SidebarMenuItem>
+                          <CollapsibleTrigger asChild>
+                            <SidebarMenuButton>
+                              {location.name}
+                            </SidebarMenuButton>
+                          </CollapsibleTrigger>
+                          <CollapsibleContent>
+                            {keys.filter((key) => key.location.id === location.id).map((key, idx) => (
+                              <SidebarMenuSub key={idx}>
+                                <SidebarMenuSubItem>
+                                  <SidebarMenuButton
+                                    onClick={() => handleKeyClick(key)}
+                                  >
+                                    <span className="text-xs">{key.name}</span>
+                                  </SidebarMenuButton>
+                                  <SidebarMenuBadge>
+                                    <Checkbox
+                                      className="mr-2 pointer-events-auto"
+                                      onCheckedChange={(checked) => {
+                                        if (checked) {
+                                          actions.user.addCollectedKey(key.id)
+                                        } else {
+                                          actions.user.removeCollectedKey(key.id)
+                                        }
+                                      }}
+                                    />
+                                  </SidebarMenuBadge>
+                                </SidebarMenuSubItem>
+                              </SidebarMenuSub>
+                            ))}
+                          </CollapsibleContent>
+                          <SidebarMenuBadge>{keys.filter((key) => key.location.id === location.id).length}</SidebarMenuBadge>
+                        </SidebarMenuItem>
+                      </Collapsible>
+                    </SidebarMenu>
+                  ))}
+                </CollapsibleContent>
+              </SidebarMenuItem>
+            </Collapsible>
+          )}
         </SidebarMenu>
       </SidebarContent>
       <SidebarFooter className="pb-1">
