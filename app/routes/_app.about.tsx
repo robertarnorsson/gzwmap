@@ -1,4 +1,11 @@
+import { MetaFunction } from "@remix-run/cloudflare";
 
+export const meta: MetaFunction = () => {
+  return [
+    { title: "GZW Map - About" },
+    { name: "description", content: "See what gzwmap.com is and why it was made!" },
+  ];
+};
 
 export default function About() {
   return (

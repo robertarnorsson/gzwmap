@@ -10,6 +10,7 @@ import {
 import "./tailwind.css";
 import { Toaster } from "./components/ui/toaster";
 import { LocalStorageProvider } from "./context/LocalStorageContext";
+import React from "react";
 
 export const links: LinksFunction = () => [
   {
@@ -33,11 +34,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="user-scalable=0, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
-        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141414" />
-        <title>Gray Zone Warfare Map</title>
-        <meta name="description" content="GZW Interactive map - Loot Maps, LZ's, Key Spawns, Container Spawns & Enemies mapped out!" />
+        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000" />
         <meta name="author" content="Robert Arnorsson" />
-        <meta name="creator" content="Robert Arnorsson" />
         <meta name="keywords" content="gray zone warfare map, gray zone warfare locations, gray zone warfare tasks, gray zone warfare landing zones, gray zone warfare missions, gray zone warfare strategy, gray zone warfare guide, gray zone warfare tips, gray zone warfare walkthrough, gray zone warfare gameplay, gray zone warfare exploration, gray zone warfare resources, gray zone warfare objectives, gray zone warfare secrets, gray zone warfare hidden items, gray zone warfare map updates, gray zone warfare community, gray zone warfare players, gray zone warfare factions, gray zone warfare lore, Gray Zone Warfare Interactive Map, Lamang Island Loot Map, Gray Zone Map, GZ Map, GZW Map, GZW Key Door Locations, Gray Zone Locked Doors, Gray Zone Loot Heatmaps, Gray Zone Spawns, Gray Zone Extracts, Gray Zone Warfare Valuable Spawns, Gray Zone Warfare Enemy Spawn Maps, gzw map, gzw locations, gzw tasks, gzw landing zones, gzw missions, gzw strategy, gzw guide, gzw tips, gzw walkthrough, gzw gameplay, gzw exploration, gzw resources, gzw objectives, gzw secrets, gzw hidden items, gzw map updates, gzw community, gzw players, gzw factions, gzw lore" />
 
         <link rel="icon" href="/favicon.ico" sizes="48x48" />
@@ -68,7 +66,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        <LocalStorageProvider>
+          {children}
+        </LocalStorageProvider>
         <Toaster />
         <ScrollRestoration />
         <Scripts />
@@ -78,9 +78,5 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return (
-    <LocalStorageProvider>
-      <Outlet />
-    </LocalStorageProvider>
-  );
+  return <Outlet />;
 }
