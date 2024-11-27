@@ -1,4 +1,4 @@
-import { faction, key, lz, objective, task } from "~/lib/types";
+import { key, lz, objective, task } from "~/lib/types";
 
 export const SingleObjectiveTask = ({
   task,

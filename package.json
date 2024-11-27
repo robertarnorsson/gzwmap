@@ -12,7 +12,8 @@
     "typecheck": "tsc",
     "typegen": "wrangler types",
     "preview": "npm run build && wrangler pages dev",
-    "cf-typegen": "wrangler types"
+    "cf-typegen": "wrangler types",
+    "whoami": "wrangler whoami"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.1",
