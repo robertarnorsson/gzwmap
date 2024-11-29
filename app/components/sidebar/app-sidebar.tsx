@@ -28,7 +28,7 @@ import { KeyPopupContent } from "../popups/key-popup";
 import { useLocalStorage } from "~/context/LocalStorageContext";
 import { Checkbox } from "../ui/checkbox";
 import { Input } from "../ui/input";
-import { SetStateAction, useCallback, useEffect, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
 import { LZPopupContent } from "../popups/lz-popup";
 import { KeyItem, LZItem, MultipleObjectiveTask, SingleObjectiveTask } from "./search-items";
@@ -408,11 +408,11 @@ export function AppSidebar() {
           {[
             {
               label: "Objectives Completed",
-              value: `${completedObjectives()} / ${totalObjectives()}`,
+              value: `${completedObjectives().toString().padStart(3, '0')} / ${totalObjectives().toString().padStart(3, '0')}`,
             },
             {
               label: "Tasks Completed",
-              value: `${completedTasks()} / ${totalTasks()}`,
+              value: `${completedTasks().toString().padStart(3, '0')} / ${totalTasks().toString().padStart(3, '0')}`,
             },
             {
               label: "LZs Discovered",
