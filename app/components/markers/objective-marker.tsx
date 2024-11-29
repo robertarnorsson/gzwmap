@@ -6,7 +6,7 @@ import { Dot } from "lucide-react";
 import { useData } from "~/context/DataContext";
 import { useLocalStorage } from "~/context/LocalStorageContext";
 import { objective, task } from "~/lib/types";
-import { isCanceledTaskCompleted } from "~/lib/utils";
+import { isObjectiveFromCanceledTask } from "~/util/task-utils";
 
 interface ObjectiveMarkerProps {
   task: task;
@@ -26,7 +26,7 @@ export const ObjectiveMarker = memo(({ task, objective }: ObjectiveMarkerProps) 
     objective.faction &&
     objective.faction.id !== selectedFaction
   );
-  const isCanceled = isCanceledTaskCompleted(task, tasks, data.user);
+  const isCanceled = isObjectiveFromCanceledTask(tasks, task, data.user.completedObjectives, data.user.faction);
 
   const handleClick = useCallback(() => {
     showPopup(

@@ -61,6 +61,7 @@ const MarkerComponent = ({ position, hide = false, children, enableHoverEffect =
       <div
         onMouseEnter={enableHoverEffect ? () => (markerRef.current!.parentElement!.style.zIndex = "1000") : undefined}
         onMouseLeave={enableHoverEffect ? () => (markerRef.current!.parentElement!.style.zIndex = "0") : undefined}
+        onContextMenu={(e) => {e.preventDefault()}}
         className={markerSizes(data.user.settings.markerSize)}
       >
         {children}

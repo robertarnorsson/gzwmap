@@ -21,7 +21,7 @@ export const Popup = () => {
 
     if (!overlayRef.current) {
       overlayRef.current = new Overlay({
-        offset: popupOffset, // Use the custom offset here
+        offset: popupOffset,
         element: popupRef.current,
         positioning: "bottom-center",
         stopEvent: true,
@@ -29,7 +29,7 @@ export const Popup = () => {
       map.addOverlay(overlayRef.current);
       setOverlayReady(true);
     } else {
-      overlayRef.current.setOffset(popupOffset); // Update offset if already created
+      overlayRef.current.setOffset(popupOffset);
     }
 
     overlayRef.current.setPosition(popupPosition);

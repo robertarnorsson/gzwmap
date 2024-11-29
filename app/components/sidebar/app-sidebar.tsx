@@ -28,10 +28,11 @@ import { KeyPopupContent } from "../popups/key-popup";
 import { useLocalStorage } from "~/context/LocalStorageContext";
 import { Checkbox } from "../ui/checkbox";
 import { Input } from "../ui/input";
-import { SetStateAction, useEffect, useState } from "react";
+import { SetStateAction, useCallback, useEffect, useState } from "react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
 import { LZPopupContent } from "../popups/lz-popup";
 import { KeyItem, LZItem, MultipleObjectiveTask, SingleObjectiveTask } from "./search-items";
+import { getCompletableObjectives, getCompletableTasks, getCompletedObjectives, getCompletedTasks, getDiscoverableLZs, getDiscoveredLZs } from "~/util/task-utils";
 
 
 const keybinds: KBInput[] = [
@@ -133,7 +134,16 @@ export function AppSidebar() {
   
     setSuggestions(filteredSuggestions);
   }, [searchQuery, searchCategory, tasks, keys, lzs, data.user.faction]);
+
+
+  const completedTasks = () => getCompletedTasks(tasks, data.user.completedObjectives, data.user.faction);
+  const totalTasks = () => getCompletableTasks(tasks, data.user.completedObjectives, data.user.faction);
   
+  const completedObjectives = () => getCompletedObjectives(tasks, data.user.completedObjectives, data.user.faction);
+  const totalObjectives = () => getCompletableObjectives(tasks, data.user.completedObjectives, data.user.faction);
+
+  const discoveredLZs = () => getDiscoveredLZs(lzs, data.user.discoveredLZs, data.user.faction);
+  const totalLZs = () => getDiscoverableLZs(lzs, data.user.faction);
 
   return (
     <Sidebar className="grid-bg p-2">
@@ -147,6 +157,7 @@ export function AppSidebar() {
               <Link
                 to="/settings"
                 className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                prefetch="render"
               >
                 <Button variant="ghost" size="icon">
                   <Settings />
@@ -397,15 +408,15 @@ export function AppSidebar() {
           {[
             {
               label: "Objectives Completed",
-              value: 'NaN / NaN',
+              value: `${completedObjectives()} / ${totalObjectives()}`,
             },
             {
               label: "Tasks Completed",
-              value: 'NaN / NaN',
+              value: `${completedTasks()} / ${totalTasks()}`,
             },
             {
               label: "LZs Discovered",
-              value: 'NaN / NaN',
+              value: `${discoveredLZs().toString().padStart(3, '0')} / ${totalLZs().toString().padStart(3, '0')}`,
             },
           ].map(({ label, value }) => (
             <div key={label} className="flex items-end justify-between">

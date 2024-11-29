@@ -24,6 +24,7 @@ import { Button } from "../ui/button";
 import PopupImage from "../common/PopupImage";
 import { useData } from "~/context/DataContext";
 import { Item } from "../common/Item";
+import { isObjectiveFromCanceledTask } from "~/util/task-utils";
 
 interface ObjectivePopupContentProps {
   task: task;
@@ -36,23 +37,9 @@ export const ObjectivePopupContent = ({
 }: ObjectivePopupContentProps) => {
   const { data, actions } = useLocalStorage();
   const { tasks } = useData();
-  const selectedFaction = data.user.faction;
+  
   const isComplete = data.user.completedObjectives.includes(objective.id);
-
-  const isTaskCanceled = useMemo(() => {
-    if (!task.cancelTaskId) return false;
-  
-    const canceledTask = tasks.find(t => t.id === task.cancelTaskId);
-    if (!canceledTask) return false;
-  
-    // Filter objectives based on selected faction
-    const relevantObjectives = canceledTask.objectives.filter(obj => {
-      return !obj.faction || selectedFaction === null || obj.faction.id === selectedFaction;
-    });
-  
-    // Check if all relevant objectives for the canceled task are completed
-    return relevantObjectives.every(obj => data.user.completedObjectives.includes(obj.id));
-  }, [task.cancelTaskId, tasks, selectedFaction, data.user.completedObjectives]);
+  const isCanceled = isObjectiveFromCanceledTask(tasks, task, data.user.completedObjectives, data.user.faction);
 
   const [noteText, setNoteText] = useState("");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -208,9 +195,9 @@ export const ObjectivePopupContent = ({
             className="w-full"
             variant='secondary'
             onClick={handleComplete}
-            disabled={isTaskCanceled}
+            disabled={isCanceled}
           >
-            {isTaskCanceled
+            {isCanceled
               ? (
                 <div className="flex justify-center items-center space-x-3">
                   <Ban className="w-4 h-4" />
