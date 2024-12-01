@@ -42,6 +42,7 @@ export type objective = Marker & {
   items?: item[];
   note?: string;
   difficulty?: difficulty;
+  time?: [string, string];
 };
 
 export type item = Marker & {

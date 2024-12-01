@@ -1,7 +1,7 @@
-import { useState, useEffect, useRef, useMemo } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLocalStorage } from "~/context/LocalStorageContext";
 import { objective, task } from "~/lib/types";
-import { Ban, Check, Dot, Ellipsis, Link, Pencil, X } from "lucide-react";
+import { Ban, Check, Clock, Dot, Ellipsis, Link, Pencil, X } from "lucide-react";
 import { copyMarker } from "~/lib/utils";
 import {
   DropdownMenu,
@@ -24,7 +24,7 @@ import { Button } from "../ui/button";
 import PopupImage from "../common/PopupImage";
 import { useData } from "~/context/DataContext";
 import { Item } from "../common/Item";
-import { isObjectiveFromCanceledTask } from "~/util/task-utils";
+import { getTaskFromObjective, isObjectiveFromCanceledTask } from "~/util/task-utils";
 
 interface ObjectivePopupContentProps {
   task: task;
@@ -95,6 +95,14 @@ export const ObjectivePopupContent = ({
           <p className="text-xs text-muted-foreground">{objective.type}</p>
         </div>
       </div>
+      {objective.time && (
+        <div className="flex flex-row items-center space-x-2 mt-4">
+          <Clock className="w-4 h-4" />
+          <p className="text-xs text-primary/85 text-pretty">
+            {`${objective.time[0]}-${objective.time[1]}`}
+          </p>
+        </div>
+      )}
       <div className="mt-4">
         <span className="text-sm text-primary text-pretty font-semibold">
           {objective.name}
@@ -174,6 +182,12 @@ export const ObjectivePopupContent = ({
         <div className="flex flex-col gap-1 mt-4">
           <p className="text-xs text-muted-foreground">Objective Note</p>
           <p className="text-xs text-orange-400/85">{objective.note}</p>
+        </div>
+      )}
+      {getTaskFromObjective(tasks, objective)?.cancelTaskId && (
+        <div className="mt-4">
+          <span className="text-xs text-muted-foreground">Will Cancel</span>
+          <p className="text-xs text-red-400/85">{tasks.filter((task) => getTaskFromObjective(tasks, objective)?.cancelTaskId === task.id).at(0)?.name}</p>
         </div>
       )}
       {data.user.notes?.[objective.id] && (
