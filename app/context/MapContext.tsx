@@ -45,7 +45,7 @@ export const MapProvider = ({ children }: { children: ReactNode }) => {
           }),
           new ImageLayer({
             source: new Static({
-              url: 'http://localhost:5173/assets/radiation.png',
+              url: 'https://gzwmap.com/assets/radiation.png',
               projection: projection,
               imageExtent: maxExtent,
             }),
