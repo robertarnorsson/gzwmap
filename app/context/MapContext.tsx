@@ -30,9 +30,9 @@ export const MapProvider = ({ children }: { children: ReactNode }) => {
             cacheSize: 1024,
             extent: maxExtent,
             source: new XYZ({
-              url: 'https://tiles.gzwmap.com/{z}/{x}/{y}',
+              url: 'https://tiles.gzwmap.com/v2/{z}/{x}/{y}',
               tileGrid: createXYZ({
-                maxZoom: 7,
+                maxZoom: 6,
                 minZoom: 1,
                 extent: tileExtent
               }),
@@ -47,7 +47,7 @@ export const MapProvider = ({ children }: { children: ReactNode }) => {
           zoom: 3,
           projection: projection,
           enableRotation: false,
-          maxZoom: 9
+          maxZoom: 8
         }),
         controls: [],
         maxTilesLoading: 64
