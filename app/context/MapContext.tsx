@@ -9,6 +9,8 @@ import { getCenter } from 'ol/extent';
 import { XYZ } from 'ol/source';
 import { createXYZ } from 'ol/tilegrid';
 import TileLayer from 'ol/layer/Tile';
+import ImageLayer from 'ol/layer/Image';
+import Static from 'ol/source/ImageStatic';
 
 interface MapContextType {
   map: Map | null;
@@ -40,7 +42,14 @@ export const MapProvider = ({ children }: { children: ReactNode }) => {
               tileSize: 256,
               transition: 0
             })
-          })
+          }),
+          new ImageLayer({
+            source: new Static({
+              url: 'http://localhost:5173/assets/radiation.png',
+              projection: projection,
+              imageExtent: maxExtent,
+            }),
+          }),
         ],
         view: new View({
           center: getCenter(maxExtent),
