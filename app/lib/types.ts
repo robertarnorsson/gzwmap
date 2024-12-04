@@ -17,7 +17,7 @@ export type faction = Marker & {
 
 export type lz = Marker & {
   discoverable: boolean;
-  location: location;
+  location?: location;
   faction?: faction;
 };
 

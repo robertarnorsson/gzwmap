@@ -20,12 +20,14 @@ export interface UserData {
   settings: {
     showCompletedObjectives: boolean;
     showCanceledObjectives: boolean;
+    showSecretTasks: boolean;
     markerSize: MarkerSize;
   };
 }
 
 export interface PopupData {
   dismissedNewMap: boolean;
+  dismissedSecretTask: boolean;
 }
 
 // Define the structure of the localStorage data
@@ -50,11 +52,13 @@ interface LocalStorageActions {
     setting: {
       toggleShowCompletedObjectives: () => void;
       toggleShowCanceledObjectives: () => void;
+      toggleShowSecretTasks: () => void;
       updateMarkerSize: (size: MarkerSize) => void;
     };
   };
   popup: {
     toggleNewMap: () => void;
+    toggleSecretTask: () => void;
   };
 }
 
@@ -79,11 +83,13 @@ const defaultData: LocalStorageData = {
     settings: {
       showCompletedObjectives: true,
       showCanceledObjectives: true,
+      showSecretTasks: false,
       markerSize: 3,
     },
   },
   popup: {
     dismissedNewMap: false,
+    dismissedSecretTask: false,
   },
 };
 
@@ -277,6 +283,17 @@ export const LocalStorageProvider: React.FC<{ children: ReactNode }> = ({ childr
           };
           setKey('user', updatedUserData);
         },
+        toggleShowSecretTasks: () => {
+          const userData = getKey('user');
+          const updatedUserData: UserData = {
+            ...userData,
+            settings: {
+              ...userData.settings,
+              showSecretTasks: !userData.settings.showSecretTasks,
+            },
+          };
+          setKey('user', updatedUserData);
+        },
         updateMarkerSize: (size: MarkerSize) => {
           const userData = getKey('user');
           const updatedUserData: UserData = {
@@ -296,6 +313,14 @@ export const LocalStorageProvider: React.FC<{ children: ReactNode }> = ({ childr
         const updatedPopupData: PopupData = {
           ...popupData,
           dismissedNewMap: !popupData.dismissedNewMap,
+        };
+        setKey('popup', updatedPopupData);
+      },
+      toggleSecretTask: () => {
+        const popupData = getKey('popup');
+        const updatedPopupData: PopupData = {
+          ...popupData,
+          dismissedSecretTask: !popupData.dismissedSecretTask,
         };
         setKey('popup', updatedPopupData);
       },

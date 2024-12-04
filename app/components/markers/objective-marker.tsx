@@ -20,6 +20,7 @@ export const ObjectiveMarker = memo(({ task, objective }: ObjectiveMarkerProps) 
 
   const selectedFaction = data.user.faction;
   const isComplete = data.user.completedObjectives.includes(objective.id);
+  const isSecret = task.isHidden;
 
   const shouldHide = !!(
     selectedFaction &&
@@ -52,7 +53,8 @@ export const ObjectiveMarker = memo(({ task, objective }: ObjectiveMarkerProps) 
 
   if (
     (isComplete && !data.user.settings.showCompletedObjectives) ||
-    (isCanceled && !data.user.settings.showCanceledObjectives)
+    (isCanceled && !data.user.settings.showCanceledObjectives) ||
+    (isSecret && !data.user.settings.showSecretTasks)
   ) {
     return null;
   }

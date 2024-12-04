@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useLocalStorage } from "~/context/LocalStorageContext";
 import { objective, task } from "~/lib/types";
-import { Ban, Check, Clock, Dot, Ellipsis, Eye, EyeClosed, Link, Pencil, X } from "lucide-react";
+import { Ban, Check, Clock, Dot, Ellipsis, Eye, Link, Pencil, X } from "lucide-react";
 import { copyMarker } from "~/lib/utils";
 import {
   DropdownMenu,
