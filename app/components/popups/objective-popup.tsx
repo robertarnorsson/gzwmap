@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useLocalStorage } from "~/context/LocalStorageContext";
 import { objective, task } from "~/lib/types";
-import { Ban, Check, Clock, Dot, Ellipsis, Link, Pencil, X } from "lucide-react";
+import { Ban, Check, Clock, Dot, Ellipsis, Eye, Link, Pencil, X } from "lucide-react";
 import { copyMarker } from "~/lib/utils";
 import {
   DropdownMenu,
@@ -95,9 +95,17 @@ export const ObjectivePopupContent = ({
           <p className="text-xs text-muted-foreground">{objective.type}</p>
         </div>
       </div>
+      {task.isHidden && (
+        <div className="flex flex-row items-center space-x-1 mt-1">
+        <Eye className="w-3 h-3 text-muted-foreground" />
+        <p className="text-[10px] text-muted-foreground text-pretty">
+          Secret task
+        </p>
+      </div>
+      )}
       {objective.time && (
         <div className="flex flex-row items-center space-x-2 mt-4">
-          <Clock className="w-4 h-4" />
+          <Clock className="w-4 h-4 text-primary/85" />
           <p className="text-xs text-primary/85 text-pretty">
             {`${objective.time[0]}-${objective.time[1]}`}
           </p>

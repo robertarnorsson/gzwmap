@@ -119,6 +119,16 @@ export default function Settings() {
                   </div>
                   <div className="flex items-center justify-between">
                     <div className="space-y-1">
+                      <p className="text-sm font-medium leading-none">Show secret tasks</p>
+                      <p className="text-sm text-muted-foreground">Show secret tasks on the map. These tasks are not gotten through normal gameplay</p>
+                    </div>
+                    <Switch
+                      checked={data.user.settings.showSecretTasks}
+                      onCheckedChange={() => actions.user.setting.toggleShowSecretTasks()}
+                    />
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="space-y-1">
                       <p className="text-sm font-medium leading-none">Marker size</p>
                       <p className="text-sm text-muted-foreground">Adjust the marker size to your preference.</p>
                     </div>

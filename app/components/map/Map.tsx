@@ -6,12 +6,13 @@ import { Cursor } from './Cursor';
 import { useSidebar } from '../ui/sidebar';
 import { useLocalStorage } from '~/context/LocalStorageContext';
 import { FactionSelect } from '../common/FactionSelect';
-import { NewMapPopup } from '../common/NewMapPopup';
+import { NewMapPopup } from '../common/popups/NewMapPopup';
+import { SecretTaskPopup } from '../common/popups/SecretTasksPopup';
 
 const Map: React.FC = () => {
   const { map, isMapLoaded } = useMap();
   const { isMobile } = useSidebar();
-  const { loaded, factions } = useData();
+  const { loaded } = useData();
   const { data } = useLocalStorage();
   const mapContainerRef = useRef<HTMLDivElement>(null);
 
@@ -38,6 +39,9 @@ const Map: React.FC = () => {
       )}
       {isMapLoaded && loaded && data.user.faction === '' && (
         <FactionSelect />
+      )}
+      {isMapLoaded && loaded && !data.popup.dismissedSecretTask && (
+        <SecretTaskPopup />
       )}
       {isMapLoaded && loaded && !data.popup.dismissedNewMap && (
         <NewMapPopup />

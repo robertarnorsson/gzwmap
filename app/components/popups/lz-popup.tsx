@@ -27,8 +27,7 @@ export const LZPopupContent = ({ lz }: LZPopupContentProps) => {
   return (
     <>
       <h2 className="text-lg font-bold">{lz.name}</h2>
-      <p className="text-sm">{lz.location.name}</p>
-      
+      <p className="text-sm">{lz.location ? lz.location.name : "No location"}</p>
       <div className="flex flex-col mt-6 space-y-2">
         <div className="flex flex-row items-center space-x-6">
           <div className="w-full h-[1px] bg-border" />

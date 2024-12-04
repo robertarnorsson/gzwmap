@@ -16,7 +16,7 @@ export const NewMapPopup = () => {
       </button>
       <div className="grid-bg border p-4">
         <h3 className="text-lg font-semibold">Welcome to the new map</h3>
-        <p className="text-sm text-muted-foreground">The map has gone through huge changes and been fully rewritten. We have added the ability to mark tasks as complete, mark LZs as discovered and mark keys as collected. There is still much to be done like a search and more statistics to see how far you have progressed in the game. Hope you enjoy and share the map with your friends.</p>
+        <p className="text-sm text-muted-foreground">The map has gone through huge changes and been fully rewritten. We have added the ability to mark tasks as complete, mark LZs as discovered and mark keys as collected. There is still much to be done like new task and more. Hope you enjoy and share the map with your friends.</p>
       </div>
     </div>
   )

@@ -28,7 +28,7 @@ export const GridOverlay = () => {
       const features = [];
 
       // Generate vertical grid lines
-      for (let x = minX; x <= maxX; x += gridSizeX) {
+      for (let x = minX; x <= maxX + 1; x += gridSizeX) {
         features.push(new Feature(new LineString([[x, minY], [x, maxY]])));
       }
 

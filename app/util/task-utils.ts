@@ -1,4 +1,4 @@
-import { lz, objective, task } from "~/lib/types";
+import { key, lz, objective, task } from "~/lib/types";
 
 export function getTaskFromObjective(tasks: task[], objective: objective): task | null {
   for (const task of tasks) {
@@ -9,10 +9,86 @@ export function getTaskFromObjective(tasks: task[], objective: objective): task 
   return null;
 }
 
+export function getFactionObjectives(
+  task: task,
+  factionId?: string
+): objective[] {
+  return task.objectives.filter(obj => {
+    return !obj.faction || (factionId && obj.faction.id === factionId);
+  });
+}
+
 export function isObjectiveFromCanceledTask(tasks: task[], task: task, completedObjectiveIds: string[], factionId?: string): boolean {
   if (!task.cancelTaskId) return false;
 
   const cancelTask = tasks.find(t => t.id === task.cancelTaskId);
+  if (!cancelTask) return false;
+
+  return cancelTask.objectives.some(obj => {
+    const isFactionMatch = !obj.faction || (factionId && obj.faction.id === factionId);
+    return isFactionMatch && completedObjectiveIds.includes(obj.id);
+  });
+}
+
+export function isTaskCanceled(tasks: task[], task: task, completedObjectiveIds: string[], factionId?: string): boolean {
+  if (!task.cancelTaskId) return false;
+
+  const cancelTask = tasks.find(t => t.id === task.cancelTaskId);
+  if (!cancelTask) return false;
+
+  // Check if any objectives in the cancelTask are completed
+  return cancelTask.objectives.some(obj => {
+    const isFactionMatch = !obj.faction || (factionId && obj.faction.id === factionId);
+    return isFactionMatch && completedObjectiveIds.includes(obj.id);
+  });
+}
+
+export function isTaskCompleted(task: task, completedObjectiveIds: string[], factionId?: string): boolean {
+  const relevantObjectives = task.objectives.filter(
+    obj => !obj.faction || (factionId && obj.faction.id === factionId)
+  );
+
+  return relevantObjectives.every(obj => completedObjectiveIds.includes(obj.id));
+}
+
+export function isKeyCollected(
+  cKey: key,
+  collectedKeyIds: string[],
+  factionId?: string
+): boolean {
+  const isFactionMatch = (!cKey.faction || (factionId && cKey.faction.id === factionId)) as boolean;
+  return isFactionMatch && collectedKeyIds.includes(cKey.id);
+}
+
+export function getFactionKeys(
+  keys: key[],
+  factionId?: string
+): key[] {
+  return keys.filter(k => {
+    return !k.faction || (factionId && k.faction.id === factionId);
+  }) || [];
+}
+
+export function isTaskCompletable(tasks: task[], task: task, completedObjectiveIds: string[], factionId?: string): boolean {
+  if (isTaskCanceled(tasks, task, completedObjectiveIds, factionId)) return false;
+
+  const relevantObjectives = task.objectives.filter(
+    obj => !obj.faction || (factionId && obj.faction.id === factionId)
+  );
+
+  return relevantObjectives.length > 0;
+}
+
+export function isObjectiveCompleted(objective: objective, completedObjectiveIds: string[], factionId?: string): boolean {
+  const isFactionMatch = (!objective.faction || (factionId && objective.faction.id === factionId)) as boolean;
+  return isFactionMatch && completedObjectiveIds.includes(objective.id);
+}
+
+export function isObjectiveCanceled(tasks: task[], objective: objective, completedObjectiveIds: string[], factionId?: string): boolean {
+  const parentTask = tasks.find(task => task.objectives.includes(objective));
+  if (!parentTask || !parentTask.cancelTaskId) return false;
+
+  const cancelTask = tasks.find(t => t.id === parentTask.cancelTaskId);
   if (!cancelTask) return false;
 
   return cancelTask.objectives.some(obj => {
