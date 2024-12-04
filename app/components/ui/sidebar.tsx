@@ -15,6 +15,7 @@ import {
   TooltipTrigger,
 } from "~/components/ui/tooltip"
 import { ViewVerticalIcon } from "@radix-ui/react-icons"
+import { PanelLeft } from "lucide-react"
 
 const SIDEBAR_WIDTH = "24rem"
 const SIDEBAR_WIDTH_MOBILE = "20rem"
@@ -215,10 +216,9 @@ const Sidebar = React.forwardRef<
         data-variant={variant}
         data-side={side}
       >
-        {/* This is what handles the sidebar gap on desktop */}
         <div
           className={cn(
-            "duration-300 relative h-svh w-[--sidebar-width] bg-transparent transition-[width] ease-out",
+            "duration-300 relative h-svh w-[--sidebar-width] bg-transparent transition-[width] ease",
             "group-data-[collapsible=offcanvas]:w-0",
             "group-data-[side=right]:rotate-180",
             variant === "floating" || variant === "inset"
@@ -272,7 +272,7 @@ const SidebarTrigger = React.forwardRef<
       }}
       {...props}
     >
-      <ViewVerticalIcon />
+      <PanelLeft />
       <span className="sr-only">Toggle Sidebar</span>
     </Button>
   )
