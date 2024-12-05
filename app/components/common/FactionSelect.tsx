@@ -11,7 +11,7 @@ export const FactionSelect = () => {
   }
 
   return (
-    <div className="absolute top-0 left-0 bottom-0 right-0 bg-black/40 z-[99999]">
+    <div className="absolute top-0 left-0 bottom-0 right-0 bg-black/40 z-[99998]">
       <div className="flex justify-center items-center w-full h-full">
         <div className="grid-bg border border-border p-8">
           <div className="text-center mb-4">

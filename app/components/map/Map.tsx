@@ -8,6 +8,7 @@ import { useLocalStorage } from '~/context/LocalStorageContext';
 import { FactionSelect } from '../common/FactionSelect';
 import { NewMapPopup } from '../common/popups/NewMapPopup';
 import { SecretTaskPopup } from '../common/popups/SecretTasksPopup';
+import { MapShutdownPopup } from '../common/popups/ShutdownPopup';
 
 const Map: React.FC = () => {
   const { map, isMapLoaded } = useMap();
@@ -36,6 +37,9 @@ const Map: React.FC = () => {
             <span>Loading map...</span>
           </div>
         </div>
+      )}
+      {isMapLoaded && loaded && !data.popup.dismissedShutdown && (
+        <MapShutdownPopup />
       )}
       {isMapLoaded && loaded && data.user.faction === '' && (
         <FactionSelect />

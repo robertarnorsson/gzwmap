@@ -28,6 +28,7 @@ export interface UserData {
 export interface PopupData {
   dismissedNewMap: boolean;
   dismissedSecretTask: boolean;
+  dismissedShutdown: boolean;
 }
 
 // Define the structure of the localStorage data
@@ -59,6 +60,7 @@ interface LocalStorageActions {
   popup: {
     toggleNewMap: () => void;
     toggleSecretTask: () => void;
+    toggleShutdown: () => void;
   };
 }
 
@@ -90,6 +92,7 @@ const defaultData: LocalStorageData = {
   popup: {
     dismissedNewMap: false,
     dismissedSecretTask: false,
+    dismissedShutdown: false,
   },
 };
 
@@ -321,6 +324,14 @@ export const LocalStorageProvider: React.FC<{ children: ReactNode }> = ({ childr
         const updatedPopupData: PopupData = {
           ...popupData,
           dismissedSecretTask: !popupData.dismissedSecretTask,
+        };
+        setKey('popup', updatedPopupData);
+      },
+      toggleShutdown: () => {
+        const popupData = getKey('popup');
+        const updatedPopupData: PopupData = {
+          ...popupData,
+          dismissedShutdown: !popupData.dismissedShutdown,
         };
         setKey('popup', updatedPopupData);
       },
