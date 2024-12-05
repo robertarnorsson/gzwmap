@@ -43,13 +43,6 @@ export const MapProvider = ({ children }: { children: ReactNode }) => {
               transition: 0
             })
           }),
-          new ImageLayer({
-            source: new Static({
-              url: 'https://gzwmap.com/assets/radiation.png',
-              projection: projection,
-              imageExtent: maxExtent,
-            }),
-          }),
         ],
         view: new View({
           center: getCenter(maxExtent),
