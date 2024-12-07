@@ -1,5 +1,10 @@
 # [GZW Map](https://gzwmap.com/)
 
+
+# IMPORTANT INFO!!!
+This project is not being actively maintained but is open to PRs and contributors.
+
+
 ## About
 
 Welcome to GZW Map! This site aims to be your go-to tool for exploring the Gray Zone Warfare game world. We want to provide you with an easy-to-use map over Lamang so you know where to go and what to do.
